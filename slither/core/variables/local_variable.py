@@ -14,6 +14,7 @@ class LocalVariable(ChildFunction, Variable):
     def __init__(self) -> None:
         super().__init__()
         self._location: Optional[str] = None
+        #self._token_type = -2
 
     def set_location(self, loc: str) -> None:
         self._location = loc
@@ -31,8 +32,16 @@ class LocalVariable(ChildFunction, Variable):
     @property
     def is_scalar(self) -> bool:
         return isinstance(self.type, ElementaryType) and not self.is_storage
-
-    @property
+    
+    def non_ssa_version(self):
+        return self
+    #@property
+    #def token_type(self) -> int:
+    #    return self._token_type
+    #
+    #def token_type(self, a: int) -> None:
+    #    self._token_type = a
+    @ property
     def is_storage(self) -> bool:
         """
             Return true if the variable is located in storage

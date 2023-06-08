@@ -19,7 +19,7 @@ class Backdoor(AbstractDetector):
 
     def _detect(self):
         results = []
-
+        exit(1)
         for contract in self.compilation_unit.contracts_derived:
             # Check if a function has 'backdoor' in its name
             for f in contract.functions:

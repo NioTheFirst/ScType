@@ -11,7 +11,7 @@ TRAVIS_PATH='/home/travis/build/crytic/slither'
 test_slither(){
 
     expected="$DIR/../tests/expected_json/$(basename "$1" .sol).$2.json"
-
+    echo "running"
     # run slither detector on input file and save output as json
     if ! slither "$1" --solc-disable-warnings --detect "$2" --json "$DIR/tmp-test.json";
     then

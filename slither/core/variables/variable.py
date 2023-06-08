@@ -23,6 +23,13 @@ class Variable(SourceMapping):
         self._is_immutable: bool = False
         self._is_reentrant: bool = True
         self._write_protection: Optional[List[str]] = None
+        self._token_type = -2
+        self._token_dim = 0;
+        self._token_typen : List[int] = []
+        self._token_typed : List[int] = []
+        self._norm = -100;
+        self._parent_function : Optional[str] = None
+        self._tname: Optional[str] = None
 
     @property
     def is_scalar(self) -> bool:
@@ -75,7 +82,82 @@ class Variable(SourceMapping):
     @name.setter
     def name(self, name):
         self._name = name
+    
+    def change_name(self, name):
+        self._tname = name
+    
+    @property
+    def norm(self) -> int:
+        return self._norm
 
+    @norm.setter
+    def norm(self, norm):
+        self._norm = norm
+
+    @property
+    def tname(self)-> Optional[str]:
+        return self._tname
+
+    @property
+    def parent_function(self) -> Optional[str]:
+        """
+        str: variable name
+        """
+        return self._parent_function
+
+    @parent_function.setter
+    def parent_function(self, name):
+        self._parent_function = name
+
+    @property
+    def token_typen(self) -> Optional[int]:
+        return self._token_typen
+
+    
+    def add_token_typen(self, a):
+        for denom in self._token_typed:
+            if(denom == a):
+                if(a!=-1):
+                    self._token_typed.remove(denom)
+                    return
+        if((a in self._token_typen and a == -1) or (a==-1 and len(self._token_typen) > 0 and (not(a in self._token_typen)))):
+            return
+        if(-1 in self._token_typen and a != -1):
+            self._token_typen.remove(-1)
+        self._token_typen.append(a)
+
+    @property
+    def token_typed(self) -> Optional[int]:
+        return self._token_typed
+
+
+    def add_token_typed(self, a):
+        for num in self._token_typen:
+            if(num == a):
+                if(a != -1):
+                    self._token_typen.remove(num)
+                    return
+        if((a in self._token_typed and a == -1) or (a==-1 and len(self._token_typed) > 0 and (not(a in self._token_typed)))):
+            return
+        if(-1 in self._token_typed and a != -1):
+            self._token_typed.remove(-1)
+        self._token_typed.append(a)
+
+    @property
+    def token_type(self):
+        return self._token_type
+
+    @token_type.setter
+    def token_type(self, toke_type):
+        self._token_type = toke_type
+
+    @property
+    def token_dim(self):
+        return self._token_dim
+
+    @token_type.setter
+    def token_dim(self, toke_dim):
+        self._token_dim = toke_dim
     @property
     def type(self) -> Optional[Union[Type, List[Type]]]:
         return self._type

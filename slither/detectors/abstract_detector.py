@@ -251,7 +251,8 @@ class AbstractDetector(metaclass=abc.ABCMeta):
 
     def generate_result(
         self,
-        info: Union[str, List[Union[str, SupportedOutput]]],
+
+    info: Union[str, List[Union[str, SupportedOutput]]],
         additional_fields: Optional[Dict] = None,
     ) -> Output:
         output = Output(

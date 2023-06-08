@@ -133,6 +133,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         # slithir Temporary and references variables (but not SSA)
         self._slithir_variables: Set["SlithIRVariable"] = set()
         self._parameters: List["LocalVariable"] = []
+        self._parameter_cache: List[List[List[List[int]]]] = []
         self._parameters_ssa: List["LocalIRVariable"] = []
         self._parameters_src: SourceMapping = SourceMapping()
         self._returns: List["LocalVariable"] = []
@@ -598,6 +599,16 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         """
         return list(self._parameters)
 
+    
+    def parameter_cache(self):
+        """
+        stuff
+        """
+        return (self._parameter_cache)
+
+    def add_parameter_cache(self, new_param_cache):
+        self._parameter_cache.append(new_param_cache)
+
     def add_parameters(self, p: "LocalVariable"):
         self._parameters.append(p)
 
@@ -663,7 +674,9 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
 
     def add_return_ssa(self, var: "LocalIRVariable"):
         self._returns_ssa.append(var)
-
+    
+    def clear_returns_ssa(self):
+        self._returns_ssa.clear()
     # endregion
     ###################################################################################
     ###################################################################################
