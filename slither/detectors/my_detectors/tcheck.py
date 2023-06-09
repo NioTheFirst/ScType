@@ -474,7 +474,7 @@ def convert_ssa(ir):
     if(not (is_type_undef(non_ssa_ir)) and is_type_undef(ir)):
         copy_token_type(non_ssa_ir, ir)
         print_token_type(ir)
-#edit check
+#edit checkdafadjfahjfa
 
 #given and ir, type check
 #currently handles assignments and Binary
