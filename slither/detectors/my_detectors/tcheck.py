@@ -485,6 +485,7 @@ def check_type(ir) -> bool:
     if isinstance(ir, Assignment):
         print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
+        print(get_norm(ir.rvalue))
         asn_norm(ir.lvalue, get_norm(ir.rvalue))
         #print_token_type(ir.lvalue)
     elif isinstance(ir, Binary):
@@ -609,6 +610,7 @@ def type_asn(dest, sorc) -> bool:
     #dest = ir.lvalue
     #sorc = ir.variable_right
     init_var(sorc)
+    print_token_type(dest)
     #asn_norm(dest, get_norm(sorc))
     if(is_type_undef(sorc)):
         return True
@@ -701,8 +703,10 @@ def type_bin_pow(dest, lir, rir) -> bool:
         assign_const(dest)
         print("x:" + str(get_norm(dest)))
         print(pow_const)
-        if(pow_const != -1):
+        if(pow_const > 0):
             asn_norm(dest, pow_const * get_norm(lir))
+        elif(pow_const == 0):
+            asn_norm(dest, pow_const)
         else:
             asn_norm(dest, -102)
     else:
@@ -797,8 +801,10 @@ def get_norm(ir):
         while (copy_val > 0 and copy_val%10 == 0):
             copy_val = copy_val/10
             power+=1
-        print(power)
-        return power
+        if(power >= 5 or copy_val == 1):
+            print(power)
+            return power
+        return 0
             
 #USAGE: given a power of 10 (norm), assign it to the dest IR
 #       can be toggled to throw an error if there is a previous type
