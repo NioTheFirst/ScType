@@ -1,5 +1,4 @@
 contract name: MyStrategy
-WARNING!!!!
 MyStrategy_types.txt
 "MyStrategy_types.txt" opened successfully.
 xcxcxcLOCKER
@@ -148,8 +147,8 @@ Checking... slitherConstructorVariables
 [x] No Binary
 Checking... slitherConstructorConstantVariables
 [x] No Binary
-State_var: LOCKER
-Finding type for LOCKER...
+State_var: DELEGATE
+Finding type for DELEGATE...
 Num:
 -1
 Den:
@@ -157,8 +156,26 @@ Den:
 Norm:
 0
 [*]Type fetched successfully
-State_var: CVX
-Finding type for CVX...
+State_var: DELEGATED_SPACE
+Finding type for DELEGATED_SPACE...
+Num:
+-1
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
+State_var: SNAPSHOT
+Finding type for SNAPSHOT...
+Num:
+-1
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
+State_var: want
+Finding type for want...
 Num:
 -1
 Den:
@@ -175,11 +192,8 @@ Den:
 Norm:
 0
 [*]Type fetched successfully
-State_var: LOCKER
-State_var: CVX
-State_var: CVX_VAULT
-State_var: SUSHI_ROUTER
-Finding type for SUSHI_ROUTER...
+State_var: MAX_BPS
+Finding type for MAX_BPS...
 Num:
 -1
 Den:
@@ -187,37 +201,9 @@ Den:
 Norm:
 0
 [*]Type fetched successfully
-State_var: WETH
-Finding type for WETH...
-Num:
--1
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: reward
-Finding type for reward...
-Num:
--1
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: CVX
-State_var: lpComponent
-Finding type for lpComponent...
-Num:
--1
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: reward
 State_var: want
-Finding type for want...
+State_var: withdrawalSafetyCheck
+Finding type for withdrawalSafetyCheck...
 Num:
 -1
 Den:
@@ -225,10 +211,6 @@ Den:
 Norm:
 0
 [*]Type fetched successfully
-State_var: CVX
-State_var: CVX_VAULT
-State_var: LOCKER
-State_var: CVX_VAULT
 State_var: controller
 Finding type for controller...
 Num:
@@ -265,65 +247,28 @@ Den:
 Norm:
 0
 [*]Type fetched successfully
-State_var: want
-State_var: DELEGATE
-Finding type for DELEGATE...
-Num:
--1
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: DELEGATED_SPACE
-Finding type for DELEGATED_SPACE...
-Num:
--1
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: SNAPSHOT
-Finding type for SNAPSHOT...
-Num:
--1
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: want
 State_var: CVX_VAULT
-State_var: MAX_BPS
-Finding type for MAX_BPS...
-Num:
--1
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: want
-State_var: withdrawalSafetyCheck
-Finding type for withdrawalSafetyCheck...
-Num:
--1
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: CVX_VAULT
-State_var: controller
-State_var: performanceFeeGovernance
-State_var: performanceFeeStrategist
-State_var: strategist
 State_var: controller
 State_var: want
 State_var: CVX
+Finding type for CVX...
+Num:
+-1
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
 State_var: CVX_VAULT
 State_var: LOCKER
+Finding type for LOCKER...
+Num:
+-1
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
 State_var: MAX_BPS
 State_var: harvestOnRebalance
 Finding type for harvestOnRebalance...
@@ -346,11 +291,15 @@ Norm:
 State_var: want
 State_var: LOCKER
 State_var: reward
+Finding type for reward...
+Num:
+-1
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
 State_var: want
-State_var: CVX
-State_var: CVX_VAULT
-State_var: LOCKER
-State_var: withdrawalSafetyCheck
 State_var: CVX
 State_var: LOCKER
 State_var: processLocksOnReinvest
@@ -362,6 +311,10 @@ Den:
 Norm:
 0
 [*]Type fetched successfully
+State_var: CVX
+State_var: CVX_VAULT
+State_var: LOCKER
+State_var: withdrawalSafetyCheck
 State_var: MAX_FEE
 Finding type for MAX_FEE...
 Num:
@@ -374,7 +327,52 @@ Norm:
 State_var: CVX
 State_var: CVX_VAULT
 State_var: LOCKER
-lolcheck?
+State_var: LOCKER
+State_var: CVX
+State_var: CVX_VAULT
+State_var: LOCKER
+State_var: CVX
+State_var: CVX_VAULT
+State_var: SUSHI_ROUTER
+Finding type for SUSHI_ROUTER...
+Num:
+-1
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
+State_var: WETH
+Finding type for WETH...
+Num:
+-1
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
+State_var: reward
+State_var: CVX
+State_var: lpComponent
+Finding type for lpComponent...
+Num:
+-1
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
+State_var: reward
+State_var: want
+State_var: CVX
+State_var: CVX_VAULT
+State_var: LOCKER
+State_var: CVX_VAULT
+State_var: controller
+State_var: performanceFeeGovernance
+State_var: performanceFeeStrategist
+State_var: strategist
+State_var: want
 Reading Function: _onlyGovernance
 Function _onlyGovernance not marked
 Reading Function: _onlyAuthorizedActors
@@ -396,13 +394,6 @@ Norm:
 Param: 0
     num: [1]
     den: [-1]
-clearning node...
-clearing ir...?
-_amount_1(uint256) := ϕ(['bCvxAmount_1'])
-clearing ir...?
-want_2(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-controller_1(address) := ϕ(['controller_8', 'controller_0', 'controller_2', 'controller_5'])
 typecheckig node...
 _amount_1(uint256) := ϕ(['bCvxAmount_1'])
 checking _amount
@@ -423,7 +414,7 @@ Den:
 Norm:
 -100
 done.
-want_2(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
+want_2(address) := ϕ(['want_4', 'want_0', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -443,7 +434,7 @@ Den:
 Norm:
 -100
 done.
-controller_1(address) := ϕ(['controller_8', 'controller_0', 'controller_2', 'controller_5'])
+controller_1(address) := ϕ(['controller_0', 'controller_2', 'controller_8', 'controller_5'])
 checking controller
 State IR  variable: controller
 State variable: controller
@@ -463,21 +454,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_2 = CONVERT controller_1 to IController
-clearing ir...?
-TMP_3 = CONVERT want_2 to address
-clearing ir...?
-TMP_4(address) = HIGH_LEVEL_CALL, dest:TMP_2(IController), function:vaults, arguments:['TMP_3']  
-Temp variable: tmp_4
-clearing ir...?
-want_3(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_2', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-controller_2(address) := ϕ(['controller_8', 'controller_5', 'controller_1', 'controller_2'])
-clearing ir...?
-_vault_1(address) := TMP_4(address)
-Local variable: _vault
 typecheckig node...
 TMP_2 = CONVERT controller_1 to IController
 checking tmp_2
@@ -526,7 +502,7 @@ Den:
 Norm:
 0
 done.
-want_3(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_2', 'want_17', 'want_1', 'want_25'])
+want_3(address) := ϕ(['want_4', 'want_7', 'want_31', 'want_2', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -546,7 +522,7 @@ Den:
 Norm:
 -100
 done.
-controller_2(address) := ϕ(['controller_8', 'controller_5', 'controller_1', 'controller_2'])
+controller_2(address) := ϕ(['controller_5', 'controller_1', 'controller_2', 'controller_8'])
 checking controller
 State IR  variable: controller
 State variable: controller
@@ -584,14 +560,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_5 = CONVERT 0 to address
-clearing ir...?
-TMP_6(bool) = _vault_1 != TMP_5
-Temp variable: tmp_6
-clearing ir...?
-TMP_7(None) = SOLIDITY_CALL require(bool,string)(TMP_6,!vault)
 typecheckig node...
 TMP_5 = CONVERT 0 to address
 checking tmp_5
@@ -625,14 +593,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_8 = CONVERT want_3 to IERC20Upgradeable
-clearing ir...?
-TMP_9(bool) = HIGH_LEVEL_CALL, dest:TMP_8(IERC20Upgradeable), function:transfer, arguments:['_vault_1', '_amount_1']  
-Temp variable: tmp_9
-clearing ir...?
-want_4(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_3', 'want_17', 'want_1', 'want_25'])
 typecheckig node...
 TMP_8 = CONVERT want_3 to IERC20Upgradeable
 checking tmp_8
@@ -670,7 +630,7 @@ Den:
 Norm:
 0
 done.
-want_4(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_3', 'want_17', 'want_1', 'want_25'])
+want_4(address) := ϕ(['want_4', 'want_7', 'want_31', 'want_3', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -741,19 +701,8 @@ Param: 2
 Param: 3
     num: [-1]
     den: [-1]
-clearning node...
-clearing ir...?
-token_1(address) := ϕ(['want_19', '_token_1', 'want_20'])
-clearing ir...?
-amount_1(uint256) := ϕ(['_amount_1', '_amount_1'])
-clearing ir...?
-feeBps_1(uint256) := ϕ(['performanceFeeStrategist_4', 'performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6'])
-clearing ir...?
-recipient_1(address) := ϕ(['strategist_3', 'TMP_124', 'strategist_7', 'TMP_120'])
-clearing ir...?
-MAX_FEE_1(uint256) := ϕ(['MAX_FEE_0'])
 typecheckig node...
-token_1(address) := ϕ(['want_19', '_token_1', 'want_20'])
+token_1(address) := ϕ(['_token_1', 'want_20', 'want_19'])
 checking token
 Local variable: token
 Function name: _processFee
@@ -791,7 +740,7 @@ Den:
 Norm:
 -100
 done.
-feeBps_1(uint256) := ϕ(['performanceFeeStrategist_4', 'performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6'])
+feeBps_1(uint256) := ϕ(['performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6', 'performanceFeeStrategist_4'])
 checking feebps
 Local variable: feebps
 Function name: _processFee
@@ -849,12 +798,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_10(bool) = feeBps_1 == 0
-Temp variable: tmp_10
-clearing ir...?
-CONDITION TMP_10
 typecheckig node...
 TMP_10(bool) = feeBps_1 == 0
 checking tmp_10
@@ -871,26 +814,12 @@ Condition...
 Conidtion: 
 TMP_10
 TMP_10
-clearning node...
-clearing ir...?
-RETURN 0
 typecheckig node...
 RETURN 0
 Return...
 _processFee
 0
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_11(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['amount_1', 'feeBps_1'] 
-Temp variable: tmp_11
-clearing ir...?
-TMP_12(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_11', 'MAX_FEE_1'] 
-Temp variable: tmp_12
-clearing ir...?
-fee_1(uint256) := TMP_12(uint256)
-Local variable: fee
 typecheckig node...
 TMP_11(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['amount_1', 'feeBps_1'] 
 High Level Call: mul
@@ -968,12 +897,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_13 = CONVERT token_1 to IERC20Upgradeable
-clearing ir...?
-TMP_14(bool) = HIGH_LEVEL_CALL, dest:TMP_13(IERC20Upgradeable), function:transfer, arguments:['recipient_1', 'fee_1']  
-Temp variable: tmp_14
 typecheckig node...
 TMP_13 = CONVERT token_1 to IERC20Upgradeable
 checking tmp_13
@@ -1011,9 +934,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-RETURN fee_1
 typecheckig node...
 RETURN fee_1
 Return...
@@ -1047,11 +967,6 @@ Norm:
 Param: 0
     num: [2]
     den: [-1]
-clearning node...
-clearing ir...?
-cvx_1(uint256) := ϕ(['TMP_32', 'TMP_36'])
-clearing ir...?
-CVX_VAULT_1(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
 cvx_1(uint256) := ϕ(['TMP_32', 'TMP_36'])
 checking cvx
@@ -1072,7 +987,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_1(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_1(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -1092,15 +1007,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_19(uint256) = HIGH_LEVEL_CALL, dest:CVX_VAULT_1(ISettV3), function:getPricePerFullShare, arguments:[]  
-Temp variable: tmp_19
-clearing ir...?
-CVX_VAULT_2(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_1', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-bCVXToCVX_1(uint256) := TMP_19(uint256)
-Local variable: bcvxtocvx
 typecheckig node...
 TMP_19(uint256) = HIGH_LEVEL_CALL, dest:CVX_VAULT_1(ISettV3), function:getPricePerFullShare, arguments:[]  
 High Level Call: getpriceperfullshare
@@ -1127,7 +1033,7 @@ Den:
 Norm:
 0
 done.
-CVX_VAULT_2(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_1', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_2(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_1', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -1165,18 +1071,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_20(uint256) = 10 ** 18
-Temp variable: tmp_20
-clearing ir...?
-TMP_21(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['cvx_1', 'TMP_20'] 
-Temp variable: tmp_21
-clearing ir...?
-TMP_22(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_21', 'bCVXToCVX_1'] 
-Temp variable: tmp_22
-clearing ir...?
-RETURN TMP_22
 typecheckig node...
 TMP_20(uint256) = 10 ** 18
 checking tmp_20
@@ -1290,11 +1184,6 @@ Norm:
 Param: 0
     num: [1]
     den: [-1]
-clearning node...
-clearing ir...?
-lol_1(uint256) := ϕ(['balanceOfWant_1'])
-clearing ir...?
-CVX_VAULT_3(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
 lol_1(uint256) := ϕ(['balanceOfWant_1'])
 checking lol
@@ -1315,7 +1204,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_3(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_3(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -1335,15 +1224,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_23(uint256) = HIGH_LEVEL_CALL, dest:CVX_VAULT_3(ISettV3), function:getPricePerFullShare, arguments:[]  
-Temp variable: tmp_23
-clearing ir...?
-CVX_VAULT_4(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_3', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-bCVXToCVX_1(uint256) := TMP_23(uint256)
-Local variable: bcvxtocvx
 typecheckig node...
 TMP_23(uint256) = HIGH_LEVEL_CALL, dest:CVX_VAULT_3(ISettV3), function:getPricePerFullShare, arguments:[]  
 High Level Call: getpriceperfullshare
@@ -1370,7 +1250,7 @@ Den:
 Norm:
 0
 done.
-CVX_VAULT_4(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_3', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_4(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_3', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -1408,18 +1288,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_24(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['lol_1', 'bCVXToCVX_1'] 
-Temp variable: tmp_24
-clearing ir...?
-TMP_25(uint256) = 10 ** 18
-Temp variable: tmp_25
-clearing ir...?
-TMP_26(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_24', 'TMP_25'] 
-Temp variable: tmp_26
-clearing ir...?
-RETURN TMP_26
 typecheckig node...
 TMP_24(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['lol_1', 'bCVXToCVX_1'] 
 High Level Call: mul
@@ -1522,17 +1390,8 @@ TMP_26
 Reading Function: balanceOfPool
 Function name: balanceOfPool
 Function Visibility: public
-clearning node...
-clearing ir...?
-CVX_1(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-LOCKER_2(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_5(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-withdrawalSafetyCheck_2(bool) := ϕ(['withdrawalSafetyCheck_1', 'withdrawalSafetyCheck_4', 'withdrawalSafetyCheck_0'])
 typecheckig node...
-CVX_1(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_1(address) := ϕ(['CVX_0', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -1552,7 +1411,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_2(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_2(ICvxLocker) := ϕ(['LOCKER_0', 'LOCKER_12', 'LOCKER_31', 'LOCKER_7', 'LOCKER_35', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -1572,7 +1431,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_5(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_5(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -1612,28 +1471,12 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-CONDITION withdrawalSafetyCheck_2
 typecheckig node...
 CONDITION withdrawalSafetyCheck_2
 Condition...
 Conidtion: 
 withdrawalSafetyCheck_2
 withdrawalSafetyCheck_2
-clearning node...
-clearing ir...?
-TMP_27(uint256) = HIGH_LEVEL_CALL, dest:CVX_VAULT_5(ISettV3), function:getPricePerFullShare, arguments:[]  
-Temp variable: tmp_27
-clearing ir...?
-CVX_2(address) := ϕ(['CVX_6', 'CVX_1', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-LOCKER_3(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_2', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_6(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_5', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-bCVXToCVX_1(uint256) := TMP_27(uint256)
-Local variable: bcvxtocvx
 typecheckig node...
 TMP_27(uint256) = HIGH_LEVEL_CALL, dest:CVX_VAULT_5(ISettV3), function:getPricePerFullShare, arguments:[]  
 High Level Call: getpriceperfullshare
@@ -1660,7 +1503,7 @@ Den:
 Norm:
 18
 done.
-CVX_2(address) := ϕ(['CVX_6', 'CVX_1', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_2(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_1', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -1680,7 +1523,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_3(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_2', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_3(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_2', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -1700,7 +1543,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_6(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_5', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_6(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_5', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -1738,17 +1581,6 @@ Den:
 Norm:
 18
 done.
-clearning node...
-typecheckig node...
-clearning node...
-clearing ir...?
-TMP_28(uint256) = 10 ** 18
-Temp variable: tmp_28
-clearing ir...?
-TMP_29(bool) = bCVXToCVX_1 > TMP_28
-Temp variable: tmp_29
-clearing ir...?
-TMP_30(None) = SOLIDITY_CALL require(bool,string)(TMP_29,Loss Of Peg)
 typecheckig node...
 TMP_28(uint256) = 10 ** 18
 checking tmp_28
@@ -1817,37 +1649,7 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_31 = CONVERT this to address
-clearing ir...?
-TMP_32(uint256) = HIGH_LEVEL_CALL, dest:LOCKER_3(ICvxLocker), function:lockedBalanceOf, arguments:['TMP_31']  
-Temp variable: tmp_32
-clearing ir...?
-CVX_3(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_2', 'CVX_43'])
-clearing ir...?
-LOCKER_4(ICvxLocker) := ϕ(['LOCKER_3', 'LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-TMP_33(uint256) = INTERNAL_CALL, MyStrategy.CVXToWant(uint256)(TMP_32)
-clearing ir...?
-TMP_34 = CONVERT CVX_4 to IERC20Upgradeable
-clearing ir...?
-TMP_35 = CONVERT this to address
-clearing ir...?
-TMP_36(uint256) = HIGH_LEVEL_CALL, dest:TMP_34(IERC20Upgradeable), function:balanceOf, arguments:['TMP_35']  
-Temp variable: tmp_36
-clearing ir...?
-CVX_5(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_4'])
-clearing ir...?
-LOCKER_6(ICvxLocker) := ϕ(['LOCKER_5', 'LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-TMP_37(uint256) = INTERNAL_CALL, MyStrategy.CVXToWant(uint256)(TMP_36)
-clearing ir...?
-TMP_38(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['TMP_33', 'TMP_37'] 
-Temp variable: tmp_38
-clearing ir...?
-valueInLocker_1(uint256) := TMP_38(uint256)
-Local variable: valueinlocker
+typecheckig node...
 typecheckig node...
 TMP_31 = CONVERT this to address
 checking tmp_31
@@ -1885,7 +1687,7 @@ Den:
 Norm:
 0
 done.
-CVX_3(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_2', 'CVX_43'])
+CVX_3(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_2', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -1905,7 +1707,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_4(ICvxLocker) := ϕ(['LOCKER_3', 'LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_4(ICvxLocker) := ϕ(['LOCKER_3', 'LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -1988,7 +1790,7 @@ Den:
 Norm:
 0
 done.
-CVX_5(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_4'])
+CVX_5(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_4', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -2008,7 +1810,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_6(ICvxLocker) := ϕ(['LOCKER_5', 'LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_6(ICvxLocker) := ϕ(['LOCKER_5', 'LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -2078,9 +1880,6 @@ Norm:
 0
 done.
 [x]node added back
-clearning node...
-clearing ir...?
-RETURN valueInLocker_1
 typecheckig node...
 RETURN valueInLocker_1
 Return...
@@ -2107,14 +1906,7 @@ Norm:
 Param: 0
     num: [1]
     den: [-1]
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_42(address[]) = INTERNAL_CALL, MyStrategy.getProtectedTokens()()
-clearing ir...?
-protectedTokens_1(address[]) := TMP_42(address[])
-Local variable: protectedtokens
 typecheckig node...
 TMP_42(address[]) = INTERNAL_CALL, MyStrategy.getProtectedTokens()()
 Internal call...
@@ -2123,18 +1915,8 @@ Function: getProtectedTokens
 ic
 Internal cal param_cache
 added
-xyz
 Function name: getProtectedTokens
 Function Visibility: public
-clearning node...
-clearing ir...?
-lpComponent_2(address) := ϕ(['lpComponent_0', 'lpComponent_1'])
-clearing ir...?
-reward_2(address) := ϕ(['reward_12', 'reward_1', 'reward_10', 'reward_0'])
-clearing ir...?
-CVX_7(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-want_5(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
 typecheckig node...
 lpComponent_2(address) := ϕ(['lpComponent_0', 'lpComponent_1'])
 checking lpcomponent
@@ -2156,7 +1938,7 @@ Den:
 Norm:
 -100
 done.
-reward_2(address) := ϕ(['reward_12', 'reward_1', 'reward_10', 'reward_0'])
+reward_2(address) := ϕ(['reward_1', 'reward_12', 'reward_0', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -2176,7 +1958,7 @@ Den:
 Norm:
 -100
 done.
-CVX_7(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_7(address) := ϕ(['CVX_0', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -2196,7 +1978,7 @@ Den:
 Norm:
 -100
 done.
-want_5(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
+want_5(address) := ϕ(['want_4', 'want_0', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -2216,12 +1998,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_40 = new address[](4)
-clearing ir...?
-protectedTokens_1(address[]) := TMP_40(address)
-Local variable: protectedtokens
 typecheckig node...
 TMP_40 = new address[](4)
 checking tmp_40
@@ -2251,13 +2027,6 @@ Norm:
 0
 done.
 [x]node added back
-clearning node...
-clearing ir...?
-REF_22(address) -> protectedTokens_1[0]
-clearing ir...?
-protectedTokens_2(address[]) := ϕ(['protectedTokens_1'])
-clearing ir...?
-REF_22 (->protectedTokens_2) := want_5(address)
 typecheckig node...
 REF_22(address) -> protectedTokens_1[0]
 checking ref_22
@@ -2305,13 +2074,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-REF_23(address) -> protectedTokens_2[1]
-clearing ir...?
-protectedTokens_3(address[]) := ϕ(['protectedTokens_2'])
-clearing ir...?
-REF_23 (->protectedTokens_3) := lpComponent_2(address)
 typecheckig node...
 REF_23(address) -> protectedTokens_2[1]
 checking ref_23
@@ -2359,13 +2121,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-REF_24(address) -> protectedTokens_3[2]
-clearing ir...?
-protectedTokens_4(address[]) := ϕ(['protectedTokens_3'])
-clearing ir...?
-REF_24 (->protectedTokens_4) := reward_2(address)
 typecheckig node...
 REF_24(address) -> protectedTokens_3[2]
 checking ref_24
@@ -2413,13 +2168,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-REF_25(address) -> protectedTokens_4[3]
-clearing ir...?
-protectedTokens_5(address[]) := ϕ(['protectedTokens_4'])
-clearing ir...?
-REF_25 (->protectedTokens_5) := CVX_7(address)
 typecheckig node...
 REF_25(address) -> protectedTokens_4[3]
 checking ref_25
@@ -2467,9 +2215,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-RETURN protectedTokens_5
 typecheckig node...
 RETURN protectedTokens_5
 Return...
@@ -2506,10 +2251,6 @@ Norm:
 0
 done.
 [x]node added back
-clearning node...
-clearing ir...?
-x_1(uint256) := 0(uint256)
-Local variable: x
 typecheckig node...
 x_1(uint256) := 0(uint256)
 checking x
@@ -2534,20 +2275,9 @@ Den:
 Norm:
 0
 done.
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-x_2(uint256) := ϕ(['x_1', 'x_3'])
-clearing ir...?
-REF_26 -> LENGTH protectedTokens_1
-clearing ir...?
-TMP_43(bool) = x_2 < REF_26
-Temp variable: tmp_43
-clearing ir...?
-CONDITION TMP_43
 typecheckig node...
-x_2(uint256) := ϕ(['x_1', 'x_3'])
+x_2(uint256) := ϕ(['x_3', 'x_1'])
 checking x
 Local variable: x
 Function name: _onlyNotProtectedTokens
@@ -2596,16 +2326,6 @@ Conidtion:
 TMP_43
 TMP_43
 [x]node added back
-clearning node...
-clearing ir...?
-REF_27(address) -> protectedTokens_1[x_2]
-clearing ir...?
-TMP_44 = CONVERT REF_27 to address
-clearing ir...?
-TMP_45(bool) = TMP_44 != _asset_1
-Temp variable: tmp_45
-clearing ir...?
-TMP_46(None) = SOLIDITY_CALL require(bool,string)(TMP_45,Asset is protected)
 typecheckig node...
 REF_27(address) -> protectedTokens_1[x_2]
 checking ref_27
@@ -2654,13 +2374,7 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_47(uint256) := x_2(uint256)
-Temp variable: tmp_47
-clearing ir...?
-x_3(uint256) = x_2 + 1
-Local variable: x
+typecheckig node...
 typecheckig node...
 TMP_47(uint256) := x_2(uint256)
 checking tmp_47
@@ -2699,22 +2413,13 @@ Norm:
 0
 done.
 [x]node added back
-clearning node...
-typecheckig node...
 Reading Function: _deposit
 Function _deposit not marked
 Reading Function: prepareWithdrawAll
 Function name: prepareWithdrawAll
 Function Visibility: external
-clearning node...
-clearing ir...?
-CVX_11(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-LOCKER_13(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_9(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
-CVX_11(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_11(address) := ϕ(['CVX_0', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -2734,7 +2439,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_13(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_13(ICvxLocker) := ϕ(['LOCKER_0', 'LOCKER_12', 'LOCKER_31', 'LOCKER_7', 'LOCKER_35', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -2754,7 +2459,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_9(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_9(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -2774,9 +2479,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-INTERNAL_CALL, MyStrategy._onlyGovernance()()
 typecheckig node...
 INTERNAL_CALL, MyStrategy._onlyGovernance()()
 Internal call...
@@ -2785,29 +2487,18 @@ Function: _onlyGovernance
 ic
 Internal cal param_cache
 added
-xyz
 Function name: _onlyGovernance
 Function Visibility: public
-clearning node...
 typecheckig node...
 Checking return value_onlyGovernance
 done.
-clearning node...
-clearing ir...?
-HIGH_LEVEL_CALL, dest:LOCKER_14(ICvxLocker), function:processExpiredLocks, arguments:['False']  
-clearing ir...?
-CVX_13(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_12', 'CVX_27', 'CVX_43'])
-clearing ir...?
-LOCKER_15(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_14', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_11(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_10', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
 HIGH_LEVEL_CALL, dest:LOCKER_14(ICvxLocker), function:processExpiredLocks, arguments:['False']  
 High Level Call: processexpiredlocks
 High Call: processExpiredLocks
 func name:processExpiredLocks
 done.
-CVX_13(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_12', 'CVX_27', 'CVX_43'])
+CVX_13(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_12', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -2827,7 +2518,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_15(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_14', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_15(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_14', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -2847,7 +2538,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_11(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_10', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_11(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_10', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -2867,21 +2558,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_57 = CONVERT CVX_13 to IERC20Upgradeable
-clearing ir...?
-TMP_58 = CONVERT this to address
-clearing ir...?
-TMP_59(uint256) = HIGH_LEVEL_CALL, dest:TMP_57(IERC20Upgradeable), function:balanceOf, arguments:['TMP_58']  
-Temp variable: tmp_59
-clearing ir...?
-CVX_14(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_13', 'CVX_27', 'CVX_43'])
-clearing ir...?
-CVX_VAULT_12(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_11', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-toDeposit_1(uint256) := TMP_59(uint256)
-Local variable: todeposit
 typecheckig node...
 TMP_57 = CONVERT CVX_13 to IERC20Upgradeable
 checking tmp_57
@@ -2930,7 +2606,7 @@ Den:
 Norm:
 0
 done.
-CVX_14(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_13', 'CVX_27', 'CVX_43'])
+CVX_14(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_13', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -2950,7 +2626,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_12(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_11', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_12(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_11', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -2988,12 +2664,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_60(bool) = toDeposit_1 > 0
-Temp variable: tmp_60
-clearing ir...?
-CONDITION TMP_60
 typecheckig node...
 TMP_60(bool) = toDeposit_1 > 0
 checking tmp_60
@@ -3023,18 +2693,14 @@ Condition...
 Conidtion: 
 TMP_60
 TMP_60
-clearning node...
-clearing ir...?
-HIGH_LEVEL_CALL, dest:CVX_VAULT_12(ISettV3), function:deposit, arguments:['toDeposit_1']  
-clearing ir...?
-CVX_VAULT_13(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+typecheckig node...
 typecheckig node...
 HIGH_LEVEL_CALL, dest:CVX_VAULT_12(ISettV3), function:deposit, arguments:['toDeposit_1']  
 High Level Call: deposit
 High Call: deposit
 func name:deposit
 done.
-CVX_VAULT_13(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_13(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -3054,16 +2720,11 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-typecheckig node...
 Reading Function: _withdrawAll
 Function name: _withdrawAll
 Function Visibility: internal
-clearning node...
-clearing ir...?
-LOCKER_16(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
 typecheckig node...
-LOCKER_16(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_16(ICvxLocker) := ϕ(['LOCKER_0', 'LOCKER_12', 'LOCKER_31', 'LOCKER_7', 'LOCKER_35', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -3083,32 +2744,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_62 = CONVERT this to address
-clearing ir...?
-TMP_63(uint256) = HIGH_LEVEL_CALL, dest:LOCKER_16(ICvxLocker), function:lockedBalanceOf, arguments:['TMP_62']  
-Temp variable: tmp_63
-clearing ir...?
-LOCKER_17(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_16', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-TMP_64(bool) = TMP_63 == 0
-Temp variable: tmp_64
-clearing ir...?
-TMP_65 = CONVERT this to address
-clearing ir...?
-TMP_66(uint256) = HIGH_LEVEL_CALL, dest:LOCKER_17(ICvxLocker), function:balanceOf, arguments:['TMP_65']  
-Temp variable: tmp_66
-clearing ir...?
-LOCKER_18(ICvxLocker) := ϕ(['LOCKER_17', 'LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-TMP_67(bool) = TMP_66 == 0
-Temp variable: tmp_67
-clearing ir...?
-TMP_68(bool) = TMP_64 && TMP_67
-Temp variable: tmp_68
-clearing ir...?
-TMP_69(None) = SOLIDITY_CALL require(bool,string)(TMP_68,You have to wait for unlock and have to manually rebalance out of it)
 typecheckig node...
 TMP_62 = CONVERT this to address
 checking tmp_62
@@ -3146,7 +2781,7 @@ Den:
 Norm:
 0
 done.
-LOCKER_17(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_16', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_17(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_16', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -3212,7 +2847,7 @@ Den:
 Norm:
 0
 done.
-LOCKER_18(ICvxLocker) := ϕ(['LOCKER_17', 'LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_18(ICvxLocker) := ϕ(['LOCKER_17', 'LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -3278,17 +2913,8 @@ Norm:
 Param: 0
     num: [1]
     den: [-1]
-clearning node...
-clearing ir...?
-MAX_BPS_1(uint256) := ϕ(['MAX_BPS_12', 'MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_0'])
-clearing ir...?
-want_6(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-CVX_VAULT_14(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-withdrawalSafetyCheck_3(bool) := ϕ(['withdrawalSafetyCheck_1', 'withdrawalSafetyCheck_4', 'withdrawalSafetyCheck_0'])
 typecheckig node...
-MAX_BPS_1(uint256) := ϕ(['MAX_BPS_12', 'MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_0'])
+MAX_BPS_1(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_12', 'MAX_BPS_0', 'MAX_BPS_3'])
 checking max_bps
 State IR  variable: max_bps
 State variable: max_bps
@@ -3308,7 +2934,7 @@ Den:
 Norm:
 -100
 done.
-want_6(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
+want_6(address) := ϕ(['want_4', 'want_0', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -3328,7 +2954,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_14(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_14(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -3368,25 +2994,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_70 = CONVERT want_6 to IERC20Upgradeable
-clearing ir...?
-TMP_71 = CONVERT this to address
-clearing ir...?
-TMP_72(uint256) = HIGH_LEVEL_CALL, dest:TMP_70(IERC20Upgradeable), function:balanceOf, arguments:['TMP_71']  
-Temp variable: tmp_72
-clearing ir...?
-MAX_BPS_2(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12', 'MAX_BPS_1'])
-clearing ir...?
-want_7(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_6', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-CVX_VAULT_15(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_14', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-withdrawalSafetyCheck_4(bool) := ϕ(['withdrawalSafetyCheck_1', 'withdrawalSafetyCheck_3', 'withdrawalSafetyCheck_4'])
-clearing ir...?
-max_1(uint256) := TMP_72(uint256)
-Local variable: max
 typecheckig node...
 TMP_70 = CONVERT want_6 to IERC20Upgradeable
 checking tmp_70
@@ -3435,7 +3042,7 @@ Den:
 Norm:
 0
 done.
-MAX_BPS_2(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12', 'MAX_BPS_1'])
+MAX_BPS_2(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_1', 'MAX_BPS_12', 'MAX_BPS_3'])
 checking max_bps
 State IR  variable: max_bps
 State variable: max_bps
@@ -3455,7 +3062,7 @@ Den:
 Norm:
 -100
 done.
-want_7(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_6', 'want_17', 'want_1', 'want_25'])
+want_7(address) := ϕ(['want_4', 'want_6', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -3475,7 +3082,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_15(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_14', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_15(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_14', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -3495,7 +3102,7 @@ Den:
 Norm:
 -100
 done.
-withdrawalSafetyCheck_4(bool) := ϕ(['withdrawalSafetyCheck_1', 'withdrawalSafetyCheck_3', 'withdrawalSafetyCheck_4'])
+withdrawalSafetyCheck_4(bool) := ϕ(['withdrawalSafetyCheck_3', 'withdrawalSafetyCheck_1', 'withdrawalSafetyCheck_4'])
 checking withdrawalsafetycheck
 State IR  variable: withdrawalsafetycheck
 State variable: withdrawalsafetycheck
@@ -3533,61 +3140,12 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-CONDITION withdrawalSafetyCheck_4
 typecheckig node...
 CONDITION withdrawalSafetyCheck_4
 Condition...
 Conidtion: 
 withdrawalSafetyCheck_4
 withdrawalSafetyCheck_4
-clearning node...
-typecheckig node...
-clearning node...
-clearing ir...?
-TMP_81(bool) = max_1 < _amount_1
-Temp variable: tmp_81
-clearing ir...?
-CONDITION TMP_81
-typecheckig node...
-TMP_81(bool) = max_1 < _amount_1
-checking tmp_81
-Temp variable: tmp_81
-Function name: _withdrawSome
-testing lt...
-Num:
-1
-Den:
--1
-Norm:
--100
-[i]Type for TMP_81
-Num:
--1
-Den:
--1
-Norm:
-0
-done.
-CONDITION TMP_81
-Condition...
-Conidtion: 
-TMP_81
-TMP_81
-clearning node...
-typecheckig node...
-clearning node...
-clearing ir...?
-TMP_73(uint256) = HIGH_LEVEL_CALL, dest:CVX_VAULT_15(ISettV3), function:getPricePerFullShare, arguments:[]  
-Temp variable: tmp_73
-clearing ir...?
-MAX_BPS_3(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12'])
-clearing ir...?
-CVX_VAULT_16(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-bCVXToCVX_1(uint256) := TMP_73(uint256)
-Local variable: bcvxtocvx
 typecheckig node...
 TMP_73(uint256) = HIGH_LEVEL_CALL, dest:CVX_VAULT_15(ISettV3), function:getPricePerFullShare, arguments:[]  
 High Level Call: getpriceperfullshare
@@ -3614,7 +3172,7 @@ Den:
 Norm:
 18
 done.
-MAX_BPS_3(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12'])
+MAX_BPS_3(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_12', 'MAX_BPS_3'])
 checking max_bps
 State IR  variable: max_bps
 State variable: max_bps
@@ -3634,7 +3192,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_16(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_16(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -3672,32 +3230,7 @@ Den:
 Norm:
 18
 done.
-clearning node...
-clearing ir...?
-RETURN max_1
 typecheckig node...
-RETURN max_1
-Return...
-_withdrawSome
-max_1
-clearning node...
-clearing ir...?
-RETURN _amount_1
-typecheckig node...
-RETURN _amount_1
-Return...
-_withdrawSome
-max_1
-_amount_1
-clearning node...
-clearing ir...?
-TMP_74(uint256) = 10 ** 18
-Temp variable: tmp_74
-clearing ir...?
-TMP_75(bool) = bCVXToCVX_1 > TMP_74
-Temp variable: tmp_75
-clearing ir...?
-TMP_76(None) = SOLIDITY_CALL require(bool,string)(TMP_75,Loss Of Peg)
 typecheckig node...
 TMP_74(uint256) = 10 ** 18
 checking tmp_74
@@ -3766,18 +3299,31 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_77(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_1', '9980'] 
-Temp variable: tmp_77
-clearing ir...?
-TMP_78(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_77', 'MAX_BPS_3'] 
-Temp variable: tmp_78
-clearing ir...?
-TMP_79(bool) = max_1 >= TMP_78
-Temp variable: tmp_79
-clearing ir...?
-TMP_80(None) = SOLIDITY_CALL require(bool,string)(TMP_79,Withdrawal Safety Check)
+typecheckig node...
+TMP_81(bool) = max_1 < _amount_1
+checking tmp_81
+Temp variable: tmp_81
+Function name: _withdrawSome
+testing lt...
+Num:
+1
+Den:
+-1
+Norm:
+-100
+[i]Type for TMP_81
+Num:
+-1
+Den:
+-1
+Norm:
+0
+done.
+CONDITION TMP_81
+Condition...
+Conidtion: 
+TMP_81
+TMP_81
 typecheckig node...
 TMP_77(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_1', '9980'] 
 High Level Call: mul
@@ -3864,18 +3410,23 @@ Den:
 Norm:
 -100
 done.
+typecheckig node...
+typecheckig node...
+RETURN max_1
+Return...
+_withdrawSome
+max_1
+typecheckig node...
+RETURN _amount_1
+Return...
+_withdrawSome
+max_1
+_amount_1
 Reading Function: harvest
 Function name: harvest
 Function Visibility: public
-clearning node...
-clearing ir...?
-reward_3(address) := ϕ(['reward_12', 'reward_1', 'reward_10', 'reward_0'])
-clearing ir...?
-want_8(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-LOCKER_19(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
 typecheckig node...
-reward_3(address) := ϕ(['reward_12', 'reward_1', 'reward_10', 'reward_0'])
+reward_3(address) := ϕ(['reward_1', 'reward_12', 'reward_0', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -3895,7 +3446,7 @@ Den:
 Norm:
 -100
 done.
-want_8(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
+want_8(address) := ϕ(['want_4', 'want_0', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -3915,7 +3466,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_19(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_19(ICvxLocker) := ϕ(['LOCKER_0', 'LOCKER_12', 'LOCKER_31', 'LOCKER_7', 'LOCKER_35', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -3935,9 +3486,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-MODIFIER_CALL, MyStrategy.whenNotPaused()()
 typecheckig node...
 MODIFIER_CALL, MyStrategy.whenNotPaused()()
 Internal call...
@@ -3946,18 +3494,12 @@ Function: whenNotPaused
 ic
 Internal cal param_cache
 added
-xyz
 Function name: whenNotPaused
 Function Visibility: internal
-clearning node...
 typecheckig node...
-clearning node...
 typecheckig node...
 Checking return valuewhenNotPaused
 done.
-clearning node...
-clearing ir...?
-INTERNAL_CALL, MyStrategy._onlyAuthorizedActors()()
 typecheckig node...
 INTERNAL_CALL, MyStrategy._onlyAuthorizedActors()()
 Internal call...
@@ -3966,30 +3508,11 @@ Function: _onlyAuthorizedActors
 ic
 Internal cal param_cache
 added
-xyz
 Function name: _onlyAuthorizedActors
 Function Visibility: public
-clearning node...
 typecheckig node...
 Checking return value_onlyAuthorizedActors
 done.
-clearning node...
-clearing ir...?
-TMP_83 = CONVERT want_10 to IERC20Upgradeable
-clearing ir...?
-TMP_84 = CONVERT this to address
-clearing ir...?
-TMP_85(uint256) = HIGH_LEVEL_CALL, dest:TMP_83(IERC20Upgradeable), function:balanceOf, arguments:['TMP_84']  
-Temp variable: tmp_85
-clearing ir...?
-reward_6(address) := ϕ(['reward_12', 'reward_5', 'reward_10', 'reward_1'])
-clearing ir...?
-want_11(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_10', 'want_7', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-LOCKER_22(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_21', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-_before_1(uint256) := TMP_85(uint256)
-Local variable: _before
 typecheckig node...
 TMP_83 = CONVERT want_10 to IERC20Upgradeable
 checking tmp_83
@@ -4038,7 +3561,7 @@ Den:
 Norm:
 0
 done.
-reward_6(address) := ϕ(['reward_12', 'reward_5', 'reward_10', 'reward_1'])
+reward_6(address) := ϕ(['reward_5', 'reward_1', 'reward_12', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -4058,7 +3581,7 @@ Den:
 Norm:
 -100
 done.
-want_11(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_10', 'want_7', 'want_17', 'want_1', 'want_25'])
+want_11(address) := ϕ(['want_4', 'want_10', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -4078,7 +3601,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_22(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_21', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_22(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_21', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -4116,23 +3639,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_86 = CONVERT reward_6 to IERC20Upgradeable
-clearing ir...?
-TMP_87 = CONVERT this to address
-clearing ir...?
-TMP_88(uint256) = HIGH_LEVEL_CALL, dest:TMP_86(IERC20Upgradeable), function:balanceOf, arguments:['TMP_87']  
-Temp variable: tmp_88
-clearing ir...?
-reward_7(address) := ϕ(['reward_12', 'reward_6', 'reward_10', 'reward_1'])
-clearing ir...?
-want_12(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_17', 'want_1', 'want_25', 'want_11'])
-clearing ir...?
-LOCKER_23(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_22', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-_beforeCVX_1(uint256) := TMP_88(uint256)
-Local variable: _beforecvx
 typecheckig node...
 TMP_86 = CONVERT reward_6 to IERC20Upgradeable
 checking tmp_86
@@ -4181,7 +3687,7 @@ Den:
 Norm:
 0
 done.
-reward_7(address) := ϕ(['reward_12', 'reward_6', 'reward_10', 'reward_1'])
+reward_7(address) := ϕ(['reward_1', 'reward_6', 'reward_12', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -4201,7 +3707,7 @@ Den:
 Norm:
 -100
 done.
-want_12(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_17', 'want_1', 'want_25', 'want_11'])
+want_12(address) := ϕ(['want_11', 'want_4', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -4221,7 +3727,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_23(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_22', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_23(ICvxLocker) := ϕ(['LOCKER_22', 'LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -4259,17 +3765,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_89 = CONVERT this to address
-clearing ir...?
-HIGH_LEVEL_CALL, dest:LOCKER_23(ICvxLocker), function:getReward, arguments:['TMP_89', 'False']  
-clearing ir...?
-reward_8(address) := ϕ(['reward_12', 'reward_7', 'reward_10', 'reward_1'])
-clearing ir...?
-want_13(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_12', 'want_7', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-LOCKER_24(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_23', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
 typecheckig node...
 TMP_89 = CONVERT this to address
 checking tmp_89
@@ -4287,7 +3782,7 @@ High Level Call: getreward
 High Call: getReward
 func name:getReward
 done.
-reward_8(address) := ϕ(['reward_12', 'reward_7', 'reward_10', 'reward_1'])
+reward_8(address) := ϕ(['reward_7', 'reward_1', 'reward_12', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -4307,7 +3802,7 @@ Den:
 Norm:
 -100
 done.
-want_13(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_12', 'want_7', 'want_17', 'want_1', 'want_25'])
+want_13(address) := ϕ(['want_12', 'want_4', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -4327,7 +3822,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_24(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_23', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_24(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_23', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -4347,24 +3842,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_91 = CONVERT reward_8 to IERC20Upgradeable
-clearing ir...?
-TMP_92 = CONVERT this to address
-clearing ir...?
-TMP_93(uint256) = HIGH_LEVEL_CALL, dest:TMP_91(IERC20Upgradeable), function:balanceOf, arguments:['TMP_92']  
-Temp variable: tmp_93
-clearing ir...?
-reward_9(address) := ϕ(['reward_12', 'reward_10', 'reward_8', 'reward_1'])
-clearing ir...?
-want_14(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_17', 'want_1', 'want_13', 'want_25'])
-clearing ir...?
-TMP_94(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_93', '_beforeCVX_1'] 
-Temp variable: tmp_94
-clearing ir...?
-earnedReward_1(uint256) := TMP_94(uint256)
-Local variable: earnedreward
 typecheckig node...
 TMP_91 = CONVERT reward_8 to IERC20Upgradeable
 checking tmp_91
@@ -4413,7 +3890,7 @@ Den:
 Norm:
 0
 done.
-reward_9(address) := ϕ(['reward_12', 'reward_10', 'reward_8', 'reward_1'])
+reward_9(address) := ϕ(['reward_1', 'reward_8', 'reward_12', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -4433,7 +3910,7 @@ Den:
 Norm:
 -100
 done.
-want_14(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_17', 'want_1', 'want_13', 'want_25'])
+want_14(address) := ϕ(['want_4', 'want_7', 'want_31', 'want_17', 'want_1', 'want_13', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -4502,17 +3979,8 @@ Den:
 Norm:
 0
 done.
-clearning node...
 typecheckig node...
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TUPLE_0(uint256,uint256) = INTERNAL_CALL, MyStrategy._processRewardsFees(uint256,address)(earnedReward_1,reward_9)
-clearing ir...?
-governancePerformanceFee_1(uint256)= UNPACK TUPLE_0 index: 0 
-clearing ir...?
-strategistPerformanceFee_1(uint256)= UNPACK TUPLE_0 index: 1 
 typecheckig node...
 TUPLE_0(uint256,uint256) = INTERNAL_CALL, MyStrategy._processRewardsFees(uint256,address)(earnedReward_1,reward_9)
 Internal call...
@@ -4529,22 +3997,8 @@ Param: 1
     num: [-1]
     den: [-1]
 added
-xyz
 Function name: _processRewardsFees
 Function Visibility: internal
-clearning node...
-clearing ir...?
-_amount_1(uint256) := ϕ(['earnedReward_1'])
-clearing ir...?
-_token_1(address) := ϕ(['reward_9'])
-clearing ir...?
-performanceFeeGovernance_5(uint256) := ϕ(['performanceFeeGovernance_7', 'performanceFeeGovernance_4', 'performanceFeeGovernance_1', 'performanceFeeGovernance_0'])
-clearing ir...?
-performanceFeeStrategist_6(uint256) := ϕ(['performanceFeeStrategist_5', 'performanceFeeStrategist_1', 'performanceFeeStrategist_9', 'performanceFeeStrategist_0'])
-clearing ir...?
-controller_6(address) := ϕ(['controller_8', 'controller_0', 'controller_2', 'controller_5'])
-clearing ir...?
-strategist_5(address) := ϕ(['strategist_4', 'strategist_8', 'strategist_0'])
 typecheckig node...
 _amount_1(uint256) := ϕ(['earnedReward_1'])
 checking _amount
@@ -4584,7 +4038,7 @@ Den:
 Norm:
 -100
 done.
-performanceFeeGovernance_5(uint256) := ϕ(['performanceFeeGovernance_7', 'performanceFeeGovernance_4', 'performanceFeeGovernance_1', 'performanceFeeGovernance_0'])
+performanceFeeGovernance_5(uint256) := ϕ(['performanceFeeGovernance_7', 'performanceFeeGovernance_4', 'performanceFeeGovernance_0', 'performanceFeeGovernance_1'])
 checking performancefeegovernance
 State IR  variable: performancefeegovernance
 State variable: performancefeegovernance
@@ -4604,7 +4058,7 @@ Den:
 Norm:
 -100
 done.
-performanceFeeStrategist_6(uint256) := ϕ(['performanceFeeStrategist_5', 'performanceFeeStrategist_1', 'performanceFeeStrategist_9', 'performanceFeeStrategist_0'])
+performanceFeeStrategist_6(uint256) := ϕ(['performanceFeeStrategist_5', 'performanceFeeStrategist_9', 'performanceFeeStrategist_0', 'performanceFeeStrategist_1'])
 checking performancefeestrategist
 State IR  variable: performancefeestrategist
 State variable: performancefeestrategist
@@ -4624,7 +4078,7 @@ Den:
 Norm:
 -100
 done.
-controller_6(address) := ϕ(['controller_8', 'controller_0', 'controller_2', 'controller_5'])
+controller_6(address) := ϕ(['controller_0', 'controller_2', 'controller_8', 'controller_5'])
 checking controller
 State IR  variable: controller
 State variable: controller
@@ -4664,25 +4118,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_123 = CONVERT controller_6 to IController
-clearing ir...?
-TMP_124(address) = HIGH_LEVEL_CALL, dest:TMP_123(IController), function:rewards, arguments:[]  
-Temp variable: tmp_124
-clearing ir...?
-performanceFeeGovernance_6(uint256) := ϕ(['performanceFeeGovernance_7', 'performanceFeeGovernance_1', 'performanceFeeGovernance_5', 'performanceFeeGovernance_4'])
-clearing ir...?
-performanceFeeStrategist_7(uint256) := ϕ(['performanceFeeStrategist_5', 'performanceFeeStrategist_9', 'performanceFeeStrategist_1', 'performanceFeeStrategist_6'])
-clearing ir...?
-controller_7(address) := ϕ(['controller_8', 'controller_5', 'controller_6', 'controller_2'])
-clearing ir...?
-strategist_6(address) := ϕ(['strategist_4', 'strategist_5', 'strategist_8'])
-clearing ir...?
-TMP_125(uint256) = INTERNAL_CALL, MyStrategy._processFee(address,uint256,uint256,address)(_token_1,_amount_1,performanceFeeGovernance_6,TMP_124)
-clearing ir...?
-governanceRewardsFee_1(uint256) := TMP_125(uint256)
-Local variable: governancerewardsfee
 typecheckig node...
 TMP_123 = CONVERT controller_6 to IController
 checking tmp_123
@@ -4720,7 +4155,7 @@ Den:
 Norm:
 0
 done.
-performanceFeeGovernance_6(uint256) := ϕ(['performanceFeeGovernance_7', 'performanceFeeGovernance_1', 'performanceFeeGovernance_5', 'performanceFeeGovernance_4'])
+performanceFeeGovernance_6(uint256) := ϕ(['performanceFeeGovernance_7', 'performanceFeeGovernance_5', 'performanceFeeGovernance_4', 'performanceFeeGovernance_1'])
 checking performancefeegovernance
 State IR  variable: performancefeegovernance
 State variable: performancefeegovernance
@@ -4760,7 +4195,7 @@ Den:
 Norm:
 -100
 done.
-controller_7(address) := ϕ(['controller_8', 'controller_5', 'controller_6', 'controller_2'])
+controller_7(address) := ϕ(['controller_5', 'controller_2', 'controller_8', 'controller_6'])
 checking controller
 State IR  variable: controller
 State variable: controller
@@ -4780,7 +4215,7 @@ Den:
 Norm:
 -100
 done.
-strategist_6(address) := ϕ(['strategist_4', 'strategist_5', 'strategist_8'])
+strategist_6(address) := ϕ(['strategist_4', 'strategist_8', 'strategist_5'])
 checking strategist
 State IR  variable: strategist
 State variable: strategist
@@ -4823,22 +4258,10 @@ Param: 3
     num: [-1]
     den: [-1]
 added
-xyz
 Function name: _processFee
 Function Visibility: internal
-clearning node...
-clearing ir...?
-token_1(address) := ϕ(['want_19', '_token_1', 'want_20'])
-clearing ir...?
-amount_1(uint256) := ϕ(['_amount_1', '_amount_1'])
-clearing ir...?
-feeBps_1(uint256) := ϕ(['performanceFeeStrategist_4', 'performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6'])
-clearing ir...?
-recipient_1(address) := ϕ(['strategist_3', 'TMP_124', 'strategist_7', 'TMP_120'])
-clearing ir...?
-MAX_FEE_1(uint256) := ϕ(['MAX_FEE_0'])
 typecheckig node...
-token_1(address) := ϕ(['want_19', '_token_1', 'want_20'])
+token_1(address) := ϕ(['_token_1', 'want_20', 'want_19'])
 checking token
 Local variable: token
 Function name: _processFee
@@ -4864,7 +4287,7 @@ Den:
 Norm:
 -100
 done.
-feeBps_1(uint256) := ϕ(['performanceFeeStrategist_4', 'performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6'])
+feeBps_1(uint256) := ϕ(['performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6', 'performanceFeeStrategist_4'])
 checking feebps
 Local variable: feebps
 Function name: _processFee
@@ -4904,12 +4327,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_10(bool) = feeBps_1 == 0
-Temp variable: tmp_10
-clearing ir...?
-CONDITION TMP_10
 typecheckig node...
 TMP_10(bool) = feeBps_1 == 0
 checking tmp_10
@@ -4926,27 +4343,13 @@ Condition...
 Conidtion: 
 TMP_10
 TMP_10
-clearning node...
-clearing ir...?
-RETURN 0
 typecheckig node...
 RETURN 0
 Return...
 _processFee
 fee_1
 0
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_11(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['amount_1', 'feeBps_1'] 
-Temp variable: tmp_11
-clearing ir...?
-TMP_12(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_11', 'MAX_FEE_1'] 
-Temp variable: tmp_12
-clearing ir...?
-fee_1(uint256) := TMP_12(uint256)
-Local variable: fee
 typecheckig node...
 TMP_11(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['amount_1', 'feeBps_1'] 
 High Level Call: mul
@@ -5030,12 +4433,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_13 = CONVERT token_1 to IERC20Upgradeable
-clearing ir...?
-TMP_14(bool) = HIGH_LEVEL_CALL, dest:TMP_13(IERC20Upgradeable), function:transfer, arguments:['recipient_1', 'fee_1']  
-Temp variable: tmp_14
 typecheckig node...
 TMP_13 = CONVERT token_1 to IERC20Upgradeable
 checking tmp_13
@@ -5073,9 +4470,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-RETURN fee_1
 typecheckig node...
 RETURN fee_1
 Return...
@@ -5116,12 +4510,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_126(uint256) = INTERNAL_CALL, MyStrategy._processFee(address,uint256,uint256,address)(_token_1,_amount_1,performanceFeeStrategist_8,strategist_7)
-clearing ir...?
-strategistRewardsFee_1(uint256) := TMP_126(uint256)
-Local variable: strategistrewardsfee
 typecheckig node...
 TMP_126(uint256) = INTERNAL_CALL, MyStrategy._processFee(address,uint256,uint256,address)(_token_1,_amount_1,performanceFeeStrategist_8,strategist_7)
 Internal call...
@@ -5158,22 +4546,10 @@ Param: 3
     num: [-1]
     den: [-1]
 added
-xyz
 Function name: _processFee
 Function Visibility: internal
-clearning node...
-clearing ir...?
-token_1(address) := ϕ(['want_19', '_token_1', 'want_20'])
-clearing ir...?
-amount_1(uint256) := ϕ(['_amount_1', '_amount_1'])
-clearing ir...?
-feeBps_1(uint256) := ϕ(['performanceFeeStrategist_4', 'performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6'])
-clearing ir...?
-recipient_1(address) := ϕ(['strategist_3', 'TMP_124', 'strategist_7', 'TMP_120'])
-clearing ir...?
-MAX_FEE_1(uint256) := ϕ(['MAX_FEE_0'])
 typecheckig node...
-token_1(address) := ϕ(['want_19', '_token_1', 'want_20'])
+token_1(address) := ϕ(['_token_1', 'want_20', 'want_19'])
 checking token
 Local variable: token
 Function name: _processFee
@@ -5199,7 +4575,7 @@ Den:
 Norm:
 -100
 done.
-feeBps_1(uint256) := ϕ(['performanceFeeStrategist_4', 'performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6'])
+feeBps_1(uint256) := ϕ(['performanceFeeGovernance_3', 'performanceFeeStrategist_8', 'performanceFeeGovernance_6', 'performanceFeeStrategist_4'])
 checking feebps
 Local variable: feebps
 Function name: _processFee
@@ -5239,12 +4615,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_10(bool) = feeBps_1 == 0
-Temp variable: tmp_10
-clearing ir...?
-CONDITION TMP_10
 typecheckig node...
 TMP_10(bool) = feeBps_1 == 0
 checking tmp_10
@@ -5261,27 +4631,13 @@ Condition...
 Conidtion: 
 TMP_10
 TMP_10
-clearning node...
-clearing ir...?
-RETURN 0
 typecheckig node...
 RETURN 0
 Return...
 _processFee
 fee_1
 0
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_11(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['amount_1', 'feeBps_1'] 
-Temp variable: tmp_11
-clearing ir...?
-TMP_12(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_11', 'MAX_FEE_1'] 
-Temp variable: tmp_12
-clearing ir...?
-fee_1(uint256) := TMP_12(uint256)
-Local variable: fee
 typecheckig node...
 TMP_11(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['amount_1', 'feeBps_1'] 
 High Level Call: mul
@@ -5365,12 +4721,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_13 = CONVERT token_1 to IERC20Upgradeable
-clearing ir...?
-TMP_14(bool) = HIGH_LEVEL_CALL, dest:TMP_13(IERC20Upgradeable), function:transfer, arguments:['recipient_1', 'fee_1']  
-Temp variable: tmp_14
 typecheckig node...
 TMP_13 = CONVERT token_1 to IERC20Upgradeable
 checking tmp_13
@@ -5408,9 +4758,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-RETURN fee_1
 typecheckig node...
 RETURN fee_1
 Return...
@@ -5509,9 +4856,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-INTERNAL_CALL, MyStrategy._swapcvxCRVToWant()()
 typecheckig node...
 INTERNAL_CALL, MyStrategy._swapcvxCRVToWant()()
 Internal call...
@@ -5520,22 +4864,10 @@ Function: _swapcvxCRVToWant
 ic
 Internal cal param_cache
 added
-xyz
 Function name: _swapcvxCRVToWant
 Function Visibility: internal
-clearning node...
-clearing ir...?
-reward_11(address) := ϕ(['reward_12', 'reward_1', 'reward_10', 'reward_0'])
-clearing ir...?
-WETH_1(address) := ϕ(['WETH_2', 'WETH_0'])
-clearing ir...?
-CVX_15(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-SUSHI_ROUTER_1(address) := ϕ(['SUSHI_ROUTER_2', 'SUSHI_ROUTER_3', 'SUSHI_ROUTER_0'])
-clearing ir...?
-CVX_VAULT_17(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
-reward_11(address) := ϕ(['reward_12', 'reward_1', 'reward_10', 'reward_0'])
+reward_11(address) := ϕ(['reward_1', 'reward_12', 'reward_0', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -5555,7 +4887,7 @@ Den:
 Norm:
 -100
 done.
-WETH_1(address) := ϕ(['WETH_2', 'WETH_0'])
+WETH_1(address) := ϕ(['WETH_0', 'WETH_2'])
 checking weth
 State IR  variable: weth
 State variable: weth
@@ -5575,7 +4907,7 @@ Den:
 Norm:
 -100
 done.
-CVX_15(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_15(address) := ϕ(['CVX_0', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -5615,7 +4947,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_17(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_17(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -5635,27 +4967,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_105 = CONVERT reward_11 to IERC20Upgradeable
-clearing ir...?
-TMP_106 = CONVERT this to address
-clearing ir...?
-TMP_107(uint256) = HIGH_LEVEL_CALL, dest:TMP_105(IERC20Upgradeable), function:balanceOf, arguments:['TMP_106']  
-Temp variable: tmp_107
-clearing ir...?
-reward_12(address) := ϕ(['reward_12', 'reward_11', 'reward_10', 'reward_1'])
-clearing ir...?
-WETH_2(address) := ϕ(['WETH_2', 'WETH_1'])
-clearing ir...?
-CVX_16(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_15'])
-clearing ir...?
-SUSHI_ROUTER_2(address) := ϕ(['SUSHI_ROUTER_2', 'SUSHI_ROUTER_3', 'SUSHI_ROUTER_1'])
-clearing ir...?
-CVX_VAULT_18(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_17', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-toSwap_1(uint256) := TMP_107(uint256)
-Local variable: toswap
 typecheckig node...
 TMP_105 = CONVERT reward_11 to IERC20Upgradeable
 checking tmp_105
@@ -5704,7 +5015,7 @@ Den:
 Norm:
 0
 done.
-reward_12(address) := ϕ(['reward_12', 'reward_11', 'reward_10', 'reward_1'])
+reward_12(address) := ϕ(['reward_1', 'reward_11', 'reward_12', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -5724,7 +5035,7 @@ Den:
 Norm:
 -100
 done.
-WETH_2(address) := ϕ(['WETH_2', 'WETH_1'])
+WETH_2(address) := ϕ(['WETH_1', 'WETH_2'])
 checking weth
 State IR  variable: weth
 State variable: weth
@@ -5744,7 +5055,7 @@ Den:
 Norm:
 -100
 done.
-CVX_16(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_15'])
+CVX_16(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42', 'CVX_15'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -5784,7 +5095,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_18(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_17', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_18(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_17', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -5822,12 +5133,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_108(bool) = toSwap_1 == 0
-Temp variable: tmp_108
-clearing ir...?
-CONDITION TMP_108
 typecheckig node...
 TMP_108(bool) = toSwap_1 == 0
 checking tmp_108
@@ -5844,16 +5149,8 @@ Condition...
 Conidtion: 
 TMP_108
 TMP_108
-clearning node...
 typecheckig node...
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_110 = new address[](3)
-clearing ir...?
-path_1(address[]) := TMP_110(address)
-Local variable: path
 typecheckig node...
 TMP_110 = new address[](3)
 checking tmp_110
@@ -5883,13 +5180,6 @@ Norm:
 0
 done.
 [x]node added back
-clearning node...
-clearing ir...?
-REF_49(address) -> path_1[0]
-clearing ir...?
-path_2(address[]) := ϕ(['path_1'])
-clearing ir...?
-REF_49 (->path_2) := reward_12(address)
 typecheckig node...
 REF_49(address) -> path_1[0]
 checking ref_49
@@ -5937,13 +5227,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-REF_50(address) -> path_2[1]
-clearing ir...?
-path_3(address[]) := ϕ(['path_2'])
-clearing ir...?
-REF_50 (->path_3) := WETH_2(address)
 typecheckig node...
 REF_50(address) -> path_2[1]
 checking ref_50
@@ -5991,13 +5274,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-REF_51(address) -> path_3[2]
-clearing ir...?
-path_4(address[]) := ϕ(['path_3'])
-clearing ir...?
-REF_51 (->path_4) := CVX_16(address)
 typecheckig node...
 REF_51(address) -> path_3[2]
 checking ref_51
@@ -6045,20 +5321,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_111 = CONVERT SUSHI_ROUTER_2 to IUniswapRouterV2
-clearing ir...?
-TMP_112 = CONVERT this to address
-clearing ir...?
-TMP_113(uint256[]) = HIGH_LEVEL_CALL, dest:TMP_111(IUniswapRouterV2), function:swapExactTokensForTokens, arguments:['toSwap_1', '0', 'path_4', 'TMP_112', 'now']  
-Temp variable: tmp_113
-clearing ir...?
-CVX_17(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-SUSHI_ROUTER_3(address) := ϕ(['SUSHI_ROUTER_2', 'SUSHI_ROUTER_3'])
-clearing ir...?
-CVX_VAULT_19(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
 TMP_111 = CONVERT SUSHI_ROUTER_2 to IUniswapRouterV2
 checking tmp_111
@@ -6107,7 +5369,7 @@ Den:
 Norm:
 0
 done.
-CVX_17(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_17(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -6147,7 +5409,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_19(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_19(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -6167,21 +5429,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_114 = CONVERT CVX_17 to IERC20Upgradeable
-clearing ir...?
-TMP_115 = CONVERT this to address
-clearing ir...?
-TMP_116(uint256) = HIGH_LEVEL_CALL, dest:TMP_114(IERC20Upgradeable), function:balanceOf, arguments:['TMP_115']  
-Temp variable: tmp_116
-clearing ir...?
-CVX_18(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_17', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-CVX_VAULT_20(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_19', 'CVX_VAULT_21'])
-clearing ir...?
-toDeposit_1(uint256) := TMP_116(uint256)
-Local variable: todeposit
 typecheckig node...
 TMP_114 = CONVERT CVX_17 to IERC20Upgradeable
 checking tmp_114
@@ -6230,7 +5477,7 @@ Den:
 Norm:
 0
 done.
-CVX_18(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_17', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_18(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_17', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -6250,7 +5497,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_20(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_19', 'CVX_VAULT_21'])
+CVX_VAULT_20(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_19', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -6288,12 +5535,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_117(bool) = toDeposit_1 > 0
-Temp variable: tmp_117
-clearing ir...?
-CONDITION TMP_117
 typecheckig node...
 TMP_117(bool) = toDeposit_1 > 0
 checking tmp_117
@@ -6323,18 +5564,14 @@ Condition...
 Conidtion: 
 TMP_117
 TMP_117
-clearning node...
-clearing ir...?
-HIGH_LEVEL_CALL, dest:CVX_VAULT_20(ISettV3), function:deposit, arguments:['toDeposit_1']  
-clearing ir...?
-CVX_VAULT_21(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+typecheckig node...
 typecheckig node...
 HIGH_LEVEL_CALL, dest:CVX_VAULT_20(ISettV3), function:deposit, arguments:['toDeposit_1']  
 High Level Call: deposit
 High Call: deposit
 func name:deposit
 done.
-CVX_VAULT_21(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_21(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -6354,26 +5591,8 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-typecheckig node...
 Checking return value_swapcvxCRVToWant
 done.
-clearning node...
-clearing ir...?
-TMP_96 = CONVERT want_16 to IERC20Upgradeable
-clearing ir...?
-TMP_97 = CONVERT this to address
-clearing ir...?
-TMP_98(uint256) = HIGH_LEVEL_CALL, dest:TMP_96(IERC20Upgradeable), function:balanceOf, arguments:['TMP_97']  
-Temp variable: tmp_98
-clearing ir...?
-want_17(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_16', 'want_7', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-TMP_99(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_98', '_before_1'] 
-Temp variable: tmp_99
-clearing ir...?
-earned_1(uint256) := TMP_99(uint256)
-Local variable: earned
 typecheckig node...
 TMP_96 = CONVERT want_16 to IERC20Upgradeable
 checking tmp_96
@@ -6422,7 +5641,7 @@ Den:
 Norm:
 0
 done.
-want_17(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_16', 'want_7', 'want_17', 'want_1', 'want_25'])
+want_17(address) := ϕ(['want_4', 'want_16', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -6491,14 +5710,8 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-Emit Harvest(earned_1,block.number)
 typecheckig node...
 Emit Harvest(earned_1,block.number)
-clearning node...
-clearing ir...?
-RETURN earned_1
 typecheckig node...
 RETURN earned_1
 Return...
@@ -6510,19 +5723,8 @@ Function tend not marked
 Reading Function: _swapcvxCRVToWant
 Function name: _swapcvxCRVToWant
 Function Visibility: internal
-clearning node...
-clearing ir...?
-reward_11(address) := ϕ(['reward_12', 'reward_1', 'reward_10', 'reward_0'])
-clearing ir...?
-WETH_1(address) := ϕ(['WETH_2', 'WETH_0'])
-clearing ir...?
-CVX_15(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-SUSHI_ROUTER_1(address) := ϕ(['SUSHI_ROUTER_2', 'SUSHI_ROUTER_3', 'SUSHI_ROUTER_0'])
-clearing ir...?
-CVX_VAULT_17(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
-reward_11(address) := ϕ(['reward_12', 'reward_1', 'reward_10', 'reward_0'])
+reward_11(address) := ϕ(['reward_1', 'reward_12', 'reward_0', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -6536,7 +5738,7 @@ Den:
 Norm:
 -100
 done.
-WETH_1(address) := ϕ(['WETH_2', 'WETH_0'])
+WETH_1(address) := ϕ(['WETH_0', 'WETH_2'])
 checking weth
 State IR  variable: weth
 State variable: weth
@@ -6550,7 +5752,7 @@ Den:
 Norm:
 -100
 done.
-CVX_15(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_15(address) := ϕ(['CVX_0', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -6578,7 +5780,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_17(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_17(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -6592,27 +5794,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_105 = CONVERT reward_11 to IERC20Upgradeable
-clearing ir...?
-TMP_106 = CONVERT this to address
-clearing ir...?
-TMP_107(uint256) = HIGH_LEVEL_CALL, dest:TMP_105(IERC20Upgradeable), function:balanceOf, arguments:['TMP_106']  
-Temp variable: tmp_107
-clearing ir...?
-reward_12(address) := ϕ(['reward_12', 'reward_11', 'reward_10', 'reward_1'])
-clearing ir...?
-WETH_2(address) := ϕ(['WETH_2', 'WETH_1'])
-clearing ir...?
-CVX_16(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_15'])
-clearing ir...?
-SUSHI_ROUTER_2(address) := ϕ(['SUSHI_ROUTER_2', 'SUSHI_ROUTER_3', 'SUSHI_ROUTER_1'])
-clearing ir...?
-CVX_VAULT_18(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_17', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-toSwap_1(uint256) := TMP_107(uint256)
-Local variable: toswap
 typecheckig node...
 TMP_105 = CONVERT reward_11 to IERC20Upgradeable
 checking tmp_105
@@ -6648,6 +5829,7 @@ TMP_107
 Finding type for hlc_0...
 Num:
 2
+2
 Den:
 -1
 Norm:
@@ -6656,12 +5838,13 @@ Norm:
 [i]Type for TMP_107
 Num:
 2
+2
 Den:
 -1
 Norm:
 0
 done.
-reward_12(address) := ϕ(['reward_12', 'reward_11', 'reward_10', 'reward_1'])
+reward_12(address) := ϕ(['reward_1', 'reward_11', 'reward_12', 'reward_10'])
 checking reward
 State IR  variable: reward
 State variable: reward
@@ -6675,7 +5858,7 @@ Den:
 Norm:
 -100
 done.
-WETH_2(address) := ϕ(['WETH_2', 'WETH_1'])
+WETH_2(address) := ϕ(['WETH_1', 'WETH_2'])
 checking weth
 State IR  variable: weth
 State variable: weth
@@ -6689,7 +5872,7 @@ Den:
 Norm:
 -100
 done.
-CVX_16(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_15'])
+CVX_16(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42', 'CVX_15'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -6717,7 +5900,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_18(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_17', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_18(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_17', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -6742,21 +5925,16 @@ Den:
 -1
 Norm:
 0
+Error with: toSwap in function _swapcvxCRVToWant
 0
 [i]Type for toSwap
 Num:
-2
+-1
 Den:
 -1
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_108(bool) = toSwap_1 == 0
-Temp variable: tmp_108
-clearing ir...?
-CONDITION TMP_108
 typecheckig node...
 TMP_108(bool) = toSwap_1 == 0
 checking tmp_108
@@ -6773,16 +5951,8 @@ Condition...
 Conidtion: 
 TMP_108
 TMP_108
-clearning node...
 typecheckig node...
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_110 = new address[](3)
-clearing ir...?
-path_1(address[]) := TMP_110(address)
-Local variable: path
 typecheckig node...
 TMP_110 = new address[](3)
 checking tmp_110
@@ -6812,13 +5982,6 @@ Norm:
 0
 done.
 [x]node added back
-clearning node...
-clearing ir...?
-REF_49(address) -> path_1[0]
-clearing ir...?
-path_2(address[]) := ϕ(['path_1'])
-clearing ir...?
-REF_49 (->path_2) := reward_12(address)
 typecheckig node...
 REF_49(address) -> path_1[0]
 checking ref_49
@@ -6866,13 +6029,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-REF_50(address) -> path_2[1]
-clearing ir...?
-path_3(address[]) := ϕ(['path_2'])
-clearing ir...?
-REF_50 (->path_3) := WETH_2(address)
 typecheckig node...
 REF_50(address) -> path_2[1]
 checking ref_50
@@ -6920,13 +6076,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-REF_51(address) -> path_3[2]
-clearing ir...?
-path_4(address[]) := ϕ(['path_3'])
-clearing ir...?
-REF_51 (->path_4) := CVX_16(address)
 typecheckig node...
 REF_51(address) -> path_3[2]
 checking ref_51
@@ -6974,20 +6123,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_111 = CONVERT SUSHI_ROUTER_2 to IUniswapRouterV2
-clearing ir...?
-TMP_112 = CONVERT this to address
-clearing ir...?
-TMP_113(uint256[]) = HIGH_LEVEL_CALL, dest:TMP_111(IUniswapRouterV2), function:swapExactTokensForTokens, arguments:['toSwap_1', '0', 'path_4', 'TMP_112', 'now']  
-Temp variable: tmp_113
-clearing ir...?
-CVX_17(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-SUSHI_ROUTER_3(address) := ϕ(['SUSHI_ROUTER_2', 'SUSHI_ROUTER_3'])
-clearing ir...?
-CVX_VAULT_19(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
 TMP_111 = CONVERT SUSHI_ROUTER_2 to IUniswapRouterV2
 checking tmp_111
@@ -7036,7 +6171,7 @@ Den:
 Norm:
 0
 done.
-CVX_17(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_17(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -7064,7 +6199,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_19(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_19(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -7078,21 +6213,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_114 = CONVERT CVX_17 to IERC20Upgradeable
-clearing ir...?
-TMP_115 = CONVERT this to address
-clearing ir...?
-TMP_116(uint256) = HIGH_LEVEL_CALL, dest:TMP_114(IERC20Upgradeable), function:balanceOf, arguments:['TMP_115']  
-Temp variable: tmp_116
-clearing ir...?
-CVX_18(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_17', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-CVX_VAULT_20(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_19', 'CVX_VAULT_21'])
-clearing ir...?
-toDeposit_1(uint256) := TMP_116(uint256)
-Local variable: todeposit
 typecheckig node...
 TMP_114 = CONVERT CVX_17 to IERC20Upgradeable
 checking tmp_114
@@ -7128,6 +6248,7 @@ TMP_116
 Finding type for hlc_2...
 Num:
 2
+2
 Den:
 -1
 Norm:
@@ -7136,12 +6257,13 @@ Norm:
 [i]Type for TMP_116
 Num:
 2
+2
 Den:
 -1
 Norm:
 0
 done.
-CVX_18(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_17', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_18(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_17', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -7155,7 +6277,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_20(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_19', 'CVX_VAULT_21'])
+CVX_VAULT_20(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_19', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -7180,21 +6302,16 @@ Den:
 -1
 Norm:
 0
+Error with: toDeposit in function _swapcvxCRVToWant
 0
 [i]Type for toDeposit
 Num:
-2
+-1
 Den:
 -1
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_117(bool) = toDeposit_1 > 0
-Temp variable: tmp_117
-clearing ir...?
-CONDITION TMP_117
 typecheckig node...
 TMP_117(bool) = toDeposit_1 > 0
 checking tmp_117
@@ -7224,18 +6341,14 @@ Condition...
 Conidtion: 
 TMP_117
 TMP_117
-clearning node...
-clearing ir...?
-HIGH_LEVEL_CALL, dest:CVX_VAULT_20(ISettV3), function:deposit, arguments:['toDeposit_1']  
-clearing ir...?
-CVX_VAULT_21(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+typecheckig node...
 typecheckig node...
 HIGH_LEVEL_CALL, dest:CVX_VAULT_20(ISettV3), function:deposit, arguments:['toDeposit_1']  
 High Level Call: deposit
 High Call: deposit
 func name:deposit
 done.
-CVX_VAULT_21(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_21(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -7249,8 +6362,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-typecheckig node...
 Reading Function: _processPerformanceFees
 Function _processPerformanceFees not marked
 Reading Function: _processRewardsFees
@@ -7262,13 +6373,8 @@ Function manualProcessExpiredLocks not marked
 Reading Function: manualDepositCVXIntoVault
 Function name: manualDepositCVXIntoVault
 Function Visibility: external
-clearning node...
-clearing ir...?
-CVX_24(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-CVX_VAULT_22(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
-CVX_24(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_24(address) := ϕ(['CVX_0', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -7288,7 +6394,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_22(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_22(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -7308,9 +6414,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-MODIFIER_CALL, MyStrategy.whenNotPaused()()
 typecheckig node...
 MODIFIER_CALL, MyStrategy.whenNotPaused()()
 Internal call...
@@ -7319,9 +6422,6 @@ Function: whenNotPaused
 ic
 Internal cal param_cache
 done.
-clearning node...
-clearing ir...?
-INTERNAL_CALL, MyStrategy._onlyGovernance()()
 typecheckig node...
 INTERNAL_CALL, MyStrategy._onlyGovernance()()
 Internal call...
@@ -7330,21 +6430,6 @@ Function: _onlyGovernance
 ic
 Internal cal param_cache
 done.
-clearning node...
-clearing ir...?
-TMP_140 = CONVERT CVX_26 to IERC20Upgradeable
-clearing ir...?
-TMP_141 = CONVERT this to address
-clearing ir...?
-TMP_142(uint256) = HIGH_LEVEL_CALL, dest:TMP_140(IERC20Upgradeable), function:balanceOf, arguments:['TMP_141']  
-Temp variable: tmp_142
-clearing ir...?
-CVX_27(address) := ϕ(['CVX_6', 'CVX_26', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-CVX_VAULT_25(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_24', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-toDeposit_1(uint256) := TMP_142(uint256)
-Local variable: todeposit
 typecheckig node...
 TMP_140 = CONVERT CVX_26 to IERC20Upgradeable
 checking tmp_140
@@ -7393,7 +6478,7 @@ Den:
 Norm:
 0
 done.
-CVX_27(address) := ϕ(['CVX_6', 'CVX_26', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_27(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_26', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -7413,7 +6498,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_25(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_24', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_25(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_24', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -7451,12 +6536,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_143(bool) = toDeposit_1 > 0
-Temp variable: tmp_143
-clearing ir...?
-CONDITION TMP_143
 typecheckig node...
 TMP_143(bool) = toDeposit_1 > 0
 checking tmp_143
@@ -7486,18 +6565,13 @@ Condition...
 Conidtion: 
 TMP_143
 TMP_143
-clearning node...
-clearing ir...?
-HIGH_LEVEL_CALL, dest:CVX_VAULT_25(ISettV3), function:deposit, arguments:['toDeposit_1']  
-clearing ir...?
-CVX_VAULT_26(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
 HIGH_LEVEL_CALL, dest:CVX_VAULT_25(ISettV3), function:deposit, arguments:['toDeposit_1']  
 High Level Call: deposit
 High Call: deposit
 func name:deposit
 done.
-CVX_VAULT_26(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_26(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -7517,7 +6591,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
 typecheckig node...
 Reading Function: manualSendbCVXToVault
 Function manualSendbCVXToVault not marked
@@ -7536,23 +6609,8 @@ Norm:
 Param: 0
     num: [-1]
     den: [-1]
-clearning node...
-clearing ir...?
-MAX_BPS_4(uint256) := ϕ(['MAX_BPS_12', 'MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_0'])
-clearing ir...?
-CVX_28(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-want_26(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
-clearing ir...?
-LOCKER_36(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_27(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-harvestOnRebalance_2(bool) := ϕ(['harvestOnRebalance_1', 'harvestOnRebalance_4', 'harvestOnRebalance_0', 'harvestOnRebalance_5'])
-clearing ir...?
-processLocksOnRebalance_2(bool) := ϕ(['processLocksOnRebalance_4', 'processLocksOnRebalance_0', 'processLocksOnRebalance_1'])
 typecheckig node...
-MAX_BPS_4(uint256) := ϕ(['MAX_BPS_12', 'MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_0'])
+MAX_BPS_4(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_12', 'MAX_BPS_0', 'MAX_BPS_3'])
 checking max_bps
 State IR  variable: max_bps
 State variable: max_bps
@@ -7572,7 +6630,7 @@ Den:
 Norm:
 -100
 done.
-CVX_28(address) := ϕ(['CVX_6', 'CVX_0', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_28(address) := ϕ(['CVX_0', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -7592,7 +6650,7 @@ Den:
 Norm:
 -100
 done.
-want_26(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_0', 'want_7', 'want_17', 'want_1', 'want_25'])
+want_26(address) := ϕ(['want_4', 'want_0', 'want_7', 'want_31', 'want_17', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -7612,7 +6670,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_36(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_0', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_36(ICvxLocker) := ϕ(['LOCKER_0', 'LOCKER_12', 'LOCKER_31', 'LOCKER_7', 'LOCKER_35', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -7632,7 +6690,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_27(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_0', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_27(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_0', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -7652,7 +6710,7 @@ Den:
 Norm:
 -100
 done.
-harvestOnRebalance_2(bool) := ϕ(['harvestOnRebalance_1', 'harvestOnRebalance_4', 'harvestOnRebalance_0', 'harvestOnRebalance_5'])
+harvestOnRebalance_2(bool) := ϕ(['harvestOnRebalance_4', 'harvestOnRebalance_0', 'harvestOnRebalance_5', 'harvestOnRebalance_1'])
 checking harvestonrebalance
 State IR  variable: harvestonrebalance
 State variable: harvestonrebalance
@@ -7672,7 +6730,7 @@ Den:
 Norm:
 -100
 done.
-processLocksOnRebalance_2(bool) := ϕ(['processLocksOnRebalance_4', 'processLocksOnRebalance_0', 'processLocksOnRebalance_1'])
+processLocksOnRebalance_2(bool) := ϕ(['processLocksOnRebalance_0', 'processLocksOnRebalance_1', 'processLocksOnRebalance_4'])
 checking processlocksonrebalance
 State IR  variable: processlocksonrebalance
 State variable: processlocksonrebalance
@@ -7692,9 +6750,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-MODIFIER_CALL, MyStrategy.whenNotPaused()()
 typecheckig node...
 MODIFIER_CALL, MyStrategy.whenNotPaused()()
 Internal call...
@@ -7703,9 +6758,6 @@ Function: whenNotPaused
 ic
 Internal cal param_cache
 done.
-clearning node...
-clearing ir...?
-INTERNAL_CALL, MyStrategy._onlyGovernance()()
 typecheckig node...
 INTERNAL_CALL, MyStrategy._onlyGovernance()()
 Internal call...
@@ -7714,12 +6766,6 @@ Function: _onlyGovernance
 ic
 Internal cal param_cache
 done.
-clearning node...
-clearing ir...?
-TMP_153(bool) = toLock_1 <= MAX_BPS_6
-Temp variable: tmp_153
-clearing ir...?
-TMP_154(None) = SOLIDITY_CALL require(bool,string)(TMP_153,Max is 100%)
 typecheckig node...
 TMP_153(bool) = toLock_1 <= MAX_BPS_6
 checking tmp_153
@@ -7757,37 +6803,19 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-CONDITION processLocksOnRebalance_4
 typecheckig node...
 CONDITION processLocksOnRebalance_4
 Condition...
 Conidtion: 
 processLocksOnRebalance_4
 processLocksOnRebalance_4
-clearning node...
-clearing ir...?
-HIGH_LEVEL_CALL, dest:LOCKER_38(ICvxLocker), function:processExpiredLocks, arguments:['False']  
-clearing ir...?
-MAX_BPS_7(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12', 'MAX_BPS_6'])
-clearing ir...?
-CVX_31(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_30', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-want_29(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_17', 'want_28', 'want_1', 'want_25'])
-clearing ir...?
-LOCKER_39(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_38', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_30(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_29', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-harvestOnRebalance_5(bool) := ϕ(['harvestOnRebalance_1', 'harvestOnRebalance_4', 'harvestOnRebalance_5'])
 typecheckig node...
 HIGH_LEVEL_CALL, dest:LOCKER_38(ICvxLocker), function:processExpiredLocks, arguments:['False']  
 High Level Call: processexpiredlocks
 High Call: processExpiredLocks
 func name:processExpiredLocks
 done.
-MAX_BPS_7(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12', 'MAX_BPS_6'])
+MAX_BPS_7(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_12', 'MAX_BPS_6', 'MAX_BPS_3'])
 checking max_bps
 State IR  variable: max_bps
 State variable: max_bps
@@ -7807,7 +6835,7 @@ Den:
 Norm:
 -100
 done.
-CVX_31(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_30', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_31(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_30', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -7827,7 +6855,7 @@ Den:
 Norm:
 -100
 done.
-want_29(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_17', 'want_28', 'want_1', 'want_25'])
+want_29(address) := ϕ(['want_4', 'want_7', 'want_31', 'want_17', 'want_28', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -7847,7 +6875,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_39(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_38', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_39(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_38', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -7867,7 +6895,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_30(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_29', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_30(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_29', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -7887,7 +6915,7 @@ Den:
 Norm:
 -100
 done.
-harvestOnRebalance_5(bool) := ϕ(['harvestOnRebalance_1', 'harvestOnRebalance_4', 'harvestOnRebalance_5'])
+harvestOnRebalance_5(bool) := ϕ(['harvestOnRebalance_4', 'harvestOnRebalance_5', 'harvestOnRebalance_1'])
 checking harvestonrebalance
 State IR  variable: harvestonrebalance
 State variable: harvestonrebalance
@@ -7907,26 +6935,14 @@ Den:
 Norm:
 -100
 done.
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-CONDITION harvestOnRebalance_5
 typecheckig node...
 CONDITION harvestOnRebalance_5
 Condition...
 Conidtion: 
 harvestOnRebalance_5
 harvestOnRebalance_5
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_156(uint256) = INTERNAL_CALL, MyStrategy.harvest()()
-clearing ir...?
-want_30(address) := ϕ(['want_17'])
-clearing ir...?
-LOCKER_40(ICvxLocker) := ϕ(['LOCKER_24'])
 typecheckig node...
 TMP_156(uint256) = INTERNAL_CALL, MyStrategy.harvest()()
 Internal call...
@@ -7980,27 +6996,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_157 = CONVERT want_30 to IERC20Upgradeable
-clearing ir...?
-TMP_158 = CONVERT this to address
-clearing ir...?
-TMP_159(uint256) = HIGH_LEVEL_CALL, dest:TMP_157(IERC20Upgradeable), function:balanceOf, arguments:['TMP_158']  
-Temp variable: tmp_159
-clearing ir...?
-MAX_BPS_9(uint256) := ϕ(['MAX_BPS_8', 'MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12'])
-clearing ir...?
-CVX_33(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_32', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-want_31(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_17', 'want_30', 'want_1', 'want_25'])
-clearing ir...?
-LOCKER_41(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_40', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_32(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_31', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-balanceOfWant_1(uint256) := TMP_159(uint256)
-Local variable: balanceofwant
 typecheckig node...
 TMP_157 = CONVERT want_30 to IERC20Upgradeable
 checking tmp_157
@@ -8049,7 +7044,7 @@ Den:
 Norm:
 0
 done.
-MAX_BPS_9(uint256) := ϕ(['MAX_BPS_8', 'MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12'])
+MAX_BPS_9(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_8', 'MAX_BPS_12', 'MAX_BPS_3'])
 checking max_bps
 State IR  variable: max_bps
 State variable: max_bps
@@ -8069,7 +7064,7 @@ Den:
 Norm:
 -100
 done.
-CVX_33(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_32', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_33(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_32', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -8089,7 +7084,7 @@ Den:
 Norm:
 -100
 done.
-want_31(address) := ϕ(['want_21', 'want_31', 'want_4', 'want_7', 'want_17', 'want_30', 'want_1', 'want_25'])
+want_31(address) := ϕ(['want_4', 'want_7', 'want_31', 'want_17', 'want_30', 'want_1', 'want_25', 'want_21'])
 checking want
 State IR  variable: want
 State variable: want
@@ -8109,7 +7104,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_41(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_40', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_41(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_40', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -8129,7 +7124,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_32(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_31', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_32(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_31', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -8167,25 +7162,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_160 = CONVERT CVX_33 to IERC20Upgradeable
-clearing ir...?
-TMP_161 = CONVERT this to address
-clearing ir...?
-TMP_162(uint256) = HIGH_LEVEL_CALL, dest:TMP_160(IERC20Upgradeable), function:balanceOf, arguments:['TMP_161']  
-Temp variable: tmp_162
-clearing ir...?
-MAX_BPS_10(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_9', 'MAX_BPS_3', 'MAX_BPS_12'])
-clearing ir...?
-CVX_34(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_33', 'CVX_43'])
-clearing ir...?
-LOCKER_42(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_41', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_33(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_32', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-balanceOfCVX_1(uint256) := TMP_162(uint256)
-Local variable: balanceofcvx
 typecheckig node...
 TMP_160 = CONVERT CVX_33 to IERC20Upgradeable
 checking tmp_160
@@ -8234,7 +7210,7 @@ Den:
 Norm:
 0
 done.
-MAX_BPS_10(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_9', 'MAX_BPS_3', 'MAX_BPS_12'])
+MAX_BPS_10(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_12', 'MAX_BPS_9', 'MAX_BPS_3'])
 checking max_bps
 State IR  variable: max_bps
 State variable: max_bps
@@ -8254,7 +7230,7 @@ Den:
 Norm:
 -100
 done.
-CVX_34(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_33', 'CVX_43'])
+CVX_34(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_33', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -8274,7 +7250,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_42(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_41', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_42(ICvxLocker) := ϕ(['LOCKER_41', 'LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -8294,7 +7270,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_33(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_32', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_33(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_32', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -8332,23 +7308,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_163 = CONVERT this to address
-clearing ir...?
-TMP_164(uint256) = HIGH_LEVEL_CALL, dest:LOCKER_42(ICvxLocker), function:balanceOf, arguments:['TMP_163']  
-Temp variable: tmp_164
-clearing ir...?
-MAX_BPS_11(uint256) := ϕ(['MAX_BPS_10', 'MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12'])
-clearing ir...?
-CVX_35(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_34', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-LOCKER_43(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_42', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_34(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_33', 'CVX_VAULT_21'])
-clearing ir...?
-balanceInLock_1(uint256) := TMP_164(uint256)
-Local variable: balanceinlock
 typecheckig node...
 TMP_163 = CONVERT this to address
 checking tmp_163
@@ -8386,7 +7345,7 @@ Den:
 Norm:
 0
 done.
-MAX_BPS_11(uint256) := ϕ(['MAX_BPS_10', 'MAX_BPS_2', 'MAX_BPS_3', 'MAX_BPS_12'])
+MAX_BPS_11(uint256) := ϕ(['MAX_BPS_2', 'MAX_BPS_12', 'MAX_BPS_10', 'MAX_BPS_3'])
 checking max_bps
 State IR  variable: max_bps
 State variable: max_bps
@@ -8406,7 +7365,7 @@ Den:
 Norm:
 -100
 done.
-CVX_35(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_34', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_35(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_34', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -8426,7 +7385,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_43(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_42', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_43(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_42', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -8446,7 +7405,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_34(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_33', 'CVX_VAULT_21'])
+CVX_VAULT_34(ISettV3) := ϕ(['CVX_VAULT_33', 'CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -8484,20 +7443,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_165(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['balanceOfCVX_1', 'balanceInLock_1'] 
-Temp variable: tmp_165
-clearing ir...?
-TMP_166(uint256) = INTERNAL_CALL, MyStrategy.wantToCVX(uint256)(balanceOfWant_1)
-clearing ir...?
-CVX_VAULT_35(ISettV3) := ϕ(['CVX_VAULT_4'])
-clearing ir...?
-TMP_167(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['TMP_165', 'TMP_166'] 
-Temp variable: tmp_167
-clearing ir...?
-totalCVXBalance_1(uint256) := TMP_167(uint256)
-Local variable: totalcvxbalance
 typecheckig node...
 TMP_165(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['balanceOfCVX_1', 'balanceInLock_1'] 
 High Level Call: add
@@ -8592,19 +7537,6 @@ Norm:
 0
 done.
 [x]node added back
-clearning node...
-clearing ir...?
-TMP_168(uint256) = 10 ** 18
-Temp variable: tmp_168
-clearing ir...?
-TMP_169(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['balanceInLock_1', 'TMP_168'] 
-Temp variable: tmp_169
-clearing ir...?
-TMP_170(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_169', 'totalCVXBalance_1'] 
-Temp variable: tmp_170
-clearing ir...?
-currentLockRatio_1(uint256) := TMP_170(uint256)
-Local variable: currentlockratio
 typecheckig node...
 TMP_168(uint256) = 10 ** 18
 checking tmp_168
@@ -8718,16 +7650,6 @@ Den:
 Norm:
 18
 done.
-clearning node...
-clearing ir...?
-TMP_171(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['totalCVXBalance_1', 'toLock_1'] 
-Temp variable: tmp_171
-clearing ir...?
-TMP_172(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_171', 'MAX_BPS_12'] 
-Temp variable: tmp_172
-clearing ir...?
-newLockRatio_1(uint256) := TMP_172(uint256)
-Local variable: newlockratio
 typecheckig node...
 TMP_171(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['totalCVXBalance_1', 'toLock_1'] 
 High Level Call: mul
@@ -8811,19 +7733,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_173(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['MAX_BPS_12', 'toLock_1'] 
-Temp variable: tmp_173
-clearing ir...?
-TMP_174(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['totalCVXBalance_1', 'TMP_173'] 
-Temp variable: tmp_174
-clearing ir...?
-TMP_175(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_174', 'MAX_BPS_12'] 
-Temp variable: tmp_175
-clearing ir...?
-toWantRatio_1(uint256) := TMP_175(uint256)
-Local variable: towantratio
 typecheckig node...
 TMP_173(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['MAX_BPS_12', 'toLock_1'] 
 High Level Call: sub
@@ -8932,12 +7841,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_176(bool) = newLockRatio_1 <= currentLockRatio_1
-Temp variable: tmp_176
-clearing ir...?
-CONDITION TMP_176
 typecheckig node...
 TMP_176(bool) = newLockRatio_1 <= currentLockRatio_1
 checking tmp_176
@@ -8958,21 +7861,6 @@ Condition...
 Conidtion: 
 TMP_176
 TMP_176
-clearning node...
-clearing ir...?
-TMP_177 = CONVERT CVX_36 to IERC20Upgradeable
-clearing ir...?
-TMP_178 = CONVERT this to address
-clearing ir...?
-TMP_179(uint256) = HIGH_LEVEL_CALL, dest:TMP_177(IERC20Upgradeable), function:balanceOf, arguments:['TMP_178']  
-Temp variable: tmp_179
-clearing ir...?
-CVX_37(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_36', 'CVX_27', 'CVX_43'])
-clearing ir...?
-CVX_VAULT_36(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_35', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-toDeposit_1(uint256) := TMP_179(uint256)
-Local variable: todeposit
 typecheckig node...
 TMP_177 = CONVERT CVX_36 to IERC20Upgradeable
 checking tmp_177
@@ -9021,7 +7909,7 @@ Den:
 Norm:
 0
 done.
-CVX_37(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_36', 'CVX_27', 'CVX_43'])
+CVX_43(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -9041,7 +7929,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_36(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_35', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_43(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -9079,14 +7967,7 @@ Den:
 Norm:
 0
 done.
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_180(bool) = toDeposit_1 > 0
-Temp variable: tmp_180
-clearing ir...?
-CONDITION TMP_180
 typecheckig node...
 TMP_180(bool) = toDeposit_1 > 0
 checking tmp_180
@@ -9116,13 +7997,7 @@ Condition...
 Conidtion: 
 TMP_180
 TMP_180
-clearning node...
-clearing ir...?
-TMP_182(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['newLockRatio_1', 'currentLockRatio_1'] 
-Temp variable: tmp_182
-clearing ir...?
-cvxToLock_1(uint256) := TMP_182(uint256)
-Local variable: cvxtolock
+typecheckig node...
 typecheckig node...
 TMP_182(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['newLockRatio_1', 'currentLockRatio_1'] 
 High Level Call: sub
@@ -9177,23 +8052,33 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_183 = CONVERT CVX_36 to IERC20Upgradeable
-clearing ir...?
-TMP_184 = CONVERT this to address
-clearing ir...?
-TMP_185(uint256) = HIGH_LEVEL_CALL, dest:TMP_183(IERC20Upgradeable), function:balanceOf, arguments:['TMP_184']  
-Temp variable: tmp_185
-clearing ir...?
-CVX_38(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
-clearing ir...?
-LOCKER_45(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_38(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-maxCVX_1(uint256) := TMP_185(uint256)
-Local variable: maxcvx
+typecheckig node...
+HIGH_LEVEL_CALL, dest:CVX_VAULT_43(ISettV3), function:deposit, arguments:['toDeposit_1']  
+High Level Call: deposit
+High Call: deposit
+func name:deposit
+done.
+CVX_VAULT_44(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
+checking cvx_vault
+State IR  variable: cvx_vault
+State variable: cvx_vault
+Function name: manualRebalance
+Num:
+-1
+Den:
+-1
+Norm:
+-100
+Phi
+[i]Type for CVX_VAULT
+Num:
+-1
+Den:
+-1
+Norm:
+-100
+done.
+typecheckig node...
 typecheckig node...
 TMP_183 = CONVERT CVX_36 to IERC20Upgradeable
 checking tmp_183
@@ -9242,7 +8127,7 @@ Den:
 Norm:
 0
 done.
-CVX_38(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43'])
+CVX_37(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_36', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -9262,7 +8147,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_45(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_45(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -9282,7 +8167,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_38(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_36(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_35', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -9320,47 +8205,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-typecheckig node...
-clearning node...
-clearing ir...?
-HIGH_LEVEL_CALL, dest:CVX_VAULT_36(ISettV3), function:deposit, arguments:['toDeposit_1']  
-clearing ir...?
-CVX_VAULT_37(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-typecheckig node...
-HIGH_LEVEL_CALL, dest:CVX_VAULT_36(ISettV3), function:deposit, arguments:['toDeposit_1']  
-High Level Call: deposit
-High Call: deposit
-func name:deposit
-done.
-CVX_VAULT_37(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-checking cvx_vault
-State IR  variable: cvx_vault
-State variable: cvx_vault
-Function name: manualRebalance
-Num:
--1
-Den:
--1
-Norm:
--100
-Phi
-[i]Type for CVX_VAULT
-Num:
--1
-Den:
--1
-Norm:
--100
-done.
-clearning node...
-typecheckig node...
-clearning node...
-clearing ir...?
-TMP_186(bool) = cvxToLock_1 > maxCVX_1
-Temp variable: tmp_186
-clearing ir...?
-CONDITION TMP_186
 typecheckig node...
 TMP_186(bool) = cvxToLock_1 > maxCVX_1
 checking tmp_186
@@ -9387,26 +8231,6 @@ Condition...
 Conidtion: 
 TMP_186
 TMP_186
-clearning node...
-clearing ir...?
-TMP_190 = CONVERT this to address
-clearing ir...?
-TMP_191(uint256) = HIGH_LEVEL_CALL, dest:LOCKER_45(ICvxLocker), function:maximumBoostPayment, arguments:[]  
-Temp variable: tmp_191
-clearing ir...?
-CVX_39(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_38'])
-clearing ir...?
-LOCKER_46(ICvxLocker) := ϕ(['LOCKER_45', 'LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_39(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_38', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-HIGH_LEVEL_CALL, dest:LOCKER_46(ICvxLocker), function:lock, arguments:['TMP_190', 'cvxToLock_1', 'TMP_191']  
-clearing ir...?
-CVX_40(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_39', 'CVX_27', 'CVX_43'])
-clearing ir...?
-LOCKER_47(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_46', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_40(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_39', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
 TMP_190 = CONVERT this to address
 checking tmp_190
@@ -9444,7 +8268,7 @@ Den:
 Norm:
 0
 done.
-CVX_39(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_38'])
+CVX_38(address) := ϕ(['CVX_37', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -9464,7 +8288,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_46(ICvxLocker) := ϕ(['LOCKER_45', 'LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_46(ICvxLocker) := ϕ(['LOCKER_45', 'LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -9484,7 +8308,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_39(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_38', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_37(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -9509,7 +8333,7 @@ High Level Call: lock
 High Call: lock
 func name:lock
 done.
-CVX_40(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_39', 'CVX_27', 'CVX_43'])
+CVX_39(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_38', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -9529,7 +8353,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_47(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_46', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_47(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_46', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -9549,7 +8373,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_40(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_39', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_38(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_37', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -9569,26 +8393,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-TMP_187 = CONVERT this to address
-clearing ir...?
-TMP_188(uint256) = HIGH_LEVEL_CALL, dest:LOCKER_45(ICvxLocker), function:maximumBoostPayment, arguments:[]  
-Temp variable: tmp_188
-clearing ir...?
-CVX_41(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_40', 'CVX_27', 'CVX_43'])
-clearing ir...?
-LOCKER_48(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_41(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_40', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-HIGH_LEVEL_CALL, dest:LOCKER_48(ICvxLocker), function:lock, arguments:['TMP_187', 'maxCVX_1', 'TMP_188']  
-clearing ir...?
-CVX_42(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_41'])
-clearing ir...?
-LOCKER_49(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_48', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
-clearing ir...?
-CVX_VAULT_42(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_41', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
 TMP_187 = CONVERT this to address
 checking tmp_187
@@ -9626,7 +8430,7 @@ Den:
 Norm:
 0
 done.
-CVX_41(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_40', 'CVX_27', 'CVX_43'])
+CVX_40(address) := ϕ(['CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_39', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -9646,7 +8450,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_48(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_48(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -9666,7 +8470,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_41(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_40', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_39(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_38', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -9691,7 +8495,7 @@ High Level Call: lock
 High Call: lock
 func name:lock
 done.
-CVX_42(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_41'])
+CVX_41(address) := ϕ(['CVX_18', 'CVX_40', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -9711,7 +8515,7 @@ Den:
 Norm:
 -100
 done.
-LOCKER_49(ICvxLocker) := ϕ(['LOCKER_49', 'LOCKER_48', 'LOCKER_12', 'LOCKER_7', 'LOCKER_31', 'LOCKER_35', 'LOCKER_18', 'LOCKER_1', 'LOCKER_47', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24'])
+LOCKER_49(ICvxLocker) := ϕ(['LOCKER_31', 'LOCKER_12', 'LOCKER_35', 'LOCKER_7', 'LOCKER_49', 'LOCKER_48', 'LOCKER_18', 'LOCKER_1', 'LOCKER_44', 'LOCKER_15', 'LOCKER_24', 'LOCKER_47'])
 checking locker
 State IR  variable: locker
 State variable: locker
@@ -9731,7 +8535,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_42(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_41', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_40(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_39', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -9751,25 +8555,9 @@ Den:
 Norm:
 -100
 done.
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-TMP_193 = CONVERT CVX_42 to IERC20Upgradeable
-clearing ir...?
-TMP_194 = CONVERT this to address
-clearing ir...?
-TMP_195(uint256) = HIGH_LEVEL_CALL, dest:TMP_193(IERC20Upgradeable), function:balanceOf, arguments:['TMP_194']  
-Temp variable: tmp_195
-clearing ir...?
-CVX_43(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_42'])
-clearing ir...?
-CVX_VAULT_43(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_42', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
-clearing ir...?
-cvxLeft_1(uint256) := TMP_195(uint256)
-Local variable: cvxleft
 typecheckig node...
-TMP_193 = CONVERT CVX_42 to IERC20Upgradeable
+TMP_193 = CONVERT CVX_41 to IERC20Upgradeable
 checking tmp_193
 Temp variable: tmp_193
 Function name: manualRebalance
@@ -9816,7 +8604,7 @@ Den:
 Norm:
 0
 done.
-CVX_43(address) := ϕ(['CVX_6', 'CVX_18', 'CVX_16', 'CVX_37', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_43', 'CVX_42'])
+CVX_42(address) := ϕ(['CVX_41', 'CVX_18', 'CVX_6', 'CVX_43', 'CVX_16', 'CVX_10', 'CVX_14', 'CVX_23', 'CVX_27', 'CVX_42'])
 checking cvx
 State IR  variable: cvx
 State variable: cvx
@@ -9836,7 +8624,7 @@ Den:
 Norm:
 -100
 done.
-CVX_VAULT_43(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_42', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_41(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_40', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -9874,12 +8662,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-TMP_196(bool) = cvxLeft_1 > 0
-Temp variable: tmp_196
-clearing ir...?
-CONDITION TMP_196
 typecheckig node...
 TMP_196(bool) = cvxLeft_1 > 0
 checking tmp_196
@@ -9909,20 +8691,14 @@ Condition...
 Conidtion: 
 TMP_196
 TMP_196
-clearning node...
 typecheckig node...
-clearning node...
-clearing ir...?
-HIGH_LEVEL_CALL, dest:CVX_VAULT_43(ISettV3), function:deposit, arguments:['cvxLeft_1']  
-clearing ir...?
-CVX_VAULT_44(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
 typecheckig node...
-HIGH_LEVEL_CALL, dest:CVX_VAULT_43(ISettV3), function:deposit, arguments:['cvxLeft_1']  
+HIGH_LEVEL_CALL, dest:CVX_VAULT_41(ISettV3), function:deposit, arguments:['cvxLeft_1']  
 High Level Call: deposit
 High Call: deposit
 func name:deposit
 done.
-CVX_VAULT_44(ISettV3) := ϕ(['CVX_VAULT_43', 'CVX_VAULT_4', 'CVX_VAULT_8', 'CVX_VAULT_37', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_36', 'CVX_VAULT_15', 'CVX_VAULT_25', 'CVX_VAULT_12', 'CVX_VAULT_44', 'CVX_VAULT_18', 'CVX_VAULT_21'])
+CVX_VAULT_42(ISettV3) := ϕ(['CVX_VAULT_4', 'CVX_VAULT_21', 'CVX_VAULT_8', 'CVX_VAULT_44', 'CVX_VAULT_41', 'CVX_VAULT_2', 'CVX_VAULT_13', 'CVX_VAULT_20', 'CVX_VAULT_6', 'CVX_VAULT_43', 'CVX_VAULT_16', 'CVX_VAULT_26', 'CVX_VAULT_15', 'CVX_VAULT_12', 'CVX_VAULT_42', 'CVX_VAULT_18', 'CVX_VAULT_25'])
 checking cvx_vault
 State IR  variable: cvx_vault
 State variable: cvx_vault
@@ -10493,37 +9269,30 @@ Norm:
 done.
 [x]node added back
 contract name: IController
-WARNING!!!!
 IController_types.txt
 Type File not found.
 [x] IController not run
 contract name: ISettV3
-WARNING!!!!
 ISettV3_types.txt
 Type File not found.
 [x] ISettV3 not run
 contract name: ICvxLocker
-WARNING!!!!
 ICvxLocker_types.txt
 Type File not found.
 [x] ICvxLocker not run
 contract name: IDelegateRegistry
-WARNING!!!!
 IDelegateRegistry_types.txt
 Type File not found.
 [x] IDelegateRegistry not run
 contract name: IUniswapRouterV2
-WARNING!!!!
 IUniswapRouterV2_types.txt
 Type File not found.
 [x] IUniswapRouterV2 not run
 contract name: SafeMath
-WARNING!!!!
 SafeMath_types.txt
 Type File not found.
 [x] SafeMath not run
 contract name: IERC20Upgradeable
-WARNING!!!!
 IERC20Upgradeable_types.txt
 Type File not found.
 [x] IERC20Upgradeable not run
