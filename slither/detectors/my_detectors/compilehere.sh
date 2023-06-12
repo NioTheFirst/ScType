@@ -7,7 +7,8 @@ cd ..
 #slither
 cd ..
 
-python3 setup.py install
+#python3 setup.py install
+pip install .
 
 cd slither
 cd detectors

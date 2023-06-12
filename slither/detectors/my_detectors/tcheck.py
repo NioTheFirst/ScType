@@ -274,6 +274,8 @@ def querry_type(ir):
     if not(user_type):
         type_tuple = read_type_file(ir)
         if(type_tuple != None):
+            ir.token_typen.clear()
+            ir.token_typed.clear()
             num = type_tuple[0]
             den = type_tuple[1]
             norm = type_tuple[2]
@@ -1237,6 +1239,33 @@ def _tcheck_node(node, function_name) -> []:
         print("[x]node added back")
     return newirs
 
+#USAGE: returns if the ir has a 'lvalue'
+#RETURNS: T/F
+def has_lvalue(ir):
+    if(isinstance(ir, Assignment)):
+        return True
+    if(isinstance(ir, Binary)):
+        return True
+    if(isinstance(ir, HighLevelCall)):
+        return True
+    if(isinstance(ir, LibraryCall)):
+        return True
+    return False
+
+#USAGE: clears a node
+#RETURNS: N/A
+def _clear_type_node(node):
+    print("clearning node...")
+    for ir in node.irs_ssa:
+        print("clearing ir...?")
+        print(ir)
+        if(has_lvalue(ir) and is_variable(ir.lvalue)):
+            if(is_temporary(ir.lvalue) or is_local(ir.lvalue)):
+                #clear the types for temporary and local variables
+                ir.lvalue.token_typen.clear()
+                ir.lvalue.token_typed.clear()
+                print("[i] " + ir.value.name + " cleared")
+            
 #USAGE: typecheck a function call
 #       given a param_cache for the input data
 #       check return values:
@@ -1244,6 +1273,7 @@ def _tcheck_node(node, function_name) -> []:
 def _tcheck_function_call(function, param_cache) -> []:
     global function_hlc
     global function_ref
+    print("xyz")
     function_hlc = 0
     function_ref = 0
     explored = set()
@@ -1268,6 +1298,7 @@ def _tcheck_function_call(function, param_cache) -> []:
         if node in explored:
             continue
         explored.add(node)
+        _clear_type_node(node)
         addback = _tcheck_node(node, function.name)
         if(len(addback) > 0):
             addback_nodes.append(node)
@@ -1317,6 +1348,7 @@ def _tcheck_function(function) -> []:
         if node in explored:
             continue
         explored.add(node)
+        _clear_type_node(node)
         addback = _tcheck_node(node, function.name)
         if(len(addback) > 0):
             addback_nodes.append(node)
@@ -1505,6 +1537,7 @@ def _tcheck_contract(contract):
     all_addback_nodes = []
     _mark_functions(contract)
     _tcheck_contract_state_var(contract)
+    print("lolcheck?")
     for function in contract.functions_declared:
         print("Reading Function: " + function.name)
         if not function_check[function.name]:
@@ -1581,6 +1614,7 @@ class tcheck(AbstractDetector):
         for contract in self.contracts:
             #TODO
             print("contract name: "+contract.name)
+            print("WARNING!!!!")
             type_info_name = contract.name+"_types.txt"
             print(type_info_name)
             #get type information from file (if there is one)
