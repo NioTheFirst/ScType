@@ -25,6 +25,7 @@ type_hashtable = {}
 function_bar = {}
 function_check = {}
 contract_run = {}
+contract_function = {}
 
 #IMPORTANT: read internal
 read_internal = True
@@ -36,6 +37,22 @@ def add_hash(function_name, var_name, num, den, norm):
     values = (num, den, norm)
     type_hashtable[composite_key] = values
     return composite_key
+
+#USAGE: adds a contract, function pair
+#RETURNS: NULL
+def add_cf_pair(contract_name, function_name, function):
+    composite_key = contract_name + ',' + function_name
+    values = (function)
+    contract_function[composite_key] = values
+
+#USAGE: returns the ir for a contract, function pair
+#RETURNS: the specified ir, if it doesn't exist, None is returned
+def get_cf_pair(contract_name, function_name):
+    composite_key = contract_name + ',' + function_name
+    if composite_key = contract_function:
+        return contract_function[composite_key]
+    else:
+        return None
 
 #USAGE: given a function name and a var name, return the token pair
 #RETURNS: tuple holding the token pair
@@ -184,6 +201,8 @@ def parse_type_file(t_file):
         lines = []
         counter = 0
         temp_counter = 0
+        #TODO: remove the complicate line stuff, turn it into a,b,c,d and split by ,
+        #Also TODO: provide a function_name for addresses
         for line in type_file:
             #print(line)
             #print(counter)
@@ -1364,7 +1383,7 @@ class tcheck(AbstractDetector):
         global type_file
         global line_no
         for contract in self.contracts:
-            #TODO: implement x contract function calls
+            #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
             print("contract name: "+contract.name)
             print("WARNING!!!!")

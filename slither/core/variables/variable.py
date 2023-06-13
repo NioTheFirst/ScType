@@ -29,6 +29,7 @@ class Variable(SourceMapping):
         self._token_typed : List[int] = []
         self._norm = -100;
         self._parent_function : Optional[str] = None
+        self._link_function : Optional[str] = None
         self._tname: Optional[str] = None
 
     @property
@@ -83,6 +84,14 @@ class Variable(SourceMapping):
     def name(self, name):
         self._name = name
     
+    @property
+    def link_function(self)->Optional[str]:
+        return self._link_function
+
+    @link_function.setter
+    def link_function(self, function):
+        self._link_function = function
+
     def change_name(self, name):
         self._tname = name
     
