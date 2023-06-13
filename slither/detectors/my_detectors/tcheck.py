@@ -32,9 +32,9 @@ read_internal = True
 
 #USAGE: adds token pair to type_hashtable
 #RETURNS: composite key of the token pair
-def add_hash(function_name, var_name, num, den, norm):
+def add_hash(function_name, var_name, num, den, norm, lf):
     composite_key = function_name + '_' + var_name
-    values = (num, den, norm)
+    values = (num, den, norm, lf)
     type_hashtable[composite_key] = values
     return composite_key
 
@@ -49,7 +49,7 @@ def add_cf_pair(contract_name, function_name, function):
 #RETURNS: the specified ir, if it doesn't exist, None is returned
 def get_cf_pair(contract_name, function_name):
     composite_key = contract_name + ',' + function_name
-    if composite_key = contract_function:
+    if composite_key in contract_function:
         return contract_function[composite_key]
     else:
         return None
@@ -204,6 +204,44 @@ def parse_type_file(t_file):
         #TODO: remove the complicate line stuff, turn it into a,b,c,d and split by ,
         #Also TODO: provide a function_name for addresses
         for line in type_file:
+            _line = line.split(',')
+            #NORMAL INPUT
+            #_line[0] = [t]
+            #_line[1] = container
+            #_line[2] = var name
+            #_line[3] = numerator type (assume one)
+            #_line[4] = denominator type (assume one)
+            #_line[5] = normalization amt (power of 10)
+            #_line[6] = (Optional) linked function if is address
+            if(_line[0].strip() == "[t]"):
+                f_name = _line[1].strip()
+                v_name = _line[2].strip()
+                try:
+                    num = int(_line[3].strip())
+                    den = int(_line[4].strip())
+                    norm = int(_line[5].strip())
+                    l_name = None
+                    if(len(_line) == 7):
+                        l_name = _line[6].strip()
+                    add_hash(f_name, v_name, num, den, norm, l_name)
+                except ValueError:
+                    print("Invalid Value read")
+                continue
+            #BAR FUNCTION
+            #_line[0] = [xf]
+            #_line[1] = function name
+            if(_line[0].strip() == "[xf]"):
+                f_name = _line[1].strip()
+                bar_function(f_name)
+                continue
+            #ALLOW CONTRACT
+            #_line[0] = [*c]
+            #_line[1] = contract name
+            if(_line[0].strip() == "[*c]"):
+                c_name = _line[1].strip()
+                run_contract(c_name)
+                continue
+            """
             #print(line)
             #print(counter)
             if(line.strip() == "[x]bar"):
@@ -240,6 +278,7 @@ def parse_type_file(t_file):
                 except ValueError:
                     print("Invalid Value read")
                 lines.clear()
+            """
 #USAGE: given a variable ir, return the type tuple
 #RETURNS: type tuple
 def read_type_file(ir):
@@ -298,6 +337,7 @@ def querry_type(ir):
             num = type_tuple[0]
             den = type_tuple[1]
             norm = type_tuple[2]
+            lf = type_tuple[3]
             ir.add_token_typen(num)
             ir.add_token_typed(den)
             if(norm == -101):
@@ -305,6 +345,8 @@ def querry_type(ir):
                 ir.norm = get_norm(ir)
             else:
                 ir.norm = norm
+            if(str(ir.type) == "address" and lf != None):
+                ir.link_function = lf
             print_token_type(ir)
             print("[*]Type fetched successfully")
             return
