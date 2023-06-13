@@ -420,7 +420,7 @@ def copy_inv_token_type(src, dest):
     for n in src.token_typen:
         dest.add_token_typed(n)
     for d in src.token_typed:
-        dest.add_token_typen(n)
+        dest.add_token_typen(d)
 
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
@@ -1158,11 +1158,12 @@ def _clear_type_node(node):
         print("clearing ir...?")
         print(ir)
         if(has_lvalue(ir) and is_variable(ir.lvalue)):
-            if(is_temporary(ir.lvalue) or is_local(ir.lvalue)):
+            print("has variable")
+            if(isinstance(ir.lvalue, TemporaryVariable) or isinstance(ir.lvalue, LocalIRVariable)):
                 #clear the types for temporary and local variables
                 ir.lvalue.token_typen.clear()
                 ir.lvalue.token_typed.clear()
-                print("[i] " + ir.value.name + " cleared")
+                print("[i] " + ir.lvalue.name + " cleared")
             
 #USAGE: typecheck a function call
 #       given a param_cache for the input data
