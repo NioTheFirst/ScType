@@ -1,7 +1,7 @@
 from collections import defaultdict
 from slither.core.variables.local_variable import LocalVariable
 from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall
+from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion
 from slither.slithir.variables import Constant, ReferenceVariable, TemporaryVariable, LocalIRVariable, StateIRVariable, TupleVariable
 from slither.core.variables.variable import Variable
 from slither.core.variables.state_variable import StateVariable
@@ -500,6 +500,11 @@ def check_type(ir) -> bool:
     elif isinstance(ir, HighLevelCall):
         #High level call
         addback = type_hlc(ir)
+    elif isinstance(ir, TypeConversion):
+        addback = type_asn(ir.lvalue, ir.variable)
+        print(get_norm(ir.variable))
+        print(ir.variable.name)
+        asn_norm(ir.lvalue, get_norm(ir.variable))
     elif isinstance(ir, Unpack):
         #Unpack tuple
         addback = type_upk(ir)
@@ -571,10 +576,36 @@ def type_ref(ir)->bool:
     print("Ref: "+str(ir.lvalue.name))
     temp = ir.lvalue.name
     ir.lvalue.change_name('ref_'+str(function_ref))
+    #ir is a 'member' class
+    print("left value name: " + str(ir.variable_left.non_ssa_version.name))
+    print("right value name: "+str(ir.variable_right))
+    
+    #test for 'decimal' propagation
+    if(str(ir.variable_right) == "decimals"):
+        #a = b.decimals
+        prop_decimals(ir.lvalue, ir.variable_left)
+        return
+    elif(str(ir.variable_left.non_ssa_version.name) == "decimals"):
+        #a = decimals[b]
+        prop_decimals(ir.lvalue, ir.variable_right)        
+        return
     querry_type(ir.lvalue)
     ir.lvalue.change_name(temp)
     function_ref+=1
     return False
+
+#USAGE: fills the corresponding ir with the target value's types and decimals
+#RETURNS: Null
+#Example: a = b.decimals;       a = decimals[b]
+def prop_decimals(dest, sorc):
+    print("Propagting decimals from "+sorc.name + " to " + dest.name)
+    if(is_type_undef(sorc)):
+        #source is undefined; just querry the type directly
+        querry_type(dest)
+    else:
+        #copy the token type and also the type
+        copy_token_type(sorc, dest)
+        asn_norm(dest, get_norm(sorc))
 
 #USAGE: typecheck for function call (pass on types etc)
 #RETURNS: whether or not the function call node should be returned
@@ -892,11 +923,10 @@ def type_bin_mul(dest, lir, rir) ->bool:
 #USAGE: typechecks a division statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_div(dest, lir, rir) ->bool:
-    #typecheck -> 10*A + B
     if(not (init_var(lir) and init_var(rir))):
         return False
     asn_norm(dest, get_norm(lir))
-    add_norm(dest, get_norm(rir))
+    add_norm(dest, -get_norm(rir))
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1082,95 +1112,6 @@ def is_assert(node):
         return True
     return False
 
-# _exploreNon also checks from rounding + 1
-def _exploreNon(to_explore, rurd, roundup, additions, add_constants):  # pylint: disable=too-many-branches
-    explored = set()
-    divisions = defaultdict(list)
-    print("TCHECK RUNNING=================================")
-    while to_explore:  # pylint: disable=too-many-nested-blocks
-        node = to_explore.pop()
-        if node in explored:
-            continue
-        explored.add(node)
-        equality_found = False
-        last_var = None
-        # List of nodes related to one bug instance
-        for ir in node.irs:
-            #print(ir)
-            #is_referenceVariable(ir)
-            #is_constant(ir)
-            if isinstance(ir, Assignment):
-                last_var = ir.lvalue
-                if add_constants[last_var] == None:
-                    add_constants[last_var] = []
-            if is_addition(ir):
-                if(not isinstance(ir.lvalue, TemporaryVariable)):
-                    last_var = ir.lvalue
-                    if add_constants[last_var] == None:
-                        add_constants[last_var] = []
-                    #print(last_var)
-            if is_division(ir):
-                if(not isinstance(ir.lvalue, TemporaryVariable)):
-                    last_var = ir.lvalue
-                    if add_constants[last_var] == None:
-                        add_constants[last_var] = []
-                    if divisions[last_var] == None:
-                        divisions[last_var] = []
-                    divisions[last_var]+=[ir.lvalue]
-                        
-        for ir in node.irs:
-            # check for Constant, has its not hashable (TODO: make Constant hashable)
-            if isinstance(ir, Assignment) and not isinstance(ir.rvalue, Constant):
-                if ir.rvalue in additions:
-                    # Avoid dupplicate. We dont use set so we keep the order of the nodes
-                    if node not in additions[ir.rvalue]:
-                        additions[ir.lvalue] = additions[ir.rvalue] + [node]
-                    else:
-                        additions[ir.lvalue] = additions[ir.rvalue]
-            if is_addition(ir) and divisions[last_var] != None:
-                add_arguments = ir.read if isinstance(ir, Binary) else ir.arguments
-                for r in add_arguments:
-                    if(r == 1):
-                        rurd.append([node])
-                        break
-            if is_division(ir) and last_var != None:
-                #print(additions)
-                add_arguments = ir.read if isinstance(ir, Binary) else ir.arguments
-                nodes = []
-                div_l = ir.lvalue
-                div_r = ir.variable_right
-                flag = True
-                nodes = []
-                for r in add_arguments:
-                    #if not isinstance(r, Constant) and (r in additions):
-                    if (r in additions):
-                        for c in add_constants[r]:
-                            print(c.value)
-                            if(c.value>div_r.value/2 and c.value<=div_r.value):
-                                # Dont add node already present to avoid dupplicate
-                                # We dont use set to keep the order of the nodes
-                                #print("in additions??: "+ r)
-                                flag = False
-                                break
-                        if not flag:
-                            break
-                if flag:
-                    print("RURD: ", (last_var.name))
-                    print(rurd)
-                    print(roundup)
-                if flag and [last_var.name] in roundup and not isinstance(last_var, LocalVariable):
-                    #if not last_var.name in rurd:
-                    #    rurd+=[last_var.name]
-                    #    print("Roundup round down detected: " , (last_var))
-                    #rurd+=[node]
-                    #if node in additions[r]:
-                    #    nodes += [n for n in additions[r] if n not in nodes]
-                    #else:
-                    #    nodes += [n for n in additions[r] + [node] if n not in nodes]
-                    print(node)
-                    rurd.append([node])
-        for son in node.sons:
-            to_explore.add(son)
 
 #USAGE: given a list of irs, typecheck
 #RETURNS: a list of irs that have undefined types
