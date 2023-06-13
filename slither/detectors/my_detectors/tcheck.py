@@ -1049,55 +1049,11 @@ def is_variable(ir):
         return True
     return False
 
-def is_division(ir) -> bool:
-    #print("division found")
-    if isinstance(ir, Binary):
-        if ir.type == BinaryType.DIVISION:
-            return True
-
-    if isinstance(ir, LibraryCall):
-        if ir.function.name.lower() in [
-            "div",
-            "safediv",
-        ]:
-            if len(ir.arguments) == 2:
-                if ir.lvalue:
-                    return True
-    return False
-
-def is_addition(ir) -> bool:
-    #print("addition found")
-    if isinstance(ir, Binary):
-        if ir.type == BinaryType.ADDITION:
-            return True
-    if isinstance(ir, LibraryCall):
-        if ir.function.name.lower() in [
-                "add",
-                "safeadd",
-        ]:
-            if len(ir.arguments) == 2:
-                if ir.lvalue:
-                    return True
-    return False
 
 def is_internalcall(ir):
     if isinstance(ir, InternalCall):
         print("Internal call...")
 
-def is_multiplication(ir):
-    if isinstance(ir, Binary):
-        if ir.type == BinaryType.MULTIPLICATION:
-            return True
-
-    if isinstance(ir, LibraryCall):
-        if ir.function.name.lower() in [
-            "mul",
-            "safemul",
-        ]:
-            if len(ir.arguments) == 2:
-                if ir.lvalue:
-                    return True
-    return False
 
 #def contains_equal(ir):
 #    if isinstance(ir, Binary):
@@ -1297,132 +1253,6 @@ def _tcheck_function(function) -> []:
             fentry.add(son)
     return addback_nodes
 
-def _explore(to_explore, f_results, v_results,  additions, add_constants):  # pylint: disable=too-many-branches
-    explored = set()
-    while to_explore:  # pylint: disable=too-many-nested-blocks
-        node = to_explore.pop()
-
-        if node in explored:
-            continue
-        explored.add(node)
-
-        equality_found = False
-        # List of nodes related to one bug instance
-        node_results = []
-        var_results = []
-        last_var = None
-        print("node changexxxx")
-        for ir in node.irs:
-            # irs are expressions in the form of a = b op c
-            print(ir)
-            is_function(ir)
-            if isinstance(ir, Function):
-                print("Function...")
-                continue
-            if isinstance(ir, Return):
-                print("Return...")
-                continue
-            if isinstance(ir, InternalCall):
-                print("Internal call...")
-                print(ir.function)
-                #print(ir.read)
-                for param in ir.read:
-                    print(param.name)
-                    #print(param.token_type)
-                is_function(ir.function)
-                continue
-            addback = check_type(ir)
-            is_referenceVariable(ir.lvalue)
-            is_constant(ir.lvalue)
-            is_temporary(ir.lvalue)
-            is_space(ir.lvalue)
-            is_state(ir.lvalue)
-            is_local(ir.lvalue)
-            is_tuple(ir.lvalue)
-            is_variable(ir.lvalue)
-            #check_type(ir)
-            if is_addition(ir):
-                print("ADDITION")
-            if isinstance(ir, Assignment):
-                #print("assignment found")
-                last_var = ir.lvalue
-                if add_constants[last_var] == None:
-                    add_constants[last_var] = []
-                #print(last_var)
-            if is_addition(ir):
-                if(isinstance(ir.lvalue, ReferenceVariable)):
-                    print("ir is reference")
-                if(not isinstance(ir.lvalue, TemporaryVariable)):
-                    #print("ir is not temporary")
-                    last_var = ir.lvalue
-                    if add_constants[last_var] == None:
-                        add_constants[last_var] = []
-                if is_division(ir) and last_var != None:
-                    if(not isinstance(ir.lvalue, TemporaryVariable)):
-                        last_var = ir.lvalue
-                        if add_constants[last_var] == None:
-                            add_constants[last_var] = []
-        print("MRA: ", (last_var))
-        for ir in node.irs:
-            # check for Constant, has its not hashable (TODO: make Constant hashable)
-            if isinstance(ir, Assignment) and not isinstance(ir.rvalue, Constant):
-                if ir.rvalue in additions:
-                    # Avoid dupplicate. We dont use set so we keep the order of the nodes
-                    if node not in additions[ir.rvalue]:
-                        additions[ir.lvalue] = additions[ir.rvalue] + [node]
-                    else:
-                        additions[ir.lvalue] = additions[ir.rvalue]
-                    
-            if is_addition(ir):
-                additions[ir.lvalue] = [node]
-                if isinstance(ir.variable_left, Constant):
-                    add_constants[last_var]+=[ir.variable_left]
-                if isinstance(ir.variable_right, Constant):
-                    #print("right var aded")
-                    add_constants[last_var]+=[ir.variable_right]
-            if is_division(ir):
-                #print(additions)
-                
-                add_arguments = ir.read if isinstance(ir, Binary) else ir.arguments
-                nodes = []
-                div_l = ir.lvalue
-                div_r = ir.variable_right
-                for r in add_arguments:
-                    print ("args",  r)
-                    #print("-----")
-                    #print (add_constants[r])
-                    #if not isinstance(r, Constant) and (r in additions):
-                    if (r in additions):
-                        for c in add_constants[r]:
-                            print(c.value)
-                            if(c.value>div_r.value/2 and c.value<=div_r.value):
-                                # Dont add node already present to avoid dupplicate
-                                # We dont use set to keep the order of the nodes
-                                #print("in additions??: "+ r)
-                                if not last_var in var_results:
-                                    print("Round up var added:", (last_var))
-                                    var_results+=[last_var.name]
-                                if node in additions[r]:
-                                    nodes += [n for n in additions[r] if n not in nodes]
-                                else:
-                                    nodes += [n for n in additions[r] + [node] if n not in nodes]
-                                break
-                if nodes:
-                    node_results = nodes
-
-            if isinstance(ir, Binary) and ir.type == BinaryType.EQUAL:
-                equality_found = True
-
-        if node_results:
-            # We do not track the case where the multiplication is done in a require() or assert()
-            # Which also contains a ==, to prevent FP due to the form
-            # assert(a == b * c + a % b)
-            if not (is_assert(node) and equality_found):
-                f_results.append(node_results)
-        if var_results:
-            v_results.append(var_results)
-        for son in node.sons:
-            to_explore.add(son)
 
 #USAGE: typechecks state (global) variables given a contract
 #RETURNS: whether or not the state variable need to be added back.
@@ -1509,27 +1339,6 @@ def _read_state_variables(contract):
         ret += f.state_variables_read
     return ret
 
-def detect_add_b4_div(contract):
-    results = []
-    v_results = []
-    rurd = []
-    for function in contract.functions_declared:
-        print("NEW FUNCTION @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: " + function.name)
-        if not function.entry_point:
-            continue
-        f_results = []
-        #v_results = []
-        additions = defaultdict(list)
-        add_constants = defaultdict(list)
-        _explore({function.entry_point}, f_results, v_results, additions, add_constants)
-        #print("V_RESULTS:______________________________")
-        #for v in v_results:
-        #    print(v)
-        #_exploreNon({function.entry_point}, rurd, v_results, additions, add_constants)
-        for f_result in rurd:
-            
-            results.append((function, f_result))
-    return results
 class tcheck(AbstractDetector):
     """
     Detects round up round down functions

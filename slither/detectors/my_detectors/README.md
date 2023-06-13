@@ -33,3 +33,9 @@ script formula:
 "---"
 
 for state/global variables, function name is: "global"
+
+
+
+next goal:
+
+function call propagation (deadline 6/14/23)
