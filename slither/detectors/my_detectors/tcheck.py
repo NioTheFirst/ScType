@@ -1,7 +1,7 @@
 from collections import defaultdict
 from slither.core.variables.local_variable import LocalVariable
 from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion
+from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion, Member
 from slither.slithir.variables import Constant, ReferenceVariable, TemporaryVariable, LocalIRVariable, StateIRVariable, TupleVariable
 from slither.core.variables.variable import Variable
 from slither.core.variables.state_variable import StateVariable
@@ -577,18 +577,19 @@ def type_ref(ir)->bool:
     temp = ir.lvalue.name
     ir.lvalue.change_name('ref_'+str(function_ref))
     #ir is a 'member' class
-    print("left value name: " + str(ir.variable_left.non_ssa_version.name))
-    print("right value name: "+str(ir.variable_right))
+    if(isinstance(ir, Member)):
+        print("left value name: " + str(ir.variable_left.non_ssa_version.name))
+        print("right value name: "+str(ir.variable_right))
     
-    #test for 'decimal' propagation
-    if(str(ir.variable_right) == "decimals"):
-        #a = b.decimals
-        prop_decimals(ir.lvalue, ir.variable_left)
-        return
-    elif(str(ir.variable_left.non_ssa_version.name) == "decimals"):
-        #a = decimals[b]
-        prop_decimals(ir.lvalue, ir.variable_right)        
-        return
+        #test for 'decimal' propagation
+        if(str(ir.variable_right) == "decimals"):
+            #a = b.decimals
+            prop_decimals(ir.lvalue, ir.variable_left)
+            return
+        elif(str(ir.variable_left.non_ssa_version.name) == "decimals"):
+            #a = decimals[b]
+            prop_decimals(ir.lvalue, ir.variable_right)        
+            return
     querry_type(ir.lvalue)
     ir.lvalue.change_name(temp)
     function_ref+=1
@@ -1362,7 +1363,8 @@ class tcheck(AbstractDetector):
         global type_file
         global line_no
         for contract in self.contracts:
-            #TODO
+            #TODO: implement x contract function calls
+            #create hashtable with function name and contract name
             print("contract name: "+contract.name)
             print("WARNING!!!!")
             type_info_name = contract.name+"_types.txt"
