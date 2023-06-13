@@ -1045,7 +1045,7 @@ def type_bin_le(dest, lir, rir) -> bool:
 
 def is_variable(ir):
     if isinstance(ir, Variable):
-        #print("This is a variable: "+ir.name.lower())
+        #print("This is a variable: "+ir.name.lower()+" " + str(ir.type))
         #print_token_type(ir)
         return True
     return False
