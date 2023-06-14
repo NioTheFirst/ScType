@@ -8,7 +8,7 @@ import "./interfaces/iVADER.sol";
 import "./interfaces/iPOOLS.sol";
 import "./interfaces/iSYNTH.sol";
 
-import "hardhat/console.sol";
+//import "hardhat/console.sol";
 
 contract Router {
 
