@@ -105,6 +105,8 @@ def print_token_type(ir):
         print(d)
     print("Norm:")
     print(ir.norm)
+    if(ir.link_function != None):
+        print("Linked function: " + ir.link_function)
 
 #USAGE: prints a param_cache
 #RETURNS: nothing
@@ -120,27 +122,33 @@ def print_param_cache(param_cache):
 #RETURNS: retursn a param_cache
 def function_call_param_cache(ir):
     #assumes types have been assigned (any undefined types must be resolved previously)
-    param_cache = []
-    for param in ir.read:
-        num = param.token_typen
-        den = param.token_typed
-        norm = param.norm
-        param_type = [num, den, norm]
-        param_cache.append(param_type)
-    return param_cache
+    return(gen_param_cache(ir.read))
 
 #USAGE: given a function, generate a param_cache
 #RETURNS: returns a param_cache
 def function_param_cache(function):
     #assumes types have already been assigned
+    return(gen_param_cache(function.parameters))
+
+#USAGE: given a hlc function, generate a param_cache
+#RETURNS: returns a param_cache
+def function_hlc_param_cache(function):
+    #assumes types have already been assigned
+    return(gen_param_cache(function.arguments))
+
+#USAGE: given a list of parameters, return a param_cache (merge function_param_cache, function_call param_cache, and function_hlc_param_cache
+#RETURNS: a para_cache
+def gen_param_cache(param_list):
     param_cache = []
-    for param in function.parameters:
+    for param in param_list:
         num = param.token_typen
         den = param.token_typed
         norm = param.norm
-        param_type = [num, den, norm]
+        link_function = param.link_function
+        param_type = [num, den, norm, link_function]
         param_cache.append(param_type)
     return param_cache
+
 
 #USAGE: given a param_cache, decide whether or not to add it to the parameter_cache
 #        of a function
@@ -501,8 +509,8 @@ def copy_pc_token_type(src, dest):
         dest.add_token_typen(n)
     for d in src[1]:
         dest.add_token_typed(d)
-    if(src.link_function != None):
-        dest.link_function = src.link_function
+    if(src[3] != None):
+        dest.link_function = src[3]
 
 
 def compare_token_type(src, dest):
@@ -622,15 +630,38 @@ def querry_fc(ir) -> int:
         return 0
     dest = ir.destination
     func_name = ir.function.name
-    if(str(dest.type) != "address"):
-        return 0
-    cont_name = ir.link_function
+    #print("dest : "+ dest.name + " type: " + str(dest.type))
+    #if(str(dest.type) != "address"):
+    #    return 0
+    cont_name = dest.link_function
     function = get_cf_pair(cont_name, func_name)
-    if(function == None):
-        return 0
-    if(type_fc(ir)):
-        return 2
-    return 1
+    #function is the fentry point
+    for param in ir.arguments:
+        print(param)
+        init_var(param)
+        if(is_constant(param)):
+            assign_const(param)
+        elif(is_type_undef(param)):
+            #undefined type
+            return 1
+    #generate param cache
+    new_param_cache = function_hlc_param_cache(ir)
+    print("High level cal param_cache")
+    print_param_cache(new_param_cache)
+    added = add_param_cache(function, new_param_cache)
+    if(added):
+        print("added")
+        addback = _tcheck_function_call(function, new_param_cache)
+        #deal with return value (single) TODO
+        for x in function.returns_ssa:
+            print(x.name)
+            print("&&")
+        if(len(function.returns_ssa)):
+            print(function.returns_ssa[0].name)
+            type_asn(ir.lvalue, function.returns_ssa[0])
+        if(len(addback) != 0):
+            return 1
+    return 2
 
 #USAGE: typecheck for high-level call (i.e. iERC20(address).balanceof())
 #RETURNS: whether or not the high-level call node should be returned (should always return FALSE)
@@ -1375,7 +1406,7 @@ def _mark_functions(contract):
             continue
         fentry = {function.entry_point}
         #add contract-function pair
-        add_cf_pair(contract.name, function.name, fentry)
+        add_cf_pair(contract.name, function.name, function)
         contains_bin = False
         while fentry:
             node = fentry.pop()
