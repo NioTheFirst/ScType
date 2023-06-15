@@ -43,12 +43,14 @@ def add_hash(function_name, var_name, num, den, norm, lf):
 def add_cf_pair(contract_name, function_name, function):
     composite_key = contract_name + ',' + function_name
     values = (function)
+    print("added cf-pair:" + composite_key)
     contract_function[composite_key] = values
 
 #USAGE: returns the ir for a contract, function pair
 #RETURNS: the specified ir, if it doesn't exist, None is returned
 def get_cf_pair(contract_name, function_name):
     composite_key = contract_name + ',' + function_name
+    print("searching for: " + composite_key)
     if composite_key in contract_function:
         return contract_function[composite_key]
     else:
@@ -364,6 +366,10 @@ def querry_type(ir):
     input_str = input()
     input_int = int(input_str)
     ir.norm = input_int
+    if(str(ir.type) == "address"):
+        print("Define Linked Contract Name for \"" + uxname + "\": ")
+        input_str = input()
+        ir.link_function = input_int
     print(ir.token_type)
 
 def is_referenceVariable(ir):
@@ -473,7 +479,8 @@ def copy_token_type(src, dest):
         dest.add_token_typen(n)
     for d in src.token_typed:
         dest.add_token_typed(d)
-    
+    if(src.link_function != None):
+        dest.link_function = src.link_function
 
 #USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
 #RETURNS: null
@@ -482,6 +489,8 @@ def copy_inv_token_type(src, dest):
         dest.add_token_typed(n)
     for d in src.token_typed:
         dest.add_token_typen(d)
+    if(src.link_function != None):
+        dest.link_function = src.link_function
 
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
@@ -492,6 +501,9 @@ def copy_pc_token_type(src, dest):
         dest.add_token_typen(n)
     for d in src[1]:
         dest.add_token_typed(d)
+    if(src.link_function != None):
+        dest.link_function = src.link_function
+
 
 def compare_token_type(src, dest):
     seen = []
@@ -599,6 +611,27 @@ def type_upk(ir) ->bool:
     querry_type(lval)
     return False
 
+#USAGE: connects a high-level call with an internal call (cross contract
+#       function call where both contracts are defined)
+#RETURNS: whether or not the function is detected (0)
+#         whether or not the function has any undef types (1)
+#         whether or not the function successfully passes (2)
+def querry_fc(ir) -> int:
+    print("WIP")
+    if(not (isinstance(ir, HighLevelCall))):
+        return 0
+    dest = ir.destination
+    func_name = ir.function.name
+    if(str(dest.type) != "address"):
+        return 0
+    cont_name = ir.link_function
+    function = get_cf_pair(cont_name, func_name)
+    if(function == None):
+        return 0
+    if(type_fc(ir)):
+        return 2
+    return 1
+
 #USAGE: typecheck for high-level call (i.e. iERC20(address).balanceof())
 #RETURNS: whether or not the high-level call node should be returned (should always return FALSE)
 def type_hlc(ir) ->bool:
@@ -606,6 +639,7 @@ def type_hlc(ir) ->bool:
     global function_hlc
     print("High Call: "+str(ir.function_name))
     print("func name:" + ir.function.name)
+    print("other func name:" + str(ir.function_name))
     param = ir.arguments
     #for p in param:
     #    print(p.name)
@@ -622,6 +656,10 @@ def type_hlc(ir) ->bool:
         return type_bin_div(ir.lvalue, param[0], param[1])
     temp = ir.lvalue.name
     print(temp)
+    res = querry_fc(ir)
+    if(res == 2):
+        return False
+        
     x = "hlc_"+str(function_hlc)
     ir.lvalue.change_name(x)
     print(ir.lvalue.name)
@@ -1327,7 +1365,7 @@ def _tcheck_contract_state_var(contract):
         if(is_type_undef(state_var)):
             querry_type(state_var)
 
-#USAGE: labels which contracts that should be read (contains binary operations)
+#USAGE: labels which contracts that should be read (contains binary operations) also adds contract-function pairs
 #RTURNS: NULL
 def _mark_functions(contract):
     for function in contract.functions_declared:
@@ -1336,6 +1374,8 @@ def _mark_functions(contract):
             print("[x] Not visible ")
             continue
         fentry = {function.entry_point}
+        #add contract-function pair
+        add_cf_pair(contract.name, function.name, fentry)
         contains_bin = False
         while fentry:
             node = fentry.pop()
@@ -1369,8 +1409,8 @@ def _tcheck_contract(contract):
     #contract is the contract passed in by Slither
     global errors
     all_addback_nodes = []
-    _mark_functions(contract)
-    _tcheck_contract_state_var(contract)
+    #_mark_functions(contract)
+    #_tcheck_contract_state_var(contract)
     print("lolcheck?")
     for function in contract.functions_declared:
         print("Reading Function: " + function.name)
@@ -1446,6 +1486,10 @@ class tcheck(AbstractDetector):
                 user_type = True
             if(not (check_contract(contract.name))):
                 continue
+            #mark functions
+            _mark_functions(contract)
+            #resolve global variables
+            _tcheck_contract_state_var(contract)
             errors = _tcheck_contract(contract)
             #print("xxxxxx")
             if errors:
