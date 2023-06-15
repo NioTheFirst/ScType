@@ -639,6 +639,8 @@ def querry_fc(ir) -> int:
     #    return 0
     cont_name = dest.link_function
     function = get_cf_pair(cont_name, func_name)
+    if(function == None):
+        return 0
     #function is the fentry point
     for param in ir.arguments:
         print(param)
