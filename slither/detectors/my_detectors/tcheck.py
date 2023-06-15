@@ -41,6 +41,8 @@ def add_hash(function_name, var_name, num, den, norm, lf):
 #USAGE: adds a contract, function pair
 #RETURNS: NULL
 def add_cf_pair(contract_name, function_name, function):
+    if(contract_name == None or function_name == None):
+        return
     composite_key = contract_name + ',' + function_name
     values = (function)
     print("added cf-pair:" + composite_key)
@@ -49,6 +51,8 @@ def add_cf_pair(contract_name, function_name, function):
 #USAGE: returns the ir for a contract, function pair
 #RETURNS: the specified ir, if it doesn't exist, None is returned
 def get_cf_pair(contract_name, function_name):
+    if(contract_name == None or function_name == None):
+        return
     composite_key = contract_name + ',' + function_name
     print("searching for: " + composite_key)
     if composite_key in contract_function:
