@@ -382,7 +382,7 @@ def querry_type(ir):
     if(str(ir.type) == "address"):
         print("Define Linked Contract Name for \"" + uxname + "\": ")
         input_str = input()
-        ir.link_function = input_int
+        ir.link_function = input_str
     print(ir.token_type)
 
 def is_referenceVariable(ir):
