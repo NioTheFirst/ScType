@@ -227,6 +227,7 @@ def parse_type_file(t_file):
             #_line[4] = denominator type (assume one)
             #_line[5] = normalization amt (power of 10)
             #_line[6] = (Optional) linked function if is address
+            print(line)
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
