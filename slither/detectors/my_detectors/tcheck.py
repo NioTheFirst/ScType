@@ -9,6 +9,7 @@ from slither.core.declarations.function import Function
 from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
 import linecache
+import tcheck_parse
 
 user_type = False
 type_file = ""
@@ -41,60 +42,37 @@ def add_hash(function_name, var_name, num, den, norm, lf):
 #USAGE: adds a contract, function pair
 #RETURNS: NULL
 def add_cf_pair(contract_name, function_name, function):
-    if(contract_name == None or function_name == None):
-        return
-    composite_key = contract_name + ',' + function_name
-    values = (function)
-    print("added cf-pair:" + composite_key)
-    contract_function[composite_key] = values
+    tcheck_parser.add_in_func(contract_name, function_name, function)
 
 #USAGE: returns the ir for a contract, function pair
 #RETURNS: the specified ir, if it doesn't exist, None is returned
 def get_cf_pair(contract_name, function_name):
-    if(contract_name == None or function_name == None):
-        return
-    composite_key = contract_name + ',' + function_name
-    print("searching for: " + composite_key)
-    if composite_key in contract_function:
-        return contract_function[composite_key]
-    else:
-        return None
+    return tcheck_parser.get_in_func_ptr(contract_name, function_name)
 
 #USAGE: given a function name and a var name, return the token pair
 #RETURNS: tuple holding the token pair
 def get_hash(function_name, var_name):
-    composite_key = function_name + '_' + var_name
-    if composite_key in type_hashtable:
-        return type_hashtable[composite_key]
-    else:
-        print("Variable: " + var_name + " not provided in Function: " + function_name)
-        return None
+    return tcheck_parser.get_var_type_tuple(function_name, var_name)
 
 #USAGE: bar a function from being typechecked
 #RETURNS: NULL
 def bar_function(function_name):
-    function_bar[function_name] = True
+    tcheck_parser.bar_function(function_name)
 
 #USAGE: returns if a function should be typechecked
 #RETURNS bool
 def check_bar(function_name):
-    if(function_name in function_bar):
-        print("[x] " + function_name + " barred")
-        return True
-    return False
+    return tcheck_parser.check_function(function_name)
 
 #USAGE: selects a  contract to typecheck
 #RETURNS: NULL
 def run_contract(contract_name):
-    contract_run[contract_name] = True
+    tcheck_parser.allow_contract(contract_name)
 
 #USAGE: returns if a function should be typechecked
 #RETURNS bool
 def check_contract(contract_name):
-    global user_type
-    #if(user_type):
-        #return True
-    if(contract_name in contract_run):
+    if(tcheck_parser.check_contract(contract_name)):
         print("[*] " + contract_name + " run")
         return True
     print("[x] " + contract_name + " not run")
@@ -211,89 +189,8 @@ def add_param_cache(function, new_param_cache):
 #num
 #den
 def parse_type_file(t_file):
-    with open (t_file, 'r') as type_file:
-        lines = []
-        counter = 0
-        temp_counter = 0
-        #TODO: remove the complicate line stuff, turn it into a,b,c,d and split by ,
-        #Also TODO: provide a function_name for addresses
-        for line in type_file:
-            _line = line.split(',')
-            #NORMAL INPUT
-            #_line[0] = [t]
-            #_line[1] = container
-            #_line[2] = var name
-            #_line[3] = numerator type (assume one)
-            #_line[4] = denominator type (assume one)
-            #_line[5] = normalization amt (power of 10)
-            #_line[6] = (Optional) linked function if is address
-            print(line)
-            if(_line[0].strip() == "[t]"):
-                f_name = _line[1].strip()
-                v_name = _line[2].strip()
-                try:
-                    num = int(_line[3].strip())
-                    den = int(_line[4].strip())
-                    norm = int(_line[5].strip())
-                    l_name = None
-                    if(len(_line) == 7):
-                        l_name = _line[6].strip()
-                    add_hash(f_name, v_name, num, den, norm, l_name)
-                except ValueError:
-                    print("Invalid Value read")
-                continue
-            #BAR FUNCTION
-            #_line[0] = [xf]
-            #_line[1] = function name
-            if(_line[0].strip() == "[xf]"):
-                f_name = _line[1].strip()
-                bar_function(f_name)
-                continue
-            #ALLOW CONTRACT
-            #_line[0] = [*c]
-            #_line[1] = contract name
-            if(_line[0].strip() == "[*c]"):
-                c_name = _line[1].strip()
-                run_contract(c_name)
-                continue
-            """
-            #print(line)
-            #print(counter)
-            if(line.strip() == "[x]bar"):
-                temp_counter = counter
-                counter = -1
-                continue
-            if(counter == -1):
-                bar_function(line.strip())
-                counter = temp_counter
-                continue
-            if(line.strip() == "[*]run"):
-                temp_counter = counter
-                counter = -2
-                continue
-            if(counter == -2):
-                run_contract(line.strip())
-                counter = temp_counter
-                continue
-            lines.append(line)
-            counter+=1
-            if(counter == 5):
-                counter = 0
-                function_name = lines[0].strip()
-                var_name = lines[1].strip()
-                try:
-                    num = int(lines[2].strip())
-                    den = int(lines[3].strip())
-                    if(lines[4].strip() == "fill norm"):
-                        norm = -101
-                    else:
-                        norm = int(lines[4].strip())
-                    add_hash(function_name, var_name, num, den, norm)
-                    print("xcxcxc" + var_name)
-                except ValueError:
-                    print("Invalid Value read")
-                lines.clear()
-            """
+    tcheck_parser.parse_type_file(t_file)
+
 #USAGE: given a variable ir, return the type tuple
 #RETURNS: type tuple
 def read_type_file(ir):
@@ -303,36 +200,7 @@ def read_type_file(ir):
         var_name = ir.tname
     #print("read function name: " + function_name)
     #print("read parent name: " + ir.name)
-    return get_hash(function_name, var_name)
-
-#USAAGE: returns the number of the next type from the provided type_file (automated usage)
-#RETURNS: the type of the next token
-def get_next_token_type(t_file):
-    global line_no
-    #print(line_no)
-    
-    try:
-        line = linecache.getline(t_file, line_no)
-        if line:
-            #print(f"Line {line_number}: {line.strip()}")
-            line = line.strip()
-            try:
-                integer_number = int(line)
-                line_no+=1
-                return integer_number
-                # Continue with the code that uses the integer number
-            except ValueError:
-                print(line)
-                line_no+=1
-                return get_next_token_type(t_file)
-                # Handle the error gracefully or take appropriate action
-        else:
-            print(f"Line {line_no} not found in the file.")
-            return(-1000)
-    except FileNotFoundError:
-        print("File not found.")
-        return(-1000)
-        # Handle the error gracefully or take appropriate action
+    return tcheck_parser.get_var_type_tuple(function_name, var_name)
 
 #USAGE: querry the user for a type
 #RETURNS: N/A
