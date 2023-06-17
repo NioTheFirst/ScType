@@ -165,7 +165,7 @@ def bar_function(function_name):
     barred_functions[function_name] = True
 
 def check_function(function_name):
-    if(function_name in barred_function):
+    if(function_name in barred_functions):
         return True
     return False
 
