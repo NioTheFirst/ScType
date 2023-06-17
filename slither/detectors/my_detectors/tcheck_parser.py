@@ -137,7 +137,7 @@ def add_ref(ref_name, type_tuple):
     key = ref_name
     ref_type_hash[key] = type_tuple
 
-def get_var_type_tuple(ref_name):
+def get_ref_type_tuple(ref_name):
     key = ref_name
     if(key in ref_type_hash):
         return ref_type_hash[key]
