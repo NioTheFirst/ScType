@@ -9,6 +9,7 @@ from slither.core.declarations.function import Function
 from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
 import linecache
+import os
 import sys
 script_dir = os.path.dirname( __file__ )
 sys.path.append(script_dir)
