@@ -46,7 +46,7 @@ def parse_type_file(t_file):
                     l_name = None
                     if(len(_line) == 7):
                         l_name = _line[6].strip()
-                    add_var_type_hash(f_name, v_name, (num, den, norm, l_name))
+                    add_var(f_name, v_name, (num, den, norm, l_name))
                 except ValueError:
                     print("Invalid Value read")
                 continue
@@ -92,7 +92,7 @@ def parse_type_file(t_file):
                     norm = int(_line[4].strip)
                     if(len(_line) == 6):
                         lf = _line[5]
-                add_ref_type_tuple(ref_name, (num, denom, norm))
+                add_ref(ref_name, (num, denom, norm))
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
