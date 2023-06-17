@@ -54,7 +54,7 @@ def add_cf_pair(contract_name, function_name, function):
 #RETURNS: the specified ir, if it doesn't exist, None is returned
 def get_cf_pair(contract_name, function_name):
     if(contract_name == None or function_name == None):
-        return False
+        return None
     return tcheck_parser.get_in_func_ptr(contract_name, function_name)
 
 #USAGE: given a function name and a var name, return the token pair
