@@ -9,7 +9,7 @@ from slither.core.declarations.function import Function
 from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
 import linecache
-import tcheck_parse
+import tcheck_parser
 
 user_type = False
 type_file = ""
