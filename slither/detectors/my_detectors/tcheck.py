@@ -631,13 +631,11 @@ def type_ref(ir)->bool:
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left)):
         copy_token_type(ir.variable_left, ir.lvalue)
-        print_token_type(ir.lvalue)
-        print("x")
         return False
 
     #check if the index of the variable has a type that is not a constant
     if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
-        copy_token_type(ir.lvalue, ir.variable_right)
+        copy_token_type(ir.variable_right, ir.lvalue)
         
         return False
 
