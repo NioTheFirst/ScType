@@ -92,7 +92,7 @@ def parse_type_file(t_file):
                     norm = int(_line[4].strip())
                     if(len(_line) == 6):
                         lf = _line[5]
-                add_ref(ref_name, (num, denom, norm))
+                add_ref(ref_name, ([num], [denom], [norm]))
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
