@@ -70,7 +70,7 @@ def parse_type_file(t_file):
                 f_name = _line[2].strip()
                 num = [-1]
                 denom = [-1]
-                norm = [0]
+                norm = 0
                 lf = None
                 if(len(_line) > 3):
                     num = extract_integers(_line[3])

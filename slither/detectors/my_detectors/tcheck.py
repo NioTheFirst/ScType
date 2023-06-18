@@ -566,6 +566,7 @@ def querry_fc(ir) -> int:
 
     written_func_ret = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_ret != None):
+        print("COPIED")
         copy_token_tuple(ir.lvalue, written_func_ret)
         return 2
     return 0
