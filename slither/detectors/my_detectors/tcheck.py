@@ -57,6 +57,17 @@ def get_cf_pair(contract_name, function_name):
         return None
     return tcheck_parser.get_in_func_ptr(contract_name, function_name)
 
+#USAGE: adds a referecne
+#RETURNS: NULL
+def add_ref(ref_name, type_tuple):
+    if(ref_name != None):
+        tcheck_parser.add_ref(ref_name, type_tuple)
+
+#USAGE: gets the type of a reference
+#RETURNS:
+def get_ref(ref_name):
+    return tcheck_parser.get_ref_type_tuple(ref_name)
+
 #USAGE: given a function name and a var name, return the token pair
 #RETURNS: tuple holding the token pair
 def get_hash(function_name, var_name):
@@ -616,7 +627,25 @@ def type_hlc(ir) ->bool:
 #USAGE: typechecks for references (i.e. a[0])
 #RETURNS: always False
 def type_ref(ir)->bool:
-    global function_ref
+    #check if the right value already has a type?
+    if not(is_undef(ir.variable_left)):
+        copy_token_type(ir.lvalue, ir.variable_left)
+        return False
+
+    #check if the index of the variable has a type that is not a constant
+    if not(is_undef(ir.variable_right) or is_constant(ir.variable_right)):
+        copy_token_type(ir.lvalue, ir.variable_right)
+        return False
+
+    #check the parser for a pre-user-defined type
+    ref_tuple = get_ref(ir.variable_left.name)
+    if(ref_tuple != None):
+        copy_token_tuple(ir.lvalue, ref_tuple)
+
+    #no other options, just querry the user (try not to let this happen)
+    querry_type(ir.lvalue)
+
+    """global function_ref
     print("Ref: "+str(ir.lvalue.name))
     temp = ir.lvalue.name
     ir.lvalue.change_name('ref_'+str(function_ref))
@@ -638,7 +667,7 @@ def type_ref(ir)->bool:
     querry_type(ir.lvalue)
     ir.lvalue.change_name(temp)
     function_ref+=1
-    return False
+    return False"""
 
 #USAGE: fills the corresponding ir with the target value's types and decimals
 #RETURNS: Null
