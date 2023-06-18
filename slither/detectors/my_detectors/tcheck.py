@@ -534,7 +534,7 @@ def type_included_hlc(ir, dest, function):
     for param in ir.arguments:
         print(param)
         init_var(param)
-        if(is_constant(param)):
+        if(is_type_const(param)):
             assign_const(param)
         elif(is_type_undef(param)):
             #undefined type
@@ -628,12 +628,12 @@ def type_hlc(ir) ->bool:
 #RETURNS: always False
 def type_ref(ir)->bool:
     #check if the right value already has a type?
-    if not(is_undef(ir.variable_left)):
+    if not(is_type_undef(ir.variable_left)):
         copy_token_type(ir.lvalue, ir.variable_left)
         return False
 
     #check if the index of the variable has a type that is not a constant
-    if not(is_undef(ir.variable_right) or is_constant(ir.variable_right)):
+    if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
         copy_token_type(ir.lvalue, ir.variable_right)
         return False
 
