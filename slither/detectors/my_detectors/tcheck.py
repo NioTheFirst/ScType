@@ -613,7 +613,7 @@ def type_ref(ir)->bool:
     print("Ref: "+str(ir.lvalue.name))
     temp = ir.lvalue.name
     ir.lvalue.change_name('ref_'+str(function_ref))
-    print("points to: "+ir.lvalue.points_to)
+    print("points to: "+ir.lvalue.points_to.name)
     #ir is a 'member' class
     if(isinstance(ir, Member)):
         print("left value name: " + str(ir.variable_left.non_ssa_version.name))
