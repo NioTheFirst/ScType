@@ -80,6 +80,8 @@ def run_contract(contract_name):
 #USAGE: returns the type tuple for an external function that has been included
 #RETURNS: external function type tuple
 def get_external_type_tuple(contract_name, function_name, parameters):
+    if(contract_name ==None or function_name == None):
+        return None
     return tcheck_parser.get_ex_func_type_tuple(contract_name, function_name, parameters)
 
 
