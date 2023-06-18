@@ -627,6 +627,7 @@ def type_hlc(ir) ->bool:
 #USAGE: typechecks for references (i.e. a[0])
 #RETURNS: always False
 def type_ref(ir)->bool:
+    print_token_type(ir.variable_left)
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left)):
         copy_token_type(ir.lvalue, ir.variable_left)
