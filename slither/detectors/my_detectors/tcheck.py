@@ -642,6 +642,7 @@ def type_ref(ir)->bool:
     ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
         copy_token_tuple(ir.lvalue, ref_tuple)
+        return False
 
     #no other options, just querry the user (try not to let this happen)
     querry_type(ir.lvalue)
