@@ -1,7 +1,7 @@
 from collections import defaultdict
 from slither.core.variables.local_variable import LocalVariable
 from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion, Member
+from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion, Member, Index
 from slither.slithir.variables import Constant, ReferenceVariable, TemporaryVariable, LocalIRVariable, StateIRVariable, TupleVariable
 from slither.core.variables.variable import Variable
 from slither.core.variables.state_variable import StateVariable
@@ -556,6 +556,7 @@ def querry_fc(ir) -> int:
     func_name = ir.function.name
     cont_name = dest.link_function
     #TODO
+    print("hlc contract name: " + cont_name + " func_name: "+ func_name)
     included_func = get_cf_pair(cont_name, func_name)
     if(included_func != None):
         if(type_included_hlc(ir, dest, included_func)):
