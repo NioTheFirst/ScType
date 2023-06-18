@@ -490,6 +490,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, EventCall):
         return False
     elif isinstance(ir, Index):
+        print("INDEX")
         addback = type_ref(ir)
         return False
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
