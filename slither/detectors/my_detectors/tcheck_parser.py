@@ -87,9 +87,9 @@ def parse_type_file(t_file):
                 norm = [0]
                 lf = None
                 if(len(_line) > 2):
-                    num = int(_line[2].strip)
-                    denom = int(_line[3].strip)
-                    norm = int(_line[4].strip)
+                    num = int(_line[2].strip())
+                    denom = int(_line[3].strip())
+                    norm = int(_line[4].strip())
                     if(len(_line) == 6):
                         lf = _line[5]
                 add_ref(ref_name, (num, denom, norm))
