@@ -628,6 +628,11 @@ def type_hlc(ir) ->bool:
 #RETURNS: always False
 def type_ref(ir)->bool:
     print_token_type(ir.variable_left)
+    #check for boolean
+    if(str(ir.lvalue.type) == "bool"):
+        assign_const(ir.lvalue)
+        return False
+
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left)):
         copy_token_type(ir.variable_left, ir.lvalue)
