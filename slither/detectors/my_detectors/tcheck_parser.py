@@ -78,7 +78,7 @@ def parse_type_file(t_file):
                     norm = int(_line[5]).strip()
                     if(len(_line) == 7):
                         lf = _line[6]
-                add_ex_type_tuple(c_name, f_name, (num, denom, norm, lf))
+                add_ex_type(c_name, f_name, (num, denom, norm, lf))
             #REFERENCE TYPE
             if(_line[0].strip() == "[tref]"):
                 ref_name = _line[1].strip()
