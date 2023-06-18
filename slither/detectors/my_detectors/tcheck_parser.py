@@ -75,7 +75,7 @@ def parse_type_file(t_file):
                 if(len(_line) > 3):
                     num = extract_integers(_line[3])
                     denom = extract_integers(_line[4])
-                    norm = int(_line[5]).strip()
+                    norm = int(_line[5].strip())
                     if(len(_line) == 7):
                         lf = _line[6]
                 add_ex_func(c_name, f_name, (num, denom, norm, lf))
