@@ -638,7 +638,8 @@ def type_ref(ir)->bool:
         return False
 
     #check the parser for a pre-user-defined type
-    ref_tuple = get_ref(ir.variable_left.name)
+    print(ir.variable_left.name)
+    ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
         copy_token_tuple(ir.lvalue, ref_tuple)
 
