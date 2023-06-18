@@ -77,6 +77,12 @@ def check_bar(function_name):
 def run_contract(contract_name):
     tcheck_parser.allow_contract(contract_name)
 
+#USAGE: returns the type tuple for an external function that has been included
+#RETURNS: external function type tuple
+def get_external_type_tuple(contract_name, function_name, parameters):
+    return tcheck_parser.get_ex_func_type_tuple(contract_name, function_name, parameters)
+
+
 #USAGE: returns if a function should be typechecked
 #RETURNS bool
 def check_contract(contract_name):
@@ -260,6 +266,7 @@ def querry_type(ir):
         input_str = input()
         ir.link_function = input_str
     print(ir.token_type)
+    #add to parser file? TODO Priority: Low
 
 def is_referenceVariable(ir):
     if not(is_variable(ir)):
@@ -351,13 +358,16 @@ def assign_err(ir):
     ir.token_typen.clear()
     ir.token_typed.clear()
     assign_const(ir)
-"""
-#USAGE: assigns an IR to the non_token type (0)
-#       ex: True, False, "hello"
-#RETURNS: NULL
-def assign_non(ir):
-    if(len(ir.token_typen) == 1 and ir.token_typen[0] == 0 and len(ir.token_typed) == 0):
-"""
+
+#USAGE: copies all the types from a type tuple to an ir node
+#RETURNS: null
+def copy_token_tuple(ir, tt):
+    for n in tt[0]:
+        ir.add_token_typen(n)
+    for d in tt[1]:
+        ir.add_token_typed(d)
+    ir.norm = tt[2]
+    ir.link_function = tt[3]
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
@@ -500,24 +510,9 @@ def type_upk(ir) ->bool:
     querry_type(lval)
     return False
 
-#USAGE: connects a high-level call with an internal call (cross contract
-#       function call where both contracts are defined)
-#RETURNS: whether or not the function is detected (0)
-#         whether or not the function has any undef types (1)
-#         whether or not the function successfully passes (2)
-def querry_fc(ir) -> int:
-    print("WIP")
-    if(not (isinstance(ir, HighLevelCall))):
-        return 0
-    dest = ir.destination
-    func_name = ir.function.name
-    #print("dest : "+ dest.name + " type: " + str(dest.type))
-    #if(str(dest.type) != "address"):
-    #    return 0
-    cont_name = dest.link_function
-    function = get_cf_pair(cont_name, func_name)
-    if(function == None):
-        return 0
+#USAGE: typechecks an included external call
+#RETURNS: success of typecheck
+def type_included_hlc(ir, dest, function):
     #function is the fentry point
     for param in ir.arguments:
         print(param)
@@ -546,6 +541,32 @@ def querry_fc(ir) -> int:
             return 1
     return 2
 
+#USAGE: connects a high-level call with an internal call (cross contract
+#       function call where both contracts are defined)
+#RETURNS: whether or not the function is detected (0)
+#         whether or not the function has any undef types (1)
+#         whether or not the function successfully passes (2)
+def querry_fc(ir) -> int:
+    print("WIP")
+    if(not (isinstance(ir, HighLevelCall))):
+        return 0
+    dest = ir.destination
+    func_name = ir.function.name
+    cont_name = dest.link_function
+    #TODO
+    included_func = get_cf_pair(cont_name, func_name)
+    if(included_func != None):
+        if(type_included_hlc(ir, dest, included_func)):
+            return 1
+        return 2
+
+    written_func_ret = get_external_type_tuple(cont_name, func_name, ir.arguments)
+    if(written_func_ret != None):
+        copy_token_tuple(ir.lvalue, written_func_ret)
+        return 2
+    return 0
+        
+
 #USAGE: typecheck for high-level call (i.e. iERC20(address).balanceof())
 #RETURNS: whether or not the high-level call node should be returned (should always return FALSE)
 def type_hlc(ir) ->bool:
@@ -570,6 +591,7 @@ def type_hlc(ir) ->bool:
         return type_bin_div(ir.lvalue, param[0], param[1])
     temp = ir.lvalue.name
     print(temp)
+    #typecheck abnormal function calls
     res = querry_fc(ir)
     if(res == 2):
         return False

@@ -115,6 +115,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
         num_trans = func_tuple[0]
         den_trans = func_tuple[1]
         norm = func_tuple[2]
+        lf = func_tuple[3]
         ret_num = []
         ret_den = []
         for num in num_trans:
@@ -129,7 +130,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                 ret_den.append(n)
             for d in cur_param.token_typed:
                 ret_num.append(d)
-        ret_type_tuple = (ret_num, ret_den, norm)
+        ret_type_tuple = (ret_num, ret_den, norm, lf)
         return ret_type_tuple
     return None
 
