@@ -630,8 +630,8 @@ def type_ref(ir)->bool:
     print_token_type(ir.variable_left)
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left)):
-        convert_ssa(ir.lvalue)
         copy_token_type(ir.lvalue, ir.variable_left)
+        print_token_type(ir.lvalue)
         print("x")
         return False
 
