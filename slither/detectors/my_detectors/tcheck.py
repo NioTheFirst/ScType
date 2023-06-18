@@ -489,10 +489,13 @@ def check_type(ir) -> bool:
         print("Phi")
     elif isinstance(ir, EventCall):
         return False
-    elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
-        #Reference
+    elif isinstance(ir, Index):
         addback = type_ref(ir)
         return False
+    #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
+    #    #Reference
+    #    addback = type_ref(ir)
+    #    return False
     #DEBUG
     if ir.lvalue and is_variable(ir.lvalue):
         print("[i]Type for "+ir.lvalue.name)
