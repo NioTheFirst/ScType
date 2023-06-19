@@ -504,6 +504,10 @@ def check_type(ir) -> bool:
         print("INDEX")
         addback = type_ref(ir)
         return False
+    elif isinstance(ir, Member):
+        print("MEMBER")
+        addback = type_member(ir) 
+        return False
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
     #    #Reference
     #    addback = type_ref(ir)
@@ -622,6 +626,15 @@ def type_hlc(ir) ->bool:
     querry_type(ir.lvalue)
     ir.lvalue.change_name(temp)
     function_hlc+=1
+    return False
+
+#USAGE: typechecks Members (i.e. a.b or a.b())
+#RETURNS: the type for a (temporary handling, will fix if any issues)
+def type_member(ir)->bool:
+    if is_type_undef(ir.variable_left):
+        print("UNDEFINED LEFT VARIABLE IN MEMBER")
+        return True
+    copy_token_type(ir.variable_left, ir.lvalue)
     return False
 
 #USAGE: typechecks for references (i.e. a[0])
