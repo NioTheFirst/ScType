@@ -582,7 +582,8 @@ def querry_fc(ir) -> int:
         print("hlc contract name: " + cont_name + " func_name: "+ func_name)
     included_func = get_cf_pair(cont_name, func_name)
     if(included_func != None):
-        if(type_included_hlc(ir, dest, included_func)):
+        if(type_included_hlc(ir, dest, included_func) == 1):
+            print("INCLUDED HIGH LEVEL CALL HAS SOME UNDEFINED TYPE")
             return 1
         return 2
 
@@ -1496,6 +1497,7 @@ class tcheck(AbstractDetector):
             _mark_functions(contract)
             #resolve global variables
             _tcheck_contract_state_var(contract)
+
         for contract in self.contracts:
             if(not (check_contract(contract.name))):
                 continue
