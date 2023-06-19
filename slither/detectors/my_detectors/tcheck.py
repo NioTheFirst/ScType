@@ -93,6 +93,8 @@ def run_contract(contract_name):
 def get_external_type_tuple(contract_name, function_name, parameters):
     if(contract_name ==None or function_name == None):
         return None
+    for p in parameters:
+        convert_ssa(p)
     return tcheck_parser.get_ex_func_type_tuple(contract_name, function_name, parameters)
 
 
