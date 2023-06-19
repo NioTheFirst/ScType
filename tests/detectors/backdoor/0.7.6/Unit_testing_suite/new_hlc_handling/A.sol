@@ -15,6 +15,7 @@ contract A{
         //should reflect the transformation of A^2/B presented in the type file
 	int d = IB(b).int_function(balanceA, balanceB);
 	a = 1+1; //obligatory binary
+	int e = IB(b).int_function(balanceA, d);
         return(d);
     }
 }
