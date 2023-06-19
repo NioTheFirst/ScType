@@ -646,16 +646,19 @@ def type_ref(ir)->bool:
     print_token_type(ir.variable_left)
     #check for boolean
     if(str(ir.lvalue.type) == "bool"):
+        print("REFERENCE IS BOOL TYPE")
         assign_const(ir.lvalue)
         return False
 
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left)):
+        print("REFERENCE LEFT VALUE PROPAGATION")
         copy_token_type(ir.variable_left, ir.lvalue)
         return False
 
     #check if the index of the variable has a type that is not a constant
     if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
+        print("REFERENCE RIGHT VALUE PROPAGATION")
         copy_token_type(ir.variable_right, ir.lvalue)
         
         return False
@@ -664,6 +667,7 @@ def type_ref(ir)->bool:
     print(ir.variable_left.name)
     ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
+        print("REFERENCE TYPE READ")
         copy_token_tuple(ir.lvalue, ref_tuple)
         return False
 
