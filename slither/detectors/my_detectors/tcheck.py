@@ -1364,6 +1364,8 @@ def _tcheck_contract_state_var(contract):
         state_var.parent_function = "global"
         if(is_type_undef(state_var)):
             querry_type(state_var)
+            if(isinstance(state_var, ReferenceVariable)):
+                add_ref(state_var.name, (state_var.token_typen, state_var.token_typed, state_var.norm, state_var.link_function))
 
 #USAGE: labels which contracts that should be read (contains binary operations) also adds contract-function pairs
 #RTURNS: NULL
