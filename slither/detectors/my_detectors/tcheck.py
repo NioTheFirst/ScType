@@ -1496,6 +1496,9 @@ class tcheck(AbstractDetector):
             _mark_functions(contract)
             #resolve global variables
             _tcheck_contract_state_var(contract)
+        for contract in self.contracts:
+            if(not (check_contract(contract.name))):
+                continue
             errors = _tcheck_contract(contract)
             #print("xxxxxx")
             if errors:
