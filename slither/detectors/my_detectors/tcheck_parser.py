@@ -119,6 +119,8 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
         ret_num = []
         ret_den = []
         param = parameters
+        for p in parameters:
+            print(p.name)
         print("num: " + str(num_trans))
         for num in num_trans:
             if(num == -1):
