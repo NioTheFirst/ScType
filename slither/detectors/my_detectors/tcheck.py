@@ -95,7 +95,7 @@ def get_external_type_tuple(contract_name, function_name, parameters):
         return None
     for p in parameters:
         convert_ssa(p)
-        print_token_type(p)
+        #print_token_type(p)
     return tcheck_parser.get_ex_func_type_tuple(contract_name, function_name, parameters)
 
 
