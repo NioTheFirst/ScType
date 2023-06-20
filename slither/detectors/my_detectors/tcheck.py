@@ -921,7 +921,7 @@ def type_bin_sub(dest, lir, rir) -> bool:
         add_errors(dest)
         return False
     else:
-        return type_asn(dest, lir)
+        return type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
 
 #USAGE: given a constant, determine the number of powers of 10 that it includes
 #RETURNS: the powers of 10 in the constant, if not, returns -1
@@ -999,17 +999,8 @@ def type_bin_mul(dest, lir, rir) ->bool:
     print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    print("---")
-    print_token_type(lir)
     asn_norm(dest, get_norm(lir))
-    print("r")
-    print_token_type(rir)
     add_norm(dest, get_norm(rir))
-    print("***")
-    print(is_type_undef(lir))
-    print(is_type_undef(rir))
-    print(is_type_const(lir))
-    print(is_type_const(rir))
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1019,7 +1010,6 @@ def type_bin_mul(dest, lir, rir) ->bool:
     elif(is_type_const(lir)):
         return type_asn(dest, rir)
     elif(is_type_const(rir)):
-            
         return type_asn(dest, lir)
     else:
         type_asn(dest, lir)
