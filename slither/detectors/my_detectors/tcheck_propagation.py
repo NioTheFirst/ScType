@@ -21,29 +21,31 @@ def _compare_token_type(A_types, B_types):
         return False
     A_buffer = 0
     B_buffer = 0
+    Apos = len(A_types)-1
     Bpos = len(B_types)-1
-    for i in range(len(A_types)-1, -1, -1):
-        if(A_types[i]>=abs_buf):
-            if(A_types[i] > B_types[Bpos]):
+    while(Apos >= 0 or Bpos >= 0):
+        if(Apos > -1 and A_types[Apos]>=abs_buf):
+            if(A_types[Apos] > B_types[Bpos]):
                 B_buffer+=1
-            elif(A_num_types[i] == B_num_types[Bpos]):
+            elif(A__types[Apos] == B_num_types[Bpos]):
                 Bpos-=1
             else:
-                while(A_types[i] < B_types[Bpos]):
+                while(A_types[Apos] < B_types[Bpos]):
                     A_buffer+=1
                     Bpos-=1
         else:
             while(B_types[Bpos] >= abs_buf):
                 A_buffer+=1
                 Bpos-=1
-            if(A_types[i] > B_types[Bpos]):
+            if(Apos > -1 and A_types[Apos] > B_types[Bpos]):
                 A_buffer-=1
-            elif(A_num_types[i] == B_num_types[Bpos]):
+            elif(Apos > -1 and A_num_types[Apos] == B_num_types[Bpos]):
                 Bpos-=1
             else:
-                while(A_types[i] < B_types[Bpos]):
+                while((Apos < 0 and Bpos > 0) or A_types[Apos] < B_types[Bpos]):
                     B_buffer-=1
                     Bpos-=1
+        Apos-=1
     if(A_buffer != 0 or B_buffer != 0):
         return False
     return True
