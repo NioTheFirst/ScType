@@ -42,7 +42,7 @@ def _compare_token_type(A_types, B_types):
             elif(Apos > -1 and A_num_types[Apos] == B_num_types[Bpos]):
                 Bpos-=1
             else:
-                while((Apos < 0 and Bpos > 0) or A_types[Apos] < B_types[Bpos]):
+                while((Apos < 0 and Bpos >= 0) or A_types[Apos] < B_types[Bpos]):
                     B_buffer-=1
                     Bpos-=1
         Apos-=1
