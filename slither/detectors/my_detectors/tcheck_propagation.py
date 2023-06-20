@@ -53,26 +53,29 @@ def _compare_token_type(A_types, B_types):
         return False
     return True
 
+
 #USAGE: returns the variable with the higher amount of ABSTRACT variables (used in dest propagation)
 def greater_abstract(varA, varB):
-    A_abstract = 0
-    B_abstract = 0
-    for n in varA.token_typen:
-        if(n >= abs_buf):
-            A_abstract+=1
-    for d in varA.token_typed:
-        if(d >= abs_buf):
-            A_abstract+=1
-    for n in varB.token_typen:
-        if(n >= abs_buf):
-            B_abstract+=1
-    for d in varB.token_typed:
-        if(d >= abs_buf):
-            B_abstract+=1
-    if(A_abstract > B_abstract):
+    if(amt_abstract(varA) > amt_abstract(varB):
         return varA
     return varB
 
+#USAGE: returns the variable with the fewer amount of ABSTRACT variables
+def lesser_abstract(varA, varB):
+    if(amt_abstract(varA) < amt_abstract(varB)):
+        return varA
+    return varA
+
+#USAGE: returns the amount of ABSTRACT types that a certain variable has
+def amt_abstract(var):
+    amt = 0
+    for n in var.token_typen:
+        if(n >= abs_buf):
+            amt+=1
+    for d in var.token_typed:
+        if(d >= abs_buf):
+            amt+=1
+    return amt
 #USAGE: personal copy and sort
 def copy_and_sort(types):
     ret = []
