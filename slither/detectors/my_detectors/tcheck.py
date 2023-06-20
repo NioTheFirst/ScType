@@ -872,18 +872,19 @@ def type_bin_add(dest, lir, rir) -> bool:
     #rir = ir.variable_right
     if(not (init_var(lir) and init_var(rir))):
         return False
+    pritn("initlize checks")
     asn_norm(dest, get_norm(lir))
     asn_norm(dest, get_norm(rir))
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
-            type_asn(dest, rir)
+            copy_token_type(dest, rir)
         else:
-            type_asn(dest, lir)
+            copy_token_type(dest, lir)
         return True
     elif(is_type_const(lir)):
-        return type_asn(dest, rir)
+        return copy_token_type(dest, rir)
     elif(is_type_const(rir)):
-        return type_asn(dest, lir)
+        return copy_token_type(dest, lir)
     elif(not(compare_token_type(rir, lir))):
         #report error, default to left child
         
