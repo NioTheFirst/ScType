@@ -14,6 +14,7 @@ import sys
 script_dir = os.path.dirname( __file__ )
 sys.path.append(script_dir)
 import tcheck_parser
+import tcheck_propagation
 
 user_type = False
 type_file = ""
@@ -421,13 +422,15 @@ def copy_pc_token_type(src, dest):
 
 
 def compare_token_type(src, dest):
-    seen = []
+    return tcheck_propagation.compare_token_type(src, dest)
+    """seen = []
     for i in range(maxTokens):
         seen.append(0)
     for n in src.token_typen:
         seen[n]+=1
     for n in dest.token_typen:
         seen[n]-=1
+
     for i in range(maxTokens):
         if(seen[i] != 0):
             return False
@@ -439,7 +442,7 @@ def compare_token_type(src, dest):
     for i in range(maxTokens):
         if(seen[i] != 0):
             return False
-    return True
+    return True"""
 
 def add_errors(ir):
     global nErrs
