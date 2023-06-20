@@ -27,3 +27,6 @@ slither --detect tcheck A.sol
 cd ..
 
 sleep 3
+
+
+echo "Unit testing complete"
