@@ -1462,7 +1462,7 @@ class tcheck(AbstractDetector):
 
     def _detect(self):
         results = []
-        has_type_file = []
+        has_type_file = {}
         global user_type
         global type_file
         global line_no
