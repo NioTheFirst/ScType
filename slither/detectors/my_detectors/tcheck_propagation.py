@@ -15,6 +15,7 @@ def compare_token_type(varA, varB):
         return _compare_token_type(A_den_types, B_den_types)
     return False
 
+
 #USAGE: helper function for compare_token_type
 def _compare_token_type(A_types, B_types):
     if(len(A_types) != len(B_types)):
@@ -56,7 +57,7 @@ def _compare_token_type(A_types, B_types):
 
 #USAGE: returns the variable with the higher amount of ABSTRACT variables (used in dest propagation)
 def greater_abstract(varA, varB):
-    if(amt_abstract(varA) > amt_abstract(varB):
+    if(amt_abstract(varA) > amt_abstract(varB)):
         return varA
     return varB
 
