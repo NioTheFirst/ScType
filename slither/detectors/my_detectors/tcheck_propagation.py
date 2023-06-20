@@ -8,12 +8,9 @@ abs_buf = 10
 #USAGE: comapres the token types of two variables. Includes support for checking ABSTRACT types
 def compare_token_type(varA, varB):
     A_num_types = copy_and_sort(varA.token_typen)
-    A_den_types = varA.token_typed.copy().sort()
-    B_num_types = varB.token_typen.copy().sort()
-    B_den_types = varB.token_typed.copy().sort()
-    print(varA.token_typen.copy())
-    print(A_num_types)
-    print(B_num_types)
+    A_den_types = copy_and_sort(varA.token_typed)
+    B_num_types = copy_and_sort(varB.token_typen)
+    B_den_types = copy_and_sort(varB.token_typed)
     if(_compare_token_type(A_num_types, B_num_types)):
         return _compare_token_type(A_den_types, B_den_types)
     return False
