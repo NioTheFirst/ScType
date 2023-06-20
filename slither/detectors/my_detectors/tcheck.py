@@ -890,7 +890,7 @@ def type_bin_add(dest, lir, rir) -> bool:
         add_errors(dest)
         return False
     else:
-        return type_asn(dest, lir)
+        return copy_token_type(dest, lir)
 
 #USAGE: typechecks subtraction statements
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
