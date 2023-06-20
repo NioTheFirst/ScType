@@ -22,7 +22,7 @@ def _compare_token_type(A_types, B_types):
     A_buffer = 1
     B_buffer = 1
     B_pos = len(B_types)-1
-    for i in range(len(A_types), -1, -1):
+    for i in range(len(A_types)-1, -1, -1):
         if(A_types[i]>=abs_buf):
             if(A_types[i] > B_types[Bpos]):
                 B_buffer+=1
