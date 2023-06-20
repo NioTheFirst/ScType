@@ -1498,7 +1498,7 @@ class tcheck(AbstractDetector):
         for contract in self.contracts:
             if(not (check_contract(contract.name))):
                 continue
-            user_type = has_type_file(contract.name)
+            user_type = has_type_file[contract.name]
             errors = _tcheck_contract(contract)
             #print("xxxxxx")
             if errors:
