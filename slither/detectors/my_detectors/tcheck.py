@@ -877,21 +877,20 @@ def type_bin_add(dest, lir, rir) -> bool:
     asn_norm(dest, get_norm(rir))
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
-            copy_token_type(dest, rir)
+            copy_token_type(rir, dest)
         else:
-            copy_token_type(dest, lir)
+            copy_token_type(lir, dest)
         return True
     elif(is_type_const(lir)):
-        return copy_token_type(dest, rir)
+        return copy_token_type(rir, dest)
     elif(is_type_const(rir)):
-        return copy_token_type(dest, lir)
+        return copy_token_type(lir, dest)
     elif(not(compare_token_type(rir, lir))):
-        #report error, default to left child
-        
+        #report error, default to left child 
         add_errors(dest)
         return False
     else:
-        return copy_token_type(dest, tcheck_propagation.greater_abstract(rir, lir))
+        return copy_token_type(tcheck_propagation.greater_abstract(rir, lir), dest)
 
 #USAGE: typechecks subtraction statements
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist

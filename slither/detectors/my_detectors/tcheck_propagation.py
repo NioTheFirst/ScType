@@ -67,7 +67,7 @@ def greater_abstract(varA, varB):
 def lesser_abstract(varA, varB):
     if(amt_abstract(varA) < amt_abstract(varB)):
         return varA
-    return varA
+    return varB
 
 #USAGE: returns the amount of ABSTRACT types that a certain variable has
 def amt_abstract(var):
