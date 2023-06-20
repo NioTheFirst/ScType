@@ -24,6 +24,9 @@ def _compare_token_type(A_types, B_types):
     Apos = len(A_types)-1
     Bpos = len(B_types)-1
     while(Apos >= 0 or Bpos >= 0):
+        print(Apos)
+        print(Bpos)
+        print("___")
         if(Apos > -1 and A_types[Apos]>=abs_buf):
             if(A_types[Apos] > B_types[Bpos]):
                 B_buffer+=1
