@@ -1462,7 +1462,7 @@ class tcheck(AbstractDetector):
 
     def _detect(self):
         results = []
-        has_type_file = {}
+        u_provide_type = {}
         global user_type
         global type_file
         global line_no
@@ -1481,12 +1481,12 @@ class tcheck(AbstractDetector):
                     user_type = False
                     type_file = type_info_name
                     parse_type_file(type_file)
-                    has_type_file[contract.name] = True
+                    u_provide_type[contract.name] = False
                     #print("oooo")
             except FileNotFoundError:
                 print("Type File not found.")
                 # Handle the error gracefully or take appropriate action
-                has_type_file[contract.name] = False
+                u_provide_type[contract.name] = False
                 user_type = True
             if(not (check_contract(contract.name))):
                 continue
@@ -1498,7 +1498,7 @@ class tcheck(AbstractDetector):
         for contract in self.contracts:
             if(not (check_contract(contract.name))):
                 continue
-            user_type = has_type_file[contract.name]
+            user_type = u_provide_type[contract.name]
             errors = _tcheck_contract(contract)
             #print("xxxxxx")
             if errors:
