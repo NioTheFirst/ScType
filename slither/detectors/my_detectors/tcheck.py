@@ -872,7 +872,7 @@ def type_bin_add(dest, lir, rir) -> bool:
     #rir = ir.variable_right
     if(not (init_var(lir) and init_var(rir))):
         return False
-    pritn("initlize checks")
+    print("initlize checks")
     asn_norm(dest, get_norm(lir))
     asn_norm(dest, get_norm(rir))
     if(is_type_undef(lir) or  is_type_undef(rir)):
