@@ -7,7 +7,7 @@ abs_buf = 10
 
 #USAGE: comapres the token types of two variables. Includes support for checking ABSTRACT types
 def compare_token_type(varA, varB):
-    A_num_types = (varA.token_typen).copy().sort()
+    A_num_types = copy_and_sort(varA.token_typen)
     A_den_types = varA.token_typed.copy().sort()
     B_num_types = varB.token_typen.copy().sort()
     B_den_types = varB.token_typed.copy().sort()
@@ -71,3 +71,10 @@ def greater_abstract(varA, varB):
         return varA
     return varB
 
+#USAGE: personal copy and sort
+def copy_and_sort(types):
+    ret = []
+    for i in types:
+        ret.append(i)
+    ret.sort()
+    return(ret)
