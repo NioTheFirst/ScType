@@ -1,4 +1,4 @@
-pragma solidity 0.8.3
+pragma solidity 0.8.3;
 
 contract A{
    int _balAConcrete = 0;
@@ -20,7 +20,7 @@ contract A{
                 _balBConcrete/=tokenAmt;
        }
        //no other errors should be thrown except for here
-       tokenAmt += otherTokenAmt
+       tokenAmt += otherTokenAmt;
        return(tokenAmt);
    }
 }
