@@ -19,8 +19,8 @@ def compare_token_type(varA, varB):
 def _compare_token_type(A_types, B_types):
     if(len(A_types) != len(B_types)):
         return False
-    A_buffer = 1
-    B_buffer = 1
+    A_buffer = 0
+    B_buffer = 0
     Bpos = len(B_types)-1
     for i in range(len(A_types)-1, -1, -1):
         if(A_types[i]>=abs_buf):
