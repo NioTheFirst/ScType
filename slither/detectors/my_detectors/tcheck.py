@@ -245,6 +245,7 @@ def querry_type(ir):
     print("Finding type for "+ uxname + "...")
     if not(user_type):
         type_tuple = read_type_file(ir)
+        print("deb")
         if(type_tuple != None):
             ir.token_typen.clear()
             ir.token_typed.clear()
