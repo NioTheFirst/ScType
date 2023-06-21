@@ -1029,7 +1029,6 @@ def type_bin_div(dest, lir, rir) ->bool:
         return False
     asn_norm(dest, get_norm(lir))
     add_norm(dest, -get_norm(rir))
-    print("done")
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1265,7 +1264,7 @@ def _clear_type_node(node):
                 #clear the types for temporary and local variables
                 ir.lvalue.token_typen.clear()
                 ir.lvalue.token_typed.clear()
-                ir.lvalue.norm = 0;
+                ir.lvalue.norm = -100;
 
                 print("[i] " + ir.lvalue.name + " cleared")
             
