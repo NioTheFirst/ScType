@@ -72,6 +72,7 @@ def parse_type_file(t_file):
                 denom = [-1]
                 norm = 0
                 lf = None
+                
                 if(len(_line) > 3):
                     num = extract_integers(_line[3])
                     denom = extract_integers(_line[4])
@@ -121,7 +122,10 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
         param = parameters
         for p in parameters:
             print(p.name)
-        print("num: " + str(num_trans))
+        if(len(param) == 0):
+            #No parameters, do not copy
+            ret_type_tuple = (ret_num, ret_den, norm , lf)
+            return ret_type_tuple
         for num in num_trans:
             if(num == -1):
                 ret_num.append(-1)
