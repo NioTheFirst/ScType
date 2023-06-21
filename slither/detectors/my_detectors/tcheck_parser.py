@@ -123,8 +123,8 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
         for p in parameters:
             print(p.name)
         if(len(param) == 0):
-            #No parameters, do not copy
-            ret_type_tuple = (ret_num, ret_den, norm , lf)
+            #No parameters, assume that the parameters are directly the types
+            ret_type_tuple = (num_trans, den_trans, norm , lf)
             return ret_type_tuple
         for num in num_trans:
             if(num == -1):
