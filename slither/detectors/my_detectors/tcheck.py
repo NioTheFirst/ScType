@@ -259,7 +259,7 @@ def querry_type(ir):
                 ir.norm = get_norm(ir)
             else:
                 ir.norm = norm
-            if(str(ir.type) == "address" and lf != None):
+            if(lf != None):
                 ir.link_function = lf
             print_token_type(ir)
             print("[*]Type fetched successfully")
