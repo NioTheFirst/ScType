@@ -581,6 +581,9 @@ def querry_fc(ir) -> int:
     func_name = ir.function.name
     cont_name = dest.link_function
     #TODiO
+    if(str(dest.type) == "bool"):
+        assign_const(dest)
+        return 2
     if(cont_name != None and func_name != None):
         print("hlc contract name: " + cont_name + " func_name: "+ func_name)
     included_func = get_cf_pair(cont_name, func_name)
