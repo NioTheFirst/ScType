@@ -581,10 +581,9 @@ def querry_fc(ir) -> int:
     func_name = ir.function.name
     cont_name = dest.link_function
     #TODO
-    print("Dest: " + dest.name + " type: " + str(dest.type))
 
-    if(str(dest.type) == "bool"):
-        assign_const(dest)
+    if(str(ir.lvalue.type) == "bool"):
+        assign_const(ir.lvalue)
         return 2
     if(cont_name != None and func_name != None):
         print("hlc contract name: " + cont_name + " func_name: "+ func_name)
