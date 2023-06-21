@@ -498,6 +498,8 @@ def check_type(ir) -> bool:
         #High level call
         addback = type_hlc(ir)
     elif isinstance(ir, TypeConversion):
+        convert_ssa(ir.lvalue)
+        convert_ssa(ir.variable)
         if(str(ir.variable) == "this"):
             addback = copy_token_tuple(ir.lvalue, get_hash("global", "this"))
         else:    
