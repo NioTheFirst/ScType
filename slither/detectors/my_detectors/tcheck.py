@@ -1264,6 +1264,8 @@ def _clear_type_node(node):
                 #clear the types for temporary and local variables
                 ir.lvalue.token_typen.clear()
                 ir.lvalue.token_typed.clear()
+                ir.norm = 0;
+
                 print("[i] " + ir.lvalue.name + " cleared")
             
 #USAGE: typecheck a function call

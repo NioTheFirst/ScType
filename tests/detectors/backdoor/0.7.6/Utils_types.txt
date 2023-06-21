@@ -1,8 +1,19 @@
 [*c],Utils
 [xf],sortArray
-[sef], collateralContract, TOKEN, [1], [-1], 0, collateralContract
+[sef], collateralContract, TOKEN, 1, -1, 0, collateralContract
 [sef], POOLS, getPoolAmounts, [1], [-1], 0
 [sef], POOLS, getBaseAmount, [1], [-1], 0
+[sef], POOLS, pooledVADER, 1, -1, 0
+[sef], POOLS, pooledUSDV, 2, -1, 0
+[sef], ROUTER, reserveUSDV, 2, -1, 0
+[sef], ROUTER, reserveVADER, 1, -1, 0
+[sef], ROUTER, getMemberBaseDeposit, [2], [-1], 0
+[sef], ROUTER, getMemberTokenDeposit, [2], [-1], 0
+[sef], POOLS, getMemberUnits, [2], [-1], 0
+[sef], POOLS, getUnits, [1], [-1], 0
+[sef], POOLS, getTokenAmount, [1], [-1], 0
+[sef], ROUTER, getMemberLastDeposit, [2], [-1], 0
+[sef], ROUTER, getSystemDebt, [2], [-1], 0
 [t],global,POOLS,-2,-1,0, POOLS
 [t],global,USDV,-2,-1,0, USDV
 [t],global,VADER,-2,-1,0, VADER
@@ -23,8 +34,8 @@
 [t],isPool,token,-2,-1,0
 [t],calcValueInBase,token,-2,-1,0
 [t],calcValueInBase,amount,-1,-1,0
-[t],calcValueInBase,_baseAmt,1,-1,0
-[t],calcValueInBase,_tokenAmt,2,-1,0
+[t],calcValueInBase,_baseAmt,2,-1,0
+[t],calcValueInBase,_tokenAmt,1,-1,0
 [t],calcValueInToken,token,-2,-1,0
 [t],calcValueInToken,amount,-1,-1,0
 [t],calcValueInToken,_baseAmt,1,-1,0
@@ -41,14 +52,14 @@
 [t],getProtection,timeForFullProtection,-1,-1,0
 [t],getCollateralValueInBase,member,-2,-1,0
 [t],getCollateralValueInBase,collateral,1,-1,0
-[t],getCollateralValueInBase,collateralAsset,-2,-1,0
-[t],getCollateralValueInBase,debtAsset,-2,-1,0
-[t],calcSwapValueInBase,_baseAmt,1,-1,0
-[t],calcSwapValueInBase,_tokenAmt,2,-1,0
-[t],getInterestPayment,collateralAsset,-2,-1,0
-[t],getInterestPayment,debtAsset,-2,-1,0
-[t],getDebtLoading,collateralAsset,-2,-1,0
-[t],getDebtLoading,debtAsset,-2,-1,0
+[t],getCollateralValueInBase,collateralAsset,-2,-1,0, collateralContract
+[t],getCollateralValueInBase,debtAsset,-2,-1,0, debtContract
+[t],calcSwapValueInBase,_baseAmt,2,-1,0
+[t],calcSwapValueInBase,_tokenAmt,1,-1,0
+[t],getInterestPayment,collateralAsset,-2,-1,0, collateralContract
+[t],getInterestPayment,debtAsset,-2,-1,0, debtContract
+[t],getDebtLoading,collateralAsset,-2,-1,0, collateralContract
+[t],getDebtLoading,debtAsset,-2,-1,0, debtContract
 [t],calcPart,bp,-1,-1,4
 [t],calcPart,total,-1,-1,0
 [t],calcShare,part,-1,-1,0
