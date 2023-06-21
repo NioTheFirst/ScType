@@ -588,7 +588,8 @@ def querry_fc(ir) -> int:
     print("WIP")
     if(not (isinstance(ir, HighLevelCall))):
         return 0
-    dest = convert_ssa(ir.destination)
+    dest = ir.destination
+    convert_ssa(dest)
     func_name = ir.function.name
     cont_name = dest.link_function
     #TODO
