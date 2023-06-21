@@ -493,7 +493,7 @@ def check_type(ir) -> bool:
         addback = type_hlc(ir)
     elif isinstance(ir, TypeConversion):
         if(str(ir.variable) == "this"):
-            addback = type_asn(ir.lvalue, get_hash("global", "this"))
+            addback = copy_token_tuple(ir.lvalue, get_hash("global", "this"))
         else:    
             addback = type_asn(ir.lvalue, ir.variable)
         print(get_norm(ir.variable))
