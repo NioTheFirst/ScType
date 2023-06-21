@@ -259,6 +259,40 @@ Checking... sortArray
 [o] Marked
 Checking... slitherConstructorVariables
 [x] No Binary
+State_var: ROUTER
+Finding type for ROUTER...
+Num:
+-2
+Den:
+-1
+Norm:
+0
+Linked function: ROUTER
+[*]Type fetched successfully
+State_var: inited
+Finding type for inited...
+Num:
+-2
+Den:
+-1
+Norm:
+0
+[*]Type fetched successfully
+State_var: POOLS
+Finding type for POOLS...
+Num:
+-2
+Den:
+-1
+Norm:
+0
+Linked function: POOLS
+[*]Type fetched successfully
+State_var: POOLS
+State_var: ROUTER
+State_var: POOLS
+State_var: POOLS
+State_var: ROUTER
 State_var: _10k
 Finding type for _10k...
 Num:
@@ -288,15 +322,7 @@ Norm:
 Linked function: FACTORY
 [*]Type fetched successfully
 State_var: POOLS
-Finding type for POOLS...
-Num:
--2
-Den:
--1
-Norm:
-0
-Linked function: POOLS
-[*]Type fetched successfully
+State_var: POOLS
 State_var: POOLS
 State_var: POOLS
 State_var: USDV
@@ -321,22 +347,11 @@ Linked function: VADER
 [*]Type fetched successfully
 State_var: POOLS
 State_var: ROUTER
-Finding type for ROUTER...
-Num:
--2
-Den:
--1
-Norm:
-0
-Linked function: ROUTER
-[*]Type fetched successfully
 State_var: VADER
 State_var: ROUTER
 State_var: one
 State_var: USDV
 State_var: VADER
-State_var: POOLS
-State_var: ROUTER
 State_var: FACTORY
 State_var: _year
 Finding type for _year...
@@ -349,22 +364,7 @@ Norm:
 [*]Type fetched successfully
 State_var: one
 State_var: POOLS
-State_var: POOLS
 State_var: ROUTER
-State_var: ROUTER
-State_var: inited
-Finding type for inited...
-Num:
--2
-Den:
--1
-Norm:
-0
-[*]Type fetched successfully
-State_var: POOLS
-State_var: POOLS
-State_var: ROUTER
-State_var: POOLS
 contract name: iERC20
 WARNING!!!!
 iERC20_types.txt
@@ -469,9 +469,9 @@ Param: 4
     den: [-1]
 clearning node...
 clearing ir...?
-inited_1(bool) := ϕ(['inited_0', 'inited_2'])
+inited_1(bool) := ϕ(['inited_2', 'inited_0'])
 typecheckig node...
-inited_1(bool) := ϕ(['inited_0', 'inited_2'])
+inited_1(bool) := ϕ(['inited_2', 'inited_0'])
 checking inited
 State IR  variable: inited
 State variable: inited
@@ -507,7 +507,7 @@ Function name: init
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,inited)
 checking tmp_1
@@ -733,9 +733,9 @@ clearning node...
 clearing ir...?
 VADER_2(address) := ϕ(['VADER_0', 'VADER_1', 'VADER_6'])
 clearing ir...?
-USDV_2(address) := ϕ(['USDV_0', 'USDV_1'])
+USDV_2(address) := ϕ(['USDV_1', 'USDV_0'])
 clearing ir...?
-POOLS_2(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_2(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 VADER_2(address) := ϕ(['VADER_0', 'VADER_1', 'VADER_6'])
 checking vader
@@ -759,7 +759,7 @@ Norm:
 -100
 Linked function: VADER
 done.
-USDV_2(address) := ϕ(['USDV_0', 'USDV_1'])
+USDV_2(address) := ϕ(['USDV_1', 'USDV_0'])
 checking usdv
 State IR  variable: usdv
 State variable: usdv
@@ -781,7 +781,7 @@ Norm:
 -100
 Linked function: USDV
 done.
-POOLS_2(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_2(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -819,7 +819,7 @@ Function name: assetChecks
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_3
 Condition...
@@ -842,7 +842,7 @@ Function name: assetChecks
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_7
 Condition...
@@ -851,96 +851,15 @@ TMP_7
 TMP_7
 clearning node...
 clearing ir...?
-TMP_4 = CONVERT POOLS_2 to iPOOLS
-clearing ir...?
-TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(iPOOLS), function:isAnchor, arguments:['debtAsset_1']  
-has variable
-[i] TMP_5 cleared
-clearing ir...?
-POOLS_12(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
-clearing ir...?
-TMP_6(None) = SOLIDITY_CALL require(bool,string)(TMP_5,Bad Combo)
-typecheckig node...
-TMP_4 = CONVERT POOLS_2 to iPOOLS
-checking tmp_4
-Temp variable: tmp_4
-Function name: assetChecks
-Num:
-Den:
-Norm:
--100
-0
-POOLS
-[i]Type for TMP_4
-Num:
--2
-Den:
--1
-Norm:
-0
-Linked function: POOLS
-done.
-TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(iPOOLS), function:isAnchor, arguments:['debtAsset_1']  
-High Level Call: isanchor
-checking tmp_5
-Temp variable: tmp_5
-Function name: assetChecks
-High Call: isAnchor
-func name:isAnchor
-other func name:isAnchor
-TMP_5
-WIP
-[i]Type for TMP_5
-Num:
--1
-Den:
--1
-Norm:
--100
-done.
-POOLS_12(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
-checking pools
-State IR  variable: pools
-State variable: pools
-Function name: assetChecks
-Num:
--2
-Den:
--1
-Norm:
--100
-Linked function: POOLS
-Phi
-[i]Type for POOLS
-Num:
--2
-Den:
--1
-Norm:
--100
-Linked function: POOLS
-done.
-TMP_6(None) = SOLIDITY_CALL require(bool,string)(TMP_5,Bad Combo)
-checking tmp_6
-Temp variable: tmp_6
-Function name: assetChecks
-[i]Type for TMP_6
-Num:
-Den:
-Norm:
--100
-done.
-clearning node...
-clearing ir...?
 TMP_11 = CONVERT POOLS_2 to iPOOLS
 clearing ir...?
 TMP_12(bool) = HIGH_LEVEL_CALL, dest:TMP_11(iPOOLS), function:isSynth, arguments:['collateralAsset_1']  
 has variable
 [i] TMP_12 cleared
 clearing ir...?
-POOLS_3(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_2', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_4(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 clearing ir...?
-TMP_13 = CONVERT POOLS_3 to iPOOLS
+TMP_13 = CONVERT POOLS_4 to iPOOLS
 clearing ir...?
 TMP_14 = CONVERT collateralAsset_1 to iSYNTH
 clearing ir...?
@@ -948,13 +867,13 @@ TMP_15(address) = HIGH_LEVEL_CALL, dest:TMP_14(iSYNTH), function:TOKEN, argument
 has variable
 [i] TMP_15 cleared
 clearing ir...?
-POOLS_4(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_5(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_4', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_16(bool) = HIGH_LEVEL_CALL, dest:TMP_13(iPOOLS), function:isAnchor, arguments:['TMP_15']  
 has variable
 [i] TMP_16 cleared
 clearing ir...?
-POOLS_5(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_4', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_6(address) := ϕ(['POOLS_9', 'POOLS_5', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_17(bool) = TMP_12 && TMP_16
 has variable
@@ -997,9 +916,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_3(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_2', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_4(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1021,7 +940,7 @@ Norm:
 -100
 Linked function: POOLS
 done.
-TMP_13 = CONVERT POOLS_3 to iPOOLS
+TMP_13 = CONVERT POOLS_4 to iPOOLS
 checking tmp_13
 Temp variable: tmp_13
 Function name: assetChecks
@@ -1087,7 +1006,7 @@ Norm:
 0
 Linked function: collateralContract
 done.
-POOLS_4(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_5(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_4', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1125,9 +1044,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_5(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_4', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_6(address) := ϕ(['POOLS_9', 'POOLS_5', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1157,7 +1076,7 @@ Function name: assetChecks
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_17
 Condition...
@@ -1166,13 +1085,177 @@ TMP_17
 TMP_17
 clearning node...
 clearing ir...?
-TMP_21 = CONVERT POOLS_5 to iPOOLS
+TMP_8 = CONVERT POOLS_2 to iPOOLS
+clearing ir...?
+TMP_9(bool) = HIGH_LEVEL_CALL, dest:TMP_8(iPOOLS), function:isAsset, arguments:['debtAsset_1']  
+has variable
+[i] TMP_9 cleared
+clearing ir...?
+POOLS_3(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_2', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
+clearing ir...?
+TMP_10(None) = SOLIDITY_CALL require(bool,string)(TMP_9,Bad Combo)
+typecheckig node...
+TMP_8 = CONVERT POOLS_2 to iPOOLS
+checking tmp_8
+Temp variable: tmp_8
+Function name: assetChecks
+Num:
+Den:
+Norm:
+-100
+0
+POOLS
+[i]Type for TMP_8
+Num:
+-2
+Den:
+-1
+Norm:
+0
+Linked function: POOLS
+done.
+TMP_9(bool) = HIGH_LEVEL_CALL, dest:TMP_8(iPOOLS), function:isAsset, arguments:['debtAsset_1']  
+High Level Call: isasset
+checking tmp_9
+Temp variable: tmp_9
+Function name: assetChecks
+High Call: isAsset
+func name:isAsset
+other func name:isAsset
+TMP_9
+WIP
+[i]Type for TMP_9
+Num:
+-1
+Den:
+-1
+Norm:
+0
+done.
+POOLS_3(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_2', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
+checking pools
+State IR  variable: pools
+State variable: pools
+Function name: assetChecks
+Num:
+-2
+Den:
+-1
+Norm:
+-100
+Linked function: POOLS
+Phi
+[i]Type for POOLS
+Num:
+-2
+Den:
+-1
+Norm:
+-100
+Linked function: POOLS
+done.
+TMP_10(None) = SOLIDITY_CALL require(bool,string)(TMP_9,Bad Combo)
+checking tmp_10
+Temp variable: tmp_10
+Function name: assetChecks
+[i]Type for TMP_10
+Num:
+Den:
+Norm:
+-100
+done.
+clearning node...
+clearing ir...?
+TMP_4 = CONVERT POOLS_2 to iPOOLS
+clearing ir...?
+TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(iPOOLS), function:isAnchor, arguments:['debtAsset_1']  
+has variable
+[i] TMP_5 cleared
+clearing ir...?
+POOLS_12(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
+clearing ir...?
+TMP_6(None) = SOLIDITY_CALL require(bool,string)(TMP_5,Bad Combo)
+typecheckig node...
+TMP_4 = CONVERT POOLS_2 to iPOOLS
+checking tmp_4
+Temp variable: tmp_4
+Function name: assetChecks
+Num:
+Den:
+Norm:
+-100
+0
+POOLS
+[i]Type for TMP_4
+Num:
+-2
+Den:
+-1
+Norm:
+0
+Linked function: POOLS
+done.
+TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(iPOOLS), function:isAnchor, arguments:['debtAsset_1']  
+High Level Call: isanchor
+checking tmp_5
+Temp variable: tmp_5
+Function name: assetChecks
+High Call: isAnchor
+func name:isAnchor
+other func name:isAnchor
+TMP_5
+WIP
+[i]Type for TMP_5
+Num:
+-1
+Den:
+-1
+Norm:
+0
+done.
+POOLS_12(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
+checking pools
+State IR  variable: pools
+State variable: pools
+Function name: assetChecks
+Num:
+-2
+Den:
+-1
+Norm:
+-100
+Linked function: POOLS
+Phi
+[i]Type for POOLS
+Num:
+-2
+Den:
+-1
+Norm:
+-100
+Linked function: POOLS
+done.
+TMP_6(None) = SOLIDITY_CALL require(bool,string)(TMP_5,Bad Combo)
+checking tmp_6
+Temp variable: tmp_6
+Function name: assetChecks
+[i]Type for TMP_6
+Num:
+Den:
+Norm:
+-100
+done.
+clearning node...
+typecheckig node...
+clearning node...
+clearing ir...?
+TMP_21 = CONVERT POOLS_6 to iPOOLS
 clearing ir...?
 TMP_22(bool) = HIGH_LEVEL_CALL, dest:TMP_21(iPOOLS), function:isSynth, arguments:['collateralAsset_1']  
 has variable
 [i] TMP_22 cleared
 clearing ir...?
-POOLS_7(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_7(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_6', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_23 = CONVERT POOLS_7 to iPOOLS
 clearing ir...?
@@ -1182,13 +1265,13 @@ TMP_25(address) = HIGH_LEVEL_CALL, dest:TMP_24(iSYNTH), function:TOKEN, argument
 has variable
 [i] TMP_25 cleared
 clearing ir...?
-POOLS_8(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_7', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_8(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_7', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_26(bool) = HIGH_LEVEL_CALL, dest:TMP_23(iPOOLS), function:isAsset, arguments:['TMP_25']  
 has variable
 [i] TMP_26 cleared
 clearing ir...?
-POOLS_9(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_8', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_9(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_8', 'POOLS_12'])
 clearing ir...?
 TMP_27(bool) = TMP_22 && TMP_26
 has variable
@@ -1196,7 +1279,7 @@ has variable
 clearing ir...?
 CONDITION TMP_27
 typecheckig node...
-TMP_21 = CONVERT POOLS_5 to iPOOLS
+TMP_21 = CONVERT POOLS_6 to iPOOLS
 checking tmp_21
 Temp variable: tmp_21
 Function name: assetChecks
@@ -1231,9 +1314,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_7(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_7(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_6', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1314,7 +1397,7 @@ Norm:
 0
 Linked function: collateralContract
 done.
-POOLS_8(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_7', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_8(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_7', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1352,9 +1435,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_9(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_8', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_9(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_8', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1384,7 +1467,7 @@ Function name: assetChecks
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_27
 Condition...
@@ -1393,17 +1476,17 @@ TMP_27
 TMP_27
 clearning node...
 clearing ir...?
-TMP_18 = CONVERT POOLS_5 to iPOOLS
+TMP_18 = CONVERT POOLS_6 to iPOOLS
 clearing ir...?
 TMP_19(bool) = HIGH_LEVEL_CALL, dest:TMP_18(iPOOLS), function:isAnchor, arguments:['debtAsset_1']  
 has variable
 [i] TMP_19 cleared
 clearing ir...?
-POOLS_6(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_5', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_11(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 clearing ir...?
 TMP_20(None) = SOLIDITY_CALL require(bool,string)(TMP_19,Bad Combo)
 typecheckig node...
-TMP_18 = CONVERT POOLS_5 to iPOOLS
+TMP_18 = CONVERT POOLS_6 to iPOOLS
 checking tmp_18
 Temp variable: tmp_18
 Function name: assetChecks
@@ -1438,9 +1521,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_6(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_5', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_11(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1476,96 +1559,13 @@ clearning node...
 typecheckig node...
 clearning node...
 clearing ir...?
-TMP_8 = CONVERT POOLS_2 to iPOOLS
-clearing ir...?
-TMP_9(bool) = HIGH_LEVEL_CALL, dest:TMP_8(iPOOLS), function:isAsset, arguments:['debtAsset_1']  
-has variable
-[i] TMP_9 cleared
-clearing ir...?
-POOLS_11(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
-clearing ir...?
-TMP_10(None) = SOLIDITY_CALL require(bool,string)(TMP_9,Bad Combo)
-typecheckig node...
-TMP_8 = CONVERT POOLS_2 to iPOOLS
-checking tmp_8
-Temp variable: tmp_8
-Function name: assetChecks
-Num:
-Den:
-Norm:
--100
-0
-POOLS
-[i]Type for TMP_8
-Num:
--2
-Den:
--1
-Norm:
-0
-Linked function: POOLS
-done.
-TMP_9(bool) = HIGH_LEVEL_CALL, dest:TMP_8(iPOOLS), function:isAsset, arguments:['debtAsset_1']  
-High Level Call: isasset
-checking tmp_9
-Temp variable: tmp_9
-Function name: assetChecks
-High Call: isAsset
-func name:isAsset
-other func name:isAsset
-TMP_9
-WIP
-[i]Type for TMP_9
-Num:
--1
-Den:
--1
-Norm:
--100
-done.
-POOLS_11(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
-checking pools
-State IR  variable: pools
-State variable: pools
-Function name: assetChecks
-Num:
--2
-Den:
--1
-Norm:
--100
-Linked function: POOLS
-Phi
-[i]Type for POOLS
-Num:
--2
-Den:
--1
-Norm:
--100
-Linked function: POOLS
-done.
-TMP_10(None) = SOLIDITY_CALL require(bool,string)(TMP_9,Bad Combo)
-checking tmp_10
-Temp variable: tmp_10
-Function name: assetChecks
-[i]Type for TMP_10
-Num:
-Den:
-Norm:
--100
-done.
-clearning node...
-typecheckig node...
-clearning node...
-clearing ir...?
 TMP_28 = CONVERT POOLS_9 to iPOOLS
 clearing ir...?
 TMP_29(bool) = HIGH_LEVEL_CALL, dest:TMP_28(iPOOLS), function:isAsset, arguments:['debtAsset_1']  
 has variable
 [i] TMP_29 cleared
 clearing ir...?
-POOLS_10(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_10(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 clearing ir...?
 TMP_30(None) = SOLIDITY_CALL require(bool,string)(TMP_29,Bad Combo)
 typecheckig node...
@@ -1604,9 +1604,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_10(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_10(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1663,7 +1663,7 @@ token_1(address) := ϕ(['collateralAsset_1', 'collateralAsset_1'])
 clearing ir...?
 VADER_3(address) := ϕ(['VADER_0', 'VADER_1', 'VADER_6'])
 clearing ir...?
-USDV_3(address) := ϕ(['USDV_0', 'USDV_1'])
+USDV_3(address) := ϕ(['USDV_1', 'USDV_0'])
 typecheckig node...
 token_1(address) := ϕ(['collateralAsset_1', 'collateralAsset_1'])
 checking token
@@ -1706,7 +1706,7 @@ Norm:
 -100
 Linked function: VADER
 done.
-USDV_3(address) := ϕ(['USDV_0', 'USDV_1'])
+USDV_3(address) := ϕ(['USDV_1', 'USDV_0'])
 checking usdv
 State IR  variable: usdv
 State variable: usdv
@@ -1752,7 +1752,7 @@ Function name: isBase
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_32(bool) = token_1 == USDV_3
 checking tmp_32
@@ -1762,7 +1762,7 @@ Function name: isBase
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_33(bool) = TMP_31 || TMP_32
 checking tmp_33
@@ -1772,7 +1772,7 @@ Function name: isBase
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_33
 Condition...
@@ -1809,7 +1809,7 @@ clearning node...
 clearing ir...?
 token_1(address) := ϕ(['collateralAsset_1'])
 clearing ir...?
-POOLS_13(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_13(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 token_1(address) := ϕ(['collateralAsset_1'])
 checking token
@@ -1830,7 +1830,7 @@ Den:
 Norm:
 -100
 done.
-POOLS_13(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_13(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1860,7 +1860,7 @@ TMP_35(bool) = HIGH_LEVEL_CALL, dest:TMP_34(iPOOLS), function:isAnchor, argument
 has variable
 [i] TMP_35 cleared
 clearing ir...?
-POOLS_14(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_13', 'POOLS_45', 'POOLS_17'])
+POOLS_14(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_13', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_36 = CONVERT POOLS_14 to iPOOLS
 clearing ir...?
@@ -1868,7 +1868,7 @@ TMP_37(bool) = HIGH_LEVEL_CALL, dest:TMP_36(iPOOLS), function:isAsset, arguments
 has variable
 [i] TMP_37 cleared
 clearing ir...?
-POOLS_15(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_14', 'POOLS_17'])
+POOLS_15(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_14', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_38(bool) = TMP_35 || TMP_37
 has variable
@@ -1911,9 +1911,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_14(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_13', 'POOLS_45', 'POOLS_17'])
+POOLS_14(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_13', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -1970,9 +1970,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_15(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_14', 'POOLS_17'])
+POOLS_15(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_14', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -2002,7 +2002,7 @@ Function name: isPool
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_38
 Condition...
@@ -2024,7 +2024,7 @@ Constatn varible: true
 Num:
 Den:
 Norm:
--100
+0
 Constatn varible: true
 val: True
 0
@@ -2069,13 +2069,13 @@ Param: 1
     den: [-1]
 clearning node...
 clearing ir...?
-token_1(address) := ϕ(['token1_1', 'token_1', 'debtAsset_1'])
+token_1(address) := ϕ(['debtAsset_1', 'token1_1', 'token_1'])
 clearing ir...?
 amount_1(uint256) := ϕ(['_interestPayment_1', 'amount_1', 'one_1'])
 clearing ir...?
-POOLS_16(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_16(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
-token_1(address) := ϕ(['token1_1', 'token_1', 'debtAsset_1'])
+token_1(address) := ϕ(['debtAsset_1', 'token1_1', 'token_1'])
 checking token
 Local variable: token
 Function name: calcValueInBase
@@ -2113,7 +2113,7 @@ Den:
 Norm:
 -100
 done.
-POOLS_16(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_16(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -2146,7 +2146,7 @@ clearing ir...?
 TUPLE_0(uint256,uint256) = HIGH_LEVEL_CALL, dest:TMP_39(iPOOLS), function:getPoolAmounts, arguments:['token_1']  
 has variable
 clearing ir...?
-POOLS_17(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_16', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_17(address) := ϕ(['POOLS_16', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _baseAmt_1(uint256)= UNPACK TUPLE_0 index: 0 
 clearing ir...?
@@ -2192,7 +2192,7 @@ Den:
 Norm:
 0
 done.
-POOLS_17(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_16', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_17(address) := ϕ(['POOLS_16', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -2326,7 +2326,7 @@ Function name: calcValueInBase
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_42
 Condition...
@@ -2418,7 +2418,7 @@ token_1(address) := ϕ(['token2_1'])
 clearing ir...?
 amount_1(uint256) := ϕ(['TMP_51'])
 clearing ir...?
-POOLS_18(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_18(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 token_1(address) := ϕ(['token2_1'])
 checking token
@@ -2458,7 +2458,7 @@ Den:
 Norm:
 -100
 done.
-POOLS_18(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_18(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -2491,7 +2491,7 @@ clearing ir...?
 TUPLE_1(uint256,uint256) = HIGH_LEVEL_CALL, dest:TMP_45(iPOOLS), function:getPoolAmounts, arguments:['token_1']  
 has variable
 clearing ir...?
-POOLS_19(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_18', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_19(address) := ϕ(['POOLS_9', 'POOLS_18', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _baseAmt_1(uint256)= UNPACK TUPLE_1 index: 0 
 clearing ir...?
@@ -2537,7 +2537,7 @@ Den:
 Norm:
 0
 done.
-POOLS_19(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_18', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_19(address) := ϕ(['POOLS_9', 'POOLS_18', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -2671,7 +2671,7 @@ Function name: calcValueInToken
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_48
 Condition...
@@ -2789,11 +2789,11 @@ Param: 3
     den: [-1]
 clearning node...
 clearing ir...?
-one_1(uint256) := ϕ(['one_0', 'one_4', 'one_2'])
+one_1(uint256) := ϕ(['one_2', 'one_0', 'one_4'])
 clearing ir...?
-_10k_1(uint256) := ϕ(['_10k_0', '_10k_3'])
+_10k_1(uint256) := ϕ(['_10k_3', '_10k_0'])
 typecheckig node...
-one_1(uint256) := ϕ(['one_0', 'one_4', 'one_2'])
+one_1(uint256) := ϕ(['one_2', 'one_0', 'one_4'])
 checking one
 State IR  variable: one
 State variable: one
@@ -2813,7 +2813,7 @@ Den:
 Norm:
 -100
 done.
-_10k_1(uint256) := ϕ(['_10k_0', '_10k_3'])
+_10k_1(uint256) := ϕ(['_10k_3', '_10k_0'])
 checking _10k
 State IR  variable: _10k
 State variable: _10k
@@ -2867,13 +2867,13 @@ Function name: calcValueInBase
 Function Visibility: public
 clearning node...
 clearing ir...?
-token_1(address) := ϕ(['token1_1', 'token_1', 'debtAsset_1'])
+token_1(address) := ϕ(['debtAsset_1', 'token1_1', 'token_1'])
 clearing ir...?
 amount_1(uint256) := ϕ(['_interestPayment_1', 'amount_1', 'one_1'])
 clearing ir...?
-POOLS_16(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_16(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
-token_1(address) := ϕ(['token1_1', 'token_1', 'debtAsset_1'])
+token_1(address) := ϕ(['debtAsset_1', 'token1_1', 'token_1'])
 checking token
 Local variable: token
 Function name: calcValueInBase
@@ -2899,7 +2899,7 @@ Den:
 Norm:
 -100
 done.
-POOLS_16(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_16(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -2925,7 +2925,7 @@ clearing ir...?
 TUPLE_0(uint256,uint256) = HIGH_LEVEL_CALL, dest:TMP_39(iPOOLS), function:getPoolAmounts, arguments:['token_1']  
 has variable
 clearing ir...?
-POOLS_17(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_16', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_17(address) := ϕ(['POOLS_16', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _baseAmt_1(uint256)= UNPACK TUPLE_0 index: 0 
 clearing ir...?
@@ -2975,7 +2975,7 @@ Den:
 Norm:
 0
 done.
-POOLS_17(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_16', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_17(address) := ϕ(['POOLS_16', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -3102,7 +3102,7 @@ Function name: calcValueInBase
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_42
 Condition...
@@ -3185,7 +3185,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _testingPrice
 Num:
@@ -3273,11 +3273,11 @@ Function name: calcPart
 Function Visibility: public
 clearning node...
 clearing ir...?
-bp_1(uint256) := ϕ(['basisPoints_1', 'TMP_58'])
+bp_1(uint256) := ϕ(['TMP_58', 'basisPoints_1'])
 clearing ir...?
 total_1(uint256) := ϕ(['protection_3', 'targetPrice_1'])
 typecheckig node...
-bp_1(uint256) := ϕ(['basisPoints_1', 'TMP_58'])
+bp_1(uint256) := ϕ(['TMP_58', 'basisPoints_1'])
 checking bp
 Local variable: bp
 Function name: calcPart
@@ -3373,7 +3373,7 @@ Function name: calcPart
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_167(None) = SOLIDITY_CALL require(bool,string)(TMP_166,Must be correct BP)
 checking tmp_167
@@ -3417,13 +3417,13 @@ Function name: calcShare
 Function Visibility: public
 clearning node...
 clearing ir...?
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 clearing ir...?
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 clearing ir...?
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 typecheckig node...
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -3442,7 +3442,7 @@ Den:
 Norm:
 -100
 done.
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 checking total
 Local variable: total
 Function name: calcShare
@@ -3461,7 +3461,7 @@ Den:
 Norm:
 -100
 done.
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 checking amount
 Local variable: amount
 Function name: calcShare
@@ -3527,7 +3527,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part
 Num:
@@ -3539,9 +3539,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 typecheckig node...
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -3597,6 +3597,8 @@ Conidtion:
 TMP_170
 TMP_170
 clearning node...
+typecheckig node...
+clearning node...
 clearing ir...?
 TMP_171(uint256) = amount_1 (c)* part_3
 has variable
@@ -3651,7 +3653,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for share
 Num:
@@ -3661,8 +3663,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-typecheckig node...
 Checking return valuecalcShare
 share
 &&
@@ -3703,7 +3703,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _lower
 Num:
@@ -3790,7 +3790,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _upper
 Num:
@@ -3863,7 +3863,7 @@ Function name: requirePriceBounds
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_66(None) = SOLIDITY_CALL require(bool,string)(TMP_65,Not inside)
 checking tmp_66
@@ -3930,7 +3930,7 @@ Function name: requirePriceBounds
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_70(None) = SOLIDITY_CALL require(bool,string)(TMP_69,Not outside)
 checking tmp_70
@@ -3976,9 +3976,9 @@ clearning node...
 clearing ir...?
 VADER_4(address) := ϕ(['VADER_0', 'VADER_1', 'VADER_6'])
 clearing ir...?
-ROUTER_2(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_2(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_24(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_24(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 VADER_4(address) := ϕ(['VADER_0', 'VADER_1', 'VADER_6'])
 checking vader
@@ -4002,7 +4002,7 @@ Norm:
 -100
 Linked function: VADER
 done.
-ROUTER_2(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_2(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -4024,7 +4024,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_24(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_24(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -4054,11 +4054,11 @@ TMP_72(bool) = HIGH_LEVEL_CALL, dest:TMP_71(iVADER), function:emitting, argument
 has variable
 [i] TMP_72 cleared
 clearing ir...?
-VADER_5(address) := ϕ(['VADER_1', 'VADER_6', 'VADER_4'])
+VADER_5(address) := ϕ(['VADER_4', 'VADER_1', 'VADER_6'])
 clearing ir...?
-ROUTER_3(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_2'])
+ROUTER_3(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_2', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_25(address) := ϕ(['POOLS_24', 'POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_25(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_24', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_73 = CONVERT ROUTER_3 to iROUTER
 clearing ir...?
@@ -4066,11 +4066,11 @@ TMP_74(bool) = HIGH_LEVEL_CALL, dest:TMP_73(iROUTER), function:isCurated, argume
 has variable
 [i] TMP_74 cleared
 clearing ir...?
-VADER_6(address) := ϕ(['VADER_1', 'VADER_5', 'VADER_6'])
+VADER_6(address) := ϕ(['VADER_5', 'VADER_1', 'VADER_6'])
 clearing ir...?
-ROUTER_4(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_3', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_4(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_3', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_26(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_25', 'POOLS_45', 'POOLS_17'])
+POOLS_26(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_25', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_75(bool) = TMP_72 && TMP_74
 has variable
@@ -4113,9 +4113,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-VADER_5(address) := ϕ(['VADER_1', 'VADER_6', 'VADER_4'])
+VADER_5(address) := ϕ(['VADER_4', 'VADER_1', 'VADER_6'])
 checking vader
 State IR  variable: vader
 State variable: vader
@@ -4137,7 +4137,7 @@ Norm:
 -100
 Linked function: VADER
 done.
-ROUTER_3(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_2'])
+ROUTER_3(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_2', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -4159,7 +4159,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_25(address) := ϕ(['POOLS_24', 'POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_25(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_24', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -4216,9 +4216,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-VADER_6(address) := ϕ(['VADER_1', 'VADER_5', 'VADER_6'])
+VADER_6(address) := ϕ(['VADER_5', 'VADER_1', 'VADER_6'])
 checking vader
 State IR  variable: vader
 State variable: vader
@@ -4240,7 +4240,7 @@ Norm:
 -100
 Linked function: VADER
 done.
-ROUTER_4(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_3', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_4(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_3', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -4262,7 +4262,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_26(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_25', 'POOLS_45', 'POOLS_17'])
+POOLS_26(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_25', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -4292,7 +4292,7 @@ Function name: getRewardShare
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_75
 Condition...
@@ -4309,9 +4309,9 @@ TMP_77(uint256) = HIGH_LEVEL_CALL, dest:TMP_76(iPOOLS), function:getBaseAmount, 
 has variable
 [i] TMP_77 cleared
 clearing ir...?
-ROUTER_5(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_5(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_27(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_27(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 clearing ir...?
 _baseAmount_1(uint256) := TMP_77(uint256)
 has variable
@@ -4363,7 +4363,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_5(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_5(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -4385,7 +4385,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_27(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_27(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -4415,7 +4415,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _baseAmount
 Num:
@@ -4433,9 +4433,9 @@ TMP_79(bool) = HIGH_LEVEL_CALL, dest:TMP_78(iPOOLS), function:isAsset, arguments
 has variable
 [i] TMP_79 cleared
 clearing ir...?
-ROUTER_6(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_5', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_6(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_5'])
 clearing ir...?
-POOLS_28(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_27', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_28(address) := ϕ(['POOLS_9', 'POOLS_27', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 CONDITION TMP_79
 typecheckig node...
@@ -4474,9 +4474,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-ROUTER_6(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_5', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_6(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_5'])
 checking router
 State IR  variable: router
 State variable: router
@@ -4498,7 +4498,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_28(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_27', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_28(address) := ϕ(['POOLS_9', 'POOLS_27', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -4533,9 +4533,9 @@ TMP_81(uint256) = HIGH_LEVEL_CALL, dest:TMP_80(iPOOLS), function:pooledUSDV, arg
 has variable
 [i] TMP_81 cleared
 clearing ir...?
-ROUTER_11(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_11(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_33(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_33(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 clearing ir...?
 TMP_82 = CONVERT ROUTER_11 to iROUTER
 clearing ir...?
@@ -4543,9 +4543,9 @@ TMP_83(uint256) = HIGH_LEVEL_CALL, dest:TMP_82(iROUTER), function:reserveUSDV, a
 has variable
 [i] TMP_83 cleared
 clearing ir...?
-ROUTER_12(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_11'])
+ROUTER_12(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_11', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_34(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_33', 'POOLS_45', 'POOLS_17'])
+POOLS_34(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_33', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_84(uint256) = INTERNAL_CALL, Utils.calcShare(uint256,uint256,uint256)(_baseAmount_1,TMP_81,TMP_83)
 clearing ir...?
@@ -4592,7 +4592,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_11(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_11(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -4614,7 +4614,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_33(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_33(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -4675,7 +4675,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_12(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_11'])
+ROUTER_12(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_11', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -4697,7 +4697,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_34(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_33', 'POOLS_45', 'POOLS_17'])
+POOLS_34(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_33', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -4743,13 +4743,13 @@ Function name: calcShare
 Function Visibility: public
 clearning node...
 clearing ir...?
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 clearing ir...?
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 clearing ir...?
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 typecheckig node...
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -4762,7 +4762,7 @@ Den:
 Norm:
 -100
 done.
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 checking total
 Local variable: total
 Function name: calcShare
@@ -4775,7 +4775,7 @@ Den:
 Norm:
 -100
 done.
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 checking amount
 Local variable: amount
 Function name: calcShare
@@ -4847,9 +4847,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 typecheckig node...
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -4898,6 +4898,8 @@ Condition...
 Conidtion: 
 TMP_170
 TMP_170
+clearning node...
+typecheckig node...
 clearning node...
 clearing ir...?
 TMP_171(uint256) = amount_1 (c)* part_3
@@ -4963,8 +4965,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-typecheckig node...
 Checking return valuecalcShare
 share
 &&
@@ -4987,7 +4987,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _share
 Num:
@@ -5004,9 +5004,9 @@ TMP_87(bool) = HIGH_LEVEL_CALL, dest:TMP_86(iPOOLS), function:isAnchor, argument
 has variable
 [i] TMP_87 cleared
 clearing ir...?
-ROUTER_7(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_6', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_7(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_6', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_29(address) := ϕ(['POOLS_23', 'POOLS_28', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_29(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_28', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 CONDITION TMP_87
 typecheckig node...
@@ -5045,9 +5045,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-ROUTER_7(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_6', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_7(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_6', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -5069,7 +5069,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_29(address) := ϕ(['POOLS_23', 'POOLS_28', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_29(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_28', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -5125,7 +5125,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for rewardShare
 Num:
@@ -5142,9 +5142,9 @@ TMP_89(uint256) = HIGH_LEVEL_CALL, dest:TMP_88(iPOOLS), function:pooledVADER, ar
 has variable
 [i] TMP_89 cleared
 clearing ir...?
-ROUTER_8(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_8(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_30(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_30(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 clearing ir...?
 TMP_90 = CONVERT ROUTER_8 to iROUTER
 clearing ir...?
@@ -5152,9 +5152,9 @@ TMP_91(uint256) = HIGH_LEVEL_CALL, dest:TMP_90(iROUTER), function:reserveVADER, 
 has variable
 [i] TMP_91 cleared
 clearing ir...?
-ROUTER_9(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_8'])
+ROUTER_9(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_8', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_31(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_30', 'POOLS_45', 'POOLS_17'])
+POOLS_31(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_30', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_92(uint256) = INTERNAL_CALL, Utils.calcShare(uint256,uint256,uint256)(_baseAmount_1,TMP_89,TMP_91)
 clearing ir...?
@@ -5201,7 +5201,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_8(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_8(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -5223,7 +5223,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_30(address) := ϕ(['POOLS_17', 'POOLS_29', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_11', 'POOLS_12', 'POOLS_10', 'POOLS_19', 'POOLS_47', 'POOLS_26', 'POOLS_54', 'POOLS_45', 'POOLS_15', 'POOLS_9', 'POOLS_6', 'POOLS_1'])
+POOLS_30(address) := ϕ(['POOLS_45', 'POOLS_15', 'POOLS_54', 'POOLS_9', 'POOLS_29', 'POOLS_26', 'POOLS_47', 'POOLS_17', 'POOLS_10', 'POOLS_1', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_23', 'POOLS_19', 'POOLS_12', 'POOLS_3', 'POOLS_11'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -5284,7 +5284,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_9(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_8'])
+ROUTER_9(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_8', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -5306,7 +5306,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_31(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_30', 'POOLS_45', 'POOLS_17'])
+POOLS_31(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_30', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -5352,13 +5352,13 @@ Function name: calcShare
 Function Visibility: public
 clearning node...
 clearing ir...?
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 clearing ir...?
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 clearing ir...?
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 typecheckig node...
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -5371,7 +5371,7 @@ Den:
 Norm:
 -100
 done.
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 checking total
 Local variable: total
 Function name: calcShare
@@ -5384,7 +5384,7 @@ Den:
 Norm:
 -100
 done.
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 checking amount
 Local variable: amount
 Function name: calcShare
@@ -5456,9 +5456,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 typecheckig node...
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -5507,6 +5507,8 @@ Condition...
 Conidtion: 
 TMP_170
 TMP_170
+clearning node...
+typecheckig node...
 clearning node...
 clearing ir...?
 TMP_171(uint256) = amount_1 (c)* part_3
@@ -5572,8 +5574,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-typecheckig node...
 Checking return valuecalcShare
 share
 &&
@@ -5596,7 +5596,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _share_scope_0
 Num:
@@ -5638,7 +5638,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for rewardShare
 Num:
@@ -5702,9 +5702,9 @@ Param: 3
     den: [-1]
 clearning node...
 clearing ir...?
-ROUTER_14(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_14(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 typecheckig node...
-ROUTER_14(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_14(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -5772,9 +5772,9 @@ member_1(address) := ϕ(['member_1'])
 clearing ir...?
 token_1(address) := ϕ(['token_1'])
 clearing ir...?
-ROUTER_18(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_18(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_36(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_36(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 member_1(address) := ϕ(['member_1'])
 checking member
@@ -5814,7 +5814,7 @@ Den:
 Norm:
 -100
 done.
-ROUTER_18(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_18(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -5836,7 +5836,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_36(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_36(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -5866,9 +5866,9 @@ TMP_105(uint256) = HIGH_LEVEL_CALL, dest:TMP_104(iROUTER), function:getMemberBas
 has variable
 [i] TMP_105 cleared
 clearing ir...?
-ROUTER_19(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_18', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_19(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_18', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_37(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_36', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_37(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_36', 'POOLS_12'])
 clearing ir...?
 _B0_1(uint256) := TMP_105(uint256)
 has variable
@@ -5915,7 +5915,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_19(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_18', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_19(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_18', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -5937,7 +5937,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_37(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_36', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_37(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_36', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -5967,7 +5967,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _B0
 Num:
@@ -5985,9 +5985,9 @@ TMP_107(uint256) = HIGH_LEVEL_CALL, dest:TMP_106(iROUTER), function:getMemberTok
 has variable
 [i] TMP_107 cleared
 clearing ir...?
-ROUTER_20(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_19', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_20(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_19', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_38(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_37', 'POOLS_45', 'POOLS_17'])
+POOLS_38(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_37', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _T0_1(uint256) := TMP_107(uint256)
 has variable
@@ -6034,7 +6034,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_20(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_19', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_20(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_19', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -6056,7 +6056,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_38(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_37', 'POOLS_45', 'POOLS_17'])
+POOLS_38(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_37', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -6086,7 +6086,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _T0
 Num:
@@ -6104,7 +6104,7 @@ TMP_109(uint256) = HIGH_LEVEL_CALL, dest:TMP_108(iPOOLS), function:getMemberUnit
 has variable
 [i] TMP_109 cleared
 clearing ir...?
-POOLS_39(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_38', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_39(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_38', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _units_1(uint256) := TMP_109(uint256)
 has variable
@@ -6151,7 +6151,7 @@ Den:
 Norm:
 0
 done.
-POOLS_39(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_38', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_39(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_38', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -6181,7 +6181,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _units
 Num:
@@ -6199,7 +6199,7 @@ TMP_111(uint256) = HIGH_LEVEL_CALL, dest:TMP_110(iPOOLS), function:getUnits, arg
 has variable
 [i] TMP_111 cleared
 clearing ir...?
-POOLS_40(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_39', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_40(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_39', 'POOLS_12'])
 clearing ir...?
 TMP_112 = CONVERT POOLS_40 to iPOOLS
 clearing ir...?
@@ -6207,7 +6207,7 @@ TMP_113(uint256) = HIGH_LEVEL_CALL, dest:TMP_112(iPOOLS), function:getBaseAmount
 has variable
 [i] TMP_113 cleared
 clearing ir...?
-POOLS_41(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_40', 'POOLS_45', 'POOLS_17'])
+POOLS_41(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_40', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_114(uint256) = INTERNAL_CALL, Utils.calcShare(uint256,uint256,uint256)(_units_1,TMP_111,TMP_113)
 clearing ir...?
@@ -6255,7 +6255,7 @@ Den:
 Norm:
 0
 done.
-POOLS_40(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_39', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_40(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_39', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -6317,7 +6317,7 @@ Den:
 Norm:
 0
 done.
-POOLS_41(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_40', 'POOLS_45', 'POOLS_17'])
+POOLS_41(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_40', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -6363,13 +6363,13 @@ Function name: calcShare
 Function Visibility: public
 clearning node...
 clearing ir...?
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 clearing ir...?
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 clearing ir...?
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 typecheckig node...
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -6382,7 +6382,7 @@ Den:
 Norm:
 -100
 done.
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 checking total
 Local variable: total
 Function name: calcShare
@@ -6395,7 +6395,7 @@ Den:
 Norm:
 -100
 done.
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 checking amount
 Local variable: amount
 Function name: calcShare
@@ -6467,9 +6467,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 typecheckig node...
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -6518,6 +6518,8 @@ Condition...
 Conidtion: 
 TMP_170
 TMP_170
+clearning node...
+typecheckig node...
 clearning node...
 clearing ir...?
 TMP_171(uint256) = amount_1 (c)* part_3
@@ -6583,8 +6585,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-typecheckig node...
 Checking return valuecalcShare
 share
 &&
@@ -6607,7 +6607,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _B1
 Num:
@@ -6624,7 +6624,7 @@ TMP_116(uint256) = HIGH_LEVEL_CALL, dest:TMP_115(iPOOLS), function:getUnits, arg
 has variable
 [i] TMP_116 cleared
 clearing ir...?
-POOLS_43(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_42', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_43(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_42', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_117 = CONVERT POOLS_43 to iPOOLS
 clearing ir...?
@@ -6632,7 +6632,7 @@ TMP_118(uint256) = HIGH_LEVEL_CALL, dest:TMP_117(iPOOLS), function:getTokenAmoun
 has variable
 [i] TMP_118 cleared
 clearing ir...?
-POOLS_44(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_43', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_44(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_43', 'POOLS_12'])
 clearing ir...?
 TMP_119(uint256) = INTERNAL_CALL, Utils.calcShare(uint256,uint256,uint256)(_units_1,TMP_116,TMP_118)
 clearing ir...?
@@ -6687,7 +6687,7 @@ Den:
 Norm:
 0
 done.
-POOLS_43(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_42', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_43(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_42', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -6749,7 +6749,7 @@ Den:
 Norm:
 0
 done.
-POOLS_44(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_43', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_44(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_43', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -6795,13 +6795,13 @@ Function name: calcShare
 Function Visibility: public
 clearning node...
 clearing ir...?
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 clearing ir...?
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 clearing ir...?
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 typecheckig node...
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -6814,7 +6814,7 @@ Den:
 Norm:
 -100
 done.
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 checking total
 Local variable: total
 Function name: calcShare
@@ -6827,7 +6827,7 @@ Den:
 Norm:
 -100
 done.
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 checking amount
 Local variable: amount
 Function name: calcShare
@@ -6899,9 +6899,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 typecheckig node...
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -6950,6 +6950,8 @@ Condition...
 Conidtion: 
 TMP_170
 TMP_170
+clearning node...
+typecheckig node...
 clearning node...
 clearing ir...?
 TMP_171(uint256) = amount_1 (c)* part_3
@@ -7015,8 +7017,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-typecheckig node...
 Checking return valuecalcShare
 share
 &&
@@ -7039,7 +7039,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _T1
 Num:
@@ -7117,7 +7117,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _coverage
 Num:
@@ -7134,7 +7134,7 @@ TMP_97(bool) = HIGH_LEVEL_CALL, dest:TMP_96(iROUTER), function:isCurated, argume
 has variable
 [i] TMP_97 cleared
 clearing ir...?
-ROUTER_16(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_15', 'ROUTER_13'])
+ROUTER_16(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_15', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
 CONDITION TMP_97
 typecheckig node...
@@ -7173,9 +7173,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-ROUTER_16(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_15', 'ROUTER_13'])
+ROUTER_16(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_15', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -7242,7 +7242,7 @@ TMP_99(uint256) = HIGH_LEVEL_CALL, dest:TMP_98(iROUTER), function:getMemberLastD
 has variable
 [i] TMP_99 cleared
 clearing ir...?
-ROUTER_17(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_17(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
 TMP_100(uint256) = block.timestamp (c)- TMP_99
 has variable
@@ -7293,7 +7293,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_17(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_17(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -7323,7 +7323,7 @@ Function name: getProtection
 Num:
 Den:
 Norm:
--100
+0
 done.
 _duration_1(uint256) := TMP_100(uint256)
 checking _duration
@@ -7333,7 +7333,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _duration
 Num:
@@ -7381,11 +7381,27 @@ TMP_101
 [x]node added back
 clearning node...
 clearing ir...?
-protection_2(uint256) := _coverage_1(uint256)
+TMP_102(uint256) = INTERNAL_CALL, Utils.calcShare(uint256,uint256,uint256)(_duration_1,timeForFullProtection_1,_coverage_1)
+clearing ir...?
+protection_2(uint256) := TMP_102(uint256)
 has variable
 [i] protection cleared
 typecheckig node...
-protection_2(uint256) := _coverage_1(uint256)
+TMP_102(uint256) = INTERNAL_CALL, Utils.calcShare(uint256,uint256,uint256)(_duration_1,timeForFullProtection_1,_coverage_1)
+Internal call...
+calcShare
+_duration
+timeForFullProtection
+_coverage
+Function: calcShare
+ic
+[i]Type for TMP_102
+Num:
+Den:
+Norm:
+-100
+done.
+protection_2(uint256) := TMP_102(uint256)
 checking protection
 Local variable: protection
 Function name: getProtection
@@ -7393,7 +7409,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for protection
 Num:
@@ -7419,27 +7435,11 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-TMP_102(uint256) = INTERNAL_CALL, Utils.calcShare(uint256,uint256,uint256)(_duration_1,timeForFullProtection_1,_coverage_1)
-clearing ir...?
-protection_1(uint256) := TMP_102(uint256)
+protection_1(uint256) := _coverage_1(uint256)
 has variable
 [i] protection cleared
 typecheckig node...
-TMP_102(uint256) = INTERNAL_CALL, Utils.calcShare(uint256,uint256,uint256)(_duration_1,timeForFullProtection_1,_coverage_1)
-Internal call...
-calcShare
-_duration
-timeForFullProtection
-_coverage
-Function: calcShare
-ic
-[i]Type for TMP_102
-Num:
-Den:
-Norm:
--100
-done.
-protection_1(uint256) := TMP_102(uint256)
+protection_1(uint256) := _coverage_1(uint256)
 checking protection
 Local variable: protection
 Function name: getProtection
@@ -7447,7 +7447,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for protection
 Num:
@@ -7513,11 +7513,11 @@ Param: 3
     den: [-1]
 clearning node...
 clearing ir...?
-POOLS_46(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_46(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 clearing ir...?
-FACTORY_2(address) := ϕ(['FACTORY_10', 'FACTORY_0', 'FACTORY_1', 'FACTORY_3', 'FACTORY_9'])
+FACTORY_2(address) := ϕ(['FACTORY_3', 'FACTORY_9', 'FACTORY_10', 'FACTORY_0', 'FACTORY_1'])
 typecheckig node...
-POOLS_46(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_46(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -7539,7 +7539,7 @@ Norm:
 -100
 Linked function: POOLS
 done.
-FACTORY_2(address) := ϕ(['FACTORY_10', 'FACTORY_0', 'FACTORY_1', 'FACTORY_3', 'FACTORY_9'])
+FACTORY_2(address) := ϕ(['FACTORY_3', 'FACTORY_9', 'FACTORY_10', 'FACTORY_0', 'FACTORY_1'])
 checking factory
 State IR  variable: factory
 State variable: factory
@@ -7629,15 +7629,16 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 -4
+Error with: _collateralAdjusted in function getCollateralValueInBase
 [i]Type for _collateralAdjusted
 Num:
-1
+-1
 Den:
 -1
 Norm:
--4
+0
 done.
 clearning node...
 clearing ir...?
@@ -7672,7 +7673,7 @@ token_1(address) := ϕ(['collateralAsset_1', 'collateralAsset_1'])
 clearing ir...?
 VADER_3(address) := ϕ(['VADER_0', 'VADER_1', 'VADER_6'])
 clearing ir...?
-USDV_3(address) := ϕ(['USDV_0', 'USDV_1'])
+USDV_3(address) := ϕ(['USDV_1', 'USDV_0'])
 typecheckig node...
 token_1(address) := ϕ(['collateralAsset_1', 'collateralAsset_1'])
 checking token
@@ -7702,7 +7703,7 @@ Norm:
 -100
 Linked function: VADER
 done.
-USDV_3(address) := ϕ(['USDV_0', 'USDV_1'])
+USDV_3(address) := ϕ(['USDV_1', 'USDV_0'])
 checking usdv
 State IR  variable: usdv
 State variable: usdv
@@ -7741,7 +7742,7 @@ Function name: isBase
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_32(bool) = token_1 == USDV_3
 checking tmp_32
@@ -7751,7 +7752,7 @@ Function name: isBase
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_33(bool) = TMP_31 || TMP_32
 checking tmp_33
@@ -7761,7 +7762,7 @@ Function name: isBase
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_33
 Condition...
@@ -7803,6 +7804,30 @@ TMP_123
 TMP_123
 clearning node...
 clearing ir...?
+baseValue_5(uint256) := _collateralAdjusted_1(uint256)
+has variable
+[i] baseValue cleared
+typecheckig node...
+baseValue_5(uint256) := _collateralAdjusted_1(uint256)
+checking basevalue
+Local variable: basevalue
+Function name: getCollateralValueInBase
+asgn
+Num:
+Den:
+Norm:
+0
+0
+[i]Type for baseValue
+Num:
+-1
+Den:
+-1
+Norm:
+0
+done.
+clearning node...
+clearing ir...?
 TMP_124(bool) = INTERNAL_CALL, Utils.isPool(address)(collateralAsset_1)
 clearing ir...?
 POOLS_48(address) := ϕ(['POOLS_15'])
@@ -7827,7 +7852,7 @@ clearning node...
 clearing ir...?
 token_1(address) := ϕ(['collateralAsset_1'])
 clearing ir...?
-POOLS_13(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_13(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 token_1(address) := ϕ(['collateralAsset_1'])
 checking token
@@ -7842,7 +7867,7 @@ Den:
 Norm:
 -100
 done.
-POOLS_13(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_13(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -7865,7 +7890,7 @@ TMP_35(bool) = HIGH_LEVEL_CALL, dest:TMP_34(iPOOLS), function:isAnchor, argument
 has variable
 [i] TMP_35 cleared
 clearing ir...?
-POOLS_14(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_13', 'POOLS_45', 'POOLS_17'])
+POOLS_14(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_13', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_36 = CONVERT POOLS_14 to iPOOLS
 clearing ir...?
@@ -7873,7 +7898,7 @@ TMP_37(bool) = HIGH_LEVEL_CALL, dest:TMP_36(iPOOLS), function:isAsset, arguments
 has variable
 [i] TMP_37 cleared
 clearing ir...?
-POOLS_15(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_14', 'POOLS_17'])
+POOLS_15(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_14', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_38(bool) = TMP_35 || TMP_37
 has variable
@@ -7919,9 +7944,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_14(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_13', 'POOLS_45', 'POOLS_17'])
+POOLS_14(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_13', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -7974,9 +7999,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-POOLS_15(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_14', 'POOLS_17'])
+POOLS_15(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_14', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -7999,7 +8024,7 @@ Function name: isPool
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_38
 Condition...
@@ -8080,13 +8105,28 @@ TMP_124
 TMP_124
 clearning node...
 clearing ir...?
+baseValue_6(uint256) := ϕ(['baseValue_0', 'baseValue_5'])
+typecheckig node...
+baseValue_6(uint256) := ϕ(['baseValue_0', 'baseValue_5'])
+checking basevalue
+Local variable: basevalue
+Function name: getCollateralValueInBase
+Phi
+[i]Type for baseValue
+Num:
+Den:
+Norm:
+-100
+done.
+clearning node...
+clearing ir...?
 TMP_130 = CONVERT FACTORY_4 to iFACTORY
 clearing ir...?
 TMP_131(bool) = HIGH_LEVEL_CALL, dest:TMP_130(iFACTORY), function:isSynth, arguments:['collateralAsset_1']  
 has variable
 [i] TMP_131 cleared
 clearing ir...?
-FACTORY_5(address) := ϕ(['FACTORY_10', 'FACTORY_1', 'FACTORY_3', 'FACTORY_4', 'FACTORY_9'])
+FACTORY_5(address) := ϕ(['FACTORY_3', 'FACTORY_4', 'FACTORY_9', 'FACTORY_10', 'FACTORY_1'])
 clearing ir...?
 CONDITION TMP_131
 typecheckig node...
@@ -8132,9 +8172,9 @@ Num:
 Den:
 -1
 Norm:
--100
+0
 done.
-FACTORY_5(address) := ϕ(['FACTORY_10', 'FACTORY_1', 'FACTORY_3', 'FACTORY_4', 'FACTORY_9'])
+FACTORY_5(address) := ϕ(['FACTORY_3', 'FACTORY_4', 'FACTORY_9', 'FACTORY_10', 'FACTORY_1'])
 checking factory
 State IR  variable: factory
 State variable: factory
@@ -8169,7 +8209,7 @@ TMP_126(uint256) = HIGH_LEVEL_CALL, dest:TMP_125(iPOOLS), function:getMemberUnit
 has variable
 [i] TMP_126 cleared
 clearing ir...?
-POOLS_49(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_48', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_49(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12', 'POOLS_48'])
 clearing ir...?
 TMP_127 = CONVERT POOLS_49 to iPOOLS
 clearing ir...?
@@ -8177,11 +8217,11 @@ TMP_128(uint256) = HIGH_LEVEL_CALL, dest:TMP_127(iPOOLS), function:getBaseAmount
 has variable
 [i] TMP_128 cleared
 clearing ir...?
-POOLS_50(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_49', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_50(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_49', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 TMP_129(uint256) = INTERNAL_CALL, Utils.calcAsymmetricShare(uint256,uint256,uint256)(_collateralAdjusted_1,TMP_126,TMP_128)
 clearing ir...?
-baseValue_3(uint256) := TMP_129(uint256)
+baseValue_1(uint256) := TMP_129(uint256)
 has variable
 [i] baseValue cleared
 typecheckig node...
@@ -8232,7 +8272,7 @@ Den:
 Norm:
 0
 done.
-POOLS_49(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_48', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_49(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12', 'POOLS_48'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -8294,7 +8334,7 @@ Den:
 Norm:
 0
 done.
-POOLS_50(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_49', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_50(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_49', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -8326,7 +8366,7 @@ Function: calcAsymmetricShare
 ic
 Internal cal param_cache
 Param: 0
-    num: [1]
+    num: [-1]
     den: [-1]
 Param: 1
     num: [-2]
@@ -8351,7 +8391,7 @@ checking u
 Local variable: u
 Function name: calcAsymmetricShare
 Num:
-1
+-1
 Den:
 -1
 Norm:
@@ -8359,7 +8399,7 @@ Norm:
 Phi
 [i]Type for u
 Num:
-1
+-1
 Den:
 -1
 Norm:
@@ -8424,7 +8464,6 @@ Norm:
 0
 [i]Type for TMP_215
 Num:
-1
 -2
 Den:
 -1
@@ -8439,11 +8478,10 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part1
 Num:
-1
 -2
 Den:
 -1
@@ -8511,7 +8549,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part2
 Num:
@@ -8548,7 +8586,6 @@ Norm:
 [i]Type for TMP_218
 Num:
 -2
-1
 Den:
 -1
 Norm:
@@ -8569,7 +8606,6 @@ Norm:
 [i]Type for TMP_219
 Num:
 -2
-1
 Den:
 -1
 Norm:
@@ -8583,12 +8619,11 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part3
 Num:
 -2
-1
 Den:
 -1
 Norm:
@@ -8615,8 +8650,7 @@ Norm:
 0
 [i]Type for TMP_220
 Num:
-1
-1
+-1
 Den:
 -1
 Norm:
@@ -8630,12 +8664,11 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part4
 Num:
-1
-1
+-1
 Den:
 -1
 Norm:
@@ -8670,7 +8703,6 @@ Norm:
 0
 [i]Type for TMP_221
 Num:
-1
 -2
 -2
 -2
@@ -8684,7 +8716,6 @@ checking tmp_222
 Temp variable: tmp_222
 Function name: calcAsymmetricShare
 Num:
-1
 -2
 -2
 -2
@@ -8694,7 +8725,6 @@ Norm:
 0
 Num:
 -2
-1
 Den:
 -1
 Norm:
@@ -8715,8 +8745,7 @@ Function name: calcAsymmetricShare
 initlize checks
 [i]Type for TMP_223
 Num:
-1
-1
+-1
 Den:
 -1
 Norm:
@@ -8730,12 +8759,11 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for numerator
 Num:
-1
-1
+-1
 Den:
 -1
 Norm:
@@ -8800,7 +8828,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part5
 Num:
@@ -8830,12 +8858,11 @@ Norm:
 0
 [i]Type for TMP_226
 Num:
-1
-1
+-2
+-2
+-2
 Den:
--2
--2
--2
+-1
 Norm:
 0
 done.
@@ -8853,65 +8880,84 @@ Norm:
 -100
 [i]Type for TMP_129
 Num:
-1
-1
-Den:
 -2
 -2
 -2
-Norm:
--100
-done.
-baseValue_3(uint256) := TMP_129(uint256)
-checking basevalue
-Local variable: basevalue
-Function name: getCollateralValueInBase
-asgn
-Num:
-Den:
-Norm:
--100
-0
-[i]Type for baseValue
-Num:
-1
-1
-Den:
--2
--2
--2
-Norm:
-0
-done.
-clearning node...
-clearing ir...?
-baseValue_5(uint256) := _collateralAdjusted_1(uint256)
-has variable
-[i] baseValue cleared
-typecheckig node...
-baseValue_5(uint256) := _collateralAdjusted_1(uint256)
-checking basevalue
-Local variable: basevalue
-Function name: getCollateralValueInBase
-asgn
-Num:
-Den:
-Norm:
--100
--4
-[i]Type for baseValue
-Num:
-1
 Den:
 -1
 Norm:
--4
+-100
+done.
+baseValue_1(uint256) := TMP_129(uint256)
+checking basevalue
+Local variable: basevalue
+Function name: getCollateralValueInBase
+asgn
+Num:
+Den:
+Norm:
+0
+0
+[i]Type for baseValue
+Num:
+-2
+-2
+-2
+Den:
+-1
+Norm:
+0
 done.
 clearning node...
 clearing ir...?
-baseValue_2(uint256) := ϕ(['baseValue_1', 'baseValue_0'])
+TMP_135(uint256) = INTERNAL_CALL, Utils.calcSwapValueInToken(address,uint256)(debtAsset_1,baseValue_6)
+clearing ir...?
+debt_1(uint256) := TMP_135(uint256)
+has variable
+[i] debt cleared
 typecheckig node...
-baseValue_2(uint256) := ϕ(['baseValue_1', 'baseValue_0'])
+TMP_135(uint256) = INTERNAL_CALL, Utils.calcSwapValueInToken(address,uint256)(debtAsset_1,baseValue_6)
+Internal call...
+calcSwapValueInToken
+debtAsset
+baseValue
+Function: calcSwapValueInToken
+ic
+Num:
+-2
+Den:
+-1
+Norm:
+-100
+Linked function: debtContract
+[i]Type for TMP_135
+Num:
+Den:
+Norm:
+-100
+done.
+debt_1(uint256) := TMP_135(uint256)
+checking debt
+Local variable: debt
+Function name: getCollateralValueInBase
+asgn
+Num:
+Den:
+Norm:
+0
+0
+[i]Type for debt
+Num:
+Den:
+Norm:
+0
+done.
+[x]node added back
+clearning node...
+clearing ir...?
+baseValue_3(uint256) := ϕ(['baseValue_2', 'baseValue_0'])
+typecheckig node...
+baseValue_3(uint256) := ϕ(['baseValue_2', 'baseValue_0'])
 checking basevalue
 Local variable: basevalue
 Function name: getCollateralValueInBase
@@ -8932,7 +8978,7 @@ has variable
 clearing ir...?
 TMP_134(uint256) = INTERNAL_CALL, Utils.calcSwapValueInBase(address,uint256)(TMP_133,_collateralAdjusted_1)
 clearing ir...?
-baseValue_1(uint256) := TMP_134(uint256)
+baseValue_2(uint256) := TMP_134(uint256)
 has variable
 [i] baseValue cleared
 typecheckig node...
@@ -8988,7 +9034,7 @@ Param: 0
     num: [1]
     den: [-1]
 Param: 1
-    num: [1]
+    num: [-1]
     den: [-1]
 added
 xyz
@@ -9000,7 +9046,7 @@ token_1(address) := ϕ(['TMP_133'])
 clearing ir...?
 amount_1(uint256) := ϕ(['_collateralAdjusted_1'])
 clearing ir...?
-POOLS_20(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_20(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 token_1(address) := ϕ(['TMP_133'])
 checking token
@@ -9028,7 +9074,7 @@ checking amount
 Local variable: amount
 Function name: calcSwapValueInBase
 Num:
-1
+-1
 Den:
 -1
 Norm:
@@ -9036,13 +9082,13 @@ Norm:
 Phi
 [i]Type for amount
 Num:
-1
+-1
 Den:
 -1
 Norm:
 -100
 done.
-POOLS_20(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_20(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -9075,7 +9121,7 @@ clearing ir...?
 TUPLE_2(uint256,uint256) = HIGH_LEVEL_CALL, dest:TMP_53(iPOOLS), function:getPoolAmounts, arguments:['token_1']  
 has variable
 clearing ir...?
-POOLS_21(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_20', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_21(address) := ϕ(['POOLS_9', 'POOLS_20', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _baseAmt_1(uint256)= UNPACK TUPLE_2 index: 0 
 clearing ir...?
@@ -9121,7 +9167,7 @@ Den:
 Norm:
 0
 done.
-POOLS_21(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_20', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_21(address) := ϕ(['POOLS_9', 'POOLS_20', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -9201,7 +9247,7 @@ Function: calcSwapOutput
 ic
 Internal cal param_cache
 Param: 0
-    num: [1]
+    num: [-1]
     den: [-1]
 Param: 1
     num: [1]
@@ -9226,7 +9272,7 @@ checking x
 Local variable: x
 Function name: calcSwapOutput
 Num:
-1
+-1
 Den:
 -1
 Norm:
@@ -9234,7 +9280,7 @@ Norm:
 Phi
 [i]Type for x
 Num:
-1
+-1
 Den:
 -1
 Norm:
@@ -9304,7 +9350,6 @@ Norm:
 [i]Type for TMP_173
 Num:
 1
-1
 Den:
 -1
 Norm:
@@ -9322,7 +9367,6 @@ Norm:
 [i]Type for TMP_174
 Num:
 1
-1
 2
 Den:
 -1
@@ -9337,11 +9381,10 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for numerator
 Num:
-1
 1
 2
 Den:
@@ -9419,7 +9462,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for denominator
 Num:
@@ -9450,7 +9493,7 @@ Norm:
 Num:
 2
 Den:
--1
+1
 Norm:
 0
 done.
@@ -9470,7 +9513,7 @@ Norm:
 Num:
 2
 Den:
--1
+1
 Norm:
 -100
 done.
@@ -9490,11 +9533,11 @@ Norm:
 Num:
 2
 Den:
--1
+1
 Norm:
 -100
 done.
-baseValue_1(uint256) := TMP_134(uint256)
+baseValue_2(uint256) := TMP_134(uint256)
 checking basevalue
 Local variable: basevalue
 Function name: getCollateralValueInBase
@@ -9502,21 +9545,21 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for baseValue
 Num:
 2
 Den:
--1
+1
 Norm:
 0
 done.
 clearning node...
 clearing ir...?
-baseValue_4(uint256) := ϕ(['baseValue_0', 'baseValue_3'])
+baseValue_4(uint256) := ϕ(['baseValue_1', 'baseValue_0'])
 typecheckig node...
-baseValue_4(uint256) := ϕ(['baseValue_0', 'baseValue_3'])
+baseValue_4(uint256) := ϕ(['baseValue_1', 'baseValue_0'])
 checking basevalue
 Local variable: basevalue
 Function name: getCollateralValueInBase
@@ -9527,66 +9570,6 @@ Den:
 Norm:
 -100
 done.
-clearning node...
-clearing ir...?
-baseValue_6(uint256) := ϕ(['baseValue_0', 'baseValue_5'])
-typecheckig node...
-baseValue_6(uint256) := ϕ(['baseValue_0', 'baseValue_5'])
-checking basevalue
-Local variable: basevalue
-Function name: getCollateralValueInBase
-Phi
-[i]Type for baseValue
-Num:
-Den:
-Norm:
--100
-done.
-clearning node...
-clearing ir...?
-TMP_135(uint256) = INTERNAL_CALL, Utils.calcSwapValueInToken(address,uint256)(debtAsset_1,baseValue_6)
-clearing ir...?
-debt_1(uint256) := TMP_135(uint256)
-has variable
-[i] debt cleared
-typecheckig node...
-TMP_135(uint256) = INTERNAL_CALL, Utils.calcSwapValueInToken(address,uint256)(debtAsset_1,baseValue_6)
-Internal call...
-calcSwapValueInToken
-debtAsset
-baseValue
-Function: calcSwapValueInToken
-ic
-Num:
--2
-Den:
--1
-Norm:
--100
-Linked function: debtContract
-[i]Type for TMP_135
-Num:
-Den:
-Norm:
--100
-done.
-debt_1(uint256) := TMP_135(uint256)
-checking debt
-Local variable: debt
-Function name: getCollateralValueInBase
-asgn
-Num:
-Den:
-Norm:
--100
-0
-[i]Type for debt
-Num:
-Den:
-Norm:
-0
-done.
-[x]node added back
 clearning node...
 clearing ir...?
 RETURN debt_1,baseValue_6
@@ -9637,7 +9620,7 @@ collateralAsset_1(address) := ϕ(['collateralAsset_1'])
 clearing ir...?
 debtAsset_1(address) := ϕ(['debtAsset_1'])
 clearing ir...?
-ROUTER_26(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_26(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 typecheckig node...
 collateralAsset_1(address) := ϕ(['collateralAsset_1'])
 checking collateralasset
@@ -9681,7 +9664,7 @@ Norm:
 -100
 Linked function: debtContract
 done.
-ROUTER_26(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_26(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -9737,9 +9720,9 @@ collateralAsset_1(address) := ϕ(['collateralAsset_1'])
 clearing ir...?
 debtAsset_1(address) := ϕ(['debtAsset_1'])
 clearing ir...?
-ROUTER_29(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_29(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_52(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_52(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 collateralAsset_1(address) := ϕ(['collateralAsset_1'])
 checking collateralasset
@@ -9783,7 +9766,7 @@ Norm:
 -100
 Linked function: debtContract
 done.
-ROUTER_29(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_29(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -9805,7 +9788,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_52(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_52(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -9835,9 +9818,9 @@ TMP_159(uint256) = HIGH_LEVEL_CALL, dest:TMP_158(iROUTER), function:getSystemDeb
 has variable
 [i] TMP_159 cleared
 clearing ir...?
-ROUTER_30(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_29', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_30(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_29'])
 clearing ir...?
-POOLS_53(address) := ϕ(['POOLS_23', 'POOLS_52', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_53(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_52', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _debtIssued_1(uint256) := TMP_159(uint256)
 has variable
@@ -9884,7 +9867,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_30(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_29', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_30(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_29'])
 checking router
 State IR  variable: router
 State variable: router
@@ -9906,7 +9889,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_53(address) := ϕ(['POOLS_23', 'POOLS_52', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_53(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_52', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -9936,7 +9919,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _debtIssued
 Num:
@@ -9954,7 +9937,7 @@ TMP_161(uint256) = HIGH_LEVEL_CALL, dest:TMP_160(iPOOLS), function:getTokenAmoun
 has variable
 [i] TMP_161 cleared
 clearing ir...?
-POOLS_54(address) := ϕ(['POOLS_53', 'POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_54(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_53', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _debtDepth_1(uint256) := TMP_161(uint256)
 has variable
@@ -10000,7 +9983,7 @@ Den:
 Norm:
 0
 done.
-POOLS_54(address) := ϕ(['POOLS_53', 'POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_54(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_53', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -10030,7 +10013,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _debtDepth
 Num:
@@ -10077,17 +10060,21 @@ TMP_163(uint256) = TMP_162 (c)/ _debtDepth_1
 checking tmp_163
 Temp variable: tmp_163
 Function name: getDebtLoading
+Error with: TMP_163 in function getDebtLoading
 Num:
+-1
 Den:
+-1
 Norm:
-4
+0
+Error with: TMP_163 in function getDebtLoading
 [i]Type for TMP_163
 Num:
 -1
 Den:
--1
+-2
 Norm:
-4
+0
 done.
 RETURN TMP_163
 Return...
@@ -10105,7 +10092,7 @@ Norm:
 Num:
 -1
 Den:
--1
+-2
 Norm:
 -100
 done.
@@ -10139,13 +10126,13 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _debtLoading
 Num:
 -1
 Den:
--1
+-2
 Norm:
 0
 done.
@@ -10157,7 +10144,7 @@ TMP_155(uint256) = HIGH_LEVEL_CALL, dest:TMP_154(iROUTER), function:getSystemDeb
 has variable
 [i] TMP_155 cleared
 clearing ir...?
-ROUTER_28(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_27', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_28(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_27', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
 TMP_156(uint256) = _debtLoading_1 (c)* TMP_155
 has variable
@@ -10210,7 +10197,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_28(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_27', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_28(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_27', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -10243,7 +10230,7 @@ Norm:
 0
 [i]Type for TMP_156
 Num:
--2
+-1
 Den:
 -1
 Norm:
@@ -10257,13 +10244,14 @@ Constatn varible: 10000
 Constatn varible: 10000
 val: 10000
 4
+Constatn varible: 10000
 Num:
 Den:
 Norm:
 -4
 [i]Type for TMP_157
 Num:
--2
+-1
 Den:
 -1
 Norm:
@@ -10308,9 +10296,9 @@ collateralAsset_1(address) := ϕ(['collateralAsset_1'])
 clearing ir...?
 debtAsset_1(address) := ϕ(['debtAsset_1'])
 clearing ir...?
-ROUTER_29(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_29(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 clearing ir...?
-POOLS_52(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_52(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 typecheckig node...
 collateralAsset_1(address) := ϕ(['collateralAsset_1'])
 checking collateralasset
@@ -10340,7 +10328,7 @@ Norm:
 -100
 Linked function: debtContract
 done.
-ROUTER_29(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0'])
+ROUTER_29(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_0', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1'])
 checking router
 State IR  variable: router
 State variable: router
@@ -10355,7 +10343,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_52(address) := ϕ(['POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_0', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_52(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_3', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_0', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -10378,9 +10366,9 @@ TMP_159(uint256) = HIGH_LEVEL_CALL, dest:TMP_158(iROUTER), function:getSystemDeb
 has variable
 [i] TMP_159 cleared
 clearing ir...?
-ROUTER_30(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_29', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_30(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_29'])
 clearing ir...?
-POOLS_53(address) := ϕ(['POOLS_23', 'POOLS_52', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_53(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_52', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _debtIssued_1(uint256) := TMP_159(uint256)
 has variable
@@ -10430,7 +10418,7 @@ Den:
 Norm:
 0
 done.
-ROUTER_30(address) := ϕ(['ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_30', 'ROUTER_29', 'ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13'])
+ROUTER_30(address) := ϕ(['ROUTER_4', 'ROUTER_25', 'ROUTER_20', 'ROUTER_13', 'ROUTER_30', 'ROUTER_10', 'ROUTER_16', 'ROUTER_28', 'ROUTER_7', 'ROUTER_1', 'ROUTER_29'])
 checking router
 State IR  variable: router
 State variable: router
@@ -10445,7 +10433,7 @@ Norm:
 -100
 Linked function: ROUTER
 done.
-POOLS_53(address) := ϕ(['POOLS_23', 'POOLS_52', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_53(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_23', 'POOLS_52', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -10486,7 +10474,7 @@ TMP_161(uint256) = HIGH_LEVEL_CALL, dest:TMP_160(iPOOLS), function:getTokenAmoun
 has variable
 [i] TMP_161 cleared
 clearing ir...?
-POOLS_54(address) := ϕ(['POOLS_53', 'POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_54(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_53', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 clearing ir...?
 _debtDepth_1(uint256) := TMP_161(uint256)
 has variable
@@ -10535,7 +10523,7 @@ Den:
 Norm:
 0
 done.
-POOLS_54(address) := ϕ(['POOLS_53', 'POOLS_23', 'POOLS_10', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_11', 'POOLS_19', 'POOLS_47', 'POOLS_54', 'POOLS_29', 'POOLS_6', 'POOLS_12', 'POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17'])
+POOLS_54(address) := ϕ(['POOLS_9', 'POOLS_1', 'POOLS_45', 'POOLS_17', 'POOLS_53', 'POOLS_23', 'POOLS_10', 'POOLS_3', 'POOLS_15', 'POOLS_26', 'POOLS_21', 'POOLS_35', 'POOLS_32', 'POOLS_19', 'POOLS_54', 'POOLS_47', 'POOLS_11', 'POOLS_29', 'POOLS_12'])
 checking pools
 State IR  variable: pools
 State variable: pools
@@ -10586,24 +10574,20 @@ Temp variable: tmp_162
 Function name: getDebtLoading
 testing mul...
 Constatn varible: 10000
-Error with: TMP_162 in function getDebtLoading
 Constatn varible: 10000
 val: 10000
 4
 Num:
--1
 Den:
--1
 Norm:
-8
-Error with: TMP_162 in function getDebtLoading
+4
 [i]Type for TMP_162
 Num:
--1
+-2
 Den:
 -1
 Norm:
-8
+4
 done.
 TMP_163(uint256) = TMP_162 (c)/ _debtDepth_1
 checking tmp_163
@@ -10615,15 +10599,15 @@ Num:
 Den:
 -1
 Norm:
-4
+0
 Error with: TMP_163 in function getDebtLoading
 [i]Type for TMP_163
 Num:
 -1
 Den:
--1
+-2
 Norm:
-4
+0
 done.
 RETURN TMP_163
 Return...
@@ -10659,11 +10643,11 @@ Param: 1
     den: [-1]
 clearning node...
 clearing ir...?
-bp_1(uint256) := ϕ(['basisPoints_1', 'TMP_58'])
+bp_1(uint256) := ϕ(['TMP_58', 'basisPoints_1'])
 clearing ir...?
 total_1(uint256) := ϕ(['protection_3', 'targetPrice_1'])
 typecheckig node...
-bp_1(uint256) := ϕ(['basisPoints_1', 'TMP_58'])
+bp_1(uint256) := ϕ(['TMP_58', 'basisPoints_1'])
 checking bp
 Local variable: bp
 Function name: calcPart
@@ -10747,7 +10731,7 @@ Function name: calcPart
 Num:
 Den:
 Norm:
--100
+0
 done.
 TMP_167(None) = SOLIDITY_CALL require(bool,string)(TMP_166,Must be correct BP)
 checking tmp_167
@@ -10791,13 +10775,13 @@ Function name: calcShare
 Function Visibility: public
 clearning node...
 clearing ir...?
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 clearing ir...?
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 clearing ir...?
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 typecheckig node...
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -10810,7 +10794,7 @@ Den:
 Norm:
 -100
 done.
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 checking total
 Local variable: total
 Function name: calcShare
@@ -10823,7 +10807,7 @@ Den:
 Norm:
 -100
 done.
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 checking amount
 Local variable: amount
 Function name: calcShare
@@ -10895,9 +10879,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 typecheckig node...
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -10946,6 +10930,8 @@ Condition...
 Conidtion: 
 TMP_170
 TMP_170
+clearning node...
+typecheckig node...
 clearning node...
 clearing ir...?
 TMP_171(uint256) = amount_1 (c)* part_3
@@ -11011,8 +10997,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-typecheckig node...
 Checking return valuecalcShare
 share
 &&
@@ -11073,13 +11057,13 @@ Param: 2
     den: [-1]
 clearning node...
 clearing ir...?
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 clearing ir...?
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 clearing ir...?
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 typecheckig node...
-part_1(uint256) := ϕ(['_duration_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1', '_units_1', 'debt_1', 'timeElapsed_1', 'totalSupply_1'])
+part_1(uint256) := ϕ(['_units_1', 'totalSupply_1', 'timeElapsed_1', '_duration_1', 'debt_1', '_baseAmount_1', '_memberCollateral_1', 'bp_1'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -11092,7 +11076,7 @@ Den:
 Norm:
 -100
 done.
-total_1(uint256) := ϕ(['TMP_116', 'TMP_111', '_memberDebt_1', '_year_2', 'maxSupply_1', 'TMP_81', 'TMP_89', '_collateral_1', 'timeForFullProtection_1', 'rewardReductionFactor_1'])
+total_1(uint256) := ϕ(['TMP_89', '_collateral_1', '_year_2', 'rewardReductionFactor_1', 'timeForFullProtection_1', 'TMP_116', '_memberDebt_1', 'TMP_111', 'maxSupply_1', 'TMP_81'])
 checking total
 Local variable: total
 Function name: calcShare
@@ -11105,7 +11089,7 @@ Den:
 Norm:
 -100
 done.
-amount_1(uint256) := ϕ(['_interestPaid_1', 'TMP_146', '_coverage_1', 'TMP_113', 'total_1', '_memberCollateral_1', 'TMP_83', 'TMP_91', 'TMP_118', 'amount_1'])
+amount_1(uint256) := ϕ(['TMP_83', 'TMP_118', 'TMP_91', '_interestPaid_1', 'amount_1', 'TMP_146', 'TMP_113', '_coverage_1', 'total_1', '_memberCollateral_1'])
 checking amount
 Local variable: amount
 Function name: calcShare
@@ -11177,9 +11161,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 typecheckig node...
-part_3(uint256) := ϕ(['part_2', 'part_1'])
+part_3(uint256) := ϕ(['part_1', 'part_2'])
 checking part
 Local variable: part
 Function name: calcShare
@@ -11228,6 +11212,8 @@ Condition...
 Conidtion: 
 TMP_170
 TMP_170
+clearning node...
+typecheckig node...
 clearning node...
 clearing ir...?
 TMP_171(uint256) = amount_1 (c)* part_3
@@ -11293,8 +11279,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-typecheckig node...
 Reading Function: calcSwapOutput
 Function name: calcSwapOutput
 Function Visibility: public
@@ -11349,7 +11333,7 @@ Function name: calcSwapOutput
 Phi
 [i]Type for x
 Num:
-1
+-1
 Den:
 -1
 Norm:
@@ -11407,7 +11391,6 @@ Norm:
 [i]Type for TMP_173
 Num:
 1
-1
 Den:
 -1
 Norm:
@@ -11424,7 +11407,6 @@ Norm:
 0
 [i]Type for TMP_174
 Num:
-1
 1
 2
 Den:
@@ -11444,7 +11426,6 @@ Norm:
 0
 [i]Type for numerator
 Num:
-1
 1
 2
 Den:
@@ -11553,7 +11534,7 @@ Norm:
 Num:
 2
 Den:
--1
+1
 Norm:
 0
 done.
@@ -11671,7 +11652,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for numerator
 Num:
@@ -11756,7 +11737,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for denominator
 Num:
@@ -11890,17 +11871,20 @@ TMP_187(uint256) = TMP_185 (c)/ TMP_186
 checking tmp_187
 Temp variable: tmp_187
 Function name: calcSwapSlip
+Error with: TMP_187 in function calcSwapSlip
 Num:
+-1
 Den:
+-1
 Norm:
-4
+0
 [i]Type for TMP_187
 Num:
 -1
 Den:
 -1
 Norm:
-4
+0
 done.
 RETURN TMP_187
 Return...
@@ -11971,9 +11955,9 @@ Param: 4
     den: [-1]
 clearning node...
 clearing ir...?
-one_3(uint256) := ϕ(['one_0', 'one_4', 'one_2'])
+one_3(uint256) := ϕ(['one_2', 'one_0', 'one_4'])
 typecheckig node...
-one_3(uint256) := ϕ(['one_0', 'one_4', 'one_2'])
+one_3(uint256) := ϕ(['one_2', 'one_0', 'one_4'])
 checking one
 State IR  variable: one
 State variable: one
@@ -12009,13 +11993,21 @@ Function name: calcLiquidityUnits
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_188
 Condition...
 Conidtion: 
 TMP_188
 TMP_188
+clearning node...
+clearing ir...?
+RETURN b_1
+typecheckig node...
+RETURN b_1
+Return...
+calcLiquidityUnits
+b_1
 clearning node...
 clearing ir...?
 TMP_189(uint256) = INTERNAL_CALL, Utils.getSlipAdustment(uint256,uint256,uint256,uint256)(b_1,B_1,t_1,T_1)
@@ -12084,7 +12076,7 @@ t_1(uint256) := ϕ(['t_1'])
 clearing ir...?
 T_1(uint256) := ϕ(['T_1'])
 clearing ir...?
-one_5(uint256) := ϕ(['one_0', 'one_4', 'one_2'])
+one_5(uint256) := ϕ(['one_2', 'one_0', 'one_4'])
 typecheckig node...
 b_1(uint256) := ϕ(['b_1'])
 checking b
@@ -12162,7 +12154,7 @@ Den:
 Norm:
 -100
 done.
-one_5(uint256) := ϕ(['one_0', 'one_4', 'one_2'])
+one_5(uint256) := ϕ(['one_2', 'one_0', 'one_4'])
 checking one
 State IR  variable: one
 State variable: one
@@ -12218,7 +12210,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part1
 Num:
@@ -12265,7 +12257,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part2
 Num:
@@ -12331,7 +12323,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part3
 Num:
@@ -12373,7 +12365,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part4
 Num:
@@ -12422,11 +12414,66 @@ TMP_204
 TMP_204
 clearning node...
 clearing ir...?
+TMP_206(uint256) = part2_1 (c)- part1_1
+has variable
+[i] TMP_206 cleared
+clearing ir...?
+numerator_1(uint256) := TMP_206(uint256)
+has variable
+[i] numerator cleared
+typecheckig node...
+TMP_206(uint256) = part2_1 (c)- part1_1
+checking tmp_206
+Temp variable: tmp_206
+Function name: getSlipAdustment
+Num:
+1
+1
+Den:
+-1
+Norm:
+0
+Num:
+1
+2
+Den:
+-1
+Norm:
+0
+Error with: TMP_206 in function getSlipAdustment
+[i]Type for TMP_206
+Num:
+-1
+Den:
+-1
+Norm:
+0
+done.
+numerator_1(uint256) := TMP_206(uint256)
+checking numerator
+Local variable: numerator
+Function name: getSlipAdustment
+asgn
+Num:
+Den:
+Norm:
+0
+0
+[i]Type for numerator
+Num:
+-1
+Den:
+-1
+Norm:
+0
+done.
+clearning node...
+clearing ir...?
 TMP_205(uint256) = part1_1 (c)- part2_1
 has variable
 [i] TMP_205 cleared
 clearing ir...?
-numerator_1(uint256) := TMP_205(uint256)
+numerator_2(uint256) := TMP_205(uint256)
 has variable
 [i] numerator cleared
 typecheckig node...
@@ -12457,7 +12504,7 @@ Den:
 Norm:
 0
 done.
-numerator_1(uint256) := TMP_205(uint256)
+numerator_2(uint256) := TMP_205(uint256)
 checking numerator
 Local variable: numerator
 Function name: getSlipAdustment
@@ -12465,7 +12512,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for numerator
 Num:
@@ -12477,9 +12524,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-numerator_3(uint256) := ϕ(['numerator_1', 'numerator_2'])
+numerator_3(uint256) := ϕ(['numerator_2', 'numerator_1'])
 typecheckig node...
-numerator_3(uint256) := ϕ(['numerator_1', 'numerator_2'])
+numerator_3(uint256) := ϕ(['numerator_2', 'numerator_1'])
 checking numerator
 Local variable: numerator
 Function name: getSlipAdustment
@@ -12525,66 +12572,11 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for denominator
 Num:
 1
-Den:
--1
-Norm:
-0
-done.
-clearning node...
-clearing ir...?
-TMP_206(uint256) = part2_1 (c)- part1_1
-has variable
-[i] TMP_206 cleared
-clearing ir...?
-numerator_2(uint256) := TMP_206(uint256)
-has variable
-[i] numerator cleared
-typecheckig node...
-TMP_206(uint256) = part2_1 (c)- part1_1
-checking tmp_206
-Temp variable: tmp_206
-Function name: getSlipAdustment
-Num:
-1
-1
-Den:
--1
-Norm:
-0
-Num:
-1
-2
-Den:
--1
-Norm:
-0
-Error with: TMP_206 in function getSlipAdustment
-[i]Type for TMP_206
-Num:
--1
-Den:
--1
-Norm:
-0
-done.
-numerator_2(uint256) := TMP_206(uint256)
-checking numerator
-Local variable: numerator
-Function name: getSlipAdustment
-asgn
-Num:
-Den:
-Norm:
--100
-0
-[i]Type for numerator
-Num:
--1
 Den:
 -1
 Norm:
@@ -12696,7 +12688,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for slipAdjustment
 Num:
@@ -12706,14 +12698,6 @@ Den:
 Norm:
 0
 done.
-clearning node...
-clearing ir...?
-RETURN b_1
-typecheckig node...
-RETURN b_1
-Return...
-calcLiquidityUnits
-b_1
 clearning node...
 clearing ir...?
 TMP_190(uint256) = t_1 (c)* B_1
@@ -12750,7 +12734,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part1
 Num:
@@ -12797,7 +12781,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part2
 Num:
@@ -12869,7 +12853,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for part3
 Num:
@@ -12961,7 +12945,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _units
 Num:
@@ -13093,7 +13077,7 @@ t_1(uint256) := ϕ(['t_1'])
 clearing ir...?
 T_1(uint256) := ϕ(['T_1'])
 clearing ir...?
-one_5(uint256) := ϕ(['one_0', 'one_4', 'one_2'])
+one_5(uint256) := ϕ(['one_2', 'one_0', 'one_4'])
 typecheckig node...
 b_1(uint256) := ϕ(['b_1'])
 checking b
@@ -13147,7 +13131,7 @@ Den:
 Norm:
 -100
 done.
-one_5(uint256) := ϕ(['one_0', 'one_4', 'one_2'])
+one_5(uint256) := ϕ(['one_2', 'one_0', 'one_4'])
 checking one
 State IR  variable: one
 State variable: one
@@ -13401,11 +13385,66 @@ TMP_204
 TMP_204
 clearning node...
 clearing ir...?
+TMP_206(uint256) = part2_1 (c)- part1_1
+has variable
+[i] TMP_206 cleared
+clearing ir...?
+numerator_1(uint256) := TMP_206(uint256)
+has variable
+[i] numerator cleared
+typecheckig node...
+TMP_206(uint256) = part2_1 (c)- part1_1
+checking tmp_206
+Temp variable: tmp_206
+Function name: getSlipAdustment
+Num:
+1
+1
+Den:
+-1
+Norm:
+0
+Num:
+1
+2
+Den:
+-1
+Norm:
+0
+Error with: TMP_206 in function getSlipAdustment
+[i]Type for TMP_206
+Num:
+-1
+Den:
+-1
+Norm:
+0
+done.
+numerator_1(uint256) := TMP_206(uint256)
+checking numerator
+Local variable: numerator
+Function name: getSlipAdustment
+asgn
+Num:
+Den:
+Norm:
+0
+0
+[i]Type for numerator
+Num:
+-1
+Den:
+-1
+Norm:
+0
+done.
+clearning node...
+clearing ir...?
 TMP_205(uint256) = part1_1 (c)- part2_1
 has variable
 [i] TMP_205 cleared
 clearing ir...?
-numerator_1(uint256) := TMP_205(uint256)
+numerator_2(uint256) := TMP_205(uint256)
 has variable
 [i] numerator cleared
 typecheckig node...
@@ -13436,7 +13475,7 @@ Den:
 Norm:
 0
 done.
-numerator_1(uint256) := TMP_205(uint256)
+numerator_2(uint256) := TMP_205(uint256)
 checking numerator
 Local variable: numerator
 Function name: getSlipAdustment
@@ -13456,9 +13495,9 @@ Norm:
 done.
 clearning node...
 clearing ir...?
-numerator_3(uint256) := ϕ(['numerator_1', 'numerator_2'])
+numerator_3(uint256) := ϕ(['numerator_2', 'numerator_1'])
 typecheckig node...
-numerator_3(uint256) := ϕ(['numerator_1', 'numerator_2'])
+numerator_3(uint256) := ϕ(['numerator_2', 'numerator_1'])
 checking numerator
 Local variable: numerator
 Function name: getSlipAdustment
@@ -13509,61 +13548,6 @@ Norm:
 [i]Type for denominator
 Num:
 1
-Den:
--1
-Norm:
-0
-done.
-clearning node...
-clearing ir...?
-TMP_206(uint256) = part2_1 (c)- part1_1
-has variable
-[i] TMP_206 cleared
-clearing ir...?
-numerator_2(uint256) := TMP_206(uint256)
-has variable
-[i] numerator cleared
-typecheckig node...
-TMP_206(uint256) = part2_1 (c)- part1_1
-checking tmp_206
-Temp variable: tmp_206
-Function name: getSlipAdustment
-Num:
-1
-1
-Den:
--1
-Norm:
-0
-Num:
-1
-2
-Den:
--1
-Norm:
-0
-Error with: TMP_206 in function getSlipAdustment
-[i]Type for TMP_206
-Num:
--1
-Den:
--1
-Norm:
-0
-done.
-numerator_2(uint256) := TMP_206(uint256)
-checking numerator
-Local variable: numerator
-Function name: getSlipAdustment
-asgn
-Num:
-Den:
-Norm:
-0
-0
-[i]Type for numerator
-Num:
--1
 Den:
 -1
 Norm:
@@ -13855,7 +13839,7 @@ Function name: calcAsymmetricShare
 Phi
 [i]Type for u
 Num:
-1
+-1
 Den:
 -1
 Norm:
@@ -13908,7 +13892,6 @@ Norm:
 0
 [i]Type for TMP_215
 Num:
-1
 -2
 Den:
 -1
@@ -13927,7 +13910,6 @@ Norm:
 0
 [i]Type for part1
 Num:
-1
 -2
 Den:
 -1
@@ -14032,7 +14014,6 @@ Norm:
 [i]Type for TMP_218
 Num:
 -2
-1
 Den:
 -1
 Norm:
@@ -14053,7 +14034,6 @@ Norm:
 [i]Type for TMP_219
 Num:
 -2
-1
 Den:
 -1
 Norm:
@@ -14072,7 +14052,6 @@ Norm:
 [i]Type for part3
 Num:
 -2
-1
 Den:
 -1
 Norm:
@@ -14099,8 +14078,7 @@ Norm:
 0
 [i]Type for TMP_220
 Num:
-1
-1
+-1
 Den:
 -1
 Norm:
@@ -14118,8 +14096,7 @@ Norm:
 0
 [i]Type for part4
 Num:
-1
-1
+-1
 Den:
 -1
 Norm:
@@ -14154,7 +14131,6 @@ Norm:
 0
 [i]Type for TMP_221
 Num:
-1
 -2
 -2
 -2
@@ -14168,7 +14144,6 @@ checking tmp_222
 Temp variable: tmp_222
 Function name: calcAsymmetricShare
 Num:
-1
 -2
 -2
 -2
@@ -14178,7 +14153,6 @@ Norm:
 0
 Num:
 -2
-1
 Den:
 -1
 Norm:
@@ -14199,8 +14173,7 @@ Function name: calcAsymmetricShare
 initlize checks
 [i]Type for TMP_223
 Num:
-1
-1
+-1
 Den:
 -1
 Norm:
@@ -14218,8 +14191,7 @@ Norm:
 0
 [i]Type for numerator
 Num:
-1
-1
+-1
 Den:
 -1
 Norm:
@@ -14314,12 +14286,11 @@ Norm:
 0
 [i]Type for TMP_226
 Num:
-1
-1
+-2
+-2
+-2
 Den:
--2
--2
--2
+-1
 Norm:
 0
 done.
@@ -14535,7 +14506,7 @@ Function name: calcCoverage
 Num:
 Den:
 Norm:
--100
+0
 done.
 CONDITION TMP_229
 Condition...
@@ -14617,7 +14588,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _depositValue
 Num:
@@ -14700,7 +14671,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for _redemptionValue
 Num:
@@ -14782,7 +14753,7 @@ asgn
 Num:
 Den:
 Norm:
--100
+0
 0
 [i]Type for coverage
 Num:

@@ -1029,6 +1029,7 @@ def type_bin_div(dest, lir, rir) ->bool:
         return False
     asn_norm(dest, get_norm(lir))
     add_norm(dest, -get_norm(rir))
+    print("done")
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
