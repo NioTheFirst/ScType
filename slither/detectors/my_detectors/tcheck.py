@@ -580,7 +580,9 @@ def querry_fc(ir) -> int:
     dest = ir.destination
     func_name = ir.function.name
     cont_name = dest.link_function
-    #TODiO
+    #TODO
+    print("Dest: " + dest.name + " type: " + str(dest.type))
+
     if(str(dest.type) == "bool"):
         assign_const(dest)
         return 2
