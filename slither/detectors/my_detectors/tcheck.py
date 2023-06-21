@@ -492,7 +492,10 @@ def check_type(ir) -> bool:
         #High level call
         addback = type_hlc(ir)
     elif isinstance(ir, TypeConversion):
-        addback = type_asn(ir.lvalue, ir.variable)
+        if(str(ir.variable) == "this"):
+            addback = type_asn(ir.lvalue, get_hash("global", "this"))
+        else:    
+            addback = type_asn(ir.lvalue, ir.variable)
         print(get_norm(ir.variable))
         print(ir.variable.name)
         asn_norm(ir.lvalue, get_norm(ir.variable))
