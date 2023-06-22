@@ -79,6 +79,7 @@ def parse_type_file(t_file):
                     num = [-1]
                     denom = [-1]
                     norm = 0
+                    copy = "c"
                     lf = None
                     if(len(ret_info) >= 4):
                         copy = ret_info[0]
