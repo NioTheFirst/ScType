@@ -595,7 +595,7 @@ def querry_fc(ir) -> int:
     #TODO
     if isinstance(ir.lvalue, TupleVariable):
         print(ir.lvalue.node)
-        for e in ir.lvalue.expressions:
+        for e in ir.lvalue.non_ssa_version.node.expressions:
             print(e)
     print_token_type(dest)
     if(str(ir.lvalue.type) == "bool"):
