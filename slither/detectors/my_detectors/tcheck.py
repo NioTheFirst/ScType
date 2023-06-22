@@ -558,7 +558,11 @@ def type_upk(ir) ->bool:
     rind = ir.index
     print("Reading tuple " + str(rtup) + " index " + str(rind))
     #currently just querry the type of the left value
-    querry_type(lval)
+    tup_token_type = get_tuple_index(str(rtup), rind)
+    if(tup_token_type):
+        copy_token_tuple(lval, tup_token_type)
+    else:
+        querry_type(lval)
     return False
 
 #USAGE: typechecks an included external call
@@ -629,7 +633,7 @@ def querry_fc(ir) -> int:
         elif(len(written_func_rets) == 1):
             written_func_ret = written_func_rets[0]
             copy_token_tuple(ir.lvalue, written_func_ret)
-        elif(isinstance(ir.lvalue, TupleVariable) and len_written_func_rets > 1):
+        elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
         else:
             print("bad function call")
