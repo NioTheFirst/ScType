@@ -18,16 +18,16 @@ contract A{
 	int e = IB(b).int_function(balanceA, d);
         return(d);
     }
+    function test_multiple_returns() external returns(int){
+        //return an address and an int
+        (address c, int d) = IB(b).getTokens();
+        a = 1+1;
+        return(d);
+    }
     function test_no_parameters(int balanceA) external returns(int){
         //no parameter function, test return
 	int d = IB(b).decimals();
 	a = 1+1;
 	return(d);
-    }
-    function test_multiple_returns() external returns(int){
-        //return an address and an int
-	(address c, int d) = IB(b).getTokens();
-        a = 1+1;
-        return(d);
     }
 }
