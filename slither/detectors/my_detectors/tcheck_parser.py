@@ -82,6 +82,7 @@ def parse_type_file(t_file):
                     norm = 0
                     copy = "c"
                     lf = None
+                    print(ret_info)
                     if(len(ret_info) >= 4):
                         copy = ret_info[0]
                         num = extract_integers(ret_info[1])
