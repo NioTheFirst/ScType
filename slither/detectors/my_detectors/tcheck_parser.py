@@ -82,6 +82,7 @@ def parse_type_file(t_file):
                     norm = 0
                     copy = "c"
                     lf = None
+                    print(_line[4+i])
                     print(ret_info)
                     if(len(ret_info) >= 4):
                         copy = ret_info[0]
@@ -222,6 +223,11 @@ def split_line(line):
             count_brackets += 1
         elif char == ']':
             count_brackets -= 1
+        
+        if char == '{':
+            count_barckets += 10
+        elif char == '}':
+            count_brackets -= 10
 
         if char == ',' and count_brackets == 0:
             result.append(buffer.strip())
@@ -236,7 +242,7 @@ def extract_type_tuple(input_str):
     # Remove the parenthesis
     input_str = input_str.strip("{}")
     
-    info_list = [str(x) for x in input_str.split(",")]
+    info_list = [str(x) for x in split_line(input_str)]
 
     return info_list
 
