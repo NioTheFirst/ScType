@@ -217,7 +217,7 @@ def split_line(line):
     result = []
     buffer = ''
     count_brackets = 0
-
+    count_parenthesis = 0
     for char in line:
         if char == '[':
             count_brackets += 1
@@ -225,11 +225,11 @@ def split_line(line):
             count_brackets -= 1
         
         if char == '{':
-            count_barckets += 10
+            count_parenthesis += 1
         elif char == '}':
-            count_brackets -= 10
+            count_parenthesis -=1
 
-        if char == ',' and count_brackets == 0:
+        if char == ',' and count_brackets == 0 and count_parenthesis == 0:
             result.append(buffer.strip())
             buffer = ''
         else:
