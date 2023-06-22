@@ -20,7 +20,7 @@ contract A{
     }
     function test_no_parameters(int balanceA) external returns(int){
         //no parameter function, test return
-	int d = IB(b).decimals()
+	int d = IB(b).decimals();
 	a = 1+1;
 	return(d);
     }

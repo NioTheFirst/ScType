@@ -69,6 +69,8 @@ def parse_type_file(t_file):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
                 ef_types = []
+                if(len(_line) <= 3):
+                    add_ex_func(ef_types)
                 ret_val = int(_line[3].strip())
                 for i in range(ret_val):
                     ret_type_tuple = _line[4+i]
@@ -85,6 +87,7 @@ def parse_type_file(t_file):
                         if(len(ret_info) == 5):
                             lf = ret_info[4]
                     ef_types.append((copy, num, denom, norm, lf))
+                add_ex_func(ef_types)
             #REFERENCE TYPE
             if(_line[0].strip() == "[tref]"):
                 ref_name = _line[1].strip()
@@ -118,39 +121,44 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
     key = contract_name + '_' + function_name
     if(key in ex_func_type_hash):
         func_tuple = ex_func_type_hash[key]
-        num_trans = func_tuple[0]
-        den_trans = func_tuple[1]
-        norm = func_tuple[2]
-        lf = func_tuple[3]
-        ret_num = []
-        ret_den = []
-        param = parameters
-        for p in parameters:
-            print(p.name)
-        if(len(param) == 0):
-            #No parameters, assume that the parameters are directly the types
-            ret_type_tuple = (num_trans, den_trans, norm , lf)
-            return ret_type_tuple
-        for num in num_trans:
-            if(num == -1):
-                ret_num.append(-1)
+        ret_type_tuples = []
+        for ret_var in func_tuple:
+            copy = ret_var[1]
+            num_trans = ret_var[1]
+            den_trans = ret_var[2]
+            norm = ret_var[3]
+            lf = ret_var[4]
+            ret_num = []
+            ret_den = []
+            param = parameters
+            for p in parameters:
+                print(p.name)
+            if(len(param) == 0 or copy == "c"):
+                #No parameters, assume that the parameters are directly the types
+                ret_type_tuple = (num_trans, den_trans, norm , lf)
+                ret_type_tuples.append(ret_type_tuple)
                 continue
-            cur_param = param[num-1]
-            for n in cur_param.token_typen:
-                ret_num.append(n)
-            for d in cur_param.token_typed:
-                ret_den.append(d)
-        for den in den_trans:
-            if(den == -1):
-                ret_den.append(-1)
-                continue
-            cur_param = param[den-1]
-            for n in cur_param.token_typen:
-                ret_den.append(n)
-            for d in cur_param.token_typed:
-                ret_num.append(d)
-        ret_type_tuple = (ret_num, ret_den, norm, lf)
-        return ret_type_tuple
+            for num in num_trans:
+                if(num == -1):
+                    ret_num.append(-1)
+                    continue
+                cur_param = param[num-1]
+                for n in cur_param.token_typen:
+                    ret_num.append(n)
+                for d in cur_param.token_typed:
+                    ret_den.append(d)
+            for den in den_trans:
+                if(den == -1):
+                    ret_den.append(-1)
+                    continue
+                cur_param = param[den-1]
+                for n in cur_param.token_typen:
+                    ret_den.append(n)
+                for d in cur_param.token_typed:
+                    ret_num.append(d)
+            ret_type_tuple = (ret_num, ret_den, norm, lf)
+            ret_type_tuples.append(ret_type_tuple)
+        return ret_type_tuples
     return None
 
 def add_ref(ref_name, type_tuple):
