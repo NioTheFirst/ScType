@@ -625,11 +625,13 @@ def querry_fc(ir) -> int:
         if(len(written_func_rets) == 0):
             #No return value included, default to constant
             assign_const(ir.lvalue)
-        if(len(written_func_rets) == 1):
+        elif(len(written_func_rets) == 1):
             written_func_ret = written_func_rets[0]
             copy_token_tuple(ir.lvalue, written_func_ret)
         elif(isinstance(ir.lvalue, TupleVariable) and len_written_func_rets > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
+        else:
+            print("bad function call")
         print("COPIED")
         return 2
     return 0
