@@ -58,6 +58,19 @@ def get_cf_pair(contract_name, function_name):
         return None
     return tcheck_parser.get_in_func_ptr(contract_name, function_name)
 
+#USAGE: adds a tuple to the parser file
+#RETURNS: NULL
+def add_tuple(tuple_name, type_tuples):
+    tcheck_parser.add_tuple(tuple_name, type_tuples)
+
+#USAGE: returns a specific element located at index of a tuple
+#RETURNS: above
+def get_tuple_index(tuple_name, index):
+    temp = tcheck_parser.get_tuple(tuple_name)
+    if(temp != None and len(temp) > index):
+        return temp[index]
+    return None
+
 #USAGE: adds a referecne
 #RETURNS: NULL
 def add_ref(ref_name, type_tuple):
@@ -593,10 +606,6 @@ def querry_fc(ir) -> int:
     func_name = ir.function.name
     cont_name = dest.link_function
     #TODO
-    if isinstance(ir.lvalue, TupleVariable):
-        print(ir.lvalue.node)
-        for e in ir.lvalue.non_ssa_version.node.expressions:
-            print(e)
     print_token_type(dest)
     if(str(ir.lvalue.type) == "bool"):
         assign_const(ir.lvalue)
@@ -613,9 +622,15 @@ def querry_fc(ir) -> int:
 
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
-        written_func_ret = written_func_rets[0]
+        if(len(written_func_rets) == 0):
+            #No return value included, default to constant
+            assign_const(ir.lvalue)
+        if(len(written_func_rets) == 1):
+            written_func_ret = written_func_rets[0]
+            copy_token_tuple(ir.lvalue, written_func_ret)
+        elif(isinstance(ir.lvalue, TupleVariable) and len_written_func_rets > 1):
+            add_tuple(ir.lvalue.name, written_func_rets)
         print("COPIED")
-        copy_token_tuple(ir.lvalue, written_func_ret)
         return 2
     return 0
         
