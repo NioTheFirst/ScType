@@ -68,18 +68,23 @@ def parse_type_file(t_file):
             if(_line[0].strip() == "[sef]"):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
-                num = [-1]
-                denom = [-1]
-                norm = 0
-                lf = None
-                
-                if(len(_line) > 3):
-                    num = extract_integers(_line[3])
-                    denom = extract_integers(_line[4])
-                    norm = int(_line[5].strip())
-                    if(len(_line) == 7):
-                        lf = _line[6]
-                add_ex_func(c_name, f_name, (num, denom, norm, lf))
+                ef_types = []
+                ret_val = int(_line[3].strip())
+                for i in range(ret_val):
+                    ret_type_tuple = _line[4+i]
+                    ret_info = extract_type_tuple(ret_type_tuple)
+                    num = [-1]
+                    denom = [-1]
+                    norm = 0
+                    lf = None
+                    if(len(ret_info) >= 4):
+                        copy = ret_info[0]
+                        num = extract_integers(ret_info[1])
+                        denom = extract_integers(ret_info[2])
+                        norm = int(ret_info[3].strip())
+                        if(len(ret_info) == 5):
+                            lf = ret_info[4]
+                    ef_types.append((copy, num, denom, norm, lf))
             #REFERENCE TYPE
             if(_line[0].strip() == "[tref]"):
                 ref_name = _line[1].strip()
@@ -204,10 +209,18 @@ def split_line(line):
     result.append(buffer.strip())
     return result
 
+def extract_type_tuple(input_str):
+    # Remove the parenthesis
+    input_str = input_str.strip("{}")
+    
+    info_list = [str(x) for x in input_str.split(",")]
+
+    return info_list
+
 def extract_integers(input_str):
     # Remove the brackets
     input_str = input_str.strip("[]")
-
+    
     # Split the string by commas and convert to integers
     integer_list = [int(x) for x in input_str.split(",")]
 
