@@ -594,7 +594,7 @@ def querry_fc(ir) -> int:
     cont_name = dest.link_function
     #TODO
     if isinstance(ir.lvalue, TupleVariable):
-        print(ir.node)
+        print(ir.lvalue.node)
     print_token_type(dest)
     if(str(ir.lvalue.type) == "bool"):
         assign_const(ir.lvalue)
