@@ -595,6 +595,8 @@ def querry_fc(ir) -> int:
     #TODO
     if isinstance(ir.lvalue, TupleVariable):
         print(ir.lvalue.node)
+        for e in ir.lvalue.expressions:
+            print(e)
     print_token_type(dest)
     if(str(ir.lvalue.type) == "bool"):
         assign_const(ir.lvalue)
