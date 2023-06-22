@@ -70,7 +70,8 @@ def parse_type_file(t_file):
                 f_name = _line[2].strip()
                 ef_types = []
                 if(len(_line) <= 3):
-                    add_ex_func(ef_types)
+                    add_ex_func(c_name, f_name, ef_types)
+                    continue
                 ret_val = int(_line[3].strip())
                 for i in range(ret_val):
                     ret_type_tuple = _line[4+i]
@@ -87,7 +88,7 @@ def parse_type_file(t_file):
                         if(len(ret_info) == 5):
                             lf = ret_info[4]
                     ef_types.append((copy, num, denom, norm, lf))
-                add_ex_func(ef_types)
+                add_ex_func(c_name, f_name, ef_types)
             #REFERENCE TYPE
             if(_line[0].strip() == "[tref]"):
                 ref_name = _line[1].strip()
