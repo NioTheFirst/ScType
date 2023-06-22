@@ -1511,7 +1511,7 @@ class tcheck(AbstractDetector):
         global user_type
         global type_file
         global line_no
-        for contract in self.compilation_unit.contracts_derived:
+        for contract in self.slither.contracts:
             print(contract.name)
         for contract in self.contracts:
             #TODO: implement x contract function calls and interate through global variables first
