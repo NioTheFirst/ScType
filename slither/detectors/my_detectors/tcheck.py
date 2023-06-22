@@ -622,6 +622,7 @@ def querry_fc(ir) -> int:
 
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
+        print("wfc len: " + str(len(written_func_rets)))
         if(len(written_func_rets) == 0):
             #No return value included, default to constant
             assign_const(ir.lvalue)

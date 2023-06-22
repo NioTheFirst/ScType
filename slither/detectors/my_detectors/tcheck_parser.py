@@ -19,6 +19,7 @@ var_type_hash = {}
 in_func_ptr_hash = {}
 ex_func_type_hash = {}
 ref_type_hash = {}
+tuple_type_hash = {}
 
 def parse_type_file(t_file):
     with open (t_file, 'r') as type_file:
@@ -115,6 +116,16 @@ def get_var_type_tuple(function_name, var_name):
         return var_type_hash[key]
     return None
 
+def add_tuple(tuple_name, type_tuples):
+    key = tuple_name
+    tuple_type_hash[key] = type_tuples
+
+def get_tuple(tuple_name):
+    key = tuple_name
+    if key in tuple_type_hash:
+        return tuple_type_hash[key]
+    return None
+
 def add_ex_func(contract_name, function_name, type_tuple):
     key = contract_name + '_' + function_name
     ex_func_type_hash[key] = type_tuple
@@ -125,7 +136,8 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
         func_tuple = ex_func_type_hash[key]
         ret_type_tuples = []
         for ret_var in func_tuple:
-            copy = ret_var[1]
+            print(ret_var)
+            copy = ret_var[0]
             num_trans = ret_var[1]
             den_trans = ret_var[2]
             norm = ret_var[3]
