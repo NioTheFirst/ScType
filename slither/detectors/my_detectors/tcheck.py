@@ -1512,6 +1512,8 @@ class tcheck(AbstractDetector):
         global type_file
         global line_no
         for contract in self.contracts:
+            print(contract.name)
+        for contract in self.contracts:
             #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
             print("contract name: "+contract.name)
