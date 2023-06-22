@@ -1,5 +1,8 @@
 #!/bin/bash
 
-source /home/brainz/slither_env/bin/activate
+c_dir=$(pwd)
 
+source /data/brainz/myenv2/bin/activate
+
+cd "$c_dir"
 echo "Activted"
