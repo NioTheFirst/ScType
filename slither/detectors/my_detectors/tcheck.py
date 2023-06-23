@@ -1245,20 +1245,21 @@ def _tcheck_ir(irs, function_name) -> []:
             is_function(ir.function)
             check_type(ir)
             continue
-        is_high_level_call(ir)
-        is_referenceVariable(ir.lvalue)
-        is_constant(ir.lvalue)
-        is_temporary(ir.lvalue)
-        is_space(ir.lvalue)
-        is_state(ir.lvalue)
-        is_local(ir.lvalue)
-        is_tuple(ir.lvalue)
-        is_function_type_variable(ir.lvalue)
-        if function_name != None and ir.lvalue != None and is_variable(ir.lvalue):
+
+        #is_high_level_call(ir)
+        #is_referenceVariable(ir.lvalue)
+        #is_constant(ir.lvalue)
+        #is_temporary(ir.lvalue)
+        #is_space(ir.lvalue)
+        #is_state(ir.lvalue)
+        #is_local(ir.lvalue)
+        #is_tuple(ir.lvalue)
+        #is_function_type_variable(ir.lvalue)
+        if not(isinstance(ir, Return) and function_name != None and ir.lvalue != None and is_variable(ir.lvalue):
             ir.lvalue.parent_function = function_name
             print("Function name: "+ ir.lvalue.parent_function)
         addback = check_type(ir)
-        is_variable(ir.lvalue)
+        #is_variable(ir.lvalue)
         if(addback):
             newirs.append(ir)
     return newirs
