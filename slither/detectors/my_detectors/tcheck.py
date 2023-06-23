@@ -1417,6 +1417,7 @@ def _mark_functions(contract):
     for function in contract.functions_declared:
         print("Checking... " + function.name)
         if(not (function.entry_point and (read_internal or function.visibility == "external" or function.visibility == "public"))):
+            function_check[function.name] = False
             print("[x] Not visible ")
             continue
         fentry = {function.entry_point}
@@ -1460,7 +1461,7 @@ def _tcheck_contract(contract):
     print("lolcheck?")
     for function in contract.functions_declared:
         print("Reading Function: " + function.name)
-        if not function_check[function.name]:
+        if not(function_check[function.name]):
             print("Function " + function.name + " not marked")
             continue
         if not function.entry_point:
