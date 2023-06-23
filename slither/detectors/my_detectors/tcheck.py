@@ -789,7 +789,7 @@ def type_fc(ir) -> bool:
             print(x.name)
             print("&&")
             if(isinstance(ir.lvalue, TupleVariable)):
-                tuple_types.append((x.token_typen, x.token_typed, x.norm, x.lval))
+                tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
             else:
                 type_asn(ir.lvalue, x)
         if(len(tuple_types) > 0):
