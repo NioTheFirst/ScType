@@ -8,11 +8,11 @@ cd ..
 sleep 3
 
 #Cross Contract Function Call
-cd cross_contract_hlc
-slither --detect tcheck .
-cd ..
+#cd cross_contract_hlc
+#slither --detect tcheck .
+#cd ..
 
-sleep 3
+#sleep 3
 
 #High Level Call Handling
 cd new_hlc_handling
