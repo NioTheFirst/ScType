@@ -1465,6 +1465,9 @@ def _tcheck_contract(contract):
             continue
         if not function.entry_point:
             continue
+        #SKIP
+        print("External Function: " + function.name)
+        continue
         addback_nodes = _tcheck_function(function)
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
