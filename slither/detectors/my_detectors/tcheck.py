@@ -1370,7 +1370,7 @@ def _tcheck_function(function) -> []:
         print("wooo")
         return addback_nodes
     print("Function name: "+function.name)
-    print("Function Visibility: "+function.visibility)
+    print("Function Visibility (test): "+function.visibility)
     fvisibl = function.visibility
     if(fvisibl == 'public' or fvisibl == 'external' or read_internal):
         for fparam in function.parameters:
