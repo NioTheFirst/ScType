@@ -538,6 +538,10 @@ def check_type(ir) -> bool:
         print("MEMBER")
         addback = type_member(ir) 
         return False
+    elif isinstance(ir, Return):
+        print("RETURN")
+        for y in ir.values:
+            ir.function.add_return_ssa(y)
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
     #    #Reference
     #    addback = type_ref(ir)
@@ -779,12 +783,16 @@ def type_fc(ir) -> bool:
         print("added")
         addback = _tcheck_function_call(ir.function, new_param_cache)
         #deal with return value (single) TODO
+        tuple_types = []
         for x in ir.function.returns_ssa:
             print(x.name)
             print("&&")
-        if(len(ir.function.returns_ssa)):
-            print(ir.function.returns_ssa[0].name)
-            type_asn(ir.lvalue, ir.function.returns_ssa[0])
+            if(isinstance(ir.lvalue, TupleVariable)):
+                tuple_types.append((x.token_typen, x.token_typed, x.norm, x.lval))
+            else:
+                type_asn(ir.lvalue, x)
+        if(len(tuple_types) > 0):
+            add_tuple(ir.lvalue.name, tuple_types)
         if(len(addback) != 0):
             return True
     return False
@@ -1223,7 +1231,7 @@ def _tcheck_ir(irs, function_name) -> []:
         if isinstance(ir, Function):
             print("Function...")
             continue
-        if isinstance(ir, Return):
+       """ if isinstance(ir, Return):
             print("Return...")
             print(ir.function.name)
             for x in ir.function.returns_ssa:
@@ -1233,7 +1241,7 @@ def _tcheck_ir(irs, function_name) -> []:
                 ir.function.add_return_ssa(y)
             for x in ir.function.returns_ssa:
                 print(x)
-            continue
+            continue"""
         if isinstance(ir, Condition):
             print("Condition...")
             is_condition(ir)
@@ -1348,8 +1356,6 @@ def _tcheck_function_call(function, param_cache) -> []:
             fentry.add(son)
 
     #check return value
-    print("Checking return value" + function.name)
-    freturns = function.returns_ssa
     #for retval in freturns:
         #print(retval.ssa_name)
         #is_variable(retval)
