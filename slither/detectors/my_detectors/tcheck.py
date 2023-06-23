@@ -1231,17 +1231,6 @@ def _tcheck_ir(irs, function_name) -> []:
         if isinstance(ir, Function):
             print("Function...")
             continue
-       """ if isinstance(ir, Return):
-            print("Return...")
-            print(ir.function.name)
-            for x in ir.function.returns_ssa:
-                print(x)
-            ir.function.clear_returns_ssa()
-            for y in ir.values:
-                ir.function.add_return_ssa(y)
-            for x in ir.function.returns_ssa:
-                print(x)
-            continue"""
         if isinstance(ir, Condition):
             print("Condition...")
             is_condition(ir)
