@@ -1457,7 +1457,6 @@ def _tcheck_contract(contract):
     all_addback_nodes = []
     #_mark_functions(contract)
     #_tcheck_contract_state_var(contract)
-    print("lolcheck????")
     for function in contract.functions_declared:
         print("Reading Function: " + function.name)
         if not(function_check[function.name]):
@@ -1466,7 +1465,7 @@ def _tcheck_contract(contract):
         if not function.entry_point:
             continue
         #SKIP
-        print("External Function: " + function.name)
+        print("[*]External Function: " + function.name)
         continue
         addback_nodes = _tcheck_function(function)
         if(len(addback_nodes) > 0):
