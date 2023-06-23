@@ -14,7 +14,7 @@ cd ..
 cd ..
 
 #python3 setup.py install
-pip install .
+pip3 install .
 
 cd slither
 cd detectors
