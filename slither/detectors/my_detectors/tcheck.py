@@ -34,7 +34,7 @@ contract_run = {}
 contract_function = {}
 
 #IMPORTANT: read internal
-read_internal = True
+read_internal = False
 
 #USAGE: adds token pair to type_hashtable
 #RETURNS: composite key of the token pair
