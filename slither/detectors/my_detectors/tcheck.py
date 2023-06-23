@@ -542,6 +542,7 @@ def check_type(ir) -> bool:
         print("RETURN")
         for y in ir.values:
             ir.function.add_return_ssa(y)
+        return False
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
     #    #Reference
     #    addback = type_ref(ir)
