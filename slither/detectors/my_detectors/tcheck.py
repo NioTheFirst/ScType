@@ -850,7 +850,6 @@ def type_fc(ir) -> bool:
             print_token_type(x)
             print("___")
         for x in ir.function.returns_ssa:
-            convert_ssa(x)
             print(x.name)
             print("&&")
             if(isinstance(ir.lvalue, TupleVariable)):
