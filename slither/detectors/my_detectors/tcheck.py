@@ -393,6 +393,8 @@ def assign_err(ir):
 #USAGE: copies all the types from a type tuple to an ir node
 #RETURNS: null
 def copy_token_tuple(ir, tt):
+    print("Check copy_toekn_tuple")
+    print(tt)
     if(isinstance(tt[0], int)):
         ir.add_token_typen(tt[0])
     else:
