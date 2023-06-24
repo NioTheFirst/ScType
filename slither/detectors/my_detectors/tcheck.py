@@ -1126,7 +1126,7 @@ def assign_norm(ir, norm, check_equal, additive, assign):
 #       if initialized, check against norm and throw error
 #RETURNS: NULL
 def asn_norm(ir, norm):
-    if(not(is_variable(ir))):
+    if(not(is_variable(ir)) or norm == -100):
         return
     if(ir.norm == -100):
         ir.norm = norm
