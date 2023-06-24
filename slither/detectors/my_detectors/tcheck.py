@@ -944,6 +944,8 @@ def type_bin_add(dest, lir, rir) -> bool:
     print("initlize checks")
     asn_norm(dest, get_norm(lir))
     asn_norm(dest, get_norm(rir))
+    print_token_type(lir)
+    print_token_type(rir)
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
             copy_token_type(rir, dest)
