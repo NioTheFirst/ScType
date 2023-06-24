@@ -1364,8 +1364,8 @@ def _tcheck_function_call(function, param_cache) -> []:
     function_ref = 0
     explored = set()
     addback_nodes = []
-    if(check_bar(function.name)):
-        return addback_nodes
+    #if(check_bar(function.name)):
+    #    return addback_nodes
     print("Function name: "+function.name)
     print("Function Visibility: "+function.visibility)
     #load parameters
