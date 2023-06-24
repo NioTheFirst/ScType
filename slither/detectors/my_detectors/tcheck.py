@@ -1136,6 +1136,8 @@ def asn_norm(ir, norm):
     else:
         if(ir.norm != norm):
             add_errors(ir)
+            if(ir.norm == 0):
+                ir.norm = norm
 
 #USAGE: append norm (i.e. for multiplication, division, or power)
 #RETURNS: NULL
@@ -1145,6 +1147,8 @@ def add_norm(ir, norm):
     temp = ir.norm
     temp+=norm
     ir.norm = temp
+    if(norm == -102):
+        ir.norm = -102
     return
 
 
