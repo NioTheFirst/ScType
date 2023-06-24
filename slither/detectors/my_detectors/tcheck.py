@@ -395,6 +395,7 @@ def assign_err(ir):
 def copy_token_tuple(ir, tt):
     print("Check copy_toekn_tuple")
     print(tt)
+
     if(isinstance(tt[0], int)):
         ir.add_token_typen(tt[0])
     else:
@@ -407,6 +408,7 @@ def copy_token_tuple(ir, tt):
             ir.add_token_typed(d)
     ir.norm = tt[2]
     ir.link_function = tt[3]
+    print_token_type(ir)
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
