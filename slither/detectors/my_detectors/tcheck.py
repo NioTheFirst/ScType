@@ -498,6 +498,24 @@ def convert_ssa(ir):
         ir.norm = non_ssa_ir.norm
         ir.link_function = non_ssa_ir.link_function
 
+#USAGE: updates a non_ssa instance of a variable
+#RETURNS: NULL
+def update_non_ssa(ir):
+    if(not(is_variable(ir))):
+        return
+    if(is_constant(ir)):
+        return
+    #if(not(ir.ssa_name)):
+    #    return
+    non_ssa_ir = ir.non_ssa_version
+    #name = ir.ssa_name
+    if(not (is_type_undef(ir))):
+        #ir.token_typen.clear()
+        #ir.token_typed.clear()
+        copy_token_type(ir, non_ssa_ir)
+        #print_token_type(ir)
+        non_ssa_ir.norm = ir.norm
+        non_ssa_ir.link_function = ir.link_function
 
 #edit checkdafadjfahjfa
 
@@ -570,6 +588,7 @@ def check_type(ir) -> bool:
     if ir.lvalue and is_variable(ir.lvalue):
         print("[i]Type for "+ir.lvalue.name)
         print_token_type(ir.lvalue)
+        update_non_ssa(ir.lvalue)
     print("done.")
     if(addback):
         print("This IR caused addback:")
