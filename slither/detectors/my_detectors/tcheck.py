@@ -557,8 +557,8 @@ def check_type(ir) -> bool:
         return False
     elif isinstance(ir, Return):
         print("RETURN")
-        for y in ir.values:
-            ir.function.add_return_ssa(y)
+        #for y in ir.values:
+        #    ir.function.add_return_ssa(y)
         return False
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
     #    #Reference
