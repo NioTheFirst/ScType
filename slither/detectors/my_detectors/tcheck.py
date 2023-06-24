@@ -399,6 +399,8 @@ def copy_token_tuple(ir, tt):
     print(tt)
     print_token_type(ir)
     print("----")
+    ir.token_typen.clear()
+    ir.token_typed.clear()
     if(isinstance(tt[0], int)):
         ir.add_token_typen(tt[0])
     else:
