@@ -1433,7 +1433,7 @@ def _tcheck_function_call(function, param_cache) -> []:
                     break
             if(temp):
                 fentry.add(son)
-    if(len(_tcheck_node(addRet, function.name)) > 0):
+    if(addRet != None and len(_tcheck_node(addRet, function.name)) > 0):
         addback_nodes.append(node)
 
     #check return value
