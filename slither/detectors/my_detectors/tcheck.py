@@ -488,8 +488,6 @@ def convert_ssa(ir):
         return
     #if(not(ir.ssa_name)):
     #    return
-    print("PREV")
-    print_token_type(ir)
     non_ssa_ir = ir.non_ssa_version
     #name = ir.ssa_name
     if(not (is_type_undef(non_ssa_ir)) and is_type_undef(ir)):
@@ -832,7 +830,6 @@ def type_fc(ir) -> bool:
         for x in ir.function.returns_ssa:
             convert_ssa(x)
             print(x.name)
-            print_token_type(x)
             print("&&")
             if(isinstance(ir.lvalue, TupleVariable)):
                 tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
@@ -1414,9 +1411,9 @@ def _tcheck_function_call(function, param_cache) -> []:
         #param.parent_function = function.name
         paramno+=1
     #find return and tack it onto the end
-    _return = _find_return_function(function)
-    print("RETURN find")
     #typecheck function
+    addRet = None
+    
     fentry = {function.entry_point}
     while fentry:
         node = fentry.pop()
@@ -1428,7 +1425,15 @@ def _tcheck_function_call(function, param_cache) -> []:
         if(len(addback) > 0):
             addback_nodes.append(node)
         for son in node.sons:
-            fentry.add(son)
+            temp = True
+            for ir in son:
+                if isinstance(ir, Return):
+                    addRet = son
+                    Temp = False
+                    break
+            if(temp):
+                fentry.add(son)
+        explored.add(addRet)
 
     #check return value
     #for retval in freturns:
