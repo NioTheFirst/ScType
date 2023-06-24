@@ -492,13 +492,15 @@ def convert_ssa(ir):
     print_token_type(ir)
     non_ssa_ir = ir.non_ssa_version
     #name = ir.ssa_name
-    if(not (is_type_undef(non_ssa_ir))): # and is_type_undef(ir)):
-        ir.token_typen.clear()
-        ir.token_typed.clear()
+    if(not (is_type_undef(non_ssa_ir)) and is_type_undef(ir)):
+        #ir.token_typen.clear()
+        #ir.token_typed.clear()
         copy_token_type(non_ssa_ir, ir)
         #print_token_type(ir)
         ir.norm = non_ssa_ir.norm
         ir.link_function = non_ssa_ir.link_function
+
+
 #edit checkdafadjfahjfa
 
 #given and ir, type check
@@ -557,8 +559,9 @@ def check_type(ir) -> bool:
         return False
     elif isinstance(ir, Return):
         print("RETURN")
-        #for y in ir.values:
-        #    ir.function.add_return_ssa(y)
+        for y in ir.values:
+            #convert_ssa(y)
+            ir.function.add_return_ssa(y)
         return False
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
     #    #Reference
@@ -822,12 +825,6 @@ def type_fc(ir) -> bool:
         #deal with return value (single) TODO
         tuple_types = []
         print("IC Saving return values for: " + ir.function.name)
-        for x in ir.non_ssa_version.function.returns:
-            if isinstance(x, Variable):
-                print(x.name)
-                print("x is varaiable")
-            print(x.non_ssa_version.name)
-        print("___")
         for x in ir.function.returns_ssa:
             convert_ssa(x)
             print(x.name)
