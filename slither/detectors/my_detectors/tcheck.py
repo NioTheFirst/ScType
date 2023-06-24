@@ -606,17 +606,27 @@ def type_included_hlc(ir, dest, function):
         print("added")
         addback = _tcheck_function_call(function, new_param_cache)
         #deal with return value (single) TODO
-        for x in function.returns_ssa:
+        tuple_types = []
+        for x in ir.function.returns_ssa:
             print(x.name)
             print("&&")
-        if(len(function.returns_ssa)):
-            print(function.returns_ssa[0].name)
-            type_asn(ir.lvalue, function.returns_ssa[0])
+            if(isinstance(ir.lvalue, TupleVariable)):
+                tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
+            else:
+                type_asn(ir.lvalue, x)
+                ir.function.add_parameter_cache_return(x)
+        if(len(tuple_types) > 0):
+            add_tuple(ir.lvalue.name, tuple_types)
+            ir.function.add_parameter_cache_return(tuple_types)
         if(len(addback) != 0):
             return 1
     else:
-        #FIX
-        print("temp")
+        ret_obj = ir.function.get_parameter_cache_return(added)
+        if isinstance(ir, Variable):
+            type_asn(ir.lvalue, x)
+        else:
+            add_tuple(ir.lvalue.name, ret_obj)
+
     return 2
 
 #USAGE: connects a high-level call with an internal call (cross contract
@@ -819,8 +829,11 @@ def type_fc(ir) -> bool:
         if(len(addback) != 0):
             return True
     else:
-        #FIX INTERNAL CALL
-        print("temp")
+        ret_obj = ir.function.get_parameter_cache_return(added)
+        if isinstance(ir, Variable):
+            type_asn(ir.lvalue, x)
+        else:
+            add_tuple(ir.lvalue.name, ret_obj)
 
     return False
 
