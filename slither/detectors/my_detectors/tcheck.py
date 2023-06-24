@@ -1440,6 +1440,7 @@ def _tcheck_function(function) -> []:
 
     #Save return value
     tuple_types = []
+    print("Saving return value for " + function.name)
     for x in function.returns_ssa:
         print(x.name)
         print("&&")
@@ -1448,9 +1449,9 @@ def _tcheck_function(function) -> []:
         else:
             # type_asn(ir.lvalue, x)
             function.add_parameter_cache_return(x)
-        if(len(tuple_types) > 0):
-            #add_tuple(ir.lvalue.name, tuple_types)
-            function.add_parameter_cache_return(tuple_types)
+    if(len(tuple_types) > 0):
+        #add_tuple(ir.lvalue.name, tuple_types)
+        function.add_parameter_cache_return(tuple_types)
 
     return addback_nodes
 
