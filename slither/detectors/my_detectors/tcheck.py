@@ -825,6 +825,8 @@ def type_fc(ir) -> bool:
         #deal with return value (single) TODO
         tuple_types = []
         print("IC Saving return values for: " + ir.function.name)
+        for x in ir.function.return_values_ssa:
+            print(x.name)
         for x in ir.function.returns_ssa:
             convert_ssa(x)
             print(x.name)
