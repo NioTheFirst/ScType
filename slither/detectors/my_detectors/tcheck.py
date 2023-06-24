@@ -1451,7 +1451,7 @@ def _tcheck_function_call(function, param_cache) -> []:
                 for irs in son.irs:
                     if(isinstance(irs, Return)):
                         temp = False
-                        return_node = irs
+                        return_node = son
                         break
             if(temp):
                 fentry.add(son)
