@@ -822,7 +822,7 @@ def type_fc(ir) -> bool:
         #deal with return value (single) TODO
         tuple_types = []
         print("IC Saving return values for: " + ir.function.name)
-        for x in ir.function.returns:
+        for x in ir.non_ssa_version.function.returns:
             if isinstance(x, Variable):
                 print(x.name)
                 print("x is varaiable")
