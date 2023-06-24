@@ -1455,7 +1455,8 @@ def _tcheck_function_call(function, param_cache) -> []:
                         break
             if(temp):
                 fentry.add(son)
-    _tcheck_node(return_node, function.name)
+    if(return_node):
+        _tcheck_node(return_node, function.name)
     return addback_nodes
 
 #USAGE: typecheck a function
