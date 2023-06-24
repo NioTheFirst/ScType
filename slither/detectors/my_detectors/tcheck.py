@@ -516,15 +516,15 @@ def check_type(ir) -> bool:
         convert_ssa(ir.lvalue)
         convert_ssa(ir.variable)
         if(str(ir.variable) == "this"):
-            assign_const(ir.variable)
-            ir.variable.norm = 0
-            ir.variable.link_function = current_contract_name
-            addback = copy_token_tuple(ir.lvalue, ir.variable)
+            #TMPxxx  CONVERT address(this)
+            assign_const(ir.lvalue)
+            ir.lvalue.norm = 0
+            ir.lvalue.link_function = current_contract_name
+            #addback = copy_token_tuple(ir.lvalue, ir.variable)
+            addback = False
         else:    
             addback = type_asn(ir.lvalue, ir.variable)
-        print(get_norm(ir.variable))
-        print(ir.variable.name)
-        asn_norm(ir.lvalue, get_norm(ir.variable))
+            asn_norm(ir.lvalue, get_norm(ir.variable))
     elif isinstance(ir, Unpack):
         #Unpack tuple
         addback = type_upk(ir)
