@@ -1026,6 +1026,7 @@ def type_bin_add(dest, lir, rir) -> bool:
     print_token_type(dest)
     print("initlize checks")
     asn_norm(dest, get_norm(lir))
+    print(";;;")
     asn_norm(dest, get_norm(rir))
     print_token_type(lir)
     print_token_type(rir)
