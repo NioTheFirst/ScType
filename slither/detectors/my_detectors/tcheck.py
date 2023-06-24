@@ -827,6 +827,8 @@ def type_fc(ir) -> bool:
         print("IC Saving return values for: " + ir.function.name)
         for x in ir.function.return_values_ssa:
             print(x.name)
+            print_token_type(x)
+            print("___")
         for x in ir.function.returns_ssa:
             convert_ssa(x)
             print(x.name)
