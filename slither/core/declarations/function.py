@@ -134,6 +134,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         self._slithir_variables: Set["SlithIRVariable"] = set()
         self._parameters: List["LocalVariable"] = []
         self._parameter_cache: List[List[List[List[int]]]] = []
+        self._parameter_cache_return = []
         self._parameters_ssa: List["LocalIRVariable"] = []
         self._parameters_src: SourceMapping = SourceMapping()
         self._returns: List["LocalVariable"] = []

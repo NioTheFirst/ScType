@@ -812,6 +812,9 @@ def type_fc(ir) -> bool:
             add_tuple(ir.lvalue.name, tuple_types)
         if(len(addback) != 0):
             return True
+    else:
+        #FIX INTERNAL CALL
+        print("tempo")
     return False
 
 #USAGE: assigns type from dest to sorc
