@@ -845,7 +845,7 @@ def type_fc(ir) -> bool:
 #RETURNS: NULL
 def handle_return(dest_ir, function):
     #dest_ir is optional if there is no return destination
-
+    print("tem")
 
 #USAGE: assigns type from dest to sorc
 #RETURNS: 'TRUE' if no variables undefined
