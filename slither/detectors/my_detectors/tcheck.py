@@ -559,6 +559,7 @@ def check_type(ir) -> bool:
         print("RETURN")
         for y in ir.values:
             #convert_ssa(y)
+            print_token_type(y)
             ir.function.add_return_ssa(y)
         return False
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
