@@ -532,6 +532,7 @@ def check_type(ir) -> bool:
         else:    
             addback = type_asn(ir.lvalue, ir.variable)
             asn_norm(ir.lvalue, get_norm(ir.variable))
+            ir.lvalue.link_function = ir.variable.link_function
     elif isinstance(ir, Unpack):
         #Unpack tuple
         addback = type_upk(ir)
