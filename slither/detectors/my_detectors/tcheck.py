@@ -1429,11 +1429,12 @@ def _tcheck_function_call(function, param_cache) -> []:
             for ir in son.irs:
                 if isinstance(ir, Return):
                     addRet = son
-                    Temp = False
+                    temp = False
                     break
             if(temp):
                 fentry.add(son)
-        explored.add(addRet)
+    if(len(_tcheck_node(addRet, function.name)) > 0):
+        addback_nodes.append(node)
 
     #check return value
     #for retval in freturns:
