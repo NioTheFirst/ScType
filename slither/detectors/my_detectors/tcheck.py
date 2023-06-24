@@ -558,7 +558,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Return):
         print("RETURN")
         for y in ir.values:
-            #convert_ssa(y)
+            convert_ssa(y)
             print_token_type(y)
             ir.function.add_return_ssa(y)
         return False
