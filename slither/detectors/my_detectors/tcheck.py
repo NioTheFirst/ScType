@@ -819,6 +819,7 @@ def type_fc(ir) -> bool:
         tuple_types = []
         print("IC Saving return values for: " + ir.function.name)
         for x in ir.function.returns_ssa:
+            convert_ssa(x)
             print(x.name)
             print_token_type(x)
             print("&&")
