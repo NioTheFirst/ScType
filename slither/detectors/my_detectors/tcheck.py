@@ -644,9 +644,11 @@ def querry_fc(ir) -> int:
         print("wfc len: " + str(len(written_func_rets)))
         if(len(written_func_rets) == 0):
             #No return value included, default to constant
+            convert_ssa(ir.lvalue)
             assign_const(ir.lvalue)
         elif(len(written_func_rets) == 1):
             written_func_ret = written_func_rets[0]
+            convert_ssa(ir.lvalue)
             copy_token_tuple(ir.lvalue, written_func_ret)
         elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
