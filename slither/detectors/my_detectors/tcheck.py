@@ -492,7 +492,7 @@ def convert_ssa(ir):
     #    return
     non_ssa_ir = ir.non_ssa_version
     #name = ir.ssa_name
-    if(not (is_type_undef(non_ssa_ir)) and is_type_undef(ir)):
+    if(not (is_type_undef(non_ssa_ir))): # and is_type_undef(ir)):
         #ir.token_typen.clear()
         #ir.token_typed.clear()
         copy_token_type(non_ssa_ir, ir)
