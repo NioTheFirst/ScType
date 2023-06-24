@@ -565,7 +565,7 @@ def check_type(ir) -> bool:
     if(addback):
         print("This IR caused addback:")
         print(ir)
-        pribt("XXXXX")
+        print("XXXXX")
     return (addback)
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
