@@ -1023,6 +1023,7 @@ def type_bin_add(dest, lir, rir) -> bool:
     #rir = ir.variable_right
     if(not (init_var(lir) and init_var(rir))):
         return False
+    print_token_type(dest)
     print("initlize checks")
     asn_norm(dest, get_norm(lir))
     asn_norm(dest, get_norm(rir))
