@@ -494,7 +494,7 @@ def convert_ssa(ir):
         ir.token_typen.clear()
         ir.token_typed.clear()
         copy_token_type(non_ssa_ir, ir)
-        print_token_type(ir)
+        #print_token_type(ir)
         ir.norm = non_ssa_ir.norm
         ir.link_function = non_ssa_ir.link_function
 #edit checkdafadjfahjfa
@@ -820,7 +820,7 @@ def type_fc(ir) -> bool:
         #deal with return value (single) TODO
         tuple_types = []
         print("IC Saving return values for: " + ir.function.name)
-        for x in ir.function.returns_ssa:
+        for x in ir.function.returns:
             convert_ssa(x)
             print(x.name)
             print_token_type(x)
