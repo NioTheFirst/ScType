@@ -616,7 +616,7 @@ def type_included_hlc(ir, dest, function):
             return 1
     else:
         #FIX
-
+        print("temp")
     return 2
 
 #USAGE: connects a high-level call with an internal call (cross contract
