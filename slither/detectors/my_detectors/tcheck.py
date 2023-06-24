@@ -488,6 +488,8 @@ def convert_ssa(ir):
         return
     #if(not(ir.ssa_name)):
     #    return
+    print("PREV")
+    print_token_type(ir)
     non_ssa_ir = ir.non_ssa_version
     #name = ir.ssa_name
     if(not (is_type_undef(non_ssa_ir))): # and is_type_undef(ir)):
