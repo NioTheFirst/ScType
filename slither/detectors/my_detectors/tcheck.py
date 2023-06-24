@@ -184,6 +184,7 @@ def add_param_cache(function, new_param_cache):
     global maxTokens
     add_param = False
     fpc = function.parameter_cache()
+    match_param = -100
     if(len(fpc) == 0):
         add_param = True
     for a in range(len(fpc)):
@@ -218,13 +219,13 @@ def add_param_cache(function, new_param_cache):
             if(add_cur_param):
                 break
             paramno+=1
-        if(add_cur_param == True):
-            add_param = True
+        if(add_cur_param == False):
+            add_param = False
+            match_param = a
             break
     if(add_param):
         function.add_parameter_cache(new_param_cache)
-        return True
-    return False
+    return match_param
 
 #USAGE: parses an input file and fills the type_hashtable
 #RETURNS: NULL
@@ -601,7 +602,7 @@ def type_included_hlc(ir, dest, function):
     print("High level cal param_cache")
     print_param_cache(new_param_cache)
     added = add_param_cache(function, new_param_cache)
-    if(added):
+    if(added == -100):
         print("added")
         addback = _tcheck_function_call(function, new_param_cache)
         #deal with return value (single) TODO
@@ -613,6 +614,9 @@ def type_included_hlc(ir, dest, function):
             type_asn(ir.lvalue, function.returns_ssa[0])
         if(len(addback) != 0):
             return 1
+    else:
+        #FIX
+
     return 2
 
 #USAGE: connects a high-level call with an internal call (cross contract
@@ -796,7 +800,7 @@ def type_fc(ir) -> bool:
     print("Internal cal param_cache")
     print_param_cache(new_param_cache)
     added = add_param_cache(ir.function, new_param_cache)
-    if(added):
+    if(added == -100):
         print("added")
         addback = _tcheck_function_call(ir.function, new_param_cache)
         #deal with return value (single) TODO
@@ -808,13 +812,16 @@ def type_fc(ir) -> bool:
                 tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
             else:
                 type_asn(ir.lvalue, x)
+                ir.function.add_parameter_cache_return(x)
         if(len(tuple_types) > 0):
             add_tuple(ir.lvalue.name, tuple_types)
+            ir.function.add_parameter_cache_return(tuple_types)
         if(len(addback) != 0):
             return True
     else:
         #FIX INTERNAL CALL
-        print("tempo")
+        print("temp")
+
     return False
 
 #USAGE: assigns type from dest to sorc
