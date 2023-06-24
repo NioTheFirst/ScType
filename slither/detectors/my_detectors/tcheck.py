@@ -578,8 +578,9 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Return):
         print("RETURN")
         for y in ir.values:
+            
             convert_ssa(y)
-            print_token_type(y.non_ssa_version)
+            #print_token_type(y.non_ssa_version)
             ir.function.add_return_ssa(y)
         return False
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
@@ -881,7 +882,7 @@ def handle_return(ir, function):
     print("IC Saving return values for: " + function.name)
     for x in function.return_values_ssa:
         print(x.name)
-        print_token_type(x)
+        #print_token_type(x)
         type_asn(ir.lvalue, x)
         if(isinstance(ir.lvalue, TupleVariable)):
             tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
