@@ -1371,7 +1371,23 @@ def _clear_type_node(node):
                 ir.lvalue.norm = -100;
 
                 print("[i] " + ir.lvalue.name + " cleared")
-            
+
+#USAGE: searches a function for a RETURN node, if it doesn't exist, do stuff
+#RETURNS: return node
+def _find_return_function(function):
+    fentry = {function.entry_point}
+    explored = set()
+    print("FIND RETURN")
+    print(function.full_name)
+    while fentry:
+        node = fentry.pop()
+        if node in explored: 
+            continue
+        explored.add(node)
+        for ir in node.irs:
+            if isinstance(ir, RETURN):
+                return node
+        
 #USAGE: typecheck a function call
 #       given a param_cache for the input data
 #       check return values:
@@ -1397,6 +1413,9 @@ def _tcheck_function_call(function, param_cache) -> []:
         is_variable(param)
         #param.parent_function = function.name
         paramno+=1
+    #find return and tack it onto the end
+    _return = _find_return_function(function)
+    print("RETURN find")
     #typecheck function
     fentry = {function.entry_point}
     while fentry:
