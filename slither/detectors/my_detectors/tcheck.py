@@ -887,6 +887,7 @@ def handle_return(ir, function):
             tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
         else:
             type_asn(ir.lvalue, x)
+            asn_norm(ir.lvalue, get_norm(x))
             ir.function.add_parameter_cache_return(x)
         print("___")
     if(len(tuple_types) > 0):
