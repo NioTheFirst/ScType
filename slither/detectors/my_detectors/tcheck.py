@@ -1426,7 +1426,7 @@ def _tcheck_function_call(function, param_cache) -> []:
             addback_nodes.append(node)
         for son in node.sons:
             temp = True
-            for ir in son:
+            for ir in son.irs:
                 if isinstance(ir, Return):
                     addRet = son
                     Temp = False
