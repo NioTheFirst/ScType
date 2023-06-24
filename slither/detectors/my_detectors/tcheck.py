@@ -562,6 +562,10 @@ def check_type(ir) -> bool:
         print("[i]Type for "+ir.lvalue.name)
         print_token_type(ir.lvalue)
     print("done.")
+    if(addback):
+        print("This IR caused addback:")
+        print(ir)
+        pribt("XXXXX")
     return (addback)
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
