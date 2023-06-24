@@ -395,7 +395,8 @@ def assign_err(ir):
 def copy_token_tuple(ir, tt):
     print("Check copy_toekn_tuple")
     print(tt)
-
+    print_token_type(ir)
+    print("----")
     if(isinstance(tt[0], int)):
         ir.add_token_typen(tt[0])
     else:
