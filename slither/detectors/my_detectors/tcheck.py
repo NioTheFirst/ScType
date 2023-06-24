@@ -1437,6 +1437,21 @@ def _tcheck_function(function) -> []:
             addback_nodes.append(node)
         for son in node.sons:
             fentry.add(son)
+
+    #Save return value
+    tuple_types = []
+    for x in function.returns_ssa:
+        print(x.name)
+        print("&&")
+        if(len(function.returns_ssa) > 0):
+            tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
+        else:
+            # type_asn(ir.lvalue, x)
+            function.add_parameter_cache_return(x)
+        if(len(tuple_types) > 0):
+            #add_tuple(ir.lvalue.name, tuple_types)
+            function.add_parameter_cache_return(tuple_types)
+
     return addback_nodes
 
 
