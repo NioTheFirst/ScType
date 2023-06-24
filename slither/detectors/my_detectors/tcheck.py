@@ -843,7 +843,8 @@ def type_fc(ir) -> bool:
         print("added")
         addback = _tcheck_function_call(ir.function, new_param_cache)
         #deal with return value (single) TODO
-        tuple_types = []
+        handle_return(ir, ir.function)
+        """tuple_types = []
         print("IC Saving return values for: " + ir.function.name)
         for x in ir.function.return_values_ssa:
             print(x.name)
@@ -859,9 +860,10 @@ def type_fc(ir) -> bool:
                 ir.function.add_parameter_cache_return(x)
         if(len(tuple_types) > 0):
             add_tuple(ir.lvalue.name, tuple_types)
-            ir.function.add_parameter_cache_return(tuple_types)
+            ir.function.add_parameter_cache_return(tuple_types)"""
         if(len(addback) != 0):
             return True
+        
     else:
         ret_obj = ir.function.get_parameter_cache_return(added)
         if isinstance(ir, Variable):
@@ -873,9 +875,25 @@ def type_fc(ir) -> bool:
 
 #USAGE: given a function, handle the return values
 #RETURNS: NULL
-def handle_return(dest_ir, function):
+def handle_return(ir, function):
     #dest_ir is optional if there is no return destination
-    print("tem")
+    tuple_types = []
+    print("IC Saving return values for: " + function.name)
+    for x in function.return_values_ssa:
+        print(x.name)
+        print_token_type(x)
+        type_asn(ir.lvalue, x)
+        if(isinstance(ir.lvalue, TupleVariable)):
+            tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
+        else:
+            type_asn(ir.lvalue, x)
+            ir.function.add_parameter_cache_return(x)
+        print("___")
+    if(len(tuple_types) > 0):
+        add_tuple(ir.lvalue.name, tuple_types)
+        function.add_parameter_cache_return(tuple_types)
+
+
 
 #USAGE: assigns type from dest to sorc
 #RETURNS: 'TRUE' if no variables undefined
