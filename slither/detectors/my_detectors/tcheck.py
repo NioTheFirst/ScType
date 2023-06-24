@@ -27,6 +27,7 @@ nErrs = 0
 line_no = 1
 function_hlc = 0
 function_ref = 0
+current_contract_name = "ERR"
 type_hashtable = {}
 function_bar = {}
 function_check = {}
@@ -515,7 +516,10 @@ def check_type(ir) -> bool:
         convert_ssa(ir.lvalue)
         convert_ssa(ir.variable)
         if(str(ir.variable) == "this"):
-            addback = copy_token_tuple(ir.lvalue, get_hash("global", "this"))
+            assign_const(ir.variable)
+            ir.variable.norm = 0
+            ir.variable.link_function = current_contract_name
+            addback = copy_token_tuple(ir.lvalue, ir.variable)
         else:    
             addback = type_asn(ir.lvalue, ir.variable)
         print(get_norm(ir.variable))
@@ -1455,6 +1459,8 @@ def _mark_functions(contract):
 def _tcheck_contract(contract):
     #contract is the contract passed in by Slither
     global errors
+    global current_contract_name
+    current_contract_name = contract.name
     all_addback_nodes = []
     #_mark_functions(contract)
     #_tcheck_contract_state_var(contract)
