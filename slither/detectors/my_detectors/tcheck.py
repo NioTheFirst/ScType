@@ -820,6 +820,7 @@ def type_fc(ir) -> bool:
         print("IC Saving return values for: " + ir.function.name)
         for x in ir.function.returns_ssa:
             print(x.name)
+            print_token_type(x)
             print("&&")
             if(isinstance(ir.lvalue, TupleVariable)):
                 tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
@@ -839,6 +840,12 @@ def type_fc(ir) -> bool:
             add_tuple(ir.lvalue.name, ret_obj)
 
     return False
+
+#USAGE: given a function, handle the return values
+#RETURNS: NULL
+def handle_return(dest_ir, function):
+    #dest_ir is optional if there is no return destination
+
 
 #USAGE: assigns type from dest to sorc
 #RETURNS: 'TRUE' if no variables undefined
