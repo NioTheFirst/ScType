@@ -1434,7 +1434,7 @@ def _tcheck_function_call(function, param_cache) -> []:
         paramno+=1
     #find return and tack it onto the end
     #typecheck function
-    
+    return_node = None
     fentry = {function.entry_point}
     while fentry:
         node = fentry.pop()
@@ -1447,13 +1447,15 @@ def _tcheck_function_call(function, param_cache) -> []:
             addback_nodes.append(node)
         for son in node.sons:
             temp = True
+            if return_node == None:
+                for irs in son.irs:
+                    if(isinstance(irs, Return)):
+                        temp = False
+                        return_node = irs
+                        break
             if(temp):
                 fentry.add(son)
-
-    #check return value
-    #for retval in freturns:
-        #print(retval.ssa_name)
-        #is_variable(retval)
+    _tcheck_node(return_node, function.name)
     return addback_nodes
 
 #USAGE: typecheck a function
