@@ -844,7 +844,7 @@ def type_fc(ir) -> bool:
         print("added")
         addback = _tcheck_function_call(ir.function, new_param_cache)
         #deal with return value (single) TODO
-        handle_return(ir, ir.function)
+        handle_return(ir.lvalue, ir.function)
         """tuple_types = []
         print("IC Saving return values for: " + ir.function.name)
         for x in ir.function.return_values_ssa:
