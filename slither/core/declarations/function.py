@@ -938,7 +938,8 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
                 if isinstance(ir, Return)
             ]
             self._return_values_ssa = list(
-                {x for x in return_values_ssa if not isinstance(x, Constant)}
+                #{x for x in return_values_ssa if not isinstance(x, Constant)}
+                {x for x in return_values_ssa}
             )
         return self._return_values_ssa
 

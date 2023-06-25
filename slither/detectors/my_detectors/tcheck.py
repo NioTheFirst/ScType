@@ -33,6 +33,9 @@ function_bar = {}
 function_check = {}
 contract_run = {}
 contract_function = {}
+constant_instance = TemporaryVariable()
+constant_instance.name = "Personal Constant Instance"
+assign_const(constant_instance)
 
 #IMPORTANT: read internal
 read_internal = False
@@ -870,8 +873,12 @@ def handle_return(dest_ir, function):
     tuple_types = []
     print("Saving return values for: " + function.name)
     added = False
-    for x in function.return_values_ssa:
+    for _x in function.return_values_ssa:
         print(x.name)
+        if(isinstance(_x, Constant)):
+            x = constant_instance
+        else:
+            x = _x
         print_token_type(x)
         if(len(function.return_values_ssa) > 1):
             tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
@@ -880,11 +887,15 @@ def handle_return(dest_ir, function):
                 type_asn(dest_ir, x)
                 asn_norm(dest_ir, get_norm(x))
             function.add_parameter_cache_return(x)
+            added = True
         print("___")
     if(len(tuple_types) > 0):
         if(dest_ir != None):
             add_tuple(dest_ir.name, tuple_types)
         function.add_parameter_cache_return(tuple_types)
+        added = True
+    if(added = False):
+        function.add_parameter_cache(None)
 
 
 
