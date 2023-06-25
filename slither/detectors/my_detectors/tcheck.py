@@ -877,11 +877,11 @@ def handle_return(dest_ir, function):
     print("Saving return values for: " + function.name)
     added = False
     for _x in function.return_values_ssa:
-        print(x.name)
         if(isinstance(_x, Constant)):
             x = constant_instance
         else:
             x = _x
+        print(x.name)
         print_token_type(x)
         if(len(function.return_values_ssa) > 1):
             tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
