@@ -38,6 +38,7 @@ constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 
 ask_user = True
+read_library = False
 
 #IMPORTANT: read internal
 read_internal = False
@@ -559,6 +560,8 @@ def check_type(ir) -> bool:
          #Function call
         print("ic")
         addback = type_fc(ir)
+    elif isinstance(ir, LibraryCall):
+        addback = type_library_call(ir)
     elif isinstance(ir, HighLevelCall):
         #High level call
         addback = type_hlc(ir)
@@ -682,9 +685,12 @@ def querry_fc(ir) -> int:
     dest = ir.destination
     convert_ssa(dest)
     func_name = ir.function.name
-    cont_name = dest.link_function
+    if(isinstance(dest, Variable)):
+        cont_name = dest.link_function
+    else:
+        cont_name = str(dest)
     #TODO
-    print_token_type(dest)
+    #print_token_type(dest)
     if(str(ir.lvalue.type) == "bool"):
         assign_const(ir.lvalue)
         return 2
@@ -716,7 +722,29 @@ def querry_fc(ir) -> int:
         print("COPIED")
         return 2
     return 0
-        
+
+#USAGE: typecheck for a library call: in this case, we only return special instances, or user-defined calls
+#RETURNS: return or not
+def type_library_call(ir):
+    print("Library Call: "+str(ir.function.name))
+    if(ir.function.name == "add"):
+        return type_bin_add(ir.lvalue, param[0], param[1])
+    elif(ir.function.name == "sub"):
+        return type_bin_sub(ir.lvalue, param[0], param[1])
+    elif(ir.function.name == "mul"):
+        return type_bin_mul(ir.lvalue, param[0], param[1])
+    elif(ir.function.name == "div"):
+        return type_bin_div(ir.lvalue, param[0], param[1])
+    
+    if(querry_fc(ir) == 2):
+        return False
+    if(read_library):
+        querry_type(ir)
+    else:
+        if(len(ir.arguments) > 0):
+            type_asn(ir.lvalue, ir.arguments(0))
+        else:
+            assign_const(ir.lvalue)
 
 #USAGE: typecheck for high-level call (i.e. iERC20(address).balanceof())
 #RETURNS: whether or not the high-level call node should be returned (should always return FALSE)
