@@ -749,6 +749,9 @@ def type_member(ir)->bool:
     if is_type_undef(ir.variable_left):
         print("UNDEFINED LEFT VARIABLE IN MEMBER")
         return True
+    if (str(ir.variable_right) == "decimals"):
+        assign_const(ir.lvalue)
+        ir.lvalue.norm = ir.variable_left.norm
     copy_token_type(ir.variable_left, ir.lvalue)
     return False
 
@@ -955,6 +958,7 @@ def type_asnai(dest, sorc)->bool:
 def init_var(ir):
     if(not(is_variable(ir))):
         return False
+    print("var..")
     if(is_constant(ir)):
         assign_const(ir)
     else:
