@@ -33,7 +33,7 @@ function_bar = {}
 function_check = {}
 contract_run = {}
 contract_function = {}
-constant_instance = TemporaryVariable()
+constant_instance = Variable(None)
 constant_instance.name = "Personal Constant Instance"
 assign_const(constant_instance)
 
