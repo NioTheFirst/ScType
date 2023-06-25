@@ -35,11 +35,22 @@ contract_run = {}
 contract_function = {}
 constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
+constant_instance_counter = 1
 
 ask_user = True
 
 #IMPORTANT: read internal
 read_internal = False
+
+
+#USAGE: creates and returns a constant instnace
+#RETURNS: a constant instance (default constant)
+def create_iconstant():
+    new_instance = Variable()
+    new_instance.name = "PCI_" + str(constant_instance_counter)
+    cosntant_instance_counter+=1
+    assign_const(new_instance)
+    return new_instance
 
 #USAGE: adds token pair to type_hashtable
 #RETURNS: composite key of the token pair
@@ -957,7 +968,6 @@ def type_asnai(dest, sorc)->bool:
 #RETURNS: NULL
 def init_var(ir):
     #Special variables
-    
     if(not(is_variable(ir))):
         print(str(ir))
         return False
@@ -969,11 +979,23 @@ def init_var(ir):
     #print_token_type(ir)
     #print("^^^^")
 
+#USAGE: test any ir for if it is a special constant instead of a variable
+#RETURNS: new ir
+def init_special(ir):
+    global constant_instance
+    if((is_variable(ir))):
+        return ir
+    if(str(ir) == "block.timestamp"):
+        return create_iconstant() 
+        
 
 #%dev returns true if the ir needs to be added back also initializes norms
 #false otherwise
 def type_bin(ir) -> bool:
-
+    temp_left = ir.variable_left
+    temp_right = ir.variable_right
+    ir.variable_left = init_special(ir.variable_left)
+    ir.variable_right = init_special(ir.variable_right)
     if (ir.type == BinaryType.ADDITION):
         return type_bin_add(ir.lvalue, ir.variable_left, ir.variable_right)
     elif (ir.type == BinaryType.SUBTRACTION):
@@ -992,6 +1014,8 @@ def type_bin(ir) -> bool:
         return type_bin_lt(ir.lvalue, ir.variable_left, ir.variable_right)
     elif (ir.type == BinaryType.LESS_EQUAL):
         return type_bin_le(ir.lvalue, ir.variable_left, ir.variable_right)
+    ir.variable_left = temp_left
+    ir.variable_right = temp_right
     return False
 
 #USAGE: typechecks power statements
