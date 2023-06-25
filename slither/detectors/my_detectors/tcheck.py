@@ -742,8 +742,8 @@ def type_library_call(ir):
     if(read_library):
         querry_type(ir)
     else:
-        if(len(ir.arguments) > 0):
-            type_asn(ir.lvalue, ir.arguments(0))
+        if(len(param) > 0):
+            type_asn(ir.lvalue, param[0])
         else:
             assign_const(ir.lvalue)
 
