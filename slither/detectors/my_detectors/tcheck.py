@@ -221,7 +221,6 @@ def add_param_cache(function, new_param_cache):
             paramno+=1
         if(add_cur_param == False):
             add_param = False
-            print_param_cache(cur_param_cache)
             match_param = a
             break
     print(match_param)
@@ -637,18 +636,7 @@ def type_included_hlc(ir, dest, function):
         print("added")
         addback = _tcheck_function_call(function, new_param_cache)
         #deal with return value (single) TODO
-        tuple_types = []
-        for x in ir.function.returns_ssa:
-            print(x.name)
-            print("&&")
-            if(isinstance(ir.lvalue, TupleVariable)):
-                tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
-            else:
-                type_asn(ir.lvalue, x)
-                ir.function.add_parameter_cache_return(x)
-        if(len(tuple_types) > 0):
-            add_tuple(ir.lvalue.name, tuple_types)
-            ir.function.add_parameter_cache_return(tuple_types)
+        handle_return(ir.lvalue, function)
         if(len(addback) != 0):
             return 1
     else:
