@@ -35,7 +35,6 @@ contract_run = {}
 contract_function = {}
 constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
-assign_const(constant_instance)
 
 #IMPORTANT: read internal
 read_internal = False
@@ -872,6 +871,7 @@ def type_fc(ir) -> bool:
 #USAGE: given a function, handle the return values
 #RETURNS: NULL
 def handle_return(dest_ir, function):
+    global constant_instance
     #dest_ir is optional if there is no return destination
     tuple_types = []
     print("Saving return values for: " + function.name)
@@ -1665,6 +1665,8 @@ class tcheck(AbstractDetector):
         global user_type
         global type_file
         global line_no
+        global constant_instance
+        assign_const(constant_instance)
         for contract in self.slither.contracts:
             print(contract.name)
         for contract in self.contracts:
