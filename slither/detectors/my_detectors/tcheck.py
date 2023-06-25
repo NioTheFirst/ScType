@@ -1385,6 +1385,16 @@ def _tcheck_node(node, function_name) -> []:
     newirs = _tcheck_ir(irs, function_name)
     if(len(newirs) > 0):
         print("[x]node added back")
+        print("[@]retrying node")
+        #WORKLIST ALGORITHM ON NODES
+        newnewirs = []
+        prevlength = len(newirs)
+        curlength = -1
+        while(prevlength != curlength):
+            newnewirs = _tcheck_ir(irs, function_name)
+            curlength = prevlength
+            prevlength = len(newnewirs)
+
     return newirs
 
 #USAGE: returns if the ir has a 'lvalue'
@@ -1619,7 +1629,7 @@ def _tcheck_contract(contract):
         addback_nodes = _tcheck_function(function)
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
-    cur = 0    
+    """cur = 0    
     while all_addback_nodes:
         print("------")
         cur_node = all_addback_nodes.pop()
@@ -1629,6 +1639,7 @@ def _tcheck_contract(contract):
         if(cur == 5):
             break
         cur+=1
+    """
     return errors
 
 #USAGE: returns the state variables of a contract
