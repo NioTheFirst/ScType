@@ -876,7 +876,7 @@ def type_fc(ir) -> bool:
         init_var(param)
         if(is_constant(param)):
             assign_const(param)
-        elif(not isinstance(param, variable)):
+        elif(not isinstance(param, Variable)):
             param = create_iconstant()
         params.append(param)
             #undefined type
