@@ -164,9 +164,9 @@ def print_param_cache(param_cache):
 
 #USAGE: given an ir for a function call, generate a param_cache
 #RETURNS: retursn a param_cache
-def function_call_param_cache(ir):
+def function_call_param_cache(params):
     #assumes types have been assigned (any undefined types must be resolved previously)
-    return(gen_param_cache(ir.read))
+    return(gen_param_cache(params))
 
 #USAGE: given a function, generate a param_cache
 #RETURNS: returns a param_cache
@@ -871,15 +871,18 @@ def prop_decimals(dest, sorc):
 #RETURNS: whether or not the function call node should be returned
 def type_fc(ir) -> bool:
     #check parameters
+    params = []
     for param in ir.read:
         init_var(param)
         if(is_constant(param)):
             assign_const(param)
-        #elif(is_type_undef(param)):
+        elif(not isinstance(param, variable)):
+            param = create_iconstant()
+        params.append(param)
             #undefined type
             #return True
     #generate param cache
-    new_param_cache = function_call_param_cache(ir)
+    new_param_cache = function_call_param_cache(params)
     print("Internal cal param_cache")
     print_param_cache(new_param_cache)
     added = add_param_cache(ir.function, new_param_cache)
