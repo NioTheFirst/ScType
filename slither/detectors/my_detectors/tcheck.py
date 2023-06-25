@@ -33,7 +33,7 @@ function_bar = {}
 function_check = {}
 contract_run = {}
 contract_function = {}
-constant_instance = Variable(None)
+constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 assign_const(constant_instance)
 
@@ -609,6 +609,9 @@ def type_upk(ir) ->bool:
     lval = ir.lvalue
     rtup = ir.tuple
     rind = ir.index
+    if(lval.type == "bool"):
+        assign_const(lval)
+        return False
     print("Reading tuple " + str(rtup) + " index " + str(rind))
     #currently just querry the type of the left value
     tup_token_type = get_tuple_index(str(rtup), rind)
