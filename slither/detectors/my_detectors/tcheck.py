@@ -727,6 +727,7 @@ def querry_fc(ir) -> int:
 #RETURNS: return or not
 def type_library_call(ir):
     print("Library Call: "+str(ir.function.name))
+    param = ir.arguments
     if(ir.function.name == "add"):
         return type_bin_add(ir.lvalue, param[0], param[1])
     elif(ir.function.name == "sub"):
