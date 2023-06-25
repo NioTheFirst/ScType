@@ -1211,6 +1211,8 @@ def add_norm(ir, norm):
     if(not(is_variable(ir))):
         return
     temp = ir.norm
+    print(temp)
+    print(norm)
     temp+=norm
     ir.norm = temp
     if(norm == -102):
