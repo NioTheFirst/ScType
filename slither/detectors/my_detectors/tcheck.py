@@ -898,7 +898,7 @@ def handle_return(dest_ir, function):
         function.add_parameter_cache_return(tuple_types)
         added = True
     if(added == False):
-        function.add_parameter_cache(None)
+        function.add_parameter_cachei_return(constant_instance)
 
 
 
