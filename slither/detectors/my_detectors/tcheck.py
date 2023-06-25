@@ -956,9 +956,11 @@ def type_asnai(dest, sorc)->bool:
 #USAGE: initializes a variable for typechecking
 #RETURNS: NULL
 def init_var(ir):
+    #Special variables
+    
     if(not(is_variable(ir))):
+        print(str(ir))
         return False
-    print("var..")
     if(is_constant(ir)):
         assign_const(ir)
     else:
