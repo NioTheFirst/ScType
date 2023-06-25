@@ -221,6 +221,7 @@ def add_param_cache(function, new_param_cache):
             paramno+=1
         if(add_cur_param == False):
             add_param = False
+            print_param_cache(cur_param_cache)
             match_param = a
             break
     print(match_param)
