@@ -868,10 +868,11 @@ def type_fc(ir) -> bool:
 def handle_return(dest_ir, function):
     #dest_ir is optional if there is no return destination
     tuple_types = []
-    print("IC Saving return values for: " + function.name)
+    print("Saving return values for: " + function.name)
+    added = False
     for x in function.return_values_ssa:
         print(x.name)
-        #print_token_type(x)
+        print_token_type(x)
         if(len(function.return_values_ssa) > 1):
             tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
         else:
