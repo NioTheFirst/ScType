@@ -49,7 +49,7 @@ def create_iconstant():
     global constant_instance_counter
     new_instance = Variable()
     new_instance.name = "PCI_" + str(constant_instance_counter)
-    cosntant_instance_counter+=1
+    constant_instance_counter+=1
     assign_const(new_instance)
     return new_instance
 
