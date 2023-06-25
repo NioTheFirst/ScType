@@ -876,23 +876,24 @@ def type_fc(ir) -> bool:
 
 #USAGE: given a function, handle the return values
 #RETURNS: NULL
-def handle_return(ir, function):
+def handle_return(dest_ir, function):
     #dest_ir is optional if there is no return destination
     tuple_types = []
     print("IC Saving return values for: " + function.name)
     for x in function.return_values_ssa:
         print(x.name)
         #print_token_type(x)
-        type_asn(ir.lvalue, x)
-        if(isinstance(ir.lvalue, TupleVariable)):
+        if(len(function.return_values_ssa) > 1):
             tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
         else:
-            type_asn(ir.lvalue, x)
-            asn_norm(ir.lvalue, get_norm(x))
-            ir.function.add_parameter_cache_return(x)
+            if(dest_ir != None):
+                type_asn(dest_ir, x)
+                asn_norm(dest_ir, get_norm(x))
+            function.add_parameter_cache_return(x)
         print("___")
     if(len(tuple_types) > 0):
-        add_tuple(ir.lvalue.name, tuple_types)
+        if(dest_ir != None):
+            add_tuple(dest_ir.name, tuple_types)
         function.add_parameter_cache_return(tuple_types)
 
 
@@ -1538,20 +1539,7 @@ def _tcheck_function(function) -> []:
             fentry.add(son)
 
     #Save return value
-    tuple_types = []
-    print("Saving return value for " + function.name)
-    for x in function.returns_ssa:
-        print(x.name)
-        print("&&")
-        if(len(function.returns_ssa) > 0):
-            tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
-        else:
-            # type_asn(ir.lvalue, x)
-            function.add_parameter_cache_return(x)
-    if(len(tuple_types) > 0):
-        #add_tuple(ir.lvalue.name, tuple_types)
-        function.add_parameter_cache_return(tuple_types)
-
+    handle_return(None, function)
     return addback_nodes
 
 
