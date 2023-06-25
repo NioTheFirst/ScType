@@ -36,6 +36,8 @@ contract_function = {}
 constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 
+ask_user = True
+
 #IMPORTANT: read internal
 read_internal = False
 
@@ -256,6 +258,7 @@ def read_type_file(ir):
 def querry_type(ir):
     global user_type
     global type_file
+    global ask_user
     uxname = ir.name
     if(ir.tname != None):
         uxname = ir.tname
@@ -283,6 +286,8 @@ def querry_type(ir):
             print("[*]Type fetched successfully")
             return
         print("[x]Failed to fetch type from type file, defaulting to human interface")
+    if (not (ask_user)):
+        return True
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
     input_int = int(input_str)
@@ -826,9 +831,9 @@ def type_fc(ir) -> bool:
         init_var(param)
         if(is_constant(param)):
             assign_const(param)
-        elif(is_type_undef(param)):
+        #elif(is_type_undef(param)):
             #undefined type
-            return True
+            #return True
     #generate param cache
     new_param_cache = function_call_param_cache(ir)
     print("Internal cal param_cache")
