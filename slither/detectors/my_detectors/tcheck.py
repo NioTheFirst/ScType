@@ -46,6 +46,7 @@ read_internal = False
 #USAGE: creates and returns a constant instnace
 #RETURNS: a constant instance (default constant)
 def create_iconstant():
+    global constant_instance_counter
     new_instance = Variable()
     new_instance.name = "PCI_" + str(constant_instance_counter)
     cosntant_instance_counter+=1
