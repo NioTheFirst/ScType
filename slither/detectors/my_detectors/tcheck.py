@@ -431,7 +431,10 @@ def copy_token_tuple(ir, tt):
     else:
         for d in tt[1]:
             ir.add_token_typed(d)
-    ir.norm = tt[2]
+    if(isinstance(tt[2], int)):
+        ir.norm = tt[2]
+    else:
+        ir.norm = tt[2][0]
     ir.link_function = tt[3]
     print_token_type(ir)
 
