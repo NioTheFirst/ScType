@@ -48,7 +48,7 @@ read_internal = False
 def create_iconstant():
     global constant_instance_counter
     new_instance = Variable()
-    new_instance.name = "PCI_" + str(constant_instance_counter)
+    new_instance.name = "PIC_" + str(constant_instance_counter)
     constant_instance_counter+=1
     assign_const(new_instance)
     return new_instance
@@ -505,7 +505,7 @@ def add_errors(ir):
 def convert_ssa(ir):
     if(not(is_variable(ir))):
         return
-    if(is_constant(ir)):
+    if(is_constant(ir) or ir.name.startswith("PIC")):
         return
     #if(not(ir.ssa_name)):
     #    return
