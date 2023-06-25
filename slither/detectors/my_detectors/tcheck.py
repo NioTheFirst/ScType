@@ -987,35 +987,33 @@ def init_special(ir):
         return ir
     if(str(ir) == "block.timestamp"):
         return create_iconstant() 
+    else:
+        return ir
         
 
 #%dev returns true if the ir needs to be added back also initializes norms
 #false otherwise
 def type_bin(ir) -> bool:
-    temp_left = ir.variable_left
-    temp_right = ir.variable_right
-    ir.variable_left = init_special(ir.variable_left)
-    ir.variable_right = init_special(ir.variable_right)
+    temp_left = init_special(ir.variable_left)
+    temp_right = init_special(ir.variable_right)
     if (ir.type == BinaryType.ADDITION):
-        return type_bin_add(ir.lvalue, ir.variable_left, ir.variable_right)
+        return type_bin_add(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.SUBTRACTION):
-        return type_bin_sub(ir.lvalue, ir.variable_left, ir.variable_right)
+        return type_bin_sub(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.MULTIPLICATION):
-        return type_bin_mul(ir.lvalue, ir.variable_left, ir.variable_right)
+        return type_bin_mul(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.DIVISION):
-        return type_bin_div(ir.lvalue, ir.variable_left, ir.variable_right)
+        return type_bin_div(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.POWER):
-        return type_bin_pow(ir.lvalue, ir.variable_left, ir.variable_right)
+        return type_bin_pow(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.GREATER):
-        return type_bin_gt(ir.lvalue, ir.variable_left, ir.variable_right)
+        return type_bin_gt(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.GREATER_EQUAL):
-        return type_bin_ge(ir.lvalue, ir.variable_left, ir.variable_right)
+        return type_bin_ge(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.LESS):
-        return type_bin_lt(ir.lvalue, ir.variable_left, ir.variable_right)
+        return type_bin_lt(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.LESS_EQUAL):
-        return type_bin_le(ir.lvalue, ir.variable_left, ir.variable_right)
-    ir.variable_left = temp_left
-    ir.variable_right = temp_right
+        return type_bin_le(ir.lvalue, temp_left, temp_right)
     return False
 
 #USAGE: typechecks power statements
