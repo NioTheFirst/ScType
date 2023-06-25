@@ -37,7 +37,7 @@ constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 
-ask_user = True
+ask_user = False
 read_library = False
 
 #IMPORTANT: read internal
@@ -728,6 +728,8 @@ def querry_fc(ir) -> int:
 def type_library_call(ir):
     print("Library Call: "+str(ir.function.name))
     param = ir.arguments
+    if(not(is_variable(ir.lvalue))):
+        return False
     if(ir.function.name == "add"):
         return type_bin_add(ir.lvalue, param[0], param[1])
     elif(ir.function.name == "sub"):
@@ -739,13 +741,8 @@ def type_library_call(ir):
     
     if(querry_fc(ir) == 2):
         return False
-    if(read_library):
-        querry_type(ir)
-    else:
-        if(len(param) > 0):
-            type_asn(ir.lvalue, param[0])
-        else:
-            assign_const(ir.lvalue)
+    querry_type(ir.lvalue)
+    return False
 
 #USAGE: typecheck for high-level call (i.e. iERC20(address).balanceof())
 #RETURNS: whether or not the high-level call node should be returned (should always return FALSE)
@@ -828,8 +825,8 @@ def type_ref(ir)->bool:
         return False
 
     #no other options, just querry the user (try not to let this happen)
-    #querry_type(ir.lvalue)
-    return True
+    querry_type(ir.lvalue)
+    #return True
     """global function_ref
     print("Ref: "+str(ir.lvalue.name))
     temp = ir.lvalue.name
