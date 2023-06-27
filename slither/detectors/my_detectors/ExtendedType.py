@@ -59,7 +59,7 @@ class ExtendedType():
 
     def add_num_token_type(self, token_type):
         if(token_type == -1):
-            if(len(self._num_token_types) == 0 or token_type in self._num_token_types):
+            if(len(self._num_token_types) != 0 or token_type in self._num_token_types):
                 return
             self._num_token_types.append(token_type)
         else:
@@ -69,6 +69,23 @@ class ExtendedType():
                 if(-1 in self._num_token_types):
                     self._num_token_types.remove(-1)
                 self._num_token_types.append(token_type)
+
+    @property
+    def den_token_types(self):
+        return(self._den_token_types)
+
+    def add_den_token_type(self, token_type):
+        if(token_type == -1):
+            if(len(self._den_token_types) != 0 or token_type in self._den_token_types):
+                return
+            self._den_token_types.append(token_type)
+        else:
+            if(token_type in self._num_token_types):
+                self._num_token_types.remove(token_type)
+            else:
+                if(-1 in self._den_token_types):
+                    self._den_token_types.remove(-1)
+                self._den_token_types.append(token_type)
     @property
     def is_undefined(self) -> bool:
         if(len(self._num_token_type) == 0 and len(self._den_token_type) == 0):

@@ -32,7 +32,7 @@ class Variable(SourceMapping):
         self._parent_function : Optional[str] = None
         self._link_function : Optional[str] = None
         self._tname: Optional[str] = None
-        self._extended_type = ExtendedType()
+        self._et = ExtendedType()
 
     @property
     def is_scalar(self) -> bool:
@@ -84,7 +84,7 @@ class Variable(SourceMapping):
 
     @name.setter
     def name(self, name):
-        self._extended_type.name = name
+        self._et.name = name
         self._name = name
     
     @property
@@ -123,7 +123,8 @@ class Variable(SourceMapping):
 
     @property
     def token_typen(self) -> Optional[int]:
-        return self._token_typen
+        #return self._token_typen
+        return self._et.num_token_types
 
     
     def add_token_typen(self, a):
@@ -137,10 +138,12 @@ class Variable(SourceMapping):
         if(-1 in self._token_typen and a != -1):
             self._token_typen.remove(-1)
         self._token_typen.append(a)
+        self._token_typen.add_num_token_type(a)
 
     @property
     def token_typed(self) -> Optional[int]:
-        return self._token_typed
+        #return self._token_typed
+        return self._et.den_token_types
 
 
     def add_token_typed(self, a):
@@ -154,6 +157,7 @@ class Variable(SourceMapping):
         if(-1 in self._token_typed and a != -1):
             self._token_typed.remove(-1)
         self._token_typed.append(a)
+        self._et.add_den_token_type(a)
 
     @property
     def token_type(self):
