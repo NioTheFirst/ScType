@@ -1,8 +1,6 @@
 from collections import defaultdict
 import os
 import sys
-import tcheck_parser
-import tcheck_propagation
 
 #USAGE: file containing the structure representing an Extended type instance
 #       Extended types have two main subclasses: token types and business types
