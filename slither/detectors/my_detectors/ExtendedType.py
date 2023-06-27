@@ -91,6 +91,6 @@ class ExtendedType():
 
     
     def init_constant(self):
-
+        print("woow")
         
 
