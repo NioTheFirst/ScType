@@ -3,6 +3,7 @@
 """
 from typing import Optional, TYPE_CHECKING, List, Union, Tuple
 
+from slither.detectors.mydetectors.ExtendedType import ExtendedType
 from slither.core.source_mapping.source_mapping import SourceMapping
 from slither.core.solidity_types.type import Type
 from slither.core.solidity_types.elementary_type import ElementaryType
@@ -31,6 +32,7 @@ class Variable(SourceMapping):
         self._parent_function : Optional[str] = None
         self._link_function : Optional[str] = None
         self._tname: Optional[str] = None
+        self.extended_type = ExtendedType()
 
     @property
     def is_scalar(self) -> bool:
@@ -82,6 +84,7 @@ class Variable(SourceMapping):
 
     @name.setter
     def name(self, name):
+        self._extended_type.name = name
         self._name = name
     
     @property
