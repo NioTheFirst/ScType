@@ -32,7 +32,7 @@ class Variable(SourceMapping):
         self._parent_function : Optional[str] = None
         self._link_function : Optional[str] = None
         self._tname: Optional[str] = None
-        self.extended_type = ExtendedType()
+        self._extended_type = ExtendedType()
 
     @property
     def is_scalar(self) -> bool:
