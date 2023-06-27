@@ -939,7 +939,8 @@ def handle_return(dest_ir, function):
             tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
         else:
             if(dest_ir != None):
-                type_asn(dest_ir, x)
+                copy_token_type(x, dest_ir)
+                dest_ir.link_function = x.link_function
                 asn_norm(dest_ir, get_norm(x))
             function.add_parameter_cache_return(x)
             added = True
