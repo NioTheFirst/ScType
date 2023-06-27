@@ -3,7 +3,7 @@
 """
 from typing import Optional, TYPE_CHECKING, List, Union, Tuple
 
-from slither.detectors.mydetectors.ExtendedType import ExtendedType
+from slither.detectors.my_detectors.ExtendedType import ExtendedType
 from slither.core.source_mapping.source_mapping import SourceMapping
 from slither.core.solidity_types.type import Type
 from slither.core.solidity_types.elementary_type import ElementaryType
