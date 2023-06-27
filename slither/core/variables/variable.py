@@ -138,7 +138,7 @@ class Variable(SourceMapping):
         if(-1 in self._token_typen and a != -1):
             self._token_typen.remove(-1)
         self._token_typen.append(a)
-        self._token_typen.add_num_token_type(a)
+        self._et.add_num_token_type(a)
 
     @property
     def token_typed(self) -> Optional[int]:
