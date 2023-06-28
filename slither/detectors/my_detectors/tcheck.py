@@ -1399,7 +1399,7 @@ def has_lvalue(ir):
         return True
     if((isinstance(ir, Condition))):
         return True
-    if(isinstance(ir, Reference)):
+    if(isinstance(ir, Member)):
         return True
     if(isinstance(ir, Unpack)):
         return True
