@@ -302,54 +302,24 @@ def querry_type(ir):
     print("Define norm for \"" + uxname + "\": ")
     input_str = input()
     input_int = int(input_str)
-    ir.norm = input_int
+    _ir.norm = input_int
     if(str(ir.type) == "address"):
         print("Define Linked Contract Name for \"" + uxname + "\": ")
         input_str = input()
         ir.link_function = input_str
-    print(ir.token_type)
     #add to parser file? TODO Priority: Low
-
-def is_referenceVariable(ir):
-    if not(is_variable(ir)):
-        return False
-    print("checking "+ir.name.lower())
-    if isinstance(ir, ReferenceVariable):
-        print("Refernce variable: " + ir.name.lower())
-        return True
-    return False
 
 def is_constant(ir):
     if isinstance(ir, Constant):
         print("Constatn varible: "+ir.name.lower())
         return True
     return False
-def is_high_level_call(ir):
-    if isinstance(ir, HighLevelCall):
-        print("High Level Call: " + str(ir.function_name).lower())
-        return True
-    return False
-def is_temporary(ir):
-    if isinstance(ir, TemporaryVariable):
-        print("Temp variable: "+ir.name.lower())
-def is_state(ir):
-    if isinstance(ir, StateVariable):
-        print("State variable: "+ir.name.lower())
-        #if(is_type_undef(ir) or is_type_const(ir)):
-        #    querry_type(ir)
-def is_space(ir):
-    if isinstance(ir, StateIRVariable):
-        print("State IR  variable: "+ir.name.lower())
-def is_local(ir):
-    if isinstance(ir, LocalVariable):
-        print("Local variable: "+ir.name.lower())
-def is_tuple(ir):
-    if isinstance(ir, TupleVariable):
-        print("TUple variable: "+ir.name.lower())
+
 def is_function(ir):
     if isinstance(ir, Function):
         print("Function: "+ir.name)
         temp = ir.parameters
+
 def is_condition(ir):
     if isinstance(ir, Condition):
         print("Conidtion: ")
@@ -360,33 +330,28 @@ def is_function_type_variable(ir):
     if isinstance(ir, FunctionTypeVariable):
         print("Function Type Variable: "+ir.name.lower())
 
-def check_exist(ir):
-    if(isinstance(ir, Constant)):
-        ir.token_type == 0
-        return True
-    if((tempVar[ir.name] == None and strgVar[ir.name] == None) and ir.token_type == -2):
-        return False
-    return True
-
 def is_type_undef(ir):
     if not(is_variable(ir)):
         print("not variable")
         return True
-    if(len(ir.token_typen) == 0 and len(ir.token_typed) == 0):
-        return True
-    return False
+    _ir = ir.extok
+    return _ir.is_undefined()
 
 def is_type_const(ir):
-    if(len(ir.token_typen) == 1 and ir.token_typen[0] == -1 and len(ir.token_typed) == 1 and ir.token_typed[0] == -1):
+    if not(is_variable(ir)):
+        print("not variable")
         return True
-    return False
+    _ir = ir.extok
+    return _ir.is_constant()
 
 #USAGE: assigns an IR to the constant type (-1)
 #       ex: 1, 5, 1001
 #RETURNS: NULL
 def assign_const(ir):
-    if(len(ir.token_typen) == 1 and ir.token_typen[0] == -1 and len(ir.token_typed) == 1 and ir.token_typed[0] == -1):
-        return    
+    if(is_type_const(ir)):
+        return
+    _ir=ir.extok
+    _ir.init_constant()
     ir.token_typen.clear()
     ir.token_typed.clear()
     ir.add_token_typen(-1)
@@ -395,10 +360,6 @@ def assign_const(ir):
 #USAGE: assigns an IR to the error type (-2) this stops infinite lioops
 #RETURNS: NULL
 def assign_err(ir):
-    if(len(ir.token_typen) == 1 and ir.token_typen[0] == -2 and len(ir.token_typed) == 0):
-        return
-    ir.token_typen.clear()
-    ir.token_typed.clear()
     assign_const(ir)
 
 #USAGE: copies all the types from a type tuple to an ir node
@@ -406,26 +367,25 @@ def assign_err(ir):
 def copy_token_tuple(ir, tt):
     print("Check copy_toekn_tuple")
     print(tt)
-    print_token_type(ir)
+    _ir = ir.extok
     print("----")
-    ir.token_typen.clear()
-    ir.token_typed.clear()
+    _ir.token_type_clear()
     if(isinstance(tt[0], int)):
-        ir.add_token_typen(tt[0])
+        _ir.add_num_token_type(tt[0])
     else:
         for n in tt[0]:
-            ir.add_token_typen(n)
+            _ir.add_num_token_type(n)
     if(isinstance(tt[1], int)):
-        ir.add_token_typed(tt[1])
+        _ir.add_den_token_type(tt[1])
     else:
         for d in tt[1]:
-            ir.add_token_typed(d)
+            _ir.add_den_token_type(d)
     if(isinstance(tt[2], int)):
-        ir.norm = tt[2]
+        _ir.norm = tt[2]
     else:
-        ir.norm = tt[2][0]
-    ir.link_function = tt[3]
-    print_token_type(ir)
+        _ir.norm = tt[2][0]
+    _ir.linked_contract = tt[3]
+    print(_ir)
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
