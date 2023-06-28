@@ -165,7 +165,7 @@ class ExtendedType():
             f"Num: {num_token_types_str}\n"
             f"Den: {den_token_types_str}\n"
             f"Norm: {self._norm}\n"
-            f"LF: {self._link_function}"
+            f"LF: {self._linked_contract}"
         )
  
         
