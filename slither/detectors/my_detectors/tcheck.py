@@ -1396,8 +1396,6 @@ def has_lvalue(ir):
         return True
     if(isinstance(ir, Return)):
         return True
-    if((isinstance(ir, Condition))):
-        return True
     if(isinstance(ir, Member)):
         return True
     if(isinstance(ir, Unpack)):
