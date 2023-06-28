@@ -1402,6 +1402,8 @@ def has_lvalue(ir):
         return True
     if(isinstance(ir, TypeConversion)):
         return True
+    if(isinstance(ir, InternalCall)):
+        return True
     return False
 
 #USAGE: clears a node
