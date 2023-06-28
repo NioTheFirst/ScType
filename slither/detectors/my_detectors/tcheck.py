@@ -1348,13 +1348,13 @@ def _tcheck_ir(irs, function_name) -> []:
         if isinstance(ir, Return):
             check_type(ir)
             continue
-        """
+        
         if function_name != None and ir.lvalue != None and is_variable(ir.lvalue):
             _ir = ir.lvalue.extok
             _ir.name = ir.lvalue.name
             _ir.function_name = function_name
             ir.lvalue.parent_function = function_name
-            print("Function name: "+ ir.lvalue.parent_function)"""
+            print("Function name: "+ ir.lvalue.parent_function)
         addback = check_type(ir)
         #is_variable(ir.lvalue)
         if(addback):
@@ -1401,6 +1401,8 @@ def has_lvalue(ir):
     if(isinstance(ir, Unpack)):
         return True
     if(isinstance(ir, Phi)):
+        return True
+    if(isinstance(ir, TypeConversion)):
         return True
     return False
 
