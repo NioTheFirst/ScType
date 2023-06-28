@@ -22,7 +22,7 @@ class ExtendedType():
         self._num_token_types = []
         self._den_token_types = []
         self._base_decimals = 0
-        self._norm = None
+        self._norm = 0
         self._linked_contract = None
         self._fields: Optional[ExtendedType] = []
         #Business type
