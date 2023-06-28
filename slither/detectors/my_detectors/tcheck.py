@@ -470,7 +470,9 @@ def convert_ssa(ir):
         return
     #if(not(ir.ssa_name)):
     #    return
+    print(ir.extok)
     non_ssa_ir = ir.non_ssa_version
+    print(non_ssa_ir.extok)
     #name = ir.ssa_name
     if(not (is_type_undef(non_ssa_ir))): # and is_type_undef(ir)):
         ir.token_typen.clear()
@@ -550,7 +552,6 @@ def check_type(ir) -> bool:
         #Phi (ssa) unpack
         addback = False
         convert_ssa(ir.lvalue)
-        print(ir.lvalue.extok)
         print("Phi")
     elif isinstance(ir, EventCall):
         return False
