@@ -392,6 +392,7 @@ def copy_token_tuple(ir, tt):
 def copy_token_type(src, dest):
     #dest.token_typen.clear()
     #dest.token_typed.clear()
+    tcheck_propagation.copy_token_type(dest, src)
     for n in src.token_typen:
         dest.add_token_typen(n)
     for d in src.token_typed:
@@ -402,6 +403,7 @@ def copy_token_type(src, dest):
 #USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
 #RETURNS: null
 def copy_inv_token_type(src, dest):
+    tcheck_propagation.copy_inv_token_type(src, dest)
     for n in src.token_typen:
         dest.add_token_typed(n)
     for d in src.token_typed:
@@ -412,6 +414,7 @@ def copy_inv_token_type(src, dest):
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
 def copy_pc_token_type(src, dest):
+    tcheck_propagation.copy_pc_token_type(src, dest)
     dest.token_typen.clear()
     dest.token_typed.clear()
     for n in src[0]:
@@ -450,8 +453,13 @@ def add_errors(ir):
     global errors
     errors.append(ir)
     nErrs+=1
-    print("Error with: " + ir.name + " in function " + ir.parent_function)
+    _ir = ir.extok
+    print("Error with: " + _ir.name + " in function " + _ir.function_name)
     assign_err(ir)
+
+#USAGE: Directly copies a normalization value (WARNING: SKIPS TYPECHECKING)
+def copy_norm(src, dest):
+    return tcheck_popagation.copy_norm(src, dest)
 
 #USAGE: Converts the first ssa instance of a variable (ends with _1)
 #RETURNS: NULL
@@ -467,8 +475,11 @@ def convert_ssa(ir):
     if(not (is_type_undef(non_ssa_ir))): # and is_type_undef(ir)):
         ir.token_typen.clear()
         ir.token_typed.clear()
+        _ir = ir.extok
+        _ir.token_type_clear()
         copy_token_type(non_ssa_ir, ir)
         #print_token_type(ir)
+        copy_norm(non_ssa_ir, ir)
         ir.norm = non_ssa_ir.norm
         ir.link_function = non_ssa_ir.link_function
 
@@ -484,16 +495,17 @@ def update_non_ssa(ir):
     non_ssa_ir = ir.non_ssa_version
     #name = ir.ssa_name
     if(not (is_type_undef(ir))):
+        _non_ssa_ir = non_ssa_ir.extok
+        _non_ssa_ir.token_type_clear()
         non_ssa_ir.token_typen.clear()
         non_ssa_ir.token_typed.clear()
         copy_token_type(ir, non_ssa_ir)
         #print_token_type(ir)
+        copy_norm(non_ssa_ir, ir)
         non_ssa_ir.norm = ir.norm
         non_ssa_ir.link_function = ir.link_function
 
-#edit checkdafadjfahjfa
-
-#given and ir, type check
+#USAGE: type checks an IR
 #currently handles assignments and Binary
 #returns ir if needs to be added back
 def check_type(ir) -> bool:

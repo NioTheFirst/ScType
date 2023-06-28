@@ -14,6 +14,8 @@ def copy_token_type(dest, src):
         _dest.add_num_token_type(n)
     for d in _src.den_token_types:
         _dest.add_dest_token_type(d)
+    if _src.linked_contract:
+        _dest.linked_contract = _src.linked_contract
 
 #USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
 def copy_inv_token_type(src, dest):
@@ -23,6 +25,8 @@ def copy_inv_token_type(src, dest):
         _dest.add_den_token_type(n)
     for d in _src.den_token_types:
         _dest.add_den_token_type(d)
+    if _src.linked_contract:
+        _dest.linked_contract = _src.linked_contract
 
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
@@ -36,8 +40,14 @@ def copy_pc_token_type(src, dest):
     if(src[3] != None):
         _dest.linked_contract = src[3]
 
+
+#USAGE: directly copies a norm value. WARNING: skips typechecks associated with normalization
+def copy_norm(src, dest):
+    _src = src.extok
+    _dest = dest.extok
+    _dest.norm = _src.norm
 #[DEPRECATED] comapres the token types of two variables. Includes support for checking ABSTRACT types
-def compare_token_type(varA, varB):
+"""def compare_token_type(varA, varB):
     A_num_types = copy_and_sort(varA.token_typen)
     A_den_types = copy_and_sort(varA.token_typed)
     B_num_types = copy_and_sort(varB.token_typen)
@@ -45,7 +55,7 @@ def compare_token_type(varA, varB):
     if(_compare_token_type(A_num_types, B_num_types)):
         return _compare_token_type(A_den_types, B_den_types)
     return False
-
+"""
 #USAGE: comapres the extended types of two variables. Includes support for checking ABSTRACT types
 def compare_token_type(varA, varB):
     _varA = varA.extok
