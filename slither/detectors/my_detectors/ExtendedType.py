@@ -130,13 +130,11 @@ class ExtendedType():
     def add_field(self, new_field):
         self._fields.append(new_field)
 
-    @property
     def is_undefined(self) -> bool:
         if(len(self._num_token_types) == 0 and len(self._den_token_types) == 0):
             return True
         return False
 
-    @property
     def is_constant(self) -> bool:
         if(len(self._num_token_types) == 1 and len(self._den_token_types) == 1 and self._num_token_types[0] == -1 and self._den_token_types[0] == -1):
             return True
