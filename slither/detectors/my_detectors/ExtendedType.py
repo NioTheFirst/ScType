@@ -147,7 +147,7 @@ class ExtendedType():
         self.link_function = None
 
     def init_constant(self):
-        if not(is_undefined(self)):
+        if not(self.is_undefined()):
             print("[W] Initializing defined variable to constant")
         self.token_type_clear()
         self.add_num_token_type(-1)
