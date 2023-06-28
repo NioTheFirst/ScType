@@ -1390,6 +1390,8 @@ def has_lvalue(ir):
         return True
     if(isinstance(ir, Member)):
         return True
+    if(isinstance(ir, Index)):
+        return True
     if(isinstance(ir, Unpack)):
         return True
     if(isinstance(ir, Phi)):
