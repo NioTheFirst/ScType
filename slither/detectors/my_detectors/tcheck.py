@@ -1354,9 +1354,8 @@ def _tcheck_ir(irs, function_name) -> []:
             _ir.name = ir.lvalue.name
             _ir.function_name = function_name
             ir.lvalue.parent_function = function_name
-            print("Function name: "+ ir.lvalue.parent_function)
+            print("Function name: "+ ir.lvalue.parent_function)"""
         addback = check_type(ir)
-        """
         #is_variable(ir.lvalue)
         if(addback):
             newirs.append(ir)
