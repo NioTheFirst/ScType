@@ -186,8 +186,8 @@ def gen_param_cache(param_list):
     param_cache = []
     for param in param_list:
         _param = param.extok
-        num = _param.num_token_type
-        den = _param.den_token_type
+        num = _param.num_token_types
+        den = _param.den_token_types
         norm = _param.norm
         link_function = _param.link_function
         param_type = [num, den, norm, link_function]
