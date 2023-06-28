@@ -13,7 +13,7 @@ def copy_token_type(dest, src):
     for n in _src.num_token_types:
         _dest.add_num_token_type(n)
     for d in _src.den_token_types:
-        _dest.add_dest_token_type(d)
+        _dest.add_desn_token_type(d)
     if _src.linked_contract:
         _dest.linked_contract = _src.linked_contract
 
@@ -46,6 +46,7 @@ def copy_norm(src, dest):
     _src = src.extok
     _dest = dest.extok
     _dest.norm = _src.norm
+
 #[DEPRECATED] comapres the token types of two variables. Includes support for checking ABSTRACT types
 """def compare_token_type(varA, varB):
     A_num_types = copy_and_sort(varA.token_typen)
