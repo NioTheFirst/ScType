@@ -387,7 +387,6 @@ def copy_token_tuple(ir, tt):
     else:
         _ir.norm = tt[2][0]
     _ir.linked_contract = tt[3]
-    print(_ir)
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
@@ -461,7 +460,6 @@ def convert_ssa(ir):
         _ir = ir.extok
         _ir.token_type_clear()
         copy_token_type(non_ssa_ir, ir)
-        print(ir.extok)
         #print_token_type(ir)
         copy_norm(non_ssa_ir, ir)
         ir.norm = non_ssa_ir.norm
@@ -1079,8 +1077,6 @@ def asn_norm(ir, norm):
     if(not(is_variable(ir)) or norm == 'u'):
         return
     _ir = ir.extok
-    print(_ir)
-    print("w")
     if(_ir.norm == 'u'):
         _ir.norm = norm
     else:
@@ -1095,8 +1091,8 @@ def add_norm(ir, norm):
         return
     _ir = ir.extok
     temp = ir.norm
-    print(temp)
-    print(norm)
+    #print(temp)
+    #print(norm)
     if(isinstance(temp, int) and isinstance(norm, int)):
         temp+=norm
         _ir.norm = temp
