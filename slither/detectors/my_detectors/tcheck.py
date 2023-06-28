@@ -822,11 +822,11 @@ def handle_return(dest_ir, function):
     print("Saving return values for: " + function.name)
     added = False
     _dest_ir = None
+    constant_instance = create_iconstant()
     if(dest_ir):
         _dest_ir = dest_ir.extok
     for _x in function.return_values_ssa:
         if(isinstance(_x, Constant)):
-            constant_instance = create_iconstant()
             x = constant_instance.extok
         else:
             x = _x.extok
