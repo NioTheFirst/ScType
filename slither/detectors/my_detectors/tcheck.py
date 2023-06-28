@@ -392,7 +392,10 @@ def copy_token_tuple(ir, tt):
 def copy_token_type(src, dest):
     #dest.token_typen.clear()
     #dest.token_typed.clear()
+    print(dest.extok)
     tcheck_propagation.copy_token_type(dest, src)
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    print(dest.extok)
     for n in src.token_typen:
         dest.add_token_typen(n)
     for d in src.token_typed:
