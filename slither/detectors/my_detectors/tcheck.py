@@ -436,6 +436,7 @@ def add_errors(ir):
     errors.append(ir)
     nErrs+=1
     _ir = ir.extok
+    print(f"Error with {_ir.name} in function {_ir.function_name}")
     print("Error with: " + _ir.name + " in function " + _ir.function_name)
     assign_err(ir)
 
@@ -832,9 +833,7 @@ def handle_return(dest_ir, function):
             x = constant_instance
         else:
             x = _x
-        print(x.name)
         __x = x.extok
-        print()
         if(len(function.return_values_ssa) > 1):
             tuple_types.append((__x.num_token_types, __x.den_token_types, __x.norm, __x.linked_contract))
         else:
