@@ -829,7 +829,7 @@ def handle_return(dest_ir, function):
         if(isinstance(_x, Constant)):
             x = constant_instance
         else:
-            x = x
+            x = _x
         print(x.name)
         __x = x.extok
         print()
