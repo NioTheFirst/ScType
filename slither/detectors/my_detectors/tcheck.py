@@ -453,17 +453,13 @@ def convert_ssa(ir):
         return
     #if(not(ir.ssa_name)):
     #    return
-    print(ir.extok)
     non_ssa_ir = ir.non_ssa_version
-    print(non_ssa_ir.extok)
     #name = ir.ssa_name
     if(not (is_type_undef(non_ssa_ir))): # and is_type_undef(ir)):
         ir.token_typen.clear()
         ir.token_typed.clear()
         _ir = ir.extok
         _ir.token_type_clear()
-        print(ir.extok)
-        print("********************************")
         copy_token_type(non_ssa_ir, ir)
         print(ir.extok)
         #print_token_type(ir)
@@ -1080,10 +1076,11 @@ def get_norm(ir):
 #       if initialized, check against norm and throw error
 #RETURNS: NULL
 def asn_norm(ir, norm):
-    _ir = ir.extok
-    print(_ir.norm)
     if(not(is_variable(ir)) or norm == 'u'):
         return
+    _ir = ir.extok
+    print(_ir)
+    print("w")
     if(_ir.norm == 'u'):
         _ir.norm = norm
     else:
