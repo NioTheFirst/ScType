@@ -157,7 +157,7 @@ class ExtendedType():
         self.norm = 0;
     
     def __str__(self):
-        return f"Name: {self._name} Function: {self._function_name}\n"+"
-        Num: {self._num_token_types}\n    Den: {self._den_token_types}\n"+"
-        Norm: {self._norm}\n    LF: {self._link_function}"
+        return (f"Name: {self._name} Function: {self._function_name}\n"
+        "Num: {self._num_token_types}\n    Den: {self._den_token_types}\n"
+        "Norm: {self._norm}\n    LF: {self._link_function}")
         
