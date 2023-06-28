@@ -28,7 +28,7 @@ class Variable(SourceMapping):
         self._token_dim = 0;
         self._token_typen : List[int] = []
         self._token_typed : List[int] = []
-        self._norm = -100;
+        self._norm = 0;
         self._parent_function : Optional[str] = None
         self._link_function : Optional[str] = None
         self._tname: Optional[str] = None
