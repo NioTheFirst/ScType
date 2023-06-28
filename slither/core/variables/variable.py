@@ -123,6 +123,7 @@ class Variable(SourceMapping):
 
     @parent_function.setter
     def parent_function(self, name):
+        self._et.function_name = name
         self._parent_function = name
 
     @property
