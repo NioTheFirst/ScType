@@ -90,6 +90,7 @@ class Variable(SourceMapping):
     def name(self, name):
         self._et.name = name
         self._name = name
+        print(name)
     
     @property
     def link_function(self)->Optional[str]:
