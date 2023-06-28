@@ -831,7 +831,7 @@ def handle_return(dest_ir, function):
         else:
             x = _x.extok
         print(x.name)
-        print_token_type(x)
+        print(x)
         if(len(function.return_values_ssa) > 1):
             tuple_types.append((x.num_token_types, x.den_token_types, x.norm, x.linked_contract))
         else:
