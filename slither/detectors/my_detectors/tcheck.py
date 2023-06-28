@@ -1321,6 +1321,13 @@ def _tcheck_ir(irs, function_name) -> []:
         # irs are expressions in the form of a = b op c
         print(ir)
         is_function(ir)
+        if has_lvalue(ir):
+             if function_name != None and ir.lvalue != None and is_variable(ir.lvalue):
+                _ir = ir.lvalue.extok
+                _ir.name = ir.lvalue.name
+                _ir.function_name = function_name
+                ir.lvalue.parent_function = function_name
+                print("Function name: "+ ir.lvalue.parent_function)
         if isinstance(ir, Function):
             print("Function...")
             continue
@@ -1341,15 +1348,7 @@ def _tcheck_ir(irs, function_name) -> []:
         if isinstance(ir, Return):
             check_type(ir)
             continue
-        #is_high_level_call(ir)
-        #is_referenceVariable(ir.lvalue)
-        #is_constant(ir.lvalue)
-        #is_temporary(ir.lvalue)
-        #is_space(ir.lvalue)
-        #is_state(ir.lvalue)
-        #is_local(ir.lvalue)
-        #is_tuple(ir.lvalue)
-        #is_function_type_variable(ir.lvalue)
+        """
         if function_name != None and ir.lvalue != None and is_variable(ir.lvalue):
             _ir = ir.lvalue.extok
             _ir.name = ir.lvalue.name
@@ -1357,6 +1356,7 @@ def _tcheck_ir(irs, function_name) -> []:
             ir.lvalue.parent_function = function_name
             print("Function name: "+ ir.lvalue.parent_function)
         addback = check_type(ir)
+        """
         #is_variable(ir.lvalue)
         if(addback):
             newirs.append(ir)
@@ -1394,6 +1394,16 @@ def has_lvalue(ir):
     if(isinstance(ir, HighLevelCall)):
         return True
     if(isinstance(ir, LibraryCall)):
+        return True
+    if(isinstance(ir, Return)):
+        return True
+    if((isinstance(ir, Condition))):
+        return True
+    if(isinstance(ir, Reference)):
+        return True
+    if(isinstance(ir, Unpack)):
+        return True
+    if(isinstance(ir, Phi)):
         return True
     return False
 
