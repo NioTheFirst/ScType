@@ -393,36 +393,16 @@ def copy_token_type(src, dest):
     #dest.token_typen.clear()
     #dest.token_typed.clear()
     tcheck_propagation.copy_token_type(dest, src)
-    for n in src.token_typen:
-        dest.add_token_typen(n)
-    for d in src.token_typed:
-        dest.add_token_typed(d)
-    if(src.link_function != None):
-        dest.link_function = src.link_function
 
 #USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
 #RETURNS: null
 def copy_inv_token_type(src, dest):
     tcheck_propagation.copy_inv_token_type(src, dest)
-    for n in src.token_typen:
-        dest.add_token_typed(n)
-    for d in src.token_typed:
-        dest.add_token_typen(d)
-    if(src.link_function != None):
-        dest.link_function = src.link_function
 
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
 def copy_pc_token_type(src, dest):
     tcheck_propagation.copy_pc_token_type(src, dest)
-    dest.token_typen.clear()
-    dest.token_typed.clear()
-    for n in src[0]:
-        dest.add_token_typen(n)
-    for d in src[1]:
-        dest.add_token_typed(d)
-    if(src[3] != None):
-        dest.link_function = src[3]
 
 
 def compare_token_type(src, dest):
