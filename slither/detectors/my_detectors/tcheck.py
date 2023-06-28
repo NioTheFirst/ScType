@@ -392,10 +392,7 @@ def copy_token_tuple(ir, tt):
 def copy_token_type(src, dest):
     #dest.token_typen.clear()
     #dest.token_typed.clear()
-    print(dest.extok)
     tcheck_propagation.copy_token_type(dest, src)
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    print(dest.extok)
     for n in src.token_typen:
         dest.add_token_typen(n)
     for d in src.token_typed:
@@ -482,7 +479,10 @@ def convert_ssa(ir):
         ir.token_typed.clear()
         _ir = ir.extok
         _ir.token_type_clear()
+        print(ir.extok)
+        print("********************************")
         copy_token_type(non_ssa_ir, ir)
+        print(ir.extok)
         #print_token_type(ir)
         copy_norm(non_ssa_ir, ir)
         ir.norm = non_ssa_ir.norm
@@ -506,7 +506,7 @@ def update_non_ssa(ir):
         non_ssa_ir.token_typed.clear()
         copy_token_type(ir, non_ssa_ir)
         #print_token_type(ir)
-        copy_norm(non_ssa_ir, ir)
+        copy_norm(ir, non_ssa_ir)
         non_ssa_ir.norm = ir.norm
         non_ssa_ir.link_function = ir.link_function
 
