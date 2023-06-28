@@ -996,9 +996,9 @@ def type_bin_add(dest, lir, rir) -> bool:
     print("initlize checks")
     asn_norm(dest, get_norm(lir))
     print(";;;")
-    asn_norm(dest, get_norm(rir))
     print_token_type(lir)
     print_token_type(rir)
+    asn_norm(dest, get_norm(rir))
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
             copy_token_type(rir, dest)
@@ -1115,8 +1115,6 @@ def sub_norm(ir, norm):
         return
     _ir = ir.extok
     temp = ir.norm
-    print(temp)
-    print(norm)
     if(isinstance(temp, int) and isinstance(norm, int)):
         temp-=norm
         _ir.norm = temp
