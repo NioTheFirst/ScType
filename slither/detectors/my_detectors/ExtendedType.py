@@ -156,16 +156,16 @@ class ExtendedType():
         self.add_den_token_type(-1)
         self.norm = 0;
     
-   def __str__(self):
-    num_token_types_str = ", ".join(str(elem) for elem in self._num_token_types)
-    den_token_types_str = ", ".join(str(elem) for elem in self._den_token_types)
-
-    return (
-        f"Name: {self._name} Function: {self._function_name}\n"
-        f"Num: {num_token_types_str}\n"
-        f"Den: {den_token_types_str}\n"
-        f"Norm: {self._norm}\n"
-        f"LF: {self._link_function}"
-    )
+    def __str__(self):
+        num_token_types_str = ", ".join(str(elem) for elem in self._num_token_types)
+        den_token_types_str = ", ".join(str(elem) for elem in self._den_token_types)
+        fields_str = ", ".join(str(elem.name) for elem in self._fields)
+        return (
+            f"Name: {self._name} Function: {self._function_name}\n"
+            f"Num: {num_token_types_str}\n"
+            f"Den: {den_token_types_str}\n"
+            f"Norm: {self._norm}\n"
+            f"LF: {self._link_function}"
+        )
  
         
