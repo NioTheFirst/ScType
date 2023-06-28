@@ -185,10 +185,11 @@ def function_hlc_param_cache(function):
 def gen_param_cache(param_list):
     param_cache = []
     for param in param_list:
-        num = param.token_typen
-        den = param.token_typed
-        norm = param.norm
-        link_function = param.link_function
+        _param = param.extok
+        num = _param.num_token_type
+        den = _param.den_token_type
+        norm = _param.norm
+        link_function = _param.link_function
         param_type = [num, den, norm, link_function]
         param_cache.append(param_type)
     return param_cache
@@ -258,8 +259,9 @@ def parse_type_file(t_file):
 #USAGE: given a variable ir, return the type tuple
 #RETURNS: type tuple
 def read_type_file(ir):
+    _ir = ir.extok
     function_name = ir.parent_function
-    var_name = ir.name
+    var_name = _ir.name
     if(ir.tname != None):
         var_name = ir.tname
     #print("read function name: " + function_name)
@@ -272,7 +274,8 @@ def querry_type(ir):
     global user_type
     global type_file
     global ask_user
-    uxname = ir.name
+    _ir = ir.extok
+    uxname = _ir.name
     if(ir.tname != None):
         uxname = ir.tname
     uxname = str(uxname)
@@ -280,22 +283,18 @@ def querry_type(ir):
     if not(user_type):
         type_tuple = read_type_file(ir)
         if(type_tuple != None):
-            ir.token_typen.clear()
-            ir.token_typed.clear()
+            _ir.clear_num()
+            _ir.clear_den()
             num = type_tuple[0]
             den = type_tuple[1]
             norm = type_tuple[2]
             lf = type_tuple[3]
-            ir.add_token_typen(num)
-            ir.add_token_typed(den)
-            if(norm == -101):
-                #fill as constant
-                ir.norm = get_norm(ir)
-            else:
-                ir.norm = norm
+            _ir.add_num_token_type(num)
+            _ir.add_den_token_type(den)
+            _ir.norm = norm
             if(lf != None):
-                ir.link_function = lf
-            print_token_type(ir)
+                _ir.link_function = lf
+            print(_ir)
             print("[*]Type fetched successfully")
             return
         print("[x]Failed to fetch type from type file, defaulting to human interface")
@@ -304,12 +303,11 @@ def querry_type(ir):
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
     input_int = int(input_str)
-    ir.token_type = input_int
-    ir.add_token_typen(input_int)
+    _ir.add_num_token_type(input_int)
     print("Define den type for \"" + uxname + "\": ")
     input_str = input()
     input_int = int(input_str)
-    ir.add_token_typed(input_int)
+    _ir.add_den_token_type(input_int)
     print("Define norm for \"" + uxname + "\": ")
     input_str = input()
     input_int = int(input_str)

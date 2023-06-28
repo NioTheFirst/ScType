@@ -21,8 +21,8 @@ class ExtendedType():
         #Token type
         self._num_token_types = []
         self._den_token_types = []
-        self._decimals = 0
-        self._normalization = 0
+        self._base_decimals = 0
+        self._norm = None
         self._linked_contract = None
         self._fields: Optional[ExtendedType] = []
         #Business type
@@ -70,6 +70,9 @@ class ExtendedType():
                     self._num_token_types.remove(-1)
                 self._num_token_types.append(token_type)
 
+    def clear_num(self):
+        self._num_token_types.clear()
+
     @property
     def den_token_types(self):
         return(self._den_token_types)
@@ -86,14 +89,73 @@ class ExtendedType():
                 if(-1 in self._den_token_types):
                     self._den_token_types.remove(-1)
                 self._den_token_types.append(token_type)
+    
+    def clear_den(self):
+        self._den_token_types.clear()
+
+    @property
+    def norm(self):
+        return self._norm
+
+    @norm.setter
+    def norm(self, a):
+        self._norm = a
+    
+    @property
+    def base_decimals(self):
+        return self._base_decimals
+
+    @base_decimals.setter
+    def base_decimals(self, a):
+        self._base_decimals = a
+
+    def total_decimals(self):
+        if(self._norm == "*"):
+            return "*"
+        else:
+            return(self._base_decimals + self._norm)
+
+    @property
+    def link_function(self):
+        return self._link_function
+
+    @link_function.setter
+    def link_function(self, a):
+        self._link_function = a
+
+    @property
+    def fields(self):
+        return self._fields
+
+    def add_field(self, new_field):
+        self._fields.append(new_field)
+
     @property
     def is_undefined(self) -> bool:
-        if(len(self._num_token_type) == 0 and len(self._den_token_type) == 0):
+        if(len(self._num_token_types) == 0 and len(self._den_token_types) == 0):
             return True
         return False
 
-    
-    def init_constant(self):
-        print("woow")
-        
+    @property
+    def is_constant(self) -> bool:
+        if(len(self._num_token_types) == 1 and len(self._den_token_types) == 1 and self._num_token_types[0] == -1 and self._den_token_types[0] == -1):
+            return True
+        return False
 
+    def token_type_clear(self):
+        self.clear_num()
+        self.clear_den()
+        self.norm = 0
+        self.link_function = None
+
+    def init_constant(self):
+        if not(is_undefined(self)):
+            print("[W] Initializing defined variable to constant")
+        self.token_type_clear()
+        self.add_num_token_type(-1)
+        self.add_den_token_type(-1)
+        self.norm = 0;
+    
+    def __str__(self):
+        return f"Name: {self._name} Function: {self._function}\n    Num: {self._num_token_types}\n    Den: {self._den_token_types}\n    Norm: {self._norm}\n    LF: {self._link_function}"
+        

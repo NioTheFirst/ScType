@@ -74,6 +74,10 @@ class Variable(SourceMapping):
         boolean: True if the variable is not initialized
         """
         return not self._initialized
+    
+    @property
+    def extok(self):
+        return self._et
 
     @property
     def name(self) -> Optional[str]:

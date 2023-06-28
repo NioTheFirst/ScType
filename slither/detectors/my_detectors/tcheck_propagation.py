@@ -5,7 +5,38 @@
 
 abs_buf = 10    
 
-#USAGE: comapres the token types of two variables. Includes support for checking ABSTRACT types
+#USAGE: copies the token types from src variable to dest variable
+def copy_token_type(dest, src):
+    #Does not clear the variables
+    _dest = dest.extok
+    _src = src.extok
+    for n in _src.num_token_types:
+        _dest.add_num_token_type(n)
+    for d in _src.den_token_types:
+        _dest.add_dest_token_type(d)
+
+#USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
+def copy_inv_token_type(src, dest):
+    _dest = dest.extok
+    _src = src.extok
+    for n in _src.num_token_types:
+        _dest.add_den_token_type(n)
+    for d in _src.den_token_types:
+        _dest.add_den_token_type(d)
+
+#USAGE: copy and replace a token from a param_cache to an ir
+#RETURNS: nN/A
+def copy_pc_token_type(src, dest):
+    _dest = dest.extok
+    _dest.token_type_clear()
+    for n in src[0]:
+        _dest.add_num_token_type(n)
+    for d in src[1]:
+        _dest.add_den_token_type(d)
+    if(src[3] != None):
+        _dest.link_function = src[3]
+
+#[DEPRECATED] comapres the token types of two variables. Includes support for checking ABSTRACT types
 def compare_token_type(varA, varB):
     A_num_types = copy_and_sort(varA.token_typen)
     A_den_types = copy_and_sort(varA.token_typed)
@@ -15,6 +46,17 @@ def compare_token_type(varA, varB):
         return _compare_token_type(A_den_types, B_den_types)
     return False
 
+#USAGE: comapres the extended types of two variables. Includes support for checking ABSTRACT types
+def compare_token_type(varA, varB):
+    _varA = varA.extok
+    _varB = varB.extok
+    A_num_types = copy_and_sort(_varA.num_token_types)
+    A_den_types = copy_and_sort(_varA.den_token_types)
+    B_num_types = copy_and_sort(_varB.num_token_types)
+    B_den_types = copy_and_sort(_varB.den_token_types)
+    if(_compare_token_type(A_num_types, B_num_types)):
+        return _compare_token_type(A_den_types, B_den_types)
+    return False
 
 #USAGE: helper function for compare_token_type
 def _compare_token_type(A_types, B_types):
