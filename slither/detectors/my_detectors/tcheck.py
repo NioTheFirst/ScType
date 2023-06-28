@@ -550,6 +550,7 @@ def check_type(ir) -> bool:
         #Phi (ssa) unpack
         addback = False
         convert_ssa(ir.lvalue)
+        print(ir.lvalue.extok)
         print("Phi")
     elif isinstance(ir, EventCall):
         return False
@@ -791,42 +792,7 @@ def type_ref(ir)->bool:
     #no other options, just querry the user (try not to let this happen)
     querry_type(ir.lvalue)
     #return True
-    """global function_ref
-    print("Ref: "+str(ir.lvalue.name))
-    temp = ir.lvalue.name
-    ir.lvalue.change_name('ref_'+str(function_ref))
-    print("points to: "+ir.lvalue.points_to.name)
-    #ir is a 'member' class
-    if(isinstance(ir, Member)):
-        print("left value name: " + str(ir.variable_left.non_ssa_version.name))
-        print("right value name: "+str(ir.variable_right))
-    
-        #test for 'decimal' propagation
-        if(str(ir.variable_right) == "decimals"):
-            #a = b.decimals
-            prop_decimals(ir.lvalue, ir.variable_left)
-            return
-        elif(str(ir.variable_left.non_ssa_version.name) == "decimals"):
-            #a = decimals[b]
-            prop_decimals(ir.lvalue, ir.variable_right)        
-            return
-    querry_type(ir.lvalue)
-    ir.lvalue.change_name(temp)
-    function_ref+=1
-    return False"""
 
-#USAGE: fills the corresponding ir with the target value's types and decimals
-#RETURNS: Null
-#Example: a = b.decimals;       a = decimals[b]
-def prop_decimals(dest, sorc):
-    print("Propagting decimals from "+sorc.name + " to " + dest.name)
-    if(is_type_undef(sorc)):
-        #source is undefined; just querry the type directly
-        querry_type(dest)
-    else:
-        #copy the token type and also the type
-        copy_token_type(sorc, dest)
-        asn_norm(dest, get_norm(sorc))
 
 #USAGE: typecheck for function call (pass on types etc)
 #RETURNS: whether or not the function call node should be returned
@@ -852,23 +818,6 @@ def type_fc(ir) -> bool:
         addback = _tcheck_function_call(ir.function, new_param_cache)
         #deal with return value (single) TODO
         handle_return(ir.lvalue, ir.function)
-        """tuple_types = []
-        print("IC Saving return values for: " + ir.function.name)
-        for x in ir.function.return_values_ssa:
-            print(x.name)
-            print_token_type(x)
-            print("___")
-        for x in ir.function.returns_ssa:
-            print(x.name)
-            print("&&")
-            if(isinstance(ir.lvalue, TupleVariable)):
-                tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
-            else:
-                type_asn(ir.lvalue, x)
-                ir.function.add_parameter_cache_return(x)
-        if(len(tuple_types) > 0):
-            add_tuple(ir.lvalue.name, tuple_types)
-            ir.function.add_parameter_cache_return(tuple_types)"""
         if(len(addback) != 0):
             return True
         
@@ -884,24 +833,25 @@ def type_fc(ir) -> bool:
 #USAGE: given a function, handle the return values
 #RETURNS: NULL
 def handle_return(dest_ir, function):
-    global constant_instance
     #dest_ir is optional if there is no return destination
     tuple_types = []
     print("Saving return values for: " + function.name)
     added = False
+    _dest_ir = dest_ir.extok
     for _x in function.return_values_ssa:
         if(isinstance(_x, Constant)):
-            x = constant_instance
+            constant_instance = create_iconstant()
+            x = constant_instance.extok
         else:
-            x = _x
+            x = _x.extok
         print(x.name)
         print_token_type(x)
         if(len(function.return_values_ssa) > 1):
-            tuple_types.append((x.token_typen, x.token_typed, x.norm, x.link_function))
+            tuple_types.append((x.num_token_types, x.den_token_types, x.norm, x.linked_contract))
         else:
             if(dest_ir != None):
                 copy_token_type(x, dest_ir)
-                dest_ir.link_function = x.link_function
+                _dest_ir.linked_contract = x.linked_contract
                 asn_norm(dest_ir, get_norm(x))
             function.add_parameter_cache_return(x)
             added = True
@@ -977,7 +927,6 @@ def init_var(ir):
 #USAGE: test any ir for if it is a special constant instead of a variable
 #RETURNS: new ir
 def init_special(ir):
-    global constant_instance
     if((is_variable(ir))):
         return ir
     if(str(ir) == "block.timestamp"):
@@ -1017,8 +966,10 @@ def type_bin_pow(dest, lir, rir) -> bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     #don't assign norm yet
-    print_token_type(lir)
-    print_token_type(rir)
+    _lir = lir.extok
+    _rir = rir.extok
+    print(_lir)
+    print(_rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         return True
     pow_const = -1
