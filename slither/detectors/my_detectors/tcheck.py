@@ -382,6 +382,8 @@ def copy_token_tuple(ir, tt):
             _ir.add_den_token_type(d)
     if(isinstance(tt[2], int)):
         _ir.norm = tt[2]
+    elif(isinstance(tt[2], str)):
+        _ir.norm = tt[2]
     else:
         _ir.norm = tt[2][0]
     _ir.linked_contract = tt[3]
@@ -967,25 +969,27 @@ def type_bin_pow(dest, lir, rir) -> bool:
         assign_const(dest)
         print("x:" + str(get_norm(dest)))
         print(pow_const)
-        if(pow_const > 0):
+        l_norm = get_norm(lir)
+        if(pow_const > 0 and isinstance(l_norm, int)):
             asn_norm(dest, pow_const * get_norm(lir))
         elif(pow_const == 0):
             asn_norm(dest, pow_const)
         else:
-            asn_norm(dest, -102)
+            asn_norm(dest, '*')
     else:
         type_asn(dest, lir)
-        if(pow_const != -1):
+        l_norm = get_norm(lir)
+        if(pow_const != -1 and isinstance(l_norm, int):
             if(pow_const > 0):
-                asn_norm(dest, pow_const * get_norm(lir))
+                asn_norm(dest, pow_const*l_norm)
                 for i in range (pow_const-1):
                     type_asna(dest, lir)
             else:
-                asn_norm(dest, -pow_const * get_norm(rir))
+                asn_norm(dest, -pow_const * l_norm)
                 for i in range(pow_const-1):
                     type_asnai(dest, lir)
         else:
-            asn_norm(dest, -102)
+            asn_norm(dest, '*')
     return False
 #USAGE: typechecks addition statements
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
@@ -1055,11 +1059,10 @@ def type_bin_sub(dest, lir, rir) -> bool:
 def get_norm(ir):
     power = -1
     if(not(is_variable(ir))):
-        return 0
+        return 'u'
+    _ir = ir.extok
     if(not(is_constant(ir))):
-        if(-100 == ir.norm):
-            return 0
-        return ir.norm
+        return _ir.norm
     else:
         print("val: " + str(ir.value))
         if(ir.value % 10 != 0):
@@ -1074,57 +1077,68 @@ def get_norm(ir):
             return power
         return 0
             
-#USAGE: given a power of 10 (norm), assign it to the dest IR
-#       can be toggled to throw an error if there is a previous type
-#       can also be toggled to be additive (i.e. increase norm)
-#RETURNS: NULL  TODO split and deprecate
-def assign_norm(ir, norm, check_equal, additive, assign):
-    #initialize
-    init = False
-    if(not(is_variable(ir))):
-        return 
-    if(ir.norm == -100 or assign):
-        ir.norm = norm
-    else:
-        init = True
-    if(check_equal):
-        if(ir.norm != norm):
-            add_errors(ir)
-        return
-    if(additive and (init)):
-        temp = ir.norm+norm
-        ir.norm = temp
-    return
-    
 #USAGE: if norm uninitialized, initializes norm (0)
 #       if initialized, check against norm and throw error
 #RETURNS: NULL
 def asn_norm(ir, norm):
-    print(ir.norm)
-    if(not(is_variable(ir)) or norm == -100):
+    _ir = ir.extok
+    print(_ir.norm)
+    if(not(is_variable(ir)) or norm == 'u'):
         return
-    if(ir.norm == -100):
-        ir.norm = norm
+    if(_ir.norm == 'u'):
+        _ir.norm = norm
     else:
-        if(ir.norm != norm):
+        if(_ir.norm != norm or (_ir.norm == norm and norm == '*')):
             add_errors(ir)
-            if(ir.norm == 0):
-                ir.norm = norm
+            ir.norm = 'u'
 
 #USAGE: append norm (i.e. for multiplication, division, or power)
 #RETURNS: NULL
 def add_norm(ir, norm):
     if(not(is_variable(ir))):
         return
+    _ir = ir.extok
     temp = ir.norm
     print(temp)
     print(norm)
-    temp+=norm
-    ir.norm = temp
-    if(norm == -102):
-        ir.norm = -102
-    return
+    if(isinstance(temp, int) and isinstance(norm, int)):
+        temp+=norm
+        _ir.norm = temp
+    elif(temp == 'u'):
+        _ir.norm = norm
+    elif(temp == '*'):
+        if(isinstance(norm, str)):
+            if(norm == '*'):
+                add_errors(ir)
+            else:
+                #do nothing
+                print("[W] ASSIGNED UNKOWN TYPE IN ADDITIVE NORM ASSIGNMENT")
+        else:
+            _ir.norm = '*'
 
+#USAGE: subtract norm (i.e. for multiplication, division, or power)
+#RETURNS: NULL
+def sub_norm(ir, norm):
+    if(not(is_variable(ir))):
+        return
+    _ir = ir.extok
+    temp = ir.norm
+    print(temp)
+    print(norm)
+    if(isinstance(temp, int) and isinstance(norm, int)):
+        temp-=norm
+        _ir.norm = temp
+    elif(temp == 'u'):
+        _ir.norm = norm
+    elif(temp == '*'):
+        if(isinstance(norm, str)):
+            if(norm == '*'):
+                add_errors(ir)
+            else:
+                #do nothing
+                print("[W] ASSIGNED UNKOWN TYPE IN ADDITIVE NORM ASSIGNMENT")
+        else:
+            _ir.norm = '*'
 
 #USAGE: typechecks a multiplication statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
@@ -1158,7 +1172,8 @@ def type_bin_div(dest, lir, rir) ->bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     asn_norm(dest, get_norm(lir))
-    add_norm(dest, -get_norm(rir))
+
+    sub_norm(dest, get_norm(rir))
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
