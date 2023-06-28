@@ -1413,9 +1413,9 @@ def _clear_type_node(node):
             print("has variable")
             if(isinstance(ir.lvalue, TemporaryVariable) or isinstance(ir.lvalue, LocalIRVariable)):
                 #clear the types for temporary and local variables
-                ir.lvalue.token_typen.clear()
-                ir.lvalue.token_typed.clear()
-                ir.lvalue.norm = -100;
+                _ir = ir.lvalue.extok
+                _ir.token_type_clear()
+                _ir.norm = 'u'
 
                 print("[i] " + ir.lvalue.name + " cleared")
 
