@@ -34,7 +34,7 @@ def copy_pc_token_type(src, dest):
     for d in src[1]:
         _dest.add_den_token_type(d)
     if(src[3] != None):
-        _dest.link_function = src[3]
+        _dest.linked_contract = src[3]
 
 #[DEPRECATED] comapres the token types of two variables. Includes support for checking ABSTRACT types
 def compare_token_type(varA, varB):

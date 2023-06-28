@@ -93,11 +93,12 @@ class Variable(SourceMapping):
     
     @property
     def link_function(self)->Optional[str]:
-        return self._link_function
+        return self._et.linked_contract
 
     @link_function.setter
     def link_function(self, function):
         self._link_function = function
+        self._et.linked_contract = function
 
     def change_name(self, name):
         self._tname = name

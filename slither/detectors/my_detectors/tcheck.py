@@ -141,16 +141,7 @@ def check_contract(contract_name):
     return False
 
 def print_token_type(ir):
-    print("Num:")
-    for n in ir.token_typen:
-        print(n)
-    print("Den:")
-    for d in ir.token_typed:
-        print(d)
-    print("Norm:")
-    print(ir.norm)
-    if(ir.link_function != None):
-        print("Linked function: " + ir.link_function)
+    print(ir.extok)
 
 #USAGE: prints a param_cache
 #RETURNS: nothing
@@ -189,7 +180,7 @@ def gen_param_cache(param_list):
         num = _param.num_token_types
         den = _param.den_token_types
         norm = _param.norm
-        link_function = _param.link_function
+        link_function = _param.linked_contract
         param_type = [num, den, norm, link_function]
         param_cache.append(param_type)
     return param_cache
@@ -293,7 +284,7 @@ def querry_type(ir):
             _ir.add_den_token_type(den)
             _ir.norm = norm
             if(lf != None):
-                _ir.link_function = lf
+                _ir.linked_contract = lf
             print(_ir)
             print("[*]Type fetched successfully")
             return

@@ -116,12 +116,12 @@ class ExtendedType():
             return(self._base_decimals + self._norm)
 
     @property
-    def link_function(self):
-        return self._link_function
+    def linked_contract(self):
+        return self._linked_contract
 
-    @link_function.setter
-    def link_function(self, a):
-        self._link_function = a
+    @linked_contract.setter
+    def linked_contract(self, a):
+        self._linked_contract = a
 
     @property
     def fields(self):
