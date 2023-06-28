@@ -827,17 +827,18 @@ def handle_return(dest_ir, function):
         _dest_ir = dest_ir.extok
     for _x in function.return_values_ssa:
         if(isinstance(_x, Constant)):
-            x = constant_instance.extok
+            x = constant_instance
         else:
-            x = _x.extok
+            x = x
         print(x.name)
-        print(x)
+        __x = x.extok
+        print()
         if(len(function.return_values_ssa) > 1):
-            tuple_types.append((x.num_token_types, x.den_token_types, x.norm, x.linked_contract))
+            tuple_types.append((__x.num_token_types, __x.den_token_types, __x.norm, __x.linked_contract))
         else:
             if(dest_ir != None):
                 copy_token_type(x, dest_ir)
-                _dest_ir.linked_contract = x.linked_contract
+                _dest_ir.linked_contract = __x.linked_contract
                 asn_norm(dest_ir, get_norm(x))
             function.add_parameter_cache_return(x)
             added = True
