@@ -1430,6 +1430,9 @@ def _tcheck_ir(irs, function_name) -> []:
         #is_tuple(ir.lvalue)
         #is_function_type_variable(ir.lvalue)
         if function_name != None and ir.lvalue != None and is_variable(ir.lvalue):
+            _ir = ir.extok
+            _ir.name = ir.name
+            _ir.function_name = function_name
             ir.lvalue.parent_function = function_name
             print("Function name: "+ ir.lvalue.parent_function)
         addback = check_type(ir)
