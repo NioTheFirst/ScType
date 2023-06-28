@@ -43,7 +43,7 @@ class ExtendedType():
 
     @function_name.setter
     def function_name(self, fname):
-        self._functon_name = fname
+        self._function_name = fname
 
     @property
     def contract_name(self):
