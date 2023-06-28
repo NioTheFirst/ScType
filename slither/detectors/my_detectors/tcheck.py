@@ -979,7 +979,7 @@ def type_bin_pow(dest, lir, rir) -> bool:
     else:
         type_asn(dest, lir)
         l_norm = get_norm(lir)
-        if(pow_const != -1 and isinstance(l_norm, int):
+        if(pow_const != -1 and isinstance(l_norm, int)):
             if(pow_const > 0):
                 asn_norm(dest, pow_const*l_norm)
                 for i in range (pow_const-1):
