@@ -459,7 +459,7 @@ def add_errors(ir):
 
 #USAGE: Directly copies a normalization value (WARNING: SKIPS TYPECHECKING)
 def copy_norm(src, dest):
-    return tcheck_popagation.copy_norm(src, dest)
+    return tcheck_propagation.copy_norm(src, dest)
 
 #USAGE: Converts the first ssa instance of a variable (ends with _1)
 #RETURNS: NULL
