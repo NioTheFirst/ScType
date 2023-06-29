@@ -1363,7 +1363,10 @@ def _tcheck_ir(irs, function_name) -> []:
                 _ir = ir.lvalue.extok
                 _ir.name = ir.lvalue.name
                 _ir.function_name = function_name
-                ir.lvalue.parent_function = function_name
+                if(ir.lvalue.parent_function and ir.lvalue.parent_function == "global"):
+                    _ir.function_name = "global"
+                else:
+                    ir.lvalue.parent_function = function_name
                 print("Function name: "+ ir.lvalue.parent_function)
         if isinstance(ir, Function):
             print("Function...")

@@ -113,7 +113,7 @@ def parse_type_file(t_file):
                         lf = _line[5]
                 add_ref(ref_name, (num, denom, norm, lf))
             #FIELD TYPE
-            if(_line[0].strip() == "[tfld]"):
+            if(_line[0].strip() == "[t*]"):
                 func_name = _line[1].strip()
                 parent_name = _line[2].strip()
                 field_name = _line[3].strip()
