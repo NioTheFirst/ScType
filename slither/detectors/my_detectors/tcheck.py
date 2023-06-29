@@ -731,6 +731,8 @@ def type_hlc(ir) ->bool:
 #RETURNS: the type for a (temporary handling, will fix if any issues)
 def type_member(ir)->bool:
     #FIELD WORK
+    init_var(ir.variable_left)
+    init_var(ir.variable_right)
     print(ir.variable_left.extok.name)
     print(ir.variable_right.extok.name)
     if is_type_undef(ir.variable_left):
@@ -902,6 +904,10 @@ def init_var(ir):
     if(not(is_variable(ir))):
         print(str(ir))
         return False
+    _ir = ir.extok
+    if(_ir.name == None or _ir.function_name == None):
+        _ir.name = ir.name
+        _ir.function_name = ir.parent_function
     if(is_constant(ir)):
         assign_const(ir)
     else:
