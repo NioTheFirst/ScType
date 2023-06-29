@@ -473,6 +473,8 @@ def convert_ssa(ir):
         #print_token_type(ir)
         copy_norm(non_ssa_ir, ir)
         ir.norm = non_ssa_ir.norm
+        if(non_ssa_ir.extok.function_name):
+            _ir.function_name = non_ssa_ir.extok.function_name
         ir.link_function = non_ssa_ir.link_function
 
 #USAGE: updates a non_ssa instance of a variable
