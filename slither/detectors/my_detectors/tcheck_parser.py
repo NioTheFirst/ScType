@@ -117,7 +117,7 @@ def parse_type_file(t_file):
                 denom = [-1]
                 norm = [0]
                 lf = None
-                if(len(_line) > 3):
+                if(len(_line) > 4):
                     num = [ int(_line[4].strip())]
                     denom = [int(_line[5].strip())]
                     norm = [int(_line[6].strip())]
