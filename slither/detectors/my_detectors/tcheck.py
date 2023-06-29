@@ -780,6 +780,8 @@ def type_member(ir)->bool:
 def type_ref(ir)->bool:
     print_token_type(ir.variable_left)
     #check for boolean
+    _lv = ir.lvalue.extok
+    _lv.name = ir.variable_left.name
     if(str(ir.lvalue.type) == "bool"):
         print("REFERENCE IS BOOL TYPE")
         assign_const(ir.lvalue)
