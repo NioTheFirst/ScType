@@ -752,6 +752,13 @@ def type_member(ir)->bool:
     if is_type_undef(ir.variable_left):
         print("UNDEFINED LEFT VARIABLE IN MEMBER")
         return True
+    
+    field_full_name = _lv.name + "." + _rv.name
+    for field in _lv.fields:
+        _field = field.extok
+        if(_field.name == field_full_name):
+            copy_token_type(_field, _lv)
+            return False
 
     field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
     if(field_type_tuple == None):
@@ -760,6 +767,7 @@ def type_member(ir)->bool:
     field_full_name = _lv.name + "." + _rv.name
     copy_token_tuple(ir.lvalue, field_type_tuple)
     _ir.name = field_full_name
+    _lv.add_field(ir.lvalue)
     return False
     #FIELD WORK
     """if (str(ir.variable_right) == "decimals"):

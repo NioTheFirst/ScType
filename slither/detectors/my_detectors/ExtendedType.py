@@ -24,7 +24,7 @@ class ExtendedType():
         self._base_decimals = 0
         self._norm = 'u'
         self._linked_contract = None
-        self._fields: Optional[ExtendedType] = []
+        self._fields = []
         #Business type
         self._business_type = None
 
