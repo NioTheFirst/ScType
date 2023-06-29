@@ -746,7 +746,7 @@ def type_member(ir)->bool:
     _lv = ir.variable_left.extok
     _rv = ir.variable_right.extok
     _ir = ir.lvalue.extok
-    pf_name = _lv.function_name
+    pf_name = _ir.function_name
     print(_lv.name)
     print(_rv.name)
     if is_type_undef(ir.variable_left):
