@@ -150,7 +150,7 @@ def add_field(function_name, parent_name, field_name, type_tuples):
     field_type_hash[key] = type_tuples
 
 def get_field(function_name, full_parent_name, field_name):
-    key = function_name + '_' + fill_parent_name + '_' + field_name
+    key = function_name + '_' + full_parent_name + '_' + field_name
     if key in field_type_hash:
         return field_type_hash[key]
     return None

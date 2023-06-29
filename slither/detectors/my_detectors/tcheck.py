@@ -105,6 +105,16 @@ def get_ref(ref_name):
 def get_hash(function_name, var_name):
     return tcheck_parser.get_var_type_tuple(function_name, var_name)
 
+#USAGE: adds a field
+#RETURNS: NULL
+def add_field(function_name, parent_name, field_name, type_tuple):
+    thceck_parser.add_field(function_name, parent_name, field_name, type_tuple)
+
+#USAGE: gets a field
+#RETURNS: NULL
+def get_field(function_name, parent_name, field_name):
+    return tcheck_parser.get_field(function_name, parent_name, field_name)
+
 #USAGE: bar a function from being typechecked
 #RETURNS: NULL
 def bar_function(function_name):
@@ -733,17 +743,29 @@ def type_member(ir)->bool:
     #FIELD WORK
     init_var(ir.variable_left)
     init_var(ir.variable_right)
-    print(ir.variable_left.extok.name)
-    print(ir.variable_right.extok.name)
+    _lv = ir.variable_left.extok
+    _rv = ir.variable_right.extok
+    _ir = ir.lvalue.extok
+    pf_name = _lv.function_name
+    print(_lv.name)
+    print(_rv.extok.name)
     if is_type_undef(ir.variable_left):
         print("UNDEFINED LEFT VARIABLE IN MEMBER")
         return True
+
+    field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
+    if(field_type_tuple == None):
+        querry_type(ir.lvalue)
+        return False
+    field_full_name = _lv.name + "." + _rv.name
+    copy_token_tuple(ir.lvalue, field_type_tuple)
+    _ir.name = field_full_name
+    return False
     #FIELD WORK
     """if (str(ir.variable_right) == "decimals"):
         assign_const(ir.lvalue)
         ir.lvalue.norm = ir.variable_left.norm"""
     
-    return False
 
 #USAGE: typechecks for references (i.e. a[0])
 #RETURNS: always False
