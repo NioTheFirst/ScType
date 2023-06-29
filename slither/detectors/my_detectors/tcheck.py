@@ -748,7 +748,7 @@ def type_member(ir)->bool:
     _ir = ir.lvalue.extok
     pf_name = _lv.function_name
     print(_lv.name)
-    print(_rv.extok.name)
+    print(_rv.name)
     if is_type_undef(ir.variable_left):
         print("UNDEFINED LEFT VARIABLE IN MEMBER")
         return True
