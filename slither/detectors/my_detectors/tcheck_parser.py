@@ -123,7 +123,8 @@ def parse_type_file(t_file):
                     norm = [int(_line[6].strip())]
                     if(len(_line) == 8):
                         lf = _line[7]
-                add_field(func_name, parent_name, field_name)
+
+                add_field(func_name, parent_name, field_name, (num, denom, norm, lf))
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
