@@ -28,5 +28,9 @@ cd ..
 
 sleep 3
 
+#Field handling
+cd field_handling
+slither --detect tcheck A.sol
+cd ..
 
 echo "Unit testing complete"
