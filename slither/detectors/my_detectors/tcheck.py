@@ -782,6 +782,7 @@ def type_ref(ir)->bool:
     #check for boolean
     _lv = ir.lvalue.extok
     _lv.name = ir.variable_left.name
+    _lv.function_name = ir.variable_left.parent_function
     if(str(ir.lvalue.type) == "bool"):
         print("REFERENCE IS BOOL TYPE")
         assign_const(ir.lvalue)
