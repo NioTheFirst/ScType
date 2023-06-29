@@ -118,11 +118,11 @@ def parse_type_file(t_file):
                 norm = [0]
                 lf = None
                 if(len(_line) > 3):
-                    num = [ int(_line[3].strip())]
-                    denom = [int(_line[4].strip())]
-                    norm = [int(_line[5].strip())]
-                    if(len(_line) == 7):
-                        lf = _line[6]
+                    num = [ int(_line[4].strip())]
+                    denom = [int(_line[5].strip())]
+                    norm = [int(_line[6].strip())]
+                    if(len(_line) == 8):
+                        lf = _line[7]
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
