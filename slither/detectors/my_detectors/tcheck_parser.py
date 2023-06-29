@@ -20,6 +20,7 @@ in_func_ptr_hash = {}
 ex_func_type_hash = {}
 ref_type_hash = {}
 tuple_type_hash = {}
+field_type_hash = {}
 
 def parse_type_file(t_file):
     with open (t_file, 'r') as type_file:
@@ -107,6 +108,21 @@ def parse_type_file(t_file):
                     if(len(_line) == 6):
                         lf = _line[5]
                 add_ref(ref_name, (num, denom, norm, lf))
+            #FIELD TYPE
+            if(_line[0].strip() == "[tfld]"):
+                func_name = _line[1].strip()
+                parent_name = _line[2].strip()
+                field_name = _line[3].strip()
+                num = [-1]
+                denom = [-1]
+                norm = [0]
+                lf = None
+                if(len(_line) > 3):
+                    num = [ int(_line[3].strip())]
+                    denom = [int(_line[4].strip())]
+                    norm = [int(_line[5].strip())]
+                    if(len(_line) == 7):
+                        lf = _line[6]
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
@@ -118,6 +134,7 @@ def get_var_type_tuple(function_name, var_name):
         return var_type_hash[key]
     return None
 
+
 def add_tuple(tuple_name, type_tuples):
     key = tuple_name
     tuple_type_hash[key] = type_tuples
@@ -126,6 +143,16 @@ def get_tuple(tuple_name):
     key = tuple_name
     if key in tuple_type_hash:
         return tuple_type_hash[key]
+    return None
+
+def add_field(function_name, parent_name, field_name, type_tuples):
+    key = function_name+'_'+var_name+'_'+field_name
+    field_type_hash[key] = type_tuples
+
+def get_field(function_name, full_parent_name, field_name):
+    key = function_name + '_' + fill_parent_name + '_' + field_name
+    if key in field_type_hash:
+        return field_type_hash[key]
     return None
 
 def add_ex_func(contract_name, function_name, type_tuple):
