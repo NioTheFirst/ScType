@@ -733,10 +733,13 @@ def type_member(ir)->bool:
     if is_type_undef(ir.variable_left):
         print("UNDEFINED LEFT VARIABLE IN MEMBER")
         return True
-    if (str(ir.variable_right) == "decimals"):
+    #FIELD WORK
+    print(ir.variable_left.extok.name)
+    print(ir.variable_right.extok.name)
+    """if (str(ir.variable_right) == "decimals"):
         assign_const(ir.lvalue)
-        ir.lvalue.norm = ir.variable_left.norm
-    copy_token_type(ir.variable_left, ir.lvalue)
+        ir.lvalue.norm = ir.variable_left.norm"""
+    
     return False
 
 #USAGE: typechecks for references (i.e. a[0])
