@@ -321,7 +321,7 @@ def querry_type(ir):
 
 def is_constant(ir):
     if isinstance(ir, Constant):
-        print("Constatn varible: "+ir.name.lower())
+        #print("Constatn varible: "+ir.name.lower())
         return True
     return False
 
