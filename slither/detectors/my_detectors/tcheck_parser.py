@@ -42,9 +42,13 @@ def parse_type_file(t_file):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
                 try:
-                    num = int(_line[3].strip())
-                    den = int(_line[4].strip())
-                    norm = int(_line[5].strip())
+                    num = -1
+                    den = -1
+                    norm = 0
+                    if(len(_line) > 3):
+                        num = int(_line[3].strip())
+                        den = int(_line[4].strip())
+                        norm = int(_line[5].strip())
                     l_name = None
                     if(len(_line) == 7):
                         l_name = _line[6].strip()

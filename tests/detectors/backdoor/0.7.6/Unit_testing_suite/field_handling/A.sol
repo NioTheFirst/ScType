@@ -13,12 +13,13 @@ contract A{
         my_struct2 in_struct;
     }
 
-    my_struct in_struct;
+    my_struct[] in_struct;
 
     function addTokenA(my_struct memory struct1, my_struct memory struct2) external returns (int temp) {
   	struct1.decimals = 18;
 	struct2.in_struct.decimals = 6;
 	int temp = struct1.tokenA + struct2.tokenA;
+	in_struct[0].decimals = 3;
         return temp;
 
     }
