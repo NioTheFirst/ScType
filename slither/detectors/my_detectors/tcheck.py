@@ -730,12 +730,13 @@ def type_hlc(ir) ->bool:
 #USAGE: typechecks Members (i.e. a.b or a.b())
 #RETURNS: the type for a (temporary handling, will fix if any issues)
 def type_member(ir)->bool:
+    #FIELD WORK
+    print(ir.variable_left.extok.name)
+    print(ir.variable_right.extok.name)
     if is_type_undef(ir.variable_left):
         print("UNDEFINED LEFT VARIABLE IN MEMBER")
         return True
     #FIELD WORK
-    print(ir.variable_left.extok.name)
-    print(ir.variable_right.extok.name)
     """if (str(ir.variable_right) == "decimals"):
         assign_const(ir.lvalue)
         ir.lvalue.norm = ir.variable_left.norm"""
