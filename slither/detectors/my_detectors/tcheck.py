@@ -754,6 +754,7 @@ def type_member(ir)->bool:
         return True
     
     field_full_name = _lv.name + "." + _rv.name
+    _ir.name = field_full_name
     for field in _lv.fields:
         _field = field.extok
         if(_field.name == field_full_name):
@@ -766,7 +767,6 @@ def type_member(ir)->bool:
         return False
     field_full_name = _lv.name + "." + _rv.name
     copy_token_tuple(ir.lvalue, field_type_tuple)
-    _ir.name = field_full_name
     _lv.add_field(ir.lvalue)
     return False
     #FIELD WORK
