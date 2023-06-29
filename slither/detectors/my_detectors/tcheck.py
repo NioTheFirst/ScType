@@ -37,7 +37,7 @@ constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 
-ask_user = False
+ask_user = True
 read_library = False
 
 #IMPORTANT: read internal
