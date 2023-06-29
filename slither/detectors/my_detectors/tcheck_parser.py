@@ -148,7 +148,7 @@ def get_tuple(tuple_name):
     return None
 
 def add_field(function_name, parent_name, field_name, type_tuples):
-    key = function_name+'_'+var_name+'_'+field_name
+    key = function_name+'_'+parent_name+'_'+field_name
     field_type_hash[key] = type_tuples
 
 def get_field(function_name, full_parent_name, field_name):
