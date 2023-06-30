@@ -407,7 +407,7 @@ def copy_token_tuple(ir, tt):
                 copy_token_tuple(field, field_tt)
                 _ir.add_field(field)
         print("FIELDS:")
-        _ir.print_field()s
+        _ir.print_fields()
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
