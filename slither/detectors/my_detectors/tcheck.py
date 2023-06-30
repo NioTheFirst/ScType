@@ -751,6 +751,7 @@ def type_member(ir)->bool:
     pf_name = _lv.function_name
     print(_lv.name)
     print(_rv.name)
+    print(pf_name)
     if is_type_undef(ir.variable_left):
         print("UNDEFINED LEFT VARIABLE IN MEMBER")
         return True
