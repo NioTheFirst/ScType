@@ -849,7 +849,8 @@ def type_ref(ir)->bool:
         return False
 
     #no other options, just querry the user (try not to let this happen)
-    querry_type(ir.lvalue)
+    #querry_type(ir.lvalue)
+    assign_const(ir.lvalue)
     #return True
 
 
