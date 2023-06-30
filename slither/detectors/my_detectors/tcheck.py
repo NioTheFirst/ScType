@@ -403,7 +403,7 @@ def copy_token_tuple(ir, tt):
             #search for type tuple in type file
             print(_ir.function_name)
             print(_ir.name)
-            print(fieled_name)
+            print(field_name)
             field_tt = get_field(_ir.function_name, _ir.name, field_name)
             if(field_tt):
                 _field_tt = field.extok
