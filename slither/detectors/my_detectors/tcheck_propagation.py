@@ -17,6 +17,9 @@ def copy_token_type(dest, src):
     if _src.linked_contract:
         _dest.linked_contract = _src.linked_contract
 
+    for field in _src.fields:
+        _dest.add_field(field)
+
 #USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
 def copy_inv_token_type(src, dest):
     _dest = dest.extok

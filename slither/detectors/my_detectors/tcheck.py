@@ -8,6 +8,7 @@ from slither.core.variables.state_variable import StateVariable
 from slither.core.declarations.function import Function
 from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
+from slither.core.soliditiy_types import UserDefinedType
 import linecache
 import os
 import sys
@@ -401,6 +402,17 @@ def copy_token_tuple(ir, tt):
         _ir.norm = tt[2][0]
     _ir.linked_contract = tt[3]
 
+    #Field tuple propagation
+    if(isinstance(ir.type, UserDefinedType) and isinstance(ir.type.type, Structure)):
+        #is an oobject, may have fields
+        for field in ir.type.type.elems:
+            field_name = field.name
+            #search for type tuple in type file
+            field_tt = get_field(_ir.function_name, _ir.var_name, field_name)
+            if(field_tt):
+                _field_tt = field.extok
+                copy_token_tuple(field, field_tt)
+                _ir.add_field(field)
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
@@ -769,8 +781,8 @@ def type_member(ir)->bool:
         if(_field.name == field_full_name):
             copy_token_type(field, ir.variable_left)
             return False
-
-    field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
+    
+    field_type_tuple = None #get_field(pf_name, _lv.name, _rv.name)
     if(field_type_tuple == None):
         #TURN OFF ASSUMPTION
         #assign_const(ir.lvalue)
