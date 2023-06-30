@@ -194,7 +194,8 @@ def gen_param_cache(param_list):
         den = _param.den_token_types
         norm = _param.norm
         link_function = _param.linked_contract
-        param_type = [num, den, norm, link_function]
+        fields = _param.fields
+        param_type = [num, den, norm, link_function, fields]
         param_cache.append(param_type)
     return param_cache
 

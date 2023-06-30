@@ -42,6 +42,9 @@ def copy_pc_token_type(src, dest):
         _dest.add_den_token_type(d)
     if(src[3] != None):
         _dest.linked_contract = src[3]
+    if(src[4] != None):
+        for field in _src[4]:
+            _dest.add_field(field)
 
 
 #USAGE: directly copies a norm value. WARNING: skips typechecks associated with normalization
