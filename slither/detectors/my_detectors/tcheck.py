@@ -420,7 +420,7 @@ def copy_token_tuple(ir, tt):
         if isinstance(ir.type.type, Structure):
             fields = ir.type.type.elems.items()
         elif isinstance(ir.type.type, Contract):
-            fields = ir.type.type.variables_as_dict()
+            fields = ir.type.type.variables_as_dict
         if(fields == None):
             print(" NO FIELDS")
             return
