@@ -161,6 +161,7 @@ def get_field(function_name, full_parent_name, field_name):
         return field_type_hash[key]
     return None
 
+
 def add_ex_func(contract_name, function_name, type_tuple):
     key = contract_name + '_' + function_name
     ex_func_type_hash[key] = type_tuple

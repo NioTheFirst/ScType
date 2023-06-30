@@ -391,7 +391,10 @@ def copy_token_tuple(ir, tt):
         for d in tt[1]:
             _ir.add_den_token_type(d)
     if(isinstance(tt[2], int)):
-        _ir.norm = tt[2]
+        if(tt[2] == -404):
+            _ir.norm = '*'
+        else:
+            _ir.norm = tt[2]
     elif(isinstance(tt[2], str)):
         _ir.norm = tt[2]
     else:
