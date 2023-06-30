@@ -414,6 +414,8 @@ def copy_token_tuple(ir, tt):
         _ir.norm = tt[2][0]
     _ir.linked_contract = tt[3]
 
+    if(isinstance(ir.type, UserDefinedType):
+            print(ir.type.type.elems)
     #Field tuple propagation
     if(isinstance(ir.type, UserDefinedType) and isinstance(ir.type.type, Structure)):
         #is an oobject, may have fields
