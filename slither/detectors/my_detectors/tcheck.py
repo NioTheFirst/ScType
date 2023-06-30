@@ -398,6 +398,7 @@ def copy_token_tuple(ir, tt):
         _ir.norm = tt[2][0]
     _ir.linked_contract = tt[3]
 
+
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
 def copy_token_type(src, dest):
@@ -761,7 +762,7 @@ def type_member(ir)->bool:
     for field in _lv.fields:
         _field = field.extok
         if(_field.name == field_full_name):
-            copy_token_type(_field, _lv)
+            copy_token_type(field, ir.variable_left)
             return False
 
     field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
