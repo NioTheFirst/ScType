@@ -415,14 +415,17 @@ def copy_token_tuple(ir, tt):
     _ir.linked_contract = tt[3]
 
     print(f"Type: {ir.type}")
+    ttype = ir.type
+    if(isinstance(ir, ArrayType)):
+        ttype = ir.type.type
     #Field tuple propagation
-    if(isinstance(ir.type, UserDefinedType)):
+    if(isinstance(ttype, UserDefinedType)):
         fields = None
         print(f"Type type: {ir.type.type}")
-        if isinstance(ir.type.type, Structure):
-            fields = ir.type.type.elems.items()
-        elif isinstance(ir.type.type, Contract):
-            fields = ir.type.type.variables_as_dict
+        if isinstance(ttype, Structure):
+            fields = ttype.elems.items()
+        elif isinstance(ttype, Contract):
+            fields = ttype.variables_as_dict
         if(fields == None):
             print(" NO FIELDS")
             return
