@@ -43,7 +43,7 @@ def copy_pc_token_type(src, dest):
     if(src[3] != None):
         _dest.linked_contract = src[3]
     if(src[4] != None):
-        for field in _src[4]:
+        for field in src[4]:
             _dest.add_field(field)
 
 
