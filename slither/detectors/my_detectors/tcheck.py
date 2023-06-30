@@ -403,6 +403,8 @@ def copy_token_tuple(ir, tt):
     _ir.linked_contract = tt[3]
 
     #Field tuple propagation
+    if(isinstance(ir.type, UserDefinedType)):
+        print("UDF")
     if(isinstance(ir.type, UserDefinedType) and isinstance(ir.type.type, Structure)):
         #is an oobject, may have fields
         for field in ir.type.type.elems:
@@ -413,6 +415,8 @@ def copy_token_tuple(ir, tt):
                 _field_tt = field.extok
                 copy_token_tuple(field, field_tt)
                 _ir.add_field(field)
+        print("FIELDS:")
+        _ir.print_field()
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
