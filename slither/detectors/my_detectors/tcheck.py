@@ -8,7 +8,7 @@ from slither.core.variables.state_variable import StateVariable
 from slither.core.declarations.function import Function
 from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
-from slither.core.solidity_types import UserDefinedType
+from slither.core.solidity_types import UserDefinedType, ArrayType
 from slither.core.declarations import Structure, Contract
 
 import linecache
@@ -418,6 +418,7 @@ def copy_token_tuple(ir, tt):
     ttype = ir.type
     if(isinstance(ir, ArrayType)):
         ttype = ir.type.type
+        print(f"New type: {ttype}")
     #Field tuple propagation
     if(isinstance(ttype, UserDefinedType)):
         fields = None
