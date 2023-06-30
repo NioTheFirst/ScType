@@ -1627,11 +1627,11 @@ def _tcheck_contract_state_var(contract):
     for state_var in _read_state_variables(contract):
         print("State_var: "+state_var.name)
         state_var.parent_function = "global"
-        if(is_type_undef(state_var)):
+        check_type(state_var)
+        """if(is_type_undef(state_var)):
             querry_type(state_var)
             if(isinstance(state_var, ReferenceVariable)):
-                add_ref(state_var.name, (state_var.token_typen, state_var.token_typed, state_var.norm, state_var.link_function))
-
+                add_ref(state_var.name, (state_var.token_typen, state_var.token_typed, state_var.norm, state_var.link_function))"""
 #USAGE: labels which contracts that should be read (contains binary operations) also adds contract-function pairs
 #RTURNS: NULL
 def _mark_functions(contract):
