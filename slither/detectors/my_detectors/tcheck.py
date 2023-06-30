@@ -283,6 +283,8 @@ def read_type_file(ir):
         var_name = ir.tname
     #print("read function name: " + function_name)
     #print("read parent name: " + ir.name)
+    if(_ir.name == None):
+        return None
     return tcheck_parser.get_var_type_tuple(function_name, var_name)
 
 #USAGE: querry the user for a type
