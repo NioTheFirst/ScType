@@ -401,8 +401,7 @@ def copy_token_tuple(ir, tt):
         print("UDF")
     if(isinstance(ir.type, UserDefinedType) and isinstance(ir.type.type, Structure)):
         #is an oobject, may have fields
-        for field in ir.type.type.elems:
-            field_name = field.name
+        for field_name, field in ir.type.type.elems:
             #search for type tuple in type file
             field_tt = get_field(_ir.function_name, _ir.var_name, field_name)
             if(field_tt):
