@@ -128,6 +128,10 @@ class ExtendedType():
         return self._fields
 
     def add_field(self, new_field):
+        for field in self._fields:
+            if(field.name == new_field.name):
+                self._fields.remove(field)
+                break
         self._fields.append(new_field)
 
     def print_fields(self):
