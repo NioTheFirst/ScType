@@ -130,6 +130,12 @@ class ExtendedType():
     def add_field(self, new_field):
         self._fields.append(new_field)
 
+    def print_fields(self):
+        print(f"{self._name} Fields:")
+        for field in self._fields:
+            print(f"{field.name")
+        print("^^^")
+
     def is_undefined(self) -> bool:
         if(len(self._num_token_types) == 0 and len(self._den_token_types) == 0):
             return True

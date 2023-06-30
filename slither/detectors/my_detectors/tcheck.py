@@ -776,6 +776,7 @@ def type_member(ir)->bool:
     
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
+    _lv.print_fields()
     for field in _lv.fields:
         _field = field.extok
         if(_field.name == field_full_name):
