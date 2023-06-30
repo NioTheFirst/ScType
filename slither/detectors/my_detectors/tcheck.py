@@ -417,6 +417,7 @@ def copy_token_tuple(ir, tt):
     #Field tuple propagation
     if(isinstance(ir.type, UserDefinedType)):
         fields = None
+        print(ir.type.type)
         if isinstance(ir.type.type, Structure):
             fields = ir.type.type.elems.items()
         elif isinstance(ir.type.type, Contract):
