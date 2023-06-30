@@ -287,15 +287,7 @@ def querry_type(ir):
         if(type_tuple != None):
             _ir.clear_num()
             _ir.clear_den()
-            num = type_tuple[0]
-            den = type_tuple[1]
-            norm = type_tuple[2]
-            lf = type_tuple[3]
-            _ir.add_num_token_type(num)
-            _ir.add_den_token_type(den)
-            _ir.norm = norm
-            if(lf != None):
-                _ir.linked_contract = lf
+            copy_token_tuple(ir, type_tuple)
             print(_ir)
             print("[*]Type fetched successfully")
             return
