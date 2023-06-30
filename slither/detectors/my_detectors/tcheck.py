@@ -417,7 +417,7 @@ def copy_token_tuple(ir, tt):
     print(f"Type: {ir.type}")
     ttype = ir.type
     if(isinstance(ir.type, ArrayType)):
-        ttype = ir.type.type
+        ttype = ir.type.type.type
         print(f"New type: {ttype}")
     #Field tuple propagation
     if(isinstance(ttype, UserDefinedType)):
