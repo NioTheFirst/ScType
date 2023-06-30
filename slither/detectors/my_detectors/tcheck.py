@@ -397,13 +397,11 @@ def copy_token_tuple(ir, tt):
     _ir.linked_contract = tt[3]
 
     #Field tuple propagation
-    if(isinstance(ir.type, UserDefinedType)):
-        print("UDF")
     if(isinstance(ir.type, UserDefinedType) and isinstance(ir.type.type, Structure)):
         #is an oobject, may have fields
         for field_name, field in ir.type.type.elems.items():
             #search for type tuple in type file
-            field_tt = get_field(_ir.function_name, _ir.var_name, field_name)
+            field_tt = get_field(_ir.function_name, _ir.name, field_name)
             if(field_tt):
                 _field_tt = field.extok
                 copy_token_tuple(field, field_tt)
