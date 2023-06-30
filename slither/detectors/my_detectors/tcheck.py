@@ -82,11 +82,15 @@ def get_cf_pair(contract_name, function_name):
 #USAGE: adds a tuple to the parser file
 #RETURNS: NULL
 def add_tuple(tuple_name, type_tuples):
+    if(tuple_name == None):
+        return None
     tcheck_parser.add_tuple(tuple_name, type_tuples)
 
 #USAGE: returns a specific element located at index of a tuple
 #RETURNS: above
 def get_tuple_index(tuple_name, index):
+    if(tuple_name == None):
+        return None
     temp = tcheck_parser.get_tuple(tuple_name)
     if(temp != None and len(temp) > index):
         return temp[index]
@@ -101,21 +105,29 @@ def add_ref(ref_name, type_tuple):
 #USAGE: gets the type of a reference
 #RETURNS:
 def get_ref(ref_name):
+    if(ref_name == None):
+        return None
     return tcheck_parser.get_ref_type_tuple(ref_name)
 
 #USAGE: given a function name and a var name, return the token pair
 #RETURNS: tuple holding the token pair
 def get_hash(function_name, var_name):
+    if(function_name == None or var_name == None):
+        return None
     return tcheck_parser.get_var_type_tuple(function_name, var_name)
 
 #USAGE: adds a field
 #RETURNS: NULL
 def add_field(function_name, parent_name, field_name, type_tuple):
+    if(function_name == None or parent_name == None or field_name == None):
+        return None
     thceck_parser.add_field(function_name, parent_name, field_name, type_tuple)
 
 #USAGE: gets a field
 #RETURNS: NULL
 def get_field(function_name, parent_name, field_name):
+    if(function_name == None or parent_name == None or field_name == None):
+        return None
     return tcheck_parser.get_field(function_name, parent_name, field_name)
 
 #USAGE: bar a function from being typechecked
