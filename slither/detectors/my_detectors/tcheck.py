@@ -9,6 +9,8 @@ from slither.core.declarations.function import Function
 from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
 from slither.core.solidity_types import UserDefinedType
+from slither.core.declarations import Structure
+
 import linecache
 import os
 import sys
