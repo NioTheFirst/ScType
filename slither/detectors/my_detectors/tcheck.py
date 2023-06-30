@@ -770,6 +770,8 @@ def type_member(ir)->bool:
 
     field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
     if(field_type_tuple == None):
+        #TURN OFF ASSUMPTION
+        assign_const(ir.lvalue)
         querry_type(ir.lvalue)
         return False
     field_full_name = _lv.name + "." + _rv.name
