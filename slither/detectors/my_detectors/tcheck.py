@@ -416,6 +416,8 @@ def copy_token_tuple(ir, tt):
 
     print(f"Type: {ir.type}")
     ttype = ir.type
+    if(_ir.name == "_pairs"):
+        print(ir.type.type.elem)
     if(isinstance(ir, ArrayType)):
         ttype = ir.type.type
         print(f"New type: {ttype}")
