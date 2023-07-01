@@ -182,7 +182,7 @@ def propagate_fields(ir):
                 _field_tt = field.extok
                 copy_token_tuple(field, field_tt)
                 _ir.add_field(field)
-                _field_tt.name = _ir.name + "." + field_name
+                _field_tt.name = field_name
                 _field_tt.function_name = _ir.function_name
                 propagate_fields(field)
         print("FIELDS:")
