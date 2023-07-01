@@ -166,7 +166,8 @@ def check_contract(contract_name):
     return False
 
 def print_token_type(ir):
-    print(ir.extok)
+    if(isinstance(ir, Variable)):
+        print(ir.extok)
 
 #USAGE: prints a param_cache
 #RETURNS: nothing
