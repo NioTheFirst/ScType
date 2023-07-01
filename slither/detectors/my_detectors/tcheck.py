@@ -1204,7 +1204,7 @@ def asn_norm(ir, norm):
     else:
         if(_ir.norm != norm or (_ir.norm == norm and norm == '*')):
             add_errors(ir)
-            __ir.norm = 'u'
+            _ir.norm = 'u'
 
 #USAGE: append norm (i.e. for multiplication, division, or power)
 #RETURNS: NULL
