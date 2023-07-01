@@ -82,7 +82,7 @@ def get_cf_pair(contract_name, function_name):
 #USAGE: adds a tuple to the parser file
 #RETURNS: NULL
 def add_tuple(tuple_name, type_tuples):
-    if(tuple_name == None):
+    if(tuple_name == None or type_tuples == None):
         return None
     tcheck_parser.add_tuple(tuple_name, type_tuples)
 
