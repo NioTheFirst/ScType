@@ -195,7 +195,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                 cur_param = param[num-1].extok
                 for n in cur_param.num_token_types:
                     ret_num.append(n)
-                for d in cur_param.num_token_types:
+                for d in cur_param.den_token_types:
                     ret_den.append(d)
             for den in den_trans:
                 if(den == -1):
@@ -204,7 +204,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                 cur_param = param[den-1].extok
                 for n in cur_param.num_token_types:
                     ret_den.append(n)
-                for d in cur_param.num_token_types:
+                for d in cur_param.den_token_types:
                     ret_num.append(d)
             if(norm > 0):
                 norm = param[norm-1].extok.norm
