@@ -118,7 +118,7 @@ def _compare_token_type(A_types, B_types):
     return True
 
 #USAGE: given an ir, propogate it's fields
-def propogate_fields(ir):
+def propagate_fields(ir):
     print(f"Type: {ir.type}")
     ttype = ir.type
     if(isinstance(ir.type, ArrayType)):
@@ -147,7 +147,7 @@ def propogate_fields(ir):
                 _field_tt = field.extok
                 copy_token_tuple(field, field_tt)
                 _ir.add_field(field)
-                propogate_fields(field)
+                propagate_fields(field)
         print("FIELDS:")
         _ir.print_fields()
 
