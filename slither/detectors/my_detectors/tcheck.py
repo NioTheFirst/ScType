@@ -426,8 +426,8 @@ def copy_token_tuple(ir, tt):
         print(f"Type type: {ir.type.type}")
         if isinstance(ttype, Structure):
             fields = ttype.elems.items()
-        elif isinstance(ttype, Contract):
-            fields = ttype.variables_as_dict
+        #elif isinstance(ttype, Contract):
+        #    fields = ttype.variables_as_dict
         if(fields == None):
             print(" NO FIELDS")
             return
