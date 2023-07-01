@@ -966,7 +966,6 @@ def handle_return(dest_ir, function):
 def type_asn(dest, sorc) -> bool:
     #dest = ir.lvalue
     #sorc = ir.variable_right
-    print_token_type(sorc)
     init_var(sorc)
     print_token_type(sorc)
     print_token_type(dest)
@@ -1081,7 +1080,7 @@ def type_bin_pow(dest, lir, rir) -> bool:
         assign_const(dest)
         print("x:" + str(get_norm(dest)))
         print(pow_const)
-        l_norm = get_norm(lir)
+        l_norm = lir.value
         if(pow_const > 0 and isinstance(l_norm, int)):
             add_norm(dest, pow_const * (l_norm-1))
         elif(pow_const == 0):
