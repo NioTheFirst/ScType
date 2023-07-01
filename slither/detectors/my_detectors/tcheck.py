@@ -392,6 +392,8 @@ def assign_err(ir):
 #USAGE: copies all the types from a type tuple to an ir node
 #RETURNS: null
 def copy_token_tuple(ir, tt):
+    tcheck_propagation.copy_token_tuple(ir, tt)
+    """
     print("Check copy_toekn_tuple")
     print(tt)
     _ir = ir.extok
@@ -418,7 +420,6 @@ def copy_token_tuple(ir, tt):
         _ir.norm = tt[2][0]
     _ir.linked_contract = tt[3]
     propagate_fields(ir) 
-    """
     print(f"Type: {ir.type}")
     ttype = ir.type
     if(isinstance(ir.type, ArrayType)):
