@@ -1286,8 +1286,8 @@ def type_bin_div(dest, lir, rir) ->bool:
     asn_norm(dest, get_norm(lir))
 
     sub_norm(dest, get_norm(rir))
-    if(get_norm(dest) != 0):
-        add_error(dest)
+    #if(get_norm(dest) != 0):
+    #    add_error(dest)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
