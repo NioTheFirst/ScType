@@ -1,5 +1,7 @@
 from slither.core.solidity_types import UserDefinedType, ArrayType
 from slither.core.declarations import Structure, Contract
+
+import tcheck_parser
 #USAGE: library for functions that help propagate types
 #       these functions contain handling for ABSTRACT types as well (any type > abs_buf is an ABSTRACT type)
 #       ABSTRACT types take priority over CONCRETE types (temporary handling for if statements)
@@ -143,7 +145,7 @@ def propagate_fields(ir):
             print(_ir.function_name)
             print(_ir.name)
             print(field_name)
-            field_tt = get_field(_ir.function_name, _ir.name, field_name)
+            field_tt = tcheck_parser.get_field(_ir.function_name, _ir.name, field_name)
             if(field_tt):
                 _field_tt = field.extok
                 copy_token_tuple(field, field_tt)
