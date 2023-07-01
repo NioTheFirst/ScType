@@ -1204,7 +1204,8 @@ def asn_norm(ir, norm):
     else:
         if(_ir.norm != norm or (_ir.norm == norm and norm == '*')):
             add_errors(ir)
-            _ir.norm = 'u'
+            __ir.norm = 'u'
+    print_token_type(sorc)
 
 #USAGE: append norm (i.e. for multiplication, division, or power)
 #RETURNS: NULL
@@ -1286,6 +1287,8 @@ def type_bin_div(dest, lir, rir) ->bool:
     asn_norm(dest, get_norm(lir))
 
     sub_norm(dest, get_norm(rir))
+    if(get_norm(dest) != 0):
+        add_error(dest)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
