@@ -1080,9 +1080,11 @@ def type_bin_pow(dest, lir, rir) -> bool:
         assign_const(dest)
         print("x:" + str(get_norm(dest)))
         print(pow_const)
-        l_norm = lir.value
+        l_norm = get_norm(lir)
         if(pow_const > 0 and isinstance(l_norm, int)):
-            add_norm(dest, pow_const * (l_norm-1))
+            if(l_norm == 0):
+                l_norm = 1
+            asn_norm(dest, pow_const * (l_norm))
         elif(pow_const == 0):
             asn_norm(dest, pow_const)
         else:
