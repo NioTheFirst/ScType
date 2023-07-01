@@ -1,7 +1,7 @@
 from collections import defaultdict
 from slither.core.variables.local_variable import LocalVariable
 from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion, Member, Index
+from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion, Member, Index, ModifierCall
 from slither.slithir.variables import Constant, ReferenceVariable, TemporaryVariable, LocalIRVariable, StateIRVariable, TupleVariable
 from slither.core.variables.variable import Variable
 from slither.core.variables.state_variable import StateVariable
@@ -404,7 +404,7 @@ def copy_token_tuple(ir, tt):
     print("----")
     _ir.token_type_clear()
     if(isinstance(tt[0], int)):
-        _ir.add_num_token_type(tt[0])
+        /_ir.add_num_token_type(tt[0])
     else:
         for n in tt[0]:
             _ir.add_num_token_type(n)
@@ -575,6 +575,8 @@ def check_type(ir) -> bool:
          #Function call
         print("ic")
         addback = type_fc(ir)
+    elif isinstance(ir, ModifierCall):
+        addback = False
     elif isinstance(ir, LibraryCall):
         addback = type_library_call(ir)
     elif isinstance(ir, HighLevelCall):
