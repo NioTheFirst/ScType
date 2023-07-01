@@ -175,11 +175,15 @@ def propagate_fields(ir):
             print(_ir.function_name)
             print(_ir.name)
             print(field_name)
+            if(_ir.function_name == None or _ir.name == None or field_name == None):
+                continue
             field_tt = tcheck_parser.get_field(_ir.function_name, _ir.name, field_name)
             if(field_tt):
                 _field_tt = field.extok
                 copy_token_tuple(field, field_tt)
                 _ir.add_field(field)
+                _field_tt.name = _ir.name + "." + _field_name
+                _field_tt.function_name = _ir.function_name
                 propagate_fields(field)
         print("FIELDS:")
         _ir.print_fields()
