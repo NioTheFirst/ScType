@@ -119,6 +119,7 @@ def _compare_token_type(A_types, B_types):
 
 #USAGE: given an ir, propogate it's fields
 def propagate_fields(ir):
+    _ir = ir.extok
     print(f"Type: {ir.type}")
     ttype = ir.type
     if(isinstance(ir.type, ArrayType)):
