@@ -190,6 +190,10 @@ def function_param_cache(function):
     #assumes types have already been assigned
     return(gen_param_cache(function.parameters))
 
+#USAGE: propogates all the fields of an ir
+def propogate_fields(ir):
+    tcheck_propogation.propogate_fields(ir)
+
 #USAGE: given a hlc function, generate a param_cache
 #RETURNS: returns a param_cache
 def function_hlc_param_cache(function):
@@ -413,7 +417,8 @@ def copy_token_tuple(ir, tt):
     else:
         _ir.norm = tt[2][0]
     _ir.linked_contract = tt[3]
-
+    propogate_fields(ir) 
+    """
     print(f"Type: {ir.type}")
     ttype = ir.type
     if(isinstance(ir.type, ArrayType)):
@@ -443,7 +448,7 @@ def copy_token_tuple(ir, tt):
                 copy_token_tuple(field, field_tt)
                 _ir.add_field(field)
         print("FIELDS:")
-        _ir.print_fields()
+        _ir.print_fields()"""
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null

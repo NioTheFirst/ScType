@@ -1,3 +1,5 @@
+from slither.core.solidity_types import UserDefinedType, ArrayType
+from slither.core.declarations import Structure, Contract
 #USAGE: library for functions that help propagate types
 #       these functions contain handling for ABSTRACT types as well (any type > abs_buf is an ABSTRACT type)
 #       ABSTRACT types take priority over CONCRETE types (temporary handling for if statements)
@@ -115,6 +117,39 @@ def _compare_token_type(A_types, B_types):
         return False
     return True
 
+#USAGE: given an ir, propogate it's fields
+def propogate_fields(ir):
+    print(f"Type: {ir.type}")
+    ttype = ir.type
+    if(isinstance(ir.type, ArrayType)):
+        ttype = ir.type.type
+        print(f"New type: {ttype}")
+    #Field tuple propagation
+    if(isinstance(ttype, UserDefinedType)):
+        fields = None
+        ttype = ttype.type
+        print(f"Type type: {ir.type.type}")
+        if isinstance(ttype, Structure):
+            fields = ttype.elems.items()
+        #elif isinstance(ttype, Contract):
+        #    fields = ttype.variables_as_dict
+        if(fields == None):
+            print(" NO FIELDS")
+            return
+        #is an oobject, may have fields
+        for field_name, field in fields:
+            #search for type tuple in type file
+            print(_ir.function_name)
+            print(_ir.name)
+            print(field_name)
+            field_tt = get_field(_ir.function_name, _ir.name, field_name)
+            if(field_tt):
+                _field_tt = field.extok
+                copy_token_tuple(field, field_tt)
+                _ir.add_field(field)
+                propogate_fields(field)
+        print("FIELDS:")
+        _ir.print_fields()
 
 #USAGE: returns the variable with the higher amount of ABSTRACT variables (used in dest propagation)
 def greater_abstract(varA, varB):
