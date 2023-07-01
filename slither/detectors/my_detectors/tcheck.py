@@ -1205,7 +1205,6 @@ def asn_norm(ir, norm):
         if(_ir.norm != norm or (_ir.norm == norm and norm == '*')):
             add_errors(ir)
             __ir.norm = 'u'
-    print_token_type(sorc)
 
 #USAGE: append norm (i.e. for multiplication, division, or power)
 #RETURNS: NULL
