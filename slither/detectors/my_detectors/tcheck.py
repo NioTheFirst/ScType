@@ -1212,7 +1212,7 @@ def add_norm(ir, norm):
     if(not(is_variable(ir))):
         return
     _ir = ir.extok
-    temp = ir.norm
+    temp = _ir.norm
     #print(temp)
     #print(norm)
     if(isinstance(temp, int) and isinstance(norm, int)):
@@ -1236,7 +1236,7 @@ def sub_norm(ir, norm):
     if(not(is_variable(ir))):
         return
     _ir = ir.extok
-    temp = ir.norm
+    temp = _ir.norm
     if(isinstance(temp, int) and isinstance(norm, int)):
         temp-=norm
         _ir.norm = temp
