@@ -682,7 +682,7 @@ def type_included_hlc(ir, dest, function):
         #deal with return value (single) TODO
         handle_return(ir.lvalue, function)
         if(len(addback) != 0):
-            return 1
+            return 2
     else:
         ret_obj = ir.function.get_parameter_cache_return(added)
         if isinstance(ir, Variable):
@@ -720,7 +720,7 @@ def querry_fc(ir) -> int:
     if(included_func != None):
         if(type_included_hlc(ir, dest, included_func) == 1):
             print("INCLUDED HIGH LEVEL CALL HAS SOME UNDEFINED TYPE")
-            return 1
+            return 2
         return 2
 
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
