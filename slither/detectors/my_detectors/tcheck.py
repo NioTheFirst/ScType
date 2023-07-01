@@ -1,7 +1,7 @@
 from collections import defaultdict
 from slither.core.variables.local_variable import LocalVariable
 from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion, Member, Index, ModifierCall
+from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall, Return, InternalCall, Condition, HighLevelCall, Unpack, Phi, EventCall, TypeConversion, Member, Index
 from slither.slithir.variables import Constant, ReferenceVariable, TemporaryVariable, LocalIRVariable, StateIRVariable, TupleVariable
 from slither.core.variables.variable import Variable
 from slither.core.variables.state_variable import StateVariable
@@ -574,9 +574,11 @@ def check_type(ir) -> bool:
     elif isinstance(ir, InternalCall):
          #Function call
         print("ic")
-        addback = type_fc(ir)
-    elif isinstance(ir, ModifierCall):
-        addback = False
+        if(ir.lvalue):
+            addback = type_fc(ir)
+        else:
+            addback = False
+            print("NO RETURN LOCATION")
     elif isinstance(ir, LibraryCall):
         addback = type_library_call(ir)
     elif isinstance(ir, HighLevelCall):
