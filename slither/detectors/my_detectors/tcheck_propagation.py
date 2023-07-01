@@ -2,6 +2,7 @@ from slither.core.solidity_types import UserDefinedType, ArrayType
 from slither.core.declarations import Structure, Contract
 
 import tcheck_parser
+import tcheck
 #USAGE: library for functions that help propagate types
 #       these functions contain handling for ABSTRACT types as well (any type > abs_buf is an ABSTRACT type)
 #       ABSTRACT types take priority over CONCRETE types (temporary handling for if statements)
@@ -57,6 +58,35 @@ def copy_norm(src, dest):
     _dest = dest.extok
     _dest.norm = _src.norm
 
+#USAGE: copies all the types from a type tuple to an ir node
+#RETURNS: null
+def copy_token_tuple(ir, tt):
+    print("Check copy_toekn_tuple")
+    print(tt)
+    _ir = ir.extok
+    print("----")
+    _ir.token_type_clear()
+    if(isinstance(tt[0], int)):
+        _ir.add_num_token_type(tt[0])
+    else:
+        for n in tt[0]:
+            _ir.add_num_token_type(n)
+    if(isinstance(tt[1], int)):
+        _ir.add_den_token_type(tt[1])
+    else:
+        for d in tt[1]:
+            _ir.add_den_token_type(d)
+    if(isinstance(tt[2], int)):
+        if(tt[2] == -404):
+            _ir.norm = '*'
+        else:
+            _ir.norm = tt[2]
+    elif(isinstance(tt[2], str)):
+        _ir.norm = tt[2]
+    else:
+        _ir.norm = tt[2][0]
+    _ir.linked_contract = tt[3]
+    propagate_fields(ir)
 #[DEPRECATED] comapres the token types of two variables. Includes support for checking ABSTRACT types
 """def compare_token_type(varA, varB):
     A_num_types = copy_and_sort(varA.token_typen)
