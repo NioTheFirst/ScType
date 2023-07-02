@@ -1200,7 +1200,7 @@ def asn_norm(ir, norm):
     if(_ir.norm == 'u'):
         _ir.norm = norm
     elif (_ir.norm != norm and norm == '*'):
-        _ir.norm = '*'
+       _ir.norm = '*'
     else:
         if(_ir.norm != norm or (_ir.norm == norm and norm == '*')):
             #add_errors(ir)

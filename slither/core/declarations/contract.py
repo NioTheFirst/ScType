@@ -13,6 +13,9 @@ from slither.core.solidity_types.type import Type
 from slither.core.source_mapping.source_mapping import SourceMapping
 
 from slither.core.declarations.function import Function, FunctionType, FunctionLanguage
+
+from slither.detectors.my_detectors.ExtendedType import ExtendedType
+
 from slither.utils.erc import (
     ERC20_signatures,
     ERC165_signatures,
@@ -62,11 +65,12 @@ class Contract(SourceMapping):  # pylint: disable=too-many-public-methods
         self._id: Optional[int] = None
         self._inheritance: List["Contract"] = []  # all contract inherited, c3 linearization
         self._immediate_inheritance: List["Contract"] = []  # immediate inheritance
-
+        self._ex = ExtendedType()
+        self._ex.function_name = "global"
         # Constructors called on contract's definition
         # contract B is A(1) { ..
         self._explicit_base_constructor_calls: List["Contract"] = []
-
+        
         self._enums: Dict[str, "EnumContract"] = {}
         self._structures: Dict[str, "StructureContract"] = {}
         self._events: Dict[str, "Event"] = {}
@@ -120,7 +124,11 @@ class Contract(SourceMapping):  # pylint: disable=too-many-public-methods
     def name(self) -> str:
         """str: Name of the contract."""
         assert self._name
+        self._ex.name = name
         return self._name
+    @property
+    def extok(self):
+        return self._ex
 
     @name.setter
     def name(self, name: str):
