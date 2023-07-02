@@ -1205,7 +1205,7 @@ def asn_norm(ir, norm):
 
 #USAGE: compares norm values of two variables and throws errors if they are not equal
 def compare_norm(lv, varA, varB):
-    if(not(isinstance(varA, Variable) and isinstance(carB, Variable))):
+    if(not(isinstance(varA, Variable) and isinstance(varB, Variable))):
         return
     _varA = varA.extok
     _varB = varB.extok
