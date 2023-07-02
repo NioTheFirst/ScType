@@ -11,6 +11,8 @@ class Enum(SourceMapping):
         self._values = values
         self._min = 0
         self._ex = ExtendedType()
+        self._ex.name = name
+        self._ex.function_name = "global"
         # The max value of an Enum is the index of the last element
         self._max = len(values) - 1
 
