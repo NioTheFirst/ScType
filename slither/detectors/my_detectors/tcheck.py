@@ -1319,12 +1319,12 @@ def type_bin_div(dest, lir, rir) ->bool:
     #    add_error(dest)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
-            type_asn(dest, rir)
+            type_asnai(dest, rir)
         else:
             type_asn(dest, lir)
         return True
     elif(is_type_const(lir)):
-        return type_asn(dest, rir)
+        return type_asnai(dest, rir)
     elif(is_type_const(rir)):
         return type_asn(dest, lir)
     else:
