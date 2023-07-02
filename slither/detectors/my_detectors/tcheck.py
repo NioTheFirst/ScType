@@ -1215,10 +1215,10 @@ def compare_norm(lv, varA, varB):
         return
     elif(A_norm == '*' or B_norm == '*'):
         if(A_norm == B_norm):
-            add_error(lv)
+            add_errors(lv)
     else:
         if(A_norm != B_norm):
-            add_error(lv)
+            add_errors(lv)
 
 
 #USAGE: append norm (i.e. for multiplication, division, or power)
