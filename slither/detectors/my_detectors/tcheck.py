@@ -1279,7 +1279,7 @@ def bin_norm(dest, lir, rir):
         asn_norm(dest, lnorm)
     else:
         #doesn't matter which
-        asn_norm(lnorm)
+        asn_norm(dest, lnorm)
 
 #USAGE: typechecks a multiplication statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
