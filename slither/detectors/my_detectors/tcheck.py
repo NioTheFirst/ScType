@@ -1271,7 +1271,7 @@ def bin_norm(dest, lir, rir):
     compare_norm(dest, lir, rir)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
-     if(lnorm == '*' or rnorm == '*'):
+    if(lnorm == '*' or rnorm == '*'):
         asn_norm(dest, '*')
     elif(lnorm == 'u'):
         asn_norm(dest, rnorm)
