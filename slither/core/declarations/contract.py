@@ -124,7 +124,6 @@ class Contract(SourceMapping):  # pylint: disable=too-many-public-methods
     def name(self) -> str:
         """str: Name of the contract."""
         assert self._name
-        self._ex.name = name
         return self._name
     @property
     def extok(self):
@@ -132,6 +131,7 @@ class Contract(SourceMapping):  # pylint: disable=too-many-public-methods
 
     @name.setter
     def name(self, name: str):
+        self._ex.name = name
         self._name = name
 
     @property
