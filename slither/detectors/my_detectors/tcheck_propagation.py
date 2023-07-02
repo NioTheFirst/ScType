@@ -1,4 +1,4 @@
-from slither.core.solidity_types import UserDefinedType, ArrayType
+from slither.core.solidity_types import UserDefinedType, ArrayType, MappingType
 from slither.core.declarations import Structure, Contract
 
 import tcheck_parser
