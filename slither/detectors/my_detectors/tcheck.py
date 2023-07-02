@@ -1115,11 +1115,8 @@ def type_bin_add(dest, lir, rir) -> bool:
         return False
     print_token_type(dest)
     print("initlize checks")
-    asn_norm(dest, get_norm(lir))
     print(";;;")
-    print_token_type(lir)
-    print_token_type(rir)
-    asn_norm(dest, get_norm(rir))
+    bin_norm(dest, lir, rir)
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
             copy_token_type(rir, dest)
@@ -1147,8 +1144,7 @@ def type_bin_sub(dest, lir, rir) -> bool:
     #print_token_type(rir)
     if(not (init_var(lir) and init_var(rir))):
         return False
-    asn_norm(dest, get_norm(lir))
-    asn_norm(dest, get_norm(rir))
+    bin_norm(dest, lir, rir)
     print_token_type(lir)
     print_token_type(rir)
     if(is_type_undef(lir) or  is_type_undef(rir)):
@@ -1204,8 +1200,26 @@ def asn_norm(ir, norm):
         _ir.norm = '*'
     else:
         if(_ir.norm != norm or (_ir.norm == norm and norm == '*')):
-            add_errors(ir)
+            #add_errors(ir)
             _ir.norm = 'u'
+
+#USAGE: compares norm values of two variables and throws errors if they are not equal
+def compare_norm(lv, varA, varB):
+    if(not(isinstance(varA, Variable) and isinstance(carB, Variable))):
+        return
+    _varA = varA.extok
+    _varB = varB.extok
+    A_norm = _varA.norm
+    B_norm = _varB.norm
+    if(A_norm == 'u' or B_norm == 'u'):
+        return
+    elif(A_norm == '*' or B_norm == '*'):
+        if(A_norm == B_norm):
+            add_error(lv)
+    else:
+        if(A_norm != B_norm):
+            add_error(lv)
+
 
 #USAGE: append norm (i.e. for multiplication, division, or power)
 #RETURNS: NULL
@@ -1253,6 +1267,20 @@ def sub_norm(ir, norm):
         else:
             _ir.norm = '*'
 
+def bin_norm(dest, lir, rir):
+    compare_norm(dest, lir, rir)
+    lnorm = get_norm(lir)
+    rnorm = get_norm(rir)
+     if(lnorm == '*' or rnorm == '*'):
+        asn_norm(dest, '*')
+    elif(lnorm == 'u'):
+        asn_norm(dest, rnorm)
+    elif(rnorm == 'u'):
+        asn_norm(dest, lnorm)
+    else:
+        #doesn't matter which
+        asn_norm(lnorm)
+
 #USAGE: typechecks a multiplication statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_mul(dest, lir, rir) ->bool:
@@ -1260,8 +1288,7 @@ def type_bin_mul(dest, lir, rir) ->bool:
     print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    asn_norm(dest, get_norm(lir))
-    add_norm(dest, get_norm(rir))
+    bin_norm(dest, lir, rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1284,9 +1311,7 @@ def type_bin_mul(dest, lir, rir) ->bool:
 def type_bin_div(dest, lir, rir) ->bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
-    asn_norm(dest, get_norm(lir))
-
-    sub_norm(dest, get_norm(rir))
+    bin_norm(dest, lir, rir)
     #if(get_norm(dest) != 0):
     #    add_error(dest)
     if(is_type_undef(lir) or is_type_undef(rir)):
@@ -1312,8 +1337,7 @@ def type_bin_gt(dest, lir, rir) -> bool:
     print("testing gt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    asn_norm(dest, get_norm(lir))
-    asn_norm(dest, get_norm(rir))
+    bin_norm(dest, lir, rir)
     print_token_type(rir)
     print(is_type_const(rir))
     if(is_type_undef(lir) or is_type_undef(rir)):
@@ -1338,8 +1362,7 @@ def type_bin_ge(dest, lir, rir) -> bool:
     print("testing gt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    asn_norm(dest, get_norm(lir))
-    asn_norm(dest, get_norm(rir))
+    bin_norm(dest, lir, rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1362,8 +1385,7 @@ def type_bin_lt(dest, lir, rir) -> bool:
     print("testing lt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    asn_norm(dest, get_norm(lir))
-    asn_norm(dest, get_norm(rir))
+    bin_norm(dest, lir, rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1386,8 +1408,7 @@ def type_bin_le(dest, lir, rir) -> bool:
     print("testing lt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    asn_norm(dest, get_norm(lir))
-    asn_norm(dest, get_norm(rir))
+    bin_norm(dest, lir, rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
