@@ -1172,7 +1172,7 @@ def get_norm(ir):
     if(not(is_variable(ir))):
         return 'u'
     _ir = ir.extok
-    if(not(isinstance(ir, Constant)) or (not(isinstance(ir.value, str)))):
+    if(not(isinstance(ir, Constant)) or (not(isinstance(ir.value, int)))):
         return _ir.norm
     else:
         print("val: " + str(ir.value))
