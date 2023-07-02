@@ -149,19 +149,30 @@ def _compare_token_type(A_types, B_types):
         return False
     return True
 
+def gen_raw_type(ir):
+    ttype = ir.type
+    changed = False
+    while(True):
+        print(ttype)
+        if(isinstance(ttype, ArrayType)):
+            changed = True
+            ttype = ttype.type
+        elif(isinstance(ttype, MappingType)):
+            changed = True
+            ttype = ttype.type_to
+        if(not(changed)):
+            return ttype
+
 #USAGE: given an ir, propogate it's fields
 def propagate_fields(ir):
     _ir = ir.extok
     print(f"Type: {ir.type}")
-    ttype = ir.type
-    if(isinstance(ir.type, ArrayType)):
-        ttype = ir.type.type
-        print(f"New type: {ttype}")
+    ttype = gen_raw_type(ir)
+    print(f"Final Type: {ttype}")
     #Field tuple propagation
     if(isinstance(ttype, UserDefinedType)):
         fields = None
         ttype = ttype.type
-        print(f"Type type: {ir.type.type}")
         if isinstance(ttype, Structure):
             fields = ttype.elems.items()
         #elif isinstance(ttype, Contract):
