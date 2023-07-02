@@ -1,7 +1,7 @@
 from typing import List
 
 from slither.core.source_mapping.source_mapping import SourceMapping
-
+from slither.detectors.my_detectors import ExtendedType
 
 class Enum(SourceMapping):
     def __init__(self, name: str, canonical_name: str, values: List[str]):
@@ -10,6 +10,7 @@ class Enum(SourceMapping):
         self._canonical_name = canonical_name
         self._values = values
         self._min = 0
+        self._ex = ExtendedType()
         # The max value of an Enum is the index of the last element
         self._max = len(values) - 1
 
@@ -32,6 +33,10 @@ class Enum(SourceMapping):
     @property
     def max(self) -> int:
         return self._max
+
+    @property
+    def extok(self):
+        return self._ex
 
     def __str__(self):
         return self.name
