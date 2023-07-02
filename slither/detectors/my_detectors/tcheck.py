@@ -1019,6 +1019,7 @@ def init_var(ir):
         _ir.function_name = ir.parent_function
     if(is_constant(ir)):
         assign_const(ir)
+        _ir.norm = get_norm(ir)
     else:
         convert_ssa(ir)
     return True
