@@ -1172,6 +1172,8 @@ def get_norm(ir):
     if(not(is_variable(ir))):
         return 'u'
     _ir = ir.extok
+    #TEST
+
     if(not(isinstance(ir, Constant)) or (not(isinstance(ir.value, int)))):
         return _ir.norm
     else:
