@@ -1,7 +1,7 @@
 from typing import List
 
 from slither.core.source_mapping.source_mapping import SourceMapping
-from slither.detectors.my_detectors import ExtendedType
+from slither.detectors.my_detectors.ExtendedType import ExtendedType
 
 class Enum(SourceMapping):
     def __init__(self, name: str, canonical_name: str, values: List[str]):
