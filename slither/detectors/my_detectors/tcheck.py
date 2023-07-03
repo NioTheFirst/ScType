@@ -1863,8 +1863,13 @@ class tcheck(AbstractDetector):
             #print("xxxxxx")
             if errors:
                 for ir in errors:
-                    name = ir.name
-                    func = ir.parent_function
+                    _ir = ir.extok
+                    name = _ir.name
+                    func = _ir.function_name
+                    if(name == None):
+                        name = "UNKNOWN"
+                    if(func == None):
+                        func = "UNKNOWN"
                     info = [" typecheck error: " ]
                     info+=("Var name: " + name + " " + "Func name: " + func + "\n")
                     res = self.generate_result(info)
