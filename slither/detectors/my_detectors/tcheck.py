@@ -1217,7 +1217,7 @@ def compare_norm(lv, varA, varB, func = None):
     if(A_norm == 'u' or B_norm == 'u'):
         return
     elif(A_norm == '*' or B_norm == '*'):
-        if(A_norm == B_norm):
+        if(A_norm == B_norm or func == "mul" or func == "div"):
             add_errors(lv)
     else:
         if(A_norm != B_norm):
@@ -1278,10 +1278,11 @@ def bin_norm(dest, lir, rir, func = None):
     rnorm = get_norm(rir)
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
     if(lnorm == '*' or rnorm == '*'):
+       
         if(isinstance(lnorm, int)):
             asn_norm(dest, lnorm)
             asn_norm(rir, lnorm)
-        elif(isinstance(rnorm, int) and func != "div"):
+        elif(isinstance(rnorm, int)):
             asn_norm(dest, rnorm)
             asn_norm(lir, rnorm)
         else:
