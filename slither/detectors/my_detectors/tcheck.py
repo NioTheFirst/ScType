@@ -1210,6 +1210,8 @@ def asn_norm(ir, norm):
 def compare_norm(lv, varA, varB, func = None):
     if(not(isinstance(varA, Variable) and isinstance(varB, Variable))):
         return
+    if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
+        return
     _varA = varA.extok
     _varB = varB.extok
     A_norm = _varA.norm
