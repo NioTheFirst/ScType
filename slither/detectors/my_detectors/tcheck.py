@@ -1292,9 +1292,9 @@ def bin_norm(dest, lir, rir, func = None):
     else:
         #doesn't matter which
         if(func == "mul"):
-            asn_norm(lnorm + rnorm)
+            asn_norm(dest, lnorm + rnorm)
         elif(func == "div"):
-            asn_norm(lnorm - rnorm)
+            asn_norm(dest, lnorm - rnorm)
         else:
             asn_norm(dest, lnorm)
 
