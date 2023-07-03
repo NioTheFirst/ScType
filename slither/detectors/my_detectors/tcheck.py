@@ -1210,12 +1210,16 @@ def asn_norm(ir, norm):
 def compare_norm(lv, varA, varB, func = None):
     if(not(isinstance(varA, Variable) and isinstance(varB, Variable))):
         return
-    if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
-        return
     _varA = varA.extok
     _varB = varB.extok
     A_norm = _varA.norm
     B_norm = _varB.norm
+    if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
+        if(varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
+            add_errors(lv)
+        if(varB.value == 1 and not(_varB.is_undefined() or _varB.is_constant())):
+            add_errors(lv)
+        return
     if(A_norm == 'u' or B_norm == 'u'):
         return
     elif(A_norm == '*' or B_norm == '*'):
