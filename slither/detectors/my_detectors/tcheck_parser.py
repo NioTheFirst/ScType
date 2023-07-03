@@ -208,6 +208,8 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                     ret_num.append(d)
             if(norm > 0):
                 norm = param[norm-1].extok.norm
+            if(isinstance(lf, int) and lf > 0):
+                lf = param[lf-1].extok.norm
             ret_type_tuple = (ret_num, ret_den, norm, lf)
             ret_type_tuples.append(ret_type_tuple)
         return ret_type_tuples
