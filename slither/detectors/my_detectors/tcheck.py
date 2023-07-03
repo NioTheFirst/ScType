@@ -1270,8 +1270,10 @@ def sub_norm(ir, norm):
         else:
             _ir.norm = '*'
 
-def bin_norm(dest, lir, rir):
-    compare_norm(dest, lir, rir)
+
+def bin_norm(dest, lir, rir, func = None):
+    if(func != None):
+        compare_norm(dest, lir, rir)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
     if(lnorm == '*' or rnorm == '*'):
@@ -1282,7 +1284,14 @@ def bin_norm(dest, lir, rir):
         asn_norm(dest, lnorm)
     else:
         #doesn't matter which
-        asn_norm(dest, lnorm)
+        if(func == "mul"):
+            asn_norm(lnorm + rnorm)
+        elif(func == "div"):
+            asn_norm(lnorm - rnorm)
+        else:
+            asn_norm(dest, lnorm)
+
+
 
 #USAGE: typechecks a multiplication statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
@@ -1291,7 +1300,7 @@ def type_bin_mul(dest, lir, rir) ->bool:
     print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    bin_norm(dest, lir, rir)
+    bin_norm(dest, lir, rir, "mul")
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1314,7 +1323,7 @@ def type_bin_mul(dest, lir, rir) ->bool:
 def type_bin_div(dest, lir, rir) ->bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
-    bin_norm(dest, lir, rir)
+    bin_norm(dest, lir, rir, "div")
     #if(get_norm(dest) != 0):
     #    add_error(dest)
     if(is_type_undef(lir) or is_type_undef(rir)):
