@@ -1272,7 +1272,7 @@ def sub_norm(ir, norm):
 
 
 def bin_norm(dest, lir, rir, func = None):
-    if(func != None):
+    if(func == None):
         compare_norm(dest, lir, rir)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
