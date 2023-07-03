@@ -1281,7 +1281,7 @@ def bin_norm(dest, lir, rir, func = None):
         if(isinstance(lnorm, int)):
             asn_norm(dest, lnorm)
             asn_norm(rir, lnorm)
-        elif(isinstance(rnorm, int)):
+        elif(isinstance(rnorm, int) and func != "div"):
             asn_norm(dest, rnorm)
             asn_norm(lir, rnorm)
         else:
