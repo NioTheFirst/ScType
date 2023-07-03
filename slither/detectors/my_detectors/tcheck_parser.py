@@ -44,7 +44,7 @@ def parse_type_file(t_file):
                 try:
                     num = -1
                     den = -1
-                    norm = 0
+                    norm = 'u'
                     if(len(_line) > 3):
                         num = int(_line[3].strip())
                         den = int(_line[4].strip())
@@ -84,7 +84,7 @@ def parse_type_file(t_file):
                     ret_info = extract_type_tuple(ret_type_tuple)
                     num = [-1]
                     denom = [-1]
-                    norm = 0
+                    norm = 'u'
                     copy = "c"
                     lf = None
                     print(_line[4+i])
@@ -103,7 +103,7 @@ def parse_type_file(t_file):
                 ref_name = _line[1].strip()
                 num = [-1]
                 denom = [-1]
-                norm = [0]
+                norm = ['u']
                 lf = None
                 if(len(_line) > 2):
                     num =[ int(_line[2].strip())]
@@ -119,7 +119,7 @@ def parse_type_file(t_file):
                 field_name = _line[3].strip()
                 num = [-1]
                 denom = [-1]
-                norm = [0]
+                norm = ['u']
                 lf = None
                 if(len(_line) > 4):
                     num = [ int(_line[4].strip())]
