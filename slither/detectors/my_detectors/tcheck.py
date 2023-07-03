@@ -1203,11 +1203,11 @@ def asn_norm(ir, norm):
        _ir.norm = '*'
     else:
         if(_ir.norm != norm or (_ir.norm == norm and norm == '*')):
-            #add_errors(ir)
+            add_errors(ir)
             _ir.norm = 'u'
 
 #USAGE: compares norm values of two variables and throws errors if they are not equal
-def compare_norm(lv, varA, varB):
+def compare_norm(lv, varA, varB, func = None):
     if(not(isinstance(varA, Variable) and isinstance(varB, Variable))):
         return
     _varA = varA.extok
@@ -1273,7 +1273,7 @@ def sub_norm(ir, norm):
 
 def bin_norm(dest, lir, rir, func = None):
     #if(func == None):
-    compare_norm(dest, lir, rir)
+    compare_norm(dest, lir, rir, func)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
