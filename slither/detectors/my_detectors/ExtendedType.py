@@ -154,7 +154,7 @@ class ExtendedType():
     def token_type_clear(self):
         self.clear_num()
         self.clear_den()
-        self.norm = 0
+        self.norm = 'u'
         self.link_function = None
 
     def init_constant(self):
@@ -163,7 +163,7 @@ class ExtendedType():
         self.token_type_clear()
         self.add_num_token_type(-1)
         self.add_den_token_type(-1)
-        self.norm = 0;
+        self.norm = 'u';
     
     def __str__(self):
         num_token_types_str = ", ".join(str(elem) for elem in self._num_token_types)
