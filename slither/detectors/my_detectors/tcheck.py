@@ -1215,9 +1215,9 @@ def compare_norm(lv, varA, varB, func = None):
     A_norm = _varA.norm
     B_norm = _varB.norm
     if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
-        if(varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
+        if(isinstance(varA, Constant) and varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
             add_errors(lv)
-        if(varB.value == 1 and not(_varB.is_undefined() or _varB.is_constant())):
+        if(isinstance(varB, Constant) and varB.value == 1 and not(_varB.is_undefined() or _varB.is_constant())):
             add_errors(lv)
         return
     if(A_norm == 'u' or B_norm == 'u'):
