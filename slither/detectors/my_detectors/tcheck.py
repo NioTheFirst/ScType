@@ -985,7 +985,27 @@ def type_asn(dest, sorc) -> bool:
         else:
             return False
     return False
-    
+
+#USAGE: assigns reverse type from sorc to dest
+def type_asni(dest, sorc):
+    init_var(sorc)
+    if(is_type_undef(sorc)):
+        return True
+    elif(is_type_const(sorc)):
+        if(is_type_undef(dest)):
+            copy_inv_token_type(sorc, dest)
+        return False
+    else:
+        tmp = create_iconstant()
+        tmp = combine_types(tmp, sorc, "div") 
+        if(is_type_undef(dest)):
+            copy_inv_token_type(sorc, dest)
+        elif(not(compare_token_type(tmp, dest))):
+            add_errors(dest)
+        else:
+            return False
+    return False
+
 #USAGE: assign type from dest to sorc, but additive
 #RETURNS: 'TRUE' if the type assign is successful (maybe not used consider removing TODO)
 def type_asna(dest, sorc) -> bool:
@@ -1316,9 +1336,7 @@ def combine_types(lir, rir, func = None):
         copy_token_type(tmp, rir)
     elif(func == "div"):
         copy_token_type(tmp, lir)
-        print(f"Before : {tmp.extok}")
         copy_inv_token_type(tmp, rir)
-        print(f"After : {tmp.extok}")
     return tmp
 
 
