@@ -641,7 +641,7 @@ def check_type(ir) -> bool:
                     break
                 ref = ref.points_to
             ref_root = ref.points_to
-            print(f"[i]Root name {ref_root.name}")
+            print(f"[i]Root name {ref_root}")
             if(isinstance(ir.lvalue, Member)):
                 update_member(ref_root, ir.lvalue)
         update_non_ssa(ir.lvalue)
