@@ -1120,14 +1120,14 @@ def type_bin_add(dest, lir, rir) -> bool:
     bin_norm(dest, lir, rir)
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
-            copy_token_type(rir, dest)
+            type_asn(dest, rir)
         else:
-            copy_token_type(lir, dest)
+            type_asn(dest, lir)
         return True
     elif(is_type_const(lir)):
-        return copy_token_type(rir, dest)
+        return type_asn(dest, rir)
     elif(is_type_const(rir)):
-        return copy_token_type(lir, dest)
+        return type_asn(dest, lir)
     elif(not(compare_token_type(rir, lir))):
         #report error, default to left child 
         add_errors(dest)
