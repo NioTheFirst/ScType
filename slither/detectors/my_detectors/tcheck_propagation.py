@@ -32,7 +32,7 @@ def copy_inv_token_type(src, dest):
     for n in _src.num_token_types:
         _dest.add_den_token_type(n)
     for d in _src.den_token_types:
-        _dest.add_den_token_type(d)
+        _dest.add_num_token_type(d)
     if _src.linked_contract:
         _dest.linked_contract = _src.linked_contract
 
