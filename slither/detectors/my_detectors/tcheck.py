@@ -953,6 +953,7 @@ def handle_return(dest_ir, function):
                 asn_norm(dest_ir, get_norm(x))
             function.add_parameter_cache_return(x)
             added = True
+        print(__x)
         print("___")
     if(len(tuple_types) > 0):
         if(dest_ir != None):
