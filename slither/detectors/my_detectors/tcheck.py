@@ -1306,6 +1306,18 @@ def bin_norm(dest, lir, rir, func = None):
         else:
             asn_norm(dest, lnorm)
 
+def combine_types(lir, rir, func = None):
+    tmp = create_iconstant()
+    _tmp = tmp.extok
+    _lir = lir.extok
+    _rir = rir.extok
+    if(func == "mul"):
+        copy_token_type(tmp, lir)
+        copy_token_type(tmp, rir)
+    elif(func == "div"):
+        copy_token_type(tmp, lir)
+        copy_inv_token_type(tmp, rir)
+    return tmp
 
 
 #USAGE: typechecks a multiplication statement
@@ -1327,8 +1339,8 @@ def type_bin_mul(dest, lir, rir) ->bool:
     elif(is_type_const(rir)):
         return type_asn(dest, lir)
     else:
-        type_asn(dest, lir)
-        type_asna(dest, rir)
+        tmp = combine_types(lir, rir, "mul")
+        type_asn(dest, tmp)
         if(is_type_undef(dest)):
             assign_const(dest)
         return False
@@ -1352,8 +1364,8 @@ def type_bin_div(dest, lir, rir) ->bool:
     elif(is_type_const(rir)):
         return type_asn(dest, lir)
     else:
-        type_asn(dest, lir)
-        type_asnai(dest, rir)
+        tmp = combine_types(lir, rir, "div")
+        type_asn(dest, tmp)
         if(is_type_undef(dest)):
             assign_const(dest)
         return False
