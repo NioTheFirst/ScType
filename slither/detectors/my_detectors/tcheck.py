@@ -827,6 +827,7 @@ def type_member(ir)->bool:
     for field in _lv.fields:
         _field = field.extok
         if(_field.name == _rv.name):
+            print(field.extok)
             copy_token_type(field, ir.lvalue)
             return False
     
