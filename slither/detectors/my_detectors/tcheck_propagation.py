@@ -81,11 +81,11 @@ def copy_token_tuple(ir, tt):
             _ir.norm = '*'
         else:
             _ir.norm = tt[2]
-    elif(isinstance(tt[2], str)):
-        _ir.norm = tt[2]
+    elif(isinstance(tt[3], str)):
+        _ir.norm = tt[3]
     else:
-        _ir.norm = tt[2][0]
-    _ir.linked_contract = tt[3]
+        _ir.norm = tt[3][0]
+    _ir.linked_contract = tt[4]
     propagate_fields(ir)
 #[DEPRECATED] comapres the token types of two variables. Includes support for checking ABSTRACT types
 """def compare_token_type(varA, varB):
