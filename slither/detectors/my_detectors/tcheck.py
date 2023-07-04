@@ -998,6 +998,7 @@ def type_asni(dest, sorc):
     else:
         tmp = create_iconstant()
         tmp = combine_types(tmp, sorc, "div") 
+        print(tmp.extok)
         if(is_type_undef(dest)):
             copy_inv_token_type(sorc, dest)
         elif(not(compare_token_type(tmp, dest))):
