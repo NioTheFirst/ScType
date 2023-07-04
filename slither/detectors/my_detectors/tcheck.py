@@ -828,7 +828,8 @@ def type_member(ir)->bool:
         _field = field.extok
         if(_field.name == _rv.name):
             print(field.extok)
-            copy_token_type(field, ir.lvalue)
+            type_asn(ir.lvalue, field)
+            copy_norm(field, ir.lvalue)
             return False
     
     field_type_tuple = None #get_field(pf_name, _lv.name, _rv.name)
