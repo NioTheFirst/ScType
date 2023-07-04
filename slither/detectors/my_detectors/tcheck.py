@@ -635,9 +635,9 @@ def check_type(ir) -> bool:
         print_token_type(ir.lvalue)
         if(isinstance(ir.lvalue, ReferenceVariable)):
             ref = ir.lvalue
-            while(not(isinstance(ref, Member) or isinstance(ref, Index))):
+            while(True):
                 print(f"Points to: {ref.name}")
-                if(isinstance(ref.points_to, Member) or isinstance(ref.points_to, Index)):
+                if(not (isinstance(ref.points_to, ReferenceVariable))):
                     break
                 ref = ref.points_to
             ref_root = ref.points_to
