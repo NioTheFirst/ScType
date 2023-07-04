@@ -966,9 +966,7 @@ def handle_return(dest_ir, function):
             add_tuple(dest_ir.name, tuple_types)
         elif(isinstance(dest_ir, Variable)):
             _dest_ir = dest_ir.extok
-            copy_token_type(tuple_types[0], dest_ir)
-            _dest_ir.linked_contract = tuple_types[0].extok.linked_contract
-            asn_norm(dest_ir, tuple_types[0].norm)
+            copy_token_tuple(dest_ir, tuple_types[0])
             
         function.add_parameter_cache_return(tuple_types)
         added = True
