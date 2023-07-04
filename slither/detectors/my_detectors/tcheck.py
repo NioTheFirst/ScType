@@ -688,7 +688,10 @@ def type_included_hlc(ir, dest, function):
         print(added)
         ret_obj = function.get_parameter_cache_return(added)
         if isinstance(ir, Variable):
-            type_asn(ir.lvalue, x)
+            if(isinstance(ret_obj, list)):
+                type_asn(ir.lvalue, ret_obj[0])
+            else:
+                type_asn(ir.lvalue, ret_obj)
         else:
             add_tuple(ir.lvalue.name, ret_obj)
 
@@ -921,7 +924,10 @@ def type_fc(ir) -> bool:
         print(added)
         ret_obj = ir.function.get_parameter_cache_return(added)
         if isinstance(ir, Variable):
-            type_asn(ir.lvalue, x)
+            if isinstance(ret_obj, list):
+                type_asn(ir.lvalue, ret_obj[0])
+            else:
+                type_asn(ir.lvalue, ret_obj)
         else:
             add_tuple(ir.lvalue.name, ret_obj)
 
@@ -956,8 +962,14 @@ def handle_return(dest_ir, function):
         print(__x)
         print("___")
     if(len(tuple_types) > 0):
-        if(dest_ir != None):
+        if(isinstance(dest_ir, TupleVariable)):
             add_tuple(dest_ir.name, tuple_types)
+        elif(isinstance(dest_ir, Variable)):
+            _dest_ir = dest_ir.extok
+            copy_token_type(tuple_types[0], dest_ir)
+            _dest_ir.linked_contract = tuple_types[0].extok.linked_contract
+            asn_norm(dest_ir, tuple_types[0].norm)
+            
         function.add_parameter_cache_return(tuple_types)
         added = True
     if(added == False):
