@@ -633,6 +633,11 @@ def check_type(ir) -> bool:
     if ir.lvalue and is_variable(ir.lvalue):
         print("[i]Type for "+ir.lvalue.name)
         print_token_type(ir.lvalue)
+        if(isinstance(ir.lvalue, ReferenceVariable)):
+            ref_root = ir.lvalue.points_to_origin
+            print(f"[i]Root name {ref_root.name}")
+            if(isinstance(ir.lvalue, Member)):
+                update_member(ref_root, ir.lvalue)
         update_non_ssa(ir.lvalue)
     print("done.")
     if(addback):
@@ -804,6 +809,24 @@ def type_hlc(ir) ->bool:
     ir.lvalue.change_name(temp)
     function_hlc+=1
     return False
+
+
+#USAGE: creates/updates a new field
+def update_member(member, copy_ir):
+    mem_left = member.variable_left
+    mem_right = member.variable_right
+    _mem_left = mem_left.extok
+    _mem_right = mem_right.extok
+    added = False
+    for field in _mem_left.fields:
+        _field = field.extok
+        if(_field.name == _mem_right.name):
+            type_asn(field, copy_ir)
+            asn_norm(field, copy_ir)
+            added = True
+    if(added):
+        return
+    _mem_left.add_field(copy_ir)
 
 #USAGE: typechecks Members (i.e. a.b or a.b())
 #RETURNS: the type for a (temporary handling, will fix if any issues)
