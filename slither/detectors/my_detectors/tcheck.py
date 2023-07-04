@@ -1316,7 +1316,9 @@ def combine_types(lir, rir, func = None):
         copy_token_type(tmp, rir)
     elif(func == "div"):
         copy_token_type(tmp, lir)
+        print(f"Before : {tmp.extok}")
         copy_inv_token_type(tmp, rir)
+        print(f"After : {tmp.extok}")
     return tmp
 
 
