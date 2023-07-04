@@ -1373,6 +1373,7 @@ def type_bin_div(dest, lir, rir) ->bool:
     bin_norm(dest, lir, rir, "div")
     #if(get_norm(dest) != 0):
     #    add_error(dest)
+    print(dest.extok)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asni(dest, rir)
