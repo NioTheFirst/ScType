@@ -1336,9 +1336,8 @@ def combine_types(lir, rir, func = None):
         copy_token_type(tmp, lir)
         copy_token_type(tmp, rir)
     elif(func == "div"):
-        copy_token_type(tmp, lir)
-        copy_inv_token_type(tmp, rir)
-    print(_tmp)
+        copy_token_type(lir, tmp)
+        copy_inv_token_type(rir, tmp)
     return tmp
 
 
