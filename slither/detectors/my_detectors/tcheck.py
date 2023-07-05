@@ -1374,8 +1374,8 @@ def combine_types(lir, rir, func = None):
     _lir = lir.extok
     _rir = rir.extok
     if(func == "mul"):
-        copy_token_type(tmp, lir)
-        copy_token_type(tmp, rir)
+        copy_token_type(lir, tmp)
+        copy_token_type(rir, tmp)
     elif(func == "div"):
         copy_token_type(lir, tmp)
         copy_inv_token_type(rir, tmp)
