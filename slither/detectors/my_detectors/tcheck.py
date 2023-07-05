@@ -1341,14 +1341,13 @@ def sub_norm(ir, norm):
 
 
 def bin_norm(dest, lir, rir, func = None):
-    if(func == None):
-        compare_norm(dest, lir, rir, func)
+    #if(func == None):
+    compare_norm(dest, lir, rir, func)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
     if(lnorm == '*' or rnorm == '*'):
-       
-        #if(isinstance(lnorm, int)):
+           
         #    asn_norm(dest, lnorm)
         #    asn_norm(rir, lnorm)
         #elif(isinstance(rnorm, int)):
