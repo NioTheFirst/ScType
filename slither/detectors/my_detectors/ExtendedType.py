@@ -47,8 +47,7 @@ class ExtendedType():
     def ref_field(self):
         return(self._reference_field)
     
-    @_reference_root.setter
-    def ref_root(self, ref):
+    def ref(self, ref):
         self._reference_root = ref[0]
         self._reference_field = ref[1]
 

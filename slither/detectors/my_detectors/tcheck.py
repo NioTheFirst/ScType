@@ -1608,7 +1608,7 @@ def _tcheck_node(node, function_name) -> []:
         #DEFINE REFERENCE RELATIONS
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
-                ir.lvalue.extok.ref_root = [ir.variable_left, ir.variable_right] 
+                ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
         irs.append(ir)
     newirs = _tcheck_ir(irs, function_name)
 
