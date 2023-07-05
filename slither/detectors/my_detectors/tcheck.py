@@ -816,7 +816,8 @@ def type_hlc(ir) ->bool:
 #USAGE: creates/updates a new field
 def update_member(member, fieldf, copy_ir):
     added = False
-    for field in member.extok.fields:
+    _member = member.extok
+    for field in _member.fields:
         _field = field.extok
         if(_field.name == fieldf.extok.name):
             type_asn(field, copy_ir)
@@ -825,7 +826,10 @@ def update_member(member, fieldf, copy_ir):
     if(added):
         return
     type_asn(fieldf, copy_ir)
-    member.extok.add_field(fieldf)
+    asn_norm(fieldf, copy_ir)
+    _member.add_field(fieldf)
+    _field = fieldf.extok
+    add_field(_member.function_name, _member.name, _field.name, (_field.num_token_types, _field.den_token_types, _field.norm, _field.linked_contract))
 
 #USAGE: typechecks Members (i.e. a.b or a.b())
 #RETURNS: the type for a (temporary handling, will fix if any issues)
@@ -859,15 +863,17 @@ def type_member(ir)->bool:
             copy_norm(field, ir.lvalue)
             return False
     
-    field_type_tuple = None #get_field(pf_name, _lv.name, _rv.name)
+    field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
     if(field_type_tuple == None):
         #TURN OFF ASSUMPTION
         #assign_const(ir.lvalue)
         #querry_type(ir.lvalue)
         return True
-    field_full_name = _lv.name + "." + _rv.name
     copy_token_tuple(ir.lvalue, field_type_tuple)
-    _lv.add_field(ir.lvalue)
+    temp = create_iconstant()
+    copy_token_tuple(temp, field_type_tuple)
+    temp.name = _rv.name
+    _lv.add_field(temp)
     return False
     #FIELD WORK
     """if (str(ir.variable_right) == "decimals"):
