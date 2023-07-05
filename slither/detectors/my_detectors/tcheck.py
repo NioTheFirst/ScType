@@ -844,9 +844,9 @@ def type_member(ir)->bool:
     print(pf_name)
     #print(f"left var type: {ir.variable_left.type}")
     #print(f"left var structure elems: {ir.variable_left.type.type.elems}")
-    if is_type_undef(ir.variable_left):
-        print("UNDEFINED LEFT VARIABLE IN MEMBER")
-        return True
+    #if is_type_undef(ir.variable_left):
+    #    print("UNDEFINED LEFT VARIABLE IN MEMBER")
+    #    return True
     
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
