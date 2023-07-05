@@ -25,6 +25,8 @@ class ExtendedType():
         self._norm = 'u'
         self._linked_contract = None
         self._fields = []
+        self._reference_root = None
+        self._reference_field = None
         #Business type
         self._business_type = None
 
@@ -36,6 +38,15 @@ class ExtendedType():
     @name.setter
     def name(self, sname):
         self._name = sname
+
+    @property
+    def ref_root(self):
+        return(self._reference_root)
+
+    @reference_root.setter
+    def ref_root(self, ref):
+        self._reference_root = ref[0]
+        self._reference_field = ref[1]
 
     @property
     def function_name(self):

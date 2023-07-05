@@ -635,15 +635,10 @@ def check_type(ir) -> bool:
         print_token_type(ir.lvalue)
         if(isinstance(ir.lvalue, ReferenceVariable)):
             ref = ir.lvalue
-            while(True):
-                print(f"Points to: {ref.name}")
-                if(not (isinstance(ref.points_to, ReferenceVariable))):
-                    break
-                ref = ref.points_to
-            ref_root = ref.points_to
-            print(f"[i]Root name {ref_root}")
-            if(isinstance(ir.lvalue, Member)):
-                update_member(ref_root, ir.lvalue)
+            ref_root = ref.extok.ref_root
+            ref_field = ref.extok.ref_field
+            if(ref_root and ref_field):
+                update_member(ref_root, ref_field, ir.lvalue)
         update_non_ssa(ir.lvalue)
     print("done.")
     if(addback):
@@ -818,21 +813,18 @@ def type_hlc(ir) ->bool:
 
 
 #USAGE: creates/updates a new field
-def update_member(member, copy_ir):
-    mem_left = member.variable_left
-    mem_right = member.variable_right
-    _mem_left = mem_left.extok
-    _mem_right = mem_right.extok
+def update_member(member, field, copy_ir):
     added = False
-    for field in _mem_left.fields:
+    for field in member.extok.fields:
         _field = field.extok
-        if(_field.name == _mem_right.name):
+        if(_field.name == field.extok.name):
             type_asn(field, copy_ir)
             asn_norm(field, copy_ir)
             added = True
     if(added):
         return
-    _mem_left.add_field(copy_ir)
+    type_asn(field, copy_ir)
+    member.extok.add_field(field)
 
 #USAGE: typechecks Members (i.e. a.b or a.b())
 #RETURNS: the type for a (temporary handling, will fix if any issues)
@@ -1613,19 +1605,12 @@ def _tcheck_node(node, function_name) -> []:
     print("typecheckig node...")
     irs = []
     for ir in node.irs_ssa:
+        #DEFINE REFERENCE RELATIONS
+        if isinstance(ir, Member):
+            if isinstance(ir.lvalue, ReferenceVariable):
+                ir.lvalue.extok.ref_root = [ir.variable_left, ir.variable_right] 
         irs.append(ir)
     newirs = _tcheck_ir(irs, function_name)
-    if(len(newirs) > 0):
-        print("[x]node added back")
-        print("[@]retrying node")
-        #WORKLIST ALGORITHM ON NODES
-        newnewirs = []
-        prevlength = len(newirs)
-        curlength = -1
-        while(prevlength != curlength):
-            newnewirs = _tcheck_ir(irs, function_name)
-            curlength = prevlength
-            prevlength = len(newnewirs)
 
     return newirs
 
@@ -1714,29 +1699,41 @@ def _tcheck_function_call(function, param_cache) -> []:
         paramno+=1
     #find return and tack it onto the end
     #typecheck function
-    return_node = None
-    fentry = {function.entry_point}
-    while fentry:
-        node = fentry.pop()
-        if node in explored:
-            continue
-        explored.add(node)
-        _clear_type_node(node)
-        addback = _tcheck_node(node, function.name)
-        if(len(addback) > 0):
-            addback_nodes.append(node)
-        for son in node.sons:
-            temp = True
-            if return_node == None:
-                for irs in son.irs:
-                    if(isinstance(irs, Return)):
-                        temp = False
-                        return_node = son
-                        break
-            if(temp):
-                fentry.add(son)
-    if(return_node):
-        _tcheck_node(return_node, function.name)
+
+    #WORKLIST ALGORITHM
+    prevlen = -1
+    curlen = 0
+    wl_iter = 0
+    while(curlen != prevlen):
+        addback_nodes = []
+        return_node = None
+        fentry = {function.entry_point}
+        while fentry:
+            node = fentry.pop()
+            if node in explored:
+                continue
+            explored.add(node)
+            if(prevlen == -1):
+                _clear_type_node(node)
+            addback = _tcheck_node(node, function.name)
+            if(len(addback) > 0):
+                addback_nodes.append(node)
+            for son in node.sons:
+                temp = True
+                if return_node == None:
+                    for irs in son.irs:
+                        if(isinstance(irs, Return)):
+                            temp = False
+                            return_node = son
+                            break
+                if(temp):
+                    fentry.add(son)
+        if(return_node):
+            _tcheck_node(return_node, function.name)
+        prevlen = curlen
+        curlen = len(addback_nodes)
+        print(f"WORKLIST iteration {wl_iter} for function call \"{function.name}\":\n New undefined nodes- {curlen}\n Old undefined nodes- {prevlen}")
+        wl_iter+=1
     return addback_nodes
 
 #USAGE: typecheck a function
@@ -1768,19 +1765,30 @@ def _tcheck_function(function) -> []:
     else:
         #do not care about internal functions in initial iteration
         return addback_nodes
-    fentry = {function.entry_point}
-    while fentry:
-        node = fentry.pop()
-        if node in explored:
-            continue
-        explored.add(node)
-        _clear_type_node(node)
-        addback = _tcheck_node(node, function.name)
-        if(len(addback) > 0):
-            addback_nodes.append(node)
-        for son in node.sons:
-            fentry.add(son)
 
+    #WORKLIST ALGORITHM
+    prevlen = -1
+    curlen = 0
+    wl_iter = 0
+    while(prevlen != curlen):
+        addback_nodes = []
+        fentry = {function.entry_point}
+        while fentry:
+            node = fentry.pop()
+            if node in explored:
+                continue
+            explored.add(node)
+            if(prevlen == -1):
+                _clear_type_node(node)
+            addback = _tcheck_node(node, function.name)
+            if(len(addback) > 0):
+                addback_nodes.append(node)
+            for son in node.sons:
+                fentry.add(son)
+        prevlen = curlen
+        curlen = len(addback_nodes)
+        print(f"WORKLIST iteration {wl_iter} for function call \"{function.name}\":\n New undefined nodes- {curlen}\n Old undefined nodes- {prevlen}")
+        wl_iter+=1
     #Save return value
     handle_return(None, function)
     return addback_nodes
