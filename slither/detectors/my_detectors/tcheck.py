@@ -517,7 +517,7 @@ def copy_norm(src, dest):
 def convert_ssa(ir):
     if(not(is_variable(ir))):
         return
-    if(is_constant(ir) or ir.name.startswith("PIC")):
+    if(is_constant(ir) or ir.name.startswith("PIC") or isinstance(ir, Constant)):
         return
     #if(not(ir.ssa_name)):
     #    return
