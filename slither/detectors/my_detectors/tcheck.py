@@ -821,12 +821,12 @@ def update_member(member, fieldf, copy_ir):
         _field = field.extok
         if(_field.name == fieldf.extok.name):
             type_asn(field, copy_ir)
-            asn_norm(field, copy_ir)
+            asn_norm(field, copy_ir.extok.norm)
             added = True
     if(added):
         return
     type_asn(fieldf, copy_ir)
-    asn_norm(fieldf, copy_ir)
+    asn_norm(fieldf, copy_ir.extok.norm)
     _member.add_field(fieldf)
     _field = fieldf.extok
     add_field(_member.function_name, _member.name, _field.name, (_field.num_token_types, _field.den_token_types, _field.norm, _field.linked_contract))
