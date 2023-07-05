@@ -863,8 +863,8 @@ def type_member(ir)->bool:
     if(field_type_tuple == None):
         #TURN OFF ASSUMPTION
         #assign_const(ir.lvalue)
-        querry_type(ir.lvalue)
-        return False
+        #querry_type(ir.lvalue)
+        return True
     field_full_name = _lv.name + "." + _rv.name
     copy_token_tuple(ir.lvalue, field_type_tuple)
     _lv.add_field(ir.lvalue)
