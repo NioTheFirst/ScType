@@ -1348,14 +1348,14 @@ def bin_norm(dest, lir, rir, func = None):
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
     if(lnorm == '*' or rnorm == '*'):
        
-        if(isinstance(lnorm, int)):
-            asn_norm(dest, lnorm)
-            asn_norm(rir, lnorm)
-        elif(isinstance(rnorm, int)):
-            asn_norm(dest, rnorm)
-            asn_norm(lir, rnorm)
-        else:
-            asn_norm(dest, '*')
+        #if(isinstance(lnorm, int)):
+        #    asn_norm(dest, lnorm)
+        #    asn_norm(rir, lnorm)
+        #elif(isinstance(rnorm, int)):
+        #    asn_norm(dest, rnorm)
+        #    asn_norm(lir, rnorm)
+        #else:
+        asn_norm(dest, '*')
     elif(lnorm == 'u'):
         asn_norm(dest, rnorm)
     elif(rnorm == 'u'):
