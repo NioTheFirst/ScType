@@ -639,8 +639,7 @@ def check_type(ir) -> bool:
             ref_root = ref.extok.ref_root
             ref_field = ref.extok.ref_field
             if(ref_root and ref_field):
-                update_member(ref_root.non_ssa_version, ref_field, ir.lvalue)
-                ref_root.non_ssa_version.extok.print_fields()
+                update_member(ir.lvalue.points_to_origin, ref_field, ir.lvalue)
         update_non_ssa(ir.lvalue)
     print("done.")
     if(addback):
