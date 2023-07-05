@@ -10,7 +10,7 @@ from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
 from slither.core.solidity_types import UserDefinedType, ArrayType
 from slither.core.declarations import Structure, Contract
-from slither.core.solidity_types.elementary_type import ELementaryType
+from slither.core.solidity_types.elementary_type import ElementaryType
 
 import linecache
 import os
