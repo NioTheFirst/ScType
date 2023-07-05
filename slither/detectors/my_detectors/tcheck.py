@@ -621,8 +621,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Return):
         print("RETURN")
         for y in ir.values:
-            
-            convert_ssa(y)
+            init_var(y) 
             print(y.extok)
             ir.function.add_return_ssa(y)
         return False
