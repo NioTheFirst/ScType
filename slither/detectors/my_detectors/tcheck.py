@@ -10,6 +10,7 @@ from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
 from slither.core.solidity_types import UserDefinedType, ArrayType
 from slither.core.declarations import Structure, Contract
+from slither.core.solidity_types.elementary_type import ELementaryType
 
 import linecache
 import os
@@ -342,7 +343,7 @@ def querry_type(ir):
     #add to parser file? TODO Priority: Low
 
 def is_constant(ir):
-    if isinstance(ir, Constant):
+    if isinstance(ir, ElementaryType):
         #print("Constatn varible: "+ir.name.lower())
         return True
     return False
