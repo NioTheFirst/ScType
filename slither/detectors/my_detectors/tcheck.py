@@ -1289,7 +1289,7 @@ def compare_norm(lv, varA, varB, func = None):
         if(A_norm == B_norm or func == "mul" or func == "div"):
             add_errors(lv)
     else:
-        if(A_norm != B_norm):
+        if(not(func) and A_norm != B_norm):
             add_errors(lv)
 
 
