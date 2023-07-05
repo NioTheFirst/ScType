@@ -831,9 +831,11 @@ def update_member(member, field, copy_ir):
 def type_member(ir)->bool:
     #FIELD WORK
     init_var(ir.variable_left)
+    print(ir.variable_right.extok)
     init_var(ir.variable_right)
     _lv = ir.variable_left.extok
     _rv = ir.variable_right.extok
+    print(_rv)
     _ir = ir.lvalue.extok
     pf_name = _lv.function_name
     print(_lv.name)
