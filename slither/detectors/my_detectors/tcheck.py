@@ -122,7 +122,7 @@ def get_hash(function_name, var_name):
 def add_field(function_name, parent_name, field_name, type_tuple):
     if(function_name == None or parent_name == None or field_name == None):
         return None
-    thceck_parser.add_field(function_name, parent_name, field_name, type_tuple)
+    tcheck_parser.add_field(function_name, parent_name, field_name, type_tuple)
 
 #USAGE: gets a field
 #RETURNS: NULL
