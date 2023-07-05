@@ -640,6 +640,7 @@ def check_type(ir) -> bool:
             ref_field = ref.extok.ref_field
             if(ref_root and ref_field):
                 update_member(ref_root.non_ssa_version, ref_field, ir.lvalue)
+            ref_root.non_ssa_version.print_fields()
         update_non_ssa(ir.lvalue)
     print("done.")
     if(addback):
