@@ -639,7 +639,7 @@ def check_type(ir) -> bool:
             ref_root = ref.extok.ref_root
             ref_field = ref.extok.ref_field
             if(ref_root and ref_field):
-                update_member(ref_root, ref_field, ir.lvalue)
+                update_member(ref_root.non_ssa_version, ref_field, ir.lvalue)
         update_non_ssa(ir.lvalue)
     print("done.")
     if(addback):
@@ -814,18 +814,18 @@ def type_hlc(ir) ->bool:
 
 
 #USAGE: creates/updates a new field
-def update_member(member, field, copy_ir):
+def update_member(member, fieldf, copy_ir):
     added = False
     for field in member.extok.fields:
         _field = field.extok
-        if(_field.name == field.extok.name):
+        if(_field.name == fieldf.extok.name):
             type_asn(field, copy_ir)
             asn_norm(field, copy_ir)
             added = True
     if(added):
         return
-    type_asn(field, copy_ir)
-    member.extok.add_field(field)
+    type_asn(fieldf, copy_ir)
+    member.extok.add_field(fieldf)
 
 #USAGE: typechecks Members (i.e. a.b or a.b())
 #RETURNS: the type for a (temporary handling, will fix if any issues)
