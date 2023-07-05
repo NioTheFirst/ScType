@@ -1714,6 +1714,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     wl_iter = 0
     while(curlen != prevlen):
         addback_nodes = []
+        explored = set()
         return_node = None
         fentry = {function.entry_point}
         while fentry:
@@ -1781,6 +1782,7 @@ def _tcheck_function(function) -> []:
     while(prevlen != curlen):
         addback_nodes = []
         fentry = {function.entry_point}
+        explored = set()
         while fentry:
             node = fentry.pop()
             if node in explored:
