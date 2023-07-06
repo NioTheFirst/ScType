@@ -41,3 +41,11 @@ next goal:
 function call propagation (deadline 6/14/23)
 
 new stuff to add
+
+balance type draft:
+
+balance
+interest
+fee
+final balance
+reserve
