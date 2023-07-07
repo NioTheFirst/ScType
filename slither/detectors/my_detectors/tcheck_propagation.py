@@ -122,10 +122,10 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         _rrf = _rr.finance_type
         if(_rrf == -1):
             assign_ftype(_rlf, dest)
-            return
+            return False
         if(_rlf == -1):
             assign_ftype(_rrf, dest)
-            return
+            return False
     key = (_rlf, _rrf)
     print(f"Finance type key: {key}")
     if(func == "add" or func == "sub"):
@@ -133,16 +133,16 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             assign_ftype(f_type_addsub[key], dest)
         else:
             assign_ftype(-1, dest)
-            tcheck.add_errors(dest)
+            return True
     elif(func == "mul" or func == "div"):
         if key in f_type_muldiv:
             assign_ftype(f_type_muldiv[key], dest)
         else:
             assign_ftype(-1, dest)
-            tcheck.add_errors(dest)
+            return True
     elif(func == "compare"):
         if(_rlf != _rrf):
-            tcheck.add_errors(dest)
+            return True
         assign_ftype(-1, dest)
     elif(func == "assign" or "pow"):
         assign_ftype(_rlf, dest)

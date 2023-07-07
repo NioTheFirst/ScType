@@ -85,7 +85,6 @@ LF: None
 Fields: 
 Finance Type: fee ratio (t)
 [*]Type fetched successfully
-State_var: feeRatioA
 State_var: justConstant
 Finding type for justConstant...
 int256
@@ -140,24 +139,6 @@ LF: None
 Fields: 
 Finance Type: undef
 [*]Type fetched successfully
-State_var: compoundInterest
-Finding type for compoundInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 21)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: compoundInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: compound interest ratio
-[*]Type fetched successfully
 State_var: simpleInterest
 Finding type for simpleInterest...
 int256
@@ -176,4 +157,1515 @@ LF: None
 Fields: 
 Finance Type: simple interest
 [*]Type fetched successfully
+State_var: compoundInterest
+Finding type for compoundInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 21)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: compoundInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: compound interest ratio
+[*]Type fetched successfully
+State_var: feeRatioA
 [*] A run
+Reading Function: calculateFee
+Function name: calculateFee
+Function Visibility (test): public
+balanceA
+Finding type for balanceA...
+int256
+Check copy_toekn_tuple
+(1, -1, 0, None, 0)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: balanceA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+[*]Type fetched successfully
+-100
+Param: 0
+    num: [1]
+    den: [-1]
+clearning node...
+clearing ir...?
+balanceA_1(int256) := ϕ(['balanceA_1'])
+has variable
+[i] balanceA cleared
+clearing ir...?
+feeRatioA_1(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+has variable
+typecheckig node...
+balanceA_1(int256) := ϕ(['balanceA_1'])
+Function name: calculateFee
+Phi
+[i]Type for balanceA
+
+Name: balanceA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+done.
+feeRatioA_1(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+Function name: calculateFee
+Phi
+[i]Type for feeRatioA
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+done.
+clearning node...
+clearing ir...?
+TMP_0(int256) = balanceA_1 (c)* feeRatioA_1
+has variable
+[i] TMP_0 cleared
+clearing ir...?
+feeA_1(int256) := TMP_0(int256)
+has variable
+[i] feeA cleared
+typecheckig node...
+TMP_0(int256) = balanceA_1 (c)* feeRatioA_1
+Function name: calculateFee
+testing mul...
+lnorm: 0 rnorm: u
+Finance type key: (0, 10)
+Func: mul
+
+Name: balanceA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: TMP_0 Function: calculateFee
+Num: 
+Den: 
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
+[i]Type for TMP_0
+
+Name: TMP_0 Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
+done.
+feeA_1(int256) := TMP_0(int256)
+Function name: calculateFee
+asgn
+
+Name: TMP_0 Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
+
+Name: feeA Function: calculateFee
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+0
+Finance type key: (11, -1)
+Func: assign
+[i]Type for feeA
+
+Name: feeA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
+done.
+clearning node...
+clearing ir...?
+RETURN feeA_1
+typecheckig node...
+RETURN feeA_1
+RETURN
+
+Name: feeA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
+WORKLIST iteration 0 for function call "calculateFee":
+ New undefined nodes- 0
+ Old undefined nodes- 0
+Saving return values for: calculateFee
+
+Name: feeA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
+___
+Reading Function: updateFee
+Function name: updateFee
+Function Visibility (test): public
+-100
+clearning node...
+clearing ir...?
+feeRatioA_2(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+has variable
+typecheckig node...
+feeRatioA_2(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+Function name: updateFee
+Phi
+[i]Type for feeRatioA
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+done.
+clearning node...
+clearing ir...?
+TMP_1(int256) = feeRatioA_2 (c)+ 1
+has variable
+[i] TMP_1 cleared
+clearing ir...?
+feeRatioA_3(int256) := TMP_1(int256)
+has variable
+typecheckig node...
+TMP_1(int256) = feeRatioA_2 (c)+ 1
+Function name: updateFee
+val: 1
+
+Name: TMP_1 Function: updateFee
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+initlize checks
+;;;
+val: 1
+lnorm: u rnorm: 0
+val: 1
+
+Name: 1 Function: None
+Num: -1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: TMP_1 Function: updateFee
+Num: 
+Den: 
+Norm: 0
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+[i]Type for TMP_1
+
+Name: TMP_1 Function: updateFee
+Num: -1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+done.
+feeRatioA_3(int256) := TMP_1(int256)
+Function name: updateFee
+asgn
+
+Name: TMP_1 Function: updateFee
+Num: -1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+
+Name: feeRatioA Function: updateFee
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+0
+Finance type key: (10, -1)
+Func: assign
+[i]Type for feeRatioA
+
+Name: feeRatioA Function: updateFee
+Num: -1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+done.
+WORKLIST iteration 0 for function call "updateFee":
+ New undefined nodes- 0
+ Old undefined nodes- 0
+Saving return values for: updateFee
+Reading Function: applySimpleInterest
+Function name: applySimpleInterest
+Function Visibility (test): public
+balanceA
+Finding type for balanceA...
+int256
+Check copy_toekn_tuple
+(1, -1, 0, None, 0)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: balanceA Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+[*]Type fetched successfully
+-100
+Param: 0
+    num: [1]
+    den: [-1]
+clearning node...
+clearing ir...?
+balanceA_1(int256) := ϕ(['balanceA_1'])
+has variable
+[i] balanceA cleared
+clearing ir...?
+simpleInterest_1(int256) := ϕ(['simpleInterest_0'])
+has variable
+typecheckig node...
+balanceA_1(int256) := ϕ(['balanceA_1'])
+Function name: applySimpleInterest
+Phi
+[i]Type for balanceA
+
+Name: balanceA Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+done.
+simpleInterest_1(int256) := ϕ(['simpleInterest_0'])
+Function name: applySimpleInterest
+Phi
+[i]Type for simpleInterest
+
+Name: simpleInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: simple interest
+done.
+clearning node...
+clearing ir...?
+TMP_2(int256) = balanceA_1 (c)* simpleInterest_1
+has variable
+[i] TMP_2 cleared
+clearing ir...?
+new_balanceA_1(int256) := TMP_2(int256)
+has variable
+[i] new_balanceA cleared
+typecheckig node...
+TMP_2(int256) = balanceA_1 (c)* simpleInterest_1
+Function name: applySimpleInterest
+testing mul...
+lnorm: 0 rnorm: u
+Finance type key: (0, 22)
+Error with TMP_2 in function applySimpleInterest
+Error with: TMP_2 in function applySimpleInterest
+[<slither.slithir.variables.temporary_ssa.TemporaryVariableSSA object at 0x7f3bcfded8b0>]
+Func: mul
+
+Name: balanceA Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: TMP_2 Function: applySimpleInterest
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_2
+
+Name: TMP_2 Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+new_balanceA_1(int256) := TMP_2(int256)
+Function name: applySimpleInterest
+asgn
+
+Name: TMP_2 Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: new_balanceA Function: applySimpleInterest
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+u
+Finance type key: (-1, -1)
+Func: assign
+[i]Type for new_balanceA
+
+Name: new_balanceA Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+clearning node...
+clearing ir...?
+RETURN new_balanceA_1
+typecheckig node...
+RETURN new_balanceA_1
+RETURN
+
+Name: new_balanceA Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+WORKLIST iteration 0 for function call "applySimpleInterest":
+ New undefined nodes- 0
+ Old undefined nodes- 0
+Saving return values for: applySimpleInterest
+
+Name: new_balanceA Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+___
+Reading Function: applyCompoundInterest
+Function name: applyCompoundInterest
+Function Visibility (test): public
+balanceA
+Finding type for balanceA...
+int256
+Check copy_toekn_tuple
+(1, -1, 0, None, 0)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: balanceA Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+[*]Type fetched successfully
+-100
+Param: 0
+    num: [1]
+    den: [-1]
+clearning node...
+clearing ir...?
+compoundInterest_1(int256) := ϕ(['compoundInterest_0'])
+has variable
+typecheckig node...
+compoundInterest_1(int256) := ϕ(['compoundInterest_0'])
+Function name: applyCompoundInterest
+Phi
+[i]Type for compoundInterest
+
+Name: compoundInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: compound interest ratio
+done.
+clearning node...
+clearing ir...?
+TMP_3(int256) = balanceA_1 (c)* compoundInterest_1
+has variable
+[i] TMP_3 cleared
+clearing ir...?
+TMP_4(int256) = balanceA_1 (c)+ TMP_3
+has variable
+[i] TMP_4 cleared
+clearing ir...?
+new_balanceA_1(int256) := TMP_4(int256)
+has variable
+[i] new_balanceA cleared
+typecheckig node...
+TMP_3(int256) = balanceA_1 (c)* compoundInterest_1
+Function name: applyCompoundInterest
+testing mul...
+lnorm: 0 rnorm: u
+Finance type key: (0, 21)
+Func: mul
+
+Name: balanceA Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: TMP_3 Function: applyCompoundInterest
+Num: 
+Den: 
+Norm: 0
+LF: None
+Fields: 
+Finance Type: compound interest
+[i]Type for TMP_3
+
+Name: TMP_3 Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: compound interest
+done.
+TMP_4(int256) = balanceA_1 (c)+ TMP_3
+Function name: applyCompoundInterest
+
+Name: TMP_4 Function: applyCompoundInterest
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+initlize checks
+;;;
+lnorm: 0 rnorm: 0
+Finance type key: (0, 23)
+Func: add
+
+Name: balanceA Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: TMP_4 Function: applyCompoundInterest
+Num: 
+Den: 
+Norm: 0
+LF: None
+Fields: 
+Finance Type: accrued balance
+[i]Type for TMP_4
+
+Name: TMP_4 Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: accrued balance
+done.
+new_balanceA_1(int256) := TMP_4(int256)
+Function name: applyCompoundInterest
+asgn
+
+Name: TMP_4 Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: accrued balance
+
+Name: new_balanceA Function: applyCompoundInterest
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+0
+Finance type key: (2, -1)
+Func: assign
+[i]Type for new_balanceA
+
+Name: new_balanceA Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: accrued balance
+done.
+clearning node...
+clearing ir...?
+RETURN new_balanceA_1
+typecheckig node...
+RETURN new_balanceA_1
+RETURN
+
+Name: new_balanceA Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: accrued balance
+WORKLIST iteration 0 for function call "applyCompoundInterest":
+ New undefined nodes- 0
+ Old undefined nodes- 0
+Saving return values for: applyCompoundInterest
+
+Name: new_balanceA Function: applyCompoundInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: accrued balance
+___
+Reading Function: withdrawBalance
+Function name: withdrawBalance
+Function Visibility (test): public
+balanceA
+Finding type for balanceA...
+int256
+Check copy_toekn_tuple
+(1, -1, 0, None, 0)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+[*]Type fetched successfully
+-100
+Param: 0
+    num: [1]
+    den: [-1]
+clearning node...
+clearing ir...?
+justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+has variable
+clearing ir...?
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+has variable
+clearing ir...?
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+has variable
+typecheckig node...
+justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+Function name: withdrawBalance
+Phi
+[i]Type for justConstant
+
+Name: justConstant Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+Function name: withdrawBalance
+Phi
+[i]Type for weird
+
+Name: weird Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+Function name: withdrawBalance
+Phi
+[i]Type for reserveA
+
+Name: reserveA Function: global
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+done.
+clearning node...
+clearing ir...?
+TMP_5(int256) = INTERNAL_CALL, A.calculateFee(int256)(balanceA_1)
+has variable
+[i] TMP_5 cleared
+clearing ir...?
+feeA_1(int256) := TMP_5(int256)
+has variable
+[i] feeA cleared
+typecheckig node...
+TMP_5(int256) = INTERNAL_CALL, A.calculateFee(int256)(balanceA_1)
+Function name: withdrawBalance
+Internal call...
+calculateFee
+balanceA
+Function: calculateFee
+ic
+Internal cal param_cache
+Param: 0
+    num: [1]
+    den: [-1]
+0
+0
+[i]Type for TMP_5
+
+Name: TMP_5 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+feeA_1(int256) := TMP_5(int256)
+Function name: withdrawBalance
+asgn
+
+Name: TMP_5 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: feeA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+u
+Finance type key: (-1, -1)
+Func: assign
+[i]Type for feeA
+
+Name: feeA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+This IR caused addback:
+feeA_1(int256) := TMP_5(int256)
+XXXXX
+clearning node...
+clearing ir...?
+TMP_6(int256) = balanceA_1 (c)- feeA_1
+has variable
+[i] TMP_6 cleared
+clearing ir...?
+net_balanceA_1(int256) := TMP_6(int256)
+has variable
+[i] net_balanceA cleared
+typecheckig node...
+TMP_6(int256) = balanceA_1 (c)- feeA_1
+Function name: withdrawBalance
+lnorm: 0 rnorm: u
+
+Name: balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: feeA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: TMP_6 Function: withdrawBalance
+Num: 
+Den: 
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+[i]Type for TMP_6
+
+Name: TMP_6 Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+done.
+This IR caused addback:
+TMP_6(int256) = balanceA_1 (c)- feeA_1
+XXXXX
+net_balanceA_1(int256) := TMP_6(int256)
+Function name: withdrawBalance
+asgn
+
+Name: TMP_6 Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: net_balanceA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+0
+Finance type key: (0, -1)
+Func: assign
+[i]Type for net_balanceA
+
+Name: net_balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+done.
+clearning node...
+clearing ir...?
+TMP_7(int256) = INTERNAL_CALL, A.applySimpleInterest(int256)(balanceA_1)
+has variable
+[i] TMP_7 cleared
+clearing ir...?
+final_balanceA_1(int256) := TMP_7(int256)
+has variable
+[i] final_balanceA cleared
+typecheckig node...
+TMP_7(int256) = INTERNAL_CALL, A.applySimpleInterest(int256)(balanceA_1)
+Function name: withdrawBalance
+Internal call...
+applySimpleInterest
+balanceA
+Function: applySimpleInterest
+ic
+Internal cal param_cache
+Param: 0
+    num: [1]
+    den: [-1]
+0
+0
+[i]Type for TMP_7
+
+Name: TMP_7 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+final_balanceA_1(int256) := TMP_7(int256)
+Function name: withdrawBalance
+asgn
+
+Name: TMP_7 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: final_balanceA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+u
+Finance type key: (-1, -1)
+Func: assign
+[i]Type for final_balanceA
+
+Name: final_balanceA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+This IR caused addback:
+final_balanceA_1(int256) := TMP_7(int256)
+XXXXX
+clearning node...
+clearing ir...?
+TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
+has variable
+[i] TMP_8 cleared
+clearing ir...?
+TMP_9(int256) = TMP_8 (c)+ weird_3
+has variable
+[i] TMP_9 cleared
+clearing ir...?
+reserveA_4(int256) = reserveA_3 (c)- TMP_9
+has variable
+typecheckig node...
+TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
+Function name: withdrawBalance
+
+Name: TMP_8 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+initlize checks
+;;;
+lnorm: u rnorm: u
+
+Name: justConstant Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: TMP_8 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_8
+
+Name: TMP_8 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+This IR caused addback:
+TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
+XXXXX
+TMP_9(int256) = TMP_8 (c)+ weird_3
+Function name: withdrawBalance
+
+Name: TMP_9 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+initlize checks
+;;;
+lnorm: u rnorm: u
+
+Name: weird Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: TMP_9 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_9
+
+Name: TMP_9 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+reserveA_4(int256) = reserveA_3 (c)- TMP_9
+Function name: withdrawBalance
+lnorm: 0 rnorm: u
+
+Name: reserveA Function: global
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+
+Name: TMP_9 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: reserveA Function: global
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+
+Name: reserveA Function: withdrawBalance
+Num: 
+Den: 
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+[i]Type for reserveA
+
+Name: reserveA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+done.
+clearning node...
+clearing ir...?
+INTERNAL_CALL, A.updateFee()()
+typecheckig node...
+INTERNAL_CALL, A.updateFee()()
+Internal call...
+updateFee
+Function: updateFee
+ic
+NO RETURN LOCATION
+done.
+clearning node...
+clearing ir...?
+RETURN net_balanceA_1
+typecheckig node...
+RETURN net_balanceA_1
+RETURN
+
+Name: net_balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+WORKLIST iteration 0 for function call "withdrawBalance":
+ New undefined nodes- 4
+ Old undefined nodes- 0
+typecheckig node...
+justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+Function name: withdrawBalance
+Phi
+[i]Type for justConstant
+
+Name: justConstant Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+Function name: withdrawBalance
+Phi
+[i]Type for weird
+
+Name: weird Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+Function name: withdrawBalance
+Phi
+[i]Type for reserveA
+
+Name: reserveA Function: global
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+done.
+typecheckig node...
+TMP_5(int256) = INTERNAL_CALL, A.calculateFee(int256)(balanceA_1)
+Function name: withdrawBalance
+Internal call...
+calculateFee
+balanceA
+Function: calculateFee
+ic
+Internal cal param_cache
+Param: 0
+    num: [1]
+    den: [-1]
+0
+0
+[i]Type for TMP_5
+
+Name: TMP_5 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+feeA_1(int256) := TMP_5(int256)
+Function name: withdrawBalance
+asgn
+
+Name: TMP_5 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: feeA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+u
+Finance type key: (-1, -1)
+Func: assign
+[i]Type for feeA
+
+Name: feeA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+This IR caused addback:
+feeA_1(int256) := TMP_5(int256)
+XXXXX
+typecheckig node...
+TMP_6(int256) = balanceA_1 (c)- feeA_1
+Function name: withdrawBalance
+lnorm: 0 rnorm: u
+
+Name: balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: feeA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: TMP_6 Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+[i]Type for TMP_6
+
+Name: TMP_6 Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+done.
+This IR caused addback:
+TMP_6(int256) = balanceA_1 (c)- feeA_1
+XXXXX
+net_balanceA_1(int256) := TMP_6(int256)
+Function name: withdrawBalance
+asgn
+
+Name: TMP_6 Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: net_balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+0
+Finance type key: (0, -1)
+Func: assign
+[i]Type for net_balanceA
+
+Name: net_balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+done.
+typecheckig node...
+TMP_7(int256) = INTERNAL_CALL, A.applySimpleInterest(int256)(balanceA_1)
+Function name: withdrawBalance
+Internal call...
+applySimpleInterest
+balanceA
+Function: applySimpleInterest
+ic
+Internal cal param_cache
+Param: 0
+    num: [1]
+    den: [-1]
+0
+0
+[i]Type for TMP_7
+
+Name: TMP_7 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+final_balanceA_1(int256) := TMP_7(int256)
+Function name: withdrawBalance
+asgn
+
+Name: TMP_7 Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: final_balanceA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+u
+Finance type key: (-1, -1)
+Func: assign
+[i]Type for final_balanceA
+
+Name: final_balanceA Function: withdrawBalance
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+This IR caused addback:
+final_balanceA_1(int256) := TMP_7(int256)
+XXXXX
+typecheckig node...
+TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
+Function name: withdrawBalance
+
+Name: TMP_8 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+initlize checks
+;;;
+lnorm: u rnorm: u
+
+Name: justConstant Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: TMP_8 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_8
+
+Name: TMP_8 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+This IR caused addback:
+TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
+XXXXX
+TMP_9(int256) = TMP_8 (c)+ weird_3
+Function name: withdrawBalance
+
+Name: TMP_9 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+initlize checks
+;;;
+lnorm: u rnorm: u
+
+Name: weird Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: TMP_9 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_9
+
+Name: TMP_9 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+done.
+reserveA_4(int256) = reserveA_3 (c)- TMP_9
+Function name: withdrawBalance
+lnorm: 0 rnorm: u
+
+Name: reserveA Function: global
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+
+Name: TMP_9 Function: withdrawBalance
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: reserveA Function: global
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+
+Name: reserveA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+[i]Type for reserveA
+
+Name: reserveA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+done.
+typecheckig node...
+INTERNAL_CALL, A.updateFee()()
+Internal call...
+updateFee
+Function: updateFee
+ic
+NO RETURN LOCATION
+done.
+typecheckig node...
+RETURN net_balanceA_1
+RETURN
+
+Name: net_balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+WORKLIST iteration 1 for function call "withdrawBalance":
+ New undefined nodes- 4
+ Old undefined nodes- 4
+Saving return values for: withdrawBalance
+
+Name: net_balanceA Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+___
+Reading Function: slitherConstructorVariables
+Function slitherConstructorVariables not marked
+Errors: []

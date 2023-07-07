@@ -172,7 +172,8 @@ def print_token_type(ir):
 
 #USAGE: passes the finance type
 def pass_ftype(dest, left, func, right = None):
-    tcheck_propagation.pass_ftype(dest, left, func, right)
+    if(tcheck_propagation.pass_ftype(dest, left, func, right)):
+        add_errors(dest)
 
 #USAGE: prints a param_cache
 #RETURNS: nothing
