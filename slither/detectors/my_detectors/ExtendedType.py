@@ -1,7 +1,8 @@
 from collections import defaultdict
 import os
 import sys
-
+script_dir = os.path.dirname( __file__ )
+sys.path.append(script_dir)
 #USAGE: file containing the structure representing an Extended type instance
 #       Extended types have two main subclasses: token types and business types
 #       Token types follow the default token structure of:
