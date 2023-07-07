@@ -915,7 +915,7 @@ def handle_return(dest_ir, function):
             x = _x
         __x = x.extok
         if(len(function.return_values_ssa) > 1):
-            tuple_types.append((__x.num_token_types, __x.den_token_types, __x.norm, __x.linked_contract))
+            tuple_types.append((__x.num_token_types, __x.den_token_types, __x.norm, __x.linked_contract, __x.finance_type))
         else:
             if(dest_ir != None):
                 copy_token_type(x, dest_ir)
