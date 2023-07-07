@@ -121,8 +121,10 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         _rrf = _rr.finance_type
         if(_rrf == -1):
             assign_ftype(_rlf, dest)
+            return
         if(_rlf == -1):
             assign_ftype(_rrf, dest)
+            return
     key = (_rlf, _rrf)
     if(func == "add" or func == "sub"):
         if key in f_type_addsub:
@@ -142,7 +144,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         assign_ftype(-1, dest)
     elif(func == "assign" or "pow"):
         assign_ftype(_rlf, dest)
-    print("Func: {func}")
+    print(f"Func: {func}")
 
         
 
