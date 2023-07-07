@@ -58,14 +58,18 @@ def gen_finance_instances(line):
     _line = line.split(",")
     finance_instances = []
     for param in _line:
-        if(param.contains("f:")):
-            offset = 2
-            for char in param[2:]:
-                if(char == ' '):
+        if(param.find("f:")):
+            offset = 0
+            for i in range(len(param)):
+                if(param[i] == ' '):
                     offset+=1
+                elif(param[i] == 'f' and i+1 < len(param) and param[i+1] == ':'):
+                    offset+=2
+                    i+=1
                 else:
                     break
             isolated_param = param[offset:]
+            print(f"Isolated Param: {isolated_param}")
             f_res = None
             try:
                 temp = int(isolated_param)
