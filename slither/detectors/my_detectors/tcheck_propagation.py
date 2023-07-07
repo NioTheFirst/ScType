@@ -35,8 +35,8 @@ f_type_muldiv = {
     (20, 1):3,
     (0, 21):23, #compound interest ratio * raw balance = compound interest
     (21, 0):23,
-    (22, 20), 22, #simple intrest * simple interest ratio = simple interest
-    (20, 22), 22,
+    (22, 20):22, #simple intrest * simple interest ratio = simple interest
+    (20, 22):22,
     (23, 21):23, #compound interest * compound interest ratio = compound interest
     (21, 23): 23, 
     (40, 0) : 0, #price/exchange rate * any balance = corresponding balance
