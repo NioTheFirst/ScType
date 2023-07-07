@@ -22,6 +22,8 @@ ref_type_hash = {}
 tuple_type_hash = {}
 field_type_hash = {}
 
+field_tuple_start = 4
+
 f_type_num = {
     -1: "undef",
     0: "raw balance",
