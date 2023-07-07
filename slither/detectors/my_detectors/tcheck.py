@@ -276,8 +276,8 @@ def add_param_cache(function, new_param_cache):
 #var_name
 #num
 #den
-def parse_type_file(t_file):
-    tcheck_parser.parse_type_file(t_file)
+def parse_type_file(t_file, f_file = None):
+    tcheck_parser.parse_type_file(t_file, f_file)
 
 #USAGE: given a variable ir, return the type tuple
 #RETURNS: type tuple
@@ -399,63 +399,7 @@ def assign_err(ir):
 #RETURNS: null
 def copy_token_tuple(ir, tt):
     tcheck_propagation.copy_token_tuple(ir, tt)
-    """
-    print("Check copy_toekn_tuple")
-    print(tt)
-    _ir = ir.extok
-    print("----")
-    _ir.token_type_clear()
-    if(isinstance(tt[0], int)):
-        /_ir.add_num_token_type(tt[0])
-    else:
-        for n in tt[0]:
-            _ir.add_num_token_type(n)
-    if(isinstance(tt[1], int)):
-        _ir.add_den_token_type(tt[1])
-    else:
-        for d in tt[1]:
-            _ir.add_den_token_type(d)
-    if(isinstance(tt[2], int)):
-        if(tt[2] == -404):
-            _ir.norm = '*'
-        else:
-            _ir.norm = tt[2]
-    elif(isinstance(tt[2], str)):
-        _ir.norm = tt[2]
-    else:
-        _ir.norm = tt[2][0]
-    _ir.linked_contract = tt[3]
-    propagate_fields(ir) 
-    print(f"Type: {ir.type}")
-    ttype = ir.type
-    if(isinstance(ir.type, ArrayType)):
-        ttype = ir.type.type
-        print(f"New type: {ttype}")
-    #Field tuple propagation
-    if(isinstance(ttype, UserDefinedType)):
-        fields = None
-        ttype = ttype.type
-        print(f"Type type: {ir.type.type}")
-        if isinstance(ttype, Structure):
-            fields = ttype.elems.items()
-        #elif isinstance(ttype, Contract):
-        #    fields = ttype.variables_as_dict
-        if(fields == None):
-            print(" NO FIELDS")
-            return
-        #is an oobject, may have fields
-        for field_name, field in fields:
-            #search for type tuple in type file
-            print(_ir.function_name)
-            print(_ir.name)
-            print(field_name)
-            field_tt = get_field(_ir.function_name, _ir.name, field_name)
-            if(field_tt):
-                _field_tt = field.extok
-                copy_token_tuple(field, field_tt)
-                _ir.add_field(field)
-        print("FIELDS:")
-        _ir.print_fields()"""
+
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
@@ -477,26 +421,7 @@ def copy_pc_token_type(src, dest):
 
 def compare_token_type(src, dest):
     return tcheck_propagation.compare_token_type(src, dest)
-    """seen = []
-    for i in range(maxTokens):
-        seen.append(0)
-    for n in src.token_typen:
-        seen[n]+=1
-    for n in dest.token_typen:
-        seen[n]-=1
-
-    for i in range(maxTokens):
-        if(seen[i] != 0):
-            return False
-        seen[i] = 0
-    for d in src.token_typed:
-        seen[d]+=1
-    for d in dest.token_typed:
-        seen[d]-=1
-    for i in range(maxTokens):
-        if(seen[i] != 0):
-            return False
-    return True"""
+    
 
 def add_errors(ir):
     global nErrs
@@ -1931,7 +1856,19 @@ class tcheck(AbstractDetector):
             print("contract name: "+contract.name)
             print("WARNING!!!!")
             type_info_name = contract.name+"_types.txt"
+            finance_info_name = contract.name+"_ftypes.txt"
+            #TODO: Eventually, combine both files as one
             print(type_info_name)
+
+            #get finance type info
+            f_file = None
+            try:
+                with open(finance_info_name, "r") as _f_file:
+                    f_file = finance_info_name
+            except FileNotFoundError:
+                print("Finance File not Found")
+                f_file = None
+
             #get type information from file (if there is one)
             try:
                 with open(type_info_name, "r") as t_file:
@@ -1939,7 +1876,7 @@ class tcheck(AbstractDetector):
                     print("\"" + type_info_name +"\" opened successfully.")
                     user_type = False
                     type_file = type_info_name
-                    parse_type_file(type_file)
+                    parse_type_file(type_file, f_file)
                     u_provide_type[contract.name] = False
                     #print("oooo")
             except FileNotFoundError:
@@ -1947,6 +1884,8 @@ class tcheck(AbstractDetector):
                 # Handle the error gracefully or take appropriate action
                 u_provide_type[contract.name] = False
                 user_type = True
+
+
             if(not (check_contract(contract.name))):
                 continue
             #mark functions

@@ -22,7 +22,97 @@ ref_type_hash = {}
 tuple_type_hash = {}
 field_type_hash = {}
 
-def parse_type_file(t_file):
+f_type_num = {
+    -1: "undef",
+    0: "raw balance",
+    1: "net balance",
+    2: "accrued balance",
+    3: "final balance",
+    10: "fee ratio",
+    11: "transaction fee",
+    12: "lp fee",
+    20: "simple interest",
+    21: "compound interest",
+    30: "reserve",
+    40: "price/exchange rate",
+}
+
+f_type_name = {
+    "undef" : -1,
+    "raw balance" :0,
+    "net balance" :1,
+    "accrued balance" :2,
+    "final balance" :3,
+    "fee ratio" : 10,
+    "transaction fee" :11,
+    "lp fee" : 12,
+    "simple interest" : 20,
+    "compound interest" : 21,
+    "reserve" : 30,
+    "price/exchange rate" : 40,
+}
+
+def gen_finance_instances(line):
+    _line = line.split(",")
+    finance_instances = []
+    for param in _line:
+        if(param.startswith("f:")):
+            offset = 2
+            for char in param[2:]:
+                if(char == ' '):
+                    offset+=1
+                else:
+                    break
+            isolated_param = param[offset:]
+            f_res = None
+            try:
+                temp = int(isolated_param)
+                f_res = temp
+            except ValueError:
+                if isolated_param in f_type_name:
+                    f_res = f_type_name[isolated_param]
+                else:
+                    f_res = -1
+            if not isinstance(f_res, int):
+                print("[x] FINANCE TYPE IS NOT INT")
+            finance_instances.append(f_res)
+    return finance_instances
+
+
+def parse_finance_file(f_file):
+    #Same structure as token_type parser
+    with open(f_file, 'r') as finance_file:
+        for line in finance_file:
+            _line = split_line(line)
+            #Look for "f: "
+            f_params = gen_finance_instances(line)
+
+            if(_line[0].strip() == "[t]"):
+                f_name = _line[1].strip()
+                v_name = _line[2].strip()
+                norm_tt = get_var_type_tuple(f_name, v_name)
+                norm_tt+=(f_params[0], )
+            elif(_line[0].strip == "[sef]"):
+                c_name = _line[1].strip()
+                f_name = _line[2].strip()
+                ef_tts = get_ex_func_type_tuple(c_name, f_name)
+                cur = 0
+                for tt in ef_tts:
+                    tt+=(f_params[cur], )
+                    cur+=1
+            elif(_line[0].strip == "tref"):
+                ref_name = _line[1].strip()
+                ref_tt = get_ref_type_tuple(ref_name)
+                ref_tt += (f_params[0], )
+            
+            elif(_line[0].strip == "t*"):
+                f_name = _line[1].strip()
+                p_name = _line[2].strip()
+                v_name = _line[3].strip()
+                field_tt = get_field(f_name, p_name, v_name)
+                field_tt += (f_params[0], )
+
+def parse_type_file(t_file, f_file = None):
     with open (t_file, 'r') as type_file:
         lines = []
         counter = 0
@@ -129,6 +219,7 @@ def parse_type_file(t_file):
                         lf = _line[7]
 
                 add_field(func_name, parent_name, field_name, (num, denom, norm, lf))
+    parse_finance_file(finance_file)
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
