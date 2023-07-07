@@ -7,7 +7,7 @@ import tcheck
 #       these functions contain handling for ABSTRACT types as well (any type > abs_buf is an ABSTRACT type)
 #       ABSTRACT types take priority over CONCRETE types (temporary handling for if statements)
 #       ABSTRACT type comparison to CONCRETE type comparison always holds true 
-from tcheck import field_tuple_start
+from tcheck_parser import field_tuple_start
 
 abs_buf = 10    
 
