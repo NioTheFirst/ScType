@@ -62,13 +62,14 @@ def gen_finance_instances(line):
             offset = 0
             foundf = False
             for i in range(len(param)):
-                print(param[i])
+                if(foundf):
+                    print(param[i])
                 if(param[i] == ' ' and foundf):
                     offset+=1
                 elif(param[i] == 'f' and i+1 < len(param) and param[i+1] == ':'):
                     foundf = True
                     offset=i+2
-                    i+=1
+                    i+=2
                 elif(foundf == False):
                     continue
                 else:

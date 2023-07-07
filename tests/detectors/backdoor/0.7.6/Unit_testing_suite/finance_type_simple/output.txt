@@ -36,22 +36,353 @@ Finance file: A_ftypes.txt
 
 [t], withdrawBalance, balanceA, 1, -1, 0
 
+[
+*
+c
+]
+ 
+A
+
+
+
+
+[
+t
+]
+ 
+g
+l
+o
+b
+a
+l
+ 
+f
+e
+e
+R
+a
+t
+i
+o
+A
+ 
+f
+:
 Isolated Param:  10
 
+[
+t
+]
+ 
+g
+l
+o
+b
+a
+l
+ 
+r
+e
+s
+e
+r
+v
+e
+A
+ 
+1
+ 
+-
+1
+ 
+0
+ 
+f
+:
 Isolated Param:  reserve
 
+[
+t
+]
+ 
+g
+l
+o
+b
+a
+l
+ 
+c
+o
+m
+p
+o
+u
+n
+d
+I
+n
+t
+e
+r
+e
+s
+t
+ 
+f
+:
 Isolated Param:  21
 
+[
+t
+]
+ 
+g
+l
+o
+b
+a
+l
+ 
+j
+u
+s
+t
+C
+o
+n
+s
+t
+a
+n
+t
+
+
+[
+t
+]
+ 
+g
+l
+o
+b
+a
+l
+ 
+s
+i
+m
+p
+l
+e
+I
+n
+t
+e
+r
+e
+s
+t
+ 
+f
+:
 Isolated Param:  simple interest
 
+[
+t
+]
+ 
+g
+l
+o
+b
+a
+l
+ 
+w
+e
+i
+r
+d
+ 
+f
+:
 Isolated Param:  weird
 
+
+
+[
+t
+]
+ 
+c
+a
+l
+c
+u
+l
+a
+t
+e
+F
+e
+e
+ 
+b
+a
+l
+a
+n
+c
+e
+A
+ 
+1
+ 
+-
+1
+ 
+0
+ 
+f
+:
 Isolated Param:  0
 
+
+
+[
+t
+]
+ 
+a
+p
+p
+l
+y
+S
+i
+m
+p
+l
+e
+I
+n
+t
+e
+r
+e
+s
+t
+ 
+b
+a
+l
+a
+n
+c
+e
+A
+ 
+1
+ 
+-
+1
+ 
+0
+ 
+f
+:
 Isolated Param: raw balance
 
+
+
+[
+t
+]
+ 
+a
+p
+p
+l
+y
+C
+o
+m
+p
+o
+u
+n
+d
+I
+n
+t
+e
+r
+e
+s
+t
+ 
+b
+a
+l
+a
+n
+c
+e
+A
+ 
+1
+ 
+-
+1
+ 
+0
+ 
+f
+:
 Isolated Param:  0
 
+
+
+[
+t
+]
+ 
+w
+i
+t
+h
+d
+r
+a
+w
+B
+a
+l
+a
+n
+c
+e
+ 
+b
+a
+l
+a
+n
+c
+e
+A
+ 
+1
+ 
+-
+1
+ 
+0
+ 
+f
+:
 Isolated Param: 0
 
 [*] A run
@@ -121,6 +452,24 @@ LF: None
 Fields: 
 Finance Type: None
 [*]Type fetched successfully
+State_var: compoundInterest
+Finding type for compoundInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: compoundInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: None
+[*]Type fetched successfully
 State_var: feeRatioA
 Finding type for feeRatioA...
 int256
@@ -140,24 +489,6 @@ Fields:
 Finance Type: None
 [*]Type fetched successfully
 State_var: feeRatioA
-State_var: compoundInterest
-Finding type for compoundInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: compoundInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: None
-[*]Type fetched successfully
 State_var: simpleInterest
 Finding type for simpleInterest...
 int256
@@ -811,7 +1142,7 @@ clearing ir...?
 justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
 has variable
 clearing ir...?
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 has variable
 clearing ir...?
 reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
@@ -830,7 +1161,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -1257,7 +1588,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
