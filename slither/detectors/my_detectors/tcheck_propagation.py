@@ -95,6 +95,7 @@ def copy_pc_token_type(src, dest):
     if(src[4] != None):
         for field in src[4]:
             _dest.add_field(field)
+    _dest.finance_type = src[5]
 
 
 #USAGE: copies a finance type
