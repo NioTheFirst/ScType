@@ -85,43 +85,6 @@ LF: None
 Fields: 
 Finance Type: compound interest ratio
 [*]Type fetched successfully
-State_var: feeRatioA
-Finding type for feeRatioA...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 10)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: feeRatioA Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: fee ratio (t)
-[*]Type fetched successfully
-State_var: feeRatioA
-State_var: simpleInterest
-Finding type for simpleInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 20)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: simpleInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: simple interest ratio
-[*]Type fetched successfully
 State_var: justConstant
 Finding type for justConstant...
 int256
@@ -176,6 +139,43 @@ LF: None
 Fields: 
 Finance Type: undef
 [*]Type fetched successfully
+State_var: feeRatioA
+Finding type for feeRatioA...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 10)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+[*]Type fetched successfully
+State_var: feeRatioA
+State_var: simpleInterest
+Finding type for simpleInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 20)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: simpleInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: simple interest ratio
+[*]Type fetched successfully
 [*] A run
 Reading Function: calculateFee
 Function name: calculateFee
@@ -208,7 +208,7 @@ balanceA_1(int256) := ϕ(['balanceA_1'])
 has variable
 [i] balanceA cleared
 clearing ir...?
-feeRatioA_1(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+feeRatioA_1(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
 has variable
 typecheckig node...
 balanceA_1(int256) := ϕ(['balanceA_1'])
@@ -224,7 +224,7 @@ LF: None
 Fields: 
 Finance Type: raw balance
 done.
-feeRatioA_1(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+feeRatioA_1(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
 Function name: calculateFee
 Phi
 [i]Type for feeRatioA
@@ -344,10 +344,10 @@ Function Visibility (test): public
 -100
 clearning node...
 clearing ir...?
-feeRatioA_2(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+feeRatioA_2(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
 has variable
 typecheckig node...
-feeRatioA_2(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+feeRatioA_2(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
 Function name: updateFee
 Phi
 [i]Type for feeRatioA
@@ -824,16 +824,16 @@ Param: 0
     den: [-1]
 clearning node...
 clearing ir...?
-justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
 has variable
 clearing ir...?
 weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 has variable
 clearing ir...?
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 has variable
 typecheckig node...
-justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for justConstant
@@ -859,7 +859,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
@@ -1266,7 +1266,7 @@ WORKLIST iteration 0 for function call "withdrawBalance":
  New undefined nodes- 4
  Old undefined nodes- 0
 typecheckig node...
-justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for justConstant
@@ -1292,7 +1292,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA

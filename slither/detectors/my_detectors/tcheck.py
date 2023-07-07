@@ -631,13 +631,13 @@ def type_included_hlc(ir, dest, function):
         if isinstance(ir, Variable):
             if(isinstance(ret_obj, list)):
                 type_asn(ir.lvalue, ret_obj[0])
-                pass_ftype(ir.lvalue, ret_obj[0])
+                pass_ftype(ret_obj[0], ir.lvalue)
             else:
                 type_asn(ir.lvalue, ret_obj)
-                pass_ftype(ir.lvalue, ret_obj)
+                pass_ftype(ret_obj, ir.lvalue)
         else:
             add_tuple(ir.lvalue.name, ret_obj)
-            
+
 
     return 2
 
@@ -893,10 +893,10 @@ def type_fc(ir) -> bool:
         if isinstance(ir, Variable):
             if isinstance(ret_obj, list):
                 type_asn(ir.lvalue, ret_obj[0])
-                pass_ftype(ir.lvalue, ret_obj[0])
+                pass_ftype(ret_obj[0], ir.lvalue)
             else:
                 type_asn(ir.lvalue, ret_obj)
-                pass_ftype(ir.lvalue, ret_obj)
+                pass_ftype(ret_obj, ir.lvalue)
         else:
             add_tuple(ir.lvalue.name, ret_obj)
 
