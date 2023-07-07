@@ -18,11 +18,23 @@ contract A{
         feeRatioA = feeRatioA + 1;
     }
 
+    function applySimpleInterest(int balanceA) public returns (int){
+    	int new_balanceA = balanceA*simpleInterest;
+        return new_balanceA;
+    }
+
+    function applyCompoundInterest(int balanceA) public returns(int){
+    	int new_balanceA = balanceA + balanceA*compoundInterest;
+        return new_balanceA;
+    }
+
     function withdrawBalance(int balanceA) public returns (int){
     	int feeA = calculateFee(balanceA);
 	int net_balanceA = balanceA - feeA;
-	reserveA -= net_balanceA;
-	updateFee();
+        int final_balanceA = applySimpleInterest(balanceA);
+	reserveA -= final_balanceA + justConstant + weird;
+	updateFee(); //Throw error here (late update)
 	return(net_balanceA);
     }
+
 }
