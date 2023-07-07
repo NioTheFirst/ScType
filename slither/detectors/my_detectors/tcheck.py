@@ -1863,6 +1863,7 @@ class tcheck(AbstractDetector):
         global user_type
         global type_file
         global line_no
+        global errors
         global constant_instance
         assign_const(constant_instance)
         for contract in self.slither.contracts:
