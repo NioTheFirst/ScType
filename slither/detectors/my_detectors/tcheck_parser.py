@@ -102,6 +102,7 @@ def parse_finance_file(f_file):
                 v_name = _line[2].strip()
                 norm_tt = get_var_type_tuple(f_name, v_name)
                 norm_tt+=(f_params[0], )
+                add_field(f_name, v_name, norm_tt)
             elif(_line[0].strip == "[sef]"):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
