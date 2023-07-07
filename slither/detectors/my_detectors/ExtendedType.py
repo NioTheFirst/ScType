@@ -31,7 +31,7 @@ class ExtendedType():
         self._reference_root = None
         self._reference_field = None
         #Business type
-        self._finance_type = None
+        self._finance_type = -1
 
     #Getters and setters for the fields
     @property

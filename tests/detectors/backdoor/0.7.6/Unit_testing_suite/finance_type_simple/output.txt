@@ -67,6 +67,43 @@ Checking... withdrawBalance
 [o] Marked
 Checking... slitherConstructorVariables
 [x] Not visible 
+State_var: feeRatioA
+Finding type for feeRatioA...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 10)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+[*]Type fetched successfully
+State_var: feeRatioA
+State_var: compoundInterest
+Finding type for compoundInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 21)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: compoundInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: compound interest ratio
+[*]Type fetched successfully
 State_var: justConstant
 Finding type for justConstant...
 int256
@@ -121,42 +158,6 @@ LF: None
 Fields: 
 Finance Type: undef
 [*]Type fetched successfully
-State_var: feeRatioA
-Finding type for feeRatioA...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 10)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: feeRatioA Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: fee ratio (t)
-[*]Type fetched successfully
-State_var: compoundInterest
-Finding type for compoundInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 21)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: compoundInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: compound interest ratio
-[*]Type fetched successfully
 State_var: simpleInterest
 Finding type for simpleInterest...
 int256
@@ -175,7 +176,6 @@ LF: None
 Fields: 
 Finance Type: simple interest
 [*]Type fetched successfully
-State_var: feeRatioA
 [*] A run
 Reading Function: calculateFee
 Function name: calculateFee
@@ -251,7 +251,7 @@ TMP_0(int256) = balanceA_1 (c)* feeRatioA_1
 Function name: calculateFee
 testing mul...
 lnorm: 0 rnorm: u
-Func: {func}
+Func: mul
 
 Name: balanceA Function: calculateFee
 Num: 1
@@ -298,7 +298,7 @@ LF: None
 Fields: 
 Finance Type: None
 0
-Func: {func}
+Func: assign
 [i]Type for feeA
 
 Name: feeA Function: calculateFee
@@ -384,7 +384,7 @@ val: 1
 lnorm: u rnorm: 0
 Error with TMP_1 in function updateFee
 Error with: TMP_1 in function updateFee
-Func: {func}
+Func: add
 val: 1
 
 Name: 1 Function: None
@@ -432,7 +432,7 @@ LF: None
 Fields: 
 Finance Type: None
 u
-Func: {func}
+Func: assign
 [i]Type for feeRatioA
 
 Name: feeRatioA Function: updateFee
@@ -523,7 +523,7 @@ testing mul...
 lnorm: 0 rnorm: u
 Error with TMP_2 in function applySimpleInterest
 Error with: TMP_2 in function applySimpleInterest
-Func: {func}
+Func: mul
 
 Name: balanceA Function: applySimpleInterest
 Num: 1
@@ -570,7 +570,7 @@ LF: None
 Fields: 
 Finance Type: None
 u
-Func: {func}
+Func: assign
 [i]Type for new_balanceA
 
 Name: new_balanceA Function: applySimpleInterest
@@ -669,7 +669,7 @@ TMP_3(int256) = balanceA_1 (c)* compoundInterest_1
 Function name: applyCompoundInterest
 testing mul...
 lnorm: 0 rnorm: u
-Func: {func}
+Func: mul
 
 Name: balanceA Function: applyCompoundInterest
 Num: 1
@@ -709,7 +709,7 @@ Finance Type: None
 initlize checks
 ;;;
 lnorm: 0 rnorm: 0
-Func: {func}
+Func: add
 
 Name: balanceA Function: applyCompoundInterest
 Num: 1
@@ -756,7 +756,7 @@ LF: None
 Fields: 
 Finance Type: None
 0
-Func: {func}
+Func: assign
 [i]Type for new_balanceA
 
 Name: new_balanceA Function: applyCompoundInterest
@@ -827,7 +827,7 @@ clearing ir...?
 weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 has variable
 clearing ir...?
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 has variable
 typecheckig node...
 justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
@@ -856,7 +856,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
@@ -922,7 +922,7 @@ LF: None
 Fields: 
 Finance Type: None
 u
-Func: {func}
+Func: assign
 [i]Type for feeA
 
 Name: feeA Function: withdrawBalance
@@ -951,7 +951,7 @@ Function name: withdrawBalance
 lnorm: 0 rnorm: u
 Error with TMP_6 in function withdrawBalance
 Error with: TMP_6 in function withdrawBalance
-Func: {func}
+Func: sub
 
 Name: balanceA Function: withdrawBalance
 Num: 1
@@ -1017,7 +1017,7 @@ LF: None
 Fields: 
 Finance Type: None
 u
-Func: {func}
+Func: assign
 [i]Type for net_balanceA
 
 Name: net_balanceA Function: withdrawBalance
@@ -1081,7 +1081,7 @@ LF: None
 Fields: 
 Finance Type: None
 u
-Func: {func}
+Func: assign
 [i]Type for final_balanceA
 
 Name: final_balanceA Function: withdrawBalance
@@ -1121,9 +1121,6 @@ Finance Type: None
 initlize checks
 ;;;
 lnorm: u rnorm: u
-Error with TMP_8 in function withdrawBalance
-Error with: TMP_8 in function withdrawBalance
-Func: {func}
 
 Name: justConstant Function: global
 Num: -1
@@ -1134,12 +1131,12 @@ Fields:
 Finance Type: undef
 
 Name: TMP_8 Function: withdrawBalance
-Num: -1
-Den: -1
+Num: 
+Den: 
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 [i]Type for TMP_8
 
 Name: TMP_8 Function: withdrawBalance
@@ -1148,7 +1145,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 done.
 This IR caused addback:
 TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
@@ -1166,9 +1163,6 @@ Finance Type: None
 initlize checks
 ;;;
 lnorm: u rnorm: u
-Error with TMP_9 in function withdrawBalance
-Error with: TMP_9 in function withdrawBalance
-Func: {func}
 
 Name: weird Function: global
 Num: -1
@@ -1179,12 +1173,12 @@ Fields:
 Finance Type: undef
 
 Name: TMP_9 Function: withdrawBalance
-Num: -1
-Den: -1
+Num: 
+Den: 
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 [i]Type for TMP_9
 
 Name: TMP_9 Function: withdrawBalance
@@ -1193,14 +1187,14 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 done.
 reserveA_4(int256) = reserveA_3 (c)- TMP_9
 Function name: withdrawBalance
 lnorm: 0 rnorm: u
 Error with reserveA in function withdrawBalance
 Error with: reserveA in function withdrawBalance
-Func: {func}
+Func: sub
 
 Name: reserveA Function: global
 Num: 1
@@ -1216,7 +1210,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 
 Name: reserveA Function: global
 Num: 1
@@ -1298,7 +1292,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
@@ -1355,7 +1349,7 @@ LF: None
 Fields: 
 Finance Type: None
 u
-Func: {func}
+Func: assign
 [i]Type for feeA
 
 Name: feeA Function: withdrawBalance
@@ -1376,7 +1370,7 @@ lnorm: 0 rnorm: u
 Error with TMP_6 in function withdrawBalance
 Error with: TMP_6 in function withdrawBalance
 [W] Initializing defined variable to constant
-Func: {func}
+Func: sub
 
 Name: balanceA Function: withdrawBalance
 Num: 1
@@ -1442,7 +1436,7 @@ LF: None
 Fields: 
 Finance Type: undef
 u
-Func: {func}
+Func: assign
 [i]Type for net_balanceA
 
 Name: net_balanceA Function: withdrawBalance
@@ -1497,7 +1491,7 @@ LF: None
 Fields: 
 Finance Type: None
 u
-Func: {func}
+Func: assign
 [i]Type for final_balanceA
 
 Name: final_balanceA Function: withdrawBalance
@@ -1521,13 +1515,10 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 initlize checks
 ;;;
 lnorm: u rnorm: u
-Error with TMP_8 in function withdrawBalance
-Error with: TMP_8 in function withdrawBalance
-Func: {func}
 
 Name: justConstant Function: global
 Num: -1
@@ -1543,7 +1534,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 [i]Type for TMP_8
 
 Name: TMP_8 Function: withdrawBalance
@@ -1552,7 +1543,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 done.
 This IR caused addback:
 TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
@@ -1566,13 +1557,10 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 initlize checks
 ;;;
 lnorm: u rnorm: u
-Error with TMP_9 in function withdrawBalance
-Error with: TMP_9 in function withdrawBalance
-Func: {func}
 
 Name: weird Function: global
 Num: -1
@@ -1588,7 +1576,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 [i]Type for TMP_9
 
 Name: TMP_9 Function: withdrawBalance
@@ -1597,15 +1585,11 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 done.
 reserveA_4(int256) = reserveA_3 (c)- TMP_9
 Function name: withdrawBalance
 lnorm: u rnorm: u
-Error with reserveA in function withdrawBalance
-Error with: reserveA in function withdrawBalance
-[W] Initializing defined variable to constant
-Func: {func}
 
 Name: reserveA Function: global
 Num: 1
@@ -1621,7 +1605,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 
 Name: reserveA Function: global
 Num: 1
@@ -1632,12 +1616,12 @@ Fields:
 Finance Type: undef
 
 Name: reserveA Function: withdrawBalance
-Num: 
-Den: 
+Num: 1
+Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 [i]Type for reserveA
 
 Name: reserveA Function: withdrawBalance
@@ -1646,7 +1630,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: None
 done.
 typecheckig node...
 INTERNAL_CALL, A.updateFee()()
