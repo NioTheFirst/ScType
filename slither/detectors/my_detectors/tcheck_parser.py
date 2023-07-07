@@ -35,8 +35,8 @@ f_type_num = {
     12: "lp fee",
     20: "simple interest ratio",
     21: "compound interest ratio",
-    22: "simple interest"
-    23: "compound interest"
+    22: "simple interest",
+    23: "compound interest",
     30: "reserve",
     40: "price/exchange rate",
 }
