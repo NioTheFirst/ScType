@@ -894,7 +894,7 @@ def type_fc(ir) -> bool:
         print(added)
         ret_obj = ir.function.get_parameter_cache_return(added)
         print(ret_obj.extok)
-        if isinstance(ir, Variable):
+        if isinstance(ir.lvalue, Variable):
             if isinstance(ret_obj, list):
                 type_asn(ir.lvalue, ret_obj[0])
                 copy_ftype(ret_obj[0], ir.lvalue)
