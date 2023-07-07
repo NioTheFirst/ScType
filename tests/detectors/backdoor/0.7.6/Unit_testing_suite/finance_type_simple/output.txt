@@ -67,6 +67,24 @@ Checking... withdrawBalance
 [o] Marked
 Checking... slitherConstructorVariables
 [x] Not visible 
+State_var: compoundInterest
+Finding type for compoundInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 21)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: compoundInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: compound interest ratio
+[*]Type fetched successfully
 State_var: justConstant
 Finding type for justConstant...
 int256
@@ -121,42 +139,6 @@ LF: None
 Fields: 
 Finance Type: undef
 [*]Type fetched successfully
-State_var: feeRatioA
-Finding type for feeRatioA...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 10)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: feeRatioA Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: fee ratio (t)
-[*]Type fetched successfully
-State_var: compoundInterest
-Finding type for compoundInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 21)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: compoundInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: compound interest ratio
-[*]Type fetched successfully
 State_var: simpleInterest
 Finding type for simpleInterest...
 int256
@@ -174,6 +156,24 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: simple interest ratio
+[*]Type fetched successfully
+State_var: feeRatioA
+Finding type for feeRatioA...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 10)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
 [*]Type fetched successfully
 State_var: feeRatioA
 [*] A run
@@ -827,7 +827,7 @@ clearing ir...?
 justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
 has variable
 clearing ir...?
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 has variable
 clearing ir...?
 reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
@@ -846,7 +846,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -1279,7 +1279,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird

@@ -631,6 +631,7 @@ def type_included_hlc(ir, dest, function):
     else:
         print(added)
         ret_obj = function.get_parameter_cache_return(added)
+        print(ret_obj.extok)
         if isinstance(ir, Variable):
             if(isinstance(ret_obj, list)):
                 type_asn(ir.lvalue, ret_obj[0])
