@@ -37,81 +37,81 @@ Finance file: A_ftypes.txt
 [t], withdrawBalance, balanceA, 1, -1, 0
 
 Isolated Param: [*c]
-Isolated Param: A
+Isolated Param:  A
 
 Isolated Param: 
 
 Isolated Param: [t]
-Isolated Param: global
-Isolated Param: feeRatioA
-Isolated Param:  10
+Isolated Param:  global
+Isolated Param:  feeRatioA
+Isolated Param: : 10
 
 Isolated Param: [t]
-Isolated Param: global
-Isolated Param: reserveA
-Isolated Param: 1
-Isolated Param: -1
-Isolated Param: 0
-Isolated Param:  reserve
+Isolated Param:  global
+Isolated Param:  reserveA
+Isolated Param:  1
+Isolated Param:  -1
+Isolated Param:  0
+Isolated Param: : reserve
 
 Isolated Param: [t]
-Isolated Param: global
-Isolated Param: compoundInterest
-Isolated Param:  21
+Isolated Param:  global
+Isolated Param:  compoundInterest
+Isolated Param: : 21
 
 Isolated Param: [t]
-Isolated Param: global
-Isolated Param: justConstant
+Isolated Param:  global
+Isolated Param:  justConstant
 
 Isolated Param: [t]
-Isolated Param: global
-Isolated Param: simpleInterest
-Isolated Param:  simple interest
+Isolated Param:  global
+Isolated Param:  simpleInterest
+Isolated Param: : simple interest
 
 Isolated Param: [t]
-Isolated Param: global
-Isolated Param: weird
+Isolated Param:  global
 Isolated Param:  weird
+Isolated Param: : weird
 
 Isolated Param: 
 
 Isolated Param: [t]
-Isolated Param: calculateFee
-Isolated Param: balanceA
-Isolated Param: 1
-Isolated Param: -1
-Isolated Param: 0
+Isolated Param:  calculateFee
+Isolated Param:  balanceA
+Isolated Param:  1
+Isolated Param:  -1
 Isolated Param:  0
+Isolated Param: : 0
 
 Isolated Param: 
 
 Isolated Param: [t]
-Isolated Param: applySimpleInterest
-Isolated Param: balanceA
-Isolated Param: 1
-Isolated Param: -1
-Isolated Param: 0
-Isolated Param: raw balance
-
-Isolated Param: 
-
-Isolated Param: [t]
-Isolated Param: applyCompoundInterest
-Isolated Param: balanceA
-Isolated Param: 1
-Isolated Param: -1
-Isolated Param: 0
+Isolated Param:  applySimpleInterest
+Isolated Param:  balanceA
+Isolated Param:  1
+Isolated Param:  -1
 Isolated Param:  0
+Isolated Param: :raw balance
 
 Isolated Param: 
 
 Isolated Param: [t]
-Isolated Param: withdrawBalance
-Isolated Param: balanceA
-Isolated Param: 1
-Isolated Param: -1
-Isolated Param: 0
-Isolated Param: 0
+Isolated Param:  applyCompoundInterest
+Isolated Param:  balanceA
+Isolated Param:  1
+Isolated Param:  -1
+Isolated Param:  0
+Isolated Param: : 0
+
+Isolated Param: 
+
+Isolated Param: [t]
+Isolated Param:  withdrawBalance
+Isolated Param:  balanceA
+Isolated Param:  1
+Isolated Param:  -1
+Isolated Param:  0
+Isolated Param: :0
 
 [*] A run
 Checking... calculateFee
@@ -126,24 +126,6 @@ Checking... withdrawBalance
 [o] Marked
 Checking... slitherConstructorVariables
 [x] Not visible 
-State_var: simpleInterest
-Finding type for simpleInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: simpleInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: None
-[*]Type fetched successfully
 State_var: feeRatioA
 Finding type for feeRatioA...
 int256
@@ -155,24 +137,6 @@ int256
 Final Type: int256
 
 Name: feeRatioA Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: None
-[*]Type fetched successfully
-State_var: compoundInterest
-Finding type for compoundInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: compoundInterest Function: global
 Num: -1
 Den: -1
 Norm: u
@@ -234,7 +198,43 @@ LF: None
 Fields: 
 Finance Type: None
 [*]Type fetched successfully
+State_var: simpleInterest
+Finding type for simpleInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: simpleInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: None
+[*]Type fetched successfully
 State_var: feeRatioA
+State_var: compoundInterest
+Finding type for compoundInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: compoundInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: None
+[*]Type fetched successfully
 [*] A run
 Reading Function: calculateFee
 Function name: calculateFee
@@ -867,16 +867,16 @@ Param: 0
     den: [-1]
 clearning node...
 clearing ir...?
-justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
 has variable
 clearing ir...?
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 has variable
 clearing ir...?
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 has variable
 typecheckig node...
-justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for justConstant
@@ -889,7 +889,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -902,7 +902,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
@@ -1303,7 +1303,7 @@ WORKLIST iteration 0 for function call "withdrawBalance":
  New undefined nodes- 4
  Old undefined nodes- 0
 typecheckig node...
-justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
+justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for justConstant
@@ -1316,7 +1316,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -1329,7 +1329,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
