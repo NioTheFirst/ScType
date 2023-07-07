@@ -202,7 +202,7 @@ class ExtendedType():
             f"Norm: {self._norm}\n"
             f"LF: {self._linked_contract}\n"
             f"Fields: {fields_str}\n"
-            f"Finance Type: {self._finance_type}"
+            f"Finance Type: {f_type_num[self._finance_type]}"
         )
  
         
