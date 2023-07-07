@@ -68,14 +68,7 @@ def gen_finance_instances(line):
                     break
             if(foundf == False):
                 continue
-            _isolated_param = param[offset:]
-            offset = 0
-            for i in range(len(_isolated_param)):
-                if(_isolated_param[i] == ' '):
-                    offset+=1
-                else:
-                    break
-            isolated_param = _isolated_param[offset:]
+            isolated_param = param[offset:].strip()
             print(f"Isolated Param: {isolated_param}")
             f_res = None
             try:
