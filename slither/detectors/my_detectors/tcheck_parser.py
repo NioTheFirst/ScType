@@ -60,12 +60,16 @@ def gen_finance_instances(line):
     for param in _line:
         if(param.find("f:")):
             offset = 0
+            foundf = False
             for i in range(len(param)):
-                if(param[i] == ' '):
+                if(param[i] == ' ' and foundf):
                     offset+=1
                 elif(param[i] == 'f' and i+1 < len(param) and param[i+1] == ':'):
-                    offset+=2
+                    foundf = True
+                    offset=i+1
                     i+=1
+                elif(foundf == False):
+                    continue
                 else:
                     break
             isolated_param = param[offset:]
