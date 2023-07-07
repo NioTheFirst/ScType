@@ -67,60 +67,6 @@ Checking... withdrawBalance
 [o] Marked
 Checking... slitherConstructorVariables
 [x] Not visible 
-State_var: simpleInterest
-Finding type for simpleInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 22)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: simpleInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: simple interest
-[*]Type fetched successfully
-State_var: compoundInterest
-Finding type for compoundInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 21)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: compoundInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: compound interest ratio
-[*]Type fetched successfully
-State_var: feeRatioA
-Finding type for feeRatioA...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 10)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: feeRatioA Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: fee ratio (t)
-[*]Type fetched successfully
 State_var: justConstant
 Finding type for justConstant...
 int256
@@ -176,6 +122,60 @@ Fields:
 Finance Type: undef
 [*]Type fetched successfully
 State_var: feeRatioA
+Finding type for feeRatioA...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 10)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+[*]Type fetched successfully
+State_var: compoundInterest
+Finding type for compoundInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 21)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: compoundInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: compound interest ratio
+[*]Type fetched successfully
+State_var: simpleInterest
+Finding type for simpleInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 22)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: simpleInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: simple interest
+[*]Type fetched successfully
+State_var: feeRatioA
 [*] A run
 Reading Function: calculateFee
 Function name: calculateFee
@@ -208,7 +208,7 @@ balanceA_1(int256) := ϕ(['balanceA_1'])
 has variable
 [i] balanceA cleared
 clearing ir...?
-feeRatioA_1(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+feeRatioA_1(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
 has variable
 typecheckig node...
 balanceA_1(int256) := ϕ(['balanceA_1'])
@@ -224,7 +224,7 @@ LF: None
 Fields: 
 Finance Type: raw balance
 done.
-feeRatioA_1(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+feeRatioA_1(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
 Function name: calculateFee
 Phi
 [i]Type for feeRatioA
@@ -287,7 +287,7 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: transaction fee
 
 Name: feeA Function: calculateFee
 Num: 
@@ -305,7 +305,7 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: transaction fee
 done.
 clearning node...
 clearing ir...?
@@ -320,7 +320,7 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: transaction fee
 WORKLIST iteration 0 for function call "calculateFee":
  New undefined nodes- 0
  Old undefined nodes- 0
@@ -332,7 +332,7 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: transaction fee
 ___
 Reading Function: updateFee
 Function name: updateFee
@@ -340,10 +340,10 @@ Function Visibility (test): public
 -100
 clearning node...
 clearing ir...?
-feeRatioA_2(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+feeRatioA_2(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
 has variable
 typecheckig node...
-feeRatioA_2(int256) := ϕ(['feeRatioA_0', 'feeRatioA_3'])
+feeRatioA_2(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
 Function name: updateFee
 Phi
 [i]Type for feeRatioA
@@ -419,7 +419,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 
 Name: feeRatioA Function: updateFee
 Num: 
@@ -437,7 +437,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 done.
 WORKLIST iteration 0 for function call "updateFee":
  New undefined nodes- 0
@@ -555,7 +555,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 
 Name: new_balanceA Function: applySimpleInterest
 Num: 
@@ -573,7 +573,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 done.
 clearning node...
 clearing ir...?
@@ -588,7 +588,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 WORKLIST iteration 0 for function call "applySimpleInterest":
  New undefined nodes- 0
  Old undefined nodes- 0
@@ -600,7 +600,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 ___
 Reading Function: applyCompoundInterest
 Function name: applyCompoundInterest
@@ -702,8 +702,6 @@ Finance Type: None
 initlize checks
 ;;;
 lnorm: 0 rnorm: 0
-Error with TMP_4 in function applyCompoundInterest
-Error with: TMP_4 in function applyCompoundInterest
 
 Name: balanceA Function: applyCompoundInterest
 Num: 1
@@ -714,21 +712,21 @@ Fields:
 Finance Type: raw balance
 
 Name: TMP_4 Function: applyCompoundInterest
-Num: -1
-Den: -1
-Norm: u
+Num: 
+Den: 
+Norm: 0
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 [i]Type for TMP_4
 
 Name: TMP_4 Function: applyCompoundInterest
 Num: 1
 Den: -1
-Norm: u
+Norm: 0
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 done.
 new_balanceA_1(int256) := TMP_4(int256)
 Function name: applyCompoundInterest
@@ -737,10 +735,10 @@ asgn
 Name: TMP_4 Function: applyCompoundInterest
 Num: 1
 Den: -1
-Norm: u
+Norm: 0
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: accrued balance
 
 Name: new_balanceA Function: applyCompoundInterest
 Num: 
@@ -749,16 +747,16 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: None
-u
+0
 [i]Type for new_balanceA
 
 Name: new_balanceA Function: applyCompoundInterest
 Num: 1
 Den: -1
-Norm: u
+Norm: 0
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: accrued balance
 done.
 clearning node...
 clearing ir...?
@@ -770,10 +768,10 @@ RETURN
 Name: new_balanceA Function: applyCompoundInterest
 Num: 1
 Den: -1
-Norm: u
+Norm: 0
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: accrued balance
 WORKLIST iteration 0 for function call "applyCompoundInterest":
  New undefined nodes- 0
  Old undefined nodes- 0
@@ -782,10 +780,10 @@ Saving return values for: applyCompoundInterest
 Name: new_balanceA Function: applyCompoundInterest
 Num: 1
 Den: -1
-Norm: u
+Norm: 0
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: accrued balance
 ___
 Reading Function: withdrawBalance
 Function name: withdrawBalance
@@ -817,10 +815,10 @@ clearing ir...?
 justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
 has variable
 clearing ir...?
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 has variable
 clearing ir...?
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 has variable
 typecheckig node...
 justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
@@ -836,7 +834,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -849,7 +847,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
@@ -998,7 +996,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 
 Name: net_balanceA Function: withdrawBalance
 Num: 
@@ -1016,7 +1014,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 done.
 clearning node...
 clearing ir...?
@@ -1202,7 +1200,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 
 Name: reserveA Function: global
 Num: 1
@@ -1253,7 +1251,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 WORKLIST iteration 0 for function call "withdrawBalance":
  New undefined nodes- 4
  Old undefined nodes- 0
@@ -1271,7 +1269,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -1284,7 +1282,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
+reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
@@ -1295,7 +1293,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: reserve
+Finance Type: undef
 done.
 typecheckig node...
 TMP_5(int256) = INTERNAL_CALL, A.calculateFee(int256)(balanceA_1)
@@ -1416,7 +1414,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 
 Name: net_balanceA Function: withdrawBalance
 Num: 1
@@ -1424,7 +1422,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 u
 [i]Type for net_balanceA
 
@@ -1434,7 +1432,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 done.
 typecheckig node...
 TMP_7(int256) = INTERNAL_CALL, A.applySimpleInterest(int256)(balanceA_1)
@@ -1503,7 +1501,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 initlize checks
 ;;;
 lnorm: u rnorm: u
@@ -1547,7 +1545,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 initlize checks
 ;;;
 lnorm: u rnorm: u
@@ -1592,7 +1590,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: reserve
+Finance Type: undef
 
 Name: TMP_9 Function: withdrawBalance
 Num: -1
@@ -1600,7 +1598,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 
 Name: reserveA Function: global
 Num: 1
@@ -1608,7 +1606,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: reserve
+Finance Type: undef
 
 Name: reserveA Function: withdrawBalance
 Num: 
@@ -1645,7 +1643,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 WORKLIST iteration 1 for function call "withdrawBalance":
  New undefined nodes- 4
  Old undefined nodes- 4
@@ -1657,7 +1655,7 @@ Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: None
+Finance Type: undef
 ___
 Reading Function: slitherConstructorVariables
 Function slitherConstructorVariables not marked

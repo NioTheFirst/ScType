@@ -142,6 +142,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         assign_ftype(-1, dest)
     elif(func == "assign" or "pow"):
         assign_ftype(_rlf, dest)
+    print("Func: {func}")
 
         
 
