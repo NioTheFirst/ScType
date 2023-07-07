@@ -488,7 +488,7 @@ def update_non_ssa(ir):
         copy_norm(ir, non_ssa_ir)
         non_ssa_ir.norm = ir.norm
         non_ssa_ir.link_function = ir.link_function
-        non_ssa_ir.finance_type = ir.extok.finance_type
+        non_ssa_ir.extok.finance_type = ir.extok.finance_type
 
 #USAGE: type checks an IR
 #currently handles assignments and Binary
