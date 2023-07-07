@@ -424,6 +424,9 @@ def copy_inv_token_type(src, dest):
 def copy_pc_token_type(src, dest):
     tcheck_propagation.copy_pc_token_type(src, dest)
 
+#USAGE: copies a finance type
+def copy_ftype(src, dest):
+    tcheck_propagation.copy_ftype(src, dest)
 
 def compare_token_type(src, dest):
     return tcheck_propagation.compare_token_type(src, dest)
@@ -631,10 +634,10 @@ def type_included_hlc(ir, dest, function):
         if isinstance(ir, Variable):
             if(isinstance(ret_obj, list)):
                 type_asn(ir.lvalue, ret_obj[0])
-                pass_ftype(ret_obj[0], ir.lvalue)
+                copy_ftype(ret_obj[0], ir.lvalue)
             else:
                 type_asn(ir.lvalue, ret_obj)
-                pass_ftype(ret_obj, ir.lvalue)
+                copy_ftype(ret_obj, ir.lvalue)
         else:
             add_tuple(ir.lvalue.name, ret_obj)
 
@@ -893,10 +896,10 @@ def type_fc(ir) -> bool:
         if isinstance(ir, Variable):
             if isinstance(ret_obj, list):
                 type_asn(ir.lvalue, ret_obj[0])
-                pass_ftype(ret_obj[0], ir.lvalue)
+                copy_ftype(ret_obj[0], ir.lvalue)
             else:
                 type_asn(ir.lvalue, ret_obj)
-                pass_ftype(ret_obj, ir.lvalue)
+                copy_ftype(ret_obj, ir.lvalue)
         else:
             add_tuple(ir.lvalue.name, ret_obj)
 
