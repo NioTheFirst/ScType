@@ -1,6 +1,6 @@
 from slither.core.solidity_types import UserDefinedType, ArrayType, MappingType
 from slither.core.declarations import Structure, Contract
-from slither.core.variables import Variable
+from slither.core.variables.variable import Variable
 
 import tcheck_parser
 import tcheck
