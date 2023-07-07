@@ -89,6 +89,7 @@ def gen_finance_instances(line):
             if not isinstance(f_res, int):
                 print("[x] FINANCE TYPE IS NOT INT")
             finance_instances.append(f_res)
+            print(f"F num: {f_res}")
     return finance_instances
 
 
