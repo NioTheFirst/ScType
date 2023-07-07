@@ -1827,6 +1827,7 @@ def _tcheck_contract(contract):
         #print("[*i*]External Function: " + function.name)
         #continue
         addback_nodes = _tcheck_function(function)
+        _tcheck_contract_state_var(contract)
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
     """cur = 0    
@@ -1847,7 +1848,8 @@ def _tcheck_contract(contract):
 def _read_state_variables(contract):
     ret = []
     for f in contract.all_functions_called + contract.modifiers:
-        ret += f.state_variables_read
+        if not(f in ret):
+            ret += f.state_variables_read
     return ret
 
 class tcheck(AbstractDetector):
