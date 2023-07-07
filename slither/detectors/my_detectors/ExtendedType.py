@@ -194,15 +194,19 @@ class ExtendedType():
         num_token_types_str = ", ".join(str(elem) for elem in self._num_token_types)
         den_token_types_str = ", ".join(str(elem) for elem in self._den_token_types)
         fields_str = ", ".join(str(elem.name) for elem in self._fields)
+        if self._finance_type in f_type_num:
+            finance_type = f_type_num[self._finance_type]
+        else:
+            finance_type = None
         return (
-            "\n"
+            f"\n"
             f"Name: {self._name} Function: {self._function_name}\n"
             f"Num: {num_token_types_str}\n"
             f"Den: {den_token_types_str}\n"
             f"Norm: {self._norm}\n"
             f"LF: {self._linked_contract}\n"
             f"Fields: {fields_str}\n"
-            f"Finance Type: {f_type_num[self._finance_type]}"
+            f"Finance Type: {finance_type}"
         )
  
         
