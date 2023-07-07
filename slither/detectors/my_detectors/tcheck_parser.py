@@ -81,6 +81,8 @@ def gen_finance_instances(line):
 
 def parse_finance_file(f_file):
     #Same structure as token_type parser
+    if(f_file == None):
+        return
     with open(f_file, 'r') as finance_file:
         for line in finance_file:
             _line = split_line(line)
