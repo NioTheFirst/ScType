@@ -67,42 +67,6 @@ Checking... withdrawBalance
 [o] Marked
 Checking... slitherConstructorVariables
 [x] Not visible 
-State_var: simpleInterest
-Finding type for simpleInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: simpleInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: None
-[*]Type fetched successfully
-State_var: feeRatioA
-Finding type for feeRatioA...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: feeRatioA Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: None
-[*]Type fetched successfully
 State_var: justConstant
 Finding type for justConstant...
 int256
@@ -157,6 +121,25 @@ LF: None
 Fields: 
 Finance Type: None
 [*]Type fetched successfully
+State_var: feeRatioA
+Finding type for feeRatioA...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: None
+[*]Type fetched successfully
+State_var: feeRatioA
 State_var: compoundInterest
 Finding type for compoundInterest...
 int256
@@ -175,7 +158,24 @@ LF: None
 Fields: 
 Finance Type: None
 [*]Type fetched successfully
-State_var: feeRatioA
+State_var: simpleInterest
+Finding type for simpleInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: simpleInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: None
+[*]Type fetched successfully
 [*] A run
 Reading Function: calculateFee
 Function name: calculateFee
@@ -811,10 +811,10 @@ clearing ir...?
 justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
 has variable
 clearing ir...?
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 has variable
 clearing ir...?
-reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
 has variable
 typecheckig node...
 justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
@@ -830,7 +830,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -843,7 +843,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
@@ -1257,7 +1257,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -1270,7 +1270,7 @@ LF: None
 Fields: 
 Finance Type: None
 done.
-reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
