@@ -101,6 +101,8 @@ def copy_pc_token_type(src, dest):
 
 #USAGE: copies a finance type
 def copy_ftype(src, dest):
+    if(not(isinstance(src, Variable) and isinstance(dest, Variable))):
+        return
     _src = src.extok
     _dest = dest.extok
     _dest.finance_type = _src.finance_type
