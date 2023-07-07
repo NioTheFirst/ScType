@@ -7,7 +7,47 @@ import tcheck
 #       these functions contain handling for ABSTRACT types as well (any type > abs_buf is an ABSTRACT type)
 #       ABSTRACT types take priority over CONCRETE types (temporary handling for if statements)
 #       ABSTRACT type comparison to CONCRETE type comparison always holds true 
-from tcheck_parser import field_tuple_start
+from tcheck_parser import field_tuple_start, f_type_name, f_type_num
+
+
+f_type_addsub = {
+    (0, 11): 1, #raw balance - fee = net balance 
+    (0, 23): 2, #compound interest + balance = accrued balance
+    (23, 0): 2,
+    (1, 23) : 3, #compound interest + net balance = final balance
+    (23, 1) : 3,
+    (30, 0): 30,#reserve - any balance
+    (30, 1): 30,
+    (30, 2): 30,
+    (30, 3): 30,
+}
+
+f_type_muldiv = {
+    (0, 10) : 11, #raw balance * fee ratio (t)= transaction fee
+    (10, 0) : 11,
+    (2, 10) : 11, #accrued balance * fee ratio (t) = transaction fee
+    (10, 2) : 11,
+    (11, 10):11, #fee * fee ratio = fee
+    (10, 11):11,
+    (0, 20):2, #simple interest ratio * raw balance = accrued balance
+    (20, 0):2,
+    (1, 20):3, #net balance * simple interest ratio = final balance
+    (20, 1):3,
+    (0, 21):23, #compound interest ratio * raw balance = compound interest
+    (21, 0):23,
+    (22, 20), 22, #simple intrest * simple interest ratio = simple interest
+    (20, 22), 22,
+    (23, 21):23, #compound interest * compound interest ratio = compound interest
+    (21, 23): 23, 
+    (40, 0) : 0, #price/exchange rate * any balance = corresponding balance
+    (0, 40) : 0,
+    (40, 1) : 1,
+    (1, 40) : 1,
+    (40, 2) : 2,
+    (1, 40) : 2,
+    (40, 3) : 3,
+    (3, 40) : 3,    
+}
 
 abs_buf = 10    
 
@@ -25,7 +65,7 @@ def copy_token_type(dest, src):
 
     for field in _src.fields:
         _dest.add_field(field)
-    _dest.finance_type = _src.finance_type
+    #_dest.finance_type = _src.finance_type
 
 #USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
 def copy_inv_token_type(src, dest):
@@ -38,7 +78,7 @@ def copy_inv_token_type(src, dest):
     if _src.linked_contract:
         _dest.linked_contract = _src.linked_contract
 
-    _dest.finance_type = _src.finance_type
+    #_dest.finance_type = _src.finance_type
 
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
@@ -72,6 +112,38 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
     #rsrcl is the left-most rhand side variable
     #rsrcr is the (optional) right-most rhand-side variable
     #func is the name of the function
+    _rl = rsrcl.extok
+    _rlf = _rl.finance_type
+    _rr = None
+    _rrf = -1
+    if(rsrcr):
+        _rr = rsrcr.extok
+        _rrf = _rr.finance_type
+        if(_rrf == -1):
+            assign_ftype(_rlf, dest)
+        if(_rlf == -1):
+            assign_ftype(_rrf, dest)
+    key = (_rlf, _rrf)
+    if(func == "add" or func == "sub"):
+        if key in f_type_addsub:
+            assign_ftype(f_type_addsub[key], dest)
+        else:
+            assign_ftype(-1, dest)
+            tcheck.add_errors(dest)
+    elif(func == "mul" or func == "div"):
+        if key in f_type_muldiv:
+            assign_ftype(f_type_muldiv[key], dest)
+        else:
+            assign_ftype(-1, dest)
+            tcheck.add_errors(dest)
+    elif(func == "compare"):
+        if(_rlf != _rrf):
+            tcheck.add_errors(dest)
+        assign_ftype(-1, dest)
+    elif(func == "assign" or "pow"):
+        assign_ftype(_rlf, dest)
+
+        
 
 #USAGE: directly copies a norm value. WARNING: skips typechecks associated with normalization
 def copy_norm(src, dest):

@@ -58,9 +58,6 @@ f_type_name = {
     "price/exchange rate" : 40,
 }
 
-f_type_add = {
-
-}
 
 def gen_finance_instances(line):
     _line = line.split(",")

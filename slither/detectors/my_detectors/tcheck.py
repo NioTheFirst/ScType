@@ -170,6 +170,10 @@ def print_token_type(ir):
     if(isinstance(ir, Variable)):
         print(ir.extok)
 
+#USAGE: passes the finance type
+def pass_ftype(dest, left, func, right = None):
+    tcheck_propagation.pass_ftype(dest, left, func, right)
+
 #USAGE: prints a param_cache
 #RETURNS: nothing
 def print_param_cache(param_cache):
@@ -461,6 +465,7 @@ def convert_ssa(ir):
         if(non_ssa_ir.extok.function_name):
             _ir.function_name = non_ssa_ir.extok.function_name
         ir.link_function = non_ssa_ir.link_function
+        _ir.finance_type = non_ssa_ir.finance_type
 
 #USAGE: updates a non_ssa instance of a variable
 #RETURNS: NULL
@@ -483,6 +488,7 @@ def update_non_ssa(ir):
         copy_norm(ir, non_ssa_ir)
         non_ssa_ir.norm = ir.norm
         non_ssa_ir.link_function = ir.link_function
+        non_ssa_ir.finance_type = ir.extok.finance_type
 
 #USAGE: type checks an IR
 #currently handles assignments and Binary
@@ -495,6 +501,7 @@ def check_type(ir) -> bool:
         addback = type_asn(ir.lvalue, ir.rvalue)
         print(get_norm(ir.rvalue))
         asn_norm(ir.lvalue, get_norm(ir.rvalue))
+        pass_ftype(ir.lvalue, ir.ravlue, "assign")
         #print_token_type(ir.lvalue)
     elif isinstance(ir, Binary):
         #Binary
@@ -1065,6 +1072,7 @@ def type_bin_pow(dest, lir, rir) -> bool:
         return True
     pow_const = -1
     print_token_type(dest) 
+    pass_ftype(dest, lir, "pow", rir)
     if(is_constant(rir)):
         pow_const = rir.value
     if(is_type_const(lir)):
@@ -1107,6 +1115,7 @@ def type_bin_add(dest, lir, rir) -> bool:
     print("initlize checks")
     print(";;;")
     bin_norm(dest, lir, rir)
+    pass_ftype(dest, lir, "add", rir)
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1135,6 +1144,7 @@ def type_bin_sub(dest, lir, rir) -> bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir)
+    pass_ftype(dest, lir, "sub", rir)
     print_token_type(lir)
     print_token_type(rir)
     if(is_type_undef(lir) or  is_type_undef(rir)):
@@ -1316,6 +1326,7 @@ def type_bin_mul(dest, lir, rir) ->bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir, "mul")
+    pass_ftype(dest, lir, "mul", rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1339,6 +1350,7 @@ def type_bin_div(dest, lir, rir) ->bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir, "div")
+    pass_ftype(dest, lir, "div", rir)
     #if(get_norm(dest) != 0):
     #    add_error(dest)
     print(dest.extok)
@@ -1366,6 +1378,7 @@ def type_bin_gt(dest, lir, rir) -> bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir)
+    pass_ftype(dest, lir, "compare", rir)
     print_token_type(rir)
     print(is_type_const(rir))
     if(is_type_undef(lir) or is_type_undef(rir)):
@@ -1391,6 +1404,7 @@ def type_bin_ge(dest, lir, rir) -> bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir)
+    pass_ftype(dest, lir, "compare", rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1414,6 +1428,7 @@ def type_bin_lt(dest, lir, rir) -> bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir)
+    pass_ftype(dest, lir, "compare", rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
@@ -1437,6 +1452,7 @@ def type_bin_le(dest, lir, rir) -> bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir)
+    pass_ftype(dest, lir, "compare", rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
