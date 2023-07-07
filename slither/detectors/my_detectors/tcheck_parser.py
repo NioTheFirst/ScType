@@ -33,8 +33,10 @@ f_type_num = {
     10: "fee ratio (t)",
     11: "transaction fee",
     12: "lp fee",
-    20: "simple interest",
-    21: "compound interest",
+    20: "simple interest ratio",
+    21: "compound interest ratio",
+    22: "simple interest"
+    23: "compound interest"
     30: "reserve",
     40: "price/exchange rate",
 }
@@ -48,10 +50,16 @@ f_type_name = {
     "fee ratio (t)" : 10,
     "transaction fee" :11,
     "lp fee" : 12,
-    "simple interest" : 20,
-    "compound interest" : 21,
+    "simple interest ratio" : 20,
+    "compound interest ratio" : 21,
+    "simple interest": 22,
+    "compound interest" : 23,
     "reserve" : 30,
     "price/exchange rate" : 40,
+}
+
+f_type_add = {
+
 }
 
 def gen_finance_instances(line):

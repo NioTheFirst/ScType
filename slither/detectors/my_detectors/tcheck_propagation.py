@@ -25,6 +25,7 @@ def copy_token_type(dest, src):
 
     for field in _src.fields:
         _dest.add_field(field)
+    _dest.finance_type = _src.finance_type
 
 #USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
 def copy_inv_token_type(src, dest):
@@ -36,6 +37,8 @@ def copy_inv_token_type(src, dest):
         _dest.add_num_token_type(d)
     if _src.linked_contract:
         _dest.linked_contract = _src.linked_contract
+
+    _dest.finance_type = _src.finance_type
 
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
@@ -52,6 +55,23 @@ def copy_pc_token_type(src, dest):
         for field in src[4]:
             _dest.add_field(field)
 
+
+#USAGE: copies a finance type
+def copy_ftype(src, dest):
+    _src = src.extok
+    _dest = dest.extok
+    _dest.finance_type = _src.finance_type
+
+#USAGE: assigns a finance type
+def assign_ftype(ftype, dest):
+    dest.extok.finance_type = ftype
+
+#USAGE: finance type propogation
+def pass_ftype(dest, rsrcl, func, rsrcr = None):
+    #dest is the finance destination
+    #rsrcl is the left-most rhand side variable
+    #rsrcr is the (optional) right-most rhand-side variable
+    #func is the name of the function
 
 #USAGE: directly copies a norm value. WARNING: skips typechecks associated with normalization
 def copy_norm(src, dest):

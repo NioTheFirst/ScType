@@ -213,7 +213,8 @@ def gen_param_cache(param_list):
         norm = _param.norm
         link_function = _param.linked_contract
         fields = _param.fields
-        param_type = [num, den, norm, link_function, fields]
+        finance_type = _param.finance_type
+        param_type = [num, den, norm, link_function, fields, finance_type]
         param_cache.append(param_type)
     return param_cache
 
