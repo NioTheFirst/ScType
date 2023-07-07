@@ -72,6 +72,8 @@ def gen_finance_instances(line):
                     continue
                 else:
                     break
+            if(foundf == False):
+                continue
             isolated_param = param[offset:]
             print(f"Isolated Param: {isolated_param}")
             f_res = None
