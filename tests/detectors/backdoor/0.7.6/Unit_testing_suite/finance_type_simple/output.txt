@@ -67,6 +67,42 @@ Checking... withdrawBalance
 [o] Marked
 Checking... slitherConstructorVariables
 [x] Not visible 
+State_var: feeRatioA
+Finding type for feeRatioA...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 10)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+[*]Type fetched successfully
+State_var: simpleInterest
+Finding type for simpleInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 20)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: simpleInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: simple interest ratio
+[*]Type fetched successfully
 State_var: compoundInterest
 Finding type for compoundInterest...
 int256
@@ -85,6 +121,7 @@ LF: None
 Fields: 
 Finance Type: compound interest ratio
 [*]Type fetched successfully
+State_var: feeRatioA
 State_var: justConstant
 Finding type for justConstant...
 int256
@@ -138,43 +175,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-[*]Type fetched successfully
-State_var: feeRatioA
-Finding type for feeRatioA...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 10)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: feeRatioA Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: fee ratio (t)
-[*]Type fetched successfully
-State_var: feeRatioA
-State_var: simpleInterest
-Finding type for simpleInterest...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 20)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: simpleInterest Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: simple interest ratio
 [*]Type fetched successfully
 [*] A run
 Reading Function: calculateFee
@@ -827,7 +827,7 @@ clearing ir...?
 justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
 has variable
 clearing ir...?
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 has variable
 clearing ir...?
 reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
@@ -846,7 +846,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
+weird_1(int256) := ϕ(['weird_3', 'weird_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -903,7 +903,14 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: transaction fee
-[i]Type for TMP_5
+
+Name: feeA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
 
 Name: TMP_5 Function: withdrawBalance
 Num: 
@@ -912,18 +919,27 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+[i]Type for TMP_5
+
+Name: TMP_5 Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: transaction fee
 done.
 feeA_1(int256) := TMP_5(int256)
 Function name: withdrawBalance
 asgn
 
 Name: TMP_5 Function: withdrawBalance
-Num: 
-Den: 
+Num: 1
+Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: transaction fee
 
 Name: feeA Function: withdrawBalance
 Num: 
@@ -933,21 +949,18 @@ LF: None
 Fields: 
 Finance Type: undef
 u
-Finance type key: (-1, -1)
+Finance type key: (11, -1)
 Func: assign
 [i]Type for feeA
 
 Name: feeA Function: withdrawBalance
-Num: 
-Den: 
+Num: 1
+Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: transaction fee
 done.
-This IR caused addback:
-feeA_1(int256) := TMP_5(int256)
-XXXXX
 clearning node...
 clearing ir...?
 TMP_6(int256) = balanceA_1 (c)- feeA_1
@@ -961,6 +974,8 @@ typecheckig node...
 TMP_6(int256) = balanceA_1 (c)- feeA_1
 Function name: withdrawBalance
 lnorm: 0 rnorm: u
+Finance type key: (0, 11)
+Func: sub
 
 Name: balanceA Function: withdrawBalance
 Num: 1
@@ -971,12 +986,12 @@ Fields:
 Finance Type: raw balance
 
 Name: feeA Function: withdrawBalance
-Num: 
-Den: 
+Num: 1
+Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: transaction fee
 
 Name: balanceA Function: withdrawBalance
 Num: 1
@@ -992,7 +1007,7 @@ Den:
 Norm: 0
 LF: None
 Fields: 
-Finance Type: raw balance
+Finance Type: net balance
 [i]Type for TMP_6
 
 Name: TMP_6 Function: withdrawBalance
@@ -1001,11 +1016,8 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: raw balance
+Finance Type: net balance
 done.
-This IR caused addback:
-TMP_6(int256) = balanceA_1 (c)- feeA_1
-XXXXX
 net_balanceA_1(int256) := TMP_6(int256)
 Function name: withdrawBalance
 asgn
@@ -1016,7 +1028,7 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: raw balance
+Finance Type: net balance
 
 Name: net_balanceA Function: withdrawBalance
 Num: 
@@ -1026,7 +1038,7 @@ LF: None
 Fields: 
 Finance Type: undef
 0
-Finance type key: (0, -1)
+Finance type key: (1, -1)
 Func: assign
 [i]Type for net_balanceA
 
@@ -1036,7 +1048,7 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: raw balance
+Finance Type: net balance
 done.
 clearning node...
 clearing ir...?
@@ -1069,7 +1081,14 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: accrued balance
-[i]Type for TMP_7
+
+Name: new_balanceA Function: applySimpleInterest
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: accrued balance
 
 Name: TMP_7 Function: withdrawBalance
 Num: 
@@ -1078,18 +1097,27 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+[i]Type for TMP_7
+
+Name: TMP_7 Function: withdrawBalance
+Num: 1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: accrued balance
 done.
 final_balanceA_1(int256) := TMP_7(int256)
 Function name: withdrawBalance
 asgn
 
 Name: TMP_7 Function: withdrawBalance
-Num: 
-Den: 
+Num: 1
+Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Name: final_balanceA Function: withdrawBalance
 Num: 
@@ -1099,21 +1127,18 @@ LF: None
 Fields: 
 Finance Type: undef
 u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Func: assign
 [i]Type for final_balanceA
 
 Name: final_balanceA Function: withdrawBalance
-Num: 
-Den: 
+Num: 1
+Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 done.
-This IR caused addback:
-final_balanceA_1(int256) := TMP_7(int256)
-XXXXX
 clearning node...
 clearing ir...?
 TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
@@ -1141,450 +1166,37 @@ initlize checks
 ;;;
 lnorm: u rnorm: u
 
-Name: justConstant Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: TMP_8 Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_8
-
-Name: TMP_8 Function: withdrawBalance
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-done.
-This IR caused addback:
-TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
-XXXXX
-TMP_9(int256) = TMP_8 (c)+ weird_3
-Function name: withdrawBalance
-
-Name: TMP_9 Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-initlize checks
-;;;
-lnorm: u rnorm: u
-
-Name: weird Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: TMP_9 Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_9
-
-Name: TMP_9 Function: withdrawBalance
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-done.
-reserveA_4(int256) = reserveA_3 (c)- TMP_9
-Function name: withdrawBalance
-lnorm: 0 rnorm: u
-
-Name: reserveA Function: global
+Name: final_balanceA Function: withdrawBalance
 Num: 1
 Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: reserve
-
-Name: TMP_9 Function: withdrawBalance
-Num: -1
-Den: -1
 Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: reserveA Function: global
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: reserve
-
-Name: reserveA Function: withdrawBalance
-Num: 
-Den: 
-Norm: 0
-LF: None
-Fields: 
-Finance Type: reserve
-[i]Type for reserveA
-
-Name: reserveA Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: reserve
-done.
-clearning node...
-clearing ir...?
-INTERNAL_CALL, A.updateFee()()
-typecheckig node...
-INTERNAL_CALL, A.updateFee()()
-Internal call...
-updateFee
-Function: updateFee
-ic
-NO RETURN LOCATION
-done.
-clearning node...
-clearing ir...?
-RETURN net_balanceA_1
-typecheckig node...
-RETURN net_balanceA_1
-RETURN
-
-Name: net_balanceA Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: raw balance
-WORKLIST iteration 0 for function call "withdrawBalance":
- New undefined nodes- 4
- Old undefined nodes- 0
-typecheckig node...
-justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
-Function name: withdrawBalance
-Phi
-[i]Type for justConstant
-
-Name: justConstant Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-done.
-weird_1(int256) := ϕ(['weird_0', 'weird_3'])
-Function name: withdrawBalance
-Phi
-[i]Type for weird
-
-Name: weird Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-done.
-reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
-Function name: withdrawBalance
-Phi
-[i]Type for reserveA
-
-Name: reserveA Function: global
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: reserve
-done.
-typecheckig node...
-TMP_5(int256) = INTERNAL_CALL, A.calculateFee(int256)(balanceA_1)
-Function name: withdrawBalance
-Internal call...
-calculateFee
-balanceA
-Function: calculateFee
-ic
-Internal cal param_cache
-Param: 0
-    num: [1]
-    den: [-1]
-0
-0
-
-Name: feeA Function: calculateFee
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: transaction fee
-[i]Type for TMP_5
-
-Name: TMP_5 Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-done.
-feeA_1(int256) := TMP_5(int256)
-Function name: withdrawBalance
-asgn
-
-Name: TMP_5 Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: feeA Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-u
-Finance type key: (-1, -1)
-Func: assign
-[i]Type for feeA
-
-Name: feeA Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-done.
-This IR caused addback:
-feeA_1(int256) := TMP_5(int256)
-XXXXX
-typecheckig node...
-TMP_6(int256) = balanceA_1 (c)- feeA_1
-Function name: withdrawBalance
-lnorm: 0 rnorm: u
-
-Name: balanceA Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: raw balance
-
-Name: feeA Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: balanceA Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: raw balance
-
-Name: TMP_6 Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: raw balance
-[i]Type for TMP_6
-
-Name: TMP_6 Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: raw balance
-done.
-This IR caused addback:
-TMP_6(int256) = balanceA_1 (c)- feeA_1
-XXXXX
-net_balanceA_1(int256) := TMP_6(int256)
-Function name: withdrawBalance
-asgn
-
-Name: TMP_6 Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: raw balance
-
-Name: net_balanceA Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: raw balance
-0
-Finance type key: (0, -1)
-Func: assign
-[i]Type for net_balanceA
-
-Name: net_balanceA Function: withdrawBalance
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: raw balance
-done.
-typecheckig node...
-TMP_7(int256) = INTERNAL_CALL, A.applySimpleInterest(int256)(balanceA_1)
-Function name: withdrawBalance
-Internal call...
-applySimpleInterest
-balanceA
-Function: applySimpleInterest
-ic
-Internal cal param_cache
-Param: 0
-    num: [1]
-    den: [-1]
-0
-0
-
-Name: new_balanceA Function: applySimpleInterest
-Num: 1
-Den: -1
-Norm: 0
 LF: None
 Fields: 
 Finance Type: accrued balance
-[i]Type for TMP_7
-
-Name: TMP_7 Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-done.
-final_balanceA_1(int256) := TMP_7(int256)
-Function name: withdrawBalance
-asgn
-
-Name: TMP_7 Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: final_balanceA Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-u
-Finance type key: (-1, -1)
-Func: assign
-[i]Type for final_balanceA
-
-Name: final_balanceA Function: withdrawBalance
-Num: 
-Den: 
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-done.
-This IR caused addback:
-final_balanceA_1(int256) := TMP_7(int256)
-XXXXX
-typecheckig node...
-TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
-Function name: withdrawBalance
 
 Name: TMP_8 Function: withdrawBalance
-Num: -1
-Den: -1
+Num: 
+Den: 
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
-initlize checks
-;;;
-lnorm: u rnorm: u
-
-Name: justConstant Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: TMP_8 Function: withdrawBalance
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 [i]Type for TMP_8
 
 Name: TMP_8 Function: withdrawBalance
-Num: -1
+Num: 1
 Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 done.
-This IR caused addback:
-TMP_8(int256) = final_balanceA_1 (c)+ justConstant_3
-XXXXX
 TMP_9(int256) = TMP_8 (c)+ weird_3
 Function name: withdrawBalance
 
 Name: TMP_9 Function: withdrawBalance
-Num: -1
-Den: -1
+Num: 
+Den: 
 Norm: u
 LF: None
 Fields: 
@@ -1593,34 +1205,36 @@ initlize checks
 ;;;
 lnorm: u rnorm: u
 
-Name: weird Function: global
-Num: -1
+Name: TMP_8 Function: withdrawBalance
+Num: 1
 Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Name: TMP_9 Function: withdrawBalance
-Num: -1
-Den: -1
+Num: 
+Den: 
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 [i]Type for TMP_9
 
 Name: TMP_9 Function: withdrawBalance
-Num: -1
+Num: 1
 Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 done.
 reserveA_4(int256) = reserveA_3 (c)- TMP_9
 Function name: withdrawBalance
 lnorm: 0 rnorm: u
+Finance type key: (30, 2)
+Func: sub
 
 Name: reserveA Function: global
 Num: 1
@@ -1631,12 +1245,12 @@ Fields:
 Finance Type: reserve
 
 Name: TMP_9 Function: withdrawBalance
-Num: -1
+Num: 1
 Den: -1
 Norm: u
 LF: None
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Name: reserveA Function: global
 Num: 1
@@ -1647,8 +1261,8 @@ Fields:
 Finance Type: reserve
 
 Name: reserveA Function: withdrawBalance
-Num: 1
-Den: -1
+Num: 
+Den: 
 Norm: 0
 LF: None
 Fields: 
@@ -1663,6 +1277,9 @@ LF: None
 Fields: 
 Finance Type: reserve
 done.
+clearning node...
+clearing ir...?
+INTERNAL_CALL, A.updateFee()()
 typecheckig node...
 INTERNAL_CALL, A.updateFee()()
 Internal call...
@@ -1671,6 +1288,9 @@ Function: updateFee
 ic
 NO RETURN LOCATION
 done.
+clearning node...
+clearing ir...?
+RETURN net_balanceA_1
 typecheckig node...
 RETURN net_balanceA_1
 RETURN
@@ -1681,10 +1301,10 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: raw balance
-WORKLIST iteration 1 for function call "withdrawBalance":
- New undefined nodes- 4
- Old undefined nodes- 4
+Finance Type: net balance
+WORKLIST iteration 0 for function call "withdrawBalance":
+ New undefined nodes- 0
+ Old undefined nodes- 0
 Saving return values for: withdrawBalance
 
 Name: net_balanceA Function: withdrawBalance
@@ -1693,7 +1313,7 @@ Den: -1
 Norm: 0
 LF: None
 Fields: 
-Finance Type: raw balance
+Finance Type: net balance
 ___
 Reading Function: slitherConstructorVariables
 Function slitherConstructorVariables not marked
