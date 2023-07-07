@@ -58,7 +58,7 @@ def gen_finance_instances(line):
     _line = line.split(",")
     finance_instances = []
     for param in _line:
-        if(param.startswith("f:")):
+        if(param.contains("f:")):
             offset = 2
             for char in param[2:]:
                 if(char == ' '):
