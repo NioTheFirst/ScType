@@ -126,6 +126,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             assign_ftype(_rrf, dest)
             return
     key = (_rlf, _rrf)
+    print(f"Finance type key: {key}")
     if(func == "add" or func == "sub"):
         if key in f_type_addsub:
             assign_ftype(f_type_addsub[key], dest)
