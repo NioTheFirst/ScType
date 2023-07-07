@@ -1,5 +1,6 @@
 from slither.core.solidity_types import UserDefinedType, ArrayType, MappingType
 from slither.core.declarations import Structure, Contract
+from slither.core.variables import Variable
 
 import tcheck_parser
 import tcheck
@@ -114,6 +115,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
     #rsrcl is the left-most rhand side variable
     #rsrcr is the (optional) right-most rhand-side variable
     #func is the name of the function
+    if(not(isinstance(rsrcl, Variable) and isinstance(rsrcr, Variable)))
     _rl = rsrcl.extok
     _rlf = _rl.finance_type
     _rr = None
