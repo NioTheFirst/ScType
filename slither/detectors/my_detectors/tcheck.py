@@ -1845,7 +1845,6 @@ class tcheck(AbstractDetector):
     """
     Detects round up round down functions
     """
-    global errors
     ARGUMENT = 'tcheck' # slither will launch the detector with slither.py --detect mydetector
     HELP = 'Help printed by slither'
     IMPACT = DetectorClassification.INFORMATIONAL
@@ -1864,7 +1863,6 @@ class tcheck(AbstractDetector):
         global user_type
         global type_file
         global line_no
-        global errors
         global constant_instance
         assign_const(constant_instance)
         for contract in self.slither.contracts:
@@ -1917,10 +1915,10 @@ class tcheck(AbstractDetector):
             if(not (check_contract(contract.name))):
                 continue
             user_type = u_provide_type[contract.name]
-            _tcheck_contract(contract)
+            errorsx = tcheck_contract(contract)
             #print("xxxxxx")
-            print(f"Errors: {errors}")
-            for ir in errors:
+            print(f"Errors: {errorsx}")
+            for ir in errorsx:
                 _ir = ir.extok
                 name = _ir.name
                 func = _ir.function_name

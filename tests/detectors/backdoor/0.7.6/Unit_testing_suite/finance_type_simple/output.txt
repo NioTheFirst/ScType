@@ -67,6 +67,60 @@ Checking... withdrawBalance
 [o] Marked
 Checking... slitherConstructorVariables
 [x] Not visible 
+State_var: justConstant
+Finding type for justConstant...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, -1)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: justConstant Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[*]Type fetched successfully
+State_var: reserveA
+Finding type for reserveA...
+int256
+Check copy_toekn_tuple
+(1, -1, 0, None, 30)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: reserveA Function: global
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+[*]Type fetched successfully
+State_var: weird
+Finding type for weird...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, -1)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: weird Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[*]Type fetched successfully
 State_var: simpleInterest
 Finding type for simpleInterest...
 int256
@@ -121,60 +175,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: compound interest ratio
-[*]Type fetched successfully
-State_var: justConstant
-Finding type for justConstant...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, -1)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: justConstant Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-[*]Type fetched successfully
-State_var: reserveA
-Finding type for reserveA...
-int256
-Check copy_toekn_tuple
-(1, -1, 0, None, 30)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: reserveA Function: global
-Num: 1
-Den: -1
-Norm: 0
-LF: None
-Fields: 
-Finance Type: reserve
-[*]Type fetched successfully
-State_var: weird
-Finding type for weird...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, -1)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: weird Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 [*]Type fetched successfully
 [*] A run
 Reading Function: calculateFee
@@ -524,6 +524,7 @@ lnorm: 0 rnorm: u
 Finance type key: (0, 22)
 Error with TMP_2 in function applySimpleInterest
 Error with: TMP_2 in function applySimpleInterest
+[<slither.slithir.variables.temporary_ssa.TemporaryVariableSSA object at 0x7fcfc06bee50>]
 Func: mul
 
 Name: balanceA Function: applySimpleInterest
@@ -826,16 +827,16 @@ Param: 0
     den: [-1]
 clearning node...
 clearing ir...?
-justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
+justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
 has variable
 clearing ir...?
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 has variable
 clearing ir...?
-reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
 has variable
 typecheckig node...
-justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
+justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for justConstant
@@ -848,7 +849,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -861,7 +862,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
@@ -1268,7 +1269,7 @@ WORKLIST iteration 0 for function call "withdrawBalance":
  New undefined nodes- 4
  Old undefined nodes- 0
 typecheckig node...
-justConstant_1(int256) := ϕ(['justConstant_0', 'justConstant_3'])
+justConstant_1(int256) := ϕ(['justConstant_3', 'justConstant_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for justConstant
@@ -1281,7 +1282,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-weird_1(int256) := ϕ(['weird_3', 'weird_0'])
+weird_1(int256) := ϕ(['weird_0', 'weird_3'])
 Function name: withdrawBalance
 Phi
 [i]Type for weird
@@ -1294,7 +1295,7 @@ LF: None
 Fields: 
 Finance Type: undef
 done.
-reserveA_1(int256) := ϕ(['reserveA_0', 'reserveA_4'])
+reserveA_1(int256) := ϕ(['reserveA_4', 'reserveA_0'])
 Function name: withdrawBalance
 Phi
 [i]Type for reserveA
