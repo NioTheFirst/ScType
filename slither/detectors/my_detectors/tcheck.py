@@ -1844,7 +1844,7 @@ class tcheck(AbstractDetector):
     """
     Detects round up round down functions
     """
-
+    global errors
     ARGUMENT = 'tcheck' # slither will launch the detector with slither.py --detect mydetector
     HELP = 'Help printed by slither'
     IMPACT = DetectorClassification.INFORMATIONAL
