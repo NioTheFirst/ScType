@@ -3,6 +3,7 @@ from slither.core.declarations import Structure, Contract
 
 import tcheck_parser
 import tcheck
+from tcheck import errors
 #USAGE: library for functions that help propagate types
 #       these functions contain handling for ABSTRACT types as well (any type > abs_buf is an ABSTRACT type)
 #       ABSTRACT types take priority over CONCRETE types (temporary handling for if statements)
