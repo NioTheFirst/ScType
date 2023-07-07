@@ -1915,9 +1915,9 @@ class tcheck(AbstractDetector):
             if(not (check_contract(contract.name))):
                 continue
             user_type = u_provide_type[contract.name]
-            #errors = _tcheck_contract(contract)
+            _tcheck_contract(contract)
             #print("xxxxxx")
-            if errors:
+            if len(errors > 0):
                 for ir in errors:
                     _ir = ir.extok
                     name = _ir.name
