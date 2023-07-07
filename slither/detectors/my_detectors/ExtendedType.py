@@ -12,6 +12,8 @@ import sys
 #           - fields          (for objects)
 #       Business types (usually one) are categorical, i.e. (fee, balance, ...) and their relations will be defined here
 
+from tcheck_parser import f_type_name, f_type_num
+
 class ExtendedType():
     def __init__(self):
         #Initialized an 'undefined' data type
@@ -28,7 +30,7 @@ class ExtendedType():
         self._reference_root = None
         self._reference_field = None
         #Business type
-        self._business_type = None
+        self._finance_type = None
 
     #Getters and setters for the fields
     @property
@@ -178,7 +180,15 @@ class ExtendedType():
         self.add_num_token_type(-1)
         self.add_den_token_type(-1)
         self.norm = 'u';
-    
+
+    @property
+    def finance_type(self):
+        return self._finance_type
+
+    @finance_type.setter
+    def finance_type(self, f_type):
+        self._finance_type = f_type
+
     def __str__(self):
         num_token_types_str = ", ".join(str(elem) for elem in self._num_token_types)
         den_token_types_str = ", ".join(str(elem) for elem in self._den_token_types)
@@ -190,7 +200,8 @@ class ExtendedType():
             f"Den: {den_token_types_str}\n"
             f"Norm: {self._norm}\n"
             f"LF: {self._linked_contract}\n"
-            f"Fields: {fields_str}"
+            f"Fields: {fields_str}\n"
+            f"Finance Type: {self._finance_type}"
         )
  
         

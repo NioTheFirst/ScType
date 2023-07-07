@@ -1,1 +1,16 @@
-[dft]
+[*c], A
+
+[t], global, feeRatioA, f: 10
+[t], global, reserveA, 1, -1, 0, f: reserve
+[t], global, compoundInterest, f: 21
+[t], global, justConstant
+[t], global, simpleInterest, f: simple interest
+[t], global, weird, f: weird
+
+[t], calculateFee, balanceA, 1, -1, 0, f: 0
+
+[t], applySimpleInterest, balanceA, 1, -1, 0, f:raw balance
+
+[t], applyCompoundInterest, balanceA, 1, -1, 0, f: 0
+
+[t], withdrawBalance, balanceA, 1, -1, 0, f:0
