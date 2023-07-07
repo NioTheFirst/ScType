@@ -67,24 +67,6 @@ Checking... withdrawBalance
 [o] Marked
 Checking... slitherConstructorVariables
 [x] Not visible 
-State_var: feeRatioA
-Finding type for feeRatioA...
-int256
-Check copy_toekn_tuple
-(-1, -1, 'u', None, 10)
-----
-Type: int256
-int256
-Final Type: int256
-
-Name: feeRatioA Function: global
-Num: -1
-Den: -1
-Norm: u
-LF: None
-Fields: 
-Finance Type: fee ratio (t)
-[*]Type fetched successfully
 State_var: compoundInterest
 Finding type for compoundInterest...
 int256
@@ -102,6 +84,24 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: compound interest ratio
+[*]Type fetched successfully
+State_var: feeRatioA
+Finding type for feeRatioA...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 10)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
 [*]Type fetched successfully
 State_var: justConstant
 Finding type for justConstant...
@@ -213,3 +213,87 @@ has variable
 typecheckig node...
 balanceA_1(int256) := ϕ(['balanceA_1'])
 Function name: calculateFee
+Phi
+[i]Type for balanceA
+
+Name: balanceA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+done.
+feeRatioA_1(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
+Function name: calculateFee
+Phi
+[i]Type for feeRatioA
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+done.
+clearning node...
+clearing ir...?
+TMP_0(int256) = balanceA_1 (c)* feeRatioA_1
+has variable
+[i] TMP_0 cleared
+clearing ir...?
+feeA_1(int256) := TMP_0(int256)
+has variable
+[i] feeA cleared
+typecheckig node...
+TMP_0(int256) = balanceA_1 (c)* feeRatioA_1
+Function name: calculateFee
+testing mul...
+lnorm: 0 rnorm: u
+
+Name: balanceA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+
+Name: TMP_0 Function: calculateFee
+Num: 
+Den: 
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
+[i]Type for TMP_0
+
+Name: TMP_0 Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: transaction fee
+done.
+feeA_1(int256) := TMP_0(int256)
+Function name: calculateFee
+asgn
+
+Name: TMP_0 Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: None
+
+Name: feeA Function: calculateFee
+Num: 
+Den: 
+Norm: u
+LF: None
+Fields: 
+Finance Type: None
+0

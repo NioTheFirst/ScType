@@ -501,7 +501,7 @@ def check_type(ir) -> bool:
         addback = type_asn(ir.lvalue, ir.rvalue)
         print(get_norm(ir.rvalue))
         asn_norm(ir.lvalue, get_norm(ir.rvalue))
-        pass_ftype(ir.lvalue, ir.ravlue, "assign")
+        pass_ftype(ir.lvalue, ir.rvalue, "assign")
         #print_token_type(ir.lvalue)
     elif isinstance(ir, Binary):
         #Binary
