@@ -195,7 +195,7 @@ class ExtendedType():
         den_token_types_str = ", ".join(str(elem) for elem in self._den_token_types)
         fields_str = ", ".join(str(elem.name) for elem in self._fields)
         return (
-            f"\n"
+            "\n"
             f"Name: {self._name} Function: {self._function_name}\n"
             f"Num: {num_token_types_str}\n"
             f"Den: {den_token_types_str}\n"
