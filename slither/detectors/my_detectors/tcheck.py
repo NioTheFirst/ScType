@@ -465,7 +465,7 @@ def convert_ssa(ir):
         if(non_ssa_ir.extok.function_name):
             _ir.function_name = non_ssa_ir.extok.function_name
         ir.link_function = non_ssa_ir.link_function
-        _ir.finance_type = non_ssa_ir.finance_type
+        _ir.finance_type = non_ssa_ir.extok.finance_type
 
 #USAGE: updates a non_ssa instance of a variable
 #RETURNS: NULL

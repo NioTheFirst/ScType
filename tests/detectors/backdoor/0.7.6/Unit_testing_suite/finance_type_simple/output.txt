@@ -1,0 +1,215 @@
+A
+contract name: A
+WARNING!!!!
+A_types.txt
+Finance file: A_ftypes.txt
+"A_types.txt" opened successfully.
+[*c], A
+
+
+
+[t], global, feeRatioA
+
+[t], global, reserveA, 1, -1, 0
+
+[t], global, compoundInterest
+
+[t], global, justConstant
+
+[t], global, simpleInterest
+
+[t], global, weird
+
+
+
+[t], calculateFee, balanceA, 1, -1, 0
+
+
+
+[t], applySimpleInterest, balanceA, 1, -1, 0
+
+
+
+[t], applyCompoundInterest, balanceA, 1, -1, 0
+
+
+
+[t], withdrawBalance, balanceA, 1, -1, 0
+
+Isolated Param: 10
+F num: 10
+Isolated Param: reserve
+F num: 30
+Isolated Param: 21
+F num: 21
+Isolated Param: simple interest
+F num: 22
+Isolated Param: weird
+F num: -1
+Isolated Param: 0
+F num: 0
+Isolated Param: raw balance
+F num: 0
+Isolated Param: 0
+F num: 0
+Isolated Param: 0
+F num: 0
+[*] A run
+Checking... calculateFee
+[o] Marked
+Checking... updateFee
+[o] Marked
+Checking... applySimpleInterest
+[o] Marked
+Checking... applyCompoundInterest
+[o] Marked
+Checking... withdrawBalance
+[o] Marked
+Checking... slitherConstructorVariables
+[x] Not visible 
+State_var: feeRatioA
+Finding type for feeRatioA...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 10)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: feeRatioA Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: fee ratio (t)
+[*]Type fetched successfully
+State_var: compoundInterest
+Finding type for compoundInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 21)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: compoundInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: compound interest ratio
+[*]Type fetched successfully
+State_var: justConstant
+Finding type for justConstant...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, -1)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: justConstant Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[*]Type fetched successfully
+State_var: reserveA
+Finding type for reserveA...
+int256
+Check copy_toekn_tuple
+(1, -1, 0, None, 30)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: reserveA Function: global
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: reserve
+[*]Type fetched successfully
+State_var: weird
+Finding type for weird...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, -1)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: weird Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[*]Type fetched successfully
+State_var: simpleInterest
+Finding type for simpleInterest...
+int256
+Check copy_toekn_tuple
+(-1, -1, 'u', None, 22)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: simpleInterest Function: global
+Num: -1
+Den: -1
+Norm: u
+LF: None
+Fields: 
+Finance Type: simple interest
+[*]Type fetched successfully
+State_var: feeRatioA
+[*] A run
+Reading Function: calculateFee
+Function name: calculateFee
+Function Visibility (test): public
+balanceA
+Finding type for balanceA...
+int256
+Check copy_toekn_tuple
+(1, -1, 0, None, 0)
+----
+Type: int256
+int256
+Final Type: int256
+
+Name: balanceA Function: calculateFee
+Num: 1
+Den: -1
+Norm: 0
+LF: None
+Fields: 
+Finance Type: raw balance
+[*]Type fetched successfully
+-100
+Param: 0
+    num: [1]
+    den: [-1]
+clearning node...
+clearing ir...?
+balanceA_1(int256) := ϕ(['balanceA_1'])
+has variable
+[i] balanceA cleared
+clearing ir...?
+feeRatioA_1(int256) := ϕ(['feeRatioA_3', 'feeRatioA_0'])
+has variable
+typecheckig node...
+balanceA_1(int256) := ϕ(['balanceA_1'])
+Function name: calculateFee
