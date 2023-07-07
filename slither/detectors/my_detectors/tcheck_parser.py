@@ -219,7 +219,7 @@ def parse_type_file(t_file, f_file = None):
                         lf = _line[7]
 
                 add_field(func_name, parent_name, field_name, (num, denom, norm, lf))
-    parse_finance_file(finance_file)
+    parse_finance_file(f_file)
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
