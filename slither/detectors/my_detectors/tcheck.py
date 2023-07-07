@@ -1918,19 +1918,19 @@ class tcheck(AbstractDetector):
             user_type = u_provide_type[contract.name]
             _tcheck_contract(contract)
             #print("xxxxxx")
-            if len(errors) > 0:
-                for ir in errors:
-                    _ir = ir.extok
-                    name = _ir.name
-                    func = _ir.function_name
-                    if(name == None):
-                        name = "UNKNOWN"
-                    if(func == None):
-                        func = "UNKNOWN"
-                    info = [" typecheck error: " ]
-                    info+=("Var name: " + name + " " + "Func name: " + func + "\n")
-                    res = self.generate_result(info)
-                    results.append(res)
+            print(f"Errors: {errors}")
+            for ir in errors:
+                _ir = ir.extok
+                name = _ir.name
+                func = _ir.function_name
+                if(name == None):
+                    name = "UNKNOWN"
+                if(func == None):
+                    func = "UNKNOWN"
+                info = [" typecheck error: " ]
+                info+=("Var name: " + name + " " + "Func name: " + func + "\n")
+                res = self.generate_result(info)
+                results.append(res)
             #add_b4_div = detect_add_b4_div(contract)
             #if add_b4_div:
             #    for (func, nodes) in add_b4_div:
