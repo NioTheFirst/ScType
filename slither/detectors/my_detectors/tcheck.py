@@ -437,6 +437,7 @@ def add_errors(ir):
     print(f"Error with {_ir.name} in function {_ir.function_name}")
     print("Error with: " + _ir.name + " in function " + _ir.function_name)
     assign_err(ir)
+    print(errors)
 
 #USAGE: Directly copies a normalization value (WARNING: SKIPS TYPECHECKING)
 def copy_norm(src, dest):
