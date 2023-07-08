@@ -1928,8 +1928,7 @@ class tcheck(AbstractDetector):
                 user_type = True
 
 
-            if(not (check_contract(contract.name))):
-                continue
+            
             #mark functions
             _mark_functions(contract)
             #resolve global variables
