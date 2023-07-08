@@ -1872,7 +1872,7 @@ def _read_state_variables(contract):
                 addF = False
                 break
         if(addF):
-            ret+=f
+            ret.append(f)
     return ret
 
 class tcheck(AbstractDetector):
