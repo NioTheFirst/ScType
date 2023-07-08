@@ -1767,6 +1767,9 @@ def _tcheck_contract_state_var(contract):
     type_info_name = None
     if(user_type and fill_type):
         type_info_name = contract.name+"_types.txt"
+        new_tfile = open(type_info_name, "a")
+        new_tfile.write(f"[*c], {contract.name}\n")
+        new_tfile.close()
 
     for state_var in _read_state_variables(contract):
         print("State_var: "+state_var.name)
@@ -1776,6 +1779,8 @@ def _tcheck_contract_state_var(contract):
             new_tfile = open(type_info_name, "a")
             new_tfile.write(f"[t], global, {state_var.name}\n")
             new_tfile.close()
+            assign_const(state_var)
+            continue
         if(True):
             querry_type(state_var)
             if(isinstance(state_var, ReferenceVariable)):
