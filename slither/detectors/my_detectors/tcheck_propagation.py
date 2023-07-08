@@ -27,7 +27,9 @@ f_type_add = {
 
 f_type_sub = {
     (0, 0): 0,  #raw balance + raw balance = raw blaance
-    (0, 11): 1, #raw balance - fee = net balance 
+    (0, 11): 1, #raw balance - t. fee = net balance 
+    (0, 13): 1, #raw balance - t. fee (n) = net balance
+    (0,14) : 1, #raw balance - t. fee (d) = net balance
     #(0, 23): 2, #compound interest + balance = accrued balance
     #(23, 0): 2,
     #(1, 23) : 3, #compound interest + net balance = final balance
@@ -38,13 +40,40 @@ f_type_sub = {
     (30, 3): 30,
 }
 
-f_type_muldiv = {
-    (0, 10) : 11, #raw balance * fee ratio (t)= transaction fee
-    (10, 0) : 11,
-    (2, 10) : 11, #accrued balance * fee ratio (t) = transaction fee
-    (10, 2) : 11,
-    (11, 10):11, #fee * fee ratio = fee
-    (10, 11):11,
+f_type_mul = {
+    (0, 10) : 13, #raw balance * compound fee ratio (t)= transaction fee (n)
+    (10, 0) : 13,
+    (2, 10) : 13, #accrued balance * compound fee ratio (t) = transaction fee (n)
+    (10, 2) : 13,
+    (14, 10):11, #transaction fee (d) * compound fee ratio = transaction fee
+    (10, 14):11,
+    (0, 12):2, #raw balance * simple fee ratio = net balance
+    (0, 12):2,
+    (0, 20):2, #simple interest ratio * raw balance = accrued balance
+    (20, 0):2,
+    (1, 20):3, #net balance * simple interest ratio = final balance
+    (20, 1):3,
+    (0, 21):23, #compound interest ratio * raw balance = compound interest
+    (21, 0):23,
+    (22, 20):22, #simple intrest * simple interest ratio = simple interest
+    (20, 22):22,
+    (23, 21):23, #compound interest * compound interest ratio = compound interest
+    (21, 23): 23, 
+    (40, 0) : 0, #price/exchange rate * any balance = corresponding balance
+    (0, 40) : 0,
+    (40, 1) : 1,
+    (1, 40) : 1,
+    (40, 2) : 2,
+    (1, 40) : 2,
+    (40, 3) : 3,
+    (3, 40) : 3,    
+}
+
+f_type_div = {
+    (0, 10) : 14, #raw balance / c. fee ratio (t)= transaction fee (d)
+    (2, 10) : 14, #accrued balance / c. fee ratio (t) = transaction fee (d)
+    (13, 10): 11, #t. fee (n) / fee ratio = t. fee
+    (0, 12):2, #raw balance / simple fee ratio = net balance
     (0, 20):2, #simple interest ratio * raw balance = accrued balance
     (20, 0):2,
     (1, 20):3, #net balance * simple interest ratio = final balance
