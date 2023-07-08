@@ -12,13 +12,26 @@ from tcheck import errors
 from tcheck_parser import field_tuple_start, f_type_name, f_type_num
 
 
-f_type_addsub = {
+f_type_add = {
     (0, 0): 0,  #raw balance + raw balance = raw blaance
-    (0, 11): 1, #raw balance - fee = net balance 
+    #(0, 11): 1, #raw balance - fee = net balance 
     (0, 23): 2, #compound interest + balance = accrued balance
     (23, 0): 2,
     (1, 23) : 3, #compound interest + net balance = final balance
     (23, 1) : 3,
+    (30, 0): 30,#reserve - any balance
+    (30, 1): 30,
+    (30, 2): 30,
+    (30, 3): 30,
+}
+
+f_type_sub = {
+    (0, 0): 0,  #raw balance + raw balance = raw blaance
+    (0, 11): 1, #raw balance - fee = net balance 
+    #(0, 23): 2, #compound interest + balance = accrued balance
+    #(23, 0): 2,
+    #(1, 23) : 3, #compound interest + net balance = final balance
+    #(23, 1) : 3,
     (30, 0): 30,#reserve - any balance
     (30, 1): 30,
     (30, 2): 30,
@@ -135,9 +148,15 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             return False
     key = (_rlf, _rrf)
     print(f"Finance type key: {key}")
-    if(func == "add" or func == "sub"):
+    if(func == "add"):
         if key in f_type_addsub:
-            assign_ftype(f_type_addsub[key], dest)
+            assign_ftype(f_type_add[key], dest)
+        else:
+            assign_ftype(-1, dest)
+            return True
+    if(func == "sub"):
+        if key in f_type_addsub:
+            assign_ftype(f_type_[key], dest)
         else:
             assign_ftype(-1, dest)
             return True
