@@ -21,6 +21,7 @@ import tcheck_parser
 import tcheck_propagation
 
 user_type = False
+fill_type = True
 type_file = ""
 maxTokens = 10
 tempVar = defaultdict(list) #list storing temp variables (refreshed every node call)
