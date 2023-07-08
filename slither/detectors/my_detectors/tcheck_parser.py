@@ -43,6 +43,7 @@ f_type_num = {
     40: "price/exchange rate",
 }
 
+#test discord bot
 f_type_name = {
     "undef" : -1,
     "raw balance" :0,
