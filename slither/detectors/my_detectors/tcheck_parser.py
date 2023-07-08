@@ -108,7 +108,7 @@ def parse_finance_file(f_file):
                 norm_tt = get_var_type_tuple(f_name, v_name)
                 norm_tt+=(f_params[0], )
                 add_var(f_name, v_name, norm_tt)
-            elif(_line[0].strip == "[sef]"):
+            elif(_line[0].strip() == "[sef]"):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
                 ef_tts = get_ex_func_type_tuple(c_name, f_name)
@@ -119,13 +119,13 @@ def parse_finance_file(f_file):
                     new_tts.append(tt)
                     cur+=1
                 add_ex_func(c_name, f_name, new_tts)
-            elif(_line[0].strip == "tref"):
+            elif(_line[0].strip() == "tref"):
                 ref_name = _line[1].strip()
                 ref_tt = get_ref_type_tuple(ref_name)
                 ref_tt += (f_params[0], )
                 add_ref(ref_name, ref_tt)
             
-            elif(_line[0].strip == "t*"):
+            elif(_line[0].strip() == "t*"):
                 f_name = _line[1].strip()
                 p_name = _line[2].strip()
                 v_name = _line[3].strip()
