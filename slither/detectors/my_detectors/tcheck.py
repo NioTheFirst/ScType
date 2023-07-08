@@ -1764,18 +1764,18 @@ def _tcheck_function(function) -> []:
 def _tcheck_contract_state_var(contract):
     global user_type
     global fill_type
-    new_tfile = None
+    type_info_name = None
     if(user_type and fill_type):
         type_info_name = contract.name+"_types.txt"
-        new_tfile = open(type_info_name, "w")
-        new_tfile.write(f"[*c], contract.name")
 
     for state_var in _read_state_variables(contract):
         print("State_var: "+state_var.name)
         state_var.parent_function = "global"
         #check_type(state_var)
         if(user_type and fill_type):
+            new_tfile = open(type_info_name, "a")
             new_tfile.write(f"[t], global, {state_var.name}\n")
+            new_tfile.close()
         if(True):
             querry_type(state_var)
             if(isinstance(state_var, ReferenceVariable)):
