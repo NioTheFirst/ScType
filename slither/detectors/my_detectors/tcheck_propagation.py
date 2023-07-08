@@ -185,7 +185,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             return True
     if(func == "sub"):
         if key in f_type_sub:
-            assign_ftype(f_type_[key], dest)
+            assign_ftype(f_type_sub[key], dest)
         else:
             assign_ftype(-1, dest)
             return True
