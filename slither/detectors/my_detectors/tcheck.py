@@ -1792,7 +1792,7 @@ def _tcheck_contract_state_var(contract):
 #RTURNS: NULL
 def _mark_functions(contract):
     for function in contract.functions_declared:
-        print("Checking... " + function.name)
+        print(f"Checking... {function.name} Visibility: {function.visibility}")
         if(not (function.entry_point and (read_internal or function.visibility == "external" or function.visibility == "public"))):
             function_check[function.name] = False
             print("[x] Not visible ")
