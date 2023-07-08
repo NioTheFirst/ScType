@@ -1940,9 +1940,9 @@ class tcheck(AbstractDetector):
             _tcheck_contract_state_var(contract)
 
         for contract in self.contracts:
-            if(not (check_contract(contract.name))):
-                continue
             user_type = u_provide_type[contract.name]
+            if(not (check_contract(contract.name)) or (user_type and fill_type)):
+                continue
             errorsx = _tcheck_contract(contract)
             #print("xxxxxx")
             print(f"Errors: {errorsx}")
