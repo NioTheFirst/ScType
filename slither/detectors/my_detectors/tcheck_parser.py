@@ -63,32 +63,31 @@ def gen_finance_instances(line):
     _line = line.split(",")
     finance_instances = []
     for param in _line:
-        if(param.find("f:")):
-            print(f"Param: {param}")
-            offset = 0
-            foundf = False
-            for i in range(len(param)):
-                if(param[i] == 'f' and i+1 < len(param) and param[i+1] == ':'):
-                    foundf = True
-                    offset=i+2
-                    break
-            if(foundf == False):
-                continue
-            isolated_param = param[offset:].strip()
-            print(f"Isolated Param: {isolated_param}")
-            f_res = None
-            try:
-                temp = int(isolated_param)
-                f_res = temp
-            except ValueError:
-                if isolated_param in f_type_name:
-                    f_res = f_type_name[isolated_param]
-                else:
-                    f_res = -1
-            if not isinstance(f_res, int):
-                print("[x] FINANCE TYPE IS NOT INT")
-            finance_instances.append(f_res)
-            print(f"F num: {f_res}")
+        print(f"Param: {param}")
+        offset = 0
+        foundf = False
+        for i in range(len(param)):
+            if(param[i] == 'f' and i+1 < len(param) and param[i+1] == ':'):
+                foundf = True
+                offset=i+2
+                break
+        if(foundf == False):
+            continue
+        isolated_param = param[offset:].strip()
+        print(f"Isolated Param: {isolated_param}")
+        f_res = None
+        try:
+            temp = int(isolated_param)
+            f_res = temp
+        except ValueError:
+            if isolated_param in f_type_name:
+                f_res = f_type_name[isolated_param]
+            else:
+                f_res = -1
+        if not isinstance(f_res, int):
+            print("[x] FINANCE TYPE IS NOT INT")
+        finance_instances.append(f_res)
+        print(f"F num: {f_res}")
     return finance_instances
 
 
