@@ -64,6 +64,7 @@ def gen_finance_instances(line):
     finance_instances = []
     for param in _line:
         if(param.find("f:")):
+            print(f"Param: {param}")
             offset = 0
             foundf = False
             for i in range(len(param)):
