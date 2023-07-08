@@ -33,8 +33,8 @@ f_type_num = {
     10: "compound fee ratio (t)",
     11: "transaction fee",  
     12: "simple fee ratio",
-    13: "transaction fee (n)"
-    14: "transaction fee (d)"
+    13: "transaction fee (n)",
+    14: "transaction fee (d)",
     20: "simple interest ratio",
     21: "compound interest ratio",
     22: "simple interest",
