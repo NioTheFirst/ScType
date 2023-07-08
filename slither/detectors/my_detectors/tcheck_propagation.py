@@ -13,6 +13,7 @@ from tcheck_parser import field_tuple_start, f_type_name, f_type_num
 
 
 f_type_addsub = {
+    (0, 0): 0,  #raw balance + raw balance = raw blaance
     (0, 11): 1, #raw balance - fee = net balance 
     (0, 23): 2, #compound interest + balance = accrued balance
     (23, 0): 2,
