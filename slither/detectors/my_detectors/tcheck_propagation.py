@@ -195,7 +195,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         else:
             assign_ftype(-1, dest)
             return True
-    lif(func == "div"):
+    elif(func == "div"):
         if key in f_type_div:
             assign_ftype(f_type_div[key], dest)
         else:
