@@ -1866,8 +1866,13 @@ def _tcheck_contract(contract):
 def _read_state_variables(contract):
     ret = []
     for f in contract.all_functions_called + contract.modifiers:
-        if not(f in ret):
-            ret += f.state_variables_read
+        addF = True
+        for r in ret:
+            if(f.name == r.name):
+                addF = False
+                break
+        if(addF):
+            ret+=f
     return ret
 
 class tcheck(AbstractDetector):
