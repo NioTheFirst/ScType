@@ -189,9 +189,15 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         else:
             assign_ftype(-1, dest)
             return True
-    elif(func == "mul" or func == "div"):
-        if key in f_type_muldiv:
-            assign_ftype(f_type_muldiv[key], dest)
+    elif(func == "mul"):
+        if key in f_type_mul:
+            assign_ftype(f_type_mul[key], dest)
+        else:
+            assign_ftype(-1, dest)
+            return True
+    lif(func == "div"):
+        if key in f_type_div:
+            assign_ftype(f_type_div[key], dest)
         else:
             assign_ftype(-1, dest)
             return True
