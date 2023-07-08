@@ -930,6 +930,7 @@ def handle_return(dest_ir, function):
                 copy_token_type(x, dest_ir)
                 _dest_ir.linked_contract = __x.linked_contract
                 asn_norm(dest_ir, get_norm(x))
+                copy_ftype(x, dest_ir)
             function.add_parameter_cache_return(x)
             added = True
         print(__x)
