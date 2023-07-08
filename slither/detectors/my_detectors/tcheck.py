@@ -1770,8 +1770,11 @@ def _tcheck_contract_state_var(contract):
         new_tfile = open(type_info_name, "a")
         new_tfile.write(f"[*c], {contract.name}\n")
         new_tfile.close()
-
+    seen = {}
     for state_var in _read_state_variables(contract):
+        if(state_var.name in seen):
+            continue
+        seen[state_var.name] = True
         print("State_var: "+state_var.name)
         state_var.parent_function = "global"
         #check_type(state_var)
@@ -1866,13 +1869,7 @@ def _tcheck_contract(contract):
 def _read_state_variables(contract):
     ret = []
     for f in contract.all_functions_called + contract.modifiers:
-        addF = True
-        for r in ret:
-            if(f.name == r.name):
-                addF = False
-                break
-        if(addF):
-            ret.append(f)
+        ret += f.state_variables_read
     return ret
 
 class tcheck(AbstractDetector):
