@@ -166,7 +166,7 @@ def parse_type_file(t_file, f_file = None):
                         den = int(_line[4].strip())
                         norm = int(_line[5].strip())
                     l_name = None
-                    if(len(_line) == 7):
+                    if(len(_line) >= 7):
                         l_name = _line[6].strip()
                     add_var(f_name, v_name, (num, den, norm, l_name))
                 except ValueError:
@@ -210,9 +210,9 @@ def parse_type_file(t_file, f_file = None):
                         num = extract_integers(ret_info[1])
                         denom = extract_integers(ret_info[2])
                         norm = int(ret_info[3].strip())
-                        if(len(ret_info) == 5):
+                        if(len(ret_info) >= 5):
                             lf = ret_info[4]
-                    ef_types.append((copy, num, denom, norm, lf))
+                    ef_types.append((copy, num, denom, norm, lf, ftypes))
                 add_ex_func(c_name, f_name, ef_types)
             #REFERENCE TYPE
             if(_line[0].strip() == "[tref]"):
@@ -225,7 +225,7 @@ def parse_type_file(t_file, f_file = None):
                     num =[ int(_line[2].strip())]
                     denom = [int(_line[3].strip())]
                     norm = int(_line[4].strip())
-                    if(len(_line) == 6):
+                    if(len(_line) >= 6):
                         lf = _line[5]
                 add_ref(ref_name, (num, denom, norm, lf))
             #FIELD TYPE
@@ -241,7 +241,7 @@ def parse_type_file(t_file, f_file = None):
                     num = [ int(_line[4].strip())]
                     denom = [int(_line[5].strip())]
                     norm = [int(_line[6].strip())]
-                    if(len(_line) == 8):
+                    if(len(_line) >= 8):
                         lf = _line[7]
 
                 add_field(func_name, parent_name, field_name, (num, denom, norm, lf))
