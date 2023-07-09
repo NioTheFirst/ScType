@@ -20,6 +20,7 @@ sys.path.append(script_dir)
 import tcheck_parser
 import tcheck_propagation
 
+seen_contracts = {}
 user_type = False
 fill_type = False
 type_file = ""
@@ -1895,6 +1896,7 @@ class tcheck(AbstractDetector):
         global type_file
         global line_no
         global constant_instance
+        global seen_contracts
         assign_const(constant_instance)
         for contract in self.slither.contracts:
             print(contract.name)
@@ -1942,9 +1944,9 @@ class tcheck(AbstractDetector):
             #resolve global variables
             _tcheck_contract_state_var(contract)
 
-        seen_contract = {}
+  
         for contract in self.contracts:
-            if(contract.name in seen_contract):
+            if(contract.name in seen_contracts):
                 continue
             print(f"Seen contract: {seen_contract} Contract name out: {contract.name}")
             seen_contract[contract.name] = True
