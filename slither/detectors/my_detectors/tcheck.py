@@ -812,6 +812,7 @@ def type_member(ir)->bool:
         #assign_const(ir.lvalue)
         #querry_type(ir.lvalue)
         return True
+        ir.lvalue.extok.token_type_clear()
     copy_token_tuple(ir.lvalue, field_type_tuple)
     temp = create_iconstant()
     copy_token_tuple(temp, field_type_tuple)
