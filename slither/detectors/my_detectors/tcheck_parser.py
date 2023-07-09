@@ -116,7 +116,7 @@ def parse_finance_file(f_file):
             elif(_line[0].strip() == "[sef]"):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
-                ef_tts = get_ex_func_type_tuple(c_name, f_name)
+                ef_tts = get_dir_ex_func_type_tuple(c_name, f_name)
                 cur = 0
                 new_tts = []
                 for tt in ef_tts:
