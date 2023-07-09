@@ -218,6 +218,7 @@ def gen_param_cache(param_list):
     param_cache = []
     for param in param_list:
         _param = param.extok
+        print(f"preprocess pram: {_param}")
         num = _param.num_token_types
         den = _param.den_token_types
         norm = _param.norm
