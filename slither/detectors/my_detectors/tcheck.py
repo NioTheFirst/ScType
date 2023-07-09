@@ -1941,8 +1941,11 @@ class tcheck(AbstractDetector):
             _mark_functions(contract)
             #resolve global variables
             _tcheck_contract_state_var(contract)
-
+        seen_contract = {}
         for contract in self.contracts:
+            if(contract.name in seen_contract):
+                continue
+            seen_contract[contract.name] = True
             user_type = u_provide_type[contract.name]
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
                 continue
