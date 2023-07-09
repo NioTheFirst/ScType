@@ -78,7 +78,7 @@ def gen_finance_instances(line):
                 break
         if(foundf == False):
             continue
-        isolated_param = param[offset:].strip("{}").strip()
+        isolated_param = param[offset:].strip("}").strip()
         print(f"Isolated Param: {isolated_param}")
         f_res = None
         try:
