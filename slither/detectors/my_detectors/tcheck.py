@@ -185,6 +185,9 @@ def print_param_cache(param_cache):
         print("Param: " + str(param_no))
         print(f"    num: {param[0]}")
         print(f"    den: {param[1]}")
+        print(f"    norm: {param[2]}")
+        print(f"    link: {param[3]}")
+        print(f"    fintype: {param[4]}")
         param_no+=1
 
 #USAGE: given an ir for a function call, generate a param_cache
