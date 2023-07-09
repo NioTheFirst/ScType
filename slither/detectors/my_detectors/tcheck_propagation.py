@@ -19,6 +19,8 @@ f_type_add = {
     (23, 0): 2,
     (1, 23) : 3, #compound interest + net balance = final balance
     (23, 1) : 3,
+    (10, 10) : 10, #c. fee ratio + c. fee ratio = c.fee ratio
+    (12, 12) : 12, #s. fee ratio + s. fee ratio = s.fee ratio
     (30, 0): 30,#reserve - any balance
     (30, 1): 30,
     (30, 2): 30,
@@ -30,6 +32,8 @@ f_type_sub = {
     (0, 11): 1, #raw balance - t. fee = net balance 
     (0, 13): 1, #raw balance - t. fee (n) = net balance
     (0,14) : 1, #raw balance - t. fee (d) = net balance
+    (10, 10) : 10, #c. fee ratio - c. fee ratio = c.fee ratio
+    (12, 12) : 12, #s. fee ratio - s. fee ratio = s.fee ratio
     #(0, 23): 2, #compound interest + balance = accrued balance
     #(23, 0): 2,
     #(1, 23) : 3, #compound interest + net balance = final balance
