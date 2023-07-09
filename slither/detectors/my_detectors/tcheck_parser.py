@@ -283,6 +283,10 @@ def add_ex_func(contract_name, function_name, type_tuple):
     key = contract_name + '_' + function_name
     ex_func_type_hash[key] = type_tuple
 
+def get_dir_ex_func_type_tuple(contract_name, function_name):
+    key = contract_name + '_' + function_name
+    return(ex_func_type_hash[key])
+
 def get_ex_func_type_tuple(contract_name, function_name, parameters):
     key = contract_name + '_' + function_name
     if(key in ex_func_type_hash):
