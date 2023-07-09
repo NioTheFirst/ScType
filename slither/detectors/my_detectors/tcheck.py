@@ -1948,7 +1948,7 @@ class tcheck(AbstractDetector):
         for contract in self.contracts:
             if(contract.name in seen_contracts):
                 continue
-            print(f"Seen contract: {seen_contract} Contract name out: {contract.name}")
+            print(f"Seen contract: {seen_contracts} Contract name out: {contract.name}")
             seen_contract[contract.name] = True
             user_type = u_provide_type[contract.name]
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
