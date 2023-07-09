@@ -212,7 +212,7 @@ def parse_type_file(t_file, f_file = None):
                         norm = int(ret_info[3].strip())
                         if(len(ret_info) >= 5):
                             lf = ret_info[4]
-                    ef_types.append((copy, num, denom, norm, lf, ftypes))
+                    ef_types.append((copy, num, denom, norm, lf))
                 add_ex_func(c_name, f_name, ef_types)
             #REFERENCE TYPE
             if(_line[0].strip() == "[tref]"):
