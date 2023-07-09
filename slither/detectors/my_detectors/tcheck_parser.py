@@ -299,6 +299,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
             den_trans = ret_var[2]
             norm = ret_var[3]
             lf = ret_var[4]
+            ftype = ret_var[5]
             ret_num = []
             ret_den = []
             param = parameters
@@ -306,7 +307,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                 print(p.name)
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
-                ret_type_tuple = (num_trans, den_trans, norm , lf)
+                ret_type_tuple = (num_trans, den_trans, norm , lf, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
             for num in num_trans:
@@ -331,7 +332,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                 norm = param[norm-1].extok.norm
             if(isinstance(lf, int) and lf > 0):
                 lf = param[lf-1].extok.norm
-            ret_type_tuple = (ret_num, ret_den, norm, lf)
+            ret_type_tuple = (ret_num, ret_den, norm, lf,ftype)
             ret_type_tuples.append(ret_type_tuple)
         return ret_type_tuples
     return None
