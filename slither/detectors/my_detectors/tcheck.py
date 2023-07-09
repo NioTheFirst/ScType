@@ -187,7 +187,8 @@ def print_param_cache(param_cache):
         print(f"    den: {param[1]}")
         print(f"    norm: {param[2]}")
         print(f"    link: {param[3]}")
-        print(f"    fintype: {param[4]}")
+        print(f"    fields: {param[4]}")
+        print(f"    fintype: {param[5]}")
         param_no+=1
 
 #USAGE: given an ir for a function call, generate a param_cache
@@ -218,7 +219,7 @@ def gen_param_cache(param_list):
     param_cache = []
     for param in param_list:
         _param = param.extok
-        print(f"preprocess pram: {_param}")
+        #print(f"preprocess pram: {_param}")
         num = _param.num_token_types
         den = _param.den_token_types
         norm = _param.norm
@@ -249,6 +250,7 @@ def add_param_cache(function, new_param_cache):
             seen_n = []
             seen_d = []
             seen_norm = False
+            seen_ftype = False
             for i in range(maxTokens):
                 seen_n.append(0)
                 seen_d.append(0)   
@@ -265,8 +267,11 @@ def add_param_cache(function, new_param_cache):
             #compare norms
             if(new_param_cache[paramno][2] != cur_param[2]):
                 seen_norm = True
+            #compre finance_type
+            if(new_apram_cache[paramno][5] != cur_param[5]):
+                seen_ftype = True
             for i in range(maxTokens):
-                if(seen_norm or seen_n[i] != 0 or seen_d[i] != 0):
+                if(seen_ftype or seen_norm or seen_n[i] != 0 or seen_d[i] != 0):
                     add_cur_param = True
                     break
             if(add_cur_param):
