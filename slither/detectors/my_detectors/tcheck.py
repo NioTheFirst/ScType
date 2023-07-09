@@ -543,11 +543,13 @@ def check_type(ir) -> bool:
             assign_const(ir.lvalue)
             ir.lvalue.norm = 0
             ir.lvalue.link_function = current_contract_name
+
             #addback = copy_token_tuple(ir.lvalue, ir.variable)
             addback = False
         else:    
             addback = type_asn(ir.lvalue, ir.variable)
             asn_norm(ir.lvalue, get_norm(ir.variable))
+            copy_ftype(ir.variable, ir.value)
             ir.lvalue.link_function = ir.variable.link_function
     elif isinstance(ir, Unpack):
         #Unpack tuple
