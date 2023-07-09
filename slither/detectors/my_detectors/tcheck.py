@@ -268,7 +268,7 @@ def add_param_cache(function, new_param_cache):
             if(new_param_cache[paramno][2] != cur_param[2]):
                 seen_norm = True
             #compre finance_type
-            if(new_apram_cache[paramno][5] != cur_param[5]):
+            if(new_param_cache[paramno][5] != cur_param[5]):
                 seen_ftype = True
             for i in range(maxTokens):
                 if(seen_ftype or seen_norm or seen_n[i] != 0 or seen_d[i] != 0):
