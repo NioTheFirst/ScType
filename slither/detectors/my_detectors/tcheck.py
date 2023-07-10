@@ -1680,6 +1680,7 @@ def _tcheck_function_call(function, param_cache) -> []:
         #clear previous types
         #copy new types
         copy_pc_token_type(param_cache[paramno], param)
+        update_non_ssa(param)
         is_variable(param)
         #param.parent_function = function.name
         paramno+=1
