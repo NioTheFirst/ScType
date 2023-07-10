@@ -15,6 +15,7 @@ from tcheck_parser import field_tuple_start, f_type_name, f_type_num, update_rat
 f_type_add = {
     (0, 0): 0,  #raw balance + raw balance = raw blaance
     #(0, 11): 1, #raw balance - fee = net balance 
+    
     (0, 23): 1, #compound interest + balance = net balance
     (23, 0): 1,
     (1, 23) : 3, #compound interest + net balance = final balance
@@ -53,8 +54,8 @@ f_type_mul = {
     (10, 2) : 13,
     (14, 10):11, #transaction fee (d) * compound fee ratio = transaction fee
     (10, 14):11,
-    (0, 12):2, #raw balance * simple fee ratio = net balance
-    (0, 12):2,
+    (0, 12):1, #raw balance * simple fee ratio = net balance
+    (0, 12):1,
     (0, 20):2, #simple interest ratio * raw balance = accrued balance
     (20, 0):2,
     (1, 20):3, #net balance * simple interest ratio = final balance
