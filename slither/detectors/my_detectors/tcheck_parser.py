@@ -306,7 +306,9 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
             den_trans = ret_var[2]
             norm = ret_var[3]
             lf = ret_var[4]
-            ftype = ret_var[5]
+            ftype = -1
+            if(len(ret_var) >= 6):
+                ftype = ret_var[5]
             ret_num = []
             ret_den = []
             param = parameters
