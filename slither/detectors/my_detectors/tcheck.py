@@ -487,6 +487,7 @@ def convert_ssa(ir):
             _ir.function_name = non_ssa_ir.extok.function_name
         ir.link_function = non_ssa_ir.link_function
         _ir.finance_type = non_ssa_ir.extok.finance_type
+        _ir.updated = non_ssa_ir.extok.updated
 
 #USAGE: updates a non_ssa instance of a variable
 #RETURNS: NULL
@@ -510,6 +511,7 @@ def update_non_ssa(ir):
         non_ssa_ir.norm = ir.norm
         non_ssa_ir.link_function = ir.link_function
         non_ssa_ir.extok.finance_type = ir.extok.finance_type
+        non_ssa_ir.updated = ir.extok.updated
 
 #USAGE: type checks an IR
 #currently handles assignments and Binary
