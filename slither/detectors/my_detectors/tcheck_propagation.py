@@ -182,6 +182,7 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
         _rrfp = _rr.pure_type
         r_in_ratio = (_rrfp in update_ratios)
         if(dest_in_ratio):
+            print(f"Dest updated")
             _dest.updated = True
             update_ratios[_dest.finance_type] = True
     
