@@ -215,10 +215,9 @@ class ExtendedType():
         den_token_types_str = ", ".join(str(elem) for elem in self._den_token_types)
         fields_str = ", ".join(str(elem.name) for elem in self._fields)
         if self._finance_type in f_type_num:
-            if(self._updated):
-                finance_type = "updated " + str(f_type_num[self._finance_type - update_start])
-            else:
-                finance_type = f_type_num[self._finance_type]
+            finance_type = f_type_num[self._finance_type]
+        elif(self._updated == True):
+            finance_type = f_type_num[self._finance_type - update_start]
         else:
             finance_type = None
         return (
