@@ -217,7 +217,7 @@ class ExtendedType():
         if self._finance_type in f_type_num:
             finance_type = f_type_num[self._finance_type]
         elif(self._updated == True):
-            finance_type = f_type_num[self._finance_type - update_start]
+            finance_type = "updated " + f_type_num[self._finance_type - update_start]
         else:
             finance_type = None
         return (
