@@ -5,7 +5,7 @@ from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCa
 from slither.slithir.variables import Constant, ReferenceVariable, TemporaryVariable, LocalIRVariable, StateIRVariable, TupleVariable
 from slither.core.variables.variable import Variable
 from slither.core.variables.state_variable import StateVariable
-from slither.core.declarations.function import Function
+from slither.core.declarations.function import Function, ModifierStatement
 from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
 from slither.core.solidity_types import UserDefinedType, ArrayType
@@ -526,6 +526,9 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Binary):
         #Binary
         addback = type_bin(ir)
+    elif isinstance(ir, ModifierStatement):
+        print("MOIFIER STATEMENT")
+        addback = False
     elif isinstance(ir, InternalCall):
          #Function call
         print("ic")
