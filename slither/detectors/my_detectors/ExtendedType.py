@@ -216,7 +216,7 @@ class ExtendedType():
         fields_str = ", ".join(str(elem.name) for elem in self._fields)
         if self._finance_type in f_type_num:
             if(self._updated):
-                finance_type = "updated " + str(f_type_num[self._pure_type])
+                finance_type = "updated " + str(f_type_num[self._finance_type - update_start])
             else:
                 finance_type = f_type_num[self._finance_type]
         else:
