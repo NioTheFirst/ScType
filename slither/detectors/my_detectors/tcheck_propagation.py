@@ -228,9 +228,11 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         _rrfp = _rr.pure_type
         if(_rrf == -1):
             assign_ftype(_rlf, dest)
+            pass_update(dest, rsrcl, func, rsrcr)
             return False
         if(_rlf == -1):
             assign_ftype(_rrf, dest)
+            pass_update(dest, rsrcl, func, rsrcr)
             return False
     key = (_rlfp, _rrfp)
     print(f"Finance type key: {key}")
