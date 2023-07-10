@@ -175,6 +175,7 @@ class ExtendedType():
         self.clear_den()
         self.norm = 'u'
         self.link_function = None
+        self._updated = False
 
     def init_constant(self):
         if not(self.is_undefined()):
@@ -183,6 +184,7 @@ class ExtendedType():
         self.add_num_token_type(-1)
         self.add_den_token_type(-1)
         self.norm = 'u';
+        self._updated = False
 
     @property
     def finance_type(self):
