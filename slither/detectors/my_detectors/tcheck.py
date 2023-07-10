@@ -915,6 +915,8 @@ def type_fc(ir) -> bool:
         
     else:
         print(added)
+        if(not(ir.lvalue)):
+            return False
         ret_obj = ir.function.get_parameter_cache_return(added)
         if isinstance( ret_obj, Variable):
             if isinstance(ret_obj, list):
