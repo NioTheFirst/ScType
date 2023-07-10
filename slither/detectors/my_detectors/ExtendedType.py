@@ -192,6 +192,7 @@ class ExtendedType():
     def pure_type(self):
         if(self._finance_type > update_start):
             return self._finance_type - update_start
+        return self._finance_type
 
     @finance_type.setter
     def finance_type(self, f_type):
