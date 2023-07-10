@@ -194,6 +194,7 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
         if(r_in_ratio):
             checked_ratio = _rrfp
             updated = _rr.updated
+            print(f"Left side: {_rlfp}, Right side: {_rrfp}, Checked Ratio: {checked_ratio}")
         elif(l_in_ratio):
             checked_ratio = _rlfp
             updated = _rl.updated
