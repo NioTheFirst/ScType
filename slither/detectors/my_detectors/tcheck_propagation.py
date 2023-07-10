@@ -191,6 +191,7 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
             checked_ratio = _rlfp
             updated = _rl.updated
         if(update_ratios[check_ratio] != updated):
+            print(f"Inconsistent updating of {checked_ratio} by {_rlf} and {_rrf}")
             return True
 
     #Propogate updated usage
