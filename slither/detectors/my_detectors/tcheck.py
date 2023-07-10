@@ -18,6 +18,7 @@ import sys
 script_dir = os.path.dirname( __file__ )
 sys.path.append(script_dir)
 import tcheck_parser
+from tcheck_parser import update_ratios
 import tcheck_propagation
 
 seen_contracts = {}
@@ -49,6 +50,9 @@ read_library = False
 #IMPORTANT: read internal
 read_internal = False
 
+#USAGE: resets update ratios
+def reset_update_ratios():
+    tcheck_parser.reset_update_ratios()
 
 #USAGE: creates and returns a constant instnace
 #RETURNS: a constant instance (default constant)
@@ -1851,6 +1855,8 @@ def _tcheck_contract(contract):
     all_addback_nodes = []
     #_mark_functions(contract)
     #_tcheck_contract_state_var(contract)
+    #Reset update ratios
+    reset_update_ratios()
     for function in contract.functions_declared:
         print("Reading Function: " + function.name)
         if not(function_check[function.name]):

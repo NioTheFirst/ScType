@@ -380,6 +380,13 @@ def check_function(function_name):
         return True
     return False
 
+def reset_update_ratios():
+    global update_ratios
+    update_ratios = {10: False, 
+                 12: False,
+                 20: False,
+                 21: False}
+
 def split_line(line):
     result = []
     buffer = ''
