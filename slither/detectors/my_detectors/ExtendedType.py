@@ -214,10 +214,10 @@ class ExtendedType():
         num_token_types_str = ", ".join(str(elem) for elem in self._num_token_types)
         den_token_types_str = ", ".join(str(elem) for elem in self._den_token_types)
         fields_str = ", ".join(str(elem.name) for elem in self._fields)
-        if self._finance_type in f_type_num:
-            finance_type = f_type_num[self._finance_type]
-        elif(self._updated == True):
+        if(self._updated == True):
             finance_type = "updated " + f_type_num[self._finance_type - update_start]
+        elif self._finance_type in f_type_num:
+            finance_type = f_type_num[self._finance_type]
         else:
             finance_type = None
         return (
