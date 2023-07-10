@@ -167,6 +167,7 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
     #Assign updates where dest is a ratio (and rsrcr exists)
     _dest = dest.extok
     dest_in_ratio = (_dest.finance_type in update_ratios)
+    print(f"Dest type: {_dest.finance_type}")
     _rl = rsrcl.extok
     _rlf = _rl.finance_type
     _rlfp = _rl.pure_type
