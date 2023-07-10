@@ -542,7 +542,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, TypeConversion):
         convert_ssa(ir.lvalue)
         convert_ssa(ir.variable)
-        if(str(ir.variable) == "this"):
+        if(str(ir.variable) == "this" or str(ir.variable) == "block.number"):
             #TMPxxx  CONVERT address(this)
             assign_const(ir.lvalue)
             ir.lvalue.norm = 0
