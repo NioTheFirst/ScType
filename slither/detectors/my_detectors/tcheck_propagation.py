@@ -164,6 +164,7 @@ def assign_ftype(ftype, dest):
 
 #USAGE: deals with updates
 def pass_update(dest, rsrcl, func, rsrcr = None):
+    global update_ratios
     #Assign updates where dest is a ratio (and rsrcr exists)
     _dest = dest.extok
     dest_in_ratio = (_dest.finance_type in update_ratios)
