@@ -165,7 +165,7 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
     dest_in_ratio = (_dest.finance_type in update_ratios)
     _rl = rsrcl.extok
     _rlf = _rl.finance_type
-    _rlfp + _rl.pure_type
+    _rlfp = _rl.pure_type
     l_in_ratio = (_rlfp in update_ratios)
     _rr = None
     _rrf = -1
