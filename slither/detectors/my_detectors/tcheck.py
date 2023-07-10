@@ -529,11 +529,11 @@ def check_type(ir) -> bool:
     elif isinstance(ir, InternalCall):
          #Function call
         print("ic")
-        if(ir.lvalue):
-            addback = type_fc(ir)
-        else:
-            addback = False
-            print("NO RETURN LOCATION")
+        #if(ir.lvalue):
+        addback = type_fc(ir)
+        #else:
+        #    addback = False
+        #    print("NO RETURN LOCATION")
     elif isinstance(ir, LibraryCall):
         addback = type_library_call(ir)
     elif isinstance(ir, HighLevelCall):
