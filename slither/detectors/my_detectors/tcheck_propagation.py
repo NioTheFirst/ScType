@@ -9,7 +9,7 @@ from tcheck import errors
 #       these functions contain handling for ABSTRACT types as well (any type > abs_buf is an ABSTRACT type)
 #       ABSTRACT types take priority over CONCRETE types (temporary handling for if statements)
 #       ABSTRACT type comparison to CONCRETE type comparison always holds true 
-from tcheck_parser import field_tuple_start, f_type_name, f_type_num
+from tcheck_parser import field_tuple_start, f_type_name, f_type_num, update_ratios
 
 
 f_type_add = {
@@ -158,6 +158,51 @@ def copy_ftype(src, dest):
 def assign_ftype(ftype, dest):
     dest.extok.finance_type = ftype
 
+#USAGE: deals with updates
+def pass_update(dest, rsrcl, func, rsrcr = None):
+    #Assign updates where dest is a ratio (and rsrcr exists)
+    _dest = dest.extok
+    dest_in_ratio = (_dest.finance_type in update_ratios)
+    _rl = rsrcl.extok
+    _rlf = _rl.finance_type
+    _rlfp + _rl.pure_type
+    l_in_ratio = (_rlfp in update_ratios)
+    _rr = None
+    _rrf = -1
+    _rrfp = -1
+    r_in_ratio = False
+    if(rsrcr):
+        _rr = rsrcr.extok
+        _rrf = _rr.finance_type
+        _rrfp = _rr.pure_type
+        r_in_ratio = (_rrfp in update_ratios)
+        if(dest_in_ratios):
+            _dest.updated = True
+            update_ratios[_dest.finance_type] = True
+    
+    #Checks for unupdated usage
+    if(not(dest_in_ratio) and (r_in_ratio or l_in_ratio)):
+        checked_ratio = -1
+        updated = False
+        if(r_in_ratio):
+            checked_ratio = _rrfp
+            updated = _rr.updated
+        elif(l_in_ratio):
+            checked_ratio = _rlfp
+            updated = _rl.updated
+        if(update_ratios[check_ratio] != updated):
+            return True
+
+    #Propogate updated usage
+    if(_rl.updated or (_rr != None and _rr.updated)):
+        _dest.updated = True
+
+
+
+    
+
+    
+
 #USAGE: finance type propogation
 def pass_ftype(dest, rsrcl, func, rsrcr = None):
     #dest is the finance destination
@@ -168,18 +213,21 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         return False
     _rl = rsrcl.extok
     _rlf = _rl.finance_type
+    _rlfp = _rl.pure_type
     _rr = None
     _rrf = -1
+    _rrfp = -1
     if(rsrcr):
         _rr = rsrcr.extok
         _rrf = _rr.finance_type
+        _rrfp = _rr.pure_type
         if(_rrf == -1):
             assign_ftype(_rlf, dest)
             return False
         if(_rlf == -1):
             assign_ftype(_rrf, dest)
             return False
-    key = (_rlf, _rrf)
+    key = (_rlfp, _rrfp)
     print(f"Finance type key: {key}")
     if(func == "add"):
         if key in f_type_add:
@@ -212,6 +260,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
     elif(func == "assign" or "pow"):
         assign_ftype(_rlf, dest)
     print(f"Func: {func}")
+    return(pass_update(dest, rsrcl, func, rsrcr))
 
         
 

@@ -13,7 +13,7 @@ sys.path.append(script_dir)
 #           - fields          (for objects)
 #       Business types (usually one) are categorical, i.e. (fee, balance, ...) and their relations will be defined here
 
-from tcheck_parser import f_type_name, f_type_num
+from tcheck_parser import f_type_name, f_type_num, update_start
 
 class ExtendedType():
     def __init__(self):
@@ -32,6 +32,7 @@ class ExtendedType():
         self._reference_field = None
         #Business type
         self._finance_type = -1
+        self._updated = False
 
     #Getters and setters for the fields
     @property
@@ -61,6 +62,7 @@ class ExtendedType():
     @function_name.setter
     def function_name(self, fname):
         self._function_name = fname
+
 
     @property
     def contract_name(self):
@@ -186,16 +188,36 @@ class ExtendedType():
     def finance_type(self):
         return self._finance_type
 
+    @property
+    def pure_type(self):
+        if(self._finance_type > update_start):
+            return self._finance_type - update_start
+
     @finance_type.setter
     def finance_type(self, f_type):
+        if(f_type > update_start):
+            self._updated = True
         self._finance_type = f_type
+
+    @property
+    def updated(self):
+        return self._updated
+
+    @updated.setter
+    def updated(self, is_updated):
+        self._updated = is_updated
+        if(self._finance_type <= update_start and is_updated):
+            self._finance_type += update_start
 
     def __str__(self):
         num_token_types_str = ", ".join(str(elem) for elem in self._num_token_types)
         den_token_types_str = ", ".join(str(elem) for elem in self._den_token_types)
         fields_str = ", ".join(str(elem.name) for elem in self._fields)
         if self._finance_type in f_type_num:
-            finance_type = f_type_num[self._finance_type]
+            if(self._updated):
+                finance_type = "updated " + f_type_num[self._finance_type]
+            else:
+                finance_type = f_type_num[self._finance_type]
         else:
             finance_type = None
         return (

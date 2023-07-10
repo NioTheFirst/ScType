@@ -23,6 +23,13 @@ tuple_type_hash = {}
 field_type_hash = {}
 
 field_tuple_start = 4
+update_start = 100
+
+#Update ratios should be reset every single contract TODO add this to tcheck
+update_ratios = {10: False, 
+                 12: False,
+                 20: False,
+                 21: False}
 
 f_type_num = {
     -1: "undef",
