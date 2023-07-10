@@ -186,7 +186,7 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
             print(f"Dest updated")
             _dest.updated = True
             update_ratios[_dest.finance_type] = True
-    print(f"Right type: {_rrfp}, Left type: {_rlfp}")
+    print(f"Right type: {_rrf}, Left type: {_rlf}")
     #Checks for unupdated usage
     if(not(dest_in_ratio) and (r_in_ratio or l_in_ratio)):
         checked_ratio = -1
