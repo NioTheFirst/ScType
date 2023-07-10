@@ -952,6 +952,7 @@ def handle_return(dest_ir, function):
             tuple_types.append((__x.num_token_types, __x.den_token_types, __x.norm, __x.linked_contract, __x.finance_type))
         else:
             if(dest_ir != None):
+                dest_ir.extok.token_type_clear()
                 copy_token_type(x, dest_ir)
                 _dest_ir.linked_contract = __x.linked_contract
                 asn_norm(dest_ir, get_norm(x))
@@ -964,7 +965,7 @@ def handle_return(dest_ir, function):
         if(isinstance(dest_ir, TupleVariable)):
             add_tuple(dest_ir.name, tuple_types)
         elif(isinstance(dest_ir, Variable)):
-            _dest_ir = dest_ir.extok
+            dest_ir.extok.token_type_clear()
             copy_token_tuple(dest_ir, tuple_types[0])
             
         function.add_parameter_cache_return(tuple_types)
