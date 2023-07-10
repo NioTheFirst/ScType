@@ -200,6 +200,8 @@ class ExtendedType():
     def finance_type(self, f_type):
         if(f_type > update_start):
             self._updated = True
+        else:
+            self._updated = False
         self._finance_type = f_type
 
     @property
