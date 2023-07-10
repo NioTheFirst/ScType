@@ -49,3 +49,5 @@ interest
 fee
 final balance
 reserve
+
+type harness: support a harness function (external) that is able to call functions in a specified order: this allows for global variable type propagation
