@@ -582,9 +582,11 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Return):
         print("RETURN")
         for y in ir.values:
-            init_var(y) 
-            print(y.extok)
-            ir.function.add_return_ssa(y)
+            if(init_var(y)): 
+                print(y.extok)
+                ir.function.add_return_ssa(y)
+            else:
+                ir.function.add_return_ssa(create_iconstant())
         return False
     #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
     #    #Reference
