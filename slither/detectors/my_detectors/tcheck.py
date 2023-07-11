@@ -886,7 +886,7 @@ def type_ref(ir)->bool:
     #no other options, just querry the user (try not to let this happen)
     #querry_type(ir.lvalue)
     assign_const(ir.lvalue)
-    #return True
+    return True
 
 
 #USAGE: typecheck for function call (pass on types etc)
