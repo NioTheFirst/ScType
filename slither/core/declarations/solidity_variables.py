@@ -104,7 +104,7 @@ class SolidityVariable(SourceMapping):
         self._check_name(name)
         self._name = name
         self._ef = ExtendedType()
-        _ef.name = name
+        self._ef.name = name
 
     # dev function, will be removed once the code is stable
     def _check_name(self, name: str):  # pylint: disable=no-self-use
