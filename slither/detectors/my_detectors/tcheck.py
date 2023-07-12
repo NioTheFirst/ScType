@@ -334,6 +334,10 @@ def querry_type(ir):
     uxname = str(uxname)
     print("Finding type for "+ uxname + "...")
     print(ir.type)
+    if(str(ir.type) == "bool"):
+        print("SKIP bool")
+        assign_const(ir)
+        return
     if(str(ir.type) == "bytes"):
         print("SKIP bytes")
         return
