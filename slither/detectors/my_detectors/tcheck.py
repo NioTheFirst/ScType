@@ -1053,7 +1053,7 @@ def type_asnai(dest, sorc)->bool:
 #RETURNS: NULL
 def init_var(ir):
     #Special variables
-    if(not(is_variable(ir))):
+    if(not(is_variable(ir)) and str(ir) != "msg.value"):
         print(str(ir))
         return False
     _ir = ir.extok
