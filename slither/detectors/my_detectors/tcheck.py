@@ -1329,6 +1329,8 @@ def bin_norm(dest, lir, rir, func = None):
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
+    if(func == "compare"):
+        continue
     if(lnorm == '*' or rnorm == '*'):
            
         #    asn_norm(dest, lnorm)
@@ -1424,7 +1426,7 @@ def type_bin_gt(dest, lir, rir) -> bool:
     print("testing gt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    bin_norm(dest, lir, rir)
+    bin_norm(dest, lir, rir, "compare")
     pass_ftype(dest, lir, "compare", rir)
     print_token_type(rir)
     print(is_type_const(rir))
@@ -1450,7 +1452,7 @@ def type_bin_ge(dest, lir, rir) -> bool:
     print("testing gt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    bin_norm(dest, lir, rir)
+    bin_norm(dest, lir, rir, "compare")
     pass_ftype(dest, lir, "compare", rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
@@ -1474,7 +1476,7 @@ def type_bin_lt(dest, lir, rir) -> bool:
     print("testing lt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    bin_norm(dest, lir, rir)
+    bin_norm(dest, lir, rir, "compare")
     pass_ftype(dest, lir, "compare", rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
