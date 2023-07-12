@@ -1330,7 +1330,7 @@ def bin_norm(dest, lir, rir, func = None):
     rnorm = get_norm(rir)
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
     if(func == "compare"):
-        continue
+        return
     if(lnorm == '*' or rnorm == '*'):
            
         #    asn_norm(dest, lnorm)
