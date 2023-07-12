@@ -150,7 +150,7 @@ class SolidityVariableComposed(SolidityVariable):
         return self._name
 
     @property
-    def extok:
+    def extok(self):
         return self._extok
 
     @property
