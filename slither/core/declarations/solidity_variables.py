@@ -105,6 +105,7 @@ class SolidityVariable(SourceMapping):
         self._name = name
         self._ef = ExtendedType()
         self._ef.name = name
+        self._parent_function = None
 
     # dev function, will be removed once the code is stable
     def _check_name(self, name: str):  # pylint: disable=no-self-use
@@ -152,6 +153,14 @@ class SolidityVariableComposed(SolidityVariable):
     @property
     def extok(self):
         return self._ef
+
+    @property
+    def parent_function(self):
+        return self._parent_function
+
+    @parent_function.setter
+    def parent_function(self, name):
+        self._parent_function = name
 
     @property
     def type(self) -> ElementaryType:
