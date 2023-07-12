@@ -150,6 +150,10 @@ class SolidityVariableComposed(SolidityVariable):
         return self._name
 
     @property
+    def extok:
+        return self._extok
+
+    @property
     def type(self) -> ElementaryType:
         return ElementaryType(SOLIDITY_VARIABLES_COMPOSED[self.name])
 
