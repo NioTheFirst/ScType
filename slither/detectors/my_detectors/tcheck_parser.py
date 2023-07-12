@@ -48,6 +48,7 @@ f_type_num = {
     23: "compound interest",
     30: "reserve",
     40: "price/exchange rate",
+    50: "debt",
 }
 
 #test discord bot again
@@ -68,6 +69,7 @@ f_type_name = {
     "compound interest" : 23,
     "reserve" : 30,
     "price/exchange rate" : 40,
+    "debt": 50,
 }
 
 
