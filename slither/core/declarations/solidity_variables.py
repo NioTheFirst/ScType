@@ -5,6 +5,7 @@ from slither.core.declarations.custom_error import CustomError
 from slither.core.solidity_types import ElementaryType, TypeInformation
 from slither.core.source_mapping.source_mapping import SourceMapping
 from slither.exceptions import SlitherException
+from slither.detectors.my_detectors.ExtendedType import ExtendedType
 
 if TYPE_CHECKING:
     pass
@@ -102,10 +103,15 @@ class SolidityVariable(SourceMapping):
         super().__init__()
         self._check_name(name)
         self._name = name
+        self._ef = ExtendedType()
 
     # dev function, will be removed once the code is stable
     def _check_name(self, name: str):  # pylint: disable=no-self-use
         assert name in SOLIDITY_VARIABLES or name.endswith(("_slot", "_offset"))
+
+    @property
+    def extok(self):
+        return self._extok
 
     @property
     def state_variable(self):
