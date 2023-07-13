@@ -20,6 +20,7 @@ class ExtendedType():
         #Initialized an 'undefined' data type
         self._name: Optional[str] = None
         self._function_name: Optional[str] = None
+        #TODO add the function ir
         self._contract_name: Optional[str] = None
         #Token type
         self._num_token_types = []
