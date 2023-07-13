@@ -27,6 +27,7 @@ class ExtendedType():
         self._den_token_types = []
         self._base_decimals = 0
         self._norm = 'u'
+        #TODO address lf should automatically be set to its name
         self._linked_contract = None
         self._fields = []
         self._reference_root = None

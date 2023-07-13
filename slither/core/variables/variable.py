@@ -186,6 +186,8 @@ class Variable(SourceMapping):
 
     @type.setter
     def type(self, types: Union[Type, List[Type]]):
+        if(str(types) == "address"):
+            self._et.linked_contract = self._et.name
         self._type = types
 
     @property
