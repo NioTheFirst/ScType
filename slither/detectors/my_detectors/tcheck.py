@@ -581,7 +581,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Index):
         print("INDEX")
         addback = type_ref(ir)
-        return addback
+        #return addback
     elif isinstance(ir, Member):
         print("MEMBER")
         addback = type_member(ir) 
