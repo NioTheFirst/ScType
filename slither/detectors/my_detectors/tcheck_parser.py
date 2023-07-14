@@ -115,7 +115,8 @@ def parse_finance_file(f_file):
             #Look for "f: "
             f_params = gen_finance_instances(line)
             if(len(f_params) == 0):
-                f_params.append(-1)
+                for i in range(5):
+                    f_params.append(-1)
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
