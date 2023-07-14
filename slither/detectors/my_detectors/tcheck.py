@@ -874,13 +874,15 @@ def type_ref(ir)->bool:
         print("REFERENCE LEFT VALUE PROPAGATION")
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_left, ir.lvalue)
+        copy_norm(ir.variable_left, ir.lvalue)
         return False
 
     #check if the index of the variable has a type that is not a constant
     if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
         print("REFERENCE RIGHT VALUE PROPAGATION")
+        ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_right, ir.lvalue)
-        
+        copy_norm(ir.variable_right, ir.lvalue)
         return False
 
     #check the parser for a pre-user-defined type
