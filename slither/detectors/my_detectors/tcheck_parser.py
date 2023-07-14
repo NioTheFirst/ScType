@@ -26,9 +26,9 @@ field_tuple_start = 4
 update_start = 100
 
 #Update ratios should be reset every single contract
-update_ratios = {10: -1, 
+update_ratios = {#10: -1, 
                  12: -1,
-                 20: -1,
+                 #20: -1,
                  21: -1}
 
 f_type_num = {
@@ -387,9 +387,9 @@ def check_function(function_name):
 
 def reset_update_ratios():
     global update_ratios
-    update_ratios = {10: -1, 
+    update_ratios = {#10: -1, 
                  12: -1,
-                 20: -1,
+                 #20: -1,
                  21: -1}
 
 def split_line(line):
