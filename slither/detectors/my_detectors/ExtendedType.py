@@ -175,9 +175,9 @@ class ExtendedType():
     def token_type_clear(self):
         self.clear_num()
         self.clear_den()
-        self.norm = 'u'
+        #self.norm = 'u'
         self.link_function = None
-        self._updated = False
+        #self._updated = False
 
     def init_constant(self):
         if not(self.is_undefined()):
