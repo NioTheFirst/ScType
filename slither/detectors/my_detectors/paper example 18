@@ -1,0 +1,29 @@
+contract Utils{
+    address public BASE
+    address public POOL
+    ...
+    function getAmountInBase(address member, uint amount, address asset) external view returns (uint debt, uint baseValue) {
+        if(asset == BASE){
+            baseValue =amount;
+        }else if(asset == POOL){
+            //collateralAmount is in address POOL
+            baseValue = calcAsymmetricShare(amount, iPOOLS(POOLS).getMemberBalance(asset, member), iPOOLS(POOLS).getPoolBalance(asset)); // calc units to BASE
+        }
+        ...
+        return (baseValue);
+    }
+    ...
+    function calcAsymmetricShare(uint u, uint U, uint A) public pure returns (uint){
+        // Mathematical conversion of POOL tokens to BASE tokens
+        // share = (u * U * (2 * A^2 - 2 * U * u + U^2))/U^3
+        // (part1 * (part2 - part3 + part4)) / part5
+        uint part1 = (u * A);       //part 1 has units PoolToken^2
+        uint part2 = ((U * U) * 2); //part 2 has units PoolToken^2
+        uint part3 = ((U * u) * 2); //Part 3 has units PoolToken^2
+        uint part4 = (u * u);
+        //part1 * part2 - part3 ~ (PoolToken^2 x PoolToken^2) - PoolToken^2 ~ PoolToken^4 - PoolToken^2
+        uint numerator = ((part1 * part2) - part3) + part4; //bug
+        uint part5 = ((U * U) * U);
+        return (numerator / part5);
+    }
+}

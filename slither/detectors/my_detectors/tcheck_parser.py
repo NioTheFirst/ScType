@@ -386,6 +386,7 @@ def check_function(function_name):
     return False
 
 def reset_update_ratios():
+    #redo update ratios: seems like there may be some issues
     global update_ratios
     update_ratios = {#10: -1, 
                  12: -1,
