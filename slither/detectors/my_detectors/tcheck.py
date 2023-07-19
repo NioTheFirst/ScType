@@ -591,7 +591,7 @@ def check_type(ir) -> bool:
         addback =  False
     elif isinstance(ir, Return):
         print("RETURN")
-        ir.function.return_ssa.clear()
+        ir.function._returns_ssa.clear()
         for y in ir.values:
             if(init_var(y)): 
                 print(y.extok)
