@@ -1258,7 +1258,7 @@ def asn_norm(ir, norm):
 #USAGE: compares norm values of two variables and throws errors if they are not equal
 def compare_norm(lv, varA, varB, func = None):
     if(not(isinstance(varA, Variable) and isinstance(varB, Variable))):
-        return
+        return True
     _varA = varA.extok
     _varB = varB.extok
     A_norm = _varA.norm
@@ -1266,17 +1266,22 @@ def compare_norm(lv, varA, varB, func = None):
     if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
         if(isinstance(varA, Constant) and varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
             add_errors(lv)
+            return True
         if(isinstance(varB, Constant) and varB.value == 1 and not(_varB.is_undefined() or _varB.is_constant())):
             add_errors(lv)
-        return
+            return True
+        return False
     if(A_norm == 'u' or B_norm == 'u'):
-        return
+        return False
     elif(A_norm == '*' or B_norm == '*'):
         if(A_norm == B_norm or func == "mul" or func == "div"):
             add_errors(lv)
+            return True
     else:
         if(not(func) and A_norm != B_norm):
             add_errors(lv)
+            return True
+    return False
 
 
 #USAGE: append norm (i.e. for multiplication, division, or power)
@@ -1297,12 +1302,13 @@ def add_norm(ir, norm):
         if(isinstance(norm, str)):
             if(norm == '*'):
                 add_errors(ir)
+                return(True)
             else:
                 #do nothing
                 print("[W] ASSIGNED UNKOWN TYPE IN ADDITIVE NORM ASSIGNMENT")
         else:
             _ir.norm = '*'
-
+    return False
 #USAGE: subtract norm (i.e. for multiplication, division, or power)
 #RETURNS: NULL
 def sub_norm(ir, norm):
@@ -1318,8 +1324,8 @@ def sub_norm(ir, norm):
     elif(temp == '*'):
         if(isinstance(norm, str)):
             if(norm == '*'):
-                return True
                 add_errors(ir)
+                return True
             else:
                 #do nothing
                 print("[W] ASSIGNED UNKOWN TYPE IN ADDITIVE NORM ASSIGNMENT")
