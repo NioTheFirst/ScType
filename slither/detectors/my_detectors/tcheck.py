@@ -1372,7 +1372,10 @@ def bin_norm(dest, lir, rir, func = None):
         if(dest.extok.norm != '*'):
             asn_norm(dest, '*')
     elif(lnorm == 'u'):
-        asn_norm(dest, rnorm)
+        if(func == "div" and isinstance(rnorm, int)):
+            asn_norm(dest, -rnorm)
+        else:
+            asn_norm(dest, rnorm)
     elif(rnorm == 'u'):
         asn_norm(dest, lnorm)
     else:
