@@ -1252,6 +1252,9 @@ def asn_norm(ir, norm):
        _ir.norm = '*'
     else:
         if(_ir.norm != norm or (_ir.norm == norm and norm == '*')):
+            if(_ir.norm == 0):
+                _ir.norm = norm
+                return
             add_errors(ir)
             _ir.norm = 'u'
 
