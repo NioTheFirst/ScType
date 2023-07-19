@@ -458,6 +458,9 @@ def compare_token_type(src, dest):
 def add_errors(ir):
     global nErrs
     global errors
+    if ir in errors:
+        assign_err(ir)
+        return
     errors.append(ir)
     nErrs+=1
     _ir = ir.extok
