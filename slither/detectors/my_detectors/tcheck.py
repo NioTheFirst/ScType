@@ -959,7 +959,7 @@ def handle_return(dest_ir, function):
     if(dest_ir):
         _dest_ir = dest_ir.extok
     #for _x in function.return_values_ssa:
-    fpr _x in function.returns_ssa"
+    for _x in function.returns_ssa"
         if(not isinstance(_x, Variable)):
             x = constant_instance
         else:
