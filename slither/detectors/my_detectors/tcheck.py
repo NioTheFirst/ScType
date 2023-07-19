@@ -879,6 +879,7 @@ def type_ref(ir)->bool:
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_left, ir.lvalue)
         copy_norm(ir.variable_left, ir.lvalue)
+        copy_ftype(ir.variable_left, ir.lvalue)
         return False
 
     #check if the index of the variable has a type that is not a constant
@@ -887,6 +888,7 @@ def type_ref(ir)->bool:
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_right, ir.lvalue)
         copy_norm(ir.variable_right, ir.lvalue)
+        copy_ftype(ir.variable_right, ir.lvalue)
         return False
 
     #check the parser for a pre-user-defined type
