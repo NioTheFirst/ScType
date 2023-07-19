@@ -1367,7 +1367,8 @@ def bin_norm(dest, lir, rir, func = None):
         #    asn_norm(dest, rnorm)
         #    asn_norm(lir, rnorm)
         #else:
-        asn_norm(dest, '*')
+        if(dest.extok.norm != '*'):
+            asn_norm(dest, '*')
     elif(lnorm == 'u'):
         asn_norm(dest, rnorm)
     elif(rnorm == 'u'):
