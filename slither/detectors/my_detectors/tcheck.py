@@ -1140,7 +1140,7 @@ def type_bin_pow(dest, lir, rir) -> bool:
         elif(pow_const == 0):
             asn_norm(dest, pow_const)
         else:
-            if(dest.norm != '*'):
+            if(dest.extok.norm != '*'):
                 asn_norm(dest, '*')
     else:
         type_asn(dest, lir)
@@ -1155,7 +1155,7 @@ def type_bin_pow(dest, lir, rir) -> bool:
                 for i in range(pow_const-1):
                     type_asnai(dest, lir)
         else:
-            if(dest.norm != '*'):
+            if(dest.extok.norm != '*'):
                 asn_norm(dest, '*')
     return False
 #USAGE: typechecks addition statements
