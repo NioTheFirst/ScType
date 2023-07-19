@@ -388,9 +388,9 @@ def check_function(function_name):
 def reset_update_ratios():
     #redo update ratios: seems like there may be some issues
     global update_ratios
-    update_ratios = {#10: -1, 
+    update_ratios = {10: -1, 
                  12: -1,
-                 #20: -1,
+                 20: -1,
                  21: -1}
 
 def split_line(line):
