@@ -1155,7 +1155,8 @@ def type_bin_pow(dest, lir, rir) -> bool:
                 for i in range(pow_const-1):
                     type_asnai(dest, lir)
         else:
-            asn_norm(dest, '*')
+            if(dest.norm != '*'):
+                asn_norm(dest, '*')
     return False
 #USAGE: typechecks addition statements
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
