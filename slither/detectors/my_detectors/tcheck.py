@@ -1318,20 +1318,24 @@ def sub_norm(ir, norm):
     elif(temp == '*'):
         if(isinstance(norm, str)):
             if(norm == '*'):
+                return False
                 add_errors(ir)
             else:
                 #do nothing
                 print("[W] ASSIGNED UNKOWN TYPE IN ADDITIVE NORM ASSIGNMENT")
         else:
             _ir.norm = '*'
+    return True
 
 
 def bin_norm(dest, lir, rir, func = None):
     #if(func == None):
-    compare_norm(dest, lir, rir, func)
+    err = compare_norm(dest, lir, rir, func)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
+    if(err):
+        asn_norm(dest, 'u');
     if(func == "compare"):
         return
     if(lnorm == '*' or rnorm == '*'):
