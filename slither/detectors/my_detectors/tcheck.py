@@ -1318,14 +1318,14 @@ def sub_norm(ir, norm):
     elif(temp == '*'):
         if(isinstance(norm, str)):
             if(norm == '*'):
-                return False
+                return True
                 add_errors(ir)
             else:
                 #do nothing
                 print("[W] ASSIGNED UNKOWN TYPE IN ADDITIVE NORM ASSIGNMENT")
         else:
             _ir.norm = '*'
-    return True
+    return False
 
 
 def bin_norm(dest, lir, rir, func = None):
