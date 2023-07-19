@@ -1140,7 +1140,8 @@ def type_bin_pow(dest, lir, rir) -> bool:
         elif(pow_const == 0):
             asn_norm(dest, pow_const)
         else:
-            asn_norm(dest, '*')
+            if(dest.norm != '*'):
+                asn_norm(dest, '*')
     else:
         type_asn(dest, lir)
         l_norm = get_norm(lir)
