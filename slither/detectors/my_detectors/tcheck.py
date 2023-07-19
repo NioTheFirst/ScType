@@ -1279,6 +1279,12 @@ def compare_norm(lv, varA, varB, func = None):
             return True
     else:
         if(not(func) and A_norm != B_norm):
+            if(A_norm == 0):
+                _varA.norm = B_norm
+                return False
+            if(B_norm == 0):
+                _varB.norm = A_norm
+                return False
             add_errors(lv)
             return True
     return False
