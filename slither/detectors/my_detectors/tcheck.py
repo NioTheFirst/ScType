@@ -1959,6 +1959,8 @@ def _tcheck_contract(contract):
         #print("[*i*]External Function: " + function.name)
         #continue
         addback_nodes = _tcheck_function(function)
+        #Don't override state variables (?)
+        current_function_marked = True
         _tcheck_contract_state_var(contract)
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
