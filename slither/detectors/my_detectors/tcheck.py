@@ -1820,6 +1820,8 @@ def _tcheck_function(function) -> []:
     global function_hlc
     global function_ref
     global function_count
+    global mark_iteration
+    global current_function_marked
     function_hlc = 0
     function_ref = 0
     explored = set()
@@ -1837,7 +1839,8 @@ def _tcheck_function(function) -> []:
             querry_type(fparam)
         #generate param_cache
         new_param_cache = function_param_cache(function)
-        added = add_param_cache(function, new_param_cache)
+        if(not(mark_iteration) or current_function_marked):
+            added = add_param_cache(function, new_param_cache)
         print_param_cache(new_param_cache)
     else:
         #do not care about internal functions in initial iteration
