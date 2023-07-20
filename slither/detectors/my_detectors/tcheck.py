@@ -25,6 +25,7 @@ import tcheck_propagation
 seen_contracts = {}
 user_type = False
 fill_type = False
+mark_iteration = False
 type_file = ""
 maxTokens = 10
 tempVar = defaultdict(list) #list storing temp variables (refreshed every node call)
@@ -328,6 +329,7 @@ def querry_type(ir):
     global user_type
     global type_file
     global ask_user
+    global mark_iteration
     _ir = ir.extok
     uxname = _ir.name
     if(ir.tname != None):
@@ -354,6 +356,9 @@ def querry_type(ir):
         print("[x]Failed to fetch type from type file, defaulting to human interface")
     if (not (ask_user)):
         return True
+    if(mark_iteration):
+        assign_const(ir)
+        return
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
     input_int = int(input_str)
@@ -1912,6 +1917,7 @@ def _tcheck_contract(contract):
     #contract is the contract passed in by Slither
     global errors
     global current_contract_name
+    global mark_iteration
     current_contract_name = contract.name
     all_addback_nodes = []
     #_mark_functions(contract)
@@ -1922,7 +1928,10 @@ def _tcheck_contract(contract):
         print("Reading Function: " + function.name)
         if not(function_check[function.name]):
             print("Function " + function.name + " not marked")
-            continue
+            if(mark_iteration):
+                print("Mark Iterations TRUE, proceeding anyway")
+            else:
+                continue
         if not function.entry_point:
             continue
         #SKIP
