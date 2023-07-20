@@ -35,6 +35,7 @@ nErrs = 0
 line_no = 1
 function_hlc = 0
 function_ref = 0
+function_count = 0
 current_contract_name = "ERR"
 type_hashtable = {}
 function_bar = {}
@@ -1713,6 +1714,7 @@ def _find_return_function(function):
 def _tcheck_function_call(function, param_cache) -> []:
     global function_hlc
     global function_ref
+    global function_count
     print("xyz")
     function_hlc = 0
     function_ref = 0
@@ -1724,6 +1726,8 @@ def _tcheck_function_call(function, param_cache) -> []:
     print("Function Visibility: "+function.visibility)
     #load parameters
     paramno = 0
+    #Append to function count
+    function+count+=1
     for param in function.parameters:
         #clear previous types
         #copy new types
@@ -1778,6 +1782,7 @@ def _tcheck_function_call(function, param_cache) -> []:
 def _tcheck_function(function) -> []:
     global function_hlc
     global function_ref
+    global function_count
     function_hlc = 0
     function_ref = 0
     explored = set()
@@ -1801,6 +1806,8 @@ def _tcheck_function(function) -> []:
         #do not care about internal functions in initial iteration
         return addback_nodes
 
+    #Append to function count
+    function_count+=1
     #WORKLIST ALGORITHM
     prevlen = -1
     curlen = 0
@@ -1970,6 +1977,7 @@ class tcheck(AbstractDetector):
         global line_no
         global constant_instance
         global seen_contracts
+        global function_count
         assign_const(constant_instance)
         for contract in self.slither.contracts:
             print(contract.name)
@@ -2053,5 +2061,5 @@ class tcheck(AbstractDetector):
             #            info += ["\t= ", node, "\n"]
             #        res = self.generate_result(info)
             #        results.append(res)
-
+        print(f"Function count: {function_count}")
         return results
