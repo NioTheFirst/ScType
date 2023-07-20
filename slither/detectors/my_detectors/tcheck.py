@@ -651,6 +651,8 @@ def type_upk(ir) ->bool:
 #USAGE: typechecks an included external call
 #RETURNS: success of typecheck
 def type_included_hlc(ir, dest, function):
+    global mark_iteration
+    global current_function_marked
     #function is the fentry point
     for param in ir.arguments:
         print(param)
@@ -664,7 +666,9 @@ def type_included_hlc(ir, dest, function):
     new_param_cache = function_hlc_param_cache(ir)
     print("High level cal param_cache")
     print_param_cache(new_param_cache)
-    added = add_param_cache(function, new_param_cache)
+    added = -100
+    if(not(mark_iteration) or current_function_marked):
+        added = add_param_cache(function, new_param_cache)
     if(added == -100):
         print("added")
         addback = _tcheck_function_call(function, new_param_cache)
