@@ -1277,9 +1277,9 @@ def asn_norm(ir, norm):
 
 #USAGE: compares norm values of two variables and throws errors if they are not equal
 def compare_norm(lv, varA, varB, func = None):
-    global mark_iterations
+    global mark_iteration
     global current_function_marked
-    if(mark_iterations and not(current_function_marked)):
+    if(mark_iteration and not(current_function_marked)):
         return True
     if(not(isinstance(varA, Variable) and isinstance(varB, Variable))):
         return True
