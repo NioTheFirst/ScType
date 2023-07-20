@@ -1727,7 +1727,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     #load parameters
     paramno = 0
     #Append to function count
-    function+count+=1
+    function_count+=1
     for param in function.parameters:
         #clear previous types
         #copy new types
