@@ -654,6 +654,8 @@ def type_included_hlc(ir, dest, function):
     global mark_iteration
     global current_function_marked
     #function is the fentry point
+    if(mark_iteration and not(current_function_marked)):
+        return 2
     for param in ir.arguments:
         print(param)
         init_var(param)
@@ -667,8 +669,8 @@ def type_included_hlc(ir, dest, function):
     print("High level cal param_cache")
     print_param_cache(new_param_cache)
     added = -100
-    if(not(mark_iteration) or current_function_marked):
-        added = add_param_cache(function, new_param_cache)
+    #if(not(mark_iteration) or current_function_marked):
+    added = add_param_cache(function, new_param_cache)
     if(added == -100):
         print("added")
         addback = _tcheck_function_call(function, new_param_cache)
@@ -932,6 +934,8 @@ def type_fc(ir) -> bool:
     global mark_iteration
     global current_function_marked
     #check parameters
+    if(mark_iteration and not(current_function_marked)):
+        return False
     params = []
     for param in ir.read:
         init_var(param)
@@ -946,9 +950,9 @@ def type_fc(ir) -> bool:
     new_param_cache = function_call_param_cache(params)
     print("Internal cal param_cache")
     print_param_cache(new_param_cache)
-    added = -100
-    if(not(mark_iteration) or current_function_marked):
-        added = add_param_cache(ir.function, new_param_cache)
+    #added = -100
+    #if(not(mark_iteration) or current_function_marked):
+    added = add_param_cache(ir.function, new_param_cache)
     if(added == -100):
         print("added")
         addback = _tcheck_function_call(ir.function, new_param_cache)
