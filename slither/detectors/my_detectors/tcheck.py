@@ -26,6 +26,7 @@ seen_contracts = {}
 user_type = False
 fill_type = False
 mark_iteration = True
+current_function_marked = False
 type_file = ""
 maxTokens = 10
 tempVar = defaultdict(list) #list storing temp variables (refreshed every node call)
@@ -330,6 +331,7 @@ def querry_type(ir):
     global type_file
     global ask_user
     global mark_iteration
+    global current_function_marked
     _ir = ir.extok
     uxname = _ir.name
     if(ir.tname != None):
@@ -337,6 +339,9 @@ def querry_type(ir):
     uxname = str(uxname)
     print("Finding type for "+ uxname + "...")
     print(ir.type)
+    if(mark_iteration and not(current_function_marked)):
+        assign_const(ir)
+        return
     if(str(ir.type) == "bool"):
         print("SKIP bool")
         assign_const(ir)
@@ -356,9 +361,6 @@ def querry_type(ir):
         print("[x]Failed to fetch type from type file, defaulting to human interface")
     if (not (ask_user)):
         return True
-    if(mark_iteration):
-        assign_const(ir)
-        return
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
     input_int = int(input_str)
@@ -1918,6 +1920,7 @@ def _tcheck_contract(contract):
     global errors
     global current_contract_name
     global mark_iteration
+    global current_function_marked
     current_contract_name = contract.name
     all_addback_nodes = []
     #_mark_functions(contract)
@@ -1930,10 +1933,15 @@ def _tcheck_contract(contract):
             print("Function " + function.name + " not marked")
             if(mark_iteration):
                 print("Mark Iterations TRUE, proceeding anyway")
+                current_function_marked = False
             else:
                 continue
+        else:
+            current_function_marked = True
         if not function.entry_point:
             continue
+
+        #current_function_marked = True
         #SKIP
         #print("[*i*]External Function: " + function.name)
         #continue
