@@ -25,7 +25,7 @@ import tcheck_propagation
 seen_contracts = {}
 user_type = False
 fill_type = False
-mark_iteration = False
+mark_iteration = True
 type_file = ""
 maxTokens = 10
 tempVar = defaultdict(list) #list storing temp variables (refreshed every node call)
