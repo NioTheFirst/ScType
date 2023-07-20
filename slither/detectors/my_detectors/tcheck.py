@@ -873,6 +873,11 @@ def type_member(ir)->bool:
 #USAGE: typechecks for references (i.e. a[0])
 #RETURNS: always False
 def type_ref(ir)->bool:
+    global mark_iteration
+    global current_function_marked
+    if(mark_iteration and not(current_function_marked)):
+        assign_const(ir.lvalue)
+        return False
     print_token_type(ir.variable_left)
     #check for boolean
     _lv = ir.lvalue.extok
