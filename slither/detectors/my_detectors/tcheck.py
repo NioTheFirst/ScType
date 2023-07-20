@@ -969,8 +969,13 @@ def type_fc(ir) -> bool:
 #USAGE: given a function, handle the return values
 #RETURNS: NULL
 def handle_return(dest_ir, function):
+    global mark_iteration
+    global current_function_marked
     #dest_ir is optional if there is no return destination
     tuple_types = []
+    if(mark_iteration and not(current_function_marked)):
+        print("No save for this scenario")
+        return
     print("Saving return values for: " + function.name)
     added = False
     _dest_ir = None
