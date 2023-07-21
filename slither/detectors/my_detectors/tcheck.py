@@ -544,11 +544,11 @@ def check_type(ir) -> bool:
     if isinstance(ir, Assignment):
         print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
-        print(get_norm(ir.rvalue))
+        #print(get_norm(ir.rvalue))
         rnorm = get_norm(ir.rvalue)
-        print("________")
-        print(ir.rvalue.extok)
-        print(f"is constnat? + {is_constant(ir.rvalue)}")
+        #print("________")
+        #print(ir.rvalue.extok)
+        #print(f"is constnat? + {is_constant(ir.rvalue)}")
         if(ir.lvalue.extok.norm != '*' and not (is_constant(ir.rvalue) and rnorm == 0)):
             asn_norm(ir.lvalue, rnorm)
         pass_ftype(ir.lvalue, ir.rvalue, "assign")
