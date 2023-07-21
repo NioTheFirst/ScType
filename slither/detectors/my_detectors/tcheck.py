@@ -1809,6 +1809,7 @@ def _tcheck_function_call(function, param_cache) -> []:
                 if(temp):
                     fentry.add(son)
         if(return_node):
+            _clear_type_node(node)
             _tcheck_node(return_node, function.name)
         prevlen = curlen
         curlen = len(addback_nodes)
