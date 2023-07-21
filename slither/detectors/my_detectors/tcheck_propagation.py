@@ -62,6 +62,7 @@ f_type_sub = {
 }
 
 f_type_mul = {
+    (0, 0): 0,
     (1, 1): 1, #net bal / net bal (?)
     (0, 10) : 13, #raw balance * compound fee ratio (t)= transaction fee (n)
     (10, 0) : 13,
