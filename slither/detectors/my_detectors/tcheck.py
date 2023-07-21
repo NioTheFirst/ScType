@@ -545,8 +545,9 @@ def check_type(ir) -> bool:
         print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
         print(get_norm(ir.rvalue))
-        if(ir.lvalue.extok.norm != '*'):
-            asn_norm(ir.lvalue, get_norm(ir.rvalue))
+        rnorm = get_norm(ir.rvalue)
+        if(ir.lvalue.extok.norm != '*' and not (isinstance(ir.lvalue, Constant) and rnorm == 0)):
+            asn_norm(ir.lvalue, rnorm)
         pass_ftype(ir.lvalue, ir.rvalue, "assign")
         #print_token_type(ir.lvalue)
     elif isinstance(ir, Binary):
