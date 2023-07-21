@@ -1732,6 +1732,7 @@ def _clear_type_node(node):
                 _ir.norm = 'u'
 
                 print("[i] " + ir.lvalue.name + " cleared")
+                print(_ir)
 
 #USAGE: searches a function for a RETURN node, if it doesn't exist, do stuff
 #RETURNS: return node
