@@ -530,6 +530,9 @@ def update_non_ssa(ir):
         non_ssa_ir.link_function = ir.link_function
         non_ssa_ir.extok.finance_type = ir.extok.finance_type
         non_ssa_ir.updated = ir.extok.updated
+    else:
+        _non_ssa_ir = non_ssa_ir.extok
+        _non_ssa_ir.token_type_clear()
 
 #USAGE: type checks an IR
 #currently handles assignments and Binary
