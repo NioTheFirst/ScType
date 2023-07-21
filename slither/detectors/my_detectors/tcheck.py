@@ -431,6 +431,7 @@ def assign_const(ir):
 #RETURNS: NULL
 def assign_err(ir):
     assign_const(ir)
+    ir.extok.finance_type = -1
 
 #USAGE: copies all the types from a type tuple to an ir node
 #RETURNS: null
