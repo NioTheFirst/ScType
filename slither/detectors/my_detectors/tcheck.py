@@ -569,7 +569,7 @@ def check_type(ir) -> bool:
         #High level call
         addback = type_hlc(ir)
     elif isinstance(ir, TypeConversion):
-        convert_ssa(ir.lvalue)
+        #convert_ssa(ir.lvalue)
         convert_ssa(ir.variable)
         if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
             #TMPxxx  CONVERT address(this)
