@@ -343,7 +343,7 @@ def append_typefile(ir, num = None, den = None, norm = None, lf = None):
     var_name = _ir.name
     newline = "[t], " + function_name + ", " + var_name
     if(num == -1 and den == -1 and norm == 0 and lf == None):
-        //do nothing
+        #do nothing
         y = 8008135
     else:
         newline=newline + ", " + str(num) + ", " + str(den) + ", " + str(norm)
