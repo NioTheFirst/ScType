@@ -350,7 +350,7 @@ def append_typefile(ir, num = None, den = None, norm = None, lf = None):
         if(lf):
             newline = newline + ", " + str(lf)
     tfile = open(type_file, "a")
-    tfile.write(newline)
+    tfile.write(newline+"\n")
     tfile.close()
 
     
