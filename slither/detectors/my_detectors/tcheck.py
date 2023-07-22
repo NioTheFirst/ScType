@@ -972,7 +972,7 @@ def type_fc(ir) -> bool:
     print(f"Parameter length: {len(ir.function.parameter_cache())}")
     for pc in ir.function.parameter_cache():
         for param in pc:
-            print_param_cache(param)
+            print(param)
     if(added == -100):
         print("added")
         addback = _tcheck_function_call(ir.function, new_param_cache)
