@@ -28,6 +28,7 @@ fill_type = False
 mark_iteration = True
 current_function_marked = False
 type_file = ""
+write_typefile = True
 maxTokens = 10
 debug_pow_pc = None
 tempVar = defaultdict(list) #list storing temp variables (refreshed every node call)
@@ -332,6 +333,27 @@ def read_type_file(ir):
         return(ref_tt)
     return tcheck_parser.get_var_type_tuple(function_name, var_name)
 
+def append_typefile(ir, num = None, den = None, norm = None, lf = None):
+    global write_typefile
+    global type_file
+    if(not(write_typefile)):
+        return
+    _ir = ir.extok
+    function_name = ir.parent_function
+    var_name = _ir.name
+    newline = "[t], " + function_name + ", " + var_name
+    if(num == -1 and den == -1 and norm == 0 and lf == None):
+        //do nothing
+        y = 8008135
+    else:
+        newline=newline + ", " + str(num) + ", " + str(den) + ", " + str(norm)
+        if(lf):
+            newline = newline + ", " + str(lf)
+    tfile = open(type_file, "a")
+    new_tfile.write(newline)
+    new_tfile.close()
+
+    
 #USAGE: querry the user for a type
 #RETURNS: N/A
 def querry_type(ir):
@@ -339,6 +361,7 @@ def querry_type(ir):
     global type_file
     global ask_user
     global mark_iteration
+    global write_typefile
     global current_function_marked
     _ir = ir.extok
     uxname = _ir.name
@@ -371,20 +394,22 @@ def querry_type(ir):
         return True
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
-    input_int = int(input_str)
-    _ir.add_num_token_type(input_int)
+    num = int(input_str)
+    _ir.add_num_token_type(num)
     print("Define den type for \"" + uxname + "\": ")
     input_str = input()
-    input_int = int(input_str)
-    _ir.add_den_token_type(input_int)
+    den = int(input_str)
+    _ir.add_den_token_type(den)
     print("Define norm for \"" + uxname + "\": ")
     input_str = input()
-    input_int = int(input_str)
-    _ir.norm = input_int
+    norm = int(input_str)
+    _ir.norm = norm
+    lf = None
     if(str(ir.type) == "address"):
         print("Define Linked Contract Name for \"" + uxname + "\": ")
-        input_str = input()
-        ir.link_function = input_str
+        lf = input()
+        ir.link_function = lf
+    append_typefile(ir, num, den, norm, lf)
     #add to parser file? TODO Priority: Low
 
 def is_constant(ir):

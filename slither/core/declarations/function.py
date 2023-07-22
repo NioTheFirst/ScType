@@ -625,7 +625,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         self._parameters.append(p)
 
     def add_parameter_cache_return(self, ret_obj):
-        self._parameter_cache_return.append(copy.deepcopy(ret_obj))
+        self._parameter_cache_return.append(ret_obj)
 
     def get_parameter_cache_return(self, index):
         return(self._parameter_cache_return[index])
