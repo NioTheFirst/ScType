@@ -1750,6 +1750,11 @@ def _clear_type_node(node):
     print("clearning node...")
     for ir in node.irs_ssa:
         print("clearing ir...?")
+        if(debug_pow_pc):
+            for pc in debug_pow_pc:
+                print("BEFORE")
+                print_param_cache(pc)
+                print("AFTER")
         print(ir)
         if(has_lvalue(ir) and is_variable(ir.lvalue)):
             print("has variable")
