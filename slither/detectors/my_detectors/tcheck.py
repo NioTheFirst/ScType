@@ -968,7 +968,7 @@ def type_fc(ir) -> bool:
     #added = -100
     #if(not(mark_iteration) or current_function_marked):
     added = add_param_cache(ir.function, new_param_cache)
-    for pc in ir.function.parameter_cache:
+    for pc in ir.function.parameter_cache():
         print_param_cache(pc)
     if(added == -100):
         print("added")
