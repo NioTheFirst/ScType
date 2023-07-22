@@ -610,11 +610,11 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
     def add_parameter_cache(self, new_param_cache):
         copy_param_cache = []
         for pc in new_param_cache:
-            num = pc[0]
-            den = pc[1]
+            num = pc[0].copy()
+            den = pc[1].copy()
             norm = pc[2]
             lc = pc[3]
-            field = pc[4]
+            field = pc[4].copy()
             ftype = pc[5]
             x = [num, den, norm, lc, field, ftype]
             copy_param_cache.append(x)
