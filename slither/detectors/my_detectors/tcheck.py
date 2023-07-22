@@ -1034,7 +1034,7 @@ def handle_return(dest_ir, function):
             x = _x
         __x = x.extok
         if(len(function.return_values_ssa) > 1):
-            tuple_types.append((__x.num_token_types, __x.den_token_types, __x.norm, __x.linked_contract, __x.finance_type))
+            tuple_types.append((__x.num_token_types.copy(), __x.den_token_types.copy(), __x.norm, __x.linked_contract, __x.finance_type))
         else:
             if(dest_ir != None):
                 dest_ir.extok.token_type_clear()
@@ -1042,7 +1042,13 @@ def handle_return(dest_ir, function):
                 _dest_ir.linked_contract = __x.linked_contract
                 asn_norm(dest_ir, get_norm(x))
                 copy_ftype(x, dest_ir)
-            function.add_parameter_cache_return(x)
+            #copy to constant instance
+            constant_instance.extok.token_type_clear()
+            copy_token_type(x, constant_instance)
+            constant_instance.extok.linked_contract = __x.linked_contract
+            asn_norm(constant_instance, get_norm(x))
+            copy_ftype(x, constant_instance)
+            function.add_parameter_cache_return(constant_instance)
             added = True
         print(__x)
         print("___")
