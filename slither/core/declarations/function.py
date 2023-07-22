@@ -6,6 +6,7 @@ from abc import abstractmethod, ABCMeta
 from collections import namedtuple
 from enum import Enum
 from itertools import groupby
+import copy
 from typing import Dict, TYPE_CHECKING, List, Optional, Set, Union, Callable, Tuple
 
 from slither.core.cfg.scope import Scope
@@ -624,7 +625,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         self._parameters.append(p)
 
     def add_parameter_cache_return(self, ret_obj):
-        self._parameter_cache_return.append(ret_obj)
+        self._parameter_cache_return.append(copy.deepcopy(ret_obj))
 
     def get_parameter_cache_return(self, index):
         return(self._parameter_cache_return[index])
