@@ -1762,7 +1762,7 @@ def _clear_type_node(node):
 
                 print("[i] " + ir.lvalue.name + " cleared")
                 print(_ir)
-         if(debug_pow_pc):
+        if(debug_pow_pc):
             for pc in debug_pow_pc:
                 print("CCCCCC")
                 print_param_cache(pc)
