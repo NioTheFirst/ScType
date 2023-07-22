@@ -288,7 +288,7 @@ def add_param_cache(function, new_param_cache):
             if(add_cur_param):
                 break
             paramno+=1
-        if(add_cur_param == False):
+        if(add_cur_param == True):
             add_param = False
             match_param = a
             break
