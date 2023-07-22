@@ -29,6 +29,7 @@ mark_iteration = True
 current_function_marked = False
 type_file = ""
 maxTokens = 10
+debug_pow_pc = None
 tempVar = defaultdict(list) #list storing temp variables (refreshed every node call)
 strgVar = defaultdict(list) #list storing storage variables (kept through all calls)
 currNode = None
@@ -546,8 +547,14 @@ def update_non_ssa(ir):
 #currently handles assignments and Binary
 #returns ir if needs to be added back
 def check_type(ir) -> bool:
+    global debug_pow_pc
     addback = False;
     #Assignmnet
+    #Deubg pow
+    if(debug_pow_pc):
+        print("*****")
+        print_param_cache(debug_pow_pc)
+        print("**E")
     if isinstance(ir, Assignment):
         print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
@@ -949,6 +956,7 @@ def type_ref(ir)->bool:
 def type_fc(ir) -> bool:
     global mark_iteration
     global current_function_marked
+    global debug_pow_pc
     #check parameters
     if(mark_iteration and not(current_function_marked)):
         return False
@@ -966,14 +974,11 @@ def type_fc(ir) -> bool:
     new_param_cache = function_call_param_cache(params)
     print("Internal cal param_cache")
     print_param_cache(new_param_cache)
-    print("BEFORE")
-    print(f"Parameter length: {len(ir.function.parameter_cache())}")
-    for pc in ir.function.parameter_cache():
-        for param in pc:
-            print(param)
     #added = -100
     #if(not(mark_iteration) or current_function_marked):
     added = add_param_cache(ir.function, new_param_cache)
+    if(ir.function.name == "pow" and added == -100):
+        debug_pow_pc = ir.function.parameter_cache()
     print(f"Parameter length: {len(ir.function.parameter_cache())}")
     for pc in ir.function.parameter_cache():
         for param in pc:
