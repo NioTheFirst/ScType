@@ -350,8 +350,8 @@ def append_typefile(ir, num = None, den = None, norm = None, lf = None):
         if(lf):
             newline = newline + ", " + str(lf)
     tfile = open(type_file, "a")
-    new_tfile.write(newline)
-    new_tfile.close()
+    tfile.write(newline)
+    tfile.close()
 
     
 #USAGE: querry the user for a type
