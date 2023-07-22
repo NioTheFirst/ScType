@@ -551,12 +551,12 @@ def check_type(ir) -> bool:
     addback = False;
     #Assignmnet
     #Deubg pow
-    if(debug_pow_pc):
-        print("**POW***")
-        for pc in debug_pow_pc:
-            print_param_cache(pc)
-            print("___")
-        print("**E")
+    #if(debug_pow_pc):
+    #    print("**POW***")
+    #    for pc in debug_pow_pc:
+    #        print_param_cache(pc)
+    #        print("___")
+    #    print("**E")
     if isinstance(ir, Assignment):
         print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
@@ -979,8 +979,8 @@ def type_fc(ir) -> bool:
     #added = -100
     #if(not(mark_iteration) or current_function_marked):
     added = add_param_cache(ir.function, new_param_cache)
-    if(ir.function.name == "pow" and added == -100):
-        debug_pow_pc = ir.function.parameter_cache()
+    #if(ir.function.name == "pow" and added == -100):
+    #    debug_pow_pc = ir.function.parameter_cache()
     print(f"Parameter length: {len(ir.function.parameter_cache())}")
     for pc in ir.function.parameter_cache():
         for param in pc:
@@ -1750,11 +1750,11 @@ def _clear_type_node(node):
     print("clearning node...")
     for ir in node.irs_ssa:
         print("clearing ir...?")
-        if(debug_pow_pc):
-            for pc in debug_pow_pc:
-                print("BEFORE")
-                print_param_cache(pc)
-                print("AFTER")
+        #if(debug_pow_pc):
+        #    for pc in debug_pow_pc:
+        #        print("BEFORE")
+        #        print_param_cache(pc)
+        #        print("AFTER")
         print(ir)
         if(has_lvalue(ir) and is_variable(ir.lvalue)):
             print("has variable")
@@ -1767,11 +1767,11 @@ def _clear_type_node(node):
 
                 print("[i] " + ir.lvalue.name + " cleared")
                 print(_ir)
-        if(debug_pow_pc):
-            for pc in debug_pow_pc:
-                print("CCCCCC")
-                print_param_cache(pc)
-                print("XXXXXX")
+        #if(debug_pow_pc):
+        ###    for pc in debug_pow_pc:
+        #      print("CCCCCC")
+        #      print_param_cache(pc)
+        #      print("XXXXXX")
 
 #USAGE: searches a function for a RETURN node, if it doesn't exist, do stuff
 #RETURNS: return node
