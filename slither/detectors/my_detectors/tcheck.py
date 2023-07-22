@@ -552,8 +552,10 @@ def check_type(ir) -> bool:
     #Assignmnet
     #Deubg pow
     if(debug_pow_pc):
-        print("*****")
-        print_param_cache(debug_pow_pc)
+        print("**POW***")
+        for pc in debug_pow_pc:
+            print_param_cache(pc)
+            print("___")
         print("**E")
     if isinstance(ir, Assignment):
         print("asgn")
