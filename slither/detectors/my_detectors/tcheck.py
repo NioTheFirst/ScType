@@ -250,6 +250,8 @@ def add_param_cache(function, new_param_cache):
     add_param = False
     fpc = function.parameter_cache()
     match_param = -100
+    for pc in fpc:
+        print_param_cache(pc)
     if(len(fpc) == 0):
         add_param = True
     for a in range(len(fpc)):
