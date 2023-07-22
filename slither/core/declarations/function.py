@@ -608,7 +608,17 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         return (self._parameter_cache)
 
     def add_parameter_cache(self, new_param_cache):
-        self._parameter_cache.append(new_param_cache)
+        copy_param_cache = []
+        for pc in new_param_cache:
+            num = pc[0]
+            den = pc[1]
+            norm = pc[2]
+            lc = pc[3]
+            field = pc[4]
+            ftype = pc[5]
+            x = [num, den, norm, lc, field, ftype]
+            copy_param_cache.append(x)
+        self._parameter_cache.append(copy_param_cache)
 
     def add_parameters(self, p: "LocalVariable"):
         self._parameters.append(p)
