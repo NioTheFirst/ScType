@@ -626,7 +626,8 @@ def check_type(ir) -> bool:
             addback = False
         else:    
             addback = type_asn(ir.lvalue, ir.variable)
-            asn_norm(ir.lvalue, get_norm(ir.variable))
+            if(ir.lvalue.extok.norm != get_norm(ir.variable)):
+                asn_norm(ir.lvalue, get_norm(ir.variable))
             copy_ftype(ir.variable, ir.lvalue)
             ir.lvalue.link_function = ir.variable.link_function
     elif isinstance(ir, Unpack):
