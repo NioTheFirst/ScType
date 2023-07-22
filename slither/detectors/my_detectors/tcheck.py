@@ -297,6 +297,8 @@ def add_param_cache(function, new_param_cache):
     print(match_param)
     if(add_param):
         function.add_parameter_cache(new_param_cache)
+        print("Add new")
+        print_param_cache(new_param_cache)
     return match_param
 
 #USAGE: parses an input file and fills the type_hashtable
