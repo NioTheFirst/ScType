@@ -290,7 +290,7 @@ def add_param_cache(function, new_param_cache):
             paramno+=1
         if(dif_cur_param == False):
             print("Its the same:")
-            print(cur_param)
+            print_param_cache(cur_param_cache)
             add_param = False
             match_param = a
             break
