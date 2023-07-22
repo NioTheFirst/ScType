@@ -966,6 +966,11 @@ def type_fc(ir) -> bool:
     new_param_cache = function_call_param_cache(params)
     print("Internal cal param_cache")
     print_param_cache(new_param_cache)
+    print("BEFORE")
+    print(f"Parameter length: {len(ir.function.parameter_cache())}")
+    for pc in ir.function.parameter_cache():
+        for param in pc:
+            print(param)
     #added = -100
     #if(not(mark_iteration) or current_function_marked):
     added = add_param_cache(ir.function, new_param_cache)
