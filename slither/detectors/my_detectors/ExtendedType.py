@@ -120,6 +120,8 @@ class ExtendedType():
 
     @norm.setter
     def norm(self, a):
+        if(a == -404):
+            a = '*'
         self._norm = a
     
     @property
