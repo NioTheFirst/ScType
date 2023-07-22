@@ -255,7 +255,7 @@ def add_param_cache(function, new_param_cache):
     for a in range(len(fpc)):
         cur_param_cache = fpc[a]
         paramno = 0
-        add_cur_param = False
+        dif_cur_param = False
         for cur_param in cur_param_cache:
             #compare cur_param with new_param_cache[paramno]
             seen_n = []
@@ -283,12 +283,12 @@ def add_param_cache(function, new_param_cache):
                 seen_ftype = True
             for i in range(maxTokens):
                 if(seen_ftype or seen_norm or seen_n[i] != 0 or seen_d[i] != 0):
-                    add_cur_param = True
+                    dif_cur_param = True
                     break
-            if(add_cur_param):
+            if(dif_cur_param):
                 break
             paramno+=1
-        if(add_cur_param == True):
+        if(dif_cur_param == False):
             add_param = False
             match_param = a
             break
