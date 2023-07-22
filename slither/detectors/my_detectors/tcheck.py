@@ -264,6 +264,7 @@ def add_param_cache(function, new_param_cache):
             seen_d = []
             seen_norm = False
             seen_ftype = False
+            print(f"cur_param: {cur_param}")
             for i in range(maxTokens):
                 seen_n.append(0)
                 seen_d.append(0)   
