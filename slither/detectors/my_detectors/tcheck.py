@@ -860,6 +860,8 @@ def type_hlc(ir) ->bool:
 
 #USAGE: creates/updates a new field
 def update_member(member, fieldf, copy_ir):
+    if(not (isinstance(member, Variable))):
+        return
     added = False
     _member = member.extok
     for field in _member.fields:
