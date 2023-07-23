@@ -8,6 +8,7 @@ from slither.core.variables.state_variable import StateVariable
 from slither.core.declarations.function import Function
 from slither.core.variables.local_variable import LocalVariable
 from slither.core.variables.function_type_variable import FunctionTypeVariable
+from slither.core.declarations.solidity_variables import SolidityVariable
 from slither.core.solidity_types import UserDefinedType, ArrayType
 from slither.core.declarations import Structure, Contract
 from slither.core.solidity_types.elementary_type import ElementaryType
@@ -860,7 +861,7 @@ def type_hlc(ir) ->bool:
 
 #USAGE: creates/updates a new field
 def update_member(member, fieldf, copy_ir):
-    if(not (isinstance(member, Variable))):
+    if((isinstance(member, SolidityVariable))):
         return
     added = False
     _member = member.extok
@@ -884,7 +885,7 @@ def update_member(member, fieldf, copy_ir):
 #RETURNS: the type for a (temporary handling, will fix if any issues)
 def type_member(ir)->bool:
     #FIELD WORK
-    if(not isinstance(ir, Variable)):
+    if(isinstance(ir, SolidityVariable)):
         return False
     init_var(ir.variable_left)
     init_var(ir.variable_right)
