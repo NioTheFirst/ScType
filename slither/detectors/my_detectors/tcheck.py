@@ -882,6 +882,8 @@ def update_member(member, fieldf, copy_ir):
 #RETURNS: the type for a (temporary handling, will fix if any issues)
 def type_member(ir)->bool:
     #FIELD WORK
+    if(not isinstance(ir, Variable)):
+        return False
     init_var(ir.variable_left)
     init_var(ir.variable_right)
     _lv = ir.variable_left.extok
