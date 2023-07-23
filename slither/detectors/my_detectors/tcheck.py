@@ -664,16 +664,20 @@ def check_type(ir) -> bool:
     #    addback = type_ref(ir)
     #    return False
     #DEBUG
-    if ir.lvalue and is_variable(ir.lvalue):
-        print("[i]Type for "+ir.lvalue.name)
-        print_token_type(ir.lvalue)
-        if(isinstance(ir.lvalue, ReferenceVariable)):
-            ref = ir.lvalue
-            ref_root = ref.extok.ref_root
-            ref_field = ref.extok.ref_field
-            if(ref_root and ref_field):
-                update_member(ir.lvalue.points_to_origin, ref_field, ir.lvalue)
-        update_non_ssa(ir.lvalue)
+    try:
+        if ir.lvalue and is_variable(ir.lvalue):
+            print("[i]Type for "+ir.lvalue.name)
+            print_token_type(ir.lvalue)
+            if(isinstance(ir.lvalue, ReferenceVariable)):
+                ref = ir.lvalue
+                ref_root = ref.extok.ref_root
+                ref_field = ref.extok.ref_field
+                if(ref_root and ref_field):
+                    update_member(ir.lvalue.points_to_origin, ref_field, ir.lvalue)
+            update_non_ssa(ir.lvalue)
+    except AttributeError:
+        #do nothing
+        y = 8008315
     print("done.")
     if(addback):
         print("This IR caused addback:")
