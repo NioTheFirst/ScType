@@ -1,7 +1,7 @@
 # Slither, the Solidity source analyzer
 <img src="./logo.png" alt="Logo" width="500"/>
 
-why does it say no sapce?
+oes it say no sapce?
 
 kepp the streak!:wq
 

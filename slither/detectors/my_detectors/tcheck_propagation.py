@@ -225,8 +225,8 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
             return True
 
     #Propogate updated usage
-    if(_rl.updated or (_rr != None and _rr.updated)):
-        _dest.updated = True
+    #if(_rl.updated or (_rr != None and _rr.updated)):
+    #    _dest.updated = True
 
     print(f"Final dest type: {_dest.finance_type}")
 

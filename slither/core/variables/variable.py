@@ -19,6 +19,7 @@ class Variable(SourceMapping):
         self._initial_expression: Optional["Expression"] = None
         self._type: Optional[Type] = None
         self._initialized: Optional[bool] = None
+        self._dnode = None
         self._visibility: Optional[str] = None
         self._is_constant = False
         self._is_immutable: bool = False
@@ -74,7 +75,14 @@ class Variable(SourceMapping):
         boolean: True if the variable is not initialized
         """
         return not self._initialized
-    
+    @property
+    def dnode(self):
+        return self._dnode
+
+    @dnode.setter
+    def dnode(self, node):
+        self._dnode = node
+
     @property
     def extok(self):
         return self._et

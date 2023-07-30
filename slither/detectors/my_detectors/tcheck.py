@@ -889,7 +889,7 @@ def update_member(member, fieldf, copy_ir):
 #RETURNS: the type for a (temporary handling, will fix if any issues)
 def type_member(ir)->bool:
     #FIELD WORK
-    if(isinstance(ir, SolidityVariable)):
+    if(isinstance(ir.variable_left, SolidityVariable)):
         return False
     init_var(ir.variable_left)
     init_var(ir.variable_right)
@@ -1753,6 +1753,7 @@ def _tcheck_node(node, function_name) -> []:
     irs = []
     for ir in node.irs_ssa:
         #DEFINE REFERENCE RELATIONS
+        ir.dnode = node
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
@@ -2182,12 +2183,13 @@ class tcheck(AbstractDetector):
                 _ir = ir.extok
                 name = _ir.name
                 func = _ir.function_name
+                dnode = ir.dnode
                 if(name == None):
                     name = "UNKNOWN"
                 if(func == None):
                     func = "UNKNOWN"
                 info = [" typecheck error: " ]
-                info+=("Var name: " + name + " " + "Func name: " + func + "\n")
+                info+=("Var name: " + name + " " + "Func name: " + func + " in " + dnode + "\n")
                 res = self.generate_result(info)
                 results.append(res)
             #add_b4_div = detect_add_b4_div(contract)

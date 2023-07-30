@@ -49,4 +49,5 @@ RUN --mount=type=bind,target=/mnt,source=/wheels,from=python-wheels \
 
 RUN solc-select install 0.4.25 && solc-select use 0.4.25
 
+RUN echo "Building scheck..."
 CMD /bin/bash
