@@ -22,6 +22,9 @@ ref_type_hash = {}
 tuple_type_hash = {}
 field_type_hash = {}
 
+reuse_types = False
+reuse_types_var = {}
+
 field_tuple_start = 4
 update_start = 100
 
@@ -50,6 +53,9 @@ f_type_num = {
     40: "price/exchange rate",
     50: "debt",
 }
+
+#link gpt... (name) ->type
+#prompt...
 
 #test discord bot again
 f_type_name = {
@@ -167,6 +173,11 @@ def parse_type_file(t_file, f_file = None):
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
+                #TODO: Check for previous mentions of v_name
+                if(reuse_types):
+                    if(reuse_types_var[v_name]):
+                        add_var(f_name, v_name, get_var_type_tuple(f_name, v_name))
+
                 try:
                     num = -1
                     den = -1
@@ -179,6 +190,8 @@ def parse_type_file(t_file, f_file = None):
                     if(len(_line) >= 7):
                         l_name = _line[6].strip()
                     add_var(f_name, v_name, (num, den, norm, l_name))
+                    if(reuse_types):
+                        reuse_types_var[v_name] = True
                 except ValueError:
                     print("Invalid Value read")
                 continue

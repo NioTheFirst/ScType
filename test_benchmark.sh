@@ -89,7 +89,7 @@ if [[ $# -eq 0 || $1 -eq 8 ]]; then
   solc-select use 0.6.12
   cd "../Benchmark/BadgerDao/veCVX/contracts"
   slither --detect tcheck veCVXStrategy.sol
-  cd "../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 8 echo "[*] Tested 2 warnings for veCVX"
   sleep 3
 fi
@@ -99,7 +99,7 @@ if [[ $# -eq 0 || $1 -eq 9 ]]; then
   solc-select use 0.8.6
   cd "../Benchmark/Wild_Credit/contracts"
   slither --detect tcheck LendingPair.sol
-  cd "../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 9 echo "[*] Tested 2 warnings for Wild Credit"
   sleep 3
 fi
@@ -109,7 +109,7 @@ if [[ $# -eq 0 || $1 -eq 10 ]]; then
   solc-select use 0.8.6
   cd "../Benchmark/PoolTogether_v4/v4-core/contracts"
   slither --detect tcheck DrawCalculator.sol
-  cd "../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 10 echo "[*] Tested 1 warnings for Pool Together v4"
   sleep 3
 fi
@@ -119,7 +119,7 @@ if [[ $# -eq 0 || $1 -eq 11 ]]; then
   solc-select use 0.8.4
   cd "../Benchmark/Sushi_Trident_p2/trident/contracts/pool/concentrated"
   slither --detect tcheck ConcentratedLiquidityPool.sol
-  cd "../../../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 11 echo "[*] Tested 12 warnings for Sushi Trident"
   sleep 3
 fi
@@ -129,7 +129,7 @@ if [[ $# -eq 0 || $1 -eq 12 ]]; then
   solc-select use 0.8.4
   cd "../Benchmark/Swivel/gost/build/swivel"
   slither --detect tcheck Swivel.sol
-  cd "../../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 12 echo "[*] Tested 2 warnings for Swivel"
   sleep 3
 fi
@@ -139,7 +139,7 @@ if [[ $# -eq 0 || $1 -eq 13 ]]; then
   solc-select use 0.8.4
   cd "../Benchmark/Covalent/contracts"
   slither --detect tcheck DelegatedStaking.sol
-  cd "../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 13 echo "[*] Tested 3 warnings for Covalent"
   sleep 3
 fi
@@ -149,7 +149,7 @@ if [[ $# -eq 0 || $1 -eq 14 ]]; then
   solc-select use 0.6.12
   cd "../Benchmark/Badger_Dao_p2/contracts"
   slither --detect tcheck WrappedIbbtc.sol
-  cd "../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 14 echo "[*] Tested 1 warnings for Badger Dao p2"
   sleep 3
 fi
@@ -169,7 +169,7 @@ if [[ $# -eq 0 || $1 -eq 15 ]]; then
   #slither --detect tcheck .
   echo "Currently Omitted (3)"
   cd "../../"
-  cd "../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 15 echo "[*] Tested 17 warnings for Badger Dao p2"
   sleep 3
 fi
@@ -179,7 +179,7 @@ if [[ $# -eq 0 || $1 -eq 16 ]]; then
   solc-select use 0.6.12
   cd "../Benchmark/yAxis_p2/contracts/v3/alchemix/libraries/alchemist"
   slither --detect tcheck CDP.sol
-  cd "../../../../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 16 echo "[*] Tested 0 warnings for yAxis p2"
   sleep 3
 fi
@@ -190,7 +190,7 @@ if [[ $# -eq 0 || $1 -eq 17 ]]; then
   cd "../Benchmark/Malt_Finance/src/contracts"
   slither --detect tcheck AuctionEscapeHatch.sol
   slither --detect tcheck AuctionBurnReserveSkew.sol
-  cd "../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 17 echo "[*] Tested 0 warnings for Malt Finance"
   sleep 3
 fi
@@ -200,7 +200,7 @@ if [[ $# -eq 0 || $1 -eq 18 ]]; then
   solc-select use 0.8.10
   cd "../Benchmark/Perennial/protocol/contracts/collateral/types"
   slither --detect tcheck OptimisticLedger.sol
-  cd "../../../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 18 echo "[*] Tested 1 warnings for Perennial"
   sleep 3
 fi
@@ -215,7 +215,7 @@ if [[ $# -eq 0 || $1 -eq 19 ]]; then
   cd "yield"
   slither --detect tcheck YearnYield.sol
   cd ".."
-  cd "../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 19 echo "[*] Tested 6 warnings for Sublime"
   sleep 3
 fi
@@ -225,7 +225,7 @@ if [[ $# -eq 0 || $1 -eq 20 ]]; then
   solc-select use 0.6.12  
   cd "../Benchmark/Yeti_Finance/packages/contracts/contracts/YETI"
   slither --detect tcheck sYETIToken.sol
-  cd "../../../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 20 echo "[*] Tested 0 warnings for Yeti Finance"
   sleep 3
 fi
@@ -235,7 +235,7 @@ if [[ $# -eq 0 || $1 -eq 21 ]]; then
   solc-select use 0.8.9
   cd "../Benchmark/Vader_Protocol_p3/contracts/lbt"
   slither --detect tcheck LiquidityBasedTWAP.sol
-  cd "../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 21 echo "[*] Tested 7 warnings for Vader Protocol p3"
   sleep 3
 fi
@@ -245,7 +245,7 @@ if [[ $# -eq 0 || $1 -eq 22 ]]; then
   solc-select use 0.8.7
   cd "../Benchmark/InsureDao/contracts"
   slither --detect tcheck PoolTemplate.sol
-  cd "../../../"  
+  cd "$ORIGINAL_DIR"
   execute_group 22 echo "[*] Tested 0 warnings for InsureDao"
   sleep 3
 fi
@@ -255,7 +255,7 @@ if [[ $# -eq 0 || $1 -eq 23 ]]; then
   solc-select use 0.8.7  
   cd "../Benchmark/Rocket_Joe/contracts"
   slither --detect tcheck LaunchEvent.sol
-  cd "../../../"  
+  cd "$ORIGINAL_DIR"
   execute_group 23 echo "[*] Tested 4 warnings for Rocket Joe"
   sleep 3
 fi
@@ -265,7 +265,7 @@ if [[ $# -eq 0 || $1 -eq 24 ]]; then
   solc-select use 0.8.12
   cd "../Benchmark/Concur_Finance/contracts"
   slither --detect tcheck MasterChef.sol
-  cd "../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 24 echo "[*] Tested 0 warnings for Concur Finance"
   sleep 3
 fi
@@ -275,7 +275,7 @@ if [[ $# -eq 0 || $1 -eq 25 ]]; then
   solc-select use 0.8.0
   cd "../Benchmark/Biconomy_Hyphen/contracts/hyphen"
   slither --detect tcheck LiquidityPool.sol
-  cd "../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 25 echo "[*] Tested 1 warnings for Biconomy Hyphen"
   sleep 3
 fi
@@ -285,7 +285,7 @@ if [[ $# -eq 0 || $1 -eq 26 ]]; then
   solc-select use 0.7.6
   cd "../Benchmark/Sublime_p2/sublime-v1/contracts/PooledCreditLine"
   slither --detect tcheck LenderPool.sol
-  cd "../../../../../"  
+  cd "$ORIGINAL_DIR"
   execute_group 26 echo "[*] Tested 0 warnings for Sublime p2"
   sleep 3
 fi
@@ -295,7 +295,7 @@ if [[ $# -eq 0 || $1 -eq 27 ]]; then
   solc-select use 0.8.6
   cd "../Benchmark/Volt/contracts/oracle"
   slither --detect tcheck ScalingPriceOracle.sol
-  cd "../../../../"    
+  cd "$ORIGINAL_DIR"
   execute_group 27 echo "[*] Tested 0 warnings for Volt"
   sleep 3
 fi
@@ -305,7 +305,7 @@ if [[ $# -eq 0 || $1 -eq 28 ]]; then
   solc-select use 0.8.12 
   cd "../Benchmark/Badger_Dao_p3/src"
   slither --detect tcheck StakedCitadel.sol
-  cd "../../../"         
+  cd "$ORIGINAL_DIR"
   execute_group 28 echo "[*] Tested 0 warnings for Badger Dao p3"
   sleep 3
 fi
@@ -315,7 +315,7 @@ if [[ $# -eq 0 || $1 -eq 29 ]]; then
   solc-select use 0.8.12   
   cd "../Benchmark/Tigris_Trade/contracts"
   slither --detect tcheck Trading.sol
-  cd "../../../"           
+ cd "$ORIGINAL_DIR"
   execute_group 29 echo "[*] Tested 5 warnings for Tigris Trade"
   sleep 3
 fi
