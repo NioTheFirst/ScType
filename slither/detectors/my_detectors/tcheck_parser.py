@@ -175,7 +175,7 @@ def parse_type_file(t_file, f_file = None):
                 v_name = _line[2].strip()
                 #TODO: Check for previous mentions of v_name
                 if(reuse_types):
-                    if(reuse_types_var[v_name]):
+                    if(v_name in reuse_types_var):
                         add_var(f_name, v_name, get_var_type_tuple(f_name, v_name))
 
                 try:
