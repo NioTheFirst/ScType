@@ -22,7 +22,7 @@ ref_type_hash = {}
 tuple_type_hash = {}
 field_type_hash = {}
 
-reuse_types = False
+reuse_types = True
 reuse_types_var = {}
 
 field_tuple_start = 4
