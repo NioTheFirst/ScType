@@ -185,7 +185,7 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
     #Assign updates where dest is a ratio (and rsrcr exists)
     _dest = dest.extok
     dest_in_ratio = (_dest.finance_type in update_ratios)
-    print(f"Dest type: {_dest.finance_type}, Update_ratios: {update_ratios}")
+    #print(f"Dest type: {_dest.finance_type}, Update_ratios: {update_ratios}")
     _rl = rsrcl.extok
     _rlf = _rl.finance_type
     _rlfp = _rl.pure_type
@@ -200,10 +200,10 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
         _rrfp = _rr.pure_type
         r_in_ratio = (_rrfp in update_ratios)
         if(dest_in_ratio):
-            print(f"Dest updated")
+            #print(f"Dest updated")
             _dest.updated = True
             update_ratios[_dest.finance_type] = True
-    print(f"Right type: {_rrf}, Left type: {_rlf}")
+    #print(f"Right type: {_rrf}, Left type: {_rlf}")
     #Checks for unupdated usage
     if(not(dest_in_ratio) and (r_in_ratio or l_in_ratio)):
         checked_ratio = -1
@@ -211,24 +211,24 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
         if(r_in_ratio):
             checked_ratio = _rrfp
             updated = _rr.updated
-            print(f"Left side: {_rlfp}, Right side: {_rrfp}, Checked Ratio: {checked_ratio}")
-            print(updated)
+            #print(f"Left side: {_rlfp}, Right side: {_rrfp}, Checked Ratio: {checked_ratio}")
+            #print(updated)
         elif(l_in_ratio):
             checked_ratio = _rlfp
             updated = _rl.updated
-            print(f"Left side: {_rlfp}, Right side: {_rrfp}, Checked Ratio: {checked_ratio}")
+            #print(f"Left side: {_rlfp}, Right side: {_rrfp}, Checked Ratio: {checked_ratio}")
         if(update_ratios[checked_ratio] == -1):
             #Set update ratio
             update_ratios[checked_ratio] = updated
         elif(update_ratios[checked_ratio] != updated):
-            print(f"Inconsistent updating of {checked_ratio} by {_rlf} and {_rrf}")
+            #print(f"Inconsistent updating of {checked_ratio} by {_rlf} and {_rrf}")
             return True
 
     #Propogate updated usage
-    if(_rl.updated or (_rr != None and _rr.updated)):
-        _dest.updated = True
+    #if(_rl.updated or (_rr != None and _rr.updated)):
+    #    _dest.updated = True
 
-    print(f"Final dest type: {_dest.finance_type}")
+    #print(f"Final dest type: {_dest.finance_type}")
 
 
 
@@ -263,7 +263,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             pass_update(dest, rsrcl, func, rsrcr)
             return False
     key = (_rlfp, _rrfp)
-    print(f"Finance type key: {key}")
+    #print(f"Finance type key: {key}")
     if(func == "add"):
         if key in f_type_add:
             assign_ftype(f_type_add[key], dest)
@@ -294,7 +294,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
         assign_ftype(-1, dest)
     elif(func == "assign" or "pow"):
         assign_ftype(_rlf, dest)
-    print(f"Func: {func}")
+    #print(f"Func: {func}")
     return(pass_update(dest, rsrcl, func, rsrcr))
 
         
@@ -308,10 +308,10 @@ def copy_norm(src, dest):
 #USAGE: copies all the types from a type tuple to an ir node
 #RETURNS: null
 def copy_token_tuple(ir, tt):
-    print("Check copy_toekn_tuple")
-    print(tt)
+    #print("Check copy_toekn_tuple")
+    #print(tt)
     _ir = ir.extok
-    print("----")
+    #print("----")
     _ir.token_type_clear()
     if(isinstance(tt[0], int)):
         _ir.add_num_token_type(tt[0])
@@ -402,7 +402,7 @@ def get_raw_type(ir):
     ttype = ir.type
     changed = False
     while(True):
-        print(ttype)
+        #print(ttype)
         changed = False
         if(isinstance(ttype, ArrayType)):
             changed = True
@@ -416,9 +416,9 @@ def get_raw_type(ir):
 #USAGE: given an ir, propogate it's fields
 def propagate_fields(ir):
     _ir = ir.extok
-    print(f"Type: {ir.type}")
+    #print(f"Type: {ir.type}")
     ttype = get_raw_type(ir)
-    print(f"Final Type: {ttype}")
+    #print(f"Final Type: {ttype}")
     #Field tuple propagation
     if(isinstance(ttype, UserDefinedType)):
         fields = None
@@ -428,14 +428,14 @@ def propagate_fields(ir):
         #elif isinstance(ttype, Contract):
         #    fields = ttype.variables_as_dict
         if(fields == None):
-            print(" NO FIELDS")
+            #print(" NO FIELDS")
             return
         #is an oobject, may have fields
         for field_name, field in fields:
             #search for type tuple in type file
-            print(_ir.function_name)
-            print(_ir.name)
-            print(field_name)
+            #print(_ir.function_name)
+            #print(_ir.name)
+            #print(field_name)
             if(_ir.function_name == None or _ir.name == None or field_name == None):
                 continue
             field_tt = tcheck_parser.get_field(_ir.function_name, _ir.name, field_name)
@@ -447,8 +447,8 @@ def propagate_fields(ir):
                 _field_tt.function_name = _ir.function_name
                 propagate_fields(field)
                 _field_tt.name = field_name
-        print("FIELDS:")
-        _ir.print_fields()
+        #print("FIELDS:")
+        #_ir.print_fields()
 
 #USAGE: returns the variable with the higher amount of ABSTRACT variables (used in dest propagation)
 def greater_abstract(varA, varB):

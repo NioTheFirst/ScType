@@ -47,6 +47,19 @@ ENV PATH="/home/slither/.local/bin:${PATH}"
 RUN --mount=type=bind,target=/mnt,source=/wheels,from=python-wheels \
     pip3 install --user --no-cache-dir --upgrade --no-index --find-links /mnt --no-deps /mnt/*.whl
 
+RUN solc-select install 0.6.12
+RUN solc-select install 0.7.6
+RUN solc-select install 0.8.0
+RUN solc-select install 0.8.1
+RUN solc-select install 0.8.3
+RUN solc-select install 0.8.4
+RUN solc-select install 0.8.6
+RUN solc-select install 0.8.7
+RUN solc-select install 0.8.9
+RUN solc-select install 0.8.10
+RUN solc-select install 0.8.12
 RUN solc-select install 0.4.25 && solc-select use 0.4.25
 
+
+RUN echo "Building scheck..."
 CMD /bin/bash

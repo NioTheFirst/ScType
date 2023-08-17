@@ -77,7 +77,7 @@ def gen_finance_instances(line):
     _line = line.split(",")
     finance_instances = []
     for param in _line:
-        print(f"Param: {param}")
+        #print(f"Param: {param}")
         offset = 0
         foundf = False
         for i in range(len(param)):
@@ -88,7 +88,7 @@ def gen_finance_instances(line):
         if(foundf == False):
             continue
         isolated_param = param[offset:].replace("}", "").strip()
-        print(f"Isolated Param: {isolated_param}")
+        #print(f"Isolated Param: {isolated_param}")
         f_res = None
         try:
             temp = int(isolated_param)
@@ -98,10 +98,10 @@ def gen_finance_instances(line):
                 f_res = f_type_name[isolated_param]
             else:
                 f_res = -1
-        if not isinstance(f_res, int):
-            print("[x] FINANCE TYPE IS NOT INT")
+        #if not isinstance(f_res, int):
+            #print("[x] FINANCE TYPE IS NOT INT")
         finance_instances.append(f_res)
-        print(f"F num: {f_res}")
+        #print(f"F num: {f_res}")
     return finance_instances
 
 
@@ -163,7 +163,7 @@ def parse_type_file(t_file, f_file = None):
             #_line[4] = denominator type (assume one)
             #_line[5] = normalization amt (power of 10)
             #_line[6] = (Optional) linked function if is address
-            print(line)
+            #print(line)
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
@@ -213,8 +213,8 @@ def parse_type_file(t_file, f_file = None):
                     norm = 'u'
                     copy = "c"
                     lf = None
-                    print(_line[4+i])
-                    print(ret_info)
+                    #print(_line[4+i])
+                    #print(ret_info)
                     if(len(ret_info) >= 4):
                         copy = ret_info[0]
                         num = extract_integers(ret_info[1])
@@ -303,7 +303,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
         func_tuple = ex_func_type_hash[key]
         ret_type_tuples = []
         for ret_var in func_tuple:
-            print(ret_var)
+            #print(ret_var)
             copy = ret_var[0]
             num_trans = ret_var[1]
             den_trans = ret_var[2]
@@ -315,8 +315,8 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
             ret_num = []
             ret_den = []
             param = parameters
-            for p in parameters:
-                print(p.name)
+            #for p in parameters:
+            #    print(p.name)
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
                 ret_type_tuple = (num_trans, den_trans, norm , lf, ftype)

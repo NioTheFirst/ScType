@@ -182,8 +182,8 @@ class ExtendedType():
         #self._updated = False
 
     def init_constant(self):
-        if not(self.is_undefined()):
-            print("[W] Initializing defined variable to constant")
+        #if not(self.is_undefined()):
+            #print("[W] Initializing defined variable to constant")
         self.token_type_clear()
         self.add_num_token_type(-1)
         self.add_den_token_type(-1)
