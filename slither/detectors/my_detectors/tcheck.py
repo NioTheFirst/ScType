@@ -1761,6 +1761,7 @@ def _tcheck_node(node, function_name) -> []:
     irs = []
     for ir in node.irs_ssa:
         #DEFINE REFERENCE RELATIONS
+        ir.dnode = node
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
@@ -2198,7 +2199,11 @@ class tcheck(AbstractDetector):
                 if(func == None):
                     func = "UNKNOWN"
                 info = [" typecheck error: " ]
+<<<<<<< HEAD
                 info+=("Var name: " + name + " " + "Func name: " + func + " in " + str(dnode) + "\n")
+=======
+                info+=("Var name: " + name + " " + "Func name: " + func + " in " + dnode + "\n")
+>>>>>>> 9aa0099a1755b1b7843565aff05d6b7f70e29059
                 res = self.generate_result(info)
                 results.append(res)
             #add_b4_div = detect_add_b4_div(contract)

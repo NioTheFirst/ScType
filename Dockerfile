@@ -60,6 +60,9 @@ RUN solc-select install 0.8.10
 RUN solc-select install 0.8.12
 RUN solc-select install 0.4.25 && solc-select use 0.4.25
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9aa0099a1755b1b7843565aff05d6b7f70e29059
 RUN echo "Building scheck..."
 CMD /bin/bash
