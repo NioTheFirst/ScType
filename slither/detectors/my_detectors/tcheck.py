@@ -704,21 +704,21 @@ def type_conversion(ir):
             print(ir)
             #print(ir.variable.extok)
         #convert_ssa(ir.lvalue)
-        convert_ssa(ir.variable)
-        if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
-            #TMPxxx  CONVERT address(this)
-            assign_const(ir.lvalue)
-            ir.lvalue.norm = 0
-            ir.lvalue.link_function = current_contract_name
+    convert_ssa(ir.variable)
+    if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
+        #TMPxxx  CONVERT address(this)
+        assign_const(ir.lvalue)
+        ir.lvalue.norm = 0
+        ir.lvalue.link_function = current_contract_name
 
-            #addback = copy_token_tuple(ir.lvalue, ir.variable)
-            addback = False
-        else:    
-            addback = type_asn(ir.lvalue, ir.variable)
-            if(ir.lvalue.extok.norm != get_norm(ir.variable)):
-                asn_norm(ir.lvalue, get_norm(ir.variable))
-            copy_ftype(ir.variable, ir.lvalue)
-            ir.lvalue.link_function = ir.variable.link_function
+        #addback = copy_token_tuple(ir.lvalue, ir.variable)
+        addback = False
+    else:    
+        addback = type_asn(ir.lvalue, ir.variable)
+        if(ir.lvalue.extok.norm != get_norm(ir.variable)):
+            asn_norm(ir.lvalue, get_norm(ir.variable))
+        copy_ftype(ir.variable, ir.lvalue)
+        ir.lvalue.link_function = ir.variable.link_function
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
 #RETURNS: nothing (type is querried from user)
