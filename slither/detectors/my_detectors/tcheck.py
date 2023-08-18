@@ -295,6 +295,7 @@ def add_param_cache(function, new_param_cache):
             if(new_param_cache[paramno][5] != cur_param[5]):
                 seen_ftype = True
             #compare address
+            print(cur_param)
             if(new_param_cache[paramno][6] != cur_param[6]):
                 seen_address = True
             for i in range(maxTokens):
