@@ -51,6 +51,8 @@ constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 
+debug_print = True
+
 ask_user = True
 read_library = False
 
@@ -618,6 +620,8 @@ def check_type(ir) -> bool:
         #High level call
         addback = type_hlc(ir)
     elif isinstance(ir, TypeConversion):
+        if(debug_print):
+            print(ir)
         #convert_ssa(ir.lvalue)
         convert_ssa(ir.variable)
         if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
