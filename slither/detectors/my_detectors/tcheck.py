@@ -1875,6 +1875,9 @@ def _tcheck_function_call(function, param_cache) -> []:
     global function_hlc
     global function_ref
     global function_count
+    global temp_address_counter
+    save_temp = temp_address_counter
+    temp_address_counter = 0
     ##print("xyz")
     function_hlc = 0
     function_ref = 0
@@ -1934,6 +1937,7 @@ def _tcheck_function_call(function, param_cache) -> []:
         curlen = len(addback_nodes)
         ##print(f"WORKLIST iteration {wl_iter} for function call \"{function.name}\":\n New undefined nodes- {curlen}\n Old undefined nodes- {prevlen}")
         wl_iter+=1
+    temp_address_counter = save_temp
     return addback_nodes
 
 #USAGE: typecheck a function
@@ -1946,6 +1950,9 @@ def _tcheck_function(function) -> []:
     global function_count
     global mark_iteration
     global current_function_marked
+    global temp_address_counter
+    save_temp = temp_address_counter
+    temp_address_counter = 0
     function_hlc = 0
     function_ref = 0
     explored = set()
@@ -1997,6 +2004,7 @@ def _tcheck_function(function) -> []:
         ##print(f"WORKLIST iteration {wl_iter} for function call \"{function.name}\":\n New undefined nodes- {curlen}\n Old undefined nodes- {prevlen}")
         wl_iter+=1
     #Save return value
+    temp_address_counter = save_temp
     handle_return(None, function)
     return addback_nodes
 
