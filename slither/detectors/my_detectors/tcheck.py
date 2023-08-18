@@ -557,7 +557,7 @@ def convert_ssa(ir):
         ir.link_function = non_ssa_ir.link_function
         _ir.finance_type = non_ssa_ir.extok.finance_type
         _ir.updated = non_ssa_ir.extok.updated
-        _ir.address = ir.address
+        _ir.address = non_ssa_ir.extok.address
 
 #USAGE: updates a non_ssa instance of a variable
 #RETURNS: NULL
@@ -582,7 +582,7 @@ def update_non_ssa(ir):
         non_ssa_ir.link_function = ir.link_function
         non_ssa_ir.extok.finance_type = ir.extok.finance_type
         non_ssa_ir.updated = ir.extok.updated
-        non_ssa_ir.address = ir.address
+        non_ssa_ir.address = ir.extok.address
     else:
         _non_ssa_ir = non_ssa_ir.extok
         _non_ssa_ir.token_type_clear()
