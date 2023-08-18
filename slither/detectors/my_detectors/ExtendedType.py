@@ -26,6 +26,7 @@ class ExtendedType():
         self._num_token_types = []
         self._den_token_types = []
         self._base_decimals = 0
+        self._address = 'u'
         self._norm = 'u'
         #TODO address lf should automatically be set to its name
         self._linked_contract = None
@@ -56,6 +57,13 @@ class ExtendedType():
     def ref(self, ref):
         self._reference_root = ref[0]
         self._reference_field = ref[1]
+
+    @property
+    def address(self):
+        return(self._address)
+
+    def address(self, x):
+        self._address = x
 
     @property
     def function_name(self):
@@ -165,7 +173,7 @@ class ExtendedType():
 
 
     def is_undefined(self) -> bool:
-        if(len(self._num_token_types) == 0 and len(self._den_token_types) == 0):
+        if(len(self._num_token_types) == 0 and len(self._den_token_types) == 0 and self._address == 'u'):
             return True
         return False
 
@@ -174,9 +182,17 @@ class ExtendedType():
             return True
         return False
 
+    
+
+    def is_address(self) -> bool:
+        if(self._address != 'u'):
+            return True 
+        return False
+
     def token_type_clear(self):
         self.clear_num()
         self.clear_den()
+        self._address = 'u'
         #self.norm = 'u'
         self.link_function = None
         #self._updated = False
@@ -233,6 +249,7 @@ class ExtendedType():
             f"Name: {self._name} Function: {self._function_name}\n"
             f"Num: {num_token_types_str}\n"
             f"Den: {den_token_types_str}\n"
+            f"Address: {self._address}\n"
             f"Norm: {self._norm}\n"
             f"LF: {self._linked_contract}\n"
             f"Fields: {fields_str}\n"
