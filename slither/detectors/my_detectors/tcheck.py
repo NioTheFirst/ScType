@@ -295,7 +295,7 @@ def add_param_cache(function, new_param_cache):
             if(new_param_cache[paramno][5] != cur_param[5]):
                 seen_ftype = True
             #compare address
-            print(cur_param)
+            #print(cur_param)
             if(new_param_cache[paramno][6] != cur_param[6]):
                 seen_address = True
             for i in range(maxTokens):
@@ -639,25 +639,7 @@ def check_type(ir) -> bool:
         #High level call
         addback = type_hlc(ir)
     elif isinstance(ir, TypeConversion):
-        if(debug_print):
-            print(ir)
-            print(ir.variable.extok)
-        #convert_ssa(ir.lvalue)
-        convert_ssa(ir.variable)
-        if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
-            #TMPxxx  CONVERT address(this)
-            assign_const(ir.lvalue)
-            ir.lvalue.norm = 0
-            ir.lvalue.link_function = current_contract_name
-
-            #addback = copy_token_tuple(ir.lvalue, ir.variable)
-            addback = False
-        else:    
-            addback = type_asn(ir.lvalue, ir.variable)
-            if(ir.lvalue.extok.norm != get_norm(ir.variable)):
-                asn_norm(ir.lvalue, get_norm(ir.variable))
-            copy_ftype(ir.variable, ir.lvalue)
-            ir.lvalue.link_function = ir.variable.link_function
+        type_conversion(ir)
     elif isinstance(ir, Unpack):
         #Unpack tuple
         addback = type_upk(ir)
@@ -711,6 +693,32 @@ def check_type(ir) -> bool:
         ##print(ir)
         ##print("XXXXX")
     return (addback)
+
+#USAGE: typechecks a type conversions (USDC vs IERC20)
+#While it has its own address (i.e. address usdc corresponds to global address x),
+#The underlying contract will still be the ERC20 contract.
+#This represents a limitation of the tool: the interface must be of the form I`Implementation` of i `Implementation`
+#RETURNS: nothing
+def type_conversion(ir):
+    if(debug_print):
+            print(ir)
+            #print(ir.variable.extok)
+        #convert_ssa(ir.lvalue)
+        convert_ssa(ir.variable)
+        if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
+            #TMPxxx  CONVERT address(this)
+            assign_const(ir.lvalue)
+            ir.lvalue.norm = 0
+            ir.lvalue.link_function = current_contract_name
+
+            #addback = copy_token_tuple(ir.lvalue, ir.variable)
+            addback = False
+        else:    
+            addback = type_asn(ir.lvalue, ir.variable)
+            if(ir.lvalue.extok.norm != get_norm(ir.variable)):
+                asn_norm(ir.lvalue, get_norm(ir.variable))
+            copy_ftype(ir.variable, ir.lvalue)
+            ir.lvalue.link_function = ir.variable.link_function
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
 #RETURNS: nothing (type is querried from user)
