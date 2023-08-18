@@ -635,7 +635,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, TypeConversion):
         if(debug_print):
             print(ir)
-            print(ir.lvalue.extok)
+            print(ir.variable.extok)
         #convert_ssa(ir.lvalue)
         convert_ssa(ir.variable)
         if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
