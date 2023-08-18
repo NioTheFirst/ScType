@@ -617,7 +617,8 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
             lc = pc[3]
             field = pc[4].copy()
             ftype = pc[5]
-            x = [num, den, norm, lc, field, ftype]
+            adress = pc[6]
+            x = [num, den, norm, lc, field, ftype, adress]
             copy_param_cache.append(x)
         self._parameter_cache.append(copy_param_cache)
 
