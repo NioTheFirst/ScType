@@ -50,6 +50,8 @@ contract_function = {}
 constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
+global_address_counter = 0
+temp_address_counter = 0
 
 debug_print = True
 
@@ -367,6 +369,8 @@ def querry_type(ir):
     global mark_iteration
     global write_typefile
     global current_function_marked
+    global global_address_counter
+    global temp_address_counter
     _ir = ir.extok
     uxname = _ir.name
     if(ir.tname != None):
@@ -384,6 +388,13 @@ def querry_type(ir):
     if(str(ir.type) == "bytes"):
         ##print("SKIP bytes")
         return
+    if(str(ir.type) == "address"):
+        if(ir.parent_function == "global"):
+            global_address_counter+=1
+        else:
+            temp_address_counter+=1
+        _ir.address = global_address_counter + temp_address_counter
+        #return #Not yet, testing is needed TODO
     if not(user_type):
         type_tuple = read_type_file(ir)
         if(type_tuple != None):
@@ -546,6 +557,7 @@ def convert_ssa(ir):
         ir.link_function = non_ssa_ir.link_function
         _ir.finance_type = non_ssa_ir.extok.finance_type
         _ir.updated = non_ssa_ir.extok.updated
+        _ir.address = ir.address
 
 #USAGE: updates a non_ssa instance of a variable
 #RETURNS: NULL
@@ -570,6 +582,7 @@ def update_non_ssa(ir):
         non_ssa_ir.link_function = ir.link_function
         non_ssa_ir.extok.finance_type = ir.extok.finance_type
         non_ssa_ir.updated = ir.extok.updated
+        non_ssa_ir.address = ir.address
     else:
         _non_ssa_ir = non_ssa_ir.extok
         _non_ssa_ir.token_type_clear()
@@ -622,6 +635,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, TypeConversion):
         if(debug_print):
             print(ir)
+            print(ir.lvalue.extok)
         #convert_ssa(ir.lvalue)
         convert_ssa(ir.variable)
         if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
