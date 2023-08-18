@@ -133,6 +133,7 @@ def copy_token_type(dest, src):
     if _src.linked_contract:
         _dest.linked_contract = _src.linked_contract
 
+    _dest.address = _src.address
     for field in _src.fields:
         _dest.add_field(field)
     #_dest.finance_type = _src.finance_type
@@ -165,6 +166,7 @@ def copy_pc_token_type(src, dest):
         for field in src[4]:
             _dest.add_field(field)
     _dest.finance_type = src[5]
+    _dest.address = src[6]
 
 
 #USAGE: copies a finance type

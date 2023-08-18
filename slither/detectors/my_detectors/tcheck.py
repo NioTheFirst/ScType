@@ -245,7 +245,8 @@ def gen_param_cache(param_list):
         link_function = _param.linked_contract
         fields = _param.fields
         finance_type = _param.finance_type
-        param_type = [num, den, norm, link_function, fields, finance_type]
+        address = _pararm.address
+        param_type = [num, den, norm, link_function, fields, finance_type, address]
         param_cache.append(param_type)
     return param_cache
 
@@ -272,6 +273,7 @@ def add_param_cache(function, new_param_cache):
             seen_d = []
             seen_norm = False
             seen_ftype = False
+            seen_address = False
             ##print(f"cur_param: {cur_param}")
             for i in range(maxTokens):
                 seen_n.append(0)
@@ -292,8 +294,11 @@ def add_param_cache(function, new_param_cache):
             #compre finance_type
             if(new_param_cache[paramno][5] != cur_param[5]):
                 seen_ftype = True
+            #compare address
+            if(new_param_cache[paramno][6] != cur_param[6]):
+                seen_address = True
             for i in range(maxTokens):
-                if(seen_ftype or seen_norm or seen_n[i] != 0 or seen_d[i] != 0):
+                if(seen_ftype or seen_norm or seen_address or seen_n[i] != 0 or seen_d[i] != 0):
                     dif_cur_param = True
                     break
             if(dif_cur_param):
