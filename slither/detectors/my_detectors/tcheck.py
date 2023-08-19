@@ -702,8 +702,6 @@ def check_type(ir) -> bool:
 #RETURNS: nothing
 def type_conversion(ir):
     #if(debug_print):
-    print(ir)
-    print(ir.variable.extok)
         #convert_ssa(ir.lvalue)
     convert_ssa(ir.variable)
     if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
@@ -715,6 +713,7 @@ def type_conversion(ir):
         #addback = copy_token_tuple(ir.lvalue, ir.variable)
         addback = False
     else:    
+        print(ir.variable.extok)
         addback = type_asn(ir.lvalue, ir.variable)
         if(ir.lvalue.extok.norm != get_norm(ir.variable)):
             asn_norm(ir.lvalue, get_norm(ir.variable))
