@@ -730,7 +730,13 @@ def type_conversion(ir):
         if(str(ir.variable.type) == "address"):
             #This is a conversion
             instance_name = str(ir.type)
-            contract_name = instance_name[1:]
+            contract_name = "UNKNOWN"
+            pos = 0
+            for char in instance_name:
+                if(pos+1 > len(instance_name) - 1):
+                    contract_name = "UNKNOWN"
+                if(instance_name[pos] == 'i' or instance_name[pos] == "I"):
+                    contract_name = instance_name[pos+1:]
             ir.lvalue.link_function = contract_name
             print(contract_name)
         #ir.lvalue.link_function = ir.variable.link_function
@@ -878,6 +884,8 @@ def handle_balance_functions(ir):
         ir.lvalue.extok.add_num_token_type(token_type)
         ir.lvalue.extok.norm = norm
         return True
+    elif(func_name == "decimals"):
+        ir.lvalue.extok.norm = norm
     #WIP
     return False
         
