@@ -720,7 +720,13 @@ def type_conversion(ir):
         if(ir.lvalue.extok.norm != get_norm(ir.variable)):
             asn_norm(ir.lvalue, get_norm(ir.variable))
         copy_ftype(ir.variable, ir.lvalue)
-        ir.lvalue.link_function = ir.variable.link_function
+        if(str(ir.variable.type) == "address"):
+            #This is a conversion
+            instance_name = str(ir.type)
+            contract_name = instance_name[1:]
+            ir.lvalue.link_function = contract_name
+            print(contract_name)
+        #ir.lvalue.link_function = ir.variable.link_function
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
 #RETURNS: nothing (type is querried from user)
