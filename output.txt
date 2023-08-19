@@ -1,7 +1,1245 @@
 Switched global version to 0.6.12
 Finding type for manager...
 IManager
-Executing Group 7
-[*] Tested 3 warnings for yAxis
-Group 7 complete
-Testing complete
+Finding type for _balances...
+mapping(address => uint256)
+Finding type for _totalSupply...
+uint256
+Finding type for _symbol...
+string
+Finding type for _allowances...
+mapping(address => mapping(address => uint256))
+Finding type for MAX...
+uint256
+Finding type for totalDepositCap...
+uint256
+Finding type for _name...
+string
+Finding type for _decimals...
+uint8
+Finding type for min...
+uint256
+
+
+
+constructor
+Finding type for _name...
+string
+Finding type for _symbol...
+string
+Finding type for _manager...
+address
+Address: 1
+INTERNAL_CALL, VaultToken.constructor(string,string)(_name_1,_symbol_1)
+TMP_66 = CONVERT _manager_1 to IManager
+
+Name: None Function: constructor
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _manager
+Fields: 
+Finance Type: undef
+Manager
+[i]Type for TMP_66
+
+Name: TMP_66 Function: constructor
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+manager_1(IManager) := TMP_66(IManager)
+[i]Type for manager
+
+Name: manager Function: constructor
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+min_1(uint256) := 9500(uint256)
+[i]Type for min
+
+Name: min Function: constructor
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_1(uint256) := 10000000000000000000000000(uint256)
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: constructor
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+
+
+setGauge
+Finding type for _gauge...
+address
+Address: 1
+MODIFIER_CALL, Vault.notHalted()()
+MODIFIER_CALL, Vault.onlyStrategist()()
+gauge_1(address) := _gauge_1(address)
+[i]Type for gauge
+
+Name: gauge Function: setGauge
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _gauge
+Fields: 
+Finance Type: undef
+
+
+
+setMin
+Finding type for _min...
+uint256
+MAX_1(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_0', 'MAX_11', 'MAX_13'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+manager_34(IManager) := ϕ(['manager_24', 'manager_0', 'manager_33', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_220(bool) = HIGH_LEVEL_CALL, dest:manager_34(IManager), function:halted, arguments:[]  
+[i]Type for TMP_220
+
+Name: TMP_220 Function: notHalted
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_35(IManager) := ϕ(['manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_34', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_221 = ! TMP_220 
+[i]Type for TMP_221
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_222(None) = SOLIDITY_CALL require(bool,string)(TMP_221,halted)
+[i]Type for TMP_222
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.onlyStrategist()()
+manager_38(IManager) := ϕ(['manager_24', 'manager_0', 'manager_33', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_226(address) = HIGH_LEVEL_CALL, dest:manager_38(IManager), function:strategist, arguments:[]  
+Finding type for hlc_0...
+address
+Address: 1
+[i]Type for TMP_226
+
+Name: TMP_226 Function: onlyStrategist
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_39(IManager) := ϕ(['manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_38', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_227(bool) = msg.sender == TMP_226
+[i]Type for TMP_227
+
+Name: TMP_227 Function: onlyStrategist
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_228(None) = SOLIDITY_CALL require(bool,string)(TMP_227,!strategist)
+[i]Type for TMP_228
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_70(bool) = _min_1 <= MAX_3
+[i]Type for TMP_70
+
+Name: TMP_70 Function: setMin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_71(None) = SOLIDITY_CALL require(bool,string)(TMP_70,!_min)
+[i]Type for TMP_71
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+min_2(uint256) := _min_1(uint256)
+[i]Type for min
+
+Name: min Function: setMin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+
+
+setTotalDepositCap
+Finding type for _totalDepositCap...
+uint256
+MODIFIER_CALL, Vault.notHalted()()
+MODIFIER_CALL, Vault.onlyStrategist()()
+totalDepositCap_2(uint256) := _totalDepositCap_1(uint256)
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: setTotalDepositCap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+
+
+swap
+Finding type for _token0...
+address
+Address: 1
+Finding type for _token1...
+address
+Address: 2
+Finding type for _expectedAmount...
+uint256
+manager_2(IManager) := ϕ(['manager_24', 'manager_0', 'manager_33', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+manager_3(IManager) := ϕ(['manager_35'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.onlyStrategist()()
+manager_4(IManager) := ϕ(['manager_39'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_76 = CONVERT this to address
+[i]Type for TMP_76
+
+Name: TMP_76 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_77(address) = HIGH_LEVEL_CALL, dest:manager_4(IManager), function:controllers, arguments:['TMP_76']  
+[i]Type for TMP_77
+
+Name: TMP_77 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_5(IManager) := ϕ(['manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_4', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_78 = CONVERT TMP_77 to IController
+
+Name: TMP_77 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Controller
+[i]Type for TMP_78
+
+Name: TMP_78 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+TMP_79 = CONVERT this to address
+[i]Type for TMP_79
+
+Name: TMP_79 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_80(address) = HIGH_LEVEL_CALL, dest:TMP_78(IController), function:converter, arguments:['TMP_79']  
+[i]Type for TMP_80
+
+Name: TMP_80 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_6(IManager) := ϕ(['manager_24', 'manager_5', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_81 = CONVERT TMP_80 to IConverter
+
+Name: TMP_80 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Converter
+[i]Type for TMP_81
+
+Name: TMP_81 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+_converter_1(IConverter) := TMP_81(IConverter)
+[i]Type for _converter
+
+Name: _converter Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+TMP_82 = CONVERT _token0_1 to IERC20
+
+Name: None Function: swap
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _token0
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_82
+
+Name: TMP_82 Function: swap
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_83 = CONVERT this to address
+[i]Type for TMP_83
+
+Name: TMP_83 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_84(uint256) = HIGH_LEVEL_CALL, dest:TMP_82(IERC20), function:balanceOf, arguments:['TMP_83']  
+[i]Type for TMP_84
+
+Name: TMP_84 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_84(uint256)
+[i]Type for _balance
+
+Name: _balance Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_85 = CONVERT _token0_1 to IERC20
+
+Name: _token0 Function: swap
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _token0
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_85
+
+Name: TMP_85 Function: swap
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_86 = CONVERT _converter_1 to address
+
+Name: _converter Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+[i]Type for TMP_86
+
+Name: TMP_86 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_85', 'TMP_86', '_balance_1'] 
+TMP_88(uint256) = HIGH_LEVEL_CALL, dest:_converter_1(IConverter), function:convert, arguments:['_token0_1', '_token1_1', '_balance_1', '_expectedAmount_1']  
+[i]Type for TMP_88
+
+Name: TMP_88 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_2(uint256) := TMP_88(uint256)
+[i]Type for _balance
+
+Name: _balance Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+
+
+earn
+Finding type for _token...
+address
+Address: 1
+Finding type for _strategy...
+address
+Address: 2
+manager_7(IManager) := ϕ(['manager_24', 'manager_0', 'manager_33', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.checkToken(address)(_token_1)
+manager_8(IManager) := ϕ(['manager_33'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+manager_9(IManager) := ϕ(['manager_35'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.onlyHarvester()()
+manager_10(IManager) := ϕ(['manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
+[i]Type for TMP_91
+
+Name: TMP_91 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_11(IManager) := ϕ(['manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_10', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_92(None) = SOLIDITY_CALL require(bool,string)(TMP_91,!_strategy)
+[i]Type for TMP_92
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_93 = CONVERT this to address
+[i]Type for TMP_93
+
+Name: TMP_93 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_94(address) = HIGH_LEVEL_CALL, dest:manager_11(IManager), function:controllers, arguments:['TMP_93']  
+[i]Type for TMP_94
+
+Name: TMP_94 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_12(IManager) := ϕ(['manager_11', 'manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_95 = CONVERT TMP_94 to IController
+
+Name: TMP_94 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Controller
+[i]Type for TMP_95
+
+Name: TMP_95 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+_controller_1(IController) := TMP_95(IController)
+[i]Type for _controller
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+TMP_96(bool) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:investEnabled, arguments:[]  
+[i]Type for TMP_96
+
+Name: TMP_96 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_97(uint256) = INTERNAL_CALL, Vault.available(address)(_token_1)
+[i]Type for TMP_97
+
+Name: TMP_97 Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_97(uint256)
+[i]Type for _balance
+
+Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_98 = CONVERT _token_1 to IERC20
+
+Name: None Function: earn
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_98
+
+Name: TMP_98 Function: earn
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_99 = CONVERT _controller_1 to address
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+[i]Type for TMP_99
+
+Name: TMP_99 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
+HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
+manager_7(IManager) := ϕ(['manager_24', 'manager_0', 'manager_33', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.checkToken(address)(_token_1)
+manager_8(IManager) := ϕ(['manager_33'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+manager_9(IManager) := ϕ(['manager_35'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.onlyHarvester()()
+manager_10(IManager) := ϕ(['manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
+[i]Type for TMP_91
+
+Name: TMP_91 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_11(IManager) := ϕ(['manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_10', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_92(None) = SOLIDITY_CALL require(bool,string)(TMP_91,!_strategy)
+[i]Type for TMP_92
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_93 = CONVERT this to address
+[i]Type for TMP_93
+
+Name: TMP_93 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_94(address) = HIGH_LEVEL_CALL, dest:manager_11(IManager), function:controllers, arguments:['TMP_93']  
+[i]Type for TMP_94
+
+Name: TMP_94 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_12(IManager) := ϕ(['manager_11', 'manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_95 = CONVERT TMP_94 to IController
+
+Name: TMP_94 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Controller
+[i]Type for TMP_95
+
+Name: TMP_95 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+_controller_1(IController) := TMP_95(IController)
+[i]Type for _controller
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+TMP_96(bool) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:investEnabled, arguments:[]  
+[i]Type for TMP_96
+
+Name: TMP_96 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_97(uint256) = INTERNAL_CALL, Vault.available(address)(_token_1)
+[i]Type for TMP_97
+
+Name: TMP_97 Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_97(uint256)
+[i]Type for _balance
+
+Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_98 = CONVERT _token_1 to IERC20
+
+Name: _token Function: earn
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_98
+
+Name: TMP_98 Function: earn
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_99 = CONVERT _controller_1 to address
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+[i]Type for TMP_99
+
+Name: TMP_99 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
+HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
+
+
+
+deposit
+Finding type for _token...
+address
+Address: 1
+Finding type for _amount...
+uint256
+_token_1(address) := ϕ(['REF_50'])
+[i]Type for _token
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+_amount_1(uint256) := ϕ(['REF_51'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_0', 'totalDepositCap_1'])
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.checkToken(address)(_token_1)
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
+[i]Type for _token
+
+Name: _token Function: checkToken
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+manager_31(IManager) := ϕ(['manager_24', 'manager_0', 'manager_33', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_214(bool) = HIGH_LEVEL_CALL, dest:manager_31(IManager), function:allowedTokens, arguments:['_token_1']  
+[i]Type for TMP_214
+
+Name: TMP_214 Function: checkToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_32(IManager) := ϕ(['manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_31', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_215(address) = HIGH_LEVEL_CALL, dest:manager_32(IManager), function:vaults, arguments:['_token_1']  
+Finding type for hlc_0...
+address
+Address: 1
+[i]Type for TMP_215
+
+Name: TMP_215 Function: checkToken
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_33(IManager) := ϕ(['manager_32', 'manager_24', 'manager_33', 'manager_35', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_216 = CONVERT this to address
+[i]Type for TMP_216
+
+Name: TMP_216 Function: checkToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_217(bool) = TMP_215 == TMP_216
+[i]Type for TMP_217
+
+Name: TMP_217 Function: checkToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_218(bool) = TMP_214 && TMP_217
+[i]Type for TMP_218
+
+Name: TMP_218 Function: checkToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_219(None) = SOLIDITY_CALL require(bool,string)(TMP_218,!_token)
+[i]Type for TMP_219
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+TMP_106(bool) = _amount_1 > 0
+[i]Type for TMP_106
+
+Name: TMP_106 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_107(None) = SOLIDITY_CALL require(bool,string)(TMP_106,!_amount)
+[i]Type for TMP_107
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_108(uint256) = INTERNAL_CALL, Vault.balance()()
+manager_21(IManager) := ϕ(['manager_24', 'manager_0', 'manager_33', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_177(uint256) = INTERNAL_CALL, Vault.balanceOfThis()()
+manager_25(IManager) := ϕ(['manager_24', 'manager_0', 'manager_33', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_183 = CONVERT this to address
+[i]Type for TMP_183
+
+Name: TMP_183 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_184(address[]) = HIGH_LEVEL_CALL, dest:manager_25(IManager), function:getTokens, arguments:['TMP_183']  
+Finding type for hlc_0...
+address[]
+Define num type for "hlc_0": 

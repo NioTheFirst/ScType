@@ -2148,7 +2148,9 @@ def _tcheck_contract(contract):
         current_function_marked = True
         if(function.name != "constructor"):
             _tcheck_contract_state_var(contract)
-        
+        else:
+            for var in function.variables:
+                print(var.extok)
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
     """cur = 0    
