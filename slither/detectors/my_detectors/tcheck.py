@@ -2149,6 +2149,7 @@ def _tcheck_contract(contract):
         if(function.name != "constructor"):
             _tcheck_contract_state_var(contract)
         else:
+            print("CONSTRUCTOR VARIABLES______________________________")
             for var in function.variables:
                 print(var.extok)
         if(len(addback_nodes) > 0):
