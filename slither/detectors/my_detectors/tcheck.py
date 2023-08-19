@@ -384,9 +384,6 @@ def querry_type(ir):
     uxname = str(uxname)
     print("Finding type for "+ uxname + "...")
     print(ir.type)
-    if(mark_iteration and not(current_function_marked)):
-        assign_const(ir)
-        return
     if(str(ir.type) == "bool"):
         ##print("SKIP bool")
         assign_const(ir)
@@ -402,6 +399,9 @@ def querry_type(ir):
         _ir.address = global_address_counter + temp_address_counter
         print(f"Address: {_ir.address}")
         return #Not yet, testing is needed TODO
+    if(mark_iteration and not(current_function_marked)):
+        assign_const(ir)
+        return
     if not(user_type):
         type_tuple = read_type_file(ir)
         if(type_tuple != None):
