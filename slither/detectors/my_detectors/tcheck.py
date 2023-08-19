@@ -2062,7 +2062,7 @@ def _tcheck_contract_state_var(contract):
             assign_const(state_var)
             continue
         if(True):
-            if(!(read_global)):
+            if(not(read_global)):
                 querry_type(state_var)
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
