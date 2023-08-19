@@ -33,6 +33,7 @@ class ExtendedType():
         self._fields = []
         self._reference_root = None
         self._reference_field = None
+        self._trace = None
         #Business type
         self._finance_type = -1
         self._updated = False
@@ -83,6 +84,15 @@ class ExtendedType():
     def contract_name(self, cname):
         self._contract_name = cname
     
+
+    @property
+    def trace(self):
+        return(self._trace)
+
+    @trace.setter
+    def trace(self, p):
+        self._trace = p
+        
     @property
     def num_token_types(self):
         return(self._num_token_types)
