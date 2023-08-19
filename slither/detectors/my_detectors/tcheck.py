@@ -51,7 +51,7 @@ constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 global_address_counter = 0
-temp_address_counter = 0
+temp_address_counter = 1
 global_var_types = {}
 read_global = False
 
@@ -399,7 +399,7 @@ def querry_type(ir):
         else:
             temp_address_counter+=1
         _ir.address = global_address_counter + temp_address_counter
-        print(f"Address: {_ir.address}")
+        print(f"Global: {global_address_counter} Address: {_ir.address}")
         return #Not yet, testing is needed TODO
     if(mark_iteration and not(current_function_marked)):
         assign_const(ir)
@@ -1896,7 +1896,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     global function_count
     global temp_address_counter
     save_temp = temp_address_counter
-    temp_address_counter = 0
+    temp_address_counter = 1
     ##print("xyz")
     function_hlc = 0
     function_ref = 0
@@ -1971,7 +1971,7 @@ def _tcheck_function(function) -> []:
     global current_function_marked
     global temp_address_counter
     save_temp = temp_address_counter
-    temp_address_counter = 0
+    temp_address_counter = 1
     function_hlc = 0
     function_ref = 0
     explored = set()
