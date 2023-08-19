@@ -1896,7 +1896,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     global function_count
     global temp_address_counter
     save_temp = temp_address_counter
-    temp_address_counter = 1
+    temp_address_counter = 0
     ##print("xyz")
     function_hlc = 0
     function_ref = 0
@@ -1971,7 +1971,7 @@ def _tcheck_function(function) -> []:
     global current_function_marked
     global temp_address_counter
     save_temp = temp_address_counter
-    temp_address_counter = 1
+    temp_address_counter = 0
     function_hlc = 0
     function_ref = 0
     explored = set()
