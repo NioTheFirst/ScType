@@ -2157,7 +2157,7 @@ def _tcheck_contract(contract):
                     temp = global_var_types[(var.extok.name, contract.name)]
                     copy_token_type(var, temp)
                     global_var_types[(var.extok.name, contract.name)] = temp
-                print(var.extok)
+                    print(temp.extok)
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
     """cur = 0    
