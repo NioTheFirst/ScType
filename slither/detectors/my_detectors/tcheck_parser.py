@@ -332,7 +332,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
             #    print(p.name)
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
-                ret_type_tuple = (num_trans, den_trans, norm , lf, ftype)
+                ret_type_tuple = (num_trans, den_trans, norm , addr, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
             for num in num_trans:
