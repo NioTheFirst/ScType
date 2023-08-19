@@ -737,6 +737,7 @@ def type_conversion(ir):
                     contract_name = "UNKNOWN"
                 if(instance_name[pos] == 'i' or instance_name[pos] == "I"):
                     contract_name = instance_name[pos+1:]
+                    break
             ir.lvalue.link_function = contract_name
             print(contract_name)
         #ir.lvalue.link_function = ir.variable.link_function
@@ -886,6 +887,7 @@ def handle_balance_functions(ir):
         return True
     elif(func_name == "decimals"):
         ir.lvalue.extok.norm = norm
+        return True
     #WIP
     return False
         
