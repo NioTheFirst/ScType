@@ -701,7 +701,7 @@ def check_type(ir) -> bool:
 #This represents a limitation of the tool: the interface must be of the form I`Implementation` of i `Implementation`
 #RETURNS: nothing
 def type_conversion(ir):
-    if(debug_print):
+    #if(debug_print):
         #print(ir)
         #print(ir.variable.extok)
         #convert_ssa(ir.lvalue)
