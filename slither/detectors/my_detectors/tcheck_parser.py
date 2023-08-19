@@ -225,7 +225,7 @@ def parse_type_file(t_file, f_file = None):
                     denom = [-1]
                     norm = 'u'
                     copy = "c"
-                    lf = None
+                    addr = None
                     #print(_line[4+i])
                     #print(ret_info)
                     if(len(ret_info) >= 4):
@@ -234,8 +234,8 @@ def parse_type_file(t_file, f_file = None):
                         denom = extract_integers(ret_info[2])
                         norm = int(ret_info[3].strip())
                         if(len(ret_info) >= 5):
-                            lf = ret_info[4]
-                    ef_types.append((copy, num, denom, norm, lf))
+                            addr = ret_info[4]  #No longer lf, link_function deprecated. Stores address instead
+                    ef_types.append((copy, num, denom, norm, addr))
                 add_ex_func(c_name, f_name, ef_types)
             #REFERENCE TYPE
             if(_line[0].strip() == "[tref]"):
@@ -321,7 +321,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
             num_trans = ret_var[1]
             den_trans = ret_var[2]
             norm = ret_var[3]
-            lf = ret_var[4]
+            addr = ret_var[4]
             ftype = -1
             if(len(ret_var) >= 6):
                 ftype = ret_var[5]
@@ -355,9 +355,9 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                     ret_num.append(d)
             if(norm > 0):
                 norm = param[norm-1].extok.norm
-            if(isinstance(lf, int) and lf > 0):
-                lf = param[lf-1].extok.norm
-            ret_type_tuple = (ret_num, ret_den, norm, lf,ftype)
+            if(isinstance(addr, int) and addr > 0):
+                addr = param[addr-1].extok.norm
+            ret_type_tuple = (ret_num, ret_den, norm, addr, ftype)
             ret_type_tuples.append(ret_type_tuple)
         return ret_type_tuples
     return None
