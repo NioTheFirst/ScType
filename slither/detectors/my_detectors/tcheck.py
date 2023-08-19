@@ -413,21 +413,21 @@ def querry_type(ir):
         #print("[x]Failed to fetch type from type file, defaulting to human interface")
     if (not (ask_user)):
         return True
-    #print("Define num type for \"" + uxname + "\": ")
+    print("Define num type for \"" + uxname + "\": ")
     input_str = input()
     num = int(input_str)
     _ir.add_num_token_type(num)
-    #print("Define den type for \"" + uxname + "\": ")
+    print("Define den type for \"" + uxname + "\": ")
     input_str = input()
     den = int(input_str)
     _ir.add_den_token_type(den)
-    #print("Define norm for \"" + uxname + "\": ")
+    print("Define norm for \"" + uxname + "\": ")
     input_str = input()
     norm = int(input_str)
     _ir.norm = norm
     lf = None
     if(str(ir.type) == "address"):
-        ##print("Define Linked Contract Name for \"" + uxname + "\": ")
+        print("Define Linked Contract Name for \"" + uxname + "\": ")
         lf = input()
         ir.link_function = lf
     append_typefile(ir, num, den, norm, lf)
