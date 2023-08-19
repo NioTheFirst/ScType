@@ -382,8 +382,8 @@ def querry_type(ir):
     if(ir.tname != None):
         uxname = ir.tname
     uxname = str(uxname)
-    ##print("Finding type for "+ uxname + "...")
-    ##print(ir.type)
+    print("Finding type for "+ uxname + "...")
+    print(ir.type)
     if(mark_iteration and not(current_function_marked)):
         assign_const(ir)
         return
