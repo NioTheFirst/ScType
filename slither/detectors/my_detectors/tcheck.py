@@ -2119,6 +2119,7 @@ def _tcheck_contract(contract):
     global current_contract_name
     global mark_iteration
     global current_function_marked
+    global global_var_types
     current_contract_name = contract.name
     all_addback_nodes = []
     #_mark_functions(contract)
@@ -2151,6 +2152,11 @@ def _tcheck_contract(contract):
         else:
             print("CONSTRUCTOR VARIABLES______________________________")
             for var in function.variables:
+                if((var.extok.name, contract.name) in global_var_types):
+                    print(f"Copied {var.extok.name}")
+                    temp = global_var_types[(var.extok.name, contract.name)]
+                    copy_token_type(var, temp)
+                    global_var_types[(var.extok.name, contract.name)] = temp
                 print(var.extok)
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
