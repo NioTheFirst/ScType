@@ -51,7 +51,7 @@ constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 global_address_counter = 0
-temp_address_counter = 1
+temp_address_counter = 0
 global_var_types = {}
 read_global = False
 
@@ -2120,6 +2120,7 @@ def _tcheck_contract(contract):
     global mark_iteration
     global current_function_marked
     global global_var_types
+    global global_address_counter
     current_contract_name = contract.name
     all_addback_nodes = []
     #_mark_functions(contract)
@@ -2157,6 +2158,8 @@ def _tcheck_contract(contract):
                     temp = global_var_types[(var.extok.name, contract.name)]
                     copy_token_type(var, temp)
                     global_var_types[(var.extok.name, contract.name)] = temp
+                    if(str(var.type) == "address"):
+                        global_address_counter+=1
                     print(temp.extok)
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
