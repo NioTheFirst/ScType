@@ -400,7 +400,7 @@ def querry_type(ir):
         else:
             temp_address_counter+=1
         _ir.address = global_address_counter + temp_address_counter
-        #return #Not yet, testing is needed TODO
+        return #Not yet, testing is needed TODO
     if not(user_type):
         type_tuple = read_type_file(ir)
         if(type_tuple != None):
