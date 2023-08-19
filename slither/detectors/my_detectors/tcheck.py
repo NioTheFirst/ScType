@@ -2151,7 +2151,7 @@ def _tcheck_contract(contract):
             _tcheck_contract_state_var(contract)
         else:
             print("CONSTRUCTOR VARIABLES______________________________")
-            for var in function.variables:
+            for var in function.variables_written:
                 if((var.extok.name, contract.name) in global_var_types):
                     print(f"Copied {var.extok.name}")
                     temp = global_var_types[(var.extok.name, contract.name)]
