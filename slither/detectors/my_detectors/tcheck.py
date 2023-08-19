@@ -1974,6 +1974,11 @@ def _tcheck_function(function) -> []:
     function_ref = 0
     explored = set()
     addback_nodes = []
+    print()
+    print()
+    print()
+    print(function.name)
+
     if(check_bar(function.name)):
         ##print("wooo")
         return addback_nodes
