@@ -676,8 +676,8 @@ def check_type(ir) -> bool:
     #DEBUG
     try:
         if ir.lvalue and is_variable(ir.lvalue):
-            ##print("[i]Type for "+ir.lvalue.name)
-           ##print_token_type(ir.lvalue)
+            print("[i]Type for "+ir.lvalue.name)
+            print_token_type(ir.lvalue)
             if(isinstance(ir.lvalue, ReferenceVariable)):
                 ref = ir.lvalue
                 ref_root = ref.extok.ref_root
