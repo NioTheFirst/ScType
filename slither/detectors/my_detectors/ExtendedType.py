@@ -64,6 +64,7 @@ class ExtendedType():
 
     @address.setter
     def address(self, x):
+        token_type_clear(self)
         self._address = x
 
     @property
