@@ -52,6 +52,8 @@ constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 global_address_counter = 0
 temp_address_counter = 0
+global_var_types = {}
+read_global = False
 
 debug_print = True
 
@@ -2037,6 +2039,8 @@ def _tcheck_function(function) -> []:
 def _tcheck_contract_state_var(contract):
     global user_type
     global fill_type
+    global read_global
+    global global_var_types
     type_info_name = None
     if(user_type and fill_type):
         type_info_name = contract.name+"_types.txt"
@@ -2058,9 +2062,16 @@ def _tcheck_contract_state_var(contract):
             assign_const(state_var)
             continue
         if(True):
-            querry_type(state_var)
+            if(!(read_global)):
+                querry_type(state_var)
+                new_constant = create_iconstant()
+                copy_token_type(state_var, new_constant)
+                global_var_types[(state_var.extok.name, contract.name)] = new_constant
+            else:
+                copy_token_type(global_var_types[(state_var.extok.name, contract.name)], state_var)
             if(isinstance(state_var, ReferenceVariable)):
                 add_ref(state_var.name, (state_var.token_typen, state_var.token_typed, state_var.norm, state_var.link_function))
+        read_global = True
 #USAGE: labels which contracts that should be read (contains binary operations) also adds contract-function pairs
 #RTURNS: NULL
 def _mark_functions(contract):
@@ -2133,9 +2144,11 @@ def _tcheck_contract(contract):
         ##print("[*i*]External Function: " + function.name)
         #continue
         addback_nodes = _tcheck_function(function)
-        #Don't override state variables (?)
+        #Override state variables only for the constructor
         current_function_marked = True
-        _tcheck_contract_state_var(contract)
+        if(function.name != "constructor"):
+            _tcheck_contract_state_var(contract)
+        
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
     """cur = 0    
