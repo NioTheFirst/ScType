@@ -601,6 +601,7 @@ def check_type(ir) -> bool:
     addback = False;
     #Assignmnet
     #Deubg pow
+    print(ir)
     #if(debug_pow_pc):
     #    #print("**POW***")
     #    for pc in debug_pow_pc:
@@ -701,10 +702,8 @@ def check_type(ir) -> bool:
 #RETURNS: nothing
 def type_conversion(ir):
     if(debug_print):
-        print(ir)
+        #print(ir)
         #print(ir.variable.extok)
-        if(str(ir.variable.type) == "address"):
-            print("Is address")
         #convert_ssa(ir.lvalue)
     convert_ssa(ir.variable)
     if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
@@ -874,7 +873,7 @@ def type_library_call(ir):
 #RETURNS: whether or not the high-level call node should be returned (should always return FALSE)
 def type_hlc(ir) ->bool:
     #just query the user for the data (beta)
-    print(ir)
+    #print(ir)
     global function_hlc
     ##print("High Call: "+str(ir.function_name))
     ##print("func name:" + ir.function.name)

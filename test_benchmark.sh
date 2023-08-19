@@ -60,7 +60,7 @@ if [[ $# -eq 0 || $1 -eq 5 ]]; then
   cd "../Benchmark/Yield_Micro/contracts/oracles/composite"
   slither --detect tcheck CompositeMultiOracle.sol
   cd "$ORIGINAL_DIR"
-  execute_group 5 echo "[*] Tested 1 warning for Yield Micro"
+  execute_group 5 echo "[*] Tested 2 warning for Yield Micro"
   sleep 3
 fi
 
