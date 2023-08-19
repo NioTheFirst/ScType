@@ -50,6 +50,12 @@ contract_function = {}
 constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
+#address to label
+global_address_to_num = {}
+#label to address
+num_to_global_address = {}
+#label to normalization
+num_to_norm = {}
 global_address_counter = 0
 temp_address_counter = 0
 global_var_types = {}
@@ -848,7 +854,34 @@ def querry_fc(ir) -> int:
             ##print("bad function call")
         ##print("COPIED")
         return 2
+
+    #Special functions:
+    if(handle_balance_functions(ir)):
+        return 2
     return 0
+
+#USAGE: propogates types etc from a set of balance-related functions. Currently supports the functions with names in `balance_funcs`.
+#RETURNS: if the balance-related function was executed
+def handle_balance_functions(ir):
+    global global_address_to_num
+    global num_to_norm
+    func_name = ir.function.name
+    dest = ir.destination
+    token_type = -2
+    norm = 'u'
+    if dest in global_address_to_num:
+        token_type = global_address_to_num[dest]
+    if token_type in num_to_norm:
+        norm = num_to_norm[token_type]
+    if(func_name == "balanceOf"):
+        #balanceOf, no important parameters, assign same type as dest address
+        ir.lvalue.extok.add_num_token_type(token_type)
+        ir.lvalue.extok.norm = norm
+        return True
+    #WIP
+    return False
+        
+
 
 #USAGE: typecheck for a library call: in this case, we only return special instances, or user-defined calls
 #RETURNS: return or not
@@ -2064,6 +2097,9 @@ def _tcheck_contract_state_var(contract):
         if(True):
             if(not(read_global)):
                 querry_type(state_var)
+                if(str(state_var.type) == "address"):
+                    global_address_to_num{state_var.name} = state_var.extok.address
+                    num_to_global_address{state_var.extok.address} = state_var.name
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
@@ -2160,7 +2196,10 @@ def _tcheck_contract(contract):
                     global_var_types[(var.extok.name, contract.name)] = temp
                     if(str(var.type) == "address"):
                         global_address_counter+=1
+                        global_address_to_num{var.name} = var.extok.address
+                        num_to_global_address{var.extok.address} = var.name
                     print(temp.extok)
+        
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
     """cur = 0    
