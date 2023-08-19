@@ -62,6 +62,7 @@ class ExtendedType():
     def address(self):
         return(self._address)
 
+    @address.setter
     def address(self, x):
         self._address = x
 
