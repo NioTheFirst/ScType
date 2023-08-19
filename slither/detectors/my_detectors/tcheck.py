@@ -2074,6 +2074,8 @@ def _tcheck_contract_state_var(contract):
     global fill_type
     global read_global
     global global_var_types
+    global global_address_to_num
+    global num_to_global_address
     type_info_name = None
     if(user_type and fill_type):
         type_info_name = contract.name+"_types.txt"
@@ -2098,8 +2100,8 @@ def _tcheck_contract_state_var(contract):
             if(not(read_global)):
                 querry_type(state_var)
                 if(str(state_var.type) == "address"):
-                    global_address_to_num{state_var.name} = state_var.extok.address
-                    num_to_global_address{state_var.extok.address} = state_var.name
+                    global_address_to_num[state_var.name] = state_var.extok.address
+                    num_to_global_address[state_var.extok.address] = state_var.name
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
@@ -2157,6 +2159,8 @@ def _tcheck_contract(contract):
     global current_function_marked
     global global_var_types
     global global_address_counter
+    global global_address_to_num
+    global num_to_global_address
     current_contract_name = contract.name
     all_addback_nodes = []
     #_mark_functions(contract)
@@ -2196,8 +2200,8 @@ def _tcheck_contract(contract):
                     global_var_types[(var.extok.name, contract.name)] = temp
                     if(str(var.type) == "address"):
                         global_address_counter+=1
-                        global_address_to_num{var.name} = var.extok.address
-                        num_to_global_address{var.extok.address} = var.name
+                        global_address_to_num[var.name] = var.extok.address
+                        num_to_global_address[var.extok.address] = var.name
                     print(temp.extok)
         
         if(len(addback_nodes) > 0):
