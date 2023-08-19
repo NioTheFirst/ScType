@@ -874,6 +874,7 @@ def type_library_call(ir):
 #RETURNS: whether or not the high-level call node should be returned (should always return FALSE)
 def type_hlc(ir) ->bool:
     #just query the user for the data (beta)
+    print(ir)
     global function_hlc
     ##print("High Call: "+str(ir.function_name))
     ##print("func name:" + ir.function.name)
