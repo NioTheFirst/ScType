@@ -876,20 +876,24 @@ def handle_balance_functions(ir):
     dest = ir.destination
     token_type = -2
     norm = 'u'
+    isbfunc = False
     if dest in global_address_to_num:
         token_type = global_address_to_num[dest]
     if token_type in num_to_norm:
         norm = num_to_norm[token_type]
+    
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
         ir.lvalue.extok.norm = norm
-        return True
+        isbfunc = True
     elif(func_name == "decimals"):
         ir.lvalue.extok.norm = norm
-        return True
+        isbfunc = True
     #WIP
-    return False
+    if(isbfunc and token_type == -2):
+        ir.lvalue.extok.trace = dest
+    return isbfunc
         
 
 
@@ -2208,7 +2212,7 @@ def _tcheck_contract(contract):
                     temp = global_var_types[(var.extok.name, contract.name)]
                     copy_token_type(var, temp)
                     global_var_types[(var.extok.name, contract.name)] = temp
-                    if(str(var.type) == "address"):
+                    if(var.extok.address != 'u'):
                         global_address_counter+=1
                         global_address_to_num[var.name] = var.extok.address
                         num_to_global_address[var.extok.address] = var.name
