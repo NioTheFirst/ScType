@@ -1517,7 +1517,7 @@ def generate_label_trace(dictA, dictB):
     if(sum != 0):
         return None
     #Begin matching (dp algorithm)
-    dp = [][]  #int, ([ordering], [pos_dict])
+    dp = [[]]  #int, ([ordering], [pos_dict])
     curn = 0
     for n in neg_dict:
         dp.add([]) #current list
