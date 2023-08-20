@@ -1440,10 +1440,10 @@ def handle_trace(rir, lir):
     #Save token types
     _rir = rir.extok
     _lir = lir.extok
-    rntt = copy(_rir.num_token_types)
-    rdtt = copy(_rir.den_token_types)
-    lntt = copy(_lir.num_token_types)
-    ldtt = copy(_lir.den_token_types)
+    rntt = _rir.num_token_types.copy()
+    rdtt = _rir.den_token_types.copy()
+    lntt = _lir.num_token_types.copy()
+    ldtt = _lir.den_token_types.copy()
     #Reduce numerators
     n_dict = {}
     for rn in rntt:
@@ -1523,7 +1523,7 @@ def generate_label_trace(dictA, dictB):
         dp.add([]) #current list
         if (curn == 0):
             for p in pos_dict:
-                _pos_dict = copy(pos_dict)
+                _pos_dict = pos_dict.copy()
                 _pos_dict[p] += neg_dict[n]
                 _ordering = {}
                 _ordering[n] = p
@@ -1533,9 +1533,9 @@ def generate_label_trace(dictA, dictB):
                 _pos_dict = prev[0]
                 _ordering = prev[1]
                 for p in _pos_dict:
-                    _2pos_dict = copy(pos_dict)
+                    _2pos_dict = pos_dict.copy()
                     _2pos_dict[p] += neg_dict[n]
-                    _2ordering = copy(_ordering)
+                    _2ordering = _ordering.copy()
                     _2ordering[n] = p
                     dp[curn].add([_2pos_dict, _2ordering])
         curn+=1
@@ -1550,13 +1550,10 @@ def generate_label_trace(dictA, dictB):
 
 
     
-                    
-
-
 #USAGE: checks ordering
 #RETURNS: ordering succeeds or not
 def check_ordering(order, _dict):
-    dict = copy(_dict)
+    dict = _dict.copy()
     for d in dict:
         if(d < 0):
             dict[order[d]]-=dict[d]
