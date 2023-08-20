@@ -2150,8 +2150,8 @@ def _tcheck_function_call(function, param_cache) -> []:
             paramno = 0
             for param in function.parameters:
                 copy_pc_token_type(param_cache[paramno], param)
-                is_variable(param)
-                update_non_ssa(param)
+                if (is_variable(param)):
+                    update_non_ssa(param)
                 paramno+=1
             addback = _tcheck_node(node, function.name)
             if(len(addback) > 0):
