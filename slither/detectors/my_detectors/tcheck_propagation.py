@@ -134,7 +134,6 @@ def copy_token_type(dest, src):
         _dest.linked_contract = _src.linked_contract
 
     _dest.address = _src.address
-    _dest.trace = _src.trace
     for field in _src.fields:
         _dest.add_field(field)
     #_dest.finance_type = _src.finance_type
