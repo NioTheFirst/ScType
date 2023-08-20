@@ -2143,8 +2143,15 @@ def _tcheck_function_call(function, param_cache) -> []:
             if node in explored:
                 continue
             explored.add(node)
-            if(prevlen == -1 or not(node in addback_nodes)):
+            #clear previous nodes
+            if(prevlen == -1):# or not(node in addback_nodes)):
                 _clear_type_node(node)
+            #load in parameters
+            paramno = 0
+            for param in function.parameters:
+                copy_pc_token_type(param_cache[paramno], param)
+                is_variable(param)
+                paramno+=1
             addback = _tcheck_node(node, function.name)
             if(len(addback) > 0):
                 addback_nodes.append(node)
@@ -2196,6 +2203,7 @@ def _tcheck_function(function) -> []:
     ##print("Function name: "+function.name)
     ##print("Function Visibility (test): "+function.visibility)
     fvisibl = function.visibility
+    new_param_cache = None
     if(fvisibl == 'public' or fvisibl == 'external' or read_internal):
         for fparam in function.parameters:
             ##print(fparam.name)
@@ -2225,8 +2233,14 @@ def _tcheck_function(function) -> []:
             if node in explored:
                 continue
             explored.add(node)
-            if(prevlen == -1 or not(node in addback_nodes)):
+            if(prevlen == -1):# or not(node in addback_nodes)):
                 _clear_type_node(node)
+            #load in parameters
+            paramno = 0
+            for param in function.parameters:
+                copy_pc_token_type(new_param_cache[paramno], param)
+                is_variable(param)
+                paramno+=1
             addback = _tcheck_node(node, function.name)
             if(len(addback) > 0):
                 addback_nodes.append(node)
