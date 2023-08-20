@@ -875,7 +875,7 @@ def handle_balance_functions(ir):
     global global_address_to_num
     global num_to_norm
     #global trace_to_label
-    global trace
+    global traces
     func_name = ir.function.name
     dest = ir.destination
     token_type = 'u'
@@ -886,8 +886,8 @@ def handle_balance_functions(ir):
     if token_type in num_to_norm:
         norm = num_to_norm[token_type]
     if (token_type == 'u'):
-        token_type = -2-trace
-        trace+=1
+        token_type = -2-traces
+        traces+=1
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
