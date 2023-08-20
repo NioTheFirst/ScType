@@ -2147,11 +2147,11 @@ def _tcheck_function_call(function, param_cache) -> []:
             if(prevlen == -1):# or not(node in addback_nodes)):
                 _clear_type_node(node)
             #load in parameters
-            paramno = 0
-            for param in function.parameters:
-                copy_pc_token_type(param_cache[paramno], param)
-                is_variable(param)
-                paramno+=1
+            #paramno = 0
+            #for param in function.parameters:
+            #    copy_pc_token_type(param_cache[paramno], param)
+            #    is_variable(param)
+            #    paramno+=1
             addback = _tcheck_node(node, function.name)
             if(len(addback) > 0):
                 addback_nodes.append(node)
