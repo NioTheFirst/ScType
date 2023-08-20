@@ -1,15 +1,17 @@
 Switched global version to 0.6.12
 Finding type for manager...
 IManager
+Finding type for _balances...
+mapping(address => uint256)
+Finding type for _totalSupply...
+uint256
+Finding type for _symbol...
+string
 Finding type for _allowances...
 mapping(address => mapping(address => uint256))
 Finding type for MAX...
 uint256
 Finding type for totalDepositCap...
-uint256
-Finding type for _balances...
-mapping(address => uint256)
-Finding type for _totalSupply...
 uint256
 Finding type for _name...
 string
@@ -17,8 +19,6 @@ Finding type for _decimals...
 uint8
 Finding type for min...
 uint256
-Finding type for _symbol...
-string
 
 
 
@@ -85,6 +85,61 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+INTERNAL_CALL, VaultToken.constructor(string,string)(_name_1,_symbol_1)
+TMP_66 = CONVERT _manager_1 to IManager
+
+Name: _manager Function: constructor
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: _manager
+Fields: 
+Finance Type: undef
+Manager
+[i]Type for TMP_66
+
+Name: TMP_66 Function: constructor
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+manager_1(IManager) := TMP_66(IManager)
+[i]Type for manager
+
+Name: manager Function: constructor
+Num: 
+Den: 
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+min_1(uint256) := 9500(uint256)
+[i]Type for min
+
+Name: min Function: constructor
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_1(uint256) := 10000000000000000000000000(uint256)
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: constructor
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 CONSTRUCTOR VARIABLES______________________________
 Copied manager
 
@@ -98,7 +153,7 @@ Fields:
 Finance Type: undef
 Copied min
 
-Name: PIC_9 Function: None
+Name: PIC_10 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -108,7 +163,7 @@ Fields:
 Finance Type: undef
 Copied totalDepositCap
 
-Name: PIC_4 Function: None
+Name: PIC_7 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -136,13 +191,72 @@ Norm: u
 LF: _gauge
 Fields: 
 Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+MODIFIER_CALL, Vault.onlyStrategist()()
+gauge_1(address) := _gauge_1(address)
+[i]Type for gauge
+
+Name: gauge Function: setGauge
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _gauge
+Fields: 
+Finance Type: undef
 
 
 
 setMin
 Finding type for _min...
 uint256
-MAX_1(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_0', 'MAX_9', 'MAX_11'])
+MAX_1(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+MODIFIER_CALL, Vault.onlyStrategist()()
+TMP_70(bool) = _min_1 <= MAX_3
+[i]Type for TMP_70
+
+Name: TMP_70 Function: setMin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_71(None) = SOLIDITY_CALL require(bool,string)(TMP_70,!_min)
+[i]Type for TMP_71
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+min_2(uint256) := _min_1(uint256)
+[i]Type for min
+
+Name: min Function: setMin
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MAX_1(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -207,6 +321,19 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+MODIFIER_CALL, Vault.onlyStrategist()()
+totalDepositCap_2(uint256) := _totalDepositCap_1(uint256)
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: setTotalDepositCap
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 
 
 
@@ -219,7 +346,7 @@ address
 Global: 1 Address: 3
 Finding type for _expectedAmount...
 uint256
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_30', 'manager_24', 'manager_35', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_2(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -276,7 +403,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_5(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_4', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -330,7 +457,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_6(IManager) := ϕ(['manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_6(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -491,6 +618,278 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+manager_2(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+manager_3(IManager) := ϕ(['manager_35'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.onlyStrategist()()
+manager_4(IManager) := ϕ(['manager_39'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_76 = CONVERT this to address
+[i]Type for TMP_76
+
+Name: TMP_76 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_77(address) = HIGH_LEVEL_CALL, dest:manager_4(IManager), function:controllers, arguments:['TMP_76']  
+[i]Type for TMP_77
+
+Name: TMP_77 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_5(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_4', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_78 = CONVERT TMP_77 to IController
+
+Name: TMP_77 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Controller
+[i]Type for TMP_78
+
+Name: TMP_78 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+TMP_79 = CONVERT this to address
+[i]Type for TMP_79
+
+Name: TMP_79 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_80(address) = HIGH_LEVEL_CALL, dest:TMP_78(IController), function:converter, arguments:['TMP_79']  
+[i]Type for TMP_80
+
+Name: TMP_80 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_6(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_81 = CONVERT TMP_80 to IConverter
+
+Name: TMP_80 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Converter
+[i]Type for TMP_81
+
+Name: TMP_81 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+_converter_1(IConverter) := TMP_81(IConverter)
+[i]Type for _converter
+
+Name: _converter Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+TMP_82 = CONVERT _token0_1 to IERC20
+
+Name: _token0 Function: swap
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token0
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_82
+
+Name: TMP_82 Function: swap
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_83 = CONVERT this to address
+[i]Type for TMP_83
+
+Name: TMP_83 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_84(uint256) = HIGH_LEVEL_CALL, dest:TMP_82(IERC20), function:balanceOf, arguments:['TMP_83']  
+[i]Type for TMP_84
+
+Name: TMP_84 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_84(uint256)
+[i]Type for _balance
+
+Name: _balance Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_85 = CONVERT _token0_1 to IERC20
+
+Name: _token0 Function: swap
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token0
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_85
+
+Name: TMP_85 Function: swap
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_86 = CONVERT _converter_1 to address
+
+Name: _converter Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+[i]Type for TMP_86
+
+Name: TMP_86 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_85', 'TMP_86', '_balance_1'] 
+TMP_88(uint256) = HIGH_LEVEL_CALL, dest:_converter_1(IConverter), function:convert, arguments:['_token0_1', '_token1_1', '_balance_1', '_expectedAmount_1']  
+[i]Type for TMP_88
+
+Name: TMP_88 Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_2(uint256) := TMP_88(uint256)
+[i]Type for _balance
+
+Name: _balance Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 
 
 
@@ -501,7 +900,7 @@ Global: 1 Address: 2
 Finding type for _strategy...
 address
 Global: 1 Address: 3
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_30', 'manager_24', 'manager_35', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_7(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -559,7 +958,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_11(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -603,7 +1002,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_11', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_12(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -722,6 +1121,227 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
 HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
+manager_7(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.checkToken(address)(_token_1)
+manager_8(IManager) := ϕ(['manager_33'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.notHalted()()
+manager_9(IManager) := ϕ(['manager_35'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.onlyHarvester()()
+manager_10(IManager) := ϕ(['manager_37'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
+[i]Type for TMP_91
+
+Name: TMP_91 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_11(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_92(None) = SOLIDITY_CALL require(bool,string)(TMP_91,!_strategy)
+[i]Type for TMP_92
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_93 = CONVERT this to address
+[i]Type for TMP_93
+
+Name: TMP_93 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_94(address) = HIGH_LEVEL_CALL, dest:manager_11(IManager), function:controllers, arguments:['TMP_93']  
+[i]Type for TMP_94
+
+Name: TMP_94 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_12(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_95 = CONVERT TMP_94 to IController
+
+Name: TMP_94 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Controller
+[i]Type for TMP_95
+
+Name: TMP_95 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+_controller_1(IController) := TMP_95(IController)
+[i]Type for _controller
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+TMP_96(bool) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:investEnabled, arguments:[]  
+[i]Type for TMP_96
+
+Name: TMP_96 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_97(uint256) = INTERNAL_CALL, Vault.available(address)(_token_1)
+[i]Type for TMP_97
+
+Name: TMP_97 Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_97(uint256)
+[i]Type for _balance
+
+Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_98 = CONVERT _token_1 to IERC20
+
+Name: _token Function: earn
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_98
+
+Name: TMP_98 Function: earn
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_99 = CONVERT _controller_1 to address
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+[i]Type for TMP_99
+
+Name: TMP_99 Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
+HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
 
 
 
@@ -753,7 +1373,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_0', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -854,7 +1474,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -953,7 +1573,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -1066,7 +1686,875 @@ LF: None
 Fields: 
 Finance Type: undef
 INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_123
+
+Name: TMP_123 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
+[i]Type for TMP_124
+
+Name: TMP_124 Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
+[i]Type for TMP_125
+
+Name: TMP_125 Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_4(uint256) := TMP_125(uint256)
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_128
+
+Name: TMP_128 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_129(bool) = TMP_128 <= totalDepositCap_13
+[i]Type for TMP_129
+
+Name: TMP_129 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
+[i]Type for TMP_130
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_token_1(address) := ϕ(['REF_50'])
+[i]Type for _token
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+_amount_1(uint256) := ϕ(['REF_51'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10'])
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.checkToken(address)(_token_1)
+MODIFIER_CALL, Vault.notHalted()()
+TMP_106(bool) = _amount_1 > 0
+[i]Type for TMP_106
+
+Name: TMP_106 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_107(None) = SOLIDITY_CALL require(bool,string)(TMP_106,!_amount)
+[i]Type for TMP_107
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_108(uint256) = INTERNAL_CALL, Vault.balance()()
+[i]Type for TMP_108
+
+Name: TMP_108 Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_108(uint256)
+[i]Type for _balance
+
+Name: _balance Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_109 = CONVERT _token_1 to IERC20
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_109
+
+Name: TMP_109 Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_110 = CONVERT this to address
+[i]Type for TMP_110
+
+Name: TMP_110 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_111(uint256) = HIGH_LEVEL_CALL, dest:TMP_109(IERC20), function:balanceOf, arguments:['TMP_110']  
+Handling balance function!
+[i]Type for TMP_111
+
+Name: TMP_111 Function: deposit
+Num: -2, -4
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6'])
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_before_1(uint256) := TMP_111(uint256)
+Error with _before in function deposit
+Error with: _before in function deposit
+[i]Type for _before
+
+Name: _before Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_112 = CONVERT _token_1 to IERC20
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_112
+
+Name: TMP_112 Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_113 = CONVERT this to address
+[i]Type for TMP_113
+
+Name: TMP_113 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address,address,uint256), arguments:['TMP_112', 'msg.sender', 'TMP_113', '_amount_1'] 
+TMP_115 = CONVERT _token_1 to IERC20
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_115
+
+Name: TMP_115 Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_116 = CONVERT this to address
+[i]Type for TMP_116
+
+Name: TMP_116 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_117(uint256) = HIGH_LEVEL_CALL, dest:TMP_115(IERC20), function:balanceOf, arguments:['TMP_116']  
+Handling balance function!
+[i]Type for TMP_117
+
+Name: TMP_117 Function: deposit
+Num: -3, -5
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7'])
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_118(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_117', '_before_1'] 
+[i]Type for TMP_118
+
+Name: TMP_118 Function: deposit
+Num: -3, -5
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_2(uint256) := TMP_118(uint256)
+Error with _amount in function deposit
+Error with: _amount in function deposit
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_119(bool) = _amount_2 > 0
+[i]Type for TMP_119
+
+Name: TMP_119 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
+[i]Type for TMP_120
+
+Name: TMP_120 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_3(uint256) := TMP_120(uint256)
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_121
+
+Name: TMP_121 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_122(bool) = TMP_121 > 0
+[i]Type for TMP_122
+
+Name: TMP_122 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_123
+
+Name: TMP_123 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
+[i]Type for TMP_124
+
+Name: TMP_124 Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
+[i]Type for TMP_125
+
+Name: TMP_125 Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_4(uint256) := TMP_125(uint256)
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_128
+
+Name: TMP_128 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_129(bool) = TMP_128 <= totalDepositCap_13
+[i]Type for TMP_129
+
+Name: TMP_129 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
+[i]Type for TMP_130
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_token_1(address) := ϕ(['REF_50'])
+[i]Type for _token
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+_amount_1(uint256) := ϕ(['REF_51'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10'])
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.checkToken(address)(_token_1)
+MODIFIER_CALL, Vault.notHalted()()
+TMP_106(bool) = _amount_1 > 0
+[i]Type for TMP_106
+
+Name: TMP_106 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_107(None) = SOLIDITY_CALL require(bool,string)(TMP_106,!_amount)
+[i]Type for TMP_107
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_108(uint256) = INTERNAL_CALL, Vault.balance()()
+[i]Type for TMP_108
+
+Name: TMP_108 Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_108(uint256)
+[i]Type for _balance
+
+Name: _balance Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_109 = CONVERT _token_1 to IERC20
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_109
+
+Name: TMP_109 Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_110 = CONVERT this to address
+[i]Type for TMP_110
+
+Name: TMP_110 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_111(uint256) = HIGH_LEVEL_CALL, dest:TMP_109(IERC20), function:balanceOf, arguments:['TMP_110']  
+Handling balance function!
+[i]Type for TMP_111
+
+Name: TMP_111 Function: deposit
+Num: -2, -4, -6
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6'])
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_before_1(uint256) := TMP_111(uint256)
+[i]Type for _before
+
+Name: _before Function: deposit
+Num: -2, -4, -6
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_112 = CONVERT _token_1 to IERC20
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_112
+
+Name: TMP_112 Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_113 = CONVERT this to address
+[i]Type for TMP_113
+
+Name: TMP_113 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address,address,uint256), arguments:['TMP_112', 'msg.sender', 'TMP_113', '_amount_1'] 
+TMP_115 = CONVERT _token_1 to IERC20
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_115
+
+Name: TMP_115 Function: deposit
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_116 = CONVERT this to address
+[i]Type for TMP_116
+
+Name: TMP_116 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_117(uint256) = HIGH_LEVEL_CALL, dest:TMP_115(IERC20), function:balanceOf, arguments:['TMP_116']  
+Handling balance function!
+[i]Type for TMP_117
+
+Name: TMP_117 Function: deposit
+Num: -3, -5, -7
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7'])
+[i]Type for totalDepositCap
+
+Name: totalDepositCap Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_118(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_117', '_before_1'] 
+[i]Type for TMP_118
+
+Name: TMP_118 Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_2(uint256) := TMP_118(uint256)
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_119(bool) = _amount_2 > 0
+[i]Type for TMP_119
+
+Name: TMP_119 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
+[i]Type for TMP_120
+
+Name: TMP_120 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_3(uint256) := TMP_120(uint256)
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_121
+
+Name: TMP_121 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_122(bool) = TMP_121 > 0
+[i]Type for TMP_122
+
+Name: TMP_122 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
 [i]Type for _amount
 
 Name: _amount Function: deposit
@@ -1338,6 +2826,336 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
+REF_46 -> LENGTH _tokens_1 (-> [])
+[i]Type for REF_46
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_47 -> LENGTH _amounts_1 (-> [])
+[i]Type for REF_47
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_134(bool) = REF_46 == REF_47
+[i]Type for TMP_134
+
+Name: TMP_134 Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_135(None) = SOLIDITY_CALL require(bool,string)(TMP_134,!length)
+[i]Type for TMP_135
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := ϕ(['_shares_2', '_shares_0'])
+[i]Type for _shares
+
+Name: _shares Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+i_1(uint8) := ϕ(['i_2', 'i_0'])
+[i]Type for i
+
+Name: i Function: depositMultiple
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+REF_48 -> LENGTH _amounts_1 (-> [])
+[i]Type for REF_48
+
+Name: REF_48 Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_136(bool) = i_1 < REF_48
+[i]Type for TMP_136
+
+Name: TMP_136 Function: depositMultiple
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_50(address) -> _tokens_1 (-> [])[i_1]
+[i]Type for REF_50
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_51(uint256) -> _amounts_1 (-> [])[i_1]
+[i]Type for REF_51
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_137(uint256) = INTERNAL_CALL, Vault.deposit(address,uint256)(REF_50,REF_51)
+[i]Type for TMP_137
+
+Name: TMP_137 Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_138(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_shares_1', 'TMP_137'] 
+[i]Type for TMP_138
+
+Name: TMP_138 Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_2(uint256) := TMP_138(uint256)
+[i]Type for _shares
+
+Name: _shares Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_139(uint8) := i_1(uint8)
+[i]Type for TMP_139
+
+Name: TMP_139 Function: depositMultiple
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_2(uint8) = i_1 + 1
+[i]Type for i
+
+Name: i Function: depositMultiple
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+REF_46 -> LENGTH _tokens_1 (-> [])
+[i]Type for REF_46
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_47 -> LENGTH _amounts_1 (-> [])
+[i]Type for REF_47
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_134(bool) = REF_46 == REF_47
+[i]Type for TMP_134
+
+Name: TMP_134 Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_135(None) = SOLIDITY_CALL require(bool,string)(TMP_134,!length)
+[i]Type for TMP_135
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := ϕ(['_shares_2', '_shares_0'])
+[i]Type for _shares
+
+Name: _shares Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+i_1(uint8) := ϕ(['i_2', 'i_0'])
+[i]Type for i
+
+Name: i Function: depositMultiple
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+REF_48 -> LENGTH _amounts_1 (-> [])
+[i]Type for REF_48
+
+Name: REF_48 Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_136(bool) = i_1 < REF_48
+[i]Type for TMP_136
+
+Name: TMP_136 Function: depositMultiple
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_50(address) -> _tokens_1 (-> [])[i_1]
+[i]Type for REF_50
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_51(uint256) -> _amounts_1 (-> [])[i_1]
+[i]Type for REF_51
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_137(uint256) = INTERNAL_CALL, Vault.deposit(address,uint256)(REF_50,REF_51)
+[i]Type for TMP_137
+
+Name: TMP_137 Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_138(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_shares_1', 'TMP_137'] 
+[i]Type for TMP_138
+
+Name: TMP_138 Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_2(uint256) := TMP_138(uint256)
+[i]Type for _shares
+
+Name: _shares Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_139(uint8) := i_1(uint8)
+[i]Type for TMP_139
+
+Name: TMP_139 Function: depositMultiple
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_2(uint8) = i_1 + 1
+[i]Type for i
+
+Name: i Function: depositMultiple
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
 
 
 
@@ -1369,7 +3187,7 @@ Norm: u
 LF: _output
 Fields: 
 Finance Type: undef
-MAX_4(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_0', 'MAX_9', 'MAX_11'])
+MAX_4(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -1380,7 +3198,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_13(IManager) := ϕ(['manager_37', 'manager_0', 'manager_30', 'manager_24', 'manager_35', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_13(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1481,7 +3299,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_9(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_9', 'MAX_11', 'MAX_8'])
+MAX_9(uint256) := ϕ(['MAX_11', 'MAX_8', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -1492,7 +3310,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_18(IManager) := ϕ(['manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_17', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_18(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_17', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1520,17 +3338,6 @@ TMP_146(bool) = _withdrawalProtectionFee_1 > 0
 Name: TMP_146 Function: withdraw
 Num: -1
 Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
-[i]Type for _amount
-
-Name: _amount Function: withdraw
-Num: 
-Den: 
 Address: u
 Norm: u
 LF: None
@@ -1566,6 +3373,39 @@ Num:
 Den: 
 Address: None
 Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_149(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_1', '_withdrawalProtection_1'] 
+[i]Type for TMP_149
+
+Name: TMP_149 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_2(uint256) := TMP_149(uint256)
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: u
+Norm: u
 LF: None
 Fields: 
 Finance Type: undef
@@ -1606,14 +3446,14 @@ Handling balance function!
 [i]Type for TMP_152
 
 Name: TMP_152 Function: withdraw
-Num: -4
+Num: -8
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_19(IManager) := ϕ(['manager_18', 'manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_19(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_18', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1628,7 +3468,7 @@ _balance_1(uint256) := TMP_152(uint256)
 [i]Type for _balance
 
 Name: _balance Function: withdraw
-Num: -4
+Num: -8
 Den: 
 Address: u
 Norm: u
@@ -1639,7 +3479,7 @@ TMP_153(bool) = _balance_1 < _amount_3
 [i]Type for TMP_153
 
 Name: TMP_153 Function: withdraw
-Num: -4
+Num: -8
 Den: 
 Address: u
 Norm: u
@@ -1668,7 +3508,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_20(IManager) := ϕ(['manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_20(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1711,58 +3551,12 @@ Norm: 0
 LF: Controller
 Fields: 
 Finance Type: undef
-TMP_166 = CONVERT _output_1 to IERC20
-
-Name: _output Function: withdraw
-Num: 
-Den: 
-Address: 2
-Norm: u
-LF: _output
-Fields: 
-Finance Type: undef
-ERC20
-[i]Type for TMP_166
-
-Name: TMP_166 Function: withdraw
-Num: 
-Den: 
-Address: 2
-Norm: u
-LF: ERC20
-Fields: 
-Finance Type: undef
-LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_166', 'msg.sender', '_amount_5'] 
-TMP_149(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_1', '_withdrawalProtection_1'] 
-[i]Type for TMP_149
-
-Name: TMP_149 Function: withdraw
-Num: 
-Den: 
-Address: None
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_2(uint256) := TMP_149(uint256)
-[i]Type for _amount
-
-Name: _amount Function: withdraw
-Num: 
-Den: 
-Address: None
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
 TMP_157(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_3', '_balance_1'] 
-Error with TMP_157 in function withdraw
-Error with: TMP_157 in function withdraw
 [i]Type for TMP_157
 
 Name: TMP_157 Function: withdraw
-Num: -1
-Den: -1
+Num: -8
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -1772,8 +3566,8 @@ _toWithdraw_1(uint256) := TMP_157(uint256)
 [i]Type for _toWithdraw
 
 Name: _toWithdraw Function: withdraw
-Num: -1
-Den: -1
+Num: -8
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -1801,6 +3595,28 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_166 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_166
+
+Name: TMP_166 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_166', 'msg.sender', '_amount_5'] 
 HIGH_LEVEL_CALL, dest:_controller_1(IController), function:withdraw, arguments:['_output_1', '_toWithdraw_1']  
 TMP_161 = CONVERT _output_1 to IERC20
 
@@ -1839,7 +3655,7 @@ Handling balance function!
 [i]Type for TMP_163
 
 Name: TMP_163 Function: withdraw
-Num: -5
+Num: -9
 Den: 
 Address: u
 Norm: u
@@ -1850,7 +3666,7 @@ _after_1(uint256) := TMP_163(uint256)
 [i]Type for _after
 
 Name: _after Function: withdraw
-Num: -5
+Num: -9
 Den: 
 Address: u
 Norm: u
@@ -1907,8 +3723,1144 @@ _amount_4(uint256) := _after_1(uint256)
 [i]Type for _amount
 
 Name: _amount Function: withdraw
-Num: -5
+Num: -9
 Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := ϕ(['TMP_170'])
+[i]Type for _shares
+
+Name: _shares Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_output_1(address) := ϕ(['_output_1'])
+[i]Type for _output
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+MAX_4(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_13(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.checkToken(address)(_output_1)
+manager_14(IManager) := ϕ(['manager_33'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_140(uint256) = INTERNAL_CALL, Vault.balance()()
+[i]Type for TMP_140
+
+Name: TMP_140 Function: withdraw
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_15(IManager) := ϕ(['manager_24'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_141(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['TMP_140', '_shares_1'] 
+[i]Type for TMP_141
+
+Name: TMP_141 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_142(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_142
+
+Name: TMP_142 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_143(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_141', 'TMP_142'] 
+[i]Type for TMP_143
+
+Name: TMP_143 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_1(uint256) := TMP_143(uint256)
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._burn(address,uint256)(msg.sender,_shares_1)
+TMP_145(uint256) = HIGH_LEVEL_CALL, dest:manager_17(IManager), function:withdrawalProtectionFee, arguments:[]  
+[i]Type for TMP_145
+
+Name: TMP_145 Function: withdraw
+Num: -1
+Den: -1
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MAX_9(uint256) := ϕ(['MAX_11', 'MAX_8', 'MAX_13', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_18(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_17', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+_withdrawalProtectionFee_1(uint256) := TMP_145(uint256)
+[i]Type for _withdrawalProtectionFee
+
+Name: _withdrawalProtectionFee Function: withdraw
+Num: -1
+Den: -1
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_146(bool) = _withdrawalProtectionFee_1 > 0
+[i]Type for TMP_146
+
+Name: TMP_146 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_147(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_1', '_withdrawalProtectionFee_1'] 
+[i]Type for TMP_147
+
+Name: TMP_147 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_148(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_147', 'MAX_9'] 
+[i]Type for TMP_148
+
+Name: TMP_148 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_withdrawalProtection_1(uint256) := TMP_148(uint256)
+[i]Type for _withdrawalProtection
+
+Name: _withdrawalProtection Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_149(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_1', '_withdrawalProtection_1'] 
+[i]Type for TMP_149
+
+Name: TMP_149 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_2(uint256) := TMP_149(uint256)
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_150 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_150
+
+Name: TMP_150 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_151 = CONVERT this to address
+[i]Type for TMP_151
+
+Name: TMP_151 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_152(uint256) = HIGH_LEVEL_CALL, dest:TMP_150(IERC20), function:balanceOf, arguments:['TMP_151']  
+Handling balance function!
+[i]Type for TMP_152
+
+Name: TMP_152 Function: withdraw
+Num: -8, -10
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_19(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_18', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_152(uint256)
+Error with _balance in function withdraw
+Error with: _balance in function withdraw
+[i]Type for _balance
+
+Name: _balance Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_153(bool) = _balance_1 < _amount_3
+[i]Type for TMP_153
+
+Name: TMP_153 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_154 = CONVERT this to address
+[i]Type for TMP_154
+
+Name: TMP_154 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_155(address) = HIGH_LEVEL_CALL, dest:manager_19(IManager), function:controllers, arguments:['TMP_154']  
+[i]Type for TMP_155
+
+Name: TMP_155 Function: withdraw
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+manager_20(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_156 = CONVERT TMP_155 to IController
+
+Name: TMP_155 Function: withdraw
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+Controller
+[i]Type for TMP_156
+
+Name: TMP_156 Function: withdraw
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: Controller
+Fields: 
+Finance Type: undef
+_controller_1(IController) := TMP_156(IController)
+[i]Type for _controller
+
+Name: _controller Function: withdraw
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: Controller
+Fields: 
+Finance Type: undef
+TMP_157(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_3', '_balance_1'] 
+Error with TMP_157 in function withdraw
+Error with: TMP_157 in function withdraw
+[i]Type for TMP_157
+
+Name: TMP_157 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_toWithdraw_1(uint256) := TMP_157(uint256)
+[i]Type for _toWithdraw
+
+Name: _toWithdraw Function: withdraw
+Num: -8
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_158(uint256) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:strategies, arguments:[]  
+[i]Type for TMP_158
+
+Name: TMP_158 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_159(bool) = TMP_158 > 0
+[i]Type for TMP_159
+
+Name: TMP_159 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_166 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_166
+
+Name: TMP_166 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_166', 'msg.sender', '_amount_5'] 
+HIGH_LEVEL_CALL, dest:_controller_1(IController), function:withdraw, arguments:['_output_1', '_toWithdraw_1']  
+TMP_161 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_161
+
+Name: TMP_161 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_162 = CONVERT this to address
+[i]Type for TMP_162
+
+Name: TMP_162 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_163(uint256) = HIGH_LEVEL_CALL, dest:TMP_161(IERC20), function:balanceOf, arguments:['TMP_162']  
+Handling balance function!
+[i]Type for TMP_163
+
+Name: TMP_163 Function: withdraw
+Num: -9, -11
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_after_1(uint256) := TMP_163(uint256)
+Error with _after in function withdraw
+Error with: _after in function withdraw
+[i]Type for _after
+
+Name: _after Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_164(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_after_1', '_balance_1'] 
+[i]Type for TMP_164
+
+Name: TMP_164 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_diff_1(uint256) := TMP_164(uint256)
+[i]Type for _diff
+
+Name: _diff Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_165(bool) = _diff_1 < _toWithdraw_1
+[i]Type for TMP_165
+
+Name: TMP_165 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_5(uint256) := ϕ(['_amount_1', '_amount_4'])
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_4(uint256) := _after_1(uint256)
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: -9
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := ϕ(['TMP_170'])
+[i]Type for _shares
+
+Name: _shares Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_output_1(address) := ϕ(['_output_1'])
+[i]Type for _output
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+MAX_4(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_13(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+MODIFIER_CALL, Vault.checkToken(address)(_output_1)
+manager_14(IManager) := ϕ(['manager_33'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_140(uint256) = INTERNAL_CALL, Vault.balance()()
+[i]Type for TMP_140
+
+Name: TMP_140 Function: withdraw
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_15(IManager) := ϕ(['manager_24'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_141(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['TMP_140', '_shares_1'] 
+[i]Type for TMP_141
+
+Name: TMP_141 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_142(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_142
+
+Name: TMP_142 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_143(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_141', 'TMP_142'] 
+[i]Type for TMP_143
+
+Name: TMP_143 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_1(uint256) := TMP_143(uint256)
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._burn(address,uint256)(msg.sender,_shares_1)
+TMP_145(uint256) = HIGH_LEVEL_CALL, dest:manager_17(IManager), function:withdrawalProtectionFee, arguments:[]  
+[i]Type for TMP_145
+
+Name: TMP_145 Function: withdraw
+Num: -1
+Den: -1
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MAX_9(uint256) := ϕ(['MAX_11', 'MAX_8', 'MAX_13', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_18(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_17', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+_withdrawalProtectionFee_1(uint256) := TMP_145(uint256)
+[i]Type for _withdrawalProtectionFee
+
+Name: _withdrawalProtectionFee Function: withdraw
+Num: -1
+Den: -1
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_146(bool) = _withdrawalProtectionFee_1 > 0
+[i]Type for TMP_146
+
+Name: TMP_146 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_147(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_1', '_withdrawalProtectionFee_1'] 
+[i]Type for TMP_147
+
+Name: TMP_147 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_148(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_147', 'MAX_9'] 
+[i]Type for TMP_148
+
+Name: TMP_148 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_withdrawalProtection_1(uint256) := TMP_148(uint256)
+[i]Type for _withdrawalProtection
+
+Name: _withdrawalProtection Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_149(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_1', '_withdrawalProtection_1'] 
+[i]Type for TMP_149
+
+Name: TMP_149 Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_2(uint256) := TMP_149(uint256)
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_150 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_150
+
+Name: TMP_150 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_151 = CONVERT this to address
+[i]Type for TMP_151
+
+Name: TMP_151 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_152(uint256) = HIGH_LEVEL_CALL, dest:TMP_150(IERC20), function:balanceOf, arguments:['TMP_151']  
+Handling balance function!
+[i]Type for TMP_152
+
+Name: TMP_152 Function: withdraw
+Num: -8, -10, -12
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_19(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_18', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := TMP_152(uint256)
+[i]Type for _balance
+
+Name: _balance Function: withdraw
+Num: -8, -10, -12
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_153(bool) = _balance_1 < _amount_3
+Error with TMP_153 in function withdraw
+Error with: TMP_153 in function withdraw
+[i]Type for TMP_153
+
+Name: TMP_153 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_154 = CONVERT this to address
+[i]Type for TMP_154
+
+Name: TMP_154 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_155(address) = HIGH_LEVEL_CALL, dest:manager_19(IManager), function:controllers, arguments:['TMP_154']  
+[i]Type for TMP_155
+
+Name: TMP_155 Function: withdraw
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+manager_20(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_156 = CONVERT TMP_155 to IController
+
+Name: TMP_155 Function: withdraw
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+Controller
+[i]Type for TMP_156
+
+Name: TMP_156 Function: withdraw
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: Controller
+Fields: 
+Finance Type: undef
+_controller_1(IController) := TMP_156(IController)
+[i]Type for _controller
+
+Name: _controller Function: withdraw
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: Controller
+Fields: 
+Finance Type: undef
+TMP_157(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_3', '_balance_1'] 
+[i]Type for TMP_157
+
+Name: TMP_157 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_toWithdraw_1(uint256) := TMP_157(uint256)
+[i]Type for _toWithdraw
+
+Name: _toWithdraw Function: withdraw
+Num: -8
+Den: 
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_158(uint256) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:strategies, arguments:[]  
+[i]Type for TMP_158
+
+Name: TMP_158 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_159(bool) = TMP_158 > 0
+[i]Type for TMP_159
+
+Name: TMP_159 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_166 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_166
+
+Name: TMP_166 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_166', 'msg.sender', '_amount_5'] 
+HIGH_LEVEL_CALL, dest:_controller_1(IController), function:withdraw, arguments:['_output_1', '_toWithdraw_1']  
+TMP_161 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_161
+
+Name: TMP_161 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_162 = CONVERT this to address
+[i]Type for TMP_162
+
+Name: TMP_162 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_163(uint256) = HIGH_LEVEL_CALL, dest:TMP_161(IERC20), function:balanceOf, arguments:['TMP_162']  
+Handling balance function!
+[i]Type for TMP_163
+
+Name: TMP_163 Function: withdraw
+Num: -9, -11, -13
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_after_1(uint256) := TMP_163(uint256)
+[i]Type for _after
+
+Name: _after Function: withdraw
+Num: -9, -11, -13
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_164(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_after_1', '_balance_1'] 
+[i]Type for TMP_164
+
+Name: TMP_164 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_diff_1(uint256) := TMP_164(uint256)
+[i]Type for _diff
+
+Name: _diff Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_165(bool) = _diff_1 < _toWithdraw_1
+[i]Type for TMP_165
+
+Name: TMP_165 Function: withdraw
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_5(uint256) := ϕ(['_amount_1', '_amount_4'])
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_4(uint256) := _after_1(uint256)
+Error with _amount in function withdraw
+Error with: _amount in function withdraw
+[i]Type for _amount
+
+Name: _amount Function: withdraw
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
@@ -1921,6 +4873,18 @@ withdrawAll
 Finding type for _output...
 address
 Global: 1 Address: 2
+TMP_170(uint256) = INTERNAL_CALL, ERC20.balanceOf(address)(msg.sender)
+[i]Type for TMP_170
+
+Name: TMP_170 Function: withdrawAll
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, Vault.withdraw(uint256,address)(TMP_170,_output_1)
 TMP_170(uint256) = INTERNAL_CALL, ERC20.balanceOf(address)(msg.sender)
 [i]Type for TMP_170
 
@@ -1951,7 +4915,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-MAX_10(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_0', 'MAX_9', 'MAX_11'])
+MAX_10(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -1962,7 +4926,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-min_3(uint256) := ϕ(['min_0', 'min_2', 'min_4', 'min_1'])
+min_3(uint256) := ϕ(['min_1', 'min_2', 'min_0', 'min_4'])
 [i]Type for min
 
 Name: min Function: global
@@ -2010,14 +4974,14 @@ Handling balance function!
 [i]Type for TMP_174
 
 Name: TMP_174 Function: available
-Num: -6
+Num: -14
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_11(uint256) := ϕ(['MAX_13', 'MAX_10', 'MAX_3', 'MAX_9', 'MAX_11'])
+MAX_11(uint256) := ϕ(['MAX_11', 'MAX_13', 'MAX_10', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -2028,7 +4992,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-min_4(uint256) := ϕ(['min_3', 'min_2', 'min_4', 'min_1'])
+min_4(uint256) := ϕ(['min_1', 'min_3', 'min_2', 'min_4'])
 [i]Type for min
 
 Name: min Function: global
@@ -2043,7 +5007,7 @@ TMP_175(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,ui
 [i]Type for TMP_175
 
 Name: TMP_175 Function: available
-Num: -6
+Num: -14
 Den: 
 Address: u
 Norm: u
@@ -2054,7 +5018,131 @@ TMP_176(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,ui
 [i]Type for TMP_176
 
 Name: TMP_176 Function: available
-Num: -6
+Num: -14
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+RETURN TMP_176
+_token_1(address) := ϕ(['_token_1'])
+[i]Type for _token
+
+Name: _token Function: available
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+MAX_10(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+min_3(uint256) := ϕ(['min_1', 'min_2', 'min_0', 'min_4'])
+[i]Type for min
+
+Name: min Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_172 = CONVERT _token_1 to IERC20
+
+Name: _token Function: available
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_172
+
+Name: TMP_172 Function: available
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_173 = CONVERT this to address
+[i]Type for TMP_173
+
+Name: TMP_173 Function: available
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_174(uint256) = HIGH_LEVEL_CALL, dest:TMP_172(IERC20), function:balanceOf, arguments:['TMP_173']  
+Handling balance function!
+[i]Type for TMP_174
+
+Name: TMP_174 Function: available
+Num: -14, -15
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MAX_11(uint256) := ϕ(['MAX_11', 'MAX_13', 'MAX_10', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+min_4(uint256) := ϕ(['min_1', 'min_3', 'min_2', 'min_4'])
+[i]Type for min
+
+Name: min Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_175(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['TMP_174', 'min_4'] 
+Error with TMP_175 in function available
+Error with: TMP_175 in function available
+[i]Type for TMP_175
+
+Name: TMP_175 Function: available
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_176(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_175', 'MAX_11'] 
+[i]Type for TMP_176
+
+Name: TMP_176 Function: available
+Num: -14
 Den: 
 Address: u
 Norm: u
@@ -2066,7 +5154,7 @@ RETURN TMP_176
 
 
 balance
-manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_30', 'manager_24', 'manager_35', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_21(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2121,7 +5209,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_22', 'manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_23(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2158,14 +5246,14 @@ Handling balance function!
 [i]Type for TMP_181
 
 Name: TMP_181 Function: balance
-Num: -7
+Num: -16
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_23', 'manager_1'])
+manager_24(IManager) := ϕ(['manager_28', 'manager_23', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2180,8 +5268,132 @@ TMP_182(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,ui
 [i]Type for TMP_182
 
 Name: TMP_182 Function: balance
-Num: -7
+Num: -16
 Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+RETURN TMP_182
+manager_21(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_177(uint256) = INTERNAL_CALL, Vault.balanceOfThis()()
+[i]Type for TMP_177
+
+Name: TMP_177 Function: balance
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_22(IManager) := ϕ(['manager_26'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_178 = CONVERT this to address
+[i]Type for TMP_178
+
+Name: TMP_178 Function: balance
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_179(address) = HIGH_LEVEL_CALL, dest:manager_22(IManager), function:controllers, arguments:['TMP_178']  
+[i]Type for TMP_179
+
+Name: TMP_179 Function: balance
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+manager_23(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_180 = CONVERT TMP_179 to IController
+
+Name: TMP_179 Function: balance
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+Controller
+[i]Type for TMP_180
+
+Name: TMP_180 Function: balance
+Num: -1
+Den: -1
+Address: CONTROLLER
+Norm: 0
+LF: Controller
+Fields: 
+Finance Type: undef
+TMP_181(uint256) = HIGH_LEVEL_CALL, dest:TMP_180(IController), function:balanceOf, arguments:[]  
+Handling balance function!
+[i]Type for TMP_181
+
+Name: TMP_181 Function: balance
+Num: -16, -17
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_24(IManager) := ϕ(['manager_28', 'manager_23', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_182(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['TMP_177', 'TMP_181'] 
+Error with TMP_182 in function balance
+Error with: TMP_182 in function balance
+[i]Type for TMP_182
+
+Name: TMP_182 Function: balance
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
@@ -2192,7 +5404,7 @@ RETURN TMP_182
 
 
 balanceOfThis
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_30', 'manager_24', 'manager_35', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_25(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2225,7 +5437,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_26(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2258,7 +5470,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-i_1(uint8) := ϕ(['i_0', 'i_2'])
+i_1(uint8) := ϕ(['i_2', 'i_0'])
 [i]Type for i
 
 Name: i Function: balanceOfThis
@@ -2350,7 +5562,7 @@ Handling balance function!
 [i]Type for TMP_188
 
 Name: TMP_188 Function: balanceOfThis
-Num: -8
+Num: -18
 Den: 
 Address: u
 Norm: u
@@ -2413,6 +5625,448 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
+manager_25(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_183 = CONVERT this to address
+[i]Type for TMP_183
+
+Name: TMP_183 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_184(address[]) = HIGH_LEVEL_CALL, dest:manager_25(IManager), function:getTokens, arguments:['TMP_183']  
+[i]Type for TMP_184
+
+Name: TMP_184 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+manager_26(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+_tokens_1(address[]) := TMP_184(address[])
+[i]Type for _tokens
+
+Name: _tokens Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+[i]Type for _balance
+
+Name: _balance Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+i_1(uint8) := ϕ(['i_2', 'i_0'])
+[i]Type for i
+
+Name: i Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+REF_73 -> LENGTH _tokens_1
+[i]Type for REF_73
+
+Name: REF_73 Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_185(bool) = i_1 < REF_73
+[i]Type for TMP_185
+
+Name: TMP_185 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_74(address) -> _tokens_1[i_1]
+[i]Type for REF_74
+
+Name: _tokens Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_token_1(address) := REF_74(address)
+[i]Type for _token
+
+Name: _token Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_186 = CONVERT _token_1 to IERC20
+
+Name: _token Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_186
+
+Name: TMP_186 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_187 = CONVERT this to address
+[i]Type for TMP_187
+
+Name: TMP_187 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_188(uint256) = HIGH_LEVEL_CALL, dest:TMP_186(IERC20), function:balanceOf, arguments:['TMP_187']  
+Handling balance function!
+[i]Type for TMP_188
+
+Name: TMP_188 Function: balanceOfThis
+Num: -18, -19
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_189(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,TMP_188)
+[i]Type for TMP_189
+
+Name: TMP_189 Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_190(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_balance_1', 'TMP_189'] 
+[i]Type for TMP_190
+
+Name: TMP_190 Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_2(uint256) := TMP_190(uint256)
+[i]Type for _balance
+
+Name: _balance Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+RETURN _balance_1
+TMP_191(uint8) := i_1(uint8)
+[i]Type for TMP_191
+
+Name: TMP_191 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_2(uint8) = i_1 + 1
+[i]Type for i
+
+Name: i Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+manager_25(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_183 = CONVERT this to address
+[i]Type for TMP_183
+
+Name: TMP_183 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_184(address[]) = HIGH_LEVEL_CALL, dest:manager_25(IManager), function:getTokens, arguments:['TMP_183']  
+[i]Type for TMP_184
+
+Name: TMP_184 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+manager_26(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+_tokens_1(address[]) := TMP_184(address[])
+[i]Type for _tokens
+
+Name: _tokens Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+[i]Type for _balance
+
+Name: _balance Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+i_1(uint8) := ϕ(['i_2', 'i_0'])
+[i]Type for i
+
+Name: i Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+REF_73 -> LENGTH _tokens_1
+[i]Type for REF_73
+
+Name: REF_73 Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_185(bool) = i_1 < REF_73
+[i]Type for TMP_185
+
+Name: TMP_185 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_74(address) -> _tokens_1[i_1]
+[i]Type for REF_74
+
+Name: _tokens Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_token_1(address) := REF_74(address)
+[i]Type for _token
+
+Name: _token Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_186 = CONVERT _token_1 to IERC20
+
+Name: _token Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_186
+
+Name: TMP_186 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: Token
+Norm: 0
+LF: ERC20
+Fields: 
+Finance Type: undef
+TMP_187 = CONVERT this to address
+[i]Type for TMP_187
+
+Name: TMP_187 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_188(uint256) = HIGH_LEVEL_CALL, dest:TMP_186(IERC20), function:balanceOf, arguments:['TMP_187']  
+Handling balance function!
+[i]Type for TMP_188
+
+Name: TMP_188 Function: balanceOfThis
+Num: -18, -19, -20
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_189(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,TMP_188)
+[i]Type for TMP_189
+
+Name: TMP_189 Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_190(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_balance_1', 'TMP_189'] 
+[i]Type for TMP_190
+
+Name: TMP_190 Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_2(uint256) := TMP_190(uint256)
+[i]Type for _balance
+
+Name: _balance Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+RETURN _balance_1
+TMP_191(uint8) := i_1(uint8)
+[i]Type for TMP_191
+
+Name: TMP_191 Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_2(uint8) = i_1 + 1
+[i]Type for i
+
+Name: i Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
 
 
 
@@ -2439,18 +6093,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_198(uint256) = INTERNAL_CALL, Vault.balance()()
-[i]Type for TMP_198
-
-Name: TMP_198 Function: getPricePerFullShare
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-RETURN TMP_198
 TMP_194(uint256) = INTERNAL_CALL, Vault.balance()()
 [i]Type for TMP_194
 
@@ -2496,11 +6138,102 @@ LF: None
 Fields: 
 Finance Type: undef
 RETURN TMP_197
+TMP_198(uint256) = INTERNAL_CALL, Vault.balance()()
+[i]Type for TMP_198
+
+Name: TMP_198 Function: getPricePerFullShare
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+RETURN TMP_198
+TMP_192(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_192
+
+Name: TMP_192 Function: getPricePerFullShare
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_193(bool) = TMP_192 > 0
+[i]Type for TMP_193
+
+Name: TMP_193 Function: getPricePerFullShare
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_194(uint256) = INTERNAL_CALL, Vault.balance()()
+[i]Type for TMP_194
+
+Name: TMP_194 Function: getPricePerFullShare
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_195(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['TMP_194', '1000000000000000000'] 
+[i]Type for TMP_195
+
+Name: TMP_195 Function: getPricePerFullShare
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Fields: 
+Finance Type: undef
+TMP_196(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_196
+
+Name: TMP_196 Function: getPricePerFullShare
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_197(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_195', 'TMP_196'] 
+[i]Type for TMP_197
+
+Name: TMP_197 Function: getPricePerFullShare
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Fields: 
+Finance Type: undef
+RETURN TMP_197
+TMP_198(uint256) = INTERNAL_CALL, Vault.balance()()
+[i]Type for TMP_198
+
+Name: TMP_198 Function: getPricePerFullShare
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+RETURN TMP_198
 
 
 
 getTokens
-manager_27(IManager) := ϕ(['manager_37', 'manager_0', 'manager_30', 'manager_24', 'manager_35', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_27(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2533,7 +6266,52 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_28(IManager) := ϕ(['manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_27', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_28(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_27', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+RETURN TMP_200
+manager_27(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_199 = CONVERT this to address
+[i]Type for TMP_199
+
+Name: TMP_199 Function: getTokens
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Vault
+Fields: 
+Finance Type: undef
+TMP_200(address[]) = HIGH_LEVEL_CALL, dest:manager_27(IManager), function:getTokens, arguments:['TMP_199']  
+[i]Type for TMP_200
+
+Name: TMP_200 Function: getTokens
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_28(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_27', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2551,7 +6329,7 @@ RETURN TMP_200
 withdrawFee
 Finding type for _amount...
 uint256
-MAX_12(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_0', 'MAX_9', 'MAX_11'])
+MAX_12(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -2562,7 +6340,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_29(IManager) := ϕ(['manager_37', 'manager_0', 'manager_30', 'manager_24', 'manager_35', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1'])
+manager_29(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2584,7 +6362,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_13(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_9', 'MAX_12', 'MAX_11'])
+MAX_13(uint256) := ϕ(['MAX_12', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -2595,7 +6373,85 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_30(IManager) := ϕ(['manager_37', 'manager_35', 'manager_30', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_1', 'manager_29'])
+manager_30(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_29', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_202(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['TMP_201', '_amount_1'] 
+[i]Type for TMP_202
+
+Name: TMP_202 Function: withdrawFee
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_203(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_202', 'MAX_13'] 
+[i]Type for TMP_203
+
+Name: TMP_203 Function: withdrawFee
+Num: 
+Den: 
+Address: None
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+RETURN TMP_203
+MAX_12(uint256) := ϕ(['MAX_11', 'MAX_0', 'MAX_13', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_29(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
+[i]Type for manager
+
+Name: manager Function: global
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
+TMP_201(uint256) = HIGH_LEVEL_CALL, dest:manager_29(IManager), function:withdrawalProtectionFee, arguments:[]  
+[i]Type for TMP_201
+
+Name: TMP_201 Function: withdrawFee
+Num: -1
+Den: -1
+Address: None
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MAX_13(uint256) := ϕ(['MAX_12', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
+[i]Type for MAX
+
+Name: MAX Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+manager_30(IManager) := ϕ(['manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_29', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2637,7 +6493,7 @@ _normalizeDecimals
 
 
 slitherConstructorConstantVariables
-Function count: 27
+Function count: 33
 Executing Group 7
 [*] Tested 3 warnings for yAxis
 Group 7 complete
