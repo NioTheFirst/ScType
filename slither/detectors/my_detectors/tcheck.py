@@ -279,25 +279,33 @@ def add_param_cache(function, new_param_cache):
         dif_cur_param = False
         for cur_param in cur_param_cache:
             #compare cur_param with new_param_cache[paramno]
-            seen_n = []
-            seen_d = []
+            seen_n = {}
+            seen_d = {}
             seen_norm = False
             seen_ftype = False
             seen_address = False
-            ##print(f"cur_param: {cur_param}")
-            for i in range(maxTokens):
-                seen_n.append(0)
-                seen_d.append(0)   
             #compare numerators
             for num in cur_param[0]:
-                seen_n[num]+=1
+                if(num in seen_n):
+                    seen_n[num]+=1
+                else:
+                    seen_n[num] = 1
             for num in new_param_cache[paramno][0]:
-                seen_n[num]-=1
+                if(num in seen_n):
+                    seen_n[num]-=1
+                else:
+                    seen_n[num] = -1
             #compare denominators
             for num in cur_param[1]:
-                seen_d[num]+=1
+                if(num in seen_d):
+                    seen_d[num]+=1
+                else:
+                    seen_d[num] = 1
             for num in new_param_cache[paramno][1]:
-                seen_d[num]-=1
+                if(num in seen_d):
+                    seen_d[num]-=1
+                else:
+                    seen_d[num] = -1
             #compare norms
             if(new_param_cache[paramno][2] != cur_param[2]):
                 seen_norm = True
@@ -308,8 +316,15 @@ def add_param_cache(function, new_param_cache):
             #print(cur_param)
             if(new_param_cache[paramno][6] != cur_param[6]):
                 seen_address = True
-            for i in range(maxTokens):
-                if(seen_ftype or seen_norm or seen_address or seen_n[i] != 0 or seen_d[i] != 0):
+            if(seen_ftype or seen_norm or seen_address):
+                dif_cur_param = True
+                break
+            for n in seen_n:
+                if(seen_n[n] != 0):
+                    dif_cur_param = True
+                    break
+            for d in seen_d:
+                if(seen_n[d] != 0):
                     dif_cur_param = True
                     break
             if(dif_cur_param):
