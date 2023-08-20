@@ -2130,8 +2130,8 @@ def _tcheck_function_call(function, param_cache) -> []:
     #typecheck function
 
     #WORKLIST ALGORITHM
-    prevlen = 10010
-    curlen = 0
+    prevlen = 10011
+    curlen = 10010
     wl_iter = 0
     while(curlen > prevlen):
         addback_nodes = []
@@ -2144,7 +2144,7 @@ def _tcheck_function_call(function, param_cache) -> []:
                 continue
             explored.add(node)
             #clear previous nodes
-            if(prevlen == 10010):# or not(node in addback_nodes)):
+            if(prevlen == 10011):# or not(node in addback_nodes)):
                 _clear_type_node(node)
             #load in parameters
             paramno = 0
@@ -2221,8 +2221,8 @@ def _tcheck_function(function) -> []:
     #Append to function count
     function_count+=1
     #WORKLIST ALGORITHM
-    prevlen = 10010
-    curlen = 0
+    prevlen = 10011
+    curlen = 10010
     wl_iter = 0
     while(prevlen > curlen):
         addback_nodes = []
@@ -2233,7 +2233,7 @@ def _tcheck_function(function) -> []:
             if node in explored:
                 continue
             explored.add(node)
-            if(prevlen == 10010):# or not(node in addback_nodes)):
+            if(prevlen == 10011):# or not(node in addback_nodes)):
                 _clear_type_node(node)
             #load in parameters
             paramno = 0
