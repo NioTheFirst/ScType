@@ -1520,14 +1520,14 @@ def generate_label_trace(dictA, dictB):
     dp = [[]]  #int, ([ordering], [pos_dict])
     curn = 0
     for n in neg_dict:
-        dp.add([]) #current list
+        dp.append([]) #current list
         if (curn == 0):
             for p in pos_dict:
                 _pos_dict = pos_dict.copy()
                 _pos_dict[p] += neg_dict[n]
                 _ordering = {}
                 _ordering[n] = p
-                dp[curn].add([_pos_dict, _ordering])
+                dp[curn].append([_pos_dict, _ordering])
         else:
             for prev in dp[curn-1]:
                 _pos_dict = prev[0]
@@ -1537,13 +1537,13 @@ def generate_label_trace(dictA, dictB):
                     _2pos_dict[p] += neg_dict[n]
                     _2ordering = _ordering.copy()
                     _2ordering[n] = p
-                    dp[curn].add([_2pos_dict, _2ordering])
+                    dp[curn].append([_2pos_dict, _2ordering])
         curn+=1
     if(curn == 0):
         return None
     for orderings in dp[curn-1]:
         if(check_ordering(orderings[1], dictA) and check_ordering(orderings[1], dictB)):
-            pot_ordering.add(orderings[1])
+            pot_ordering.append(orderings[1])
     if(len(pot_ordering) == 0):
         return None
     return pot_ordering
