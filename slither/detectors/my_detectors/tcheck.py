@@ -2143,7 +2143,7 @@ def _tcheck_function_call(function, param_cache) -> []:
             if node in explored:
                 continue
             explored.add(node)
-            if(prevlen == -1):
+            if(prevlen == -1 or not(node in addback_nodes)):
                 _clear_type_node(node)
             addback = _tcheck_node(node, function.name)
             if(len(addback) > 0):
