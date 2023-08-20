@@ -2007,11 +2007,18 @@ def _tcheck_ir(irs, function_name) -> []:
 
 #USAGE: typecheck a node
 #RETURNS: list of IR with undefined types
-def _tcheck_node(node, function_name) -> []:
+def _tcheck_node(node, function) -> []:
     global errors
     ##print("typecheckig node...")
+    function_name = function.name
     irs = []
     for ir in node.irs_ssa:
+        #Pass in paramters
+        if isinstance(ir, Phi):
+            for p in function.parameters:
+                if(p.name == ir.lvalue.name):
+                    copy_token_type(p, ir.lvalue)
+                    update_non_ssa(ir.lvalue)
         #DEFINE REFERENCE RELATIONS
         ir.dnode = node
         if isinstance(ir, Member):
@@ -2155,7 +2162,7 @@ def _tcheck_function_call(function, param_cache) -> []:
             #clear previous nodes
             if(prevlen == -1):# or not(node in addback_nodes)):
                 _clear_type_node(node)
-            addback = _tcheck_node(node, function.name)
+            addback = _tcheck_node(node, function)
             if(len(addback) > 0):
                 addback_nodes.append(node)
             for son in node.sons:
@@ -2170,7 +2177,7 @@ def _tcheck_function_call(function, param_cache) -> []:
                     fentry.add(son)
         if(return_node):
             _clear_type_node(return_node)
-            _tcheck_node(return_node, function.name)
+            _tcheck_node(return_node, function)
         prevlen = curlen
         curlen = len(addback_nodes)
         ##print(f"WORKLIST iteration {wl_iter} for function call \"{function.name}\":\n New undefined nodes- {curlen}\n Old undefined nodes- {prevlen}")
@@ -2243,7 +2250,7 @@ def _tcheck_function(function) -> []:
             explored.add(node)
             if(prevlen == -1):# or not(node in addback_nodes)):
                 _clear_type_node(node)
-            addback = _tcheck_node(node, function.name)
+            addback = _tcheck_node(node, function)
             if(len(addback) > 0):
                 addback_nodes.append(node)
             for son in node.sons:
