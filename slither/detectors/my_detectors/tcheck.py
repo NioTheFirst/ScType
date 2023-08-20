@@ -2138,6 +2138,15 @@ def _tcheck_function_call(function, param_cache) -> []:
         explored = set()
         return_node = None
         fentry = {function.entry_point}
+        #load in parameters
+        paramno = 0
+        for param in function.parameters:
+            copy_pc_token_type(param_cache[paramno], param)
+            #update_non_ssa(param)
+            #if (isinstance(param, Variable)):
+            #    print(param)
+            #    update_non_ssa(param)
+            paramno+=1
         while fentry:
             node = fentry.pop()
             if node in explored:
@@ -2146,15 +2155,6 @@ def _tcheck_function_call(function, param_cache) -> []:
             #clear previous nodes
             if(prevlen == -1):# or not(node in addback_nodes)):
                 _clear_type_node(node)
-            #load in parameters
-            paramno = 0
-            for param in function.parameters:
-                copy_pc_token_type(param_cache[paramno], param)
-                update_non_ssa(param)
-                #if (isinstance(param, Variable)):
-                #    print(param)
-                #    update_non_ssa(param)
-                paramno+=1
             addback = _tcheck_node(node, function.name)
             if(len(addback) > 0):
                 addback_nodes.append(node)
@@ -2231,6 +2231,11 @@ def _tcheck_function(function) -> []:
         addback_nodes = []
         fentry = {function.entry_point}
         explored = set()
+        paramno = 0
+        for param in function.parameters:
+            copy_pc_token_type(new_param_cache[paramno], param)
+            is_variable(param)
+            paramno+=1
         while fentry:
             node = fentry.pop()
             if node in explored:
@@ -2238,12 +2243,6 @@ def _tcheck_function(function) -> []:
             explored.add(node)
             if(prevlen == -1):# or not(node in addback_nodes)):
                 _clear_type_node(node)
-            #load in parameters
-            paramno = 0
-            for param in function.parameters:
-                copy_pc_token_type(new_param_cache[paramno], param)
-                is_variable(param)
-                paramno+=1
             addback = _tcheck_node(node, function.name)
             if(len(addback) > 0):
                 addback_nodes.append(node)
