@@ -874,11 +874,11 @@ def querry_fc(ir) -> int:
             copy_token_tuple(ir.lvalue, written_func_ret)
             #Convert to a given address, if possible
             if(str(ir.lvalue.type) == "address"):
-                if(ir.lvalue.extok.lf in global_address_to_num):
-                    address_label = global_address_to_num[ir.lvalue.extok.lf]
+                if(ir.lvalue.extok.link_function in global_address_to_num):
+                    address_label = global_address_to_num[ir.lvalue.extok.link_function]
                     ir.lvalue.extok.address = address_label
                 else:
-                    ir.lvalue.extok.lf = None
+                    ir.lvalue.extok.link_function = None
         elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
         else:
