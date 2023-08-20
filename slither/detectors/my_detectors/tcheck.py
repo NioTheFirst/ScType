@@ -324,7 +324,7 @@ def add_param_cache(function, new_param_cache):
                     dif_cur_param = True
                     break
             for d in seen_d:
-                if(seen_n[d] != 0):
+                if(seen_d[d] != 0):
                     dif_cur_param = True
                     break
             if(dif_cur_param):
