@@ -85,14 +85,14 @@ class ExtendedType():
         self._contract_name = cname
     
 
-    @property
-    def trace(self):
-        return(self._trace)
-
-    @trace.setter
-    def trace(self, p):
-        self._trace = p
-        
+    def resolve_trace(self, trace_labels):
+        for n in self._num_token_types:
+            if n in trace_labels:
+                n = trace_lables[n]
+        for d in self._den_token_types:
+            if d in trace_labels:
+                d = trace_labels[d]
+    
     @property
     def num_token_types(self):
         return(self._num_token_types)

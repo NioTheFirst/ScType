@@ -57,6 +57,8 @@ num_to_global_address = {}
 #label to normalization
 num_to_norm = {}
 global_address_counter = 0
+traces = 0 #trace default is -2
+trace_to_label = {}
 temp_address_counter = 0
 global_var_types = {}
 read_global = False
@@ -872,16 +874,20 @@ def querry_fc(ir) -> int:
 def handle_balance_functions(ir):
     global global_address_to_num
     global num_to_norm
+    #global trace_to_label
+    global trace
     func_name = ir.function.name
     dest = ir.destination
-    token_type = -2
+    token_type = 'u'
     norm = 'u'
     isbfunc = False
     if dest in global_address_to_num:
         token_type = global_address_to_num[dest]
     if token_type in num_to_norm:
         norm = num_to_norm[token_type]
-    
+    if (token_type == 'u'):
+        token_type = -2-trace
+        trace+=1
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
@@ -1388,8 +1394,9 @@ def type_bin_add(dest, lir, rir) -> bool:
         return type_asn(dest, rir)
     elif(is_type_const(rir)):
         return type_asn(dest, lir)
-    elif(not(compare_token_type(rir, lir))):
+    elif(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
         #report error, default to left child 
+        
         add_errors(dest)
         return False
     else:
@@ -1419,12 +1426,146 @@ def type_bin_sub(dest, lir, rir) -> bool:
         return type_asn(dest, rir)
     elif(is_type_const(rir)):
         return type_asn(dest, lir)
-    elif(not(compare_token_type(rir, lir))):
+    elif(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
         #report error, default to left child
         add_errors(dest)
         return False
     else:
         return type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
+
+#USAGE: handles traces -> takes the difference in token types and handles traces, placed in the comparison failure branch in type...add and type...sub
+#RETURNS: successful handling or not
+def handle_trace(rir, lir):
+    global trace_to_label
+    #Save token types
+    _rir = rir.extok
+    _lir = lir.extok
+    rntt = copy(_rir.num_token_types)
+    rdtt = copy(_rir.den_token_types)
+    lntt = copy(_lir.num_token_types)
+    ldtt = copy(_lir.den_token_types)
+    #Reduce numerators
+    n_dict = {}
+    for rn in rntt:
+        if(rn == -1):
+            continue
+        if(rn < -1):
+            if(rn in trace_to_label):
+                rn = trace_to_label[rn]
+        if(rn in n_dict):
+            n_dict[rn]+=1
+        else:
+            n_dict[rn] = 1
+    for ln in lntt:
+        if(ln == -1):
+            continue
+        if(ln < -1):
+            if(ln in trace_to_label):
+                ln = trace_to_label[ln]
+        if(ln in n_dict):
+            n_dict[ln]-=1
+        else:
+            n_dict[ln] = -1
+    #Reduce denominators
+    d_dict = {}
+    for rd in rdtt:
+        if(rd == -1):
+            continue
+        if(rd < -1):
+            if(rd in trace_to_label):
+                rd = trace_to_label[rd]
+        if(rd in d_dict):
+            d_dict[rd]+=1
+        else:
+            d_dict[rd] = 1
+    for ld in ldtt:
+        if(ld == -1):
+            continue
+        if(ld < -1):
+            if(ld in trace_to_label):
+                ld = trace_to_label[ld]
+        if(ld in d_dict):
+            d_dict[ld]-=1
+        else:
+            d_dict[ld] = -1
+    #Generate matchings
+    pot_trace = generate_label_trace(n_dict, d_dict)
+    if(pot_trace == None):
+        return False
+    #Just take the first one for now
+    first_trace = pot_trace[0]
+    for f in first_trace:
+        trace_to_label[f] = first_trace[f]
+    _rir.resolve_trace(trace_to_label)
+    _lir.resolve_trace(trace_to_label)
+    return True
+
+#USAGE: given two dictionaries with x amounts of value y, generate all possible orderings of trace to label
+#RETURNS: set of all possible orderings
+def generate_label_trace(dictA, dictB):
+    pot_ordering = []
+    #Generate for dictA
+    pos_dict = {}
+    sum = 0
+    neg_dict = {}
+    for i in dictA:
+        if(i > 0):
+            pos_dict{i} = dictA{i}
+        else:
+            neg_dict{i} = dictA{i}
+        sum+=dictA{i}
+    if(sum != 0):
+        return None
+    #Begin matching (dp algorithm)
+    dp = [][]  #int, ([ordering], [pos_dict])
+    curn = 0
+    for n in neg_dict:
+        dp.add([]) #current list
+        if (curn == 0):
+            for p in pos_dict:
+                _pos_dict = copy(pos_dict)
+                _pos_dict[p] += neg_dict[n]
+                _ordering = {}
+                _ordering[n] = p
+                dp[curn].add([_pos_dict, _ordering])
+        else:
+            for prev in dp[curn-1]:
+                _pos_dict = prev[0]
+                _ordering = prev[1]
+                for p in _pos_dict:
+                    _2pos_dict = copy(pos_dict)
+                    _2pos_dict[p] += neg_dict[n]
+                    _2ordering = copy(_ordering)
+                    _2ordering[n] = p
+                    dp[curn].add([_2pos_dict, _2ordering])
+        curn+=1
+    if(curn == 0):
+        return None
+    for orderings in dp[curn-1]:
+        if(check_ordering(orderings[1], dictA) and check_ordering(orderings[1], dictB)):
+            pot_ordering.add(orderings[1])
+    if(len(pot_ordering) == 0):
+        return None
+    return pot_ordering
+
+
+    
+                    
+
+
+#USAGE: checks ordering
+#RETURNS: ordering succeeds or not
+def check_ordering(order, _dict):
+    dict = copy(_dict)
+    for d in dict:
+        if(d < 0):
+            dict[order[d]]-=dict[d]
+            if(dict[order[d]]) < 0:
+                return False
+    for d in dict:
+        if(dict[d] != 0):
+            return False
+
 
 #USAGE: given a constant, determine the number of powers of 10 that it includes
 #RETURNS: the powers of 10 in the constant, if not, returns -1
