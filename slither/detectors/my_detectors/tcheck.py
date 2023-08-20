@@ -2133,7 +2133,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     prevlen = 10010
     curlen = 0
     wl_iter = 0
-    while(curlen >= prevlen):
+    while(curlen > prevlen):
         addback_nodes = []
         explored = set()
         return_node = None
@@ -2224,7 +2224,7 @@ def _tcheck_function(function) -> []:
     prevlen = 10010
     curlen = 0
     wl_iter = 0
-    while(prevlen >= curlen):
+    while(prevlen > curlen):
         addback_nodes = []
         fentry = {function.entry_point}
         explored = set()
