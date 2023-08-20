@@ -1510,10 +1510,10 @@ def generate_label_trace(dictA, dictB):
     neg_dict = {}
     for i in dictA:
         if(i > 0):
-            pos_dict{i} = dictA{i}
+            pos_dict[i] = dictA[i]
         else:
-            neg_dict{i} = dictA{i}
-        sum+=dictA{i}
+            neg_dict[i] = dictA[i]
+        sum+=dictA[i]
     if(sum != 0):
         return None
     #Begin matching (dp algorithm)
