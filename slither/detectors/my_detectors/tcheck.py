@@ -832,6 +832,7 @@ def type_included_hlc(ir, dest, function):
 def querry_fc(ir) -> int:
     global mark_iteration
     global current_function_marked
+    global global_address_to_num
     if(not (isinstance(ir, HighLevelCall))):
         return 0
     if(mark_iteration and not(current_function_marked)):
@@ -871,6 +872,13 @@ def querry_fc(ir) -> int:
             written_func_ret = written_func_rets[0]
             convert_ssa(ir.lvalue)
             copy_token_tuple(ir.lvalue, written_func_ret)
+            #Convert to a given address, if possible
+            if(str(ir.lvalue.type) == "address"):
+                if(ir.lvalue.extok.lf in global_address_to_num):
+                    address_label = global_address_to_num[ir.lvalue.extok.lf]
+                    ir.lvalue.extok.address = address_label
+                else:
+                    ir.lvalue.extok.lf = None
         elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
         else:
