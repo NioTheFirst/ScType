@@ -904,6 +904,7 @@ def handle_balance_functions(ir):
     token_type = 'u'
     norm = 'u'
     isbfunc = False
+    print('Handling balance function!')
     if dest in global_address_to_num:
         token_type = global_address_to_num[dest]
     if token_type in num_to_norm:
