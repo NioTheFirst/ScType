@@ -2069,7 +2069,7 @@ def _clear_type_node(node):
                 _ir = ir.lvalue.extok
                 _ir.token_type_clear()
                 _ir.norm = 'u'
-                
+                update_non_ssa(ir)
 
                 print("[i] " + ir.lvalue.name + " cleared")
                 ##print(_ir)
