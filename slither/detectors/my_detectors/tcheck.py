@@ -51,9 +51,9 @@ constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 #address to label
-global_address_to_num = {}
+address_to_num = {}
 #label to address
-num_to_global_address = {}
+num_to_address = {}
 #label to normalization
 num_to_norm = {}
 global_address_counter = 0
@@ -74,6 +74,8 @@ read_internal = False
 #USAGE: resets update ratios
 def reset_update_ratios():
     tcheck_parser.reset_update_ratios()
+
+#USAGE: create a 
 
 #USAGE: creates and returns a constant instnace
 #RETURNS: a constant instance (default constant)
@@ -834,7 +836,7 @@ def type_included_hlc(ir, dest, function):
 def querry_fc(ir) -> int:
     global mark_iteration
     global current_function_marked
-    global global_address_to_num
+    global address_to_num
     if(not (isinstance(ir, HighLevelCall))):
         return 0
     if(mark_iteration and not(current_function_marked)):
@@ -876,8 +878,8 @@ def querry_fc(ir) -> int:
             copy_token_tuple(ir.lvalue, written_func_ret)
             #Convert to a given address, if possible
             if(str(ir.lvalue.type) == "address"):
-                if(ir.lvalue.extok.link_function in global_address_to_num):
-                    address_label = global_address_to_num[ir.lvalue.extok.link_function]
+                if(ir.lvalue.extok.link_function in address_to_num):
+                    address_label = address_to_num[ir.lvalue.extok.link_function]
                     ir.lvalue.extok.address = address_label
                 else:
                     ir.lvalue.extok.link_function = None
@@ -897,7 +899,7 @@ def querry_fc(ir) -> int:
 #USAGE: propogates types etc from a set of balance-related functions. Currently supports the functions with names in `balance_funcs`.
 #RETURNS: if the balance-related function was executed
 def handle_balance_functions(ir):
-    global global_address_to_num
+    global address_to_num
     global num_to_norm
     #global trace_to_label
     global traces
@@ -907,8 +909,8 @@ def handle_balance_functions(ir):
     norm = 'u'
     isbfunc = False
     print('Handling balance function!')
-    if dest in global_address_to_num:
-        token_type = global_address_to_num[dest]
+    if dest in address_to_num:
+        token_type = address_to_num[dest]
     if token_type in num_to_norm:
         norm = num_to_norm[token_type]
     if (token_type == 'u'):
@@ -2276,8 +2278,8 @@ def _tcheck_contract_state_var(contract):
     global fill_type
     global read_global
     global global_var_types
-    global global_address_to_num
-    global num_to_global_address
+    global address_to_num
+    global num_to_address
     type_info_name = None
     if(user_type and fill_type):
         type_info_name = contract.name+"_types.txt"
@@ -2302,8 +2304,8 @@ def _tcheck_contract_state_var(contract):
             if(not(read_global)):
                 querry_type(state_var)
                 if(str(state_var.type) == "address"):
-                    global_address_to_num[state_var.name] = state_var.extok.address
-                    num_to_global_address[state_var.extok.address] = state_var.name
+                    address_to_num[state_var.name] = state_var.extok.address
+                    num_to_address[state_var.extok.address] = state_var.name
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
@@ -2361,8 +2363,8 @@ def _tcheck_contract(contract):
     global current_function_marked
     global global_var_types
     global global_address_counter
-    global global_address_to_num
-    global num_to_global_address
+    global address_to_num
+    global num_to_address
     current_contract_name = contract.name
     all_addback_nodes = []
     #_mark_functions(contract)
@@ -2402,8 +2404,8 @@ def _tcheck_contract(contract):
                     global_var_types[(var.extok.name, contract.name)] = temp
                     if(var.extok.address != 'u'):
                         global_address_counter+=1
-                        global_address_to_num[var.name] = var.extok.address
-                        num_to_global_address[var.extok.address] = var.name
+                        address_to_num[var.name] = var.extok.address
+                        num_to_address[var.extok.address] = var.name
                     print(temp.extok)
         
         if(len(addback_nodes) > 0):
