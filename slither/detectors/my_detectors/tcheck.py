@@ -936,8 +936,8 @@ def handle_balance_functions(ir):
     if dest in address_to_num:
         token_type = address_to_num[dest]
     else:
-        token_type = -2-trace
-        trace+=1
+        token_type = -2-traces
+        traces+=1
     if token_type in num_to_norm:
         norm = num_to_norm[token_type]
     if(func_name == "balanceOf"):
