@@ -453,7 +453,9 @@ def querry_type(ir):
         if(type_tuple != None):
             _ir.clear_num()
             _ir.clear_den()
+            save_addr = _ir.address
             copy_token_tuple(ir, type_tuple)
+            _ir.address = save_addr
             ##print(_ir)
             ##print("[*]Type fetched successfully")
             return
