@@ -158,6 +158,7 @@ def copy_pc_token_type(_src, dest):
     src = _src.copy()
     _dest = dest.extok
     _dest.token_type_clear()
+    print(src)
     for n in src[0]:
         _dest.add_num_token_type(n)
     for d in src[1]:
