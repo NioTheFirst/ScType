@@ -1,7 +1,7 @@
 from slither.core.solidity_types import UserDefinedType, ArrayType, MappingType
 from slither.core.declarations import Structure, Contract
 from slither.core.variables.variable import Variable
-
+import copy
 import tcheck_parser
 import tcheck
 from tcheck import errors
@@ -155,7 +155,7 @@ def copy_inv_token_type(src, dest):
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
 def copy_pc_token_type(_src, dest):
-    src = _src.copy()
+    src = copy.deepcopy(_src)
     print(src)
     _dest = dest.extok
     _dest.token_type_clear()
