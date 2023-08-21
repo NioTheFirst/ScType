@@ -2240,6 +2240,7 @@ def _tcheck_function(function) -> []:
         explored = set()
         paramno = 0
         for param in function.parameters:
+            print(param.extok)
             copy_pc_token_type(new_param_cache[paramno], param)
             is_variable(param)
             print(param.extok)
