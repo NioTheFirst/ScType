@@ -13,7 +13,7 @@ from slither.core.solidity_types import UserDefinedType, ArrayType
 from slither.core.declarations import Structure, Contract
 from slither.core.solidity_types.elementary_type import ElementaryType
 from slither.core.declarations.modifier import Modifier
-
+import copy
 import linecache
 import os
 import sys
@@ -1547,7 +1547,7 @@ def generate_label_trace(dictA, dictB):
         dp.append([]) #current list
         if (curn == 0):
             for p in pos_dict:
-                _pos_dict = pos_dict.copy()
+                _pos_dict = copy.deepcopy(pos_dict)
                 _pos_dict[p] += neg_dict[n]
                 _ordering = {}
                 _ordering[n] = p
@@ -1557,7 +1557,7 @@ def generate_label_trace(dictA, dictB):
                 _pos_dict = prev[0]
                 _ordering = prev[1]
                 for p in _pos_dict:
-                    _2pos_dict = pos_dict.copy()
+                    _2pos_dict = copy.deepcopy(_pos_dict)
                     _2pos_dict[p] += neg_dict[n]
                     _2ordering = _ordering.copy()
                     _2ordering[n] = p
@@ -1577,7 +1577,7 @@ def generate_label_trace(dictA, dictB):
 #USAGE: checks ordering
 #RETURNS: ordering succeeds or not
 def check_ordering(order, _dict):
-    dict = _dict.copy()
+    dict = copy.deepcopy(_dict)
     for d in dict:
         if(d < 0):
             dict[order[d]]-=dict[d]

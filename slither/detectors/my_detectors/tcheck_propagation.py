@@ -156,10 +156,8 @@ def copy_inv_token_type(src, dest):
 #RETURNS: nN/A
 def copy_pc_token_type(_src, dest):
     src = copy.deepcopy(_src)
-    print(src)
     _dest = dest.extok
     _dest.token_type_clear()
-    print(src)
     for n in src[0]:
         _dest.add_num_token_type(n)
     for d in src[1]:
