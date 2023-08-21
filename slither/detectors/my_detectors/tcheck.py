@@ -2242,6 +2242,7 @@ def _tcheck_function(function) -> []:
         for param in function.parameters:
             copy_pc_token_type(new_param_cache[paramno], param)
             is_variable(param)
+            print(param.extok)
             paramno+=1
         while fentry:
             node = fentry.pop()

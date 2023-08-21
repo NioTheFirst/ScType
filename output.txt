@@ -7,10 +7,10 @@ Finding type for _totalSupply...
 uint256
 Finding type for _symbol...
 string
-Finding type for MAX...
-uint256
 Finding type for _allowances...
 mapping(address => mapping(address => uint256))
+Finding type for MAX...
+uint256
 Finding type for totalDepositCap...
 uint256
 Finding type for _name...
@@ -30,6 +30,27 @@ string
 Finding type for _manager...
 address
 Global: 0 Address: 1
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+Param: 1
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+Param: 2
+    num: []
+    den: []
+    norm: u
+    link: _manager
+    fields: []
+    fintype: -1
 INTERNAL_CALL, VaultToken.constructor(string,string)(_name_1,_symbol_1)
 TMP_66 = CONVERT _manager_1 to IManager
 
@@ -178,6 +199,13 @@ setGauge
 Finding type for _gauge...
 address
 Global: 1 Address: 2
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: _gauge
+    fields: []
+    fintype: -1
 MODIFIER_CALL, Vault.notHalted()()
 MODIFIER_CALL, Vault.onlyStrategist()()
 gauge_1(address) := _gauge_1(address)
@@ -210,7 +238,14 @@ Finance Type: undef
 setMin
 Finding type for _min...
 uint256
-MAX_1(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_0', 'MAX_13'])
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -222,7 +257,7 @@ LF: None
 Fields: 
 Finance Type: undef
 MODIFIER_CALL, Vault.notHalted()()
-manager_34(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_34(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -244,7 +279,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_35(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_34', 'manager_37', 'manager_33', 'manager_24'])
+manager_35(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_34', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -277,7 +312,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_34(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_34(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -299,7 +334,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_35(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_34', 'manager_37', 'manager_33', 'manager_24'])
+manager_35(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_34', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -333,7 +368,7 @@ LF: None
 Fields: 
 Finance Type: undef
 MODIFIER_CALL, Vault.onlyStrategist()()
-manager_38(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_38(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -355,7 +390,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_39(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_38', 'manager_37', 'manager_33', 'manager_24'])
+manager_39(IManager) := ϕ(['manager_1', 'manager_30', 'manager_38', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -388,7 +423,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_38(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_38(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -410,7 +445,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_39(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_38', 'manager_37', 'manager_33', 'manager_24'])
+manager_39(IManager) := ϕ(['manager_1', 'manager_30', 'manager_38', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -476,7 +511,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_1(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_0', 'MAX_13'])
+MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -528,6 +563,13 @@ Finance Type: undef
 setTotalDepositCap
 Finding type for _totalDepositCap...
 uint256
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
 MODIFIER_CALL, Vault.notHalted()()
 MODIFIER_CALL, Vault.onlyStrategist()()
 totalDepositCap_2(uint256) := _totalDepositCap_1(uint256)
@@ -566,7 +608,28 @@ address
 Global: 1 Address: 3
 Finding type for _expectedAmount...
 uint256
-manager_2(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: _token0
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: _token1
+    fields: []
+    fintype: -1
+Param: 2
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+manager_2(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -623,7 +686,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_33', 'manager_24'])
+manager_5(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_4', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -677,7 +740,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_6(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_5', 'manager_33', 'manager_24'])
+manager_6(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -838,7 +901,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_2(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_2(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -895,7 +958,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_33', 'manager_24'])
+manager_5(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_4', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -949,7 +1012,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_6(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_5', 'manager_33', 'manager_24'])
+manager_6(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1120,7 +1183,21 @@ Global: 1 Address: 2
 Finding type for _strategy...
 address
 Global: 1 Address: 3
-manager_7(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: _token
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: _strategy
+    fields: []
+    fintype: -1
+manager_7(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1178,7 +1255,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_10', 'manager_33', 'manager_24'])
+manager_11(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1222,7 +1299,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_33', 'manager_11', 'manager_24'])
+manager_12(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1341,7 +1418,7 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
 HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
-manager_7(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_7(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1399,7 +1476,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_10', 'manager_33', 'manager_24'])
+manager_11(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1443,7 +1520,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_33', 'manager_11', 'manager_24'])
+manager_12(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1571,6 +1648,20 @@ address
 Global: 1 Address: 2
 Finding type for _amount...
 uint256
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: _token
+    fields: []
+    fintype: -1
+Param: 1
+    num: [1]
+    den: [-1]
+    norm: 0
+    link: None
+    fields: []
+    fintype: -1
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -1593,7 +1684,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -1616,7 +1707,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1638,7 +1729,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1660,7 +1751,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1726,7 +1817,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1748,7 +1839,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1770,7 +1861,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1849,7 +1940,7 @@ LF: None
 Fields: 
 Finance Type: undef
 TMP_108(uint256) = INTERNAL_CALL, Vault.balance()()
-manager_21(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_21(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1861,7 +1952,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 TMP_177(uint256) = INTERNAL_CALL, Vault.balanceOfThis()()
-manager_25(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_25(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1894,7 +1985,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_25', 'manager_33', 'manager_24'])
+manager_26(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2124,7 +2215,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -2277,7 +2368,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -2388,7 +2479,7 @@ LF: None
 Fields: 
 Finance Type: undef
 RETURN _balance_1
-manager_25(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_25(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2421,7 +2512,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_25', 'manager_33', 'manager_24'])
+manager_26(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2651,7 +2742,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -2804,7 +2895,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -2917,7 +3008,7 @@ LF: None
 Fields: 
 Finance Type: undef
 RETURN _balance_1
-manager_25(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_25(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2950,7 +3041,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_25', 'manager_33', 'manager_24'])
+manager_26(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3180,7 +3271,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -3333,7 +3424,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -3489,7 +3580,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_22', 'manager_37', 'manager_33', 'manager_24'])
+manager_23(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3533,7 +3624,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_23', 'manager_37', 'manager_33', 'manager_24'])
+manager_24(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_23', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3556,7 +3647,7 @@ LF: None
 Fields: 
 Finance Type: undef
 RETURN TMP_182
-manager_21(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_21(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3611,7 +3702,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_22', 'manager_37', 'manager_33', 'manager_24'])
+manager_23(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3655,7 +3746,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_23', 'manager_37', 'manager_33', 'manager_24'])
+manager_24(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_23', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3743,7 +3834,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -3842,7 +3933,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -3888,7 +3979,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
@@ -3997,7 +4088,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -4150,7 +4241,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -4228,7 +4319,7 @@ LF: None
 Fields: 
 Finance Type: undef
 TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-_totalSupply_1(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
+_totalSupply_1(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -4240,7 +4331,7 @@ LF: None
 Fields: 
 Finance Type: undef
 RETURN _totalSupply_1
-_totalSupply_1(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
+_totalSupply_1(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -4270,50 +4361,6 @@ Num: -1
 Den: -1
 Address: u
 Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-[i]Type for TMP_123
-
-Name: TMP_123 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
-[i]Type for TMP_124
-
-Name: TMP_124 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: *
-LF: None
-Fields: 
-Finance Type: undef
-TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
-[i]Type for TMP_125
-
-Name: TMP_125 Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: *
-LF: None
-Fields: 
-Finance Type: undef
-_amount_4(uint256) := TMP_125(uint256)
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: *
 LF: None
 Fields: 
 Finance Type: undef
@@ -4351,7 +4398,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_11', '_balances_0'])
 [i]Type for _balances
 
 Name: _balances Function: global
@@ -4362,7 +4409,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -4436,7 +4483,7 @@ LF: None
 Fields: 
 Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -4469,7 +4516,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -4621,7 +4668,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_11', '_balances_0'])
 [i]Type for _balances
 
 Name: _balances Function: global
@@ -4632,7 +4679,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -4803,7 +4850,62 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_123
+
+Name: TMP_123 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
+[i]Type for TMP_124
+
+Name: TMP_124 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
+[i]Type for TMP_125
+
+Name: TMP_125 Function: deposit
+Num: 
+Den: -12
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_4(uint256) := TMP_125(uint256)
 [i]Type for _amount
 
 Name: _amount Function: deposit
@@ -4847,17 +4949,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -4880,7 +4971,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -4981,7 +5072,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -5080,7 +5171,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -5124,12 +5215,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
-Num: 
-Den: -12
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
@@ -5233,7 +5324,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -5386,7 +5477,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -5485,6 +5576,580 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+account_1(address) := ϕ(['msg.sender'])
+[i]Type for account
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['_shares_2'])
+[i]Type for amount
+
+Name: amount Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_11', '_balances_0'])
+[i]Type for _balances
+
+Name: _balances Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_39 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_39
+
+Name: TMP_39 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_40(bool) = account_1 != TMP_39
+[i]Type for TMP_40
+
+Name: TMP_40 Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
+[i]Type for TMP_41
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_42 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_42
+
+Name: TMP_42 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
+[i]Type for from
+
+Name: from Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: from
+Fields: 
+Finance Type: undef
+to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
+[i]Type for to
+
+Name: to Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
+[i]Type for amount
+
+Name: amount Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
+[i]Type for from
+
+Name: from Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: from
+Fields: 
+Finance Type: undef
+to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
+[i]Type for to
+
+Name: to Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
+[i]Type for amount
+
+Name: amount Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
+[i]Type for TMP_44
+
+Name: TMP_44 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_totalSupply_4(uint256) := TMP_44(uint256)
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_21(uint256) -> _balances_7[account_1]
+[i]Type for REF_21
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_22(uint256) -> _balances_7[account_1]
+[i]Type for REF_22
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
+[i]Type for TMP_45
+
+Name: TMP_45 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
+[i]Type for _balances
+
+Name: _balances Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_21 (->_balances_8) := TMP_45(uint256)
+[i]Type for REF_21
+
+Name: REF_21 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_46 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_46
+
+Name: TMP_46 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+account_1(address) := ϕ(['msg.sender'])
+[i]Type for account
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['_shares_2'])
+[i]Type for amount
+
+Name: amount Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_11', '_balances_0'])
+[i]Type for _balances
+
+Name: _balances Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_39 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_39
+
+Name: TMP_39 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_40(bool) = account_1 != TMP_39
+[i]Type for TMP_40
+
+Name: TMP_40 Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
+[i]Type for TMP_41
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_42 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_42
+
+Name: TMP_42 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
+[i]Type for from
+
+Name: from Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: from
+Fields: 
+Finance Type: undef
+to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
+[i]Type for to
+
+Name: to Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
+[i]Type for amount
+
+Name: amount Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
+[i]Type for from
+
+Name: from Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: from
+Fields: 
+Finance Type: undef
+to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
+[i]Type for to
+
+Name: to Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
+[i]Type for amount
+
+Name: amount Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
+[i]Type for TMP_44
+
+Name: TMP_44 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_totalSupply_4(uint256) := TMP_44(uint256)
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_21(uint256) -> _balances_7[account_1]
+[i]Type for REF_21
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_22(uint256) -> _balances_7[account_1]
+[i]Type for REF_22
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
+[i]Type for TMP_45
+
+Name: TMP_45 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
+[i]Type for _balances
+
+Name: _balances Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_21 (->_balances_8) := TMP_45(uint256)
+[i]Type for REF_21
+
+Name: REF_21 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_46 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_46
+
+Name: TMP_46 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_123
 
@@ -5529,571 +6194,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_126(bool) = _shares_2 > 0
-[i]Type for TMP_126
-
-Name: TMP_126 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-Error with TMP_44 in function _mint
-Error with: TMP_44 in function _mint
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_128
 
@@ -6127,17 +6227,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 
 
 
@@ -6146,6 +6235,20 @@ Finding type for _tokens...
 address[]
 Finding type for _amounts...
 uint256[]
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: 0
+    link: None
+    fields: []
+    fintype: -1
+Param: 1
+    num: [1]
+    den: [-1]
+    norm: 0
+    link: None
+    fields: []
+    fintype: -1
 REF_46 -> LENGTH _tokens_1 (-> [])
 [i]Type for REF_46
 
@@ -6279,7 +6382,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -6302,7 +6405,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6324,7 +6427,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6346,7 +6449,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6412,7 +6515,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6434,7 +6537,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6456,7 +6559,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6600,7 +6703,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -6699,7 +6802,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -6743,12 +6846,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
 Num: 
-Den: -12
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -6852,7 +6955,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -7005,7 +7108,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -7104,6 +7207,40 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_123
 
@@ -7148,569 +7285,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_126(bool) = _shares_2 > 0
-[i]Type for TMP_126
-
-Name: TMP_126 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_128
 
@@ -7744,17 +7318,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -7777,7 +7340,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -7800,7 +7363,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -7822,7 +7385,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -7844,7 +7407,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -7910,7 +7473,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -7932,7 +7495,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -7954,7 +7517,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -8098,7 +7661,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -8197,7 +7760,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -8241,12 +7804,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
 Num: 
-Den: -12
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -8350,7 +7913,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -8503,7 +8066,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -8602,6 +8165,40 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_123
 
@@ -8646,569 +8243,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_126(bool) = _shares_2 > 0
-[i]Type for TMP_126
-
-Name: TMP_126 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_128
 
@@ -9237,17 +8271,6 @@ TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 Name: None Function: None
 Num: 
 Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: 
-Den: -12
 Address: u
 Norm: u
 LF: None
@@ -9440,7 +8463,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -9463,7 +8486,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -9485,7 +8508,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -9507,7 +8530,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -9573,7 +8596,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -9595,7 +8618,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -9617,7 +8640,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -9761,7 +8784,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -9860,7 +8883,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -9904,12 +8927,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
 Num: 
-Den: -12
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -10013,7 +9036,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -10166,7 +9189,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -10265,6 +9288,40 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_123
 
@@ -10309,569 +9366,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_126(bool) = _shares_2 > 0
-[i]Type for TMP_126
-
-Name: TMP_126 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_128
 
@@ -10905,17 +9399,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -10938,7 +9421,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -10961,7 +9444,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -10983,7 +9466,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -11005,7 +9488,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -11071,7 +9554,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -11093,7 +9576,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -11115,7 +9598,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -11259,7 +9742,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -11358,7 +9841,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -11402,12 +9885,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
 Num: 
-Den: -12
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -11511,7 +9994,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -11664,7 +10147,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -11763,6 +10246,40 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_123
 
@@ -11807,569 +10324,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_126(bool) = _shares_2 > 0
-[i]Type for TMP_126
-
-Name: TMP_126 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_128
 
@@ -12398,17 +10352,6 @@ TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 Name: None Function: None
 Num: 
 Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: 
-Den: -12
 Address: u
 Norm: u
 LF: None
@@ -12601,7 +10544,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -12624,7 +10567,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -12646,7 +10589,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -12668,7 +10611,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -12734,7 +10677,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -12756,7 +10699,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -12778,7 +10721,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -12922,7 +10865,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -13021,7 +10964,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -13065,12 +11008,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
 Num: 
-Den: -12
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -13174,7 +11117,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -13327,7 +11270,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -13426,6 +11369,40 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_123
 
@@ -13470,569 +11447,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_126(bool) = _shares_2 > 0
-[i]Type for TMP_126
-
-Name: TMP_126 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_128
 
@@ -14066,17 +11480,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -14099,7 +11502,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -14122,7 +11525,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14144,7 +11547,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14166,7 +11569,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14232,7 +11635,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_31(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14254,7 +11657,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_31', 'manager_37', 'manager_33', 'manager_24'])
+manager_32(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14276,7 +11679,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_32', 'manager_33', 'manager_24'])
+manager_33(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14420,7 +11823,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -14519,7 +11922,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11', 'totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -14563,12 +11966,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
 Num: 
-Den: -12
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -14672,7 +12075,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -14825,7 +12228,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -14924,6 +12327,40 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_126(bool) = _shares_2 > 0
+[i]Type for TMP_126
+
+Name: TMP_126 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_123
 
@@ -14968,569 +12405,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_126(bool) = _shares_2 > 0
-[i]Type for TMP_126
-
-Name: TMP_126 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['account_1', 'recipient_1', 'TMP_51'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21(uint256) -> _balances_7[account_1]
-[i]Type for REF_21
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_3', '_amount_4'])
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: 
-Den: -12
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 [i]Type for TMP_128
 
@@ -15559,17 +12433,6 @@ TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 Name: None Function: None
 Num: 
 Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: 
-Den: -12
 Address: u
 Norm: u
 LF: None
@@ -15638,6 +12501,20 @@ uint256
 Finding type for _output...
 address
 Global: 1 Address: 2
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: 0
+    link: None
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: _output
+    fields: []
+    fintype: -1
 _shares_1(uint256) := ϕ(['TMP_170'])
 [i]Type for _shares
 
@@ -15660,7 +12537,7 @@ Norm: u
 LF: _output
 Fields: 
 Finance Type: undef
-MAX_4(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_0', 'MAX_13'])
+MAX_4(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -15671,7 +12548,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_13(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_13(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -15783,7 +12660,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_9(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
+_balances_9(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_11', '_balances_0'])
 [i]Type for _balances
 
 Name: _balances Function: global
@@ -15794,12 +12671,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_5(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
+_totalSupply_5(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
 Num: -1
-Den: -12
+Den: -1
 Address: u
 Norm: u
 LF: None
@@ -15868,7 +12745,7 @@ LF: None
 Fields: 
 Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(account_1,TMP_51,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -15901,7 +12778,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -15990,14 +12867,12 @@ LF: None
 Fields: 
 Finance Type: undef
 TMP_54(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_totalSupply_6', 'amount_1'] 
-Error with TMP_54 in function _burn
-Error with: TMP_54 in function _burn
 [i]Type for TMP_54
 
 Name: TMP_54 Function: _burn
-Num: -1
-Den: -1
-Address: u
+Num: 
+Den: 
+Address: None
 Norm: u
 LF: None
 Fields: 
@@ -16006,9 +12881,9 @@ _totalSupply_7(uint256) := TMP_54(uint256)
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: _burn
-Num: -1
-Den: -1
-Address: u
+Num: 
+Den: 
+Address: None
 Norm: u
 LF: None
 Fields: 
@@ -16055,7 +12930,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_9(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_0', '_balances_11'])
+_balances_9(mapping(address => uint256)) := ϕ(['_balances_1', '_balances_8', '_balances_5', '_balances_11', '_balances_0'])
 [i]Type for _balances
 
 Name: _balances Function: global
@@ -16066,13 +12941,13 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_5(uint256) := ϕ(['_totalSupply_4', '_totalSupply_7', '_totalSupply_0'])
+_totalSupply_5(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
-Num: -1
-Den: -1
-Address: u
+Num: 
+Den: 
+Address: None
 Norm: u
 LF: None
 Fields: 
@@ -16140,7 +13015,7 @@ LF: None
 Fields: 
 Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(account_1,TMP_51,amount_1)
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -16173,7 +13048,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'TMP_42', 'account_1'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -16276,8 +13151,8 @@ _totalSupply_7(uint256) := TMP_54(uint256)
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: _burn
-Num: -1
-Den: -1
+Num: 
+Den: 
 Address: None
 Norm: u
 LF: None
@@ -16314,7 +13189,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_9(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_8', 'MAX_11', 'MAX_13'])
+MAX_9(uint256) := ϕ(['MAX_11', 'MAX_8', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -16325,7 +13200,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_18(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_17', 'manager_33', 'manager_24'])
+manager_18(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_17', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -16446,7 +13321,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_19(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_18', 'manager_33', 'manager_24'])
+manager_19(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_18', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -16464,28 +13339,6 @@ Name: _balance Function: withdraw
 Num: -45
 Den: 
 Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_149(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_1', '_withdrawalProtection_1'] 
-[i]Type for TMP_149
-
-Name: TMP_149 Function: withdraw
-Num: -12
-Den: -1
-Address: None
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_amount_2(uint256) := TMP_149(uint256)
-[i]Type for _amount
-
-Name: _amount Function: withdraw
-Num: -12
-Den: -1
-Address: None
 Norm: u
 LF: None
 Fields: 
@@ -16525,7 +13378,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_20(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_33', 'manager_24'])
+manager_20(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -16568,28 +13421,28 @@ Norm: 0
 LF: Controller
 Fields: 
 Finance Type: undef
-TMP_166 = CONVERT _output_1 to IERC20
+TMP_149(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_1', '_withdrawalProtection_1'] 
+[i]Type for TMP_149
 
-Name: _output Function: withdraw
-Num: 
-Den: 
-Address: 2
+Name: TMP_149 Function: withdraw
+Num: -12
+Den: -1
+Address: None
 Norm: u
-LF: _output
+LF: None
 Fields: 
 Finance Type: undef
-ERC20
-[i]Type for TMP_166
+_amount_2(uint256) := TMP_149(uint256)
+[i]Type for _amount
 
-Name: TMP_166 Function: withdraw
-Num: 
-Den: 
-Address: 2
+Name: _amount Function: withdraw
+Num: -12
+Den: -1
+Address: None
 Norm: u
-LF: ERC20
+LF: None
 Fields: 
 Finance Type: undef
-LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_166', 'msg.sender', '_amount_5'] 
 TMP_157(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_3', '_balance_1'] 
 Error with TMP_157 in function withdraw
 Error with: TMP_157 in function withdraw
@@ -16614,6 +13467,28 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_166 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_166
+
+Name: TMP_166 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_166', 'msg.sender', '_amount_5'] 
 TMP_158(uint256) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:strategies, arguments:[]  
 [i]Type for TMP_158
 
@@ -16727,7 +13602,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_1', '_amount_4'])
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_1'])
 [i]Type for _amount
 
 Name: _amount Function: withdraw
@@ -16771,7 +13646,7 @@ Norm: u
 LF: _output
 Fields: 
 Finance Type: undef
-MAX_4(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_0', 'MAX_13'])
+MAX_4(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -16782,7 +13657,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_13(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_13(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -16883,7 +13758,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_9(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_8', 'MAX_11', 'MAX_13'])
+MAX_9(uint256) := ϕ(['MAX_11', 'MAX_8', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -16894,7 +13769,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_18(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_17', 'manager_33', 'manager_24'])
+manager_18(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_17', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17015,7 +13890,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_19(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_18', 'manager_33', 'manager_24'])
+manager_19(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_18', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17033,28 +13908,6 @@ Name: _balance Function: withdraw
 Num: -47
 Den: 
 Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_149(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_1', '_withdrawalProtection_1'] 
-[i]Type for TMP_149
-
-Name: TMP_149 Function: withdraw
-Num: -12
-Den: -1
-Address: None
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_amount_2(uint256) := TMP_149(uint256)
-[i]Type for _amount
-
-Name: _amount Function: withdraw
-Num: -12
-Den: -1
-Address: None
 Norm: u
 LF: None
 Fields: 
@@ -17092,7 +13945,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_20(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_33', 'manager_24'])
+manager_20(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17135,28 +13988,28 @@ Norm: 0
 LF: Controller
 Fields: 
 Finance Type: undef
-TMP_166 = CONVERT _output_1 to IERC20
+TMP_149(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_1', '_withdrawalProtection_1'] 
+[i]Type for TMP_149
 
-Name: _output Function: withdraw
-Num: 
-Den: 
-Address: 2
+Name: TMP_149 Function: withdraw
+Num: -12
+Den: -1
+Address: None
 Norm: u
-LF: _output
+LF: None
 Fields: 
 Finance Type: undef
-ERC20
-[i]Type for TMP_166
+_amount_2(uint256) := TMP_149(uint256)
+[i]Type for _amount
 
-Name: TMP_166 Function: withdraw
-Num: 
-Den: 
-Address: 2
+Name: _amount Function: withdraw
+Num: -12
+Den: -1
+Address: None
 Norm: u
-LF: ERC20
+LF: None
 Fields: 
 Finance Type: undef
-LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_166', 'msg.sender', '_amount_5'] 
 TMP_157(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_amount_3', '_balance_1'] 
 [i]Type for TMP_157
 
@@ -17179,6 +14032,28 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+TMP_166 = CONVERT _output_1 to IERC20
+
+Name: _output Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: _output
+Fields: 
+Finance Type: undef
+ERC20
+[i]Type for TMP_166
+
+Name: TMP_166 Function: withdraw
+Num: 
+Den: 
+Address: 2
+Norm: u
+LF: ERC20
+Fields: 
+Finance Type: undef
+LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_166', 'msg.sender', '_amount_5'] 
 TMP_158(uint256) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:strategies, arguments:[]  
 [i]Type for TMP_158
 
@@ -17290,7 +14165,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_5(uint256) := ϕ(['_amount_1', '_amount_4'])
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_1'])
 [i]Type for _amount
 
 Name: _amount Function: withdraw
@@ -17319,6 +14194,13 @@ withdrawAll
 Finding type for _output...
 address
 Global: 1 Address: 2
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: _output
+    fields: []
+    fintype: -1
 TMP_170(uint256) = INTERNAL_CALL, ERC20.balanceOf(address)(msg.sender)
 [i]Type for TMP_170
 
@@ -17350,6 +14232,13 @@ available
 Finding type for _token...
 address
 Global: 1 Address: 2
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: _token
+    fields: []
+    fintype: -1
 _token_1(address) := ϕ(['_token_1'])
 [i]Type for _token
 
@@ -17361,7 +14250,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-MAX_10(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_0', 'MAX_13'])
+MAX_10(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -17372,7 +14261,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-min_3(uint256) := ϕ(['min_1', 'min_0', 'min_2', 'min_4'])
+min_3(uint256) := ϕ(['min_2', 'min_0', 'min_4', 'min_1'])
 [i]Type for min
 
 Name: min Function: global
@@ -17427,7 +14316,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_11(uint256) := ϕ(['MAX_3', 'MAX_10', 'MAX_9', 'MAX_11', 'MAX_13'])
+MAX_11(uint256) := ϕ(['MAX_11', 'MAX_13', 'MAX_10', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -17438,7 +14327,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-min_4(uint256) := ϕ(['min_1', 'min_2', 'min_3', 'min_4'])
+min_4(uint256) := ϕ(['min_2', 'min_4', 'min_1', 'min_3'])
 [i]Type for min
 
 Name: min Function: global
@@ -17483,7 +14372,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-MAX_10(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_0', 'MAX_13'])
+MAX_10(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -17494,7 +14383,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-min_3(uint256) := ϕ(['min_1', 'min_0', 'min_2', 'min_4'])
+min_3(uint256) := ϕ(['min_2', 'min_0', 'min_4', 'min_1'])
 [i]Type for min
 
 Name: min Function: global
@@ -17549,7 +14438,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_11(uint256) := ϕ(['MAX_3', 'MAX_10', 'MAX_9', 'MAX_11', 'MAX_13'])
+MAX_11(uint256) := ϕ(['MAX_11', 'MAX_13', 'MAX_10', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -17560,7 +14449,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-min_4(uint256) := ϕ(['min_1', 'min_2', 'min_3', 'min_4'])
+min_4(uint256) := ϕ(['min_2', 'min_4', 'min_1', 'min_3'])
 [i]Type for min
 
 Name: min Function: global
@@ -17598,7 +14487,7 @@ RETURN TMP_176
 
 
 balance
-manager_21(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_21(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17653,7 +14542,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_22', 'manager_37', 'manager_33', 'manager_24'])
+manager_23(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17697,7 +14586,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_23', 'manager_37', 'manager_33', 'manager_24'])
+manager_24(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_23', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17720,7 +14609,7 @@ LF: None
 Fields: 
 Finance Type: undef
 RETURN TMP_182
-manager_21(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_21(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17775,7 +14664,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_22', 'manager_37', 'manager_33', 'manager_24'])
+manager_23(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17819,7 +14708,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_23', 'manager_37', 'manager_33', 'manager_24'])
+manager_24(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_23', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17846,7 +14735,7 @@ RETURN TMP_182
 
 
 balanceOfThis
-manager_25(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_25(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -17879,7 +14768,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_25', 'manager_33', 'manager_24'])
+manager_26(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -18109,7 +14998,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -18262,7 +15151,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -18350,7 +15239,6 @@ Norm: *
 LF: None
 Fields: 
 Finance Type: undef
-RETURN _balance_1
 TMP_191(uint8) := i_1(uint8)
 [i]Type for TMP_191
 
@@ -18373,7 +15261,8 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_25(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+RETURN _balance_1
+manager_25(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -18406,7 +15295,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_25', 'manager_33', 'manager_24'])
+manager_26(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -18636,7 +15525,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -18789,7 +15678,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -18877,7 +15766,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-RETURN _balance_1
 TMP_191(uint8) := i_1(uint8)
 [i]Type for TMP_191
 
@@ -18900,6 +15788,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
+RETURN _balance_1
 
 
 
@@ -19066,7 +15955,7 @@ RETURN TMP_198
 
 
 getTokens
-manager_27(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_27(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -19099,7 +15988,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_28(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_33', 'manager_27', 'manager_24'])
+manager_28(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_27', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -19111,7 +16000,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 RETURN TMP_200
-manager_27(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_27(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -19144,7 +16033,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_28(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_33', 'manager_27', 'manager_24'])
+manager_28(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_27', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -19162,7 +16051,14 @@ RETURN TMP_200
 withdrawFee
 Finding type for _amount...
 uint256
-MAX_12(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_0', 'MAX_13'])
+Param: 0
+    num: [1]
+    den: [-1]
+    norm: 0
+    link: None
+    fields: []
+    fintype: -1
+MAX_12(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -19173,7 +16069,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_29(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_29(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -19195,7 +16091,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_13(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_12', 'MAX_13'])
+MAX_13(uint256) := ϕ(['MAX_11', 'MAX_13', 'MAX_3', 'MAX_9', 'MAX_12'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -19206,7 +16102,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_30(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_29', 'manager_33', 'manager_24'])
+manager_30(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_29', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -19240,7 +16136,7 @@ LF: None
 Fields: 
 Finance Type: undef
 RETURN TMP_203
-MAX_12(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_0', 'MAX_13'])
+MAX_12(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -19251,7 +16147,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_29(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_33', 'manager_37', 'manager_0', 'manager_24'])
+manager_29(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -19273,7 +16169,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-MAX_13(uint256) := ϕ(['MAX_3', 'MAX_9', 'MAX_11', 'MAX_12', 'MAX_13'])
+MAX_13(uint256) := ϕ(['MAX_11', 'MAX_13', 'MAX_3', 'MAX_9', 'MAX_12'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -19284,7 +16180,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_30(IManager) := ϕ(['manager_35', 'manager_26', 'manager_39', 'manager_6', 'manager_19', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_37', 'manager_29', 'manager_33', 'manager_24'])
+manager_30(IManager) := ϕ(['manager_1', 'manager_30', 'manager_28', 'manager_29', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_19', 'manager_12', 'manager_6'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -19326,7 +16222,7 @@ _normalizeDecimals
 
 
 slitherConstructorConstantVariables
-Function count: 70
+Function count: 52
 Executing Group 7
 [*] Tested 3 warnings for yAxis
 Group 7 complete
