@@ -208,13 +208,13 @@ def pass_ftype(dest, left, func, right = None):
 def print_param_cache(param_cache):
     param_no = 0
     for param in param_cache:
-        ##print("Param: " + str(param_no))
-        ##print(f"    num: {param[0]}")
-        ##print(f"    den: {param[1]}")
-        ##print(f"    norm: {param[2]}")
-        ##print(f"    link: {param[3]}")
-        ##print(f"    fields: {param[4]}")
-        ##print(f"    fintype: {param[5]}")
+        print("Param: " + str(param_no))
+        print(f"    num: {param[0]}")
+        print(f"    den: {param[1]}")
+        print(f"    norm: {param[2]}")
+        print(f"    link: {param[3]}")
+        print(f"    fields: {param[4]}")
+        print(f"    fintype: {param[5]}")
         param_no+=1
 
 #USAGE: given an ir for a function call, generate a param_cache
@@ -2223,7 +2223,7 @@ def _tcheck_function(function) -> []:
         new_param_cache = function_param_cache(function)
         if(not(mark_iteration) or current_function_marked):
             added = add_param_cache(function, new_param_cache)
-        ##print_param_cache(new_param_cache)
+        print_param_cache(new_param_cache)
     else:
         #do not care about internal functions in initial iteration
         return addback_nodes
