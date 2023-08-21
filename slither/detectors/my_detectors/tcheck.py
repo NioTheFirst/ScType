@@ -423,6 +423,8 @@ def querry_type(ir):
             temp_address_counter+=1
         _ir.address = global_address_counter + temp_address_counter
         print(f"Global: {global_address_counter} Address: {_ir.address}")
+        #TODO Do not reset temp_address_counter, create sets
+
         return #Not yet, testing is needed TODO
     if(mark_iteration and not(current_function_marked)):
         assign_const(ir)
@@ -920,7 +922,7 @@ def handle_balance_functions(ir):
     elif(func_name == "decimals"):
         ir.lvalue.extok.norm = norm
         isbfunc = True
-    #WIP
+    #WIP, transferFrom, "safe"
     if(isbfunc and token_type == -2):
         ir.lvalue.extok.trace = dest
     return isbfunc
