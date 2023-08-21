@@ -392,7 +392,14 @@ def append_typefile(ir, num = None, den = None, norm = None, lf = None):
     tfile.write(newline+"\n")
     tfile.close()
 
-    
+#USAGE: generate a name for temporary addresses in the form: function:name
+def generate_temporary_address_name(ir):
+    parent = ir.parent_function
+    name = ir.extok.name
+    new_name = str(parent)+":"+str(name)
+    return(new_name)
+
+
 #USAGE: querry the user for a type
 #RETURNS: N/A
 def querry_type(ir):
@@ -404,6 +411,8 @@ def querry_type(ir):
     global current_function_marked
     global global_address_counter
     global temp_address_counter
+    global num_to_address
+    global address_to_num
     _ir = ir.extok
     uxname = _ir.name
     if(ir.tname != None):
@@ -419,12 +428,20 @@ def querry_type(ir):
         ##print("SKIP bytes")
         return
     if(str(ir.type) == "address"):
+        address_name = None
         if(ir.parent_function == "global"):
             global_address_counter+=1
+            #fill in name in mapping
+            address_name = _ir.name
         else:
             temp_address_counter+=1
+            address_name = generate_temporary_address_name(ir)
         _ir.address = global_address_counter + temp_address_counter
-        print(f"Global: {global_address_counter} Address: {_ir.address}")
+        address_to_num[address_name] = _ir.address
+        num_to_address[_ir.address] = address_name
+        #label for address
+        
+
         #TODO Do not reset temp_address_counter, create sets
 
         return #Not yet, testing is needed TODO
@@ -905,17 +922,21 @@ def handle_balance_functions(ir):
     global traces
     func_name = ir.function.name
     dest = ir.destination
+    _dest = dest.extok
     token_type = 'u'
     norm = 'u'
     isbfunc = False
     print('Handling balance function!')
-    if dest in address_to_num:
-        token_type = address_to_num[dest]
-    if token_type in num_to_norm:
-        norm = num_to_norm[token_type]
-    if (token_type == 'u'):
-        token_type = -2-traces
-        traces+=1
+    #TODO check the address
+    print(_dest.address)
+    #if(not(dest in address_to_num))
+    #if(_dest.function_name == "global"):
+        #Global address, positive t_type
+    #    token_type = address_to_num[dest]
+    #if dest in address_to_num:
+    #    token_type = address_to_num[dest]
+    #if token_type in num_to_norm:
+    #    norm = num_to_norm[token_type]
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
@@ -2303,7 +2324,7 @@ def _tcheck_contract_state_var(contract):
         if(True):
             if(not(read_global)):
                 querry_type(state_var)
-                if(str(state_var.type) == "address"):
+                if(str(state_var.type) == "address" and not(state_var.name in address_to_num)):
                     address_to_num[state_var.name] = state_var.extok.address
                     num_to_address[state_var.extok.address] = state_var.name
                 new_constant = create_iconstant()
@@ -2403,6 +2424,7 @@ def _tcheck_contract(contract):
                     copy_token_type(var, temp)
                     global_var_types[(var.extok.name, contract.name)] = temp
                     if(var.extok.address != 'u'):
+                        #Only global addresses
                         global_address_counter+=1
                         address_to_num[var.name] = var.extok.address
                         num_to_address[var.extok.address] = var.name
