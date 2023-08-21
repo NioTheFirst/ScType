@@ -933,10 +933,13 @@ def handle_balance_functions(ir):
     #if(_dest.function_name == "global"):
         #Global address, positive t_type
     #    token_type = address_to_num[dest]
-    #if dest in address_to_num:
-    #    token_type = address_to_num[dest]
-    #if token_type in num_to_norm:
-    #    norm = num_to_norm[token_type]
+    if dest in address_to_num:
+        token_type = address_to_num[dest]
+    else:
+        token_type = -2-trace
+        trace+=1
+    if token_type in num_to_norm:
+        norm = num_to_norm[token_type]
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
