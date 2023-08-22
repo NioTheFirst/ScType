@@ -930,11 +930,9 @@ def handle_balance_functions(ir):
     #if(_dest.function_name == "global"):
         #Global address, positive t_type
     #    token_type = address_to_num[dest]
-    if dest in address_to_num:
-        token_type = address_to_num[dest]
-    else:
-        token_type = -2-traces
-        traces+=1
+    token_type = _dest.address
+    if(label_sets[token_type].head > 0):
+        token_type = label_sets[token_type].head
     if token_type in num_to_norm:
         norm = num_to_norm[token_type]
     if(func_name == "balanceOf"):
@@ -946,7 +944,7 @@ def handle_balance_functions(ir):
         ir.lvalue.extok.norm = norm
         isbfunc = True
     #WIP, transferFrom, "safe"
-    if(isbfunc and token_type == -2):
+    if(isbfunc and token_type < 0):
         ir.lvalue.extok.trace = dest
     return isbfunc
         
