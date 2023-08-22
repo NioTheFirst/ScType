@@ -2191,7 +2191,7 @@ def _tcheck_function_call(function, param_cache) -> []:
             #    update_non_ssa(param)
             paramno+=1
         while fentry:
-            node = fentry.pop(0)
+            node = fentry.pop()
             if node in explored:
                 continue
             explored.add(node)
@@ -2264,6 +2264,8 @@ def _tcheck_function(function) -> []:
         #do not care about internal functions in initial iteration
         return addback_nodes
 
+
+
     #Append to function count
     function_count+=1
     #WORKLIST ALGORITHM
@@ -2273,6 +2275,8 @@ def _tcheck_function(function) -> []:
     while((prevlen > curlen and prevlen != -1) or prevlen == -1):
         addback_nodes = []
         fentry = {function.entry_point}
+        viewfentry = {function.entry_point}
+        view_ir(viewfentry)
         explored = set()
         paramno = 0
         for param in function.parameters:
@@ -2281,7 +2285,7 @@ def _tcheck_function(function) -> []:
             print(param.extok)
             paramno+=1
         while fentry:
-            node = fentry.pop(0)
+            node = fentry.pop()
             if node in explored:
                 continue
             explored.add(node)
@@ -2301,7 +2305,18 @@ def _tcheck_function(function) -> []:
     handle_return(None, function)
     return addback_nodes
 
+def view_ir(fentry):
+    print()
+    print()
 
+    while fentry:
+        node = fentry.pop()
+        for ir in node.irs_ssa:
+            print (ir)
+        for son in node.sons:
+            fentry.add(son)
+    print()
+    print()
 #USAGE: typechecks state (global) variables given a contract
 #RETURNS: whether or not the state variable need to be added back.
 #         the result is always 'FALSE' (querried)
@@ -2357,7 +2372,7 @@ def _mark_functions(contract):
         add_cf_pair(contract.name, function.name, function)
         contains_bin = False
         while fentry:
-            node = fentry.pop(0)
+            node = fentry.pop()
             for ir in node.irs_ssa:
                 if(isinstance(ir, Binary)):
                     contains_bin = True
