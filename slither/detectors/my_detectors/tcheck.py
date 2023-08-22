@@ -22,6 +22,8 @@ sys.path.append(script_dir)
 import tcheck_parser
 from tcheck_parser import update_ratios
 import tcheck_propagation
+import address_handler
+from address_handler import global_address_counter, temp_address_counter, num_to_norm, label_sets, label_to_address
 
 seen_contracts = {}
 user_type = False
@@ -51,15 +53,15 @@ constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
 #address to label
-address_to_num = {}
+#address_to_num = {}
 #label to address
-num_to_address = {}
+#num_to_address = {}
 #label to normalization
-num_to_norm = {}
-global_address_counter = 0
+#num_to_norm = {}
+#global_address_counter = 0
 traces = 0 #trace default is -2
 trace_to_label = {}
-temp_address_counter = 0
+#temp_address_counter = 0
 global_var_types = {}
 read_global = False
 
@@ -164,6 +166,16 @@ def get_field(function_name, parent_name, field_name):
 #RETURNS: NULL
 def bar_function(function_name):
     tcheck_parser.bar_function(function_name)
+
+
+#USAGE: new address
+def new_address(ir):
+    if (not(isinstance(ir, Variable))):
+        return
+    if(ir.extok.function_name == "global"):
+        address_handler.new_address(ir, True)
+    else:
+        address_handler.new_address(ir, False)
 
 #USAGE: returns if a function should be typechecked
 #RETURNS bool
@@ -428,18 +440,7 @@ def querry_type(ir):
         ##print("SKIP bytes")
         return
     if(str(ir.type) == "address"):
-        address_name = None
-        if(ir.parent_function == "global"):
-            global_address_counter+=1
-            #fill in name in mapping
-            address_name = _ir.name
-        else:
-            temp_address_counter+=1
-            address_name = generate_temporary_address_name(ir)
-        _ir.address = global_address_counter + temp_address_counter
-        _ir.linked_contract = None
-        address_to_num[address_name] = _ir.address
-        num_to_address[_ir.address] = address_name
+        new_address(ir)
         #label for address
         
 
@@ -2333,9 +2334,6 @@ def _tcheck_contract_state_var(contract):
         if(True):
             if(not(read_global)):
                 querry_type(state_var)
-                if(str(state_var.type) == "address" and not(state_var.name in address_to_num)):
-                    address_to_num[state_var.name] = state_var.extok.address
-                    num_to_address[state_var.extok.address] = state_var.name
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
@@ -2435,8 +2433,6 @@ def _tcheck_contract(contract):
                     if(var.extok.address != 'u'):
                         #Only global addresses
                         global_address_counter+=1
-                        address_to_num[var.name] = var.extok.address
-                        num_to_address[var.extok.address] = var.name
                     print(temp.extok)
         
         if(len(addback_nodes) > 0):
