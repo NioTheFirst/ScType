@@ -245,13 +245,13 @@ def parse_type_file(t_file, f_file = None):
                 denom = [-1]
                 norm = ['u']
                 lf = None
+                addr = 'u'
                 if(len(_line) > 2):
                     num =[ int(_line[2].strip())]
                     denom = [int(_line[3].strip())]
                     norm = int(_line[4].strip())
                     if(len(_line) >= 6):
                         lf = _line[5]
-                add_ref(ref_name, (num, denom, norm, lf))
             #FIELD TYPE
             if(_line[0].strip() == "[t*]"):
                 func_name = _line[1].strip()
@@ -316,13 +316,15 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
     if(key in ex_func_type_hash):
         func_tuple = ex_func_type_hash[key]
         ret_type_tuples = []
+        pos = -1
         for ret_var in func_tuple:
             #print(ret_var)
+            pos+=1
             copy = ret_var[0]
             num_trans = ret_var[1]
             den_trans = ret_var[2]
             norm = ret_var[3]
-            addr = ret_var[4]
+            lc = ret_var[4]
             ftype = -1
             if(len(ret_var) >= 6):
                 ftype = ret_var[5]
@@ -334,7 +336,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
             
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
-                ret_type_tuple = (num_trans, den_trans, norm , addr, ftype)
+                ret_type_tuple = (num_trans, den_trans, norm , lc, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
             for num in num_trans:
@@ -357,9 +359,9 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                     ret_num.append(d)
             if(norm > 0):
                 norm = param[norm-1].extok.norm
-            if(isinstance(addr, int) and addr > 0):
-                addr = param[addr-1].extok.norm
-            ret_type_tuple = (ret_num, ret_den, norm, addr, ftype)
+            if(isinstance(lc, int) and lc > 0):
+                lc = param[lc-1].extok.linked_contract
+            ret_type_tuple = (ret_num, ret_den, norm, lc, ftype)
             ret_type_tuples.append(ret_type_tuple)
         return ret_type_tuples
     return None

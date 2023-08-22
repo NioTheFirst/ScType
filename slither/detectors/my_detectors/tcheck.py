@@ -900,6 +900,7 @@ def querry_fc(ir) -> int:
             convert_ssa(ir.lvalue)
             copy_token_tuple(ir.lvalue, written_func_ret)
             #address
+            print("Getting new address:")
             new_address(ir.lvalue, False)
         elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
@@ -1108,6 +1109,8 @@ def type_ref(ir)->bool:
         ##print("REFERENCE IS BOOL TYPE")
         assign_const(ir.lvalue)
         return False
+    
+    #if(str(ir.lvalue.type) == "address"):
 
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left)):
