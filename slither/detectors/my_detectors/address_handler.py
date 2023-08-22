@@ -11,15 +11,20 @@ class Address_label():
     def __init__(self, _head):
         self._head = _head
         self._set = {_head}
-    
-    @head.setter
-    def head(self, x):
-        self._head = x
+
     
     @property
     def head(self):
         return(self._head)
+    
+    @head.setter
+    def head(self, x):
+        self._head = x
 
+    @property
+    def set(self):
+        return(self._set)
+        
     @set.setter
     def set(self, x):
         self._set = x
