@@ -2050,6 +2050,7 @@ def _tcheck_node(node, function) -> []:
     for ir in node.irs_ssa:
         #Pass in paramters
         if isinstance(ir, Phi):
+            print(ir)
             for p in function.parameters:
                 if(p.name == ir.lvalue.name):
                     copy_token_type(p, ir.lvalue)
