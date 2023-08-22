@@ -437,6 +437,7 @@ def querry_type(ir):
             temp_address_counter+=1
             address_name = generate_temporary_address_name(ir)
         _ir.address = global_address_counter + temp_address_counter
+        _ir.linked_contract = None
         address_to_num[address_name] = _ir.address
         num_to_address[_ir.address] = address_name
         #label for address
