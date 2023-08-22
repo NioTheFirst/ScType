@@ -1,5 +1,4 @@
 #Handles address things
-from slither.core.variables.variable import Variable
 #label to normalization
 num_to_norm = {}
 label_sets = {}
