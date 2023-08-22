@@ -1134,6 +1134,7 @@ def type_ref(ir)->bool:
     #check the parser for a pre-user-defined type
     #print(ir.variable_left.name)
     #check address
+    print("dfadkfjk")
     print(ir.lvalue.type.type)
     ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
