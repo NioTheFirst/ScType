@@ -2191,7 +2191,7 @@ def _tcheck_function_call(function, param_cache) -> []:
             #    update_non_ssa(param)
             paramno+=1
         while fentry:
-            node = fentry.pop()
+            node = fentry.pop(0)
             if node in explored:
                 continue
             explored.add(node)
@@ -2281,7 +2281,7 @@ def _tcheck_function(function) -> []:
             print(param.extok)
             paramno+=1
         while fentry:
-            node = fentry.pop()
+            node = fentry.pop(0)
             if node in explored:
                 continue
             explored.add(node)
@@ -2357,7 +2357,7 @@ def _mark_functions(contract):
         add_cf_pair(contract.name, function.name, function)
         contains_bin = False
         while fentry:
-            node = fentry.pop()
+            node = fentry.pop(0)
             for ir in node.irs_ssa:
                 if(isinstance(ir, Binary)):
                     contains_bin = True
