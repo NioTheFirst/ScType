@@ -3,7 +3,7 @@ from slither.core.variables.variable import Variable
 #label to normalization
 num_to_norm = {}
 label_sets = {}
-label_to_address
+label_to_address = {}
 global_address_counter = 0
 temp_address_counter = -1000
 
