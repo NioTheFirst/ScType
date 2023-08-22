@@ -53,7 +53,7 @@ def new_address(ir, isGlobal):
     global label_sets
     global label_to_address
     _ir = ir.extok
-    if(_ir.address != 'u'):
+    if(_ir.address != 'u' and _ir.address != None):
         return None
     if(isGlobal):
         global_address_counter+=1
