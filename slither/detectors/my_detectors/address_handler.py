@@ -8,7 +8,7 @@ global_address_counter = 0
 temp_address_counter = -1000
 
 class Address_label():
-    def init(self, _head):
+    def __init__(self, _head):
         self._head = _head
         self._set = {_head}
     
