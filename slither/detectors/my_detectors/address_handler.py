@@ -52,8 +52,6 @@ def new_address(ir, isGlobal):
     global temp_address_counter
     global label_sets
     global label_to_address
-    if(not(isinstance(ir, Variable))):
-        return None
     _ir = ir.extok
     if(_ir.address != 'u'):
         return None
