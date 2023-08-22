@@ -24,7 +24,7 @@ class Address_label():
     @property
     def set(self):
         return(self._set)
-        
+
     @set.setter
     def set(self, x):
         self._set = x
@@ -67,4 +67,5 @@ def new_address(ir, isGlobal):
     label = Address_label(_ir.address)
     label_sets[_ir.address] = label
     label_to_address[_ir.address] = str(_ir.function_name)+":"+str(_ir.name)
+    return _ir.address
         

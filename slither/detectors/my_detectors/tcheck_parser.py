@@ -12,6 +12,7 @@
 #       -get_var_type_tuple(function_name, var_name) :check for existence and returns type tuple for a variable
 #       -get_func_type_tuple(contract_name, function_name, [parameters]) :check for existence and returns type tuple for an external function call
 #       -get_ref_type_tuple(ref_name) :check for existence and returns type tuple for a reference (arrays or maps)
+import address_handler
 
 allowed_contracts = {}
 barred_functions = {}
@@ -330,6 +331,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
             param = parameters
             #for p in parameters:
             #    print(p.name)
+            
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
                 ret_type_tuple = (num_trans, den_trans, norm , addr, ftype)

@@ -794,6 +794,8 @@ def type_upk(ir) ->bool:
     if(lval.type == "bool"):
         assign_const(lval)
         return False
+    if(lval.type == "address"):
+        new_address(l_val, False)
     ##print("Reading tuple " + str(rtup) + " index " + str(rind))
     #currently just querry the type of the left value
     tup_token_type = get_tuple_index(str(rtup), rind)
@@ -897,6 +899,8 @@ def querry_fc(ir) -> int:
             written_func_ret = written_func_rets[0]
             convert_ssa(ir.lvalue)
             copy_token_tuple(ir.lvalue, written_func_ret)
+            #address
+            new_address(ir.lvaluem False)
         elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
         else:
