@@ -897,13 +897,6 @@ def querry_fc(ir) -> int:
             written_func_ret = written_func_rets[0]
             convert_ssa(ir.lvalue)
             copy_token_tuple(ir.lvalue, written_func_ret)
-            #Convert to a given address, if possible
-            if(str(ir.lvalue.type) == "address"):
-                if(ir.lvalue.extok.link_function in address_to_num):
-                    address_label = address_to_num[ir.lvalue.extok.link_function]
-                    ir.lvalue.extok.address = address_label
-                else:
-                    ir.lvalue.extok.link_function = None
         elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
         else:
