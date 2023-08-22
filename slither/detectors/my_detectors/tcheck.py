@@ -439,7 +439,7 @@ def querry_type(ir):
     if(str(ir.type) == "bytes"):
         ##print("SKIP bytes")
         return
-    if(str(ir.type) == "address"):
+    if(str(ir.type).startswith("address")):
         new_address(ir)
         #label for address
         
