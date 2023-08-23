@@ -2264,7 +2264,8 @@ def _tcheck_function(function) -> []:
         #do not care about internal functions in initial iteration
         return addback_nodes
 
-
+    for ssa in function.parameters_ssa:
+        print(ssa)
 
     #Append to function count
     function_count+=1
@@ -2308,9 +2309,12 @@ def _tcheck_function(function) -> []:
 def view_ir(fentry):
     print()
     print()
-
+    explored = set()
     while fentry:
         node = fentry.pop()
+        if node in explored:
+            continue
+        explored.add(node)
         for ir in node.irs_ssa:
             print (ir)
         for son in node.sons:
