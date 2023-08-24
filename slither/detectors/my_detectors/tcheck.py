@@ -2051,6 +2051,10 @@ def _tcheck_node(node, function) -> []:
     #Examine the Phi thing more closesly
     function_name = function.name
     irs = []
+    #local vars read
+    for local_var in node.ssa_variables_read:
+        print(local_var.extok)
+        
     for ir in node.irs_ssa:
         #Pass in paramters
         if isinstance(ir, Phi):
