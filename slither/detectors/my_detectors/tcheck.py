@@ -2045,6 +2045,10 @@ def _tcheck_ir(irs, function_name) -> []:
 def _tcheck_node(node, function) -> []:
     global errors
     ##print("typecheckig node...")
+    #OVERHAUL:
+    #Get rid of the mapping thing for the SSA
+    #Just apply mappings for the initial parameters
+    #Examine the Phi thing more closesly
     function_name = function.name
     irs = []
     for ir in node.irs_ssa:
