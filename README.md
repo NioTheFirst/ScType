@@ -1,13 +1,8 @@
 # ICSE 2024 Submission: SCType type checker
 
-<<<<<<< HEAD
 =======
-is this comitting?
 
-oes it say no sapce?
->>>>>>> 9aa0099a1755b1b7843565aff05d6b7f70e29059
 
-docker build ...
 
 SCType is a Solidity type checker written in Python 3. 
 
