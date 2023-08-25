@@ -761,6 +761,7 @@ def check_type(ir) -> bool:
 #RETURNS: nothing
 def type_conversion(ir):
     global address_to_label
+    global label_to_address
     #if(debug_print):
         #convert_ssa(ir.lvalue)
     #convert_ssa(ir.variable)
@@ -774,7 +775,10 @@ def type_conversion(ir):
             addr = address_to_label[name_key]
         else:
             print("new address made")
-            addr = new_address(ir.variable, True)
+            addr = new_address(ir.lvalue, True)
+            label_to_address[addr] = name_key
+            address_to_label[name_key] = addr
+
         ir.lvalue.extok.address = addr
         ir.lvalue.norm = 0
         ir.lvalue.link_function = current_contract_name
