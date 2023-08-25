@@ -2078,6 +2078,7 @@ def _tcheck_node(node, function) -> []:
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
         irs.append(ir)
     newirs = _tcheck_ir(irs, function_name)
+
     #Handle Constructor Varialbes (need to be propagated)
     if(function.name == "constructor"):
         for var in node.ssa_variables_written:
@@ -2090,6 +2091,7 @@ def _tcheck_node(node, function) -> []:
                     #Only global addresses
                     global_address_counter+=1
                 print(temp.extok)
+
     for error in errors:
         if(error.dnode == None):
             error.dnode = node
@@ -2470,7 +2472,7 @@ def _tcheck_contract(contract):
         if(function.name != "constructor"):
             _tcheck_contract_state_var(contract)
         else:
-            return
+            return errors
             #Deprecated
             print("CONSTRUCTOR VARIABLES______________________________")
             for var in function.ssa_variables_written:
