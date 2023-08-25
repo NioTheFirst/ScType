@@ -171,11 +171,11 @@ def bar_function(function_name):
 #USAGE: new address
 def new_address(ir, isGlobal = None):
     if (not(isinstance(ir, Variable))):
-        return
+        return None
     if(isGlobal or ir.extok.function_name == "global"):
-        address_handler.new_address(ir, True)
+        return address_handler.new_address(ir, True)
     else:
-        address_handler.new_address(ir, False)
+        return address_handler.new_address(ir, False)
 
 #USAGE: returns if a function should be typechecked
 #RETURNS bool
