@@ -2472,7 +2472,7 @@ def _tcheck_contract(contract):
         if(function.name != "constructor"):
             _tcheck_contract_state_var(contract)
         else:
-            return errors
+            continue
             #Deprecated
             print("CONSTRUCTOR VARIABLES______________________________")
             for var in function.ssa_variables_written:
