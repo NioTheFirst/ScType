@@ -2046,6 +2046,7 @@ def _tcheck_ir(irs, function_name) -> []:
 #RETURNS: list of IR with undefined types
 def _tcheck_node(node, function) -> []:
     global errors
+    global current_contract_name
     ##print("typecheckig node...")
     #OVERHAUL:
     #Get rid of the mapping thing for the SSA
@@ -2055,7 +2056,7 @@ def _tcheck_node(node, function) -> []:
     irs = []
     #local vars read
     print("Propogating parameters to local SSA variables...")
-    for lv in node.ssa_local_variables_read:
+    for lv in node.ssa_variables_read:
         print(lv.ssa_name)
         if(lv.ssa_name.endswith("_1")):
             lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
@@ -2076,6 +2077,18 @@ def _tcheck_node(node, function) -> []:
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
         irs.append(ir)
     newirs = _tcheck_ir(irs, function_name)
+    #Handle Constructor Varialbes (need to be propagated)
+    if(function.name == "constructor"):
+        for var in node.ssa_variables_written:
+            if((var.extok.name, current_contract_name) in global_var_types):
+                print(f"Copied {var.extok.name}")
+                temp = global_var_types[(var.extok.name, current_contract_name)]
+                copy_token_type(var, temp)
+                global_var_types[(var.extok.name, current_contract_name)] = temp
+                if(var.extok.address != 'u'):
+                    #Only global addresses
+                    global_address_counter+=1
+                print(temp.extok)
     for error in errors:
         if(error.dnode == None):
             error.dnode = node
@@ -2180,7 +2193,6 @@ def _tcheck_function_call(function, param_cache) -> []:
         #clear previous types
         #copy new types
         copy_pc_token_type(param_cache[paramno], param)
-        is_variable(param)
         #param.parent_function = function.name
         paramno+=1
     #find return and tack it onto the end
@@ -2457,6 +2469,8 @@ def _tcheck_contract(contract):
         if(function.name != "constructor"):
             _tcheck_contract_state_var(contract)
         else:
+            return
+            #Deprecated
             print("CONSTRUCTOR VARIABLES______________________________")
             for var in function.ssa_variables_written:
                 if((var.extok.name, contract.name) in global_var_types):
