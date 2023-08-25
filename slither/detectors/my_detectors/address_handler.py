@@ -59,7 +59,7 @@ def new_address(ir, isGlobal):
         return None
     if(isGlobal):
         global_address_counter+=1
-        print("global assignment")
+        print(f"global assignment: {global_address_counter}")
         _ir.address = global_address_counter
     else:
         temp_address_counter+=1
