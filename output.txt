@@ -1,10 +1,4 @@
 Switched global version to 0.6.12
-Finding type for _allowances...
-mapping(address => mapping(address => uint256))
-Finding type for MAX...
-uint256
-Finding type for manager...
-IManager
 Finding type for totalDepositCap...
 uint256
 Finding type for _balances...
@@ -13,8 +7,14 @@ Finding type for _totalSupply...
 uint256
 Finding type for _name...
 string
+Finding type for _allowances...
+mapping(address => mapping(address => uint256))
+Finding type for manager...
+IManager
 Finding type for _decimals...
 uint8
+Finding type for MAX...
+uint256
 Finding type for min...
 uint256
 Finding type for _symbol...
@@ -97,16 +97,18 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
 Propogating parameters to local SSA variables...
-_name_1
+_symbol_1
 1
-_
-e
-m
-a
-n
-_name
+_1
+l_
+ol
+bo
+mb
+ym
+sy
+_symbol
 
-Name: _name_1 Function: None
+Name: _symbol_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -114,18 +116,16 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_symbol_1
+_name_1
 1
-_
-l
-o
-b
-m
-y
-s
-_symbol
+_1
+e_
+me
+am
+na
+_name
 
-Name: _symbol_1 Function: None
+Name: _name_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -138,14 +138,14 @@ INTERNAL_CALL, VaultToken.constructor(string,string)(_name_1,_symbol_1)
 Propogating parameters to local SSA variables...
 _manager_1
 1
-_
-r
-e
-g
-a
-n
-a
-m
+_1
+r_
+er
+ge
+ag
+na
+an
+ma
 _manager
 
 Name: _manager_1 Function: None
@@ -288,16 +288,18 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
 Propogating parameters to local SSA variables...
-_name_1
+_symbol_1
 1
-_
-e
-m
-a
-n
-_name
+_1
+l_
+ol
+bo
+mb
+ym
+sy
+_symbol
 
-Name: _name_1 Function: None
+Name: _symbol_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -305,18 +307,16 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_symbol_1
+_name_1
 1
-_
-l
-o
-b
-m
-y
-s
-_symbol
+_1
+e_
+me
+am
+na
+_name
 
-Name: _symbol_1 Function: None
+Name: _name_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -329,14 +329,14 @@ INTERNAL_CALL, VaultToken.constructor(string,string)(_name_1,_symbol_1)
 Propogating parameters to local SSA variables...
 _manager_1
 1
-_
-r
-e
-g
-a
-n
-a
-m
+_1
+r_
+er
+ge
+ag
+na
+an
+ma
 _manager
 
 Name: _manager_1 Function: None
@@ -481,12 +481,12 @@ MODIFIER_CALL, Vault.onlyStrategist()()
 Propogating parameters to local SSA variables...
 _gauge_1
 1
-_
-e
-g
-u
-a
-g
+_1
+e_
+ge
+ug
+au
+ga
 _gauge
 
 Name: _gauge_1 Function: None
@@ -537,12 +537,12 @@ MODIFIER_CALL, Vault.onlyStrategist()()
 Propogating parameters to local SSA variables...
 _gauge_1
 1
-_
-e
-g
-u
-a
-g
+_1
+e_
+ge
+ug
+au
+ga
 _gauge
 
 Name: _gauge_1 Function: None
@@ -581,7 +581,7 @@ Param: 0
 _min_0
 
 
-MAX_1(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_9', 'MAX_0', 'MAX_11'])
+MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 MODIFIER_CALL, Vault.notHalted()()
 MODIFIER_CALL, Vault.onlyStrategist()()
 TMP_70(bool) = _min_1 <= MAX_3
@@ -601,7 +601,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-MAX_1(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_9', 'MAX_0', 'MAX_11'])
+MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: setMin
@@ -617,7 +617,7 @@ End popogation
 MODIFIER_CALL, Vault.notHalted()()
 Propogating parameters to local SSA variables...
 End popogation
-manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: notHalted
@@ -651,7 +651,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_35(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_34'])
+manager_35(IManager) := ϕ(['manager_34', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: notHalted
@@ -688,7 +688,7 @@ Propogating parameters to local SSA variables...
 End popogation
 Propogating parameters to local SSA variables...
 End popogation
-manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: notHalted
@@ -722,7 +722,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_35(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_34'])
+manager_35(IManager) := ϕ(['manager_34', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: notHalted
@@ -762,7 +762,7 @@ End popogation
 MODIFIER_CALL, Vault.onlyStrategist()()
 Propogating parameters to local SSA variables...
 End popogation
-manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: onlyStrategist
@@ -800,7 +800,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_39(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_38'])
+manager_39(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_38'])
 [i]Type for manager
 
 Name: manager Function: onlyStrategist
@@ -837,7 +837,7 @@ Propogating parameters to local SSA variables...
 End popogation
 Propogating parameters to local SSA variables...
 End popogation
-manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: onlyStrategist
@@ -875,7 +875,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_39(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_38'])
+manager_39(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_38'])
 [i]Type for manager
 
 Name: manager Function: onlyStrategist
@@ -911,27 +911,27 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
 Propogating parameters to local SSA variables...
-MAX_3
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _min_1
 1
-_
-n
-i
-m
+_1
+n_
+in
+mi
 _min
 
 Name: _min_1 Function: None
 Num: -1
 Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MAX_3
+
+Name: None Function: None
+Num: 
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -963,10 +963,10 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _min_1
 1
-_
-n
-i
-m
+_1
+n_
+in
+mi
 _min
 
 Name: _min_1 Function: None
@@ -991,7 +991,7 @@ Fields:
 Finance Type: undef
 
 
-MAX_1(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_9', 'MAX_0', 'MAX_11'])
+MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 MODIFIER_CALL, Vault.notHalted()()
 MODIFIER_CALL, Vault.onlyStrategist()()
 TMP_70(bool) = _min_1 <= MAX_3
@@ -1011,7 +1011,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-MAX_1(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_9', 'MAX_0', 'MAX_11'])
+MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
 [i]Type for MAX
 
 Name: MAX Function: setMin
@@ -1029,27 +1029,27 @@ Propogating parameters to local SSA variables...
 End popogation
 MODIFIER_CALL, Vault.onlyStrategist()()
 Propogating parameters to local SSA variables...
-MAX_3
-
-Name: MAX Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _min_1
 1
-_
-n
-i
-m
+_1
+n_
+in
+mi
 _min
 
 Name: _min_1 Function: None
 Num: -1
 Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+MAX_3
+
+Name: MAX Function: None
+Num: 
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -1081,10 +1081,10 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _min_1
 1
-_
-n
-i
-m
+_1
+n_
+in
+mi
 _min
 
 Name: _min_1 Function: None
@@ -1149,22 +1149,22 @@ MODIFIER_CALL, Vault.onlyStrategist()()
 Propogating parameters to local SSA variables...
 _totalDepositCap_1
 1
-_
-p
-a
-C
-t
-i
-s
-o
-p
-e
-D
-l
-a
-t
-o
-t
+_1
+p_
+ap
+Ca
+tC
+it
+si
+os
+po
+ep
+De
+lD
+al
+ta
+ot
+to
 _totalDepositCap
 
 Name: _totalDepositCap_1 Function: None
@@ -1215,22 +1215,22 @@ MODIFIER_CALL, Vault.onlyStrategist()()
 Propogating parameters to local SSA variables...
 _totalDepositCap_1
 1
-_
-p
-a
-C
-t
-i
-s
-o
-p
-e
-D
-l
-a
-t
-o
-t
+_1
+p_
+ap
+Ca
+tC
+it
+si
+os
+po
+ep
+De
+lD
+al
+ta
+ot
+to
 _totalDepositCap
 
 Name: _totalDepositCap_1 Function: None
@@ -1293,18 +1293,18 @@ _token1_0
 _expectedAmount_0
 
 
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 MODIFIER_CALL, Vault.notHalted()()
 manager_3(IManager) := ϕ(['manager_35'])
 MODIFIER_CALL, Vault.onlyStrategist()()
 manager_4(IManager) := ϕ(['manager_39'])
 TMP_76 = CONVERT this to address
 TMP_77(address) = HIGH_LEVEL_CALL, dest:manager_4(IManager), function:controllers, arguments:['TMP_76']  
-manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_4', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_4', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 TMP_78 = CONVERT TMP_77 to IController
 TMP_79 = CONVERT this to address
 TMP_80(address) = HIGH_LEVEL_CALL, dest:TMP_78(IController), function:converter, arguments:['TMP_79']  
-manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_5', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_5', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 TMP_81 = CONVERT TMP_80 to IConverter
 _converter_1(IConverter) := TMP_81(IConverter)
 TMP_82 = CONVERT _token0_1 to IERC20
@@ -1350,7 +1350,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: swap
@@ -1429,7 +1429,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_4', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_4', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: swap
@@ -1486,7 +1486,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_5', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_5', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: swap
@@ -1533,13 +1533,13 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token0_1
 1
-_
-0
-n
-e
-k
-o
-t
+_1
+0_
+n0
+en
+ke
+ok
+to
 _token0
 
 Name: _token0_1 Function: None
@@ -1609,35 +1609,15 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_balance_1
-1
-_
-e
-c
-n
-a
-l
-a
-b
-_balance
-
-Name: _balance Function: swap
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token0_1
 1
-_
-0
-n
-e
-k
-o
-t
+_1
+0_
+n0
+en
+ke
+ok
+to
 _token0
 
 Name: _token0_1 Function: None
@@ -1650,16 +1630,16 @@ Fields:
 Finance Type: undef
 _converter_1
 1
-_
-r
-e
-t
-r
-e
-v
-n
-o
-c
+_1
+r_
+er
+te
+rt
+er
+ve
+nv
+on
+co
 _converter
 
 Name: _converter Function: swap
@@ -1668,6 +1648,26 @@ Den: -1
 Address: u
 Norm: u
 LF: Converter
+Fields: 
+Finance Type: undef
+_balance_1
+1
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
+_balance
+
+Name: _balance Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Fields: 
 Finance Type: undef
 End popogation
@@ -1716,84 +1716,18 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_85', 'TMP_86', '_balance_1'] 
 Propogating parameters to local SSA variables...
-_balance_1
-1
-_
-e
-c
-n
-a
-l
-a
-b
-_balance
-
-Name: _balance Function: swap
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_expectedAmount_1
-1
-_
-t
-n
-u
-o
-m
-A
-d
-e
-t
-c
-e
-p
-x
-e
-_expectedAmount
-
-Name: _expectedAmount_1 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_token0_1
-1
-_
-0
-n
-e
-k
-o
-t
-_token0
-
-Name: _token0_1 Function: None
-Num: 
-Den: 
-Address: -995
-Norm: u
-LF: _token0
-Fields: 
-Finance Type: undef
 _converter_1
 1
-_
-r
-e
-t
-r
-e
-v
-n
-o
-c
+_1
+r_
+er
+te
+rt
+er
+ve
+nv
+on
+co
 _converter
 
 Name: _converter Function: swap
@@ -1806,13 +1740,13 @@ Fields:
 Finance Type: undef
 _token1_1
 1
-_
-1
-n
-e
-k
-o
-t
+_1
+1_
+n1
+en
+ke
+ok
+to
 _token1
 
 Name: _token1_1 Function: None
@@ -1821,6 +1755,72 @@ Den:
 Address: -994
 Norm: u
 LF: _token1
+Fields: 
+Finance Type: undef
+_balance_1
+1
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
+_balance
+
+Name: _balance Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_expectedAmount_1
+1
+_1
+t_
+nt
+un
+ou
+mo
+Am
+dA
+ed
+te
+ct
+ec
+pe
+xp
+ex
+_expectedAmount
+
+Name: _expectedAmount_1 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_token0_1
+1
+_1
+0_
+n0
+en
+ke
+ok
+to
+_token0
+
+Name: _token0_1 Function: None
+Num: 
+Den: 
+Address: -995
+Norm: u
+LF: _token0
 Fields: 
 Finance Type: undef
 End popogation
@@ -1848,18 +1848,18 @@ Fields:
 Finance Type: undef
 
 
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 MODIFIER_CALL, Vault.notHalted()()
 manager_3(IManager) := ϕ(['manager_35'])
 MODIFIER_CALL, Vault.onlyStrategist()()
 manager_4(IManager) := ϕ(['manager_39'])
 TMP_76 = CONVERT this to address
 TMP_77(address) = HIGH_LEVEL_CALL, dest:manager_4(IManager), function:controllers, arguments:['TMP_76']  
-manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_4', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_4', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 TMP_78 = CONVERT TMP_77 to IController
 TMP_79 = CONVERT this to address
 TMP_80(address) = HIGH_LEVEL_CALL, dest:TMP_78(IController), function:converter, arguments:['TMP_79']  
-manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_5', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_5', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 TMP_81 = CONVERT TMP_80 to IConverter
 _converter_1(IConverter) := TMP_81(IConverter)
 TMP_82 = CONVERT _token0_1 to IERC20
@@ -1905,7 +1905,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: swap
@@ -1980,7 +1980,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_4', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_4', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: swap
@@ -2037,7 +2037,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_5', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_5', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: swap
@@ -2084,13 +2084,13 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token0_1
 1
-_
-0
-n
-e
-k
-o
-t
+_1
+0_
+n0
+en
+ke
+ok
+to
 _token0
 
 Name: _token0_1 Function: None
@@ -2160,35 +2160,15 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_balance_1
-1
-_
-e
-c
-n
-a
-l
-a
-b
-_balance
-
-Name: _balance Function: swap
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token0_1
 1
-_
-0
-n
-e
-k
-o
-t
+_1
+0_
+n0
+en
+ke
+ok
+to
 _token0
 
 Name: _token0_1 Function: None
@@ -2201,16 +2181,16 @@ Fields:
 Finance Type: undef
 _converter_1
 1
-_
-r
-e
-t
-r
-e
-v
-n
-o
-c
+_1
+r_
+er
+te
+rt
+er
+ve
+nv
+on
+co
 _converter
 
 Name: _converter Function: swap
@@ -2219,6 +2199,26 @@ Den:
 Address: u
 Norm: u
 LF: Converter
+Fields: 
+Finance Type: undef
+_balance_1
+1
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
+_balance
+
+Name: _balance Function: swap
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
 Fields: 
 Finance Type: undef
 End popogation
@@ -2267,84 +2267,18 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_85', 'TMP_86', '_balance_1'] 
 Propogating parameters to local SSA variables...
-_balance_1
-1
-_
-e
-c
-n
-a
-l
-a
-b
-_balance
-
-Name: _balance Function: swap
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_expectedAmount_1
-1
-_
-t
-n
-u
-o
-m
-A
-d
-e
-t
-c
-e
-p
-x
-e
-_expectedAmount
-
-Name: _expectedAmount_1 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_token0_1
-1
-_
-0
-n
-e
-k
-o
-t
-_token0
-
-Name: _token0_1 Function: None
-Num: 
-Den: 
-Address: -995
-Norm: u
-LF: _token0
-Fields: 
-Finance Type: undef
 _converter_1
 1
-_
-r
-e
-t
-r
-e
-v
-n
-o
-c
+_1
+r_
+er
+te
+rt
+er
+ve
+nv
+on
+co
 _converter
 
 Name: _converter Function: swap
@@ -2357,13 +2291,13 @@ Fields:
 Finance Type: undef
 _token1_1
 1
-_
-1
-n
-e
-k
-o
-t
+_1
+1_
+n1
+en
+ke
+ok
+to
 _token1
 
 Name: _token1_1 Function: None
@@ -2372,6 +2306,72 @@ Den:
 Address: -994
 Norm: u
 LF: _token1
+Fields: 
+Finance Type: undef
+_balance_1
+1
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
+_balance
+
+Name: _balance Function: swap
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_expectedAmount_1
+1
+_1
+t_
+nt
+un
+ou
+mo
+Am
+dA
+ed
+te
+ct
+ec
+pe
+xp
+ex
+_expectedAmount
+
+Name: _expectedAmount_1 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_token0_1
+1
+_1
+0_
+n0
+en
+ke
+ok
+to
+_token0
+
+Name: _token0_1 Function: None
+Num: 
+Den: 
+Address: -995
+Norm: u
+LF: _token0
 Fields: 
 Finance Type: undef
 End popogation
@@ -2427,7 +2427,7 @@ _token_0
 _strategy_0
 
 
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 manager_8(IManager) := ϕ(['manager_33'])
 MODIFIER_CALL, Vault.notHalted()()
@@ -2435,11 +2435,11 @@ manager_9(IManager) := ϕ(['manager_35'])
 MODIFIER_CALL, Vault.onlyHarvester()()
 manager_10(IManager) := ϕ(['manager_37'])
 TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
-manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_10'])
+manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 TMP_92(None) = SOLIDITY_CALL require(bool,string)(TMP_91,!_strategy)
 TMP_93 = CONVERT this to address
 TMP_94(address) = HIGH_LEVEL_CALL, dest:manager_11(IManager), function:controllers, arguments:['TMP_93']  
-manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_11', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_11', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 TMP_95 = CONVERT TMP_94 to IController
 _controller_1(IController) := TMP_95(IController)
 TMP_96(bool) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:investEnabled, arguments:[]  
@@ -2475,7 +2475,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: earn
@@ -2489,12 +2489,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: None
@@ -2547,37 +2547,17 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-manager_10
-0
-1
-_
-r
-e
-g
-a
-n
-a
-manager_
-
-Name: manager Function: earn
-Num: -1
-Den: -1
-Address: -999
-Norm: u
-LF: Manager
-Fields: 
-Finance Type: undef
 _strategy_1
 1
-_
-y
-g
-e
-t
-a
-r
-t
-s
+_1
+y_
+gy
+eg
+te
+at
+ra
+tr
+st
 _strategy
 
 Name: _strategy_1 Function: None
@@ -2586,6 +2566,26 @@ Den:
 Address: -992
 Norm: u
 LF: _strategy
+Fields: 
+Finance Type: undef
+manager_10
+0
+10
+_1
+r_
+er
+ge
+ag
+na
+an
+manager_
+
+Name: manager Function: earn
+Num: -1
+Den: -1
+Address: -999
+Norm: u
+LF: Manager
 Fields: 
 Finance Type: undef
 End popogation
@@ -2600,7 +2600,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_10'])
+manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: earn
@@ -2625,14 +2625,14 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 manager_11
 1
-1
-_
-r
-e
-g
-a
-n
-a
+11
+_1
+r_
+er
+ge
+ag
+na
+an
 manager_
 
 Name: manager Function: earn
@@ -2668,7 +2668,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_11', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_11', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: earn
@@ -2715,17 +2715,17 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _controller_1
 1
-_
-r
-e
-l
-l
-o
-r
-t
-n
-o
-c
+_1
+r_
+er
+le
+ll
+ol
+ro
+tr
+nt
+on
+co
 _controller
 
 Name: _controller Function: earn
@@ -2753,12 +2753,12 @@ End popogation
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: None
@@ -2793,19 +2793,37 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
+_token_1
+1
+_1
+n_
+en
+ke
+ok
+to
+_token
+
+Name: _token_1 Function: None
+Num: 
+Den: 
+Address: -993
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
 _controller_1
 1
-_
-r
-e
-l
-l
-o
-r
-t
-n
-o
-c
+_1
+r_
+er
+le
+ll
+ol
+ro
+tr
+nt
+on
+co
 _controller
 
 Name: _controller Function: earn
@@ -2818,14 +2836,14 @@ Fields:
 Finance Type: undef
 _balance_1
 1
-_
-e
-c
-n
-a
-l
-a
-b
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
 _balance
 
 Name: _balance Function: earn
@@ -2834,24 +2852,6 @@ Den:
 Address: u
 Norm: u
 LF: None
-Fields: 
-Finance Type: undef
-_token_1
-1
-_
-n
-e
-k
-o
-t
-_token
-
-Name: _token_1 Function: None
-Num: 
-Den: 
-Address: -993
-Norm: u
-LF: _token
 Fields: 
 Finance Type: undef
 End popogation
@@ -2900,19 +2900,58 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
 Propogating parameters to local SSA variables...
+_strategy_1
+1
+_1
+y_
+gy
+eg
+te
+at
+ra
+tr
+st
+_strategy
+
+Name: _strategy_1 Function: None
+Num: 
+Den: 
+Address: -992
+Norm: u
+LF: _strategy
+Fields: 
+Finance Type: undef
+_token_1
+1
+_1
+n_
+en
+ke
+ok
+to
+_token
+
+Name: _token_1 Function: None
+Num: 
+Den: 
+Address: -993
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
 _controller_1
 1
-_
-r
-e
-l
-l
-o
-r
-t
-n
-o
-c
+_1
+r_
+er
+le
+ll
+ol
+ro
+tr
+nt
+on
+co
 _controller
 
 Name: _controller Function: earn
@@ -2925,14 +2964,14 @@ Fields:
 Finance Type: undef
 _balance_1
 1
-_
-e
-c
-n
-a
-l
-a
-b
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
 _balance
 
 Name: _balance Function: earn
@@ -2941,78 +2980,19 @@ Den:
 Address: u
 Norm: u
 LF: None
-Fields: 
-Finance Type: undef
-_token_1
-1
-_
-n
-e
-k
-o
-t
-_token
-
-Name: _token_1 Function: None
-Num: 
-Den: 
-Address: -993
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-_strategy_1
-1
-_
-y
-g
-e
-t
-a
-r
-t
-s
-_strategy
-
-Name: _strategy_1 Function: None
-Num: 
-Den: 
-Address: -992
-Norm: u
-LF: _strategy
 Fields: 
 Finance Type: undef
 End popogation
 HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
 Propogating parameters to local SSA variables...
-_balance_1
-1
-_
-e
-c
-n
-a
-l
-a
-b
-_balance
-
-Name: _balance Function: earn
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: None
@@ -3023,10 +3003,30 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
+_balance_1
+1
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
+_balance
+
+Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 End popogation
 
 
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 manager_8(IManager) := ϕ(['manager_33'])
 MODIFIER_CALL, Vault.notHalted()()
@@ -3034,11 +3034,11 @@ manager_9(IManager) := ϕ(['manager_35'])
 MODIFIER_CALL, Vault.onlyHarvester()()
 manager_10(IManager) := ϕ(['manager_37'])
 TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
-manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_10'])
+manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 TMP_92(None) = SOLIDITY_CALL require(bool,string)(TMP_91,!_strategy)
 TMP_93 = CONVERT this to address
 TMP_94(address) = HIGH_LEVEL_CALL, dest:manager_11(IManager), function:controllers, arguments:['TMP_93']  
-manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_11', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_11', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 TMP_95 = CONVERT TMP_94 to IController
 _controller_1(IController) := TMP_95(IController)
 TMP_96(bool) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:investEnabled, arguments:[]  
@@ -3074,7 +3074,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: earn
@@ -3088,12 +3088,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: None
@@ -3146,37 +3146,17 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-manager_10
-0
-1
-_
-r
-e
-g
-a
-n
-a
-manager_
-
-Name: manager Function: earn
-Num: -1
-Den: -1
-Address: -999
-Norm: u
-LF: Manager
-Fields: 
-Finance Type: undef
 _strategy_1
 1
-_
-y
-g
-e
-t
-a
-r
-t
-s
+_1
+y_
+gy
+eg
+te
+at
+ra
+tr
+st
 _strategy
 
 Name: _strategy_1 Function: None
@@ -3185,6 +3165,26 @@ Den:
 Address: -992
 Norm: u
 LF: _strategy
+Fields: 
+Finance Type: undef
+manager_10
+0
+10
+_1
+r_
+er
+ge
+ag
+na
+an
+manager_
+
+Name: manager Function: earn
+Num: -1
+Den: -1
+Address: -999
+Norm: u
+LF: Manager
 Fields: 
 Finance Type: undef
 End popogation
@@ -3199,7 +3199,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_10'])
+manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: earn
@@ -3224,14 +3224,14 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 manager_11
 1
-1
-_
-r
-e
-g
-a
-n
-a
+11
+_1
+r_
+er
+ge
+ag
+na
+an
 manager_
 
 Name: manager Function: earn
@@ -3267,7 +3267,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_11', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_11', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: earn
@@ -3314,17 +3314,17 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _controller_1
 1
-_
-r
-e
-l
-l
-o
-r
-t
-n
-o
-c
+_1
+r_
+er
+le
+ll
+ol
+ro
+tr
+nt
+on
+co
 _controller
 
 Name: _controller Function: earn
@@ -3352,12 +3352,12 @@ End popogation
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: None
@@ -3392,19 +3392,37 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
+_token_1
+1
+_1
+n_
+en
+ke
+ok
+to
+_token
+
+Name: _token_1 Function: None
+Num: 
+Den: 
+Address: -993
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
 _controller_1
 1
-_
-r
-e
-l
-l
-o
-r
-t
-n
-o
-c
+_1
+r_
+er
+le
+ll
+ol
+ro
+tr
+nt
+on
+co
 _controller
 
 Name: _controller Function: earn
@@ -3417,14 +3435,14 @@ Fields:
 Finance Type: undef
 _balance_1
 1
-_
-e
-c
-n
-a
-l
-a
-b
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
 _balance
 
 Name: _balance Function: earn
@@ -3433,24 +3451,6 @@ Den:
 Address: u
 Norm: u
 LF: None
-Fields: 
-Finance Type: undef
-_token_1
-1
-_
-n
-e
-k
-o
-t
-_token
-
-Name: _token_1 Function: None
-Num: 
-Den: 
-Address: -993
-Norm: u
-LF: _token
 Fields: 
 Finance Type: undef
 End popogation
@@ -3499,19 +3499,58 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
 Propogating parameters to local SSA variables...
+_strategy_1
+1
+_1
+y_
+gy
+eg
+te
+at
+ra
+tr
+st
+_strategy
+
+Name: _strategy_1 Function: None
+Num: 
+Den: 
+Address: -992
+Norm: u
+LF: _strategy
+Fields: 
+Finance Type: undef
+_token_1
+1
+_1
+n_
+en
+ke
+ok
+to
+_token
+
+Name: _token_1 Function: None
+Num: 
+Den: 
+Address: -993
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
 _controller_1
 1
-_
-r
-e
-l
-l
-o
-r
-t
-n
-o
-c
+_1
+r_
+er
+le
+ll
+ol
+ro
+tr
+nt
+on
+co
 _controller
 
 Name: _controller Function: earn
@@ -3524,14 +3563,14 @@ Fields:
 Finance Type: undef
 _balance_1
 1
-_
-e
-c
-n
-a
-l
-a
-b
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
 _balance
 
 Name: _balance Function: earn
@@ -3540,78 +3579,19 @@ Den:
 Address: u
 Norm: u
 LF: None
-Fields: 
-Finance Type: undef
-_token_1
-1
-_
-n
-e
-k
-o
-t
-_token
-
-Name: _token_1 Function: None
-Num: 
-Den: 
-Address: -993
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-_strategy_1
-1
-_
-y
-g
-e
-t
-a
-r
-t
-s
-_strategy
-
-Name: _strategy_1 Function: None
-Num: 
-Den: 
-Address: -992
-Norm: u
-LF: _strategy
 Fields: 
 Finance Type: undef
 End popogation
 HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
 Propogating parameters to local SSA variables...
-_balance_1
-1
-_
-e
-c
-n
-a
-l
-a
-b
-_balance
-
-Name: _balance Function: earn
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: None
@@ -3620,6 +3600,26 @@ Den:
 Address: -993
 Norm: u
 LF: _token
+Fields: 
+Finance Type: undef
+_balance_1
+1
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
+_balance
+
+Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
 Fields: 
 Finance Type: undef
 End popogation
@@ -3653,7 +3653,7 @@ _amount_0
 
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 MODIFIER_CALL, Vault.notHalted()()
 TMP_106(bool) = _amount_1 > 0
@@ -3663,7 +3663,7 @@ _balance_1(uint256) := TMP_108(uint256)
 TMP_109 = CONVERT _token_1 to IERC20
 TMP_110 = CONVERT this to address
 TMP_111(uint256) = HIGH_LEVEL_CALL, dest:TMP_109(IERC20), function:balanceOf, arguments:['TMP_110']  
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_2'])
 _before_1(uint256) := TMP_111(uint256)
 TMP_112 = CONVERT _token_1 to IERC20
 TMP_113 = CONVERT this to address
@@ -3671,7 +3671,7 @@ LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address
 TMP_115 = CONVERT _token_1 to IERC20
 TMP_116 = CONVERT this to address
 TMP_117(uint256) = HIGH_LEVEL_CALL, dest:TMP_115(IERC20), function:balanceOf, arguments:['TMP_116']  
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_2'])
 TMP_118(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_117', '_before_1'] 
 _amount_2(uint256) := TMP_118(uint256)
 TMP_119(bool) = _amount_2 > 0
@@ -3682,19 +3682,19 @@ CONDITION TMP_126
 TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
 _amount_3(uint256) := TMP_120(uint256)
 INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-TMP_122(bool) = TMP_121 > 0
-CONDITION TMP_122
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_129(bool) = TMP_128 <= totalDepositCap_13
 TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
+TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+TMP_122(bool) = TMP_121 > 0
+CONDITION TMP_122
+Emit Deposit(msg.sender,_shares_2)
 _amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
 _shares_1(uint256) := _amount_5(uint256)
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
 TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
 _amount_4(uint256) := TMP_125(uint256)
-Emit Deposit(msg.sender,_shares_2)
 
 
 [[], [], 'u', '_token', [], -1, -991]
@@ -3741,7 +3741,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: deposit
@@ -3755,12 +3755,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -3786,7 +3786,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -3798,14 +3798,24 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
+manager_31
+
+Name: manager Function: checkToken
+Num: -1
+Den: -1
+Address: -999
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: checkToken
@@ -3826,16 +3836,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_31
-
-Name: manager Function: checkToken
-Num: -1
-Den: -1
-Address: -999
-Norm: u
-LF: Manager
-Fields: 
-Finance Type: undef
 End popogation
 TMP_214(bool) = HIGH_LEVEL_CALL, dest:manager_31(IManager), function:allowedTokens, arguments:['_token_1']  
 [i]Type for TMP_214
@@ -3848,7 +3848,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_31'])
+manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -3874,7 +3874,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -3946,7 +3946,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -3958,14 +3958,24 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
+manager_31
+
+Name: manager Function: checkToken
+Num: -1
+Den: -1
+Address: -999
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: checkToken
@@ -3977,16 +3987,6 @@ LF: _token
 Fields: 
 Finance Type: undef
 manager_32
-
-Name: manager Function: checkToken
-Num: -1
-Den: -1
-Address: -999
-Norm: u
-LF: Manager
-Fields: 
-Finance Type: undef
-manager_31
 
 Name: manager Function: checkToken
 Num: -1
@@ -4008,7 +4008,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_31'])
+manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -4034,7 +4034,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -4099,13 +4099,13 @@ MODIFIER_CALL, Vault.notHalted()()
 Propogating parameters to local SSA variables...
 _amount_1
 1
-_
-t
-n
-u
-o
-m
-a
+_1
+t_
+nt
+un
+ou
+mo
+am
 _amount
 
 Name: _amount_1 Function: deposit
@@ -4144,7 +4144,7 @@ End popogation
 TMP_108(uint256) = INTERNAL_CALL, Vault.balance()()
 Propogating parameters to local SSA variables...
 End popogation
-manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balance
@@ -4170,7 +4170,7 @@ End popogation
 TMP_177(uint256) = INTERNAL_CALL, Vault.balanceOfThis()()
 Propogating parameters to local SSA variables...
 End popogation
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balanceOfThis
@@ -4221,7 +4221,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balanceOfThis
@@ -4250,13 +4250,13 @@ End popogation
 Propogating parameters to local SSA variables...
 _tokens_1
 1
-_
-s
-n
-e
-k
-o
-t
+_1
+s_
+ns
+en
+ke
+ok
+to
 _tokens
 
 Name: _tokens Function: balanceOfThis
@@ -4269,7 +4269,7 @@ Fields:
 Finance Type: undef
 i_1
 1
-_
+_1
 i
 
 Name: None Function: None
@@ -4281,7 +4281,7 @@ LF: None
 Fields: 
 Finance Type: undef
 End popogation
-_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+_balance_1(uint256) := ϕ(['_balance_0', '_balance_2'])
 [i]Type for _balance
 
 Name: _balance Function: balanceOfThis
@@ -4292,7 +4292,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-i_1(uint8) := ϕ(['i_0', 'i_2'])
+i_1(uint8) := ϕ(['i_2', 'i_0'])
 [i]Type for i
 
 Name: i Function: balanceOfThis
@@ -4330,13 +4330,13 @@ End popogation
 Propogating parameters to local SSA variables...
 _tokens_1
 1
-_
-s
-n
-e
-k
-o
-t
+_1
+s_
+ns
+en
+ke
+ok
+to
 _tokens
 
 Name: _tokens Function: balanceOfThis
@@ -4349,7 +4349,7 @@ Fields:
 Finance Type: undef
 i_1
 1
-_
+_1
 i
 
 Name: i Function: balanceOfThis
@@ -4386,14 +4386,14 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _balance_1
 1
-_
-e
-c
-n
-a
-l
-a
-b
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
 _balance
 
 Name: _balance Function: balanceOfThis
@@ -4406,12 +4406,12 @@ Fields:
 Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token Function: balanceOfThis
@@ -4499,12 +4499,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: _normalizeDecimals
@@ -4586,15 +4586,15 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _decimals_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
 _decimals
 
 Name: _decimals Function: _normalizeDecimals
@@ -4619,7 +4619,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -4631,40 +4631,40 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
+_decimals_1
 1
-_
-t
-n
-u
-o
-m
-a
-_amount
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
+_decimals
 
-Name: _amount_1 Function: _normalizeDecimals
-Num: -988
+Name: _decimals Function: _normalizeDecimals
+Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_decimals_1
+_amount_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
-_decimals
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
 
-Name: _decimals Function: _normalizeDecimals
-Num: 
+Name: _amount_1 Function: _normalizeDecimals
+Num: -988
 Den: 
 Address: u
 Norm: u
@@ -4756,12 +4756,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: _normalizeDecimals
@@ -4843,15 +4843,15 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _decimals_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
 _decimals
 
 Name: _decimals Function: _normalizeDecimals
@@ -4876,7 +4876,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -4888,40 +4888,40 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
+_decimals_1
 1
-_
-t
-n
-u
-o
-m
-a
-_amount
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
+_decimals
 
-Name: _amount_1 Function: _normalizeDecimals
-Num: -988
+Name: _decimals Function: _normalizeDecimals
+Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_decimals_1
+_amount_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
-_decimals
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
 
-Name: _decimals Function: _normalizeDecimals
-Num: 
+Name: _amount_1 Function: _normalizeDecimals
+Num: -988
 Den: 
 Address: u
 Norm: u
@@ -5021,7 +5021,7 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 i_1
 1
-_
+_1
 i
 
 Name: i Function: balanceOfThis
@@ -5058,14 +5058,14 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _balance_1
 1
-_
-e
-c
-n
-a
-l
-a
-b
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
 _balance
 
 Name: _balance Function: balanceOfThis
@@ -5080,7 +5080,7 @@ End popogation
 RETURN _balance_1
 Propogating parameters to local SSA variables...
 End popogation
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balanceOfThis
@@ -5131,7 +5131,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balanceOfThis
@@ -5160,13 +5160,13 @@ End popogation
 Propogating parameters to local SSA variables...
 _tokens_1
 1
-_
-s
-n
-e
-k
-o
-t
+_1
+s_
+ns
+en
+ke
+ok
+to
 _tokens
 
 Name: _tokens Function: balanceOfThis
@@ -5179,7 +5179,7 @@ Fields:
 Finance Type: undef
 i_1
 1
-_
+_1
 i
 
 Name: i Function: balanceOfThis
@@ -5191,7 +5191,7 @@ LF: None
 Fields: 
 Finance Type: undef
 End popogation
-_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+_balance_1(uint256) := ϕ(['_balance_0', '_balance_2'])
 [i]Type for _balance
 
 Name: _balance Function: balanceOfThis
@@ -5202,7 +5202,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-i_1(uint8) := ϕ(['i_0', 'i_2'])
+i_1(uint8) := ϕ(['i_2', 'i_0'])
 [i]Type for i
 
 Name: i Function: balanceOfThis
@@ -5240,13 +5240,13 @@ End popogation
 Propogating parameters to local SSA variables...
 _tokens_1
 1
-_
-s
-n
-e
-k
-o
-t
+_1
+s_
+ns
+en
+ke
+ok
+to
 _tokens
 
 Name: _tokens Function: balanceOfThis
@@ -5259,7 +5259,7 @@ Fields:
 Finance Type: undef
 i_1
 1
-_
+_1
 i
 
 Name: i Function: balanceOfThis
@@ -5296,14 +5296,14 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _balance_1
 1
-_
-e
-c
-n
-a
-l
-a
-b
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
 _balance
 
 Name: _balance Function: balanceOfThis
@@ -5316,12 +5316,12 @@ Fields:
 Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token Function: balanceOfThis
@@ -5409,12 +5409,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: _normalizeDecimals
@@ -5496,15 +5496,15 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _decimals_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
 _decimals
 
 Name: _decimals Function: _normalizeDecimals
@@ -5529,7 +5529,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -5541,40 +5541,40 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
+_decimals_1
 1
-_
-t
-n
-u
-o
-m
-a
-_amount
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
+_decimals
 
-Name: _amount_1 Function: _normalizeDecimals
-Num: -987
+Name: _decimals Function: _normalizeDecimals
+Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_decimals_1
+_amount_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
-_decimals
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
 
-Name: _decimals Function: _normalizeDecimals
-Num: 
+Name: _amount_1 Function: _normalizeDecimals
+Num: -987
 Den: 
 Address: u
 Norm: u
@@ -5666,12 +5666,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: _normalizeDecimals
@@ -5753,15 +5753,15 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _decimals_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
 _decimals
 
 Name: _decimals Function: _normalizeDecimals
@@ -5786,7 +5786,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -5798,40 +5798,40 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
+_decimals_1
 1
-_
-t
-n
-u
-o
-m
-a
-_amount
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
+_decimals
 
-Name: _amount_1 Function: _normalizeDecimals
-Num: -987
+Name: _decimals Function: _normalizeDecimals
+Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_decimals_1
+_amount_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
-_decimals
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
 
-Name: _decimals Function: _normalizeDecimals
-Num: 
+Name: _amount_1 Function: _normalizeDecimals
+Num: -987
 Den: 
 Address: u
 Norm: u
@@ -5931,7 +5931,7 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 i_1
 1
-_
+_1
 i
 
 Name: i Function: balanceOfThis
@@ -5968,14 +5968,14 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _balance_1
 1
-_
-e
-c
-n
-a
-l
-a
-b
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
 _balance
 
 Name: _balance Function: balanceOfThis
@@ -6036,7 +6036,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_22'])
+manager_23(IManager) := ϕ(['manager_22', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balance
@@ -6084,7 +6084,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_23'])
+manager_24(IManager) := ϕ(['manager_23', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balance
@@ -6109,7 +6109,7 @@ Finance Type: undef
 RETURN TMP_182
 Propogating parameters to local SSA variables...
 End popogation
-manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balance
@@ -6181,7 +6181,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_22'])
+manager_23(IManager) := ϕ(['manager_22', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balance
@@ -6229,7 +6229,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_23'])
+manager_24(IManager) := ϕ(['manager_23', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: balance
@@ -6276,12 +6276,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -6341,7 +6341,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: deposit
@@ -6364,33 +6364,14 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
-1
-_
-t
-n
-u
-o
-m
-a
-_amount
-
-Name: _amount_1 Function: deposit
-Num: 1, 1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -6399,6 +6380,25 @@ Den:
 Address: -991
 Norm: u
 LF: _token
+Fields: 
+Finance Type: undef
+_amount_1
+1
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
+
+Name: _amount_1 Function: deposit
+Num: 1, 1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Fields: 
 Finance Type: undef
 End popogation
@@ -6441,12 +6441,12 @@ LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -6459,13 +6459,13 @@ Fields:
 Finance Type: undef
 _before_1
 1
-_
-e
-r
-o
-f
-e
-b
+_1
+e_
+re
+or
+fo
+ef
+be
 _before
 
 Name: _before Function: deposit
@@ -6525,7 +6525,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: deposit
@@ -6618,24 +6618,16 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_2
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+End popogation
+Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -6644,6 +6636,16 @@ Den:
 Address: -991
 Norm: u
 LF: _token
+Fields: 
+Finance Type: undef
+_amount_2
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
 Fields: 
 Finance Type: undef
 End popogation
@@ -6675,12 +6677,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: _normalizeDecimals
@@ -6762,15 +6764,15 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _decimals_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
 _decimals
 
 Name: _decimals Function: _normalizeDecimals
@@ -6795,7 +6797,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -6807,40 +6809,40 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
+_decimals_1
 1
-_
-t
-n
-u
-o
-m
-a
-_amount
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
+_decimals
 
-Name: _amount_1 Function: _normalizeDecimals
-Num: -991
+Name: _decimals Function: _normalizeDecimals
+Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_decimals_1
+_amount_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
-_decimals
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
 
-Name: _decimals Function: _normalizeDecimals
-Num: 
+Name: _amount_1 Function: _normalizeDecimals
+Num: -991
 Den: 
 Address: u
 Norm: u
@@ -6932,12 +6934,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: _normalizeDecimals
@@ -7019,15 +7021,15 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _decimals_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
 _decimals
 
 Name: _decimals Function: _normalizeDecimals
@@ -7052,7 +7054,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -7064,40 +7066,40 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
+_decimals_1
 1
-_
-t
-n
-u
-o
-m
-a
-_amount
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
+_decimals
 
-Name: _amount_1 Function: _normalizeDecimals
-Num: -991
+Name: _decimals Function: _normalizeDecimals
+Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_decimals_1
+_amount_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
-_decimals
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
 
-Name: _decimals Function: _normalizeDecimals
-Num: 
+Name: _amount_1 Function: _normalizeDecimals
+Num: -991
 Den: 
 Address: u
 Norm: u
@@ -7184,8 +7186,6 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-End popogation
-Propogating parameters to local SSA variables...
 _shares_2
 
 Name: _shares Function: deposit
@@ -7222,7 +7222,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_8', '_balances_5', '_balances_11', '_balances_1', '_balances_0'])
 [i]Type for _balances
 
 Name: _balances Function: _mint
@@ -7233,7 +7233,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_0', '_totalSupply_7'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: _mint
@@ -7247,13 +7247,13 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 account_1
 1
-_
-t
-n
-u
-o
-c
-c
+_1
+t_
+nt
+un
+ou
+co
+cc
 account
 
 Name: account_1 Function: _mint
@@ -7309,33 +7309,14 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-account_1
-1
-_
-t
-n
-u
-o
-c
-c
-account
-
-Name: account_1 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
 amount_1
 1
-_
-t
-n
-u
-o
-m
+_1
+t_
+nt
+un
+ou
+mo
 amount
 
 Name: amount_1 Function: _mint
@@ -7344,6 +7325,25 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+account_1
+1
+_1
+t_
+nt
+un
+ou
+co
+cc
+account
+
+Name: account_1 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
 Fields: 
 Finance Type: undef
 End popogation
@@ -7371,7 +7371,7 @@ Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
 Propogating parameters to local SSA variables...
 End popogation
-from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -7406,7 +7406,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -7440,9 +7440,17 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_totalSupply_3
+amount_1
+1
+_1
+t_
+nt
+un
+ou
+mo
+amount
 
-Name: None Function: None
+Name: amount_1 Function: _mint
 Num: 
 Den: 
 Address: u
@@ -7450,17 +7458,9 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-amount_1
-1
-_
-t
-n
-u
-o
-m
-amount
+_totalSupply_3
 
-Name: amount_1 Function: _mint
+Name: None Function: None
 Num: 
 Den: 
 Address: u
@@ -7492,9 +7492,17 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_balances_7
+amount_1
+1
+_1
+t_
+nt
+un
+ou
+mo
+amount
 
-Name: None Function: None
+Name: amount_1 Function: _mint
 Num: 
 Den: 
 Address: u
@@ -7504,13 +7512,13 @@ Fields:
 Finance Type: undef
 account_1
 1
-_
-t
-n
-u
-o
-c
-c
+_1
+t_
+nt
+un
+ou
+co
+cc
 account
 
 Name: account_1 Function: _mint
@@ -7521,17 +7529,9 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
-amount_1
-1
-_
-t
-n
-u
-o
-m
-amount
+_balances_7
 
-Name: amount_1 Function: _mint
+Name: None Function: None
 Num: 
 Den: 
 Address: u
@@ -7598,33 +7598,14 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-account_1
-1
-_
-t
-n
-u
-o
-c
-c
-account
-
-Name: account_1 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
 amount_1
 1
-_
-t
-n
-u
-o
-m
+_1
+t_
+nt
+un
+ou
+mo
 amount
 
 Name: amount_1 Function: _mint
@@ -7633,6 +7614,25 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+account_1
+1
+_1
+t_
+nt
+un
+ou
+co
+cc
+account
+
+Name: account_1 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
 Fields: 
 Finance Type: undef
 End popogation
@@ -7681,7 +7681,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_8', '_balances_5', '_balances_11', '_balances_1', '_balances_0'])
 [i]Type for _balances
 
 Name: _balances Function: _mint
@@ -7692,7 +7692,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_4', '_totalSupply_0', '_totalSupply_7'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: _mint
@@ -7706,13 +7706,13 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 account_1
 1
-_
-t
-n
-u
-o
-c
-c
+_1
+t_
+nt
+un
+ou
+co
+cc
 account
 
 Name: account_1 Function: _mint
@@ -7768,33 +7768,14 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-account_1
-1
-_
-t
-n
-u
-o
-c
-c
-account
-
-Name: account_1 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
 amount_1
 1
-_
-t
-n
-u
-o
-m
+_1
+t_
+nt
+un
+ou
+mo
 amount
 
 Name: amount_1 Function: _mint
@@ -7803,6 +7784,25 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+account_1
+1
+_1
+t_
+nt
+un
+ou
+co
+cc
+account
+
+Name: account_1 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
 Fields: 
 Finance Type: undef
 End popogation
@@ -7829,9 +7829,17 @@ Fields:
 Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
 Propogating parameters to local SSA variables...
-_totalSupply_3
+amount_1
+1
+_1
+t_
+nt
+un
+ou
+mo
+amount
 
-Name: _totalSupply Function: None
+Name: amount_1 Function: _mint
 Num: 
 Den: 
 Address: u
@@ -7839,17 +7847,9 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-amount_1
-1
-_
-t
-n
-u
-o
-m
-amount
+_totalSupply_3
 
-Name: amount_1 Function: _mint
+Name: _totalSupply Function: None
 Num: 
 Den: 
 Address: u
@@ -7881,9 +7881,17 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_balances_7
+amount_1
+1
+_1
+t_
+nt
+un
+ou
+mo
+amount
 
-Name: None Function: None
+Name: amount_1 Function: _mint
 Num: 
 Den: 
 Address: u
@@ -7893,13 +7901,13 @@ Fields:
 Finance Type: undef
 account_1
 1
-_
-t
-n
-u
-o
-c
-c
+_1
+t_
+nt
+un
+ou
+co
+cc
 account
 
 Name: account_1 Function: _mint
@@ -7910,17 +7918,9 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
-amount_1
-1
-_
-t
-n
-u
-o
-m
-amount
+_balances_7
 
-Name: amount_1 Function: _mint
+Name: None Function: None
 Num: 
 Den: 
 Address: u
@@ -7987,33 +7987,14 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-account_1
-1
-_
-t
-n
-u
-o
-c
-c
-account
-
-Name: account_1 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
 amount_1
 1
-_
-t
-n
-u
-o
-m
+_1
+t_
+nt
+un
+ou
+mo
 amount
 
 Name: amount_1 Function: _mint
@@ -8022,6 +8003,25 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+account_1
+1
+_1
+t_
+nt
+un
+ou
+co
+cc
+account
+
+Name: account_1 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
 Fields: 
 Finance Type: undef
 End popogation
@@ -8047,128 +8047,24 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-End popogation
-TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-Propogating parameters to local SSA variables...
-End popogation
-_totalSupply_1(uint256) := ϕ(['_totalSupply_4', '_totalSupply_0', '_totalSupply_7'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: totalSupply
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Propogating parameters to local SSA variables...
-_totalSupply_1
-1
-_
-y
-l
-p
-p
-u
-S
-l
-a
-t
-o
-t
-_totalSupply
-
-Name: _totalSupply Function: totalSupply
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-End popogation
-RETURN _totalSupply_1
-Propogating parameters to local SSA variables...
-End popogation
-_totalSupply_1(uint256) := ϕ(['_totalSupply_4', '_totalSupply_0', '_totalSupply_7'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: totalSupply
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Propogating parameters to local SSA variables...
-_totalSupply_1
-1
-_
-y
-l
-p
-p
-u
-S
-l
-a
-t
-o
-t
-_totalSupply
-
-Name: _totalSupply Function: totalSupply
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-End popogation
-RETURN _totalSupply_1
-[i]Type for TMP_121
-
-Name: TMP_121 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_122(bool) = TMP_121 > 0
-[i]Type for TMP_122
-
-Name: TMP_122 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Propogating parameters to local SSA variables...
 totalDepositCap_13
 3
-1
-_
-p
-a
-C
-t
-i
-s
-o
-p
-e
-D
-l
-a
-t
-o
+13
+_1
+p_
+ap
+Ca
+tC
+it
+si
+os
+po
+ep
+De
+lD
+al
+ta
+ot
 totalDepositCap_
 
 Name: None Function: None
@@ -8181,6 +8077,86 @@ Fields:
 Finance Type: undef
 End popogation
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+Propogating parameters to local SSA variables...
+End popogation
+_totalSupply_1(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: totalSupply
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Propogating parameters to local SSA variables...
+_totalSupply_1
+1
+_1
+y_
+ly
+pl
+pp
+up
+Su
+lS
+al
+ta
+ot
+to
+_totalSupply
+
+Name: _totalSupply Function: totalSupply
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+End popogation
+RETURN _totalSupply_1
+Propogating parameters to local SSA variables...
+End popogation
+_totalSupply_1(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: totalSupply
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Propogating parameters to local SSA variables...
+_totalSupply_1
+1
+_1
+y_
+ly
+pl
+pp
+up
+Su
+lS
+al
+ta
+ot
+to
+_totalSupply
+
+Name: _totalSupply Function: totalSupply
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+End popogation
+RETURN _totalSupply_1
 [i]Type for TMP_128
 
 Name: TMP_128 Function: deposit
@@ -8213,6 +8189,42 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+Propogating parameters to local SSA variables...
+End popogation
+TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_121
+
+Name: TMP_121 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_122(bool) = TMP_121 > 0
+[i]Type for TMP_122
+
+Name: TMP_122 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Propogating parameters to local SSA variables...
+_shares_2
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+End popogation
 Propogating parameters to local SSA variables...
 End popogation
 _amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
@@ -8250,26 +8262,6 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_balance_1
-1
-_
-e
-c
-n
-a
-l
-a
-b
-_balance
-
-Name: _balance Function: deposit
-Num: 1
-Den: -1
-Address: -985
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
 _amount_3
 
 Name: _amount Function: deposit
@@ -8277,6 +8269,26 @@ Num:
 Den: 
 Address: u
 Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1
+1
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
+_balance
+
+Name: _balance Function: deposit
+Num: 1
+Den: -1
+Address: -985
+Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
@@ -8325,23 +8337,11 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-Propogating parameters to local SSA variables...
-_shares_2
-
-Name: _shares Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-End popogation
 
 
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 MODIFIER_CALL, Vault.notHalted()()
 TMP_106(bool) = _amount_1 > 0
@@ -8351,7 +8351,7 @@ _balance_1(uint256) := TMP_108(uint256)
 TMP_109 = CONVERT _token_1 to IERC20
 TMP_110 = CONVERT this to address
 TMP_111(uint256) = HIGH_LEVEL_CALL, dest:TMP_109(IERC20), function:balanceOf, arguments:['TMP_110']  
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_2'])
 _before_1(uint256) := TMP_111(uint256)
 TMP_112 = CONVERT _token_1 to IERC20
 TMP_113 = CONVERT this to address
@@ -8359,7 +8359,7 @@ LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address
 TMP_115 = CONVERT _token_1 to IERC20
 TMP_116 = CONVERT this to address
 TMP_117(uint256) = HIGH_LEVEL_CALL, dest:TMP_115(IERC20), function:balanceOf, arguments:['TMP_116']  
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_2'])
 TMP_118(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_117', '_before_1'] 
 _amount_2(uint256) := TMP_118(uint256)
 TMP_119(bool) = _amount_2 > 0
@@ -8370,19 +8370,19 @@ CONDITION TMP_126
 TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
 _amount_3(uint256) := TMP_120(uint256)
 INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-TMP_122(bool) = TMP_121 > 0
-CONDITION TMP_122
 TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_129(bool) = TMP_128 <= totalDepositCap_13
 TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
+TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+TMP_122(bool) = TMP_121 > 0
+CONDITION TMP_122
+Emit Deposit(msg.sender,_shares_2)
 _amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
 _shares_1(uint256) := _amount_5(uint256)
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
 TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
 _amount_4(uint256) := TMP_125(uint256)
-Emit Deposit(msg.sender,_shares_2)
 
 
 [[], [], 'u', '_token', [], -1, -991]
@@ -8429,7 +8429,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: deposit
@@ -8443,12 +8443,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -8467,13 +8467,13 @@ MODIFIER_CALL, Vault.notHalted()()
 Propogating parameters to local SSA variables...
 _amount_1
 1
-_
-t
-n
-u
-o
-m
-a
+_1
+t_
+nt
+un
+ou
+mo
+am
 _amount
 
 Name: _amount_1 Function: deposit
@@ -8534,12 +8534,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -8599,7 +8599,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: deposit
@@ -8622,33 +8622,14 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
-1
-_
-t
-n
-u
-o
-m
-a
-_amount
-
-Name: _amount_1 Function: deposit
-Num: 1, 1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -8657,6 +8638,25 @@ Den:
 Address: -991
 Norm: u
 LF: _token
+Fields: 
+Finance Type: undef
+_amount_1
+1
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
+
+Name: _amount_1 Function: deposit
+Num: 1, 1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Fields: 
 Finance Type: undef
 End popogation
@@ -8699,12 +8699,12 @@ LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -8717,13 +8717,13 @@ Fields:
 Finance Type: undef
 _before_1
 1
-_
-e
-r
-o
-f
-e
-b
+_1
+e_
+re
+or
+fo
+ef
+be
 _before
 
 Name: _before Function: deposit
@@ -8783,7 +8783,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: deposit
@@ -8876,24 +8876,16 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_2
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+End popogation
+Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -8902,6 +8894,16 @@ Den:
 Address: -991
 Norm: u
 LF: _token
+Fields: 
+Finance Type: undef
+_amount_2
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
 Fields: 
 Finance Type: undef
 End popogation
@@ -8933,12 +8935,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: _normalizeDecimals
@@ -9020,15 +9022,15 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _decimals_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
 _decimals
 
 Name: _decimals Function: _normalizeDecimals
@@ -9053,7 +9055,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -9065,40 +9067,40 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
+_decimals_1
 1
-_
-t
-n
-u
-o
-m
-a
-_amount
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
+_decimals
 
-Name: _amount_1 Function: _normalizeDecimals
-Num: -991
+Name: _decimals Function: _normalizeDecimals
+Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_decimals_1
+_amount_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
-_decimals
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
 
-Name: _decimals Function: _normalizeDecimals
-Num: 
+Name: _amount_1 Function: _normalizeDecimals
+Num: -991
 Den: 
 Address: u
 Norm: u
@@ -9190,12 +9192,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: _normalizeDecimals
@@ -9277,15 +9279,15 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _decimals_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
 _decimals
 
 Name: _decimals Function: _normalizeDecimals
@@ -9310,7 +9312,7 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
-_amount_3(uint256) := ϕ(['_amount_2', '_amount_1'])
+_amount_3(uint256) := ϕ(['_amount_1', '_amount_2'])
 [i]Type for _amount
 
 Name: _amount Function: _normalizeDecimals
@@ -9322,40 +9324,40 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_amount_1
+_decimals_1
 1
-_
-t
-n
-u
-o
-m
-a
-_amount
+_1
+s_
+ls
+al
+ma
+im
+ci
+ec
+de
+_decimals
 
-Name: _amount_1 Function: _normalizeDecimals
-Num: -991
+Name: _decimals Function: _normalizeDecimals
+Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_decimals_1
+_amount_1
 1
-_
-s
-l
-a
-m
-i
-c
-e
-d
-_decimals
+_1
+t_
+nt
+un
+ou
+mo
+am
+_amount
 
-Name: _decimals Function: _normalizeDecimals
-Num: 
+Name: _amount_1 Function: _normalizeDecimals
+Num: -991
 Den: 
 Address: u
 Norm: u
@@ -9442,8 +9444,6 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-End popogation
-Propogating parameters to local SSA variables...
 _shares_2
 
 Name: _shares Function: deposit
@@ -9457,48 +9457,24 @@ Finance Type: undef
 End popogation
 INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
 Propogating parameters to local SSA variables...
-End popogation
-TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-[i]Type for TMP_121
-
-Name: TMP_121 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_122(bool) = TMP_121 > 0
-[i]Type for TMP_122
-
-Name: TMP_122 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Propogating parameters to local SSA variables...
 totalDepositCap_13
 3
-1
-_
-p
-a
-C
-t
-i
-s
-o
-p
-e
-D
-l
-a
-t
-o
+13
+_1
+p_
+ap
+Ca
+tC
+it
+si
+os
+po
+ep
+De
+lD
+al
+ta
+ot
 totalDepositCap_
 
 Name: totalDepositCap Function: None
@@ -9545,6 +9521,42 @@ Fields:
 Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
+TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_121
+
+Name: TMP_121 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_122(bool) = TMP_121 > 0
+[i]Type for TMP_122
+
+Name: TMP_122 Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Propogating parameters to local SSA variables...
+_shares_2
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+End popogation
+Propogating parameters to local SSA variables...
+End popogation
 _amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
 [i]Type for _amount
 
@@ -9580,32 +9592,32 @@ LF: None
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
-_balance_1
-1
-_
-e
-c
-n
-a
-l
-a
-b
-_balance
-
-Name: _balance Function: deposit
-Num: 1
-Den: -1
-Address: -985
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 _amount_3
 
 Name: _amount Function: deposit
 Num: 
 Den: 
 Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1
+1
+_1
+e_
+ce
+nc
+an
+la
+al
+ba
+_balance
+
+Name: _balance Function: deposit
+Num: 1
+Den: -1
+Address: -985
 Norm: u
 LF: None
 Fields: 
@@ -9655,18 +9667,6 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-Propogating parameters to local SSA variables...
-_shares_2
-
-Name: _shares Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-End popogation
 
 
 
@@ -9699,8 +9699,8 @@ REF_46 -> LENGTH _tokens_1 (-> [])
 REF_47 -> LENGTH _amounts_1 (-> [])
 TMP_134(bool) = REF_46 == REF_47
 TMP_135(None) = SOLIDITY_CALL require(bool,string)(TMP_134,!length)
-_shares_1(uint256) := ϕ(['_shares_2', '_shares_0'])
-i_1(uint8) := ϕ(['i_2', 'i_0'])
+_shares_1(uint256) := ϕ(['_shares_0', '_shares_2'])
+i_1(uint8) := ϕ(['i_0', 'i_2'])
 REF_48 -> LENGTH _amounts_1 (-> [])
 TMP_136(bool) = i_1 < REF_48
 CONDITION TMP_136
@@ -9736,25 +9736,24 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
 Propogating parameters to local SSA variables...
-_amounts_1 (-> [])
+_tokens_1 (-> [])
 )
-]
-[
- 
->
--
-(
- 
-1
-_
-s
-t
-n
-u
-o
-m
-a
-_amounts_1 (-> [
+])
+[]
+ [
+> 
+->
+(-
+ (
+1 
+_1
+s_
+ns
+en
+ke
+ok
+to
+_tokens_1 (-> [
 
 Name: None Function: None
 Num: 
@@ -9764,24 +9763,25 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_tokens_1 (-> [])
+_amounts_1 (-> [])
 )
-]
-[
- 
->
--
-(
- 
-1
-_
-s
-n
-e
-k
-o
-t
-_tokens_1 (-> [
+])
+[]
+ [
+> 
+->
+(-
+ (
+1 
+_1
+s_
+ts
+nt
+un
+ou
+mo
+am
+_amounts_1 (-> [
 
 Name: None Function: None
 Num: 
@@ -9843,22 +9843,22 @@ End popogation
 Propogating parameters to local SSA variables...
 _amounts_1 (-> [])
 )
-]
-[
- 
->
--
-(
- 
-1
-_
-s
-t
-n
-u
-o
-m
-a
+])
+[]
+ [
+> 
+->
+(-
+ (
+1 
+_1
+s_
+ts
+nt
+un
+ou
+mo
+am
 _amounts_1 (-> [
 
 Name: None Function: None
@@ -9871,7 +9871,7 @@ Fields:
 Finance Type: undef
 i_1
 1
-_
+_1
 i
 
 Name: None Function: None
@@ -9883,7 +9883,7 @@ LF: None
 Fields: 
 Finance Type: undef
 End popogation
-_shares_1(uint256) := ϕ(['_shares_2', '_shares_0'])
+_shares_1(uint256) := ϕ(['_shares_0', '_shares_2'])
 [i]Type for _shares
 
 Name: _shares Function: depositMultiple
@@ -9894,7 +9894,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-i_1(uint8) := ϕ(['i_2', 'i_0'])
+i_1(uint8) := ϕ(['i_0', 'i_2'])
 [i]Type for i
 
 Name: i Function: depositMultiple
@@ -9930,24 +9930,51 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 End popogation
 Propogating parameters to local SSA variables...
+_tokens_1 (-> [])
+)
+])
+[]
+ [
+> 
+->
+(-
+ (
+1 
+_1
+s_
+ns
+en
+ke
+ok
+to
+_tokens_1 (-> [
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 _amounts_1 (-> [])
 )
-]
-[
- 
->
--
-(
- 
-1
-_
-s
-t
-n
-u
-o
-m
-a
+])
+[]
+ [
+> 
+->
+(-
+ (
+1 
+_1
+s_
+ts
+nt
+un
+ou
+mo
+am
 _amounts_1 (-> [
 
 Name: None Function: None
@@ -9960,7 +9987,7 @@ Fields:
 Finance Type: undef
 i_1
 1
-_
+_1
 i
 
 Name: i Function: depositMultiple
@@ -9973,43 +10000,16 @@ Fields:
 Finance Type: undef
 _shares_1
 1
-_
-s
-e
-r
-a
-h
-s
+_1
+s_
+es
+re
+ar
+ha
+sh
 _shares
 
 Name: _shares Function: depositMultiple
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_tokens_1 (-> [])
-)
-]
-[
- 
->
--
-(
- 
-1
-_
-s
-n
-e
-k
-o
-t
-_tokens_1 (-> [
-
-Name: None Function: None
 Num: 
 Den: 
 Address: u
@@ -10067,7 +10067,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_8', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_1'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_8', 'totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_11', 'totalDepositCap_0', 'totalDepositCap_2'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: deposit
@@ -10081,12 +10081,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
@@ -10112,7 +10112,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -10124,14 +10124,24 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
+manager_31
+
+Name: manager Function: checkToken
+Num: -1
+Den: -1
+Address: -999
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: checkToken
@@ -10143,16 +10153,6 @@ LF: _token
 Fields: 
 Finance Type: undef
 manager_32
-
-Name: manager Function: checkToken
-Num: -1
-Den: -1
-Address: -999
-Norm: u
-LF: Manager
-Fields: 
-Finance Type: undef
-manager_31
 
 Name: manager Function: checkToken
 Num: -1
@@ -10174,7 +10174,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_31'])
+manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -10200,7 +10200,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -10272,7 +10272,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_26', 'manager_35', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -10284,14 +10284,24 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Propogating parameters to local SSA variables...
+manager_31
+
+Name: manager Function: checkToken
+Num: -1
+Den: -1
+Address: -999
+Norm: u
+LF: Manager
+Fields: 
+Finance Type: undef
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: checkToken
@@ -10303,16 +10313,6 @@ LF: _token
 Fields: 
 Finance Type: undef
 manager_32
-
-Name: manager Function: checkToken
-Num: -1
-Den: -1
-Address: -999
-Norm: u
-LF: Manager
-Fields: 
-Finance Type: undef
-manager_31
 
 Name: manager Function: checkToken
 Num: -1
@@ -10334,7 +10334,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30', 'manager_31'])
+manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -10360,7 +10360,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_28', 'manager_39', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_39', 'manager_19', 'manager_28', 'manager_6', 'manager_1', 'manager_12', 'manager_30'])
 [i]Type for manager
 
 Name: manager Function: checkToken
@@ -10425,13 +10425,13 @@ MODIFIER_CALL, Vault.notHalted()()
 Propogating parameters to local SSA variables...
 _amount_1
 1
-_
-t
-n
-u
-o
-m
-a
+_1
+t_
+nt
+un
+ou
+mo
+am
 _amount
 
 Name: _amount_1 Function: deposit
@@ -10492,12 +10492,12 @@ Finance Type: undef
 Propogating parameters to local SSA variables...
 _token_1
 1
-_
-n
-e
-k
-o
-t
+_1
+n_
+en
+ke
+ok
+to
 _token
 
 Name: _token_1 Function: deposit
