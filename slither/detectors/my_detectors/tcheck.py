@@ -2058,7 +2058,7 @@ def _tcheck_node(node, function) -> []:
         #Load initial parameters mapping
         if(local_var.name.endswith("_1")):
             for p in function.parameters:
-                print(local_var.name[:len(local_var.name)-2])
+                print(f"Reduced: {local_var.name[:len(local_var.name)-2]}")
                 
         
     for ir in node.irs_ssa:
