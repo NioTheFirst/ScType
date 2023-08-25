@@ -702,11 +702,11 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Phi):
         #Phi (ssa) unpack
         addback = False
-        #search global variables
-        _ir = ir.lvalue
-        _name = _ir.name
-        if((_name, current_contract_name) in global_var_types):
-            copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
+        #search global variables (deprecated)
+        #_ir = ir.lvalue
+        #_name = _ir.name
+        #if((_name, current_contract_name) in global_var_types):
+        #    copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
         ##print("Phi")
     elif isinstance(ir, EventCall):
         return False
@@ -2097,7 +2097,13 @@ def _tcheck_node(node, function) -> []:
                     lv.extok.name = lv.ssa_name
                     lv.function_name = function.name
                     copy_token_type(p, lv)
+        if(lv.extok.is_undefined()):
+            _ir = ir.lvalue
+            _name = _ir.name
+            if((_name, current_contract_name) in global_var_types):
+                copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
         print(lv.extok)
+    
     print("End popogation")            
         
     for ir in node.irs_ssa:
