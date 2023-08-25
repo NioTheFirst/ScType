@@ -651,6 +651,8 @@ def update_non_ssa(ir):
 #returns ir if needs to be added back
 def check_type(ir) -> bool:
     global debug_pow_pc
+    global global_var_types
+    global current_contract_name
     addback = False;
     #Assignmnet
     #Deubg pow
@@ -700,7 +702,17 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Phi):
         #Phi (ssa) unpack
         addback = False
+        #search global variables
+        _ir = ir.lvalue
+        pos = -1
+        for i in range(len(_ir.name)):
+            if(_ir.name[len(_ir.name)-i-1] == '_'):
+                pos = len(_ir.name)-i-1
+                break
+        _name = _ir.name(:pos)
         convert_ssa(ir.lvalue)
+        if((_name, current_contract_name) in global_var_types):
+            copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
         ##print("Phi")
     elif isinstance(ir, EventCall):
         return False
