@@ -710,6 +710,7 @@ def check_type(ir) -> bool:
                 pos = len(_ir.name)-i-1
                 break
         _name = _ir.name[:pos]
+        print(f"Name: {_name}, CCName: {current_contract_name}")
         convert_ssa(ir.lvalue)
         if((_name, current_contract_name) in global_var_types):
             copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
