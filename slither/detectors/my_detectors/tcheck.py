@@ -763,7 +763,8 @@ def type_conversion(ir):
     global address_to_label
     #if(debug_print):
         #convert_ssa(ir.lvalue)
-    convert_ssa(ir.variable)
+    #convert_ssa(ir.variable)
+    print(f"Converting {str(ir.variable)}")
     if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
         #TMPxxx  CONVERT address(this)
         assign_const(ir.lvalue)
