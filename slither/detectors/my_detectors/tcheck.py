@@ -2087,7 +2087,7 @@ def _tcheck_node(node, function) -> []:
                 if(lv.ssa_name[revpos:revpos+2] == '_1'):
                     pos = revpos
                     break
-            lv_subname = lv.ssa_name[:pos-1]
+            lv_subname = lv.ssa_name[:pos]
             #lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
             print(lv_subname)
             for p in function.parameters:
