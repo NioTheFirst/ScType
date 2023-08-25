@@ -782,7 +782,7 @@ def type_conversion(ir):
         ir.lvalue.extok.address = addr
         ir.lvalue.norm = 0
         ir.lvalue.link_function = current_contract_name
-
+        print(addr)
         #addback = copy_token_tuple(ir.lvalue, ir.variable)
         addback = False
     else:    
