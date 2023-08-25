@@ -2077,10 +2077,11 @@ def _tcheck_node(node, function) -> []:
     function_name = function.name
     irs = []
     #local vars read
-    print("Propogating parameters to local SSA variables...")
+    print("Propogating parameters to SSA variables...")
     for lv in node.ssa_variables_read:
         print(lv.ssa_name)
         if("_1" in lv.ssa_name and lv.extok.is_undefined()):
+            print("local...")
             pos = -1
             for i in range(len(lv.ssa_name)-1):
                 revpos = len(lv.ssa_name)-i-1
@@ -2105,9 +2106,10 @@ def _tcheck_node(node, function) -> []:
                 if(lv.ssa_name[revpos] == '_'):
                     pos = revpos
                     break
-            _name = lv.ssa_name[:pos+1]
+            _name = lv.ssa_name[:pos]
             print(_name)
             if((_name, current_contract_name) in global_var_types):
+                print("global...")
                 copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
         print(lv.extok)
     
