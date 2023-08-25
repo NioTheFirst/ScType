@@ -54,6 +54,7 @@ def new_address(ir, isGlobal):
     global label_sets
     global label_to_address
     _ir = ir.extok
+    print(_ir.address)
     if(_ir.address != 'u' and _ir.address != None):
         return None
     if(isGlobal):
