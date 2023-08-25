@@ -592,6 +592,7 @@ def copy_norm(src, dest):
 #USAGE: Converts the first ssa instance of a variable (ends with _1)
 #RETURNS: NULL
 def convert_ssa(ir):
+    return
     if(not(is_variable(ir))):
         return
     if(is_constant(ir) or ir.name.startswith("PIC") or isinstance(ir, Constant)):
@@ -619,6 +620,7 @@ def convert_ssa(ir):
 #USAGE: updates a non_ssa instance of a variable
 #RETURNS: NULL
 def update_non_ssa(ir):
+    return
     if(not(is_variable(ir))):
         return
     if(is_constant(ir)):
@@ -2055,17 +2057,15 @@ def _tcheck_node(node, function) -> []:
     print("Begin local variable read")
     for lv in node.ssa_local_variables_read:
         print(lv.ssa_name)
+        if(lv.ssa_name.endswith("_1")):
+            for p in function.parameters:
+                print(lv.ssa_name[:len(lv.ssa_name)-2])
+                if(p.name == lv.ssa_name[:len(lv.ssa_name)-2]):
+                    lv.extok.name = lv.ssa_name
+                    lv.function_name = function.name
+                    copy_token_type(p, lv)
         print(lv.extok)
     print("ALLL")
-    for local_var in node.ssa_variables_read:
-        print(local_var.extok)
-        #Load initial parameters mapping
-        _local_var = local_var.extok
-        if(_local_var.name == None):
-            continue
-        if(_local_var.name.endswith("_1")):
-            for p in function.parameters:
-                print(f"Reduced: {_local_var.name[:len(_local_var.name)-2]}")
                 
         
     for ir in node.irs_ssa:

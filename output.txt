@@ -1,15 +1,17 @@
 Switched global version to 0.6.12
 Finding type for manager...
 IManager
-Finding type for _allowances...
-mapping(address => mapping(address => uint256))
-Finding type for MAX...
-uint256
+Finding type for _symbol...
+string
 Finding type for _balances...
 mapping(address => uint256)
-Finding type for totalDepositCap...
-uint256
 Finding type for _totalSupply...
+uint256
+Finding type for MAX...
+uint256
+Finding type for _allowances...
+mapping(address => mapping(address => uint256))
+Finding type for totalDepositCap...
 uint256
 Finding type for _name...
 string
@@ -17,8 +19,6 @@ Finding type for _decimals...
 uint8
 Finding type for min...
 uint256
-Finding type for _symbol...
-string
 
 
 
@@ -95,6 +95,7 @@ Finance Type: undef
 Begin local variable read
 ALLL
 Begin local variable read
+_name_1
 
 Name: None Function: None
 Num: 
@@ -104,6 +105,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_symbol_1
 
 Name: None Function: None
 Num: 
@@ -134,6 +136,7 @@ Fields:
 Finance Type: undef
 INTERNAL_CALL, VaultToken.constructor(string,string)(_name_1,_symbol_1)
 Begin local variable read
+_manager_1
 
 Name: None Function: None
 Num: 
@@ -253,6 +256,7 @@ Finance Type: undef
 Begin local variable read
 ALLL
 Begin local variable read
+_name_1
 
 Name: None Function: None
 Num: 
@@ -262,6 +266,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_symbol_1
 
 Name: None Function: None
 Num: 
@@ -292,6 +297,7 @@ Fields:
 Finance Type: undef
 INTERNAL_CALL, VaultToken.constructor(string,string)(_name_1,_symbol_1)
 Begin local variable read
+_manager_1
 
 Name: _manager Function: constructor
 Num: 
@@ -382,7 +388,7 @@ Fields:
 Finance Type: undef
 Copied min
 
-Name: PIC_9 Function: None
+Name: PIC_10 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -392,7 +398,7 @@ Fields:
 Finance Type: undef
 Copied totalDepositCap
 
-Name: PIC_5 Function: None
+Name: PIC_7 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -440,6 +446,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.onlyStrategist()()
 Begin local variable read
+_gauge_1
 
 Name: None Function: None
 Num: 
@@ -496,6 +503,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.onlyStrategist()()
 Begin local variable read
+_gauge_1
 
 Name: _gauge Function: setGauge
 Num: 
@@ -542,7 +550,7 @@ Param: 0
 _min_0
 
 
-MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
+MAX_1(uint256) := ϕ(['MAX_13', 'MAX_11', 'MAX_3', 'MAX_9', 'MAX_0'])
 MODIFIER_CALL, Vault.notHalted()()
 MODIFIER_CALL, Vault.onlyStrategist()()
 TMP_70(bool) = _min_1 <= MAX_3
@@ -562,8 +570,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
-MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
+MAX_1(uint256) := ϕ(['MAX_13', 'MAX_11', 'MAX_3', 'MAX_9', 'MAX_0'])
+MAX_1(uint256) := ϕ(['MAX_13', 'MAX_11', 'MAX_3', 'MAX_9', 'MAX_0'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -579,8 +587,8 @@ ALLL
 MODIFIER_CALL, Vault.notHalted()()
 Begin local variable read
 ALLL
-manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -602,7 +610,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_35(IManager) := ϕ(['manager_34', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_35(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_34', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_220(bool) = HIGH_LEVEL_CALL, dest:manager_34(IManager), function:halted, arguments:[]  
 [i]Type for TMP_220
 
@@ -614,7 +622,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_35(IManager) := ϕ(['manager_34', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_35(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_34', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -651,8 +659,8 @@ Begin local variable read
 ALLL
 Begin local variable read
 ALLL
-manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_34(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -674,7 +682,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_35(IManager) := ϕ(['manager_34', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_35(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_34', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_220(bool) = HIGH_LEVEL_CALL, dest:manager_34(IManager), function:halted, arguments:[]  
 [i]Type for TMP_220
 
@@ -686,7 +694,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_35(IManager) := ϕ(['manager_34', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_35(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_34', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -726,8 +734,8 @@ ALLL
 MODIFIER_CALL, Vault.onlyStrategist()()
 Begin local variable read
 ALLL
-manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -749,7 +757,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_39(IManager) := ϕ(['manager_38', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_39(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_38'])
 TMP_226(address) = HIGH_LEVEL_CALL, dest:manager_38(IManager), function:strategist, arguments:[]  
 Getting new address:
 None
@@ -763,7 +771,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_39(IManager) := ϕ(['manager_38', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_39(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_38'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -800,8 +808,8 @@ Begin local variable read
 ALLL
 Begin local variable read
 ALLL
-manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_38(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -823,7 +831,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_39(IManager) := ϕ(['manager_38', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_39(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_38'])
 TMP_226(address) = HIGH_LEVEL_CALL, dest:manager_38(IManager), function:strategist, arguments:[]  
 Getting new address:
 None
@@ -837,7 +845,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_39(IManager) := ϕ(['manager_38', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_39(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_38'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -873,6 +881,7 @@ Finance Type: undef
 Begin local variable read
 ALLL
 Begin local variable read
+_min_1
 
 Name: None Function: None
 Num: 
@@ -924,6 +933,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_min_1
 
 Name: _min Function: setMin
 Num: -1
@@ -956,7 +966,7 @@ Fields:
 Finance Type: undef
 
 
-MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
+MAX_1(uint256) := ϕ(['MAX_13', 'MAX_11', 'MAX_3', 'MAX_9', 'MAX_0'])
 MODIFIER_CALL, Vault.notHalted()()
 MODIFIER_CALL, Vault.onlyStrategist()()
 TMP_70(bool) = _min_1 <= MAX_3
@@ -976,8 +986,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
-MAX_1(uint256) := ϕ(['MAX_0', 'MAX_11', 'MAX_13', 'MAX_3', 'MAX_9'])
+MAX_1(uint256) := ϕ(['MAX_13', 'MAX_11', 'MAX_3', 'MAX_9', 'MAX_0'])
+MAX_1(uint256) := ϕ(['MAX_13', 'MAX_11', 'MAX_3', 'MAX_9', 'MAX_0'])
 [i]Type for MAX
 
 Name: MAX Function: global
@@ -995,6 +1005,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.onlyStrategist()()
 Begin local variable read
+_min_1
 
 Name: _min Function: setMin
 Num: -1
@@ -1046,6 +1057,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_min_1
 
 Name: _min Function: setMin
 Num: -1
@@ -1116,6 +1128,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.onlyStrategist()()
 Begin local variable read
+_totalDepositCap_1
 
 Name: None Function: None
 Num: 
@@ -1172,6 +1185,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.onlyStrategist()()
 Begin local variable read
+_totalDepositCap_1
 
 Name: _totalDepositCap Function: setTotalDepositCap
 Num: -1
@@ -1238,18 +1252,18 @@ _token1_0
 _expectedAmount_0
 
 
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 MODIFIER_CALL, Vault.notHalted()()
 manager_3(IManager) := ϕ(['manager_35'])
 MODIFIER_CALL, Vault.onlyStrategist()()
 manager_4(IManager) := ϕ(['manager_39'])
 TMP_76 = CONVERT this to address
 TMP_77(address) = HIGH_LEVEL_CALL, dest:manager_4(IManager), function:controllers, arguments:['TMP_76']  
-manager_5(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_4', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_78 = CONVERT TMP_77 to IController
 TMP_79 = CONVERT this to address
 TMP_80(address) = HIGH_LEVEL_CALL, dest:TMP_78(IController), function:converter, arguments:['TMP_79']  
-manager_6(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_5', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_81 = CONVERT TMP_80 to IConverter
 _converter_1(IConverter) := TMP_81(IConverter)
 TMP_82 = CONVERT _token0_1 to IERC20
@@ -1295,8 +1309,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1348,8 +1362,8 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_6(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_4', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_5', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_76 = CONVERT this to address
 [i]Type for TMP_76
 
@@ -1372,7 +1386,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_4', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1426,7 +1440,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_6(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_5', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1470,6 +1484,7 @@ LF: Converter
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token0_1
 
 Name: None Function: None
 Num: 
@@ -1544,15 +1559,17 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_converter_1
 
-Name: _balance Function: swap
+Name: _converter Function: swap
 Num: -1
 Den: -1
 Address: u
 Norm: u
-LF: None
+LF: Converter
 Fields: 
 Finance Type: undef
+_token0_1
 
 Name: _token0 Function: swap
 Num: 
@@ -1562,23 +1579,24 @@ Norm: u
 LF: _token0
 Fields: 
 Finance Type: undef
+_balance_1
 
-Name: _converter Function: swap
+Name: _balance Function: swap
 Num: -1
 Den: -1
 Address: u
 Norm: u
-LF: Converter
+LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _balance Function: swap
+Name: _converter Function: swap
 Num: -1
 Den: -1
 Address: u
 Norm: u
-LF: None
+LF: Converter
 Fields: 
 Finance Type: undef
 
@@ -1591,12 +1609,12 @@ LF: _token0
 Fields: 
 Finance Type: undef
 
-Name: _converter Function: swap
+Name: _balance Function: swap
 Num: -1
 Den: -1
 Address: u
 Norm: u
-LF: Converter
+LF: None
 Fields: 
 Finance Type: undef
 TMP_85 = CONVERT _token0_1 to IERC20
@@ -1642,24 +1660,7 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_85', 'TMP_86', '_balance_1'] 
 Begin local variable read
-
-Name: _converter Function: swap
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: Converter
-Fields: 
-Finance Type: undef
-
-Name: _balance Function: swap
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+_expectedAmount_1
 
 Name: None Function: None
 Num: 
@@ -1669,6 +1670,17 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_balance_1
+
+Name: _balance Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_token0_1
 
 Name: _token0 Function: swap
 Num: 
@@ -1678,6 +1690,17 @@ Norm: u
 LF: _token0
 Fields: 
 Finance Type: undef
+_converter_1
+
+Name: _converter Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+_token1_1
 
 Name: None Function: None
 Num: 
@@ -1689,12 +1712,12 @@ Fields:
 Finance Type: undef
 ALLL
 
-Name: _converter Function: swap
-Num: -1
-Den: -1
+Name: None Function: None
+Num: 
+Den: 
 Address: u
 Norm: u
-LF: Converter
+LF: None
 Fields: 
 Finance Type: undef
 
@@ -1707,21 +1730,21 @@ LF: None
 Fields: 
 Finance Type: undef
 
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
 Name: _token0 Function: swap
 Num: 
 Den: 
 Address: -995
 Norm: u
 LF: _token0
+Fields: 
+Finance Type: undef
+
+Name: _converter Function: swap
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Converter
 Fields: 
 Finance Type: undef
 
@@ -1757,18 +1780,18 @@ Fields:
 Finance Type: undef
 
 
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 MODIFIER_CALL, Vault.notHalted()()
 manager_3(IManager) := ϕ(['manager_35'])
 MODIFIER_CALL, Vault.onlyStrategist()()
 manager_4(IManager) := ϕ(['manager_39'])
 TMP_76 = CONVERT this to address
 TMP_77(address) = HIGH_LEVEL_CALL, dest:manager_4(IManager), function:controllers, arguments:['TMP_76']  
-manager_5(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_4', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_78 = CONVERT TMP_77 to IController
 TMP_79 = CONVERT this to address
 TMP_80(address) = HIGH_LEVEL_CALL, dest:TMP_78(IController), function:converter, arguments:['TMP_79']  
-manager_6(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_5', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_81 = CONVERT TMP_80 to IConverter
 _converter_1(IConverter) := TMP_81(IConverter)
 TMP_82 = CONVERT _token0_1 to IERC20
@@ -1814,8 +1837,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_2(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1867,8 +1890,8 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_6(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_4', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_5', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_76 = CONVERT this to address
 [i]Type for TMP_76
 
@@ -1891,7 +1914,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_5(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_4', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_5(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_4', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1945,7 +1968,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_6(IManager) := ϕ(['manager_37', 'manager_35', 'manager_24', 'manager_5', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_6(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_5', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -1989,6 +2012,7 @@ LF: Converter
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token0_1
 
 Name: _token0 Function: swap
 Num: 
@@ -2063,15 +2087,17 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_converter_1
 
-Name: _balance Function: swap
+Name: _converter Function: swap
 Num: 
 Den: 
 Address: u
 Norm: u
-LF: None
+LF: Converter
 Fields: 
 Finance Type: undef
+_token0_1
 
 Name: _token0 Function: swap
 Num: 
@@ -2081,23 +2107,24 @@ Norm: u
 LF: _token0
 Fields: 
 Finance Type: undef
+_balance_1
 
-Name: _converter Function: swap
+Name: _balance Function: swap
 Num: 
 Den: 
 Address: u
 Norm: u
-LF: Converter
+LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _balance Function: swap
+Name: _converter Function: swap
 Num: 
 Den: 
 Address: u
 Norm: u
-LF: None
+LF: Converter
 Fields: 
 Finance Type: undef
 
@@ -2110,12 +2137,12 @@ LF: _token0
 Fields: 
 Finance Type: undef
 
-Name: _converter Function: swap
+Name: _balance Function: swap
 Num: 
 Den: 
 Address: u
 Norm: u
-LF: Converter
+LF: None
 Fields: 
 Finance Type: undef
 TMP_85 = CONVERT _token0_1 to IERC20
@@ -2161,24 +2188,7 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_85', 'TMP_86', '_balance_1'] 
 Begin local variable read
-
-Name: _converter Function: swap
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: Converter
-Fields: 
-Finance Type: undef
-
-Name: _balance Function: swap
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+_expectedAmount_1
 
 Name: None Function: None
 Num: 
@@ -2188,6 +2198,17 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_balance_1
+
+Name: _balance Function: swap
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_token0_1
 
 Name: _token0 Function: swap
 Num: 
@@ -2197,6 +2218,17 @@ Norm: u
 LF: _token0
 Fields: 
 Finance Type: undef
+_converter_1
+
+Name: _converter Function: swap
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: Converter
+Fields: 
+Finance Type: undef
+_token1_1
 
 Name: None Function: None
 Num: 
@@ -2208,16 +2240,7 @@ Fields:
 Finance Type: undef
 ALLL
 
-Name: _converter Function: swap
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: Converter
-Fields: 
-Finance Type: undef
-
-Name: _balance Function: swap
+Name: None Function: None
 Num: 
 Den: 
 Address: u
@@ -2226,7 +2249,7 @@ LF: None
 Fields: 
 Finance Type: undef
 
-Name: None Function: None
+Name: _balance Function: swap
 Num: 
 Den: 
 Address: u
@@ -2241,6 +2264,15 @@ Den:
 Address: -995
 Norm: u
 LF: _token0
+Fields: 
+Finance Type: undef
+
+Name: _converter Function: swap
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: Converter
 Fields: 
 Finance Type: undef
 
@@ -2300,7 +2332,7 @@ _token_0
 _strategy_0
 
 
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 manager_8(IManager) := ϕ(['manager_33'])
 MODIFIER_CALL, Vault.notHalted()()
@@ -2308,11 +2340,11 @@ manager_9(IManager) := ϕ(['manager_35'])
 MODIFIER_CALL, Vault.onlyHarvester()()
 manager_10(IManager) := ϕ(['manager_37'])
 TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
-manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_10'])
 TMP_92(None) = SOLIDITY_CALL require(bool,string)(TMP_91,!_strategy)
 TMP_93 = CONVERT this to address
 TMP_94(address) = HIGH_LEVEL_CALL, dest:manager_11(IManager), function:controllers, arguments:['TMP_93']  
-manager_12(IManager) := ϕ(['manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_11', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_95 = CONVERT TMP_94 to IController
 _controller_1(IController) := TMP_95(IController)
 TMP_96(bool) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:investEnabled, arguments:[]  
@@ -2348,8 +2380,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2361,6 +2393,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: None Function: None
 Num: 
@@ -2424,6 +2457,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Begin local variable read
+_strategy_1
 
 Name: None Function: None
 Num: 
@@ -2452,7 +2486,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_10'])
 TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
 [i]Type for TMP_91
 
@@ -2464,7 +2498,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_10'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2497,7 +2531,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_11', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_93 = CONVERT this to address
 [i]Type for TMP_93
 
@@ -2520,7 +2554,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_11', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2564,6 +2598,7 @@ LF: Controller
 Fields: 
 Finance Type: undef
 Begin local variable read
+_controller_1
 
 Name: _controller Function: earn
 Num: -1
@@ -2595,6 +2630,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: None Function: None
 Num: 
@@ -2637,8 +2673,46 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_controller_1
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+_balance_1
+
+Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
 ALLL
-Begin local variable read
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
 
 Name: _balance Function: earn
 Num: 
@@ -2655,43 +2729,6 @@ Den:
 Address: u
 Norm: u
 LF: None
-Fields: 
-Finance Type: undef
-
-Name: _controller Function: earn
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: Controller
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: _balance Function: earn
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: _controller Function: earn
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: Controller
 Fields: 
 Finance Type: undef
 TMP_98 = CONVERT _token_1 to IERC20
@@ -2737,6 +2774,19 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
 Begin local variable read
+ALLL
+Begin local variable read
+_controller_1
+
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+_balance_1
 
 Name: _balance Function: earn
 Num: 
@@ -2746,15 +2796,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-
-Name: _token Function: earn
-Num: 
-Den: 
-Address: -993
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_strategy_1
 
 Name: None Function: None
 Num: 
@@ -2764,18 +2806,37 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_token_1
 
-Name: _controller Function: earn
-Num: -1
-Den: -1
-Address: u
+Name: _token Function: earn
+Num: 
+Den: 
+Address: -993
 Norm: u
-LF: Controller
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
+Name: _controller Function: earn
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+
 Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: None Function: None
 Num: 
 Den: 
 Address: u
@@ -2790,28 +2851,11 @@ Den:
 Address: -993
 Norm: u
 LF: _token
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: _controller Function: earn
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: Controller
 Fields: 
 Finance Type: undef
 HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
 Begin local variable read
+_balance_1
 
 Name: _balance Function: earn
 Num: 
@@ -2821,6 +2865,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_token_1
 
 Name: _token Function: earn
 Num: 
@@ -2851,7 +2896,7 @@ Fields:
 Finance Type: undef
 
 
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 manager_8(IManager) := ϕ(['manager_33'])
 MODIFIER_CALL, Vault.notHalted()()
@@ -2859,11 +2904,11 @@ manager_9(IManager) := ϕ(['manager_35'])
 MODIFIER_CALL, Vault.onlyHarvester()()
 manager_10(IManager) := ϕ(['manager_37'])
 TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
-manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_10'])
 TMP_92(None) = SOLIDITY_CALL require(bool,string)(TMP_91,!_strategy)
 TMP_93 = CONVERT this to address
 TMP_94(address) = HIGH_LEVEL_CALL, dest:manager_11(IManager), function:controllers, arguments:['TMP_93']  
-manager_12(IManager) := ϕ(['manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_11', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_95 = CONVERT TMP_94 to IController
 _controller_1(IController) := TMP_95(IController)
 TMP_96(bool) = HIGH_LEVEL_CALL, dest:_controller_1(IController), function:investEnabled, arguments:[]  
@@ -2899,8 +2944,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_7(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -2912,6 +2957,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: earn
 Num: 
@@ -2975,6 +3021,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Begin local variable read
+_strategy_1
 
 Name: None Function: None
 Num: 
@@ -3003,7 +3050,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_10'])
 TMP_91(bool) = HIGH_LEVEL_CALL, dest:manager_10(IManager), function:allowedStrategies, arguments:['_strategy_1']  
 [i]Type for TMP_91
 
@@ -3015,7 +3062,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_11(IManager) := ϕ(['manager_10', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_11(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_10'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3048,7 +3095,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_11', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_93 = CONVERT this to address
 [i]Type for TMP_93
 
@@ -3071,7 +3118,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_12(IManager) := ϕ(['manager_37', 'manager_35', 'manager_11', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_12(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_11', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3115,6 +3162,7 @@ LF: Controller
 Fields: 
 Finance Type: undef
 Begin local variable read
+_controller_1
 
 Name: _controller Function: earn
 Num: 
@@ -3146,6 +3194,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: earn
 Num: 
@@ -3188,8 +3237,46 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_controller_1
+
+Name: _controller Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+_balance_1
+
+Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: earn
+Num: 
+Den: 
+Address: -993
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
 ALLL
-Begin local variable read
+
+Name: _controller Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
 
 Name: _balance Function: earn
 Num: 
@@ -3206,43 +3293,6 @@ Den:
 Address: -993
 Norm: u
 LF: _token
-Fields: 
-Finance Type: undef
-
-Name: _controller Function: earn
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: Controller
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: _balance Function: earn
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: _token Function: earn
-Num: 
-Den: 
-Address: -993
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
-Name: _controller Function: earn
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: Controller
 Fields: 
 Finance Type: undef
 TMP_98 = CONVERT _token_1 to IERC20
@@ -3288,6 +3338,19 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransfer(IERC20,address,uint256), arguments:['TMP_98', 'TMP_99', '_balance_1'] 
 Begin local variable read
+ALLL
+Begin local variable read
+_controller_1
+
+Name: _controller Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+_balance_1
 
 Name: _balance Function: earn
 Num: 
@@ -3297,15 +3360,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-
-Name: _token Function: earn
-Num: 
-Den: 
-Address: -993
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_strategy_1
 
 Name: None Function: None
 Num: 
@@ -3315,18 +3370,37 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_token_1
 
-Name: _controller Function: earn
+Name: _token Function: earn
 Num: 
 Den: 
-Address: u
+Address: -993
 Norm: u
-LF: Controller
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
+Name: _controller Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: Controller
+Fields: 
+Finance Type: undef
+
 Name: _balance Function: earn
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: None Function: None
 Num: 
 Den: 
 Address: u
@@ -3343,26 +3417,9 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: _controller Function: earn
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: Controller
-Fields: 
-Finance Type: undef
 HIGH_LEVEL_CALL, dest:_controller_1(IController), function:earn, arguments:['_strategy_1', '_token_1', '_balance_1']  
 Begin local variable read
+_balance_1
 
 Name: _balance Function: earn
 Num: 
@@ -3372,6 +3429,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_token_1
 
 Name: _token Function: earn
 Num: 
@@ -3428,7 +3486,7 @@ _amount_0
 
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 MODIFIER_CALL, Vault.notHalted()()
 TMP_106(bool) = _amount_1 > 0
@@ -3438,7 +3496,7 @@ _balance_1(uint256) := TMP_108(uint256)
 TMP_109 = CONVERT _token_1 to IERC20
 TMP_110 = CONVERT this to address
 TMP_111(uint256) = HIGH_LEVEL_CALL, dest:TMP_109(IERC20), function:balanceOf, arguments:['TMP_110']  
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 _before_1(uint256) := TMP_111(uint256)
 TMP_112 = CONVERT _token_1 to IERC20
 TMP_113 = CONVERT this to address
@@ -3446,29 +3504,29 @@ LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address
 TMP_115 = CONVERT _token_1 to IERC20
 TMP_116 = CONVERT this to address
 TMP_117(uint256) = HIGH_LEVEL_CALL, dest:TMP_115(IERC20), function:balanceOf, arguments:['TMP_116']  
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_118(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_117', '_before_1'] 
 _amount_2(uint256) := TMP_118(uint256)
 TMP_119(bool) = _amount_2 > 0
 CONDITION TMP_119
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 TMP_126(bool) = _shares_2 > 0
 CONDITION TMP_126
 TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
 _amount_3(uint256) := TMP_120(uint256)
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
 TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_122(bool) = TMP_121 > 0
 CONDITION TMP_122
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+TMP_129(bool) = TMP_128 <= totalDepositCap_13
+TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 _amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
 _shares_1(uint256) := _amount_5(uint256)
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
 TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
 _amount_4(uint256) := TMP_125(uint256)
-TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-TMP_129(bool) = TMP_128 <= totalDepositCap_13
-TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 Emit Deposit(msg.sender,_shares_2)
 
 
@@ -3496,7 +3554,7 @@ Begin local variable read
 ALLL
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -3519,7 +3577,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -3531,6 +3589,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: deposit
 Num: 
@@ -3553,9 +3612,9 @@ Finance Type: undef
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 Begin local variable read
 ALLL
-_token_1(address) := ϕ(['_token_1', '_token_1', '_output_1'])
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-_token_1(address) := ϕ(['_token_1', '_token_1', '_output_1'])
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
 [i]Type for _token
 
 Name: _token Function: checkToken
@@ -3566,7 +3625,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3578,6 +3637,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: checkToken
 Num: 
@@ -3589,21 +3649,21 @@ Fields:
 Finance Type: undef
 ALLL
 
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
 Name: manager Function: global
 Num: -1
 Den: -1
 Address: -999
 Norm: u
 LF: Manager
+Fields: 
+Finance Type: undef
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
 Fields: 
 Finance Type: undef
 
@@ -3615,8 +3675,8 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_33(IManager) := ϕ(['manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_31', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_214(bool) = HIGH_LEVEL_CALL, dest:manager_31(IManager), function:allowedTokens, arguments:['_token_1']  
 [i]Type for TMP_214
 
@@ -3628,7 +3688,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_31', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3652,7 +3712,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3711,9 +3771,9 @@ Begin local variable read
 ALLL
 Begin local variable read
 ALLL
-_token_1(address) := ϕ(['_token_1', '_token_1', '_output_1'])
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-_token_1(address) := ϕ(['_token_1', '_token_1', '_output_1'])
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
 [i]Type for _token
 
 Name: _token Function: checkToken
@@ -3724,7 +3784,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3736,6 +3796,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: checkToken
 Num: 
@@ -3773,8 +3834,8 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_33(IManager) := ϕ(['manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_31', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_214(bool) = HIGH_LEVEL_CALL, dest:manager_31(IManager), function:allowedTokens, arguments:['_token_1']  
 [i]Type for TMP_214
 
@@ -3786,7 +3847,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_31', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3810,7 +3871,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3871,6 +3932,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.notHalted()()
 Begin local variable read
+_amount_1
 
 Name: _amount Function: deposit
 Num: 1
@@ -3917,8 +3979,8 @@ ALLL
 TMP_108(uint256) = INTERNAL_CALL, Vault.balance()()
 Begin local variable read
 ALLL
-manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3941,13 +4003,13 @@ LF: None
 Fields: 
 Finance Type: undef
 manager_22(IManager) := ϕ(['manager_26'])
-manager_23(IManager) := ϕ(['manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_24(IManager) := ϕ(['manager_23', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_23(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_22'])
+manager_24(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_23'])
 TMP_177(uint256) = INTERNAL_CALL, Vault.balanceOfThis()()
 Begin local variable read
 ALLL
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -3969,7 +4031,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_183 = CONVERT this to address
 [i]Type for TMP_183
 
@@ -3994,7 +4056,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -4021,35 +4083,28 @@ ALLL
 Begin local variable read
 ALLL
 Begin local variable read
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+_tokens_1
 
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
 Address: -988
 Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
 LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
@@ -4058,9 +4113,18 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := ϕ(['_balance_0', '_balance_2'])
 i_1(uint8) := ϕ(['i_0', 'i_2'])
-_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+_balance_1(uint256) := ϕ(['_balance_0', '_balance_2'])
 [i]Type for _balance
 
 Name: _balance Function: balanceOfThis
@@ -4105,40 +4169,42 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: i Function: balanceOfThis
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+_tokens_1
 
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
 Address: -988
 Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_1
+
+Name: i Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
 LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: i Function: balanceOfThis
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
 Address: -988
 Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: i Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
 LF: None
 Fields: 
 Finance Type: undef
@@ -4165,17 +4231,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-ALLL
-Begin local variable read
-
-Name: _token Function: balanceOfThis
-Num: -1
-Den: -1
-Address: -988
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
+_balance_1
 
 Name: _balance Function: balanceOfThis
 Num: 
@@ -4185,7 +4241,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-ALLL
+_token_1
 
 Name: _token Function: balanceOfThis
 Num: -1
@@ -4195,12 +4251,22 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
+ALLL
 
 Name: _balance Function: balanceOfThis
 Num: 
 Den: 
 Address: u
 Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: balanceOfThis
+Num: -1
+Den: -1
+Address: -988
+Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
@@ -4277,6 +4343,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: -1
@@ -4362,6 +4429,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -4407,6 +4475,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -4416,6 +4485,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -988
@@ -4489,6 +4559,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -988
@@ -4536,6 +4607,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: -1
@@ -4621,6 +4693,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -4666,6 +4739,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -4675,6 +4749,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -988
@@ -4748,6 +4823,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -988
@@ -4801,6 +4877,9 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+ALLL
+Begin local variable read
+i_1
 
 Name: i Function: balanceOfThis
 Num: 
@@ -4843,6 +4922,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_balance_1
 
 Name: _balance Function: balanceOfThis
 Num: 
@@ -4865,8 +4945,8 @@ Finance Type: undef
 RETURN _balance_1
 Begin local variable read
 ALLL
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -4888,7 +4968,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_183 = CONVERT this to address
 [i]Type for TMP_183
 
@@ -4913,7 +4993,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -4940,35 +5020,28 @@ ALLL
 Begin local variable read
 ALLL
 Begin local variable read
-
-Name: i Function: balanceOfThis
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+_tokens_1
 
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
 Address: -987
 Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_1
+
+Name: i Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
 LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: i Function: balanceOfThis
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
@@ -4977,9 +5050,18 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+
+Name: i Function: balanceOfThis
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := ϕ(['_balance_0', '_balance_2'])
 i_1(uint8) := ϕ(['i_0', 'i_2'])
-_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+_balance_1(uint256) := ϕ(['_balance_0', '_balance_2'])
 [i]Type for _balance
 
 Name: _balance Function: balanceOfThis
@@ -5024,39 +5106,41 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: i Function: balanceOfThis
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
+_tokens_1
 
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
 Address: -987
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_1
+
+Name: i Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
 Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: i Function: balanceOfThis
+Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
-Address: u
+Address: -987
 Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
 
-Name: _tokens Function: balanceOfThis
+Name: i Function: balanceOfThis
 Num: -1
 Den: -1
-Address: -987
+Address: u
 Norm: 0
 LF: None
 Fields: 
@@ -5084,17 +5168,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-ALLL
-Begin local variable read
-
-Name: _token Function: balanceOfThis
-Num: -1
-Den: -1
-Address: -987
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
+_balance_1
 
 Name: _balance Function: balanceOfThis
 Num: -988
@@ -5104,7 +5178,7 @@ Norm: *
 LF: None
 Fields: 
 Finance Type: undef
-ALLL
+_token_1
 
 Name: _token Function: balanceOfThis
 Num: -1
@@ -5114,12 +5188,22 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
+ALLL
 
 Name: _balance Function: balanceOfThis
 Num: -988
 Den: 
 Address: u
 Norm: *
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: balanceOfThis
+Num: -1
+Den: -1
+Address: -987
+Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
@@ -5196,6 +5280,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: -1
@@ -5281,6 +5366,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -5326,6 +5412,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -5335,6 +5422,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -987
@@ -5408,6 +5496,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -987
@@ -5455,6 +5544,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: -1
@@ -5540,6 +5630,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -5585,6 +5676,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -5594,6 +5686,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -987
@@ -5667,6 +5760,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -987
@@ -5722,6 +5816,9 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+ALLL
+Begin local variable read
+i_1
 
 Name: i Function: balanceOfThis
 Num: -1
@@ -5764,6 +5861,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_balance_1
 
 Name: _balance Function: balanceOfThis
 Num: -988
@@ -5786,8 +5884,8 @@ Finance Type: undef
 RETURN _balance_1
 Begin local variable read
 ALLL
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_25(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -5809,7 +5907,7 @@ Norm: u
 LF: Manager
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_183 = CONVERT this to address
 [i]Type for TMP_183
 
@@ -5834,7 +5932,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_26(IManager) := ϕ(['manager_37', 'manager_25', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -5861,35 +5959,28 @@ ALLL
 Begin local variable read
 ALLL
 Begin local variable read
-
-Name: i Function: balanceOfThis
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
+_tokens_1
 
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
 Address: -987
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_1
+
+Name: i Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
 Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: i Function: balanceOfThis
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
@@ -5898,9 +5989,18 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+
+Name: i Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1(uint256) := ϕ(['_balance_0', '_balance_2'])
 i_1(uint8) := ϕ(['i_0', 'i_2'])
-_balance_1(uint256) := ϕ(['_balance_2', '_balance_0'])
+_balance_1(uint256) := ϕ(['_balance_0', '_balance_2'])
 [i]Type for _balance
 
 Name: _balance Function: balanceOfThis
@@ -5945,39 +6045,41 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: i Function: balanceOfThis
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
+_tokens_1
 
 Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
 Address: -987
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+i_1
+
+Name: i Function: balanceOfThis
+Num: -1
+Den: -1
+Address: u
 Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: i Function: balanceOfThis
+Name: _tokens Function: balanceOfThis
 Num: -1
 Den: -1
-Address: u
+Address: -987
 Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
 
-Name: _tokens Function: balanceOfThis
+Name: i Function: balanceOfThis
 Num: -1
 Den: -1
-Address: -987
+Address: u
 Norm: 0
 LF: None
 Fields: 
@@ -6005,17 +6107,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-ALLL
-Begin local variable read
-
-Name: _token Function: balanceOfThis
-Num: -1
-Den: -1
-Address: -987
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
+_balance_1
 
 Name: _balance Function: balanceOfThis
 Num: -1
@@ -6025,7 +6117,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-ALLL
+_token_1
 
 Name: _token Function: balanceOfThis
 Num: -1
@@ -6035,12 +6127,22 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
+ALLL
 
 Name: _balance Function: balanceOfThis
 Num: -1
 Den: -1
 Address: u
 Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: balanceOfThis
+Num: -1
+Den: -1
+Address: -987
+Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
@@ -6117,6 +6219,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: -1
@@ -6202,6 +6305,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -6247,6 +6351,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -6256,6 +6361,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -987, -987
@@ -6329,6 +6435,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -987, -987
@@ -6376,6 +6483,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: -1
@@ -6461,6 +6569,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -6506,6 +6615,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -6515,6 +6625,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -987, -987
@@ -6588,6 +6699,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -987, -987
@@ -6643,6 +6755,9 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+ALLL
+Begin local variable read
+i_1
 
 Name: i Function: balanceOfThis
 Num: -1
@@ -6685,6 +6800,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_balance_1
 
 Name: _balance Function: balanceOfThis
 Num: -1
@@ -6750,7 +6866,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_23(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_22'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6795,7 +6911,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_23', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_24(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_23'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6820,8 +6936,8 @@ Finance Type: undef
 RETURN TMP_182
 Begin local variable read
 ALLL
-manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_21(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6844,8 +6960,8 @@ LF: Manager
 Fields: 
 Finance Type: undef
 manager_22(IManager) := ϕ(['manager_26'])
-manager_23(IManager) := ϕ(['manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_24(IManager) := ϕ(['manager_23', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_23(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_22'])
+manager_24(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_23'])
 TMP_177(uint256) = INTERNAL_CALL, Vault.balanceOfThis()()
 [i]Type for TMP_177
 
@@ -6892,7 +7008,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_23(IManager) := ϕ(['manager_22', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_23(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_22'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6937,7 +7053,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_24(IManager) := ϕ(['manager_23', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_24(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1', 'manager_23'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -6982,6 +7098,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: deposit
 Num: 
@@ -7001,7 +7118,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_109 = CONVERT _token_1 to IERC20
 
 Name: _token Function: deposit
@@ -7047,7 +7164,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -7070,15 +7187,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_amount_1
 
 Name: _amount Function: deposit
 Num: 1
@@ -7086,25 +7195,35 @@ Den: -1
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _amount Function: deposit
 Num: 1
 Den: -1
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 TMP_112 = CONVERT _token_1 to IERC20
@@ -7141,15 +7260,7 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address,address,uint256), arguments:['TMP_112', 'msg.sender', 'TMP_113', '_amount_1'] 
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_before_1
 
 Name: _before Function: deposit
 Num: -991
@@ -7157,19 +7268,20 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _before Function: deposit
 Num: -991
 Den: 
@@ -7178,7 +7290,16 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_115 = CONVERT _token_1 to IERC20
 
 Name: _token Function: deposit
@@ -7224,7 +7345,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -7258,6 +7379,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_2
 
 Name: _amount Function: deposit
 Num: -991
@@ -7290,8 +7412,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
@@ -7303,6 +7425,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_shares_2
 
 Name: _shares Function: deposit
 Num: 
@@ -7334,15 +7457,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_amount_2
 
 Name: _amount Function: deposit
 Num: -991
@@ -7350,25 +7465,35 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _amount Function: deposit
 Num: -991
 Den: 
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
@@ -7399,6 +7524,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: 
@@ -7484,6 +7610,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -7529,6 +7656,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -7538,6 +7666,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -7611,6 +7740,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -7658,6 +7788,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: 
@@ -7743,6 +7874,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -7788,6 +7920,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -7797,6 +7930,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -7870,6 +8004,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -7913,11 +8048,897 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
+Begin local variable read
+_shares_2
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: _shares Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+Begin local variable read
+ALLL
+account_1(address) := ϕ(['msg.sender'])
+amount_1(uint256) := ϕ(['_shares_2'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
+account_1(address) := ϕ(['msg.sender'])
+[i]Type for account
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['_shares_2'])
+[i]Type for amount
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+[i]Type for _balances
+
+Name: _balances Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+account_1
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+TMP_39 = CONVERT 0 to address
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_39
+
+Name: TMP_39 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_40(bool) = account_1 != TMP_39
+[i]Type for TMP_40
+
+Name: TMP_40 Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
+[i]Type for TMP_41
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+account_1
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_42 = CONVERT 0 to address
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_42
+
+Name: TMP_42 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
+Begin local variable read
+ALLL
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
+amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+[i]Type for from
+
+Name: from Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: from
+Fields: 
+Finance Type: undef
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
+[i]Type for to
+
+Name: to Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
+[i]Type for amount
+
+Name: amount Function: _beforeTokenTransfer
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+ALLL
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
+amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+[i]Type for from
+
+Name: from Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: from
+Fields: 
+Finance Type: undef
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
+[i]Type for to
+
+Name: to Function: _beforeTokenTransfer
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
+[i]Type for amount
+
+Name: amount Function: _beforeTokenTransfer
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+amount_1
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
+[i]Type for TMP_44
+
+Name: TMP_44 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_totalSupply_4(uint256) := TMP_44(uint256)
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+account_1
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
+REF_21(uint256) -> _balances_7[account_1]
+uint256
+[i]Type for REF_21
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_22(uint256) -> _balances_7[account_1]
+uint256
+[i]Type for REF_22
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
+[i]Type for TMP_45
+
+Name: TMP_45 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
+[i]Type for _balances
+
+Name: _balances Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_21 (->_balances_8) := TMP_45(uint256)
+[i]Type for REF_21
+
+Name: REF_21 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+account_1
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_46 = CONVERT 0 to address
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_46
+
+Name: TMP_46 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+ALLL
+account_1(address) := ϕ(['msg.sender'])
+amount_1(uint256) := ϕ(['_shares_2'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
+account_1(address) := ϕ(['msg.sender'])
+[i]Type for account
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1(uint256) := ϕ(['_shares_2'])
+[i]Type for amount
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+[i]Type for _balances
+
+Name: _balances Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+account_1
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+TMP_39 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_39
+
+Name: TMP_39 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_40(bool) = account_1 != TMP_39
+[i]Type for TMP_40
+
+Name: TMP_40 Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
+[i]Type for TMP_41
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+account_1
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_42 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_42
+
+Name: TMP_42 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
+Begin local variable read
+amount_1
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: _totalSupply Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
+[i]Type for TMP_44
+
+Name: TMP_44 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_totalSupply_4(uint256) := TMP_44(uint256)
+[i]Type for _totalSupply
+
+Name: _totalSupply Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+account_1
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
+REF_21(uint256) -> _balances_7[account_1]
+uint256
+[i]Type for REF_21
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_22(uint256) -> _balances_7[account_1]
+uint256
+[i]Type for REF_22
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
+[i]Type for TMP_45
+
+Name: TMP_45 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
+[i]Type for _balances
+
+Name: _balances Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+REF_21 (->_balances_8) := TMP_45(uint256)
+[i]Type for REF_21
+
+Name: REF_21 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+account_1
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: account Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: account
+Fields: 
+Finance Type: undef
+
+Name: amount Function: _mint
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_46 = CONVERT 0 to address
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+[i]Type for TMP_46
+
+Name: TMP_46 Function: _mint
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+ALLL
 TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 Begin local variable read
 ALLL
-_totalSupply_1(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
-_totalSupply_1(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_totalSupply_1(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
+_totalSupply_1(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -7942,8 +8963,8 @@ Finance Type: undef
 RETURN _totalSupply_1
 Begin local variable read
 ALLL
-_totalSupply_1(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
-_totalSupply_1(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_totalSupply_1(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
+_totalSupply_1(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -7984,1002 +9005,6 @@ Num: -1
 Den: -1
 Address: u
 Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-ALLL
-Begin local variable read
-
-Name: _shares Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: _shares Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
-Begin local variable read
-ALLL
-account_1(address) := ϕ(['msg.sender'])
-amount_1(uint256) := ϕ(['_shares_2'])
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-Begin local variable read
-ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-[i]Type for from
-
-Name: from Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: from
-Fields: 
-Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
-[i]Type for to
-
-Name: to Function: _beforeTokenTransfer
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-[i]Type for amount
-
-Name: amount Function: _beforeTokenTransfer
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-REF_21(uint256) -> _balances_7[account_1]
-uint256
-[i]Type for REF_21
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-uint256
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-ALLL
-account_1(address) := ϕ(['msg.sender'])
-amount_1(uint256) := ϕ(['_shares_2'])
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
-account_1(address) := ϕ(['msg.sender'])
-[i]Type for account
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['_shares_2'])
-[i]Type for amount
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-TMP_39 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_39
-
-Name: TMP_39 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-TMP_40(bool) = account_1 != TMP_39
-[i]Type for TMP_40
-
-Name: TMP_40 Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_41(None) = SOLIDITY_CALL require(bool,string)(TMP_40,ERC20: mint to the zero address)
-[i]Type for TMP_41
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_42 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_42
-
-Name: TMP_42 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
-Begin local variable read
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: _totalSupply Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_44(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['_totalSupply_3', 'amount_1'] 
-[i]Type for TMP_44
-
-Name: TMP_44 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_totalSupply_4(uint256) := TMP_44(uint256)
-[i]Type for _totalSupply
-
-Name: _totalSupply Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-REF_21(uint256) -> _balances_7[account_1]
-uint256
-[i]Type for REF_21
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_22(uint256) -> _balances_7[account_1]
-uint256
-[i]Type for REF_22
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_45(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.add(uint256,uint256), arguments:['REF_22', 'amount_1'] 
-[i]Type for TMP_45
-
-Name: TMP_45 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_balances_8(mapping(address => uint256)) := ϕ(['_balances_7'])
-[i]Type for _balances
-
-Name: _balances Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-REF_21 (->_balances_8) := TMP_45(uint256)
-[i]Type for REF_21
-
-Name: REF_21 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: account Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: account
-Fields: 
-Finance Type: undef
-
-Name: amount Function: _mint
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_46 = CONVERT 0 to address
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-[i]Type for TMP_46
-
-Name: TMP_46 Function: _mint
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-ALLL
-_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
-_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: _balance Function: deposit
-Num: 1
-Den: -1
-Address: -984
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: *
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: _balance Function: deposit
-Num: 1
-Den: -1
-Address: -984
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: *
-LF: None
-Fields: 
-Finance Type: undef
-TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-[i]Type for TMP_123
-
-Name: TMP_123 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
-[i]Type for TMP_124
-
-Name: TMP_124 Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
-[i]Type for TMP_125
-
-Name: TMP_125 Function: deposit
-Num: -991
-Den: 1
-Address: u
-Norm: 0
-LF: None
-Fields: 
-Finance Type: undef
-_amount_4(uint256) := TMP_125(uint256)
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: -991
-Den: 1
-Address: u
-Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
@@ -9028,6 +9053,137 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+ALLL
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+_amount_5
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+_amount_3
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: *
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1
+
+Name: _balance Function: deposit
+Num: 1
+Den: -1
+Address: -984
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: *
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: _balance Function: deposit
+Num: 1
+Den: -1
+Address: -984
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_123
+
+Name: TMP_123 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
+[i]Type for TMP_124
+
+Name: TMP_124 Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
+[i]Type for TMP_125
+
+Name: TMP_125 Function: deposit
+Num: -991
+Den: 1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+_amount_4(uint256) := TMP_125(uint256)
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: -991
+Den: 1
+Address: u
+Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+_shares_2
 
 Name: _shares Function: deposit
 Num: 
@@ -9051,7 +9207,7 @@ Finance Type: undef
 
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 MODIFIER_CALL, Vault.notHalted()()
 TMP_106(bool) = _amount_1 > 0
@@ -9061,7 +9217,7 @@ _balance_1(uint256) := TMP_108(uint256)
 TMP_109 = CONVERT _token_1 to IERC20
 TMP_110 = CONVERT this to address
 TMP_111(uint256) = HIGH_LEVEL_CALL, dest:TMP_109(IERC20), function:balanceOf, arguments:['TMP_110']  
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 _before_1(uint256) := TMP_111(uint256)
 TMP_112 = CONVERT _token_1 to IERC20
 TMP_113 = CONVERT this to address
@@ -9069,29 +9225,29 @@ LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address
 TMP_115 = CONVERT _token_1 to IERC20
 TMP_116 = CONVERT this to address
 TMP_117(uint256) = HIGH_LEVEL_CALL, dest:TMP_115(IERC20), function:balanceOf, arguments:['TMP_116']  
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_118(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_117', '_before_1'] 
 _amount_2(uint256) := TMP_118(uint256)
 TMP_119(bool) = _amount_2 > 0
 CONDITION TMP_119
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 TMP_126(bool) = _shares_2 > 0
 CONDITION TMP_126
 TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
 _amount_3(uint256) := TMP_120(uint256)
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
 TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_122(bool) = TMP_121 > 0
 CONDITION TMP_122
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+TMP_129(bool) = TMP_128 <= totalDepositCap_13
+TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 _amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
 _shares_1(uint256) := _amount_5(uint256)
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
 TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
 _amount_4(uint256) := TMP_125(uint256)
-TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-TMP_129(bool) = TMP_128 <= totalDepositCap_13
-TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 Emit Deposit(msg.sender,_shares_2)
 
 
@@ -9119,7 +9275,7 @@ Begin local variable read
 ALLL
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -9142,7 +9298,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -9154,6 +9310,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: deposit
 Num: 
@@ -9178,6 +9335,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.notHalted()()
 Begin local variable read
+_amount_1
 
 Name: _amount Function: deposit
 Num: -991
@@ -9244,6 +9402,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: deposit
 Num: 
@@ -9263,7 +9422,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_109 = CONVERT _token_1 to IERC20
 
 Name: _token Function: deposit
@@ -9309,7 +9468,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -9332,15 +9491,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_amount_1
 
 Name: _amount Function: deposit
 Num: -991
@@ -9348,25 +9499,35 @@ Den: 1
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _amount Function: deposit
 Num: -991
 Den: 1
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 TMP_112 = CONVERT _token_1 to IERC20
@@ -9403,15 +9564,7 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address,address,uint256), arguments:['TMP_112', 'msg.sender', 'TMP_113', '_amount_1'] 
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_before_1
 
 Name: _before Function: deposit
 Num: -991
@@ -9419,19 +9572,20 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _before Function: deposit
 Num: -991
 Den: 
@@ -9440,7 +9594,16 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_115 = CONVERT _token_1 to IERC20
 
 Name: _token Function: deposit
@@ -9486,7 +9649,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -9520,6 +9683,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_2
 
 Name: _amount Function: deposit
 Num: -991
@@ -9552,8 +9716,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
@@ -9565,6 +9729,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_shares_2
 
 Name: _shares Function: deposit
 Num: -991
@@ -9596,15 +9761,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_amount_2
 
 Name: _amount Function: deposit
 Num: -991
@@ -9612,25 +9769,35 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _amount Function: deposit
 Num: -991
 Den: 
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
@@ -9661,6 +9828,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: 
@@ -9746,6 +9914,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -9791,6 +9960,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -9800,6 +9970,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -9873,6 +10044,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -9920,6 +10092,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: 
@@ -10005,6 +10178,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -10050,6 +10224,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -10059,6 +10234,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -10132,6 +10308,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -10175,31 +10352,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-[i]Type for TMP_121
-
-Name: TMP_121 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_122(bool) = TMP_121 > 0
-[i]Type for TMP_122
-
-Name: TMP_122 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 Begin local variable read
-ALLL
-Begin local variable read
+_shares_2
 
 Name: _shares Function: deposit
 Num: -991
@@ -10224,8 +10378,8 @@ Begin local variable read
 ALLL
 account_1(address) := ϕ(['msg.sender'])
 amount_1(uint256) := ϕ(['_shares_2'])
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 account_1(address) := ϕ(['msg.sender'])
 [i]Type for account
 
@@ -10248,7 +10402,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
 [i]Type for _balances
 
 Name: _balances Function: global
@@ -10259,7 +10413,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -10271,6 +10425,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -10333,6 +10488,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -10342,6 +10498,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -10393,10 +10550,10 @@ Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
 Begin local variable read
 ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -10407,7 +10564,7 @@ Norm: u
 LF: from
 Fields: 
 Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 [i]Type for to
 
 Name: to Function: _beforeTokenTransfer
@@ -10431,10 +10588,10 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -10445,7 +10602,7 @@ Norm: u
 LF: from
 Fields: 
 Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 [i]Type for to
 
 Name: to Function: _beforeTokenTransfer
@@ -10468,6 +10625,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -10519,6 +10677,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -10528,6 +10687,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -10624,6 +10784,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -10633,6 +10794,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -10685,8 +10847,8 @@ Begin local variable read
 ALLL
 account_1(address) := ϕ(['msg.sender'])
 amount_1(uint256) := ϕ(['_shares_2'])
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 account_1(address) := ϕ(['msg.sender'])
 [i]Type for account
 
@@ -10709,7 +10871,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
 [i]Type for _balances
 
 Name: _balances Function: global
@@ -10720,7 +10882,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -10732,6 +10894,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -10794,6 +10957,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -10803,6 +10967,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -10854,10 +11019,10 @@ Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
 Begin local variable read
 ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -10868,7 +11033,7 @@ Norm: u
 LF: from
 Fields: 
 Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 [i]Type for to
 
 Name: to Function: _beforeTokenTransfer
@@ -10892,10 +11057,10 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -10906,7 +11071,7 @@ Norm: u
 LF: from
 Fields: 
 Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 [i]Type for to
 
 Name: to Function: _beforeTokenTransfer
@@ -10929,6 +11094,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -10982,6 +11148,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -10991,6 +11158,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -11087,6 +11255,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -11096,6 +11265,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -11146,91 +11316,10 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
-_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
-[i]Type for _amount
+TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_121
 
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_shares_1(uint256) := _amount_5(uint256)
-[i]Type for _shares
-
-Name: _shares Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
-
-Name: _balance Function: deposit
-Num: 1
-Den: -1
-Address: -984
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: *
-LF: None
-Fields: 
-Finance Type: undef
-ALLL
-
-Name: _balance Function: deposit
-Num: 1
-Den: -1
-Address: -984
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
-Norm: *
-LF: None
-Fields: 
-Finance Type: undef
-TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-[i]Type for TMP_123
-
-Name: TMP_123 Function: deposit
+Name: TMP_121 Function: deposit
 Num: -1
 Den: -1
 Address: u
@@ -11238,34 +11327,12 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
-[i]Type for TMP_124
+TMP_122(bool) = TMP_121 > 0
+[i]Type for TMP_122
 
-Name: TMP_124 Function: deposit
-Num: -991
+Name: TMP_122 Function: deposit
+Num: 
 Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
-[i]Type for TMP_125
-
-Name: TMP_125 Function: deposit
-Num: -991
-Den: 1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-_amount_4(uint256) := TMP_125(uint256)
-[i]Type for _amount
-
-Name: _amount Function: deposit
-Num: -991
-Den: 1
 Address: u
 Norm: u
 LF: None
@@ -11316,6 +11383,137 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+ALLL
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+_amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+_amount_5
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_shares_1(uint256) := _amount_5(uint256)
+[i]Type for _shares
+
+Name: _shares Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+_amount_3
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: *
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1
+
+Name: _balance Function: deposit
+Num: 1
+Den: -1
+Address: -984
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+ALLL
+
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: *
+LF: None
+Fields: 
+Finance Type: undef
+
+Name: _balance Function: deposit
+Num: 1
+Den: -1
+Address: -984
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_123
+
+Name: TMP_123 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
+[i]Type for TMP_124
+
+Name: TMP_124 Function: deposit
+Num: -991
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
+[i]Type for TMP_125
+
+Name: TMP_125 Function: deposit
+Num: -991
+Den: 1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amount_4(uint256) := TMP_125(uint256)
+[i]Type for _amount
+
+Name: _amount Function: deposit
+Num: -991
+Den: 1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+_shares_2
 
 Name: _shares Function: deposit
 Num: -991
@@ -11339,7 +11537,7 @@ Finance Type: undef
 
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 MODIFIER_CALL, Vault.notHalted()()
 TMP_106(bool) = _amount_1 > 0
@@ -11349,7 +11547,7 @@ _balance_1(uint256) := TMP_108(uint256)
 TMP_109 = CONVERT _token_1 to IERC20
 TMP_110 = CONVERT this to address
 TMP_111(uint256) = HIGH_LEVEL_CALL, dest:TMP_109(IERC20), function:balanceOf, arguments:['TMP_110']  
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 _before_1(uint256) := TMP_111(uint256)
 TMP_112 = CONVERT _token_1 to IERC20
 TMP_113 = CONVERT this to address
@@ -11357,29 +11555,29 @@ LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address
 TMP_115 = CONVERT _token_1 to IERC20
 TMP_116 = CONVERT this to address
 TMP_117(uint256) = HIGH_LEVEL_CALL, dest:TMP_115(IERC20), function:balanceOf, arguments:['TMP_116']  
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_118(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['TMP_117', '_before_1'] 
 _amount_2(uint256) := TMP_118(uint256)
 TMP_119(bool) = _amount_2 > 0
 CONDITION TMP_119
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 TMP_126(bool) = _shares_2 > 0
 CONDITION TMP_126
 TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
 _amount_3(uint256) := TMP_120(uint256)
+INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
 TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_122(bool) = TMP_121 > 0
 CONDITION TMP_122
-INTERNAL_CALL, ERC20._mint(address,uint256)(msg.sender,_shares_2)
+TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+TMP_129(bool) = TMP_128 <= totalDepositCap_13
+TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 _amount_5(uint256) := ϕ(['_amount_4', '_amount_3'])
 _shares_1(uint256) := _amount_5(uint256)
 TMP_123(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
 TMP_124(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.mul(uint256,uint256), arguments:['_amount_3', 'TMP_123'] 
 TMP_125(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.div(uint256,uint256), arguments:['TMP_124', '_balance_1'] 
 _amount_4(uint256) := TMP_125(uint256)
-TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-TMP_129(bool) = TMP_128 <= totalDepositCap_13
-TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
 Emit Deposit(msg.sender,_shares_2)
 
 
@@ -11407,7 +11605,7 @@ Begin local variable read
 ALLL
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -11430,7 +11628,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -11442,6 +11640,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: deposit
 Num: 
@@ -11466,6 +11665,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.notHalted()()
 Begin local variable read
+_amount_1
 
 Name: _amount Function: deposit
 Num: -991, -991
@@ -11532,6 +11732,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: deposit
 Num: 
@@ -11551,7 +11752,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_109 = CONVERT _token_1 to IERC20
 
 Name: _token Function: deposit
@@ -11597,7 +11798,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -11622,15 +11823,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_amount_1
 
 Name: _amount Function: deposit
 Num: -991, -991
@@ -11638,25 +11831,35 @@ Den: 1, 1
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _amount Function: deposit
 Num: -991, -991
 Den: 1, 1
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 TMP_112 = CONVERT _token_1 to IERC20
@@ -11693,15 +11896,7 @@ Fields:
 Finance Type: undef
 LIBRARY_CALL, dest:SafeERC20, function:SafeERC20.safeTransferFrom(IERC20,address,address,uint256), arguments:['TMP_112', 'msg.sender', 'TMP_113', '_amount_1'] 
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_before_1
 
 Name: _before Function: deposit
 Num: -1
@@ -11709,19 +11904,20 @@ Den: -1
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _before Function: deposit
 Num: -1
 Den: -1
@@ -11730,7 +11926,16 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
+Fields: 
+Finance Type: undef
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_115 = CONVERT _token_1 to IERC20
 
 Name: _token Function: deposit
@@ -11776,7 +11981,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_8(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_7', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -11812,6 +12017,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_2
 
 Name: _amount Function: deposit
 Num: -991
@@ -11844,8 +12050,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
-_shares_2(uint256) := ϕ(['_shares_1', '_shares_0'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
+_shares_2(uint256) := ϕ(['_shares_0', '_shares_1'])
 [i]Type for _shares
 
 Name: _shares Function: deposit
@@ -11857,6 +12063,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_shares_2
 
 Name: _shares Function: deposit
 Num: -991
@@ -11888,15 +12095,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
+_amount_2
 
 Name: _amount Function: deposit
 Num: -991
@@ -11904,25 +12103,35 @@ Den:
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+_token_1
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _token Function: deposit
-Num: 
-Den: 
-Address: -991
-Norm: u
-LF: _token
-Fields: 
-Finance Type: undef
-
 Name: _amount Function: deposit
 Num: -991
 Den: 
 Address: u
 Norm: u
 LF: None
+Fields: 
+Finance Type: undef
+
+Name: _token Function: deposit
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: _token
 Fields: 
 Finance Type: undef
 TMP_120(uint256) = INTERNAL_CALL, Vault._normalizeDecimals(address,uint256)(_token_1,_amount_2)
@@ -11953,6 +12162,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: 
@@ -12038,6 +12248,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -12083,6 +12294,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -12092,6 +12304,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -12165,6 +12378,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -12212,6 +12426,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: _normalizeDecimals
 Num: 
@@ -12297,6 +12512,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -12342,6 +12558,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_decimals_1
 
 Name: _decimals Function: _normalizeDecimals
 Num: 
@@ -12351,6 +12568,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amount_1
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -12424,6 +12642,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_3
 
 Name: _amount Function: _normalizeDecimals
 Num: -991
@@ -12469,31 +12688,8 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-[i]Type for TMP_121
-
-Name: TMP_121 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_122(bool) = TMP_121 > 0
-[i]Type for TMP_122
-
-Name: TMP_122 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
 Begin local variable read
-ALLL
-Begin local variable read
+_shares_2
 
 Name: _shares Function: deposit
 Num: -991
@@ -12518,8 +12714,8 @@ Begin local variable read
 ALLL
 account_1(address) := ϕ(['msg.sender'])
 amount_1(uint256) := ϕ(['_shares_2'])
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 account_1(address) := ϕ(['msg.sender'])
 [i]Type for account
 
@@ -12542,7 +12738,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
 [i]Type for _balances
 
 Name: _balances Function: global
@@ -12553,7 +12749,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -12565,6 +12761,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -12627,6 +12824,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -12636,6 +12834,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -12687,10 +12886,10 @@ Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
 Begin local variable read
 ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -12701,7 +12900,7 @@ Norm: u
 LF: from
 Fields: 
 Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 [i]Type for to
 
 Name: to Function: _beforeTokenTransfer
@@ -12725,10 +12924,10 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -12739,7 +12938,7 @@ Norm: u
 LF: from
 Fields: 
 Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 [i]Type for to
 
 Name: to Function: _beforeTokenTransfer
@@ -12762,6 +12961,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -12813,6 +13013,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -12822,6 +13023,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -12918,6 +13120,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -12927,6 +13130,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -12979,8 +13183,8 @@ Begin local variable read
 ALLL
 account_1(address) := ϕ(['msg.sender'])
 amount_1(uint256) := ϕ(['_shares_2'])
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 account_1(address) := ϕ(['msg.sender'])
 [i]Type for account
 
@@ -13003,7 +13207,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_balances_6(mapping(address => uint256)) := ϕ(['_balances_5', '_balances_11', '_balances_0', '_balances_1', '_balances_8'])
+_balances_6(mapping(address => uint256)) := ϕ(['_balances_0', '_balances_1', '_balances_8', '_balances_5', '_balances_11'])
 [i]Type for _balances
 
 Name: _balances Function: global
@@ -13014,7 +13218,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_totalSupply_2(uint256) := ϕ(['_totalSupply_0', '_totalSupply_4', '_totalSupply_7'])
+_totalSupply_2(uint256) := ϕ(['_totalSupply_7', '_totalSupply_0', '_totalSupply_4'])
 [i]Type for _totalSupply
 
 Name: _totalSupply Function: global
@@ -13026,6 +13230,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -13088,6 +13293,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -13097,6 +13303,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -13148,10 +13355,10 @@ Finance Type: undef
 INTERNAL_CALL, ERC20._beforeTokenTransfer(address,address,uint256)(TMP_42,account_1,amount_1)
 Begin local variable read
 ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -13162,7 +13369,7 @@ Norm: u
 LF: from
 Fields: 
 Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 [i]Type for to
 
 Name: to Function: _beforeTokenTransfer
@@ -13186,10 +13393,10 @@ Fields:
 Finance Type: undef
 Begin local variable read
 ALLL
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 amount_1(uint256) := ϕ(['amount_1', 'amount_1', 'amount_1'])
-from_1(address) := ϕ(['TMP_42', 'account_1', 'sender_1'])
+from_1(address) := ϕ(['sender_1', 'account_1', 'TMP_42'])
 [i]Type for from
 
 Name: from Function: _beforeTokenTransfer
@@ -13200,7 +13407,7 @@ Norm: u
 LF: from
 Fields: 
 Finance Type: undef
-to_1(address) := ϕ(['recipient_1', 'TMP_51', 'account_1'])
+to_1(address) := ϕ(['TMP_51', 'account_1', 'recipient_1'])
 [i]Type for to
 
 Name: to Function: _beforeTokenTransfer
@@ -13223,6 +13430,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -13274,6 +13482,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -13283,6 +13492,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -13379,6 +13589,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+account_1
 
 Name: account Function: _mint
 Num: -1
@@ -13388,6 +13599,7 @@ Norm: u
 LF: account
 Fields: 
 Finance Type: undef
+amount_1
 
 Name: amount Function: _mint
 Num: -991
@@ -13433,6 +13645,74 @@ Num: -1
 Den: -1
 Address: u
 Norm: 0
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+ALLL
+TMP_121(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_121
+
+Name: TMP_121 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_122(bool) = TMP_121 > 0
+[i]Type for TMP_122
+
+Name: TMP_122 Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+Begin local variable read
+ALLL
+
+Name: totalDepositCap Function: global
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
+[i]Type for TMP_128
+
+Name: TMP_128 Function: deposit
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_129(bool) = TMP_128 <= totalDepositCap_13
+[i]Type for TMP_129
+
+Name: TMP_129 Function: deposit
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
+[i]Type for TMP_130
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
 LF: None
 Fields: 
 Finance Type: undef
@@ -13451,6 +13731,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_amount_5
 
 Name: _amount Function: deposit
 Num: -991, -991
@@ -13484,39 +13765,41 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: _balance Function: deposit
-Num: 1
-Den: -1
-Address: -984
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+_amount_3
 
 Name: _amount Function: deposit
 Num: -991
 Den: 
 Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_balance_1
+
+Name: _balance Function: deposit
+Num: 1
+Den: -1
+Address: -984
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
 ALLL
 
-Name: _balance Function: deposit
-Num: 1
-Den: -1
-Address: -984
+Name: _amount Function: deposit
+Num: -991
+Den: 
+Address: u
 Norm: u
 LF: None
 Fields: 
 Finance Type: undef
 
-Name: _amount Function: deposit
-Num: -991
-Den: 
-Address: u
+Name: _balance Function: deposit
+Num: 1
+Den: -1
+Address: -984
 Norm: u
 LF: None
 Fields: 
@@ -13570,50 +13853,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-ALLL
-
-Name: totalDepositCap Function: global
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_128(uint256) = INTERNAL_CALL, ERC20.totalSupply()()
-[i]Type for TMP_128
-
-Name: TMP_128 Function: deposit
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_129(bool) = TMP_128 <= totalDepositCap_13
-[i]Type for TMP_129
-
-Name: TMP_129 Function: deposit
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-TMP_130(None) = SOLIDITY_CALL require(bool,string)(TMP_129,>totalDepositCap)
-[i]Type for TMP_130
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
-Begin local variable read
+_shares_2
 
 Name: _shares Function: deposit
 Num: -991
@@ -13663,7 +13903,7 @@ REF_46 -> LENGTH _tokens_1 (-> [])
 REF_47 -> LENGTH _amounts_1 (-> [])
 TMP_134(bool) = REF_46 == REF_47
 TMP_135(None) = SOLIDITY_CALL require(bool,string)(TMP_134,!length)
-_shares_1(uint256) := ϕ(['_shares_0', '_shares_2'])
+_shares_1(uint256) := ϕ(['_shares_2', '_shares_0'])
 i_1(uint8) := ϕ(['i_0', 'i_2'])
 REF_48 -> LENGTH _amounts_1 (-> [])
 TMP_136(bool) = i_1 < REF_48
@@ -13700,6 +13940,7 @@ Finance Type: undef
 Begin local variable read
 ALLL
 Begin local variable read
+_amounts_1 (-> [])
 
 Name: None Function: None
 Num: 
@@ -13709,6 +13950,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_tokens_1 (-> [])
 
 Name: None Function: None
 Num: 
@@ -13786,6 +14028,7 @@ ALLL
 Begin local variable read
 ALLL
 Begin local variable read
+i_1
 
 Name: None Function: None
 Num: 
@@ -13795,6 +14038,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_amounts_1 (-> [])
 
 Name: None Function: None
 Num: 
@@ -13823,9 +14067,9 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-_shares_1(uint256) := ϕ(['_shares_0', '_shares_2'])
+_shares_1(uint256) := ϕ(['_shares_2', '_shares_0'])
 i_1(uint8) := ϕ(['i_0', 'i_2'])
-_shares_1(uint256) := ϕ(['_shares_0', '_shares_2'])
+_shares_1(uint256) := ϕ(['_shares_2', '_shares_0'])
 [i]Type for _shares
 
 Name: _shares Function: depositMultiple
@@ -13870,15 +14114,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
-
-Name: i Function: depositMultiple
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Fields: 
-Finance Type: undef
+_shares_1
 
 Name: _shares Function: depositMultiple
 Num: 
@@ -13888,6 +14124,17 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+i_1
+
+Name: i Function: depositMultiple
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
+_amounts_1 (-> [])
 
 Name: None Function: None
 Num: 
@@ -13897,6 +14144,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
+_tokens_1 (-> [])
 
 Name: None Function: None
 Num: 
@@ -13908,7 +14156,7 @@ Fields:
 Finance Type: undef
 ALLL
 
-Name: i Function: depositMultiple
+Name: _shares Function: depositMultiple
 Num: 
 Den: 
 Address: u
@@ -13917,7 +14165,7 @@ LF: None
 Fields: 
 Finance Type: undef
 
-Name: _shares Function: depositMultiple
+Name: i Function: depositMultiple
 Num: 
 Den: 
 Address: u
@@ -13972,7 +14220,7 @@ Begin local variable read
 ALLL
 _token_1(address) := ϕ(['REF_50'])
 _amount_1(uint256) := ϕ(['REF_51'])
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 _token_1(address) := ϕ(['REF_50'])
 [i]Type for _token
 
@@ -13995,7 +14243,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-totalDepositCap_3(uint256) := ϕ(['totalDepositCap_13', 'totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_3(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_13', 'totalDepositCap_0', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 [i]Type for totalDepositCap
 
 Name: totalDepositCap Function: global
@@ -14007,6 +14255,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: deposit
 Num: 
@@ -14029,9 +14278,9 @@ Finance Type: undef
 MODIFIER_CALL, Vault.checkToken(address)(_token_1)
 Begin local variable read
 ALLL
-_token_1(address) := ϕ(['_token_1', '_token_1', '_output_1'])
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-_token_1(address) := ϕ(['_token_1', '_token_1', '_output_1'])
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
 [i]Type for _token
 
 Name: _token Function: checkToken
@@ -14042,7 +14291,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14054,6 +14303,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: checkToken
 Num: 
@@ -14091,8 +14341,8 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_33(IManager) := ϕ(['manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_31', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_214(bool) = HIGH_LEVEL_CALL, dest:manager_31(IManager), function:allowedTokens, arguments:['_token_1']  
 [i]Type for TMP_214
 
@@ -14104,7 +14354,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_31', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14128,7 +14378,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14187,9 +14437,9 @@ Begin local variable read
 ALLL
 Begin local variable read
 ALLL
-_token_1(address) := ϕ(['_token_1', '_token_1', '_output_1'])
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-_token_1(address) := ϕ(['_token_1', '_token_1', '_output_1'])
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+_token_1(address) := ϕ(['_token_1', '_output_1', '_token_1'])
 [i]Type for _token
 
 Name: _token Function: checkToken
@@ -14200,7 +14450,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_31(IManager) := ϕ(['manager_37', 'manager_0', 'manager_33', 'manager_24', 'manager_35', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14212,6 +14462,7 @@ LF: Manager
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: checkToken
 Num: 
@@ -14249,8 +14500,8 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
-manager_33(IManager) := ϕ(['manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_31', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 TMP_214(bool) = HIGH_LEVEL_CALL, dest:manager_31(IManager), function:allowedTokens, arguments:['_token_1']  
 [i]Type for TMP_214
 
@@ -14262,7 +14513,7 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-manager_32(IManager) := ϕ(['manager_31', 'manager_37', 'manager_35', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_32(IManager) := ϕ(['manager_37', 'manager_33', 'manager_35', 'manager_24', 'manager_31', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14286,7 +14537,7 @@ Norm: 0
 LF: None
 Fields: 
 Finance Type: undef
-manager_33(IManager) := ϕ(['manager_37', 'manager_35', 'manager_32', 'manager_24', 'manager_33', 'manager_26', 'manager_39', 'manager_28', 'manager_6', 'manager_19', 'manager_12', 'manager_30', 'manager_1'])
+manager_33(IManager) := ϕ(['manager_37', 'manager_32', 'manager_33', 'manager_35', 'manager_24', 'manager_26', 'manager_19', 'manager_39', 'manager_6', 'manager_12', 'manager_28', 'manager_30', 'manager_1'])
 [i]Type for manager
 
 Name: manager Function: global
@@ -14347,6 +14598,7 @@ Begin local variable read
 ALLL
 MODIFIER_CALL, Vault.notHalted()()
 Begin local variable read
+_amount_1
 
 Name: _amount Function: deposit
 Num: -1
@@ -14413,6 +14665,7 @@ LF: None
 Fields: 
 Finance Type: undef
 Begin local variable read
+_token_1
 
 Name: _token Function: deposit
 Num: 
@@ -14432,7 +14685,7 @@ Norm: u
 LF: _token
 Fields: 
 Finance Type: undef
-totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_8', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_11'])
+totalDepositCap_7(uint256) := ϕ(['totalDepositCap_1', 'totalDepositCap_10', 'totalDepositCap_6', 'totalDepositCap_13', 'totalDepositCap_2', 'totalDepositCap_8', 'totalDepositCap_11'])
 TMP_109 = CONVERT _token_1 to IERC20
 
 Name: _token Function: deposit
