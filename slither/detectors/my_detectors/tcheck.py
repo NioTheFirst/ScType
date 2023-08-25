@@ -2055,6 +2055,11 @@ def _tcheck_node(node, function) -> []:
     print("Begin local variable read")
     for local_var in node.ssa_variables_read:
         print(local_var.extok)
+        #Load initial parameters mapping
+        if(local_var.name.endswith("_1")):
+            for p in function.parameters:
+                print(local_var.name[:len(local_var.name)-2])
+                
         
     for ir in node.irs_ssa:
         #Pass in paramters
