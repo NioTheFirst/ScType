@@ -709,7 +709,7 @@ def check_type(ir) -> bool:
             if(_ir.name[len(_ir.name)-i-1] == '_'):
                 pos = len(_ir.name)-i-1
                 break
-        _name = _ir.name[:pos]
+        _name = _ir.name[:pos+1]
         print(f"Name: {_name}, CCName: {current_contract_name}")
         convert_ssa(ir.lvalue)
         if((_name, current_contract_name) in global_var_types):
