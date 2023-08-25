@@ -773,7 +773,8 @@ def type_conversion(ir):
         if(name_key in address_to_label):
             addr = address_to_label[name_key]
         else:
-            addr = new_address(ir.lvalue, True)
+            print("new address made")
+            addr = new_address(ir.variable, True)
         ir.lvalue.extok.address = addr
         ir.lvalue.norm = 0
         ir.lvalue.link_function = current_contract_name
@@ -876,7 +877,7 @@ def type_included_hlc(ir, dest, function):
 def querry_fc(ir) -> int:
     global mark_iteration
     global current_function_marked
-    global address_to_num
+    global address_to_label
     if(not (isinstance(ir, HighLevelCall))):
         return 0
     if(mark_iteration and not(current_function_marked)):
