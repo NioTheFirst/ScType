@@ -2053,7 +2053,7 @@ def _tcheck_node(node, function) -> []:
     irs = []
     #local vars read
     print("Begin local variable read")
-    for lv in node.ssa_local_variables_read:
+    for lv in variables_read:
         print(lv.extok)
     print("ALLL")
     for local_var in node.ssa_variables_read:
