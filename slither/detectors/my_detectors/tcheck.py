@@ -2098,13 +2098,15 @@ def _tcheck_node(node, function) -> []:
                     lv.function_name = function.name
                     copy_token_type(p, lv)
         if(lv.extok.is_undefined()):
+            pos = -1
             for i in range(len(lv.ssa_name)-1):
                 revpos = len(lv.ssa_name)-i-1
-                print(lv.ssa_name[revpos:revpos+2])
-                if(lv.ssa_name[revpos:revpos+2] == '_1'):
+                print(lv.ssa_name[revpos])
+                if(lv.ssa_name[revpos] == '_'):
                     pos = revpos
                     break
-            _name = lv.ssa_name[:pos]
+            _name = lv.ssa_name[:pos+1]
+            print(_name)
             if((_name, current_contract_name) in global_var_types):
                 copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
         print(lv.extok)
