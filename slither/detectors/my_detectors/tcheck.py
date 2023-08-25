@@ -2088,7 +2088,7 @@ def _tcheck_node(node, function) -> []:
                     lv.function_name = function.name
                     copy_token_type(p, lv)
         print(lv.extok)
-                
+    print("End popogation")            
         
     for ir in node.irs_ssa:
         #DEFINE REFERENCE RELATIONS
