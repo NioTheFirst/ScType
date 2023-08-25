@@ -2081,6 +2081,7 @@ def _tcheck_node(node, function) -> []:
         print(lv.ssa_name)
         if(lv.ssa_name.endswith("_1")):
             lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
+            print(lv_subname)
             for p in function.parameters:
                 
                 if(p.name == lv_subname):
