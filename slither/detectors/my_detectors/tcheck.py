@@ -2110,7 +2110,7 @@ def _tcheck_node(node, function) -> []:
             print(_name)
             if((_name, current_contract_name) in global_var_types):
                 print("global...")
-                copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
+                copy_token_type(global_var_types[(_name, current_contract_name)], lv)
         print(lv.extok)
     
     print("End popogation")            
