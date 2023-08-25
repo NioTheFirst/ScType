@@ -2085,7 +2085,7 @@ def _tcheck_node(node, function) -> []:
             pos = -1
             for i in range(len(lv.ssa_name)-1):
                 revpos = len(lv.ssa_name)-i-1
-                print(lv.ssa_name[revpos:revpos+2])
+                #print(lv.ssa_name[revpos:revpos+2])
                 if(lv.ssa_name[revpos:revpos+2] == '_1'):
                     pos = revpos
                     break
@@ -2102,7 +2102,7 @@ def _tcheck_node(node, function) -> []:
             pos = -1
             for i in range(len(lv.ssa_name)-1):
                 revpos = len(lv.ssa_name)-i-1
-                print(lv.ssa_name[revpos])
+                #print(lv.ssa_name[revpos])
                 if(lv.ssa_name[revpos] == '_'):
                     pos = revpos
                     break
