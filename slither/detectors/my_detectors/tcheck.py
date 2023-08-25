@@ -2479,6 +2479,8 @@ def _tcheck_contract(contract):
                 if((var.extok.name, contract.name) in global_var_types):
                     print(f"Copied {var.extok.name}")
                     temp = global_var_types[(var.extok.name, contract.name)]
+                    temp.extok.name = var.extok.name
+                    temp.extok.function_name = "constructor"
                     copy_token_type(var, temp)
                     global_var_types[(var.extok.name, contract.name)] = temp
                     if(var.extok.address != 'u'):

@@ -1,4 +1,6 @@
 Switched global version to 0.6.12
+Finding type for _decimals...
+uint8
 Finding type for MAX...
 uint256
 Finding type for min...
@@ -13,8 +15,6 @@ Finding type for _symbol...
 string
 Finding type for _allowances...
 mapping(address => mapping(address => uint256))
-Finding type for _decimals...
-uint8
 Finding type for totalDepositCap...
 uint256
 Finding type for _name...
@@ -160,7 +160,7 @@ Fields:
 Finance Type: undef
 Copied manager
 
-Name: PIC_3 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: -999
@@ -182,7 +182,7 @@ Fields:
 Finance Type: undef
 Copied min
 
-Name: PIC_2 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -319,7 +319,7 @@ Fields:
 Finance Type: undef
 Copied manager
 
-Name: PIC_3 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: -999
@@ -341,7 +341,7 @@ Fields:
 Finance Type: undef
 Copied min
 
-Name: PIC_2 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -371,7 +371,139 @@ Norm: u
 LF: None
 Fields: 
 Finance Type: undef
-Executing Group 7
-[*] Tested 3 warnings for yAxis
-Group 7 complete
-Testing complete
+
+
+
+setGauge
+Finding type for _gauge...
+address
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: _gauge
+    fields: []
+    fintype: -1
+_gauge_0
+
+
+MODIFIER_CALL, Vault.notHalted()()
+MODIFIER_CALL, Vault.onlyStrategist()()
+gauge_1(address) := _gauge_1(address)
+
+
+[[], [], 'u', '_gauge', [], -1, -998]
+
+Name: _gauge Function: setGauge
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _gauge
+Fields: 
+Finance Type: undef
+Propogating parameters to local SSA variables...
+Propogating parameters to local SSA variables...
+MODIFIER_CALL, Vault.notHalted()()
+Propogating parameters to local SSA variables...
+MODIFIER_CALL, Vault.onlyStrategist()()
+Propogating parameters to local SSA variables...
+_gauge_1
+
+Name: _gauge_1 Function: None
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _gauge
+Fields: 
+Finance Type: undef
+gauge_1(address) := _gauge_1(address)
+[i]Type for gauge
+
+Name: gauge Function: setGauge
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _gauge
+Fields: 
+Finance Type: undef
+
+
+MODIFIER_CALL, Vault.notHalted()()
+MODIFIER_CALL, Vault.onlyStrategist()()
+gauge_1(address) := _gauge_1(address)
+
+
+[[], [], 'u', '_gauge', [], -1, -998]
+
+Name: _gauge Function: setGauge
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _gauge
+Fields: 
+Finance Type: undef
+Propogating parameters to local SSA variables...
+Propogating parameters to local SSA variables...
+MODIFIER_CALL, Vault.notHalted()()
+Propogating parameters to local SSA variables...
+MODIFIER_CALL, Vault.onlyStrategist()()
+Propogating parameters to local SSA variables...
+_gauge_1
+
+Name: _gauge_1 Function: None
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _gauge
+Fields: 
+Finance Type: undef
+gauge_1(address) := _gauge_1(address)
+[i]Type for gauge
+
+Name: gauge Function: setGauge
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _gauge
+Fields: 
+Finance Type: undef
+
+
+
+setMin
+Finding type for _min...
+uint256
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+_min_0
+
+
+MAX_1(uint256) := ϕ(['MAX_13', 'MAX_3', 'MAX_9', 'MAX_0', 'MAX_11'])
+MODIFIER_CALL, Vault.notHalted()()
+MODIFIER_CALL, Vault.onlyStrategist()()
+TMP_70(bool) = _min_1 <= MAX_3
+TMP_71(None) = SOLIDITY_CALL require(bool,string)(TMP_70,!_min)
+min_2(uint256) := _min_1(uint256)
+
+
+[[-1], [-1], 'u', None, [], -1, 'u']
+
+Name: _min Function: setMin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Fields: 
+Finance Type: undef
