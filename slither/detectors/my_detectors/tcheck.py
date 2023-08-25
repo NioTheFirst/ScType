@@ -2054,28 +2054,21 @@ def _tcheck_node(node, function) -> []:
     function_name = function.name
     irs = []
     #local vars read
-    print("Begin local variable read")
+    print("Propogating parameters to local SSA variables...")
     for lv in node.ssa_local_variables_read:
         print(lv.ssa_name)
         if(lv.ssa_name.endswith("_1")):
+            lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
             for p in function.parameters:
-                print(lv.ssa_name[:len(lv.ssa_name)-2])
-                if(p.name == lv.ssa_name[:len(lv.ssa_name)-2]):
+                
+                if(p.name == lv_subname):
                     lv.extok.name = lv.ssa_name
                     lv.function_name = function.name
                     copy_token_type(p, lv)
         print(lv.extok)
-    print("ALLL")
                 
         
     for ir in node.irs_ssa:
-        #Pass in paramters
-        if isinstance(ir, Phi):
-            print(ir)
-            for p in function.parameters:
-                if(p.name == ir.lvalue.name):
-                    copy_token_type(p, ir.lvalue)
-                    update_non_ssa(ir.lvalue)
         #DEFINE REFERENCE RELATIONS
         ir.dnode = node
         if isinstance(ir, Member):
