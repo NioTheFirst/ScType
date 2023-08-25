@@ -704,15 +704,7 @@ def check_type(ir) -> bool:
         addback = False
         #search global variables
         _ir = ir.lvalue
-        pos = -1
-        print(_ir.name)
-        for i in range(len(_ir.name)):
-            if(_ir.name[len(_ir.name)-i-1] == '_'):
-                pos = len(_ir.name)-i-1
-                break
-        _name = _ir.name[:pos+1]
-        print(f"Name: {_name}, CCName: {current_contract_name}")
-        convert_ssa(ir.lvalue)
+        _name = _ir.name
         if((_name, current_contract_name) in global_var_types):
             copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
         ##print("Phi")
