@@ -69,5 +69,6 @@ def new_address(ir, isGlobal):
     name_key = str(_ir.function_name)+":"+str(_ir.name)
     label_to_address[_ir.address] = name_key
     address_to_label[name_key] = _ir.address
+    print(_ir.address)
     return _ir.address
         
