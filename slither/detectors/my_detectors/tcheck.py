@@ -2082,8 +2082,10 @@ def _tcheck_node(node, function) -> []:
         if("_1" in lv.ssa_name):
             pos = -1
             for i in range(len(lv.ssa_name)-1):
-                if(lv.ssa_name[len(lv.ssa_name) - i - 1:len(lv.ssa_name)-i] == '_1'):
-                    pos = len(lv.ssa_name) - i - 1
+                revpos = len(lv.ssa_name)-i-1
+                print(lv.ssa_name[revpos:revpos+1])
+                if(lv.ssa_name[revpos:revpos+1] == '_1'):
+                    pos = revpos
                     break
             lv_subname = lv.ssa_name[:pos-1]
             #lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
