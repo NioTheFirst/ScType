@@ -3,6 +3,7 @@
 num_to_norm = {}
 label_sets = {}
 label_to_address = {}
+address_to_label = {}
 global_address_counter = 0
 temp_address_counter = -1000
 
@@ -63,6 +64,8 @@ def new_address(ir, isGlobal):
         _ir.address = temp_address_counter
     label = Address_label(_ir.address)
     label_sets[_ir.address] = label
-    label_to_address[_ir.address] = str(_ir.function_name)+":"+str(_ir.name)
+    name_key = str(_ir.function_name)+":"+str(_ir.name)
+    label_to_address[_ir.address] = name_key
+    address_to_label[name_key] = _ir.address
     return _ir.address
         

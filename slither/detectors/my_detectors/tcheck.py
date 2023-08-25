@@ -23,7 +23,7 @@ import tcheck_parser
 from tcheck_parser import update_ratios
 import tcheck_propagation
 import address_handler
-from address_handler import global_address_counter, temp_address_counter, num_to_norm, label_sets, label_to_address
+from address_handler import global_address_counter, temp_address_counter, num_to_norm, label_sets, label_to_address, address_to_label
 
 seen_contracts = {}
 user_type = False
@@ -760,12 +760,20 @@ def check_type(ir) -> bool:
 #This represents a limitation of the tool: the interface must be of the form I`Implementation` of i `Implementation`
 #RETURNS: nothing
 def type_conversion(ir):
+    global address_to_label
     #if(debug_print):
         #convert_ssa(ir.lvalue)
     convert_ssa(ir.variable)
     if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
         #TMPxxx  CONVERT address(this)
         assign_const(ir.lvalue)
+        #ir.variable.extok.function_name = "global"
+        name_key = "global:" + str(ir.variable)
+        if(name_key in address_to_label):
+            addr = address_to_label[name_key]
+        else:
+            addr = new_address(ir.lvalue, True)
+        ir.lvalue.extok.address = addr
         ir.lvalue.norm = 0
         ir.lvalue.link_function = current_contract_name
 
