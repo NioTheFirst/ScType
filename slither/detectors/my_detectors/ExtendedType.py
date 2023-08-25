@@ -182,7 +182,7 @@ class ExtendedType():
             print(f"{field.name}")
         print("^^^")
 
-
+    
     def is_undefined(self) -> bool:
         if(len(self._num_token_types) == 0 and len(self._den_token_types) == 0 and self._address == 'u'):
             return True

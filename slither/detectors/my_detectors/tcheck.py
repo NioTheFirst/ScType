@@ -2079,7 +2079,7 @@ def _tcheck_node(node, function) -> []:
     print("Propogating parameters to local SSA variables...")
     for lv in node.ssa_variables_read:
         print(lv.ssa_name)
-        if("_1" in lv.ssa_name):
+        if("_1" in lv.ssa_name and lv.extok.is_undefined()):
             pos = -1
             for i in range(len(lv.ssa_name)-1):
                 revpos = len(lv.ssa_name)-i-1
