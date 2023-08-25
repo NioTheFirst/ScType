@@ -2047,6 +2047,7 @@ def _tcheck_ir(irs, function_name) -> []:
 def _tcheck_node(node, function) -> []:
     global errors
     global current_contract_name
+    global global_address_counter
     ##print("typecheckig node...")
     #OVERHAUL:
     #Get rid of the mapping thing for the SSA
