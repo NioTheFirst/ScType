@@ -2057,6 +2057,8 @@ def _tcheck_node(node, function) -> []:
         print(local_var.extok)
         #Load initial parameters mapping
         _local_var = local_var.extok
+        if(_local_var.name == None):
+            continue
         if(_local_var.name.endswith("_1")):
             for p in function.parameters:
                 print(f"Reduced: {_local_var.name[:len(_local_var.name)-2]}")
