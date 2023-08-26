@@ -2091,7 +2091,7 @@ def _tcheck_node(node, function) -> []:
                     break
             lv_subname = lv.ssa_name[:pos]
             #lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
-            print(lv_subname)
+            #print(lv_subname)
             for p in function.parameters:
                 
                 if(p.name == lv_subname):
@@ -2107,7 +2107,7 @@ def _tcheck_node(node, function) -> []:
                     pos = revpos
                     break
             _name = lv.ssa_name[:pos]
-            print(_name)
+            #print(_name)
             if((_name, current_contract_name) in global_var_types):
                 print("global...")
                 copy_token_type(global_var_types[(_name, current_contract_name)], lv)
