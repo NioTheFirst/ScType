@@ -46,6 +46,9 @@ class Address_label():
         self._set = temp_set
         a.set = temp_set
 
+    #def __str__(self):
+    #    return(f"")
+
 
 
 def new_address(ir, isGlobal):
