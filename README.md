@@ -1,7 +1,7 @@
 # ICSE 2024 Submission: SCType type checker
 
 =======
-x
+
 
 
 SCType is a Solidity type checker written in Python 3. 
