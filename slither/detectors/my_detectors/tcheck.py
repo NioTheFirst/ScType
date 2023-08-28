@@ -2605,8 +2605,8 @@ class tcheck(AbstractDetector):
         global function_count
         global address_to_label
         assign_const(constant_instance)
-        #for contract in self.slither.contracts:
-            #print(contract.name)
+        for contract in self.slither.contracts:
+            print(f"Checking {contract.name}")
         for contract in self.contracts:
             #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
