@@ -63,6 +63,7 @@ traces = 0 #trace default is -2
 trace_to_label = {}
 #temp_address_counter = 0
 global_var_types = {}
+var_assignment_storage = {}
 read_global = False
 
 debug_print = True
@@ -653,6 +654,7 @@ def check_type(ir) -> bool:
     global debug_pow_pc
     global global_var_types
     global current_contract_name
+    global var_assignment_storage
     addback = False;
     #Assignmnet
     #Deubg pow
@@ -1252,6 +1254,7 @@ def handle_return(dest_ir, function):
         else:
             x = _x
         __x = x.extok
+        #Replace the returns_ssa
         if(len(function.return_values_ssa) > 1):
             tuple_types.append((__x.num_token_types.copy(), __x.den_token_types.copy(), __x.norm, __x.linked_contract, __x.finance_type))
         else:
@@ -2201,19 +2204,30 @@ def _clear_type_node(node):
 
 #USAGE: searches a function for a RETURN node, if it doesn't exist, do stuff
 #RETURNS: return node
-def _find_return_function(function):
+def remap_return(function):
     fentry = {function.entry_point}
     explored = set()
     ##print("FIND RETURN")
     ##print(function.full_name)
-    while fentry:
+    return_ssa_mapping = {}
+    for ir_ssa in function.returns_ssa:
+        return_ssa_mapping[ir_ssa.ssa_name] = None
+    fentry = {function.entry_point}
+    explored = set()
+    while(fentry):
         node = fentry.pop()
-        if node in explored: 
+        if(node in explored):
             continue
         explored.add(node)
-        for ir in node.irs:
-            if isinstance(ir, RETURN):
-                return node
+        for written_ir in node.ssa_variables_written:
+            if(written_ir.ssa_name in return_ssa_mapping):
+                return_ssa_mapping[written_ir.ssa_name] = written_ir
+        for son in node.sons:
+            fentry.add(son)
+    for ir_ssa in function.returns_ssa:
+        if(not return_ssa_mapping[ir_ssa.ssa_name] == None ):
+            ir_ssa = return_ssa_mapping[ir_ssa.ssa_name]
+
         
 #USAGE: typecheck a function call
 #       given a param_cache for the input data
@@ -2247,7 +2261,7 @@ def _tcheck_function_call(function, param_cache) -> []:
         paramno+=1
     #find return and tack it onto the end
     #typecheck function
-
+    remap_return(function)
     #WORKLIST ALGORITHM
     prevlen = -1
     curlen = -1
@@ -2342,7 +2356,7 @@ def _tcheck_function(function) -> []:
 
     for ssa in function.parameters_ssa:
         print(ssa)
-
+    remap_return(function)
     #Append to function count
     function_count+=1
     #WORKLIST ALGORITHM
@@ -2646,6 +2660,7 @@ class tcheck(AbstractDetector):
 
             for label, address in address_to_label.items():
                 print(f"Address: {address}, Label: {label}")
+                
             for ir in errorsx:
                 _ir = ir.extok
                 name = _ir.name
