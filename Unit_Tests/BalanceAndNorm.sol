@@ -12,7 +12,8 @@ contract BalanceAndNormTest{
 	
     function seeReserveTotal(address reserve, uint256 amount) public returns(uint256){
 	//see if amount becomes the same type as reserveToken
-        return(ITypicalTokenWrapper(reserve).balanceOf(address(this))+amount);
+	uint256 amt = ITypicalTokenWrapper(reserve).balanceOf(address(this))+amount;
+        return(amt);
     }
 
     function addBalanceBad(uint256 amountA, uint256 amountB) public returns(uint256){
@@ -22,7 +23,24 @@ contract BalanceAndNormTest{
 	return(total);
     }
 
-    
+    //NORM TESTS===================================================================
+    function normalizeToken(address token, uint256 amount) public returns (uint256){
+        uint256 decimals = ITypicalTokenWrapper(token).decimals();
+	amount = amount * 10**(18 - decimals);
+	return(amount);
+    } 
+
+    function normComarisonBad(uint256 amountA) public returns (uint256){
+        uint256 normAmtA = normalizeToken(reserveTokenA, amountA);
+	uint256 badSum = normAmtA + amountA;
+	return(badSum);
+    } 
+   
+    function normComarisonGood(uint256 amountA) public returns (uint256){
+        uint256 normAmtA = normalizeToken(reserveTokenA, amountA);
+        uint256 goodSum = normAmtA + normAmtA;
+        return(goodSum);
+    }
 
     
 }
