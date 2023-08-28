@@ -68,7 +68,7 @@ read_global = False
 
 debug_print = True
 
-ask_user = True
+ask_user = False
 read_library = False
 
 #IMPORTANT: read internal
@@ -448,6 +448,8 @@ def querry_type(ir):
         #TODO Do not reset temp_address_counter, create sets
 
         return #Not yet, testing is needed TODO
+
+    
     if(mark_iteration and not(current_function_marked)):
         assign_const(ir)
         return
