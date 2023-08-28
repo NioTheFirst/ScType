@@ -1523,7 +1523,7 @@ def type_bin_sub(dest, lir, rir) -> bool:
 #USAGE: handles traces -> takes the difference in token types and handles traces, placed in the comparison failure branch in type...add and type...sub
 #RETURNS: successful handling or not
 def handle_trace(rir, lir):
-    global trace_to_label
+    global label_sets
     #Save token types
     _rir = rir.extok
     _lir = lir.extok
@@ -1537,8 +1537,8 @@ def handle_trace(rir, lir):
         if(rn == -1):
             continue
         if(rn < -1):
-            if(rn in trace_to_label):
-                rn = trace_to_label[rn]
+            if(rn in label_sets):
+                rn = label_sets[rn].head
         if(rn in n_dict):
             n_dict[rn]+=1
         else:
@@ -1547,8 +1547,8 @@ def handle_trace(rir, lir):
         if(ln == -1):
             continue
         if(ln < -1):
-            if(ln in trace_to_label):
-                ln = trace_to_label[ln]
+            if(ln in label_sets):
+                ln = label_sets[ln].head
         if(ln in n_dict):
             n_dict[ln]-=1
         else:
@@ -1559,8 +1559,8 @@ def handle_trace(rir, lir):
         if(rd == -1):
             continue
         if(rd < -1):
-            if(rd in trace_to_label):
-                rd = trace_to_label[rd]
+            if(rd in label_sets):
+                rd = label_sets[rd].head
         if(rd in d_dict):
             d_dict[rd]+=1
         else:
@@ -1569,13 +1569,13 @@ def handle_trace(rir, lir):
         if(ld == -1):
             continue
         if(ld < -1):
-            if(ld in trace_to_label):
-                ld = trace_to_label[ld]
+            if(ld in label_sets):
+                ld = label_sets[ld].head
         if(ld in d_dict):
             d_dict[ld]-=1
         else:
             d_dict[ld] = -1
-    #Generate matchings
+    #Generate matchings, or generalize set
     pot_trace = generate_label_trace(n_dict, d_dict)
     if(pot_trace == None):
         return False
@@ -1598,12 +1598,15 @@ def generate_label_trace(dictA, dictB):
     for i in dictA:
         if(i > 0):
             pos_dict[i] = dictA[i]
+            sum+=1
         else:
             neg_dict[i] = dictA[i]
-        sum+=dictA[i]
-    if(sum != 0):
+            sum-=1
+    if(sum > 0):
         return None
     #Begin matching (dp algorithm)
+    #Rework this by today
+    #Try to get some normalization in as well
     dp = [[]]  #int, ([ordering], [pos_dict])
     curn = 0
     for n in neg_dict:

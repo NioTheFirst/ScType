@@ -7,12 +7,14 @@ address_to_label = {}
 global_address_counter = 0
 temp_address_counter = -1000
 
+norm_offsets = {}
+
 class Address_label():
     def __init__(self, _head):
         self._head = _head
         self._set = {_head}
-
-    
+        self._norm = "norm("+str(_head)_")"
+  
     @property
     def head(self):
         return(self._head)
@@ -20,6 +22,14 @@ class Address_label():
     @head.setter
     def head(self, x):
         self._head = x
+
+    @property
+    def norm(self):
+        return(self._norm)
+
+    @norm.setter
+    def norm(self, norm):
+        self._norm = norm
 
     @property
     def set(self):
@@ -33,21 +43,27 @@ class Address_label():
         if(self._head < 0):
             if(a.head < 0 and self._head < a.head):
                 a.head = self._head
+                a.norm = self._norm
             else:
                 self._head = a.head
+                self._norm = a.norm
         else:
             if(a.head < 0 or self._head < a.head):
                 a.head = self._head
+                a.norm = self._norm
             else:
                 self._head = a.head
+                self._norm = a.norm
         temp_set = {}
         temp_set.union(self._set)
         temp_set.union(a.set)
         self._set = temp_set
         a.set = temp_set
 
-    #def __str__(self):
-    #    return(f"")
+    def __str__(self):
+        return(f"Head: {self._head}\n"
+               f"    Norm: {self._norm}\n"
+               f"    Set: {self._set}")
 
 
 
