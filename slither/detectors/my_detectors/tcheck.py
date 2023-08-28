@@ -801,7 +801,7 @@ def type_conversion(ir):
             for char in instance_name:
                 if(pos+1 > len(instance_name) - 1):
                     contract_name = "UNKNOWN"
-                if(instance_name[pos] == 'i' or instance_name[pos] == "I"):
+                if(instance_name[pos] == 'i' or instance_name[pos] == 'I'):
                     contract_name = instance_name[pos+1:]
                     break
             ir.lvalue.link_function = contract_name
@@ -2080,11 +2080,11 @@ def _tcheck_node(node, function) -> []:
     function_name = function.name
     irs = []
     #local vars read
-    print("Propogating parameters to SSA variables...")
+    #print("Propogating parameters to SSA variables...")
     for lv in node.ssa_variables_read:
-        print(lv.ssa_name)
+        #print(lv.ssa_name)
         if("_1" in lv.ssa_name and lv.extok.is_undefined()):
-            print("local...")
+            #print("local...")
             pos = -1
             for i in range(len(lv.ssa_name)-1):
                 revpos = len(lv.ssa_name)-i-1
@@ -2112,11 +2112,11 @@ def _tcheck_node(node, function) -> []:
             _name = lv.ssa_name[:pos]
             #print(_name)
             if((_name, current_contract_name) in global_var_types):
-                print("global...")
+                #print("global...")
                 copy_token_type(global_var_types[(_name, current_contract_name)], lv)
-        print(lv.extok)
+        #print(lv.extok)
     
-    print("End popogation")            
+    #print("End popogation")            
         
     for ir in node.irs_ssa:
         #DEFINE REFERENCE RELATIONS
@@ -2360,8 +2360,8 @@ def _tcheck_function(function) -> []:
         #do not care about internal functions in initial iteration
         return addback_nodes
 
-    for ssa in function.parameters_ssa:
-        print(ssa)
+    #for ssa in function.parameters_ssa:
+        #print(ssa)
     remap_return(function)
     #Append to function count
     function_count+=1
@@ -2377,9 +2377,9 @@ def _tcheck_function(function) -> []:
         explored = set()
         paramno = 0
         for param in function.parameters:
-            print(new_param_cache[paramno])
+            #print(new_param_cache[paramno])
             copy_pc_token_type(new_param_cache[paramno], param)
-            print(param.extok)
+            #print(param.extok)
             paramno+=1
         while fentry:
             node = fentry.pop()
