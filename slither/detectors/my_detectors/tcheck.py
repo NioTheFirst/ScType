@@ -2211,7 +2211,10 @@ def remap_return(function):
     ##print(function.full_name)
     return_ssa_mapping = {}
     for ir_ssa in function.returns_ssa:
-        return_ssa_mapping[ir_ssa.ssa_name] = None
+        try:
+            return_ssa_mapping[ir_ssa.ssa_name] = None
+        except AttributeError:
+            a = 2
     fentry = {function.entry_point}
     explored = set()
     while(fentry):
@@ -2225,8 +2228,11 @@ def remap_return(function):
         for son in node.sons:
             fentry.add(son)
     for ir_ssa in function.returns_ssa:
-        if(not return_ssa_mapping[ir_ssa.ssa_name] == None ):
-            ir_ssa = return_ssa_mapping[ir_ssa.ssa_name]
+        try:
+            if(not return_ssa_mapping[ir_ssa.ssa_name] == None ):
+                ir_ssa = return_ssa_mapping[ir_ssa.ssa_name]
+        except AttributeError:
+            a = 2
 
         
 #USAGE: typecheck a function call
