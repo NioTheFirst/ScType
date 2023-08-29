@@ -1655,7 +1655,7 @@ def generate_label_trace(dictA, dictB):
     if(curn == 0):
         return None
     for orderings in dp[curn-1]:
-        if(check_ordering(orderings[1], dictA) and check_ordering(orderings[1], dictB)):
+        if(check_ordering(orderings[2], dictA) and check_ordering(orderings[2], dictB)):
             pot_ordering.append(orderings[1])
     if(len(pot_ordering) == 0):
         return None
