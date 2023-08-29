@@ -1667,6 +1667,7 @@ def generate_label_trace(dictA, dictB):
 #RETURNS: ordering succeeds or not
 def check_ordering(order, _dict):
     dict = copy.deepcopy(_dict)
+    print(dict)
     print(order)
     for d in dict:
         if(d < 0):
