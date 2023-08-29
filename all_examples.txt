@@ -201,3 +201,239 @@ Reserve: "_citadelAmount", "amount"
         }
     }"
     Price: "_citadelPriceInAsset"
+
+"function deposit(uint256 _amount) external whenNotPaused {
+        _depositWithAuthorization(_amount, new bytes32[](0));
+    }"
+Balance: "_amount"
+
+"function setMaxManagementFee(uint256 _fees) external {
+        _onlyGovernance();
+        require(_fees <= MANAGEMENT_FEE_HARD_CAP, "managementFee too high");
+
+        maxManagementFee = _fees;
+        emit SetMaxManagementFee(_fees);
+    }"
+Fee: "_fees", "maxManagementFee"
+
+"function setPerformanceFeeStrategist(uint256 _performanceFeeStrategist)
+        external
+        whenNotPaused
+    {
+        _onlyGovernanceOrStrategist();
+        require(
+            _performanceFeeStrategist <= maxPerformanceFee,
+            "Excessive strategist performance fee"
+        );
+        performanceFeeStrategist = _performanceFeeStrategist;
+        emit SetPerformanceFeeStrategist(_performanceFeeStrategist);"
+Fee: "_performanceFeeStrategist", "performanceFeeStrategist'
+
+"function _depositFor(address _recipient, uint256 _amount)
+        internal
+        nonReentrant
+    {
+        require(_recipient != address(0), "Address 0");
+        require(_amount != 0, "Amount 0");
+        require(!pausedDeposit, "pausedDeposit"); // dev: deposits are paused
+
+        uint256 _pool = balance();
+        uint256 _before = token.balanceOf(address(this));
+        token.safeTransferFrom(msg.sender, address(this), _amount);
+        uint256 _after = token.balanceOf(address(this));
+        _mintSharesFor(_recipient, _after - _before, _pool);
+    }"
+Balance: "_amount"
+Reserve: "_before", "_pool", "_after"
+
+"function _calculateFee(uint256 amount, uint256 feeBps)
+        internal
+        pure
+        returns (uint256)
+    {
+        if (feeBps == 0) {
+            return 0;
+        }
+        uint256 fee = (amount * feeBps) / MAX_BPS;
+        return fee;
+    }"
+Balance: "amount"
+Fee: "feeBps", "fee"
+
+"function depositErc20(
+        uint256 toChainId,
+        address tokenAddress,
+        address receiver,
+        uint256 amount,
+        string memory tag
+    ) public tokenChecks(tokenAddress) whenNotPaused nonReentrant {
+        require(
+            tokenManager.getDepositConfig(toChainId, tokenAddress).min <= amount &&
+                tokenManager.getDepositConfig(toChainId, tokenAddress).max >= amount,
+            "Deposit amount not in Cap limit"
+        );
+        require(receiver != address(0), "Receiver address cannot be 0");
+        require(amount != 0, "Amount cannot be 0");
+        address sender = _msgSender();
+
+        uint256 rewardAmount = getRewardAmount(amount, tokenAddress);
+        if (rewardAmount != 0) {
+            incentivePool[tokenAddress] = incentivePool[tokenAddress] - rewardAmount;
+        }
+        liquidityProviders.increaseCurrentLiquidity(tokenAddress, amount);
+        SafeERC20Upgradeable.safeTransferFrom(IERC20Upgradeable(tokenAddress), sender, address(this), amount);
+        // Emit (amount + reward amount) in event
+        emit Deposit(sender, tokenAddress, receiver, toChainId, amount + rewardAmount, rewardAmount, tag);
+    }"
+Balance: "amount"
+
+" function sendFundsToUser(
+        address tokenAddress,
+        uint256 amount,
+        address payable receiver,
+        bytes memory depositHash,
+        uint256 tokenGasPrice,
+        uint256 fromChainId
+    ) external nonReentrant onlyExecutor tokenChecks(tokenAddress) whenNotPaused {
+        uint256 initialGas = gasleft();
+        require(
+            tokenManager.getTransferConfig(tokenAddress).min <= amount &&
+                tokenManager.getTransferConfig(tokenAddress).max >= amount,
+            "Withdraw amnt not in Cap limits"
+        );
+        require(receiver != address(0), "Bad receiver address");
+
+        (bytes32 hashSendTransaction, bool status) = checkHashStatus(tokenAddress, amount, receiver, depositHash);
+
+        require(!status, "Already Processed");
+        processedHash[hashSendTransaction] = true;
+
+        uint256 amountToTransfer = getAmountToTransfer(initialGas, tokenAddress, amount, tokenGasPrice);
+        liquidityProviders.decreaseCurrentLiquidity(tokenAddress, amountToTransfer);
+
+        if (tokenAddress == NATIVE) {
+            require(address(this).balance >= amountToTransfer, "Not Enough Balance");
+            (bool success, ) = receiver.call{value: amountToTransfer}("");
+            require(success, "Native Transfer Failed");
+        } else {
+            require(IERC20Upgradeable(tokenAddress).balanceOf(address(this)) >= amountToTransfer, "Not Enough Balance");
+            SafeERC20Upgradeable.safeTransfer(IERC20Upgradeable(tokenAddress), receiver, amountToTransfer);
+        }
+
+        emit AssetSent(tokenAddress, amount, amountToTransfer, receiver, depositHash, fromChainId);
+    }"
+Balance: "amount"
+
+"function getAmountToTransfer(
+        uint256 initialGas,
+        address tokenAddress,
+        uint256 amount,
+        uint256 tokenGasPrice
+    ) public returns (uint256 amountToTransfer) {
+        uint256 transferFeePerc = getTransferFee(tokenAddress, amount);
+        uint256 lpFee;
+        if (transferFeePerc > tokenManager.getTokensInfo(tokenAddress).equilibriumFee) {
+            // Here add some fee to incentive pool also
+            lpFee = (amount * tokenManager.getTokensInfo(tokenAddress).equilibriumFee) / BASE_DIVISOR;
+            incentivePool[tokenAddress] =
+                (incentivePool[tokenAddress] +
+                    (amount * (transferFeePerc - tokenManager.getTokensInfo(tokenAddress).equilibriumFee))) /
+                BASE_DIVISOR;
+        } else {
+            lpFee = (amount * transferFeePerc) / BASE_DIVISOR;
+        }
+        uint256 transferFeeAmount = (amount * transferFeePerc) / BASE_DIVISOR;
+
+        liquidityProviders.addLPFee(tokenAddress, lpFee);
+
+        uint256 totalGasUsed = initialGas - gasleft();
+        totalGasUsed = totalGasUsed + tokenManager.getTokensInfo(tokenAddress).transferOverhead;
+        totalGasUsed = totalGasUsed + baseGas;
+
+        uint256 gasFee = totalGasUsed * tokenGasPrice;
+        gasFeeAccumulatedByToken[tokenAddress] = gasFeeAccumulatedByToken[tokenAddress] + gasFee;
+        gasFeeAccumulated[tokenAddress][_msgSender()] = gasFeeAccumulated[tokenAddress][_msgSender()] + gasFee;
+        amountToTransfer = amount - (transferFeeAmount + gasFee);
+
+        emit FeeDetails(lpFee, transferFeeAmount, gasFee);
+    }"
+Balance: "amount", "amountToTransfer"
+Fee: "lpFee", "transferFeeAmount", "gasFee", "transferFeePerc"
+
+"function transfer(
+        address _tokenAddress,
+        address receiver,
+        uint256 _tokenAmount
+    ) external whenNotPaused onlyLiquidityProviders nonReentrant {
+        require(receiver != address(0), "Invalid receiver");
+        if (_tokenAddress == NATIVE) {
+            require(address(this).balance >= _tokenAmount, "ERR__INSUFFICIENT_BALANCE");
+            (bool success, ) = receiver.call{value: _tokenAmount}("");
+            require(success, "ERR__NATIVE_TRANSFER_FAILED");
+        } else {
+            IERC20Upgradeable baseToken = IERC20Upgradeable(_tokenAddress);
+            require(baseToken.balanceOf(address(this)) >= _tokenAmount, "ERR__INSUFFICIENT_BALANCE");
+            SafeERC20Upgradeable.safeTransfer(baseToken, receiver, _tokenAmount);
+        }
+    }"
+Balance: "tokenAmount"
+
+"// Deposit tokens for [concur] allocation.
+    function deposit(address _recipient, uint _pid, uint _amount) external nonReentrant onlyDepositor {
+        PoolInfo storage pool = poolInfo[_pid];
+        UserInfo storage user = userInfo[_pid][_msgSender()];
+        updatePool(_pid);
+
+        if(user.amount > 0) {
+            uint pending = user.amount * pool.accConcurPerShare / _concurShareMultiplier - user.rewardDebt;
+            if (pending > 0) {
+                safeConcurTransfer(_recipient, pending);
+            }
+        }
+
+        if (_amount > 0) {
+            if (pool.depositFeeBP > 0) {
+                uint depositFee = _amount.mul(pool.depositFeeBP).div(_perMille);
+                user.amount = SafeCast.toUint128(user.amount + _amount - depositFee);
+            } else {
+                user.amount = SafeCast.toUint128(user.amount + _amount);
+            }
+        }
+
+        user.rewardDebt = SafeCast.toUint128(user.amount * pool.accConcurPerShare / _concurShareMultiplier);
+        emit Deposit(_recipient, _pid, _amount);
+    }"
+Balance: "_amount", "pending"
+Price: "poolaccConcurPerShare"
+Debt: "user.rewardDebt
+Fee: "pool.depositFeeBP, depositFee"
+
+"function safeConcurTransfer(address _to, uint _amount) private {
+        uint concurBalance = concur.balanceOf(address(this));
+        bool transferSuccess = false;
+        if (_amount > concurBalance) {
+            transferSuccess = concur.transfer(_to, concurBalance);
+        } else {
+            transferSuccess = concur.transfer(_to, _amount);
+        }
+        require(transferSuccess, "safeConcurTransfer: transfer failed");
+    }"
+Balance: "_amount"
+Reserve: "concurBalance"
+
+"function stake(uint256 amount)
+        external
+        nonReentrant
+        whenNotPaused
+        updateReward(msg.sender)
+    {
+        require(amount > 0, "Cannot stake 0");
+        _totalSupply += amount;
+        _balances[msg.sender] += amount;
+        stakingToken.safeTransferFrom(msg.sender, address(this), amount);
+        uint256 pid = masterChef.pid(address(stakingToken));
+        masterChef.deposit(msg.sender, pid, amount);
+        emit Staked(msg.sender, amount);
+    }"
+Balance: "amount"
+
