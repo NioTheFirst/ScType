@@ -13,7 +13,7 @@ class Address_label():
     def __init__(self, _head):
         self._head = _head
         self._set = {_head}
-        self._norm = "norm("+str(_head)_")"
+        self._norm = "norm("+str(_head)+")"
   
     @property
     def head(self):
