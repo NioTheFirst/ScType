@@ -1,0 +1,41 @@
+In smart contracts written in Solidity, many variables have a financial meaning. Given the following financial labels of: {balance, price, fee, reserve, debt, and interest}, a number of examples describing a variable of each financial meaning is provided.
+
+The following are examples of variables of the balance financial type. The format of the examples are: a snippet of code containing the variable followed by the name of the variables belonging to the category.
+Code: "function _deposit(uint256 _amount) internal override {
+        // We receive bCVX -> Convert to bCVX
+        CVX_VAULT.withdraw(_amount);
+
+        uint256 toDeposit = IERC20Upgradeable(CVX).balanceOf(address(this));
+
+        // Lock tokens for 17 weeks, send credit to strat, always use max boost cause why not?
+        LOCKER.lock(address(this), toDeposit, LOCKER.maximumBoostPayment());
+    }", 
+Variables: "_amount"
+Code: "/// @dev used to manage the governance and strategist fee on earned rewards, make sure to use it to get paid!
+    function _processRewardsFees(uint256 _amount, address _token)
+        internal
+        returns (uint256 governanceRewardsFee, uint256 strategistRewardsFee)
+    {
+        governanceRewardsFee = _processFee(
+            _token,
+            _amount,
+            performanceFeeGovernance,
+            IController(controller).rewards()
+        );
+
+        strategistRewardsFee = _processFee(
+            _token,
+            _amount,
+            performanceFeeStrategist,
+            strategist
+        );
+    }"
+Variables: "_amount"
+
+Given a snippet of code, please output the most likely candidates for the balance type if there exists any
+
+
+ 
+
+
+Output the most likely label for the financial meaning of the given variable XXX in the following code snippet.

@@ -16,6 +16,13 @@ contract BalanceAndNormTest{
         return(amt);
     }
 
+    function addBalanceGood(uint256 amountA, uint256 amountB) public returns (uint256){
+        uint256 totalA = seeReserveTotal(reserveTokenA, amountA);
+        uint256 totalB = seeReserveTotal(reserveTokenA, amountB);
+        uint256 total = totalA + totalB;
+        return(total);
+    }
+
     function addBalanceBad(uint256 amountA, uint256 amountB) public returns(uint256){
         uint256 totalA = seeReserveTotal(reserveTokenA, amountA);
 	uint256 totalB = seeReserveTotal(reserveTokenB, amountB);
