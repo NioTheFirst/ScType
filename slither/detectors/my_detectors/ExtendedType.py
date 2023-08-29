@@ -84,7 +84,7 @@ class ExtendedType():
     def contract_name(self, cname):
         self._contract_name = cname
     
-
+    #DEPRECATED
     def resolve_trace(self, trace_labels):
         for n in self._num_token_types:
             if n in trace_labels:
@@ -92,6 +92,14 @@ class ExtendedType():
         for d in self._den_token_types:
             if d in trace_labels:
                 d = trace_labels[d]
+
+    def resolve_labels(self, label_sets):
+        for n in self._num_token_types:
+            if n in label_sets:
+                n = label_sets[n].head
+        for d in self._den_token_types:
+            if d in label_sets:
+                d = label_sets[d].head
     
     @property
     def num_token_types(self):

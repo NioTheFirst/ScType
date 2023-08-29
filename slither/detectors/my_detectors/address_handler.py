@@ -40,6 +40,8 @@ class Address_label():
         self._set = x
 
     def union(self, a):
+        if(a.head > 0 and self.head > 0 and a.head != self.head):
+            return False
         if(self._head < 0):
             if(a.head < 0 and self._head < a.head):
                 a.head = self._head
@@ -59,6 +61,7 @@ class Address_label():
         temp_set.union(a.set)
         self._set = temp_set
         a.set = temp_set
+        return True
 
     def __str__(self):
         return(f"Head: {self._head}\n"

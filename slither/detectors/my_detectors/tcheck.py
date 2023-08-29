@@ -1581,10 +1581,14 @@ def handle_trace(rir, lir):
         return False
     #Just take the first one for now
     first_trace = pot_trace[0]
-    for f in first_trace:
-        trace_to_label[f] = first_trace[f]
-    _rir.resolve_trace(trace_to_label)
-    _lir.resolve_trace(trace_to_label)
+    for key,value in first_trace.items():
+        unioned = label_sets[key].union(label_sets[value])
+        if(unioned):
+            continue
+        return False
+        
+    _rir.resolve_labels(label_sets)
+    _lir.resolve_labels(label_sets)
     return True
 
 #USAGE: given two dictionaries with x amounts of value y, generate all possible orderings of trace to label
@@ -1614,20 +1618,39 @@ def generate_label_trace(dictA, dictB):
         if (curn == 0):
             for p in pos_dict:
                 _pos_dict = copy.deepcopy(pos_dict)
+                _neg_dict = copy.deepcopy(neg_dict)
                 _pos_dict[p] += neg_dict[n]
                 _ordering = {}
                 _ordering[n] = p
-                dp[curn].append([_pos_dict, _ordering])
+                dp[curn].append([_pos_dict, _neg_dict, _ordering])
+            for n2 in neg_dict:
+                if(n2 == n):
+                    continue
+                _pos_dict = copy.deepcopy(pos_dict)
+                _neg_dict = copy.deepcopy(neg_dict)
+                _neg_dict[n2] += neg_dict[n]
+                _ordering = {}
+                _ordering[n] = n2
+                dp[curn].append([_pos_dict, _neg_dict, _ordering]) 
         else:
-            for prev in dp[curn-1]:
+            for tuple in dp[curn-1]:
                 _pos_dict = prev[0]
-                _ordering = prev[1]
+                _neg_dict = prev[1]
+                _ordering = prev[2]
                 for p in _pos_dict:
                     _2pos_dict = copy.deepcopy(_pos_dict)
-                    _2pos_dict[p] += neg_dict[n]
+                    _2pos_dict[p] += _neg_dict[n]
                     _2ordering = _ordering.copy()
                     _2ordering[n] = p
-                    dp[curn].append([_2pos_dict, _2ordering])
+                    dp[curn].append([_2pos_dict, _neg_dict, _2ordering])
+                for n2 in _neg_dict:
+                    if(n2 == n):
+                        continue
+                    _2neg_dict = copy.deepcopy(_neg_dict)
+                    _2neg_dict[n2] += _neg_dict[n]
+                    _2ordering = _ordering.copy()
+                    _2ordering[n] = n2
+                    dp[curn].append([_pos_dict, _2neg_dict, _2ordering])
         curn+=1
     if(curn == 0):
         return None
