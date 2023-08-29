@@ -1634,9 +1634,9 @@ def generate_label_trace(dictA, dictB):
                 dp[curn].append([_pos_dict, _neg_dict, _ordering]) 
         else:
             for tuple in dp[curn-1]:
-                _pos_dict = prev[0]
-                _neg_dict = prev[1]
-                _ordering = prev[2]
+                _pos_dict = tuple[0]
+                _neg_dict = tuple[1]
+                _ordering = tuple[2]
                 for p in _pos_dict:
                     _2pos_dict = copy.deepcopy(_pos_dict)
                     _2pos_dict[p] += _neg_dict[n]
