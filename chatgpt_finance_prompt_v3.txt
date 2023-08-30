@@ -1,6 +1,6 @@
-In smart contracts written in Solidity, many variables have a financial meaning. Given the following financial labels of: {balance, price, fee, reserve, debt, and interest}, a number of examples describing a variable of each financial meaning is provided.
+In smart contracts written in Solidity, many variables have a financial meaning. Given the following financial labels of: {user balance, price, fee, reserve, debt, and interest}, a number of examples describing a variable of each financial meaning is provided.
 
-Balance generally refers to an amount of some currency owned by a user. This is fundamentally different from reserve, which is an amount of currency owned by the contract or other non-user entities.
+User balance generally refers to an amount of some currency owned by a user. This is fundamentally different from reserve, which is an amount of currency owned by the contract or other non-user entities.
 The following are examples of variables of the balance financial type. The format of the examples are: a snippet of code containing the variable followed by the name of the variables belonging to the category.
 Code: "function _deposit(uint256 _amount) internal override {
         // We receive bCVX -> Convert to bCVX
@@ -105,5 +105,135 @@ Code: "function safeConcurTransfer(address _to, uint _amount) private {
         require(transferSuccess, "safeConcurTransfer: transfer failed");
     }"
 Variable: "_amount"
+Code: "function requestWithdraw(uint256 _amount) external {
+        uint256 _balance = balanceOf(msg.sender);
+        require(_balance >= _amount, "ERROR: REQUEST_EXCEED_BALANCE");
+        require(_amount > 0, "ERROR: REQUEST_ZERO");
+        withdrawalReq[msg.sender].timestamp = block.timestamp;
+        withdrawalReq[msg.sender].amount = _amount;
+        emit WithdrawRequested(msg.sender, _amount, block.timestamp);
+    }"
+Variables: "_amount", "_balance"
+Code: "function withdraw(uint256 _amount) external returns (uint256 _retVal) {
+        uint256 _supply = totalSupply();
+        require(_supply != 0, "ERROR: NO_AVAILABLE_LIQUIDITY");
 
-Given a snippet of code representing part or the entirity of a Solidity function, please output the most likely candidates for the balance type if there exists any. Place priority on the function parameters as well as return values of function calls. Do not create any other output other than the names of the likely candidates.
+        uint256 _liquidity = originalLiquidity();
+        _retVal = (_amount * _liquidity) / _supply;
+
+        require(
+            marketStatus == MarketStatus.Trading,
+            "ERROR: WITHDRAWAL_PENDING"
+        );
+        require(
+            withdrawalReq[msg.sender].timestamp +
+                parameters.getLockup(msg.sender) <
+                block.timestamp,
+            "ERROR: WITHDRAWAL_QUEUE"
+        );
+        require(
+            withdrawalReq[msg.sender].timestamp +
+                parameters.getLockup(msg.sender) +
+                parameters.getWithdrawable(msg.sender) >
+                block.timestamp,
+            "ERROR: WITHDRAWAL_NO_ACTIVE_REQUEST"
+        );
+        require(
+            withdrawalReq[msg.sender].amount >= _amount,
+            "ERROR: WITHDRAWAL_EXCEEDED_REQUEST"
+        );
+        require(_amount > 0, "ERROR: WITHDRAWAL_ZERO");
+        require(
+            _retVal <= availableBalance(),
+            "ERROR: WITHDRAW_INSUFFICIENT_LIQUIDITY"
+        );
+        //reduce requested amount
+        withdrawalReq[msg.sender].amount -= _amount;
+
+        //Burn iToken
+        _burn(msg.sender, _amount);
+
+        //Withdraw liquidity
+        vault.withdrawValue(_retVal, msg.sender);
+
+        emit Withdraw(msg.sender, _amount, _retVal); ..."
+Variables: "_amount", "_retVal"
+Code: ""function insure(
+        uint256 _amount,
+        uint256 _maxCost,
+        uint256 _span,
+        bytes32 _target
+    ) external returns (uint256) {
+        //Distribute premium and fee
+        uint256 _endTime = _span + block.timestamp;
+        uint256 _premium = getPremium(_amount, _span);
+        uint256 _fee = parameters.getFeeRate(msg.sender);
+
+        require(
+            _amount <= availableBalance(),
+            "ERROR: INSURE_EXCEEDED_AVAILABLE_BALANCE"
+        );
+        require(_premium <= _maxCost, "ERROR: INSURE_EXCEEDED_MAX_COST");
+        require(_span <= 365 days, "ERROR: INSURE_EXCEEDED_MAX_SPAN");
+        require(
+            parameters.getMinDate(msg.sender) <= _span,
+            "ERROR: INSURE_SPAN_BELOW_MIN"
+        );
+
+        require(
+            marketStatus == MarketStatus.Trading,
+            "ERROR: INSURE_MARKET_PENDING"
+        );
+        require(paused == false, "ERROR: INSURE_MARKET_PAUSED");
+
+        //current liquidity
+        uint256 _liquidity = totalLiquidity();
+        uint256 _totalCredit = totalCredit;
+
+        //accrue premium/fee
+        uint256[2] memory _newAttribution = vault.addValueBatch(
+            _premium,
+            msg.sender,
+            [address(this), parameters.getOwner()],
+            [MAGIC_SCALE_1E6 - _fee, _fee]
+        );
+
+         uint256 _id = allInsuranceCount;
+        lockedAmount += _amount;
+        Insurance memory _insurance = Insurance(
+            _id,
+            block.timestamp,
+            _endTime,
+            _amount,
+            _target,
+            msg.sender,
+            true
+        );
+        insurances[_id] = _insurance;
+        allInsuranceCount += 1;
+
+        //Calculate liquidity for index
+        if (_totalCredit > 0) {
+            uint256 _attributionForIndex = (_newAttribution[0] * _totalCredit) /
+                _liquidity;
+            attributionDebt += _attributionForIndex;
+            rewardPerCredit += ((_attributionForIndex * MAGIC_SCALE_1E6) /
+                _totalCredit);
+        }
+
+        emit Insured(
+            _id,
+            _amount,
+            _target,
+            block.timestamp,
+            _endTime,
+            msg.sender,
+            _premium
+        );
+
+        return _id;
+    }"
+Variables: "_amount", "_premium"
+Given a snippet of code representing part or the entirity of a Solidity function, please output the likely candidates for the balance type if there exists any. If there are more than one, please output all of them. Place priority on the function parameters as well as return values of function calls. 
+
+[FINAL VERSION ONLY] Do not create any other output other than the names of the likely candidates.
