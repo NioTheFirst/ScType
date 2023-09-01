@@ -6,6 +6,8 @@
 
 SCType is a Solidity type checker written in Python 3. 
 
+Currently working on overhaul for type file
+
 There are two Docker Images that we have provided for our tool. Both of the images contain the tool, as well as the benchmarks we use.
 
 The full Docker Image holds the complete benchmark set and all of their dependencies. It includes 29 projects. It can be downloaded by running `docker pull icse24sctype/full`. It is 23 GB.
