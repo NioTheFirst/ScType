@@ -259,7 +259,9 @@ def parse_type_file(t_file, f_file = None):
             #i.e. transfer, token, *    (negative address)
             if(_line[0].strip() == "[ta]"):
                 func_name = _line[1].strip()
-                norm = int(_line[2].strip())
+                var_name = _line[2].strip()
+                norm = int(_line[3].strip())
+                add_addr(func_name, var_name, norm)
             #FIELD TYPE
             if(_line[0].strip() == "[t*]"):
                 func_name = _line[1].strip()

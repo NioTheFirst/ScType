@@ -385,6 +385,16 @@ def read_type_file(ir):
         return(ref_tt)
     return tcheck_parser.get_var_type_tuple(function_name, var_name)
 
+#USAGE: gets an address from the type file
+def get_addr(ir):
+    _ir = ir.extok
+    function_name = ir.parent_function
+    var_name = _ir.name
+    if(_ir.name == None):
+        return None
+    return tcheck_parser.get_addr(function_name, var_name)
+        
+
 def append_typefile(ir, num = None, den = None, norm = None, lf = None):
     global write_typefile
     global type_file
@@ -441,7 +451,13 @@ def querry_type(ir):
         ##print("SKIP bytes")
         return
     if(str(ir.type).startswith("address")):
-        new_address(ir)
+        norm = get_addr(ir)
+        if(norm == None):
+            print("Decimals for \"" + uxname + "\": ")
+            input_str = input()
+            norm = int(input_str)
+        label = new_address(ir)
+        label.norm = norm
         #label for address
         
 
@@ -776,14 +792,15 @@ def type_conversion(ir):
         #ir.variable.extok.function_name = "global"
         name_key = "global:" + str(ir.variable)
         if(name_key in address_to_label):
-            addr = address_to_label[name_key]
+            _addr = address_to_label[name_key]
         else:
-            print("new address made")
+            print(f"new address made for {str(ir.variable)}")
             addr = new_address(ir.lvalue, True)
+            _addr = addr.head
             label_to_address[addr] = name_key
-            address_to_label[name_key] = addr
+            address_to_label[name_key] = _addr
 
-        ir.lvalue.extok.address = addr
+        ir.lvalue.extok.address = _addr
         ir.lvalue.norm = 0
         ir.lvalue.link_function = current_contract_name
         print(addr)
