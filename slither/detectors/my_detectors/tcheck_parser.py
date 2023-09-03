@@ -252,6 +252,12 @@ def parse_type_file(t_file, f_file = None):
                     norm = int(_line[4].strip())
                     if(len(_line) >= 6):
                         lf = _line[5]
+            #ADDRESS TYPE
+            #func/global, name, norm
+            #i.e. global, USDC, 6 
+            if(_line[0].strip() == "[ta]"):
+                func_name = _line[1].strip()
+                norm = int(_line[2].strip())
             #FIELD TYPE
             if(_line[0].strip() == "[t*]"):
                 func_name = _line[1].strip()
