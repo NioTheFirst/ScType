@@ -460,7 +460,7 @@ def querry_type(ir):
         label.norm = norm
         #label for address
         
-
+        print(label)
         #TODO Do not reset temp_address_counter, create sets
 
         return #Not yet, testing is needed TODO
