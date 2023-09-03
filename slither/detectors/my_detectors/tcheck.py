@@ -455,7 +455,8 @@ def querry_type(ir):
         if(norm == None):
             print("Decimals for \"" + uxname + "\": ")
             input_str = input()
-            norm = int(input_str)
+            if(input_str != '*'):
+                norm = int(input_str)
         label = new_address(ir)
         label.norm = norm
         #label for address

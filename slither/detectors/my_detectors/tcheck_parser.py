@@ -260,7 +260,9 @@ def parse_type_file(t_file, f_file = None):
             if(_line[0].strip() == "[ta]"):
                 func_name = _line[1].strip()
                 var_name = _line[2].strip()
-                norm = int(_line[3].strip())
+                _norm = _line[3].strip()
+                if(_norm != '*'):
+                    norm = int(_line[3].strip())
                 add_addr(func_name, var_name, norm)
             #FIELD TYPE
             if(_line[0].strip() == "[t*]"):
