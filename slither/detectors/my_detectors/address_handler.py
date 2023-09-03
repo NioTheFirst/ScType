@@ -42,7 +42,10 @@ class Address_label():
     def union(self, a):
         if(a.head > 0 and self.head > 0 and a.head != self.head):
             return False
-        if(self._head < 0):
+        if(self._norm != '*' and a.norm != '*'):
+            if(self._norm != a.norm):
+                return False
+        elif(self._head < 0):
             if(a.head < 0 and self._head < a.head):
                 a.head = self._head
                 a.norm = self._norm

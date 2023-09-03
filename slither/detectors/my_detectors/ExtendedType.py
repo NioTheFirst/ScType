@@ -28,6 +28,7 @@ class ExtendedType():
         self._base_decimals = 0
         self._address = 'u'
         self._norm = 'u'
+        self._value = 'u'
         #TODO address lf should automatically be set to its name
         self._linked_contract = None
         self._fields = []
