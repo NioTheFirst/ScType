@@ -20,6 +20,7 @@ var_type_hash = {}
 in_func_ptr_hash = {}
 ex_func_type_hash = {}
 ref_type_hash = {}
+address_type_hash = {}
 tuple_type_hash = {}
 field_type_hash = {}
 
@@ -254,7 +255,8 @@ def parse_type_file(t_file, f_file = None):
                         lf = _line[5]
             #ADDRESS TYPE
             #func/global, name, norm
-            #i.e. global, USDC, 6 
+            #i.e. global, USDC, 6       (positive address)
+            #i.e. transfer, token, *    (negative address)
             if(_line[0].strip() == "[ta]"):
                 func_name = _line[1].strip()
                 norm = int(_line[2].strip())
@@ -287,6 +289,15 @@ def get_var_type_tuple(function_name, var_name):
         return var_type_hash[key]
     return None
 
+def add_addr(function_name, var_name, norm):
+    key = function_name + "_" + var_name
+    address_type_hash[key] = norm
+
+def get_addr(function_name, var_name):
+    key = function_name + "_" + var_name
+    if(key in address_type_hash):
+        return address_type_hash[key]
+    return None
 
 def add_tuple(tuple_name, type_tuples):
     key = tuple_name
