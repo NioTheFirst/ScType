@@ -826,7 +826,7 @@ def type_conversion(ir):
                     break
             ir.lvalue.link_function = contract_name
             print(contract_name)
-        #ir.lvalue.link_function = ir.variable.link_function
+       
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
 #RETURNS: nothing (type is querried from user)
@@ -983,15 +983,14 @@ def handle_balance_functions(ir):
     token_type = _dest.address
     if(label_sets[token_type].head > 0):
         token_type = label_sets[token_type].head
-    if token_type in num_to_norm:
-        norm = num_to_norm[token_type]
+    norm = label_sets[token_type].norm
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
         ir.lvalue.extok.norm = norm
         isbfunc = True
     elif(func_name == "decimals"):
-        ir.lvalue.extok.norm = norm
+        ir.lvalue.extok.value = norm
         isbfunc = True
     #WIP, transferFrom, "safe"
     if(isbfunc and token_type < 0):

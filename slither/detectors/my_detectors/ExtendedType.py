@@ -76,6 +76,13 @@ class ExtendedType():
     def function_name(self, fname):
         self._function_name = fname
 
+    @property
+    def value(self):
+        return(self._value)
+
+    @value.setter
+    def value(self, value):
+        self._value = value
 
     @property
     def contract_name(self):
