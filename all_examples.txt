@@ -765,3 +765,86 @@ Balance: "self.balances", "newBalance", "amount", "shortfall"
     emit TimelockDeposited(operator, to, controlledToken, amount); "
 Balance: "amount", "_timelockBalances"
 Reserve: "timelockTotalSupply"
+
+"  function beforeTokenTransfer(address from, address to, uint256 amount) external override onlyControlledToken(msg.sender) {
+    if (from != address(0)) {
+      uint256 fromBeforeBalance = IERC20Upgradeable(msg.sender).balanceOf(from);
+      // first accrue credit for their old balance
+      uint256 newCreditBalance = _calculateCreditBalance(from, msg.sender, fromBeforeBalance, 0);
+
+      if (from != to) {
+        // if they are sending funds to someone else, we need to limit their accrued credit to their new balance
+        newCreditBalance = _applyCreditLimit(msg.sender, fromBeforeBalance.sub(amount), newCreditBalance);
+      }
+
+      _updateCreditBalance(from, msg.sender, newCreditBalance);
+    }
+    if (to != address(0) && to != from) {
+      _accrueCredit(to, msg.sender, IERC20Upgradeable(msg.sender).balanceOf(to), 0);
+    }
+    // if we aren't minting
+    if (from != address(0) && address(prizeStrategy) != address(0)) {
+      prizeStrategy.beforeTokenTransfer(from, to, amount, msg.sender);
+    }
+  }"
+  Balances: "fromBeforeBalance", "newCreditBalance", 
+
+  "function captureAwardBalance() external override nonReentrant returns (uint256) {
+    uint256 tokenTotalSupply = _tokenTotalSupply();
+
+    // it's possible for the balance to be slightly less due to rounding errors in the underlying yield source
+    uint256 currentBalance = _balance();
+    uint256 totalInterest = (currentBalance > tokenTotalSupply) ? currentBalance.sub(tokenTotalSupply) : 0;
+    uint256 unaccountedPrizeBalance = (totalInterest > _currentAwardBalance) ? totalInterest.sub(_currentAwardBalance) : 0;
+
+    if (unaccountedPrizeBalance > 0) {
+      uint256 reserveFee = calculateReserveFee(unaccountedPrizeBalance);
+      if (reserveFee > 0) {
+        reserveTotalSupply = reserveTotalSupply.add(reserveFee);
+        unaccountedPrizeBalance = unaccountedPrizeBalance.sub(reserveFee);
+        emit ReserveFeeCaptured(reserveFee);
+      }
+      _currentAwardBalance = _currentAwardBalance.add(unaccountedPrizeBalance);
+
+      emit AwardCaptured(unaccountedPrizeBalance);
+    }
+
+    return _currentAwardBalance;
+  }"
+  Reserve: "tokenTotalSupply()", "currentBalance", "_currentAwardBalance"
+  Fee: "resreeFee"
+
+"function withdrawReserve(address to) external override onlyReserve returns (uint256) {
+
+    uint256 amount = reserveTotalSupply;
+    reserveTotalSupply = 0;
+    uint256 redeemed = _redeem(amount);
+
+    _token().safeTransfer(address(to), redeemed);
+
+    emit ReserveWithdrawal(to, amount);
+
+    return redeemed;
+  }"
+  Reserve: "amount", "reserveTotalSupply"
+
+  "function _transferOut(
+    address to,
+    address externalToken,
+    uint256 amount
+  )
+    internal
+    returns (bool)
+  {
+    require(_canAwardExternal(externalToken), "PrizePool/invalid-external-token");
+
+    if (amount == 0) {
+      return false;
+    }
+
+    IERC20Upgradeable(externalToken).safeTransfer(to, amount);
+
+    return true;
+  }"
+  Balance: "amount"
+  
