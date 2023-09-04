@@ -2651,6 +2651,7 @@ class tcheck(AbstractDetector):
         global seen_contracts
         global function_count
         global address_to_label
+        global label_sets
         assign_const(constant_instance)
         for contract in self.slither.contracts:
             print(f"Checking {contract.name}")
@@ -2711,8 +2712,10 @@ class tcheck(AbstractDetector):
             #print("xxxxxx")
             #print(f"Errors: {errorsx}")
 
-            for label, address in address_to_label.items():
-                print(f"Address: {address}, Label: {label}")
+            #for label, address in address_to_label.items():
+            #    print(f"Address: {address}, Label: {label}")
+            for label in label_sets:
+                print(label)
                 
             for ir in errorsx:
                 _ir = ir.extok

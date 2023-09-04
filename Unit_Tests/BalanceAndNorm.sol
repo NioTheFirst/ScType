@@ -23,7 +23,7 @@ contract BalanceAndNormTest{
         return(total);
     }
 
-    function addBalanceBuild(uint256 amountA, address tokenC, uint256 amountC) public returns (uint256){
+    /*function addBalanceBuild(uint256 amountA, address tokenC, uint256 amountC) public returns (uint256){
        uint256 totalA = seeReserveTotal(reserveTokenA, amountA);
        uint256 totalC = seeReserveTotal(tokenC, amountC);
        uint256 total = totalA + totalC;
@@ -54,7 +54,7 @@ contract BalanceAndNormTest{
         uint256 normAmtA = normalizeToken(reserveTokenA, amountA);
         uint256 goodSum = normAmtA + normAmtA;
         return(goodSum);
-    }
+    }*/
 
     
 }
