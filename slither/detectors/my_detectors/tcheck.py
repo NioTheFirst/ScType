@@ -2714,8 +2714,8 @@ class tcheck(AbstractDetector):
 
             for label, address in address_to_label.items():
                 print(f"Address: {address}, Label: {label}")
-            for label in label_sets:
-                print(label)
+            for label, addr_label in label_sets.items():
+                print(addr_label)
                 
             for ir in errorsx:
                 _ir = ir.extok
