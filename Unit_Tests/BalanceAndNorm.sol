@@ -23,14 +23,14 @@ contract BalanceAndNormTest{
         return(total);
     }
 
-    /*function addBalanceBuild(uint256 amountA, address tokenC, uint256 amountC) public returns (uint256){
+    function addBalanceBuild(uint256 amountA, address tokenC, uint256 amountC) public returns (uint256){
        uint256 totalA = seeReserveTotal(reserveTokenA, amountA);
        uint256 totalC = seeReserveTotal(tokenC, amountC);
        uint256 total = totalA + totalC;
        return(total);
     }
 
-    function addBalanceBad(uint256 amountA, uint256 amountB) public returns(uint256){
+    /*function addBalanceBad(uint256 amountA, uint256 amountB) public returns(uint256){
         uint256 totalA = seeReserveTotal(reserveTokenA, amountA);
 	uint256 totalB = seeReserveTotal(reserveTokenB, amountB);
 	uint256 total = totalA + totalB;
