@@ -60,8 +60,8 @@ class Address_label():
                 self._head = a.head
                 self._norm = a.norm
         temp_set = set()
-        temp_set.union(self._set)
-        temp_set.union(a.set)
+        temp_set = temp_set.union(self._set)
+        temp_set = temp_set.union(a.set)
         self._set = temp_set
         a.set = temp_set
         return True
