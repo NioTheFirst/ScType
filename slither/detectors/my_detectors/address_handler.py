@@ -69,7 +69,7 @@ class Address_label():
     def __str__(self):
         return(f"Head: {self._head}\n"
                f"    Norm: {self._norm}\n"
-               f"    Set: {self._set}")
+               f"    Set: {str(self._set)}")
 
 
 
