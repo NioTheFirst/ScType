@@ -930,3 +930,150 @@ Reserve: "wavaxReserve"
     }"
 Balance: "user.balance"
 Reserve: "lpSupply", "wavaxAllocated"
+
+"function pendingRJoe(address _user) external view returns (uint256) {
+        UserInfo storage user = userInfo[_user];
+        uint256 joeSupply = joe.balanceOf(address(this));
+        uint256 _accRJoePerShare = accRJoePerShare;
+
+        if (block.timestamp > lastRewardTimestamp && joeSupply != 0) {
+            uint256 multiplier = block.timestamp - lastRewardTimestamp;
+            uint256 rJoeReward = multiplier * rJoePerSec;
+            _accRJoePerShare += (rJoeReward * PRECISION) / joeSupply;
+        }
+        return (user.amount * _accRJoePerShare) / PRECISION - user.rewardDebt;
+    }"
+Balance: "user.amount"
+Reserve: "joeSupply"
+
+"function mint(bytes calldata data) public override lock returns (uint256 liquidity) {
+        address recipient = abi.decode(data, (address));
+        (uint256 _reserve0, uint256 _reserve1) = _getReserves();
+        (uint256 balance0, uint256 balance1) = _balance();
+        uint256 _totalSupply = totalSupply;
+
+        uint256 amount0 = balance0 - _reserve0;
+        uint256 amount1 = balance1 - _reserve1;
+        (uint256 fee0, uint256 fee1) = _nonOptimalMintFee(amount0, amount1, _reserve0, _reserve1);
+        uint256 newLiq = _computeLiquidity(balance0 - fee0, balance1 - fee1);
+
+        if (_totalSupply == 0) {
+            liquidity = newLiq - MINIMUM_LIQUIDITY;
+            _mint(address(0), MINIMUM_LIQUIDITY);
+        } else {
+            uint256 oldLiq = _computeLiquidity(_reserve0, _reserve1);
+            liquidity = ((newLiq - oldLiq) * _totalSupply) / oldLiq;
+        }
+        require(liquidity != 0, "INSUFFICIENT_LIQUIDITY_MINTED");
+        _mint(recipient, liquidity);
+        _updateReserves();
+        emit Mint(msg.sender, amount0, amount1, recipient);
+    }"
+    Reserve: "balance0", "balance1", "_reserve0", "_reserve", "_totalSupply"
+
+    "function _handleFee(address tokenIn, uint256 amountIn) internal returns (uint256 fee) {
+        fee = (amountIn * swapFee) / MAX_FEE;
+        uint256 _barFee = (fee * barFee) / MAX_FEE;
+        _transfer(tokenIn, _barFee, barFeeTo, false);
+    }"
+    fee: "swapFee", "barFee"
+
+"function _nonOptimalMintFee(
+        uint256 _amount0,
+        uint256 _amount1,
+        uint256 _reserve0,
+        uint256 _reserve1
+    ) internal view returns (uint256 token0Fee, uint256 token1Fee) {
+        if (_reserve0 == 0 || _reserve1 == 0) return (0, 0);
+        uint256 amount1Optimal = (_amount0 * _reserve1) / _reserve0;
+
+        if (amount1Optimal <= _amount1) {
+            token1Fee = (swapFee * (_amount1 - amount1Optimal)) / (2 * MAX_FEE);
+        } else {
+            uint256 amount0Optimal = (_amount1 * _reserve0) / _reserve1;
+            token0Fee = (swapFee * (_amount0 - amount0Optimal)) / (2 * MAX_FEE);
+        }
+        return(token0Fee,token1Fee);
+    }"
+    Fee: "swapFee"
+
+    " function initiateVaultFillingZcTokenInitiate(Hash.Order calldata o, uint256 a, Sig.Components calldata c) internal {
+    // checks order signature, order cancellation and order expiry
+    bytes32 hash = validOrderHash(o, c);
+
+    // checks the taker amount passed to amount available in the order
+    require(a <= (o.premium - filled[hash]), 'taker amount > available volume');
+
+    // adds the taker amount to the order's filled amount
+    filled[hash] += a;
+
+    // calculate principal filled and fee
+    uint256 principalFilled = (((a * 1e18) / o.premium) * o.principal) / 1e18;
+    uint256 fee = ((principalFilled * 1e18) / fenominator[2]) / 1e18;
+
+    // transfer underlying tokens
+    Erc20 uToken = Erc20(o.underlying);
+    uToken.transferFrom(msg.sender, o.maker, a);
+    uToken.transferFrom(o.maker, address(this), principalFilled);
+
+    // deposit underlying to Compound and mint cTokens
+    MarketPlace mPlace = MarketPlace(marketPlace);
+    address cTokenAddr = mPlace.cTokenAddress(o.underlying, o.maturity);
+    uToken.approve(cTokenAddr, principalFilled);
+    require(CErc20(cTokenAddr).mint(principalFilled) == 0, 'minting CToken failed');
+
+    // mint <principalFilled> zcTokens + nTokens and allocate appropriately in marketplace
+    require(mPlace.custodialInitiate(o.underlying, o.maturity, o.maker, msg.sender, principalFilled), 'custodial initiate failed');
+
+    // transfer fee in vault notional to swivel (from msg.sender)
+    require(mPlace.transferVaultNotionalFee(o.underlying, o.maturity, msg.sender, fee), "notional fee transfer failed");
+
+    emit Initiate(o.key, hash, o.maker, o.vault, o.exit, msg.sender, a, principalFilled);
+  }"
+  Fee: "fenominator"
+  Balance: "a"
+
+  " function _handleOpenFees(
+        uint _asset,
+        uint _positionSize,
+        address _trader,
+        address _tigAsset,
+        bool _isBot
+    )
+        internal
+        returns (uint _feePaid)
+    {
+        IPairsContract.Asset memory asset = pairsContract.idToAsset(_asset);
+        Fees memory _fees = openFees;
+        unchecked {
+            _fees.daoFees = _fees.daoFees * asset.feeMultiplier / DIVISION_CONSTANT;
+            _fees.burnFees = _fees.burnFees * asset.feeMultiplier / DIVISION_CONSTANT;
+            _fees.referralFees = _fees.referralFees * asset.feeMultiplier / DIVISION_CONSTANT;
+            _fees.botFees = _fees.botFees * asset.feeMultiplier / DIVISION_CONSTANT;
+        }
+        address _referrer = tradingExtension.getRef(_trader); //referrals.getReferral(referrals.getReferred(_trader));
+        if (_referrer != address(0)) {
+            unchecked {
+                IStable(_tigAsset).mintFor(
+                    _referrer,
+                    _positionSize
+                    * _fees.referralFees // get referral fee%
+                    / DIVISION_CONSTANT // divide by 100%
+                );
+            }
+            _fees.daoFees = _fees.daoFees - _fees.referralFees*2;
+        }
+        if (_isBot) {
+            unchecked {
+                IStable(_tigAsset).mintFor(
+                    _msgSender(),
+                    _positionSize
+                    * _fees.botFees // get bot fee%
+                    / DIVISION_CONSTANT // divide by 100%
+                );
+            }
+            _fees.daoFees = _fees.daoFees - _fees.botFees;
+        } else {
+            _fees.botFees = 0;
+        } ..."
+    Fees: "_fees.daoFees", "_fees.burnFees", "_fees.referralFees", "_fees.botFees"

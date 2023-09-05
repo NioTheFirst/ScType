@@ -75,7 +75,103 @@ Code: "// Deposit tokens for [concur] allocation.
     }"
 Variables: "pool.depositFeeBP"
 
+Code: "function _handleFee(address tokenIn, uint256 amountIn) internal returns (uint256 fee) {
+        fee = (amountIn * swapFee) / MAX_FEE;
+        uint256 _barFee = (fee * barFee) / MAX_FEE;
+        _transfer(tokenIn, _barFee, barFeeTo, false);
+    }"
+Variables: "swapFee", "barFee"
+Code:  function initiateVaultFillingZcTokenInitiate(Hash.Order calldata o, uint256 a, Sig.Components calldata c) internal {
+    // checks order signature, order cancellation and order expiry
+    bytes32 hash = validOrderHash(o, c);
 
+    // checks the taker amount passed to amount available in the order
+    require(a <= (o.premium - filled[hash]), 'taker amount > available volume');
 
+    // adds the taker amount to the order's filled amount
+    filled[hash] += a;
+
+    // calculate principal filled and fee
+    uint256 principalFilled = (((a * 1e18) / o.premium) * o.principal) / 1e18;
+    uint256 fee = ((principalFilled * 1e18) / fenominator[2]) / 1e18;
+
+    // transfer underlying tokens
+    Erc20 uToken = Erc20(o.underlying);
+    uToken.transferFrom(msg.sender, o.maker, a);
+    uToken.transferFrom(o.maker, address(this), principalFilled);
+
+    // deposit underlying to Compound and mint cTokens
+    MarketPlace mPlace = MarketPlace(marketPlace);
+    address cTokenAddr = mPlace.cTokenAddress(o.underlying, o.maturity);
+    uToken.approve(cTokenAddr, principalFilled);
+    require(CErc20(cTokenAddr).mint(principalFilled) == 0, 'minting CToken failed');
+
+    // mint <principalFilled> zcTokens + nTokens and allocate appropriately in marketplace
+    require(mPlace.custodialInitiate(o.underlying, o.maturity, o.maker, msg.sender, principalFilled), 'custodial initiate failed');
+
+    // transfer fee in vault notional to swivel (from msg.sender)
+    require(mPlace.transferVaultNotionalFee(o.underlying, o.maturity, msg.sender, fee), "notional fee transfer failed");
+
+    emit Initiate(o.key, hash, o.maker, o.vault, o.exit, msg.sender, a, principalFilled);
+  }
+  Variable: "fenominator"
+  Code:" function _handleOpenFees(
+        uint _asset,
+        uint _positionSize,
+        address _trader,
+        address _tigAsset,
+        bool _isBot
+    )
+        internal
+        returns (uint _feePaid)
+    {
+        IPairsContract.Asset memory asset = pairsContract.idToAsset(_asset);
+        Fees memory _fees = openFees;
+        unchecked {
+            _fees.daoFees = _fees.daoFees * asset.feeMultiplier / DIVISION_CONSTANT;
+            _fees.burnFees = _fees.burnFees * asset.feeMultiplier / DIVISION_CONSTANT;
+            _fees.referralFees = _fees.referralFees * asset.feeMultiplier / DIVISION_CONSTANT;
+            _fees.botFees = _fees.botFees * asset.feeMultiplier / DIVISION_CONSTANT;
+        }
+        address _referrer = tradingExtension.getRef(_trader); //referrals.getReferral(referrals.getReferred(_trader));
+        if (_referrer != address(0)) {
+            unchecked {
+                IStable(_tigAsset).mintFor(
+                    _referrer,
+                    _positionSize
+                    * _fees.referralFees // get referral fee%
+                    / DIVISION_CONSTANT // divide by 100%
+                );
+            }
+            _fees.daoFees = _fees.daoFees - _fees.referralFees*2;
+        }
+        if (_isBot) {
+            unchecked {
+                IStable(_tigAsset).mintFor(
+                    _msgSender(),
+                    _positionSize
+                    * _fees.botFees // get bot fee%
+                    / DIVISION_CONSTANT // divide by 100%
+                );
+            }
+            _fees.daoFees = _fees.daoFees - _fees.botFees;
+        } else {
+            _fees.botFees = 0;
+        } ..."
+    Variables: "_fees.daoFees", "_fees.burnFees", "_fees.referralFees", "_fees.botFees"
+Code: "function _transfer(address sender, address recipient, uint amount) internal virtual {
+        require(sender != address(0), "sender");
+        require(recipient != address(this), "recipient");
+        _balances[sender] -= amount;
+        uint _fee = iUTILS(UTILS).calcPart(feeOnTransfer, amount);  // Critical functionality
+        if(_fee >= 0 && _fee <= amount){                            // Stops reverts if UTILS corrupted
+            amount -= _fee;
+            _burn(msg.sender, _fee);
+        }
+        _balances[recipient] += amount;
+        emit Transfer(sender, recipient, amount);
+        _checkEmission();
+    }"
+Variables: "feeOnTransfer"
 
 It is not always guaranteed to find fee ratios in Solidity code. Given a snippet of code representing part or the entirity of a Solidity function, please output the likely candidates for only the "fee ratio" type if there exists any. If there are more than one, please output all of them. Place priority on the function parameters as well as return values of function calls. 

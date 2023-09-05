@@ -290,6 +290,41 @@ Code: " function depositAVAX()
         WAVAX.deposit{value: msg.value}();"
 Variables: "msg.value", "user.balance", "newAllocation"
 
+Code: " function initiateVaultFillingZcTokenInitiate(Hash.Order calldata o, uint256 a, Sig.Components calldata c) internal {
+    // checks order signature, order cancellation and order expiry
+    bytes32 hash = validOrderHash(o, c);
+
+    // checks the taker amount passed to amount available in the order
+    require(a <= (o.premium - filled[hash]), 'taker amount > available volume');
+
+    // adds the taker amount to the order's filled amount
+    filled[hash] += a;
+
+    // calculate principal filled and fee
+    uint256 principalFilled = (((a * 1e18) / o.premium) * o.principal) / 1e18;
+    uint256 fee = ((principalFilled * 1e18) / fenominator[2]) / 1e18;
+
+    // transfer underlying tokens
+    Erc20 uToken = Erc20(o.underlying);
+    uToken.transferFrom(msg.sender, o.maker, a);
+    uToken.transferFrom(o.maker, address(this), principalFilled);
+
+    // deposit underlying to Compound and mint cTokens
+    MarketPlace mPlace = MarketPlace(marketPlace);
+    address cTokenAddr = mPlace.cTokenAddress(o.underlying, o.maturity);
+    uToken.approve(cTokenAddr, principalFilled);
+    require(CErc20(cTokenAddr).mint(principalFilled) == 0, 'minting CToken failed');
+
+    // mint <principalFilled> zcTokens + nTokens and allocate appropriately in marketplace
+    require(mPlace.custodialInitiate(o.underlying, o.maturity, o.maker, msg.sender, principalFilled), 'custodial initiate failed');
+
+    // transfer fee in vault notional to swivel (from msg.sender)
+    require(mPlace.transferVaultNotionalFee(o.underlying, o.maturity, msg.sender, fee), "notional fee transfer failed");
+
+    emit Initiate(o.key, hash, o.maker, o.vault, o.exit, msg.sender, a, principalFilled);
+  }"
+  Variable: "a"
+
 Given a snippet of code representing part or the entirity of a Solidity function, please output the likely candidates for only the "user balance" type if there exists any. If there are more than one, please output all of them. Place priority on the function parameters as well as return values of function calls. 
 
 [FINAL VERSION ONLY] Do not create any other output other than the names of the likely candidates.
