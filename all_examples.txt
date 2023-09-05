@@ -847,4 +847,86 @@ Reserve: "timelockTotalSupply"
     return true;
   }"
   Balance: "amount"
-  
+
+" function _burnCredit(address user, address controlledToken, uint256 credit) internal {
+    _tokenCreditBalances[controlledToken][user].balance = uint256(_tokenCreditBalances[controlledToken][user].balance).sub(credit).toUint128();
+
+    emit CreditBurned(user, controlledToken, credit);
+  }"
+  Balance: "credit"
+  " function depositAVAX()
+        external
+        payable
+        isStopped(false)
+        atPhase(Phase.PhaseOne)
+    {
+        require(msg.sender != issuer, "LaunchEvent: issuer cannot participate");
+        require(
+            msg.value > 0,
+            "LaunchEvent: expected non-zero AVAX to deposit"
+        );
+
+        UserInfo storage user = getUserInfo[msg.sender];
+        uint256 newAllocation = user.balance + msg.value;
+        require(
+            newAllocation <= maxAllocation,
+            "LaunchEvent: amount exceeds max allocation"
+        );
+
+        uint256 rJoeNeeded;
+        // check if additional allocation is required.
+        if (newAllocation > user.allocation) {
+            // Burn tokens and update allocation.
+            rJoeNeeded = getRJoeAmount(newAllocation - user.allocation);
+            // Set allocation to the current balance as it's impossible
+            // to buy more allocation without sending AVAX too
+            user.allocation = newAllocation;
+        }
+
+        user.balance = newAllocation;
+        wavaxReserve += msg.value;
+
+        if (rJoeNeeded > 0) {
+            rJoe.burnFrom(msg.sender, rJoeNeeded);
+        }
+
+        WAVAX.deposit{value: msg.value}();"
+Balance: "msg.value", "user.balance", "newAllocation"
+Reserve: "wavaxReserve"
+"  function withdrawAVAX(uint256 _amount) public isStopped(false) {
+        Phase _currentPhase = currentPhase();
+        require(
+            _currentPhase == Phase.PhaseOne || _currentPhase == Phase.PhaseTwo,
+            "LaunchEvent: unable to withdraw"
+        );
+        require(_amount > 0, "LaunchEvent: invalid withdraw amount");
+        UserInfo storage user = getUserInfo[msg.sender];
+        require(
+            user.balance >= _amount,
+            "LaunchEvent: withdrawn amount exceeds balance"
+        );
+        user.balance -= _amount;
+
+        uint256 feeAmount = (_amount * getPenalty()) / 1e18;
+        uint256 amountMinusFee = _amount - feeAmount;
+
+        wavaxReserve -= _amount;
+
+        WAVAX.withdraw(_amount);
+        _safeTransferAVAX(msg.sender, amountMinusFee);
+        if (feeAmount > 0) {
+            _safeTransferAVAX(rocketJoeFactory.penaltyCollector(), feeAmount);
+        }
+    }"
+Balance: "_amount", "user.balance
+Reserve: "wavaxReserve"
+
+"function pairBalance(address _user) public view returns (uint256) {
+        UserInfo memory user = getUserInfo[_user];
+        if (wavaxAllocated == 0 || user.hasWithdrawnPair) {
+            return 0;
+        }
+        return (user.balance * lpSupply) / wavaxAllocated / 2;
+    }"
+Balance: "user.balance"
+Reserve: "lpSupply", "wavaxAllocated"

@@ -5,10 +5,10 @@ contract BalanceAndNormTest{
     address reserveTokenB;
     //uint256 reserveBalance;
 
-    constructor(address _reserveTokenA, address _reserveTokenB) public{
+    /*constructor(address _reserveTokenA, address _reserveTokenB) public{
 	reserveTokenA = _reserveTokenA;
 	reserveTokenB = _reserveTokenB;
-    }
+    }*/
 	
     function seeReserveTotal(address reserve, uint256 amount) public returns(uint256){
 	//see if amount becomes the same type as reserveToken
@@ -30,13 +30,13 @@ contract BalanceAndNormTest{
        return(total);
     }
 
-    /*function addBalanceBad(uint256 amountA, uint256 amountB) public returns(uint256){
+    function addBalanceBad(uint256 amountA, uint256 amountB) public returns(uint256){
         uint256 totalA = seeReserveTotal(reserveTokenA, amountA);
 	uint256 totalB = seeReserveTotal(reserveTokenB, amountB);
 	uint256 total = totalA + totalB;
 	return(total);
     }
-
+    /*
     //NORM TESTS===================================================================
     function normalizeToken(address token, uint256 amount) public returns (uint256){
         uint256 decimals = ITypicalTokenWrapper(token).decimals();

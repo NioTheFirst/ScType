@@ -251,6 +251,45 @@ Code: ""function insure(
         return _id;
     }"
 Variables: "_amount", "_premium"
+Code: " function depositAVAX()
+        external
+        payable
+        isStopped(false)
+        atPhase(Phase.PhaseOne)
+    {
+        require(msg.sender != issuer, "LaunchEvent: issuer cannot participate");
+        require(
+            msg.value > 0,
+            "LaunchEvent: expected non-zero AVAX to deposit"
+        );
+
+        UserInfo storage user = getUserInfo[msg.sender];
+        uint256 newAllocation = user.balance + msg.value;
+        require(
+            newAllocation <= maxAllocation,
+            "LaunchEvent: amount exceeds max allocation"
+        );
+
+        uint256 rJoeNeeded;
+        // check if additional allocation is required.
+        if (newAllocation > user.allocation) {
+            // Burn tokens and update allocation.
+            rJoeNeeded = getRJoeAmount(newAllocation - user.allocation);
+            // Set allocation to the current balance as it's impossible
+            // to buy more allocation without sending AVAX too
+            user.allocation = newAllocation;
+        }
+
+        user.balance = newAllocation;
+        wavaxReserve += msg.value;
+
+        if (rJoeNeeded > 0) {
+            rJoe.burnFrom(msg.sender, rJoeNeeded);
+        }
+
+        WAVAX.deposit{value: msg.value}();"
+Variables: "msg.value", "user.balance", "newAllocation"
+
 Given a snippet of code representing part or the entirity of a Solidity function, please output the likely candidates for only the "user balance" type if there exists any. If there are more than one, please output all of them. Place priority on the function parameters as well as return values of function calls. 
 
 [FINAL VERSION ONLY] Do not create any other output other than the names of the likely candidates.

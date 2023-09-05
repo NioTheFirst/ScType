@@ -1,0 +1,81 @@
+In smart contracts written in Solidity, many variables have a financial meaning. Given the following financial labels of: {user balance, price, fee ratio, reserve, debt, and interest}, please provide a list of all possible candidates of variables with the financial meaning of "fee ratio".
+
+A fee ratio is a ratio that is usually multiplied to an amount like a balance in order to generate a fee. The following are a few examples to demonstrate variables representing "fee ratio" in Solidity.
+Code: "function _calculateFee(uint256 amount, uint256 feeBps)
+        internal
+        pure
+        returns (uint256)
+    {
+        if (feeBps == 0) {
+            return 0;
+        }
+        uint256 fee = (amount * feeBps) / MAX_BPS;
+        return fee;
+    }"
+Variables: "feeBps"
+Code: "function getAmountToTransfer(
+        uint256 initialGas,
+        address tokenAddress,
+        uint256 amount,
+        uint256 tokenGasPrice
+    ) public returns (uint256 amountToTransfer) {
+        uint256 transferFeePerc = getTransferFee(tokenAddress, amount);
+        uint256 lpFee;
+        if (transferFeePerc > tokenManager.getTokensInfo(tokenAddress).equilibriumFee) {
+            // Here add some fee to incentive pool also
+            lpFee = (amount * tokenManager.getTokensInfo(tokenAddress).equilibriumFee) / BASE_DIVISOR;
+            incentivePool[tokenAddress] =
+                (incentivePool[tokenAddress] +
+                    (amount * (transferFeePerc - tokenManager.getTokensInfo(tokenAddress).equilibriumFee))) /
+                BASE_DIVISOR;
+        } else {
+            lpFee = (amount * transferFeePerc) / BASE_DIVISOR;
+        }
+        uint256 transferFeeAmount = (amount * transferFeePerc) / BASE_DIVISOR;
+
+        liquidityProviders.addLPFee(tokenAddress, lpFee);
+
+        uint256 totalGasUsed = initialGas - gasleft();
+        totalGasUsed = totalGasUsed + tokenManager.getTokensInfo(tokenAddress).transferOverhead;
+        totalGasUsed = totalGasUsed + baseGas;
+
+        uint256 gasFee = totalGasUsed * tokenGasPrice;
+        gasFeeAccumulatedByToken[tokenAddress] = gasFeeAccumulatedByToken[tokenAddress] + gasFee;
+        gasFeeAccumulated[tokenAddress][_msgSender()] = gasFeeAccumulated[tokenAddress][_msgSender()] + gasFee;
+        amountToTransfer = amount - (transferFeeAmount + gasFee);
+
+        emit FeeDetails(lpFee, transferFeeAmount, gasFee);
+    }"
+Variables: "tokenManager.getTokensInfo(tokenAddress).equilibriumFee", "transferFeePerc"
+
+Code: "// Deposit tokens for [concur] allocation.
+    function deposit(address _recipient, uint _pid, uint _amount) external nonReentrant onlyDepositor {
+        PoolInfo storage pool = poolInfo[_pid];
+        UserInfo storage user = userInfo[_pid][_msgSender()];
+        updatePool(_pid);
+
+        if(user.amount > 0) {
+            uint pending = user.amount * pool.accConcurPerShare / _concurShareMultiplier - user.rewardDebt;
+            if (pending > 0) {
+                safeConcurTransfer(_recipient, pending);
+            }
+        }
+
+        if (_amount > 0) {
+            if (pool.depositFeeBP > 0) {
+                uint depositFee = _amount.mul(pool.depositFeeBP).div(_perMille);
+                user.amount = SafeCast.toUint128(user.amount + _amount - depositFee);
+            } else {
+                user.amount = SafeCast.toUint128(user.amount + _amount);
+            }
+        }
+
+        user.rewardDebt = SafeCast.toUint128(user.amount * pool.accConcurPerShare / _concurShareMultiplier);
+        emit Deposit(_recipient, _pid, _amount);
+    }"
+Variables: "pool.depositFeeBP"
+
+
+
+
+It is not always guaranteed to find fee ratios in Solidity code. Given a snippet of code representing part or the entirity of a Solidity function, please output the likely candidates for only the "fee ratio" type if there exists any. If there are more than one, please output all of them. Place priority on the function parameters as well as return values of function calls. 
