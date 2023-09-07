@@ -67,7 +67,7 @@ class Address_label():
         return True
 
     def __str__(self):
-        return(f"Head: {self._head}\n"
+        return(f"Head Addr: {self._head}\n"
                f"    Norm: {self._norm}\n"
                f"    Set: {str(self._set)}")
 
