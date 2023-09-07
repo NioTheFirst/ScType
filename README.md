@@ -6,7 +6,7 @@
 
 SCType is a Solidity type checker written in Python 3. 
 
-Currently working on overhaul for type file
+Currently working on overhaul for type fileeeeee
 
 There are two Docker Images that we have provided for our tool. Both of the images contain the tool, as well as the benchmarks we use.
 
