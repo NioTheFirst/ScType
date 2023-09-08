@@ -41,7 +41,7 @@ contract BalanceAndNormTest{
     function values() public{
         int A = 10;
         int B = 18;
-        int C = A + B;
+        int C = A + 9;
     }
  
     //NORM TESTS===================================================================

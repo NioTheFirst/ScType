@@ -1408,6 +1408,11 @@ def init_special(ir):
     else:
         return ir
         
+def get_values(ir):
+    if(is_constant(ir)):
+        return ir.value
+    else:
+        return ir.extok.value
 
 #%dev returns true if the ir needs to be added back also initializes norms
 #false otherwise
@@ -1415,6 +1420,9 @@ def type_bin(ir) -> bool:
     temp_left = init_special(ir.variable_left)
     temp_right = init_special(ir.variable_right)
     if (ir.type == BinaryType.ADDITION):
+        lval = get_values(ir.variable_left)
+        rval = get_values(ir.variable_right)
+        ir.lvalue.extok.value = lval + rval
         return type_bin_add(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.SUBTRACTION):
         return type_bin_sub(ir.lvalue, temp_left, temp_right)
