@@ -1424,14 +1424,25 @@ def type_bin(ir) -> bool:
         ret = type_bin_add(ir.lvalue, temp_left, temp_right)
         lval = get_values(ir.variable_left)
         rval = get_values(ir.variable_right)
-        print(f"L: {lval} R: {rval}")
         ir.lvalue.extok.value = lval + rval
         return ret
     elif (ir.type == BinaryType.SUBTRACTION):
-        return type_bin_sub(ir.lvalue, temp_left, temp_right)
+        ret = type_bin_sub(ir.lvalue, temp_left, temp_right)
+        lval = get_values(ir.variable_left)
+        rval = get_values(ir.variable_right)
+        ir.lvalue.extok.value = lval - rval
+        return ret
     elif (ir.type == BinaryType.MULTIPLICATION):
-        return type_bin_mul(ir.lvalue, temp_left, temp_right)
+        ret = type_bin_mul(ir.lvalue, temp_left, temp_right)
+        lval = get_values(ir.variable_left)
+        rval = get_values(ir.variable_right)
+        ir.lvalue.extok.value = lval * rval
+        return ret
     elif (ir.type == BinaryType.DIVISION):
+        ret = type_bin_div(ir.lvalue, temp_left, temp_right)
+        lval = get_values(ir.variable_left)
+        rval = get_values(ir.variable_right)
+        ir.lvalue.extok.value = lval / rval
         return type_bin_div(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.POWER):
         return type_bin_pow(ir.lvalue, temp_left, temp_right)
