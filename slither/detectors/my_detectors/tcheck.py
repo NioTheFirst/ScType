@@ -688,6 +688,9 @@ def check_type(ir) -> bool:
         ##print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
         ##print(get_norm(ir.rvalue))
+        #Assign value if constant int assignement
+        if(is_constant(ir.rvalue)):
+            ir.lvalue.extok.value = ir.rvalue.value
         rnorm = get_norm(ir.rvalue)
         ##print("________")
         ##print(ir.rvalue.extok)
@@ -2134,14 +2137,13 @@ def _tcheck_node(node, function) -> []:
     #local vars read
     #print("Propogating parameters to SSA variables...")
     for lv in node.ssa_variables_read:
-        if(is_constant(lv)):
-            print(f"Var: {lv.name}, Val: {lv.value}")
+
         if("_1" in lv.ssa_name and lv.extok.is_undefined()):
             #print("local...")
             pos = -1
             for i in range(len(lv.ssa_name)-1):
                 revpos = len(lv.ssa_name)-i-1
-                #print(lv.ssa_name[revpos:revpos+2])
+                #print(lv.ssa_name[revpos:revpos+2])   
                 if(lv.ssa_name[revpos:revpos+2] == '_1'):
                     pos = revpos
                     break

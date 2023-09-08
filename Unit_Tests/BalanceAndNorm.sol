@@ -37,6 +37,13 @@ contract BalanceAndNormTest{
 	return(total);
     }
     
+    //VALUE TESTS=================================================================
+    function values() public{
+        int A = 10;
+        int B = 18;
+        int C = A + B;
+    }
+ 
     //NORM TESTS===================================================================
     function normalizeToken(address token, uint256 amount) public returns (uint256){
         uint256 decimals = ITypicalTokenWrapper(token).decimals();
