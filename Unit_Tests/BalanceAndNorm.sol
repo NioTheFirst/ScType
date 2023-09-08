@@ -36,14 +36,14 @@ contract BalanceAndNormTest{
 	uint256 total = totalA + totalB;
 	return(total);
     }
-    /*
+    
     //NORM TESTS===================================================================
     function normalizeToken(address token, uint256 amount) public returns (uint256){
         uint256 decimals = ITypicalTokenWrapper(token).decimals();
 	amount = amount * 10**(18 - decimals);
 	return(amount);
     } 
-
+    /*
     function normComarisonBad(uint256 amountA) public returns (uint256){
         uint256 normAmtA = normalizeToken(reserveTokenA, amountA);
 	uint256 badSum = normAmtA + amountA;

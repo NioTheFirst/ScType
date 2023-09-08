@@ -696,6 +696,9 @@ def check_type(ir) -> bool:
             asn_norm(ir.lvalue, rnorm)
         pass_ftype(ir.lvalue, ir.rvalue, "assign")
         ##print_token_type(ir.lvalue)
+
+        #Handle value
+        
     elif isinstance(ir, Binary):
         #Binary
         addback = type_bin(ir)
@@ -2131,7 +2134,8 @@ def _tcheck_node(node, function) -> []:
     #local vars read
     #print("Propogating parameters to SSA variables...")
     for lv in node.ssa_variables_read:
-        #print(lv.ssa_name)
+        if(lv.value):
+            print(f"Var: {lv.name}, Val: {lv.value}")
         if("_1" in lv.ssa_name and lv.extok.is_undefined()):
             #print("local...")
             pos = -1
