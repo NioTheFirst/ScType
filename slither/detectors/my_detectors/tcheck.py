@@ -2134,7 +2134,7 @@ def _tcheck_node(node, function) -> []:
     #local vars read
     #print("Propogating parameters to SSA variables...")
     for lv in node.ssa_variables_read:
-        if(lv.value):
+        if(is_constant(lv)):
             print(f"Var: {lv.name}, Val: {lv.value}")
         if("_1" in lv.ssa_name and lv.extok.is_undefined()):
             #print("local...")
