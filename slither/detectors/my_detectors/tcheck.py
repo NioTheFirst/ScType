@@ -1422,6 +1422,7 @@ def type_bin(ir) -> bool:
     if (ir.type == BinaryType.ADDITION):
         lval = get_values(ir.variable_left)
         rval = get_values(ir.variable_right)
+        print(f"L: {lval} R: {rval}")
         ir.lvalue.extok.value = lval + rval
         return type_bin_add(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.SUBTRACTION):
