@@ -1419,12 +1419,14 @@ def get_values(ir):
 def type_bin(ir) -> bool:
     temp_left = init_special(ir.variable_left)
     temp_right = init_special(ir.variable_right)
+    ret = False
     if (ir.type == BinaryType.ADDITION):
+        ret = type_bin_add(ir.lvalue, temp_left, temp_right)
         lval = get_values(ir.variable_left)
         rval = get_values(ir.variable_right)
         print(f"L: {lval} R: {rval}")
         ir.lvalue.extok.value = lval + rval
-        return type_bin_add(ir.lvalue, temp_left, temp_right)
+        return ret
     elif (ir.type == BinaryType.SUBTRACTION):
         return type_bin_sub(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.MULTIPLICATION):
