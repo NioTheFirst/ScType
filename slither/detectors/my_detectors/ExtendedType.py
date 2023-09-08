@@ -279,6 +279,7 @@ class ExtendedType():
             f"Address: {self._address}\n"
             f"Norm: {self._norm}\n"
             f"LF: {self._linked_contract}\n"
+            f"Value: {self._value}\n"
             f"Fields: {fields_str}\n"
             f"Finance Type: {finance_type}"
         )
