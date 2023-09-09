@@ -43,13 +43,26 @@ contract BalanceAndNormTest{
         int B = 18;
         int C = A + 9;
     }
+
+    function passValue() public{
+        uint A = 18;
+	A = addTen(A);
+	A -= 20;
+	A *= 2;
+ 	A/=4;
+	uint normAmt = 10**A;
+    }
+
+    function addTen(uint x) public returns (uint){
+        return(x + 10);
+    }
  
     //NORM TESTS===================================================================
-    function normalizeToken(address token, uint256 amount) public returns (uint256){
+    /*function normalizeToken(address token, uint256 amount) public returns (uint256){
         uint256 decimals = ITypicalTokenWrapper(token).decimals();
 	amount = amount * 10**(18 - decimals);
 	return(amount);
-    } 
+    } */
     /*
     function normComarisonBad(uint256 amountA) public returns (uint256){
         uint256 normAmtA = normalizeToken(reserveTokenA, amountA);
