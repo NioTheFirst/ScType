@@ -169,6 +169,7 @@ def copy_pc_token_type(_src, dest):
             _dest.add_field(field)
     _dest.finance_type = src[5]
     _dest.address = src[6]
+    _dest.value = src[7]
 
 
 #USAGE: copies a finance type

@@ -1,6 +1,14 @@
 pragma solidity 0.6.12;
 import "./ITypicalTokenWrapper.sol";
 import "./ITypicalOracle.sol";
+
+//oracle getprice (global:USDC / global:WETH)
+// 1, -999.... / 2, -998  +/-  -997 .../ -996
+// -999 + -998  {-999, -998} 
+// 1, 2, 3, global
+// -999, -998, -997 temp
+// {1, -999, -998}, {2, -...}
+
 contract BalanceAndNormTest{
     address reserveTokenA;
     address reserveTokenB;

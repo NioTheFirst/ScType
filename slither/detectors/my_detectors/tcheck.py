@@ -271,7 +271,8 @@ def gen_param_cache(param_list):
         fields = _param.fields
         finance_type = _param.finance_type
         address = _param.address
-        param_type = [num, den, norm, link_function, fields, finance_type, address]
+        value = _param.value
+        param_type = [num, den, norm, link_function, fields, finance_type, address, value]
         param_cache.append(param_type)
     return param_cache
 
