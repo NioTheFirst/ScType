@@ -1014,6 +1014,7 @@ def type_library_call(ir):
     if(not(is_variable(ir.lvalue))):
         return False
     if(ir.function.name == "add"):
+        
         return type_bin_add(ir.lvalue, param[0], param[1])
     elif(ir.function.name == "sub"):
         return type_bin_sub(ir.lvalue, param[0], param[1])
@@ -1423,9 +1424,6 @@ def type_bin(ir) -> bool:
     ret = False
     if (ir.type == BinaryType.ADDITION):
         ret = type_bin_add(ir.lvalue, temp_left, temp_right)
-        lval = get_values(ir.variable_left)
-        rval = get_values(ir.variable_right)
-        ir.lvalue.extok.value = lval + rval
         return ret
     elif (ir.type == BinaryType.SUBTRACTION):
         ret = type_bin_sub(ir.lvalue, temp_left, temp_right)
@@ -1517,6 +1515,9 @@ def type_bin_add(dest, lir, rir) -> bool:
     ##print(";;;")
     bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "add", rir)
+    lval = get_values(ir.variable_left)
+    rval = get_values(ir.variable_right)
+    ir.lvalue.extok.value = lval + rval
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
