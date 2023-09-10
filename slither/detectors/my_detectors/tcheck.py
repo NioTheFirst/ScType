@@ -1515,9 +1515,9 @@ def type_bin_add(dest, lir, rir) -> bool:
     ##print(";;;")
     bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "add", rir)
-    lval = get_values(ir.variable_left)
-    rval = get_values(ir.variable_right)
-    ir.lvalue.extok.value = lval + rval
+    lval = get_values(lir)
+    rval = get_values(rir)
+    dest.extok.value = lval + rval
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
