@@ -2265,9 +2265,12 @@ def _tcheck_node(node, function) -> []:
     #Handle Constructor Varialbes (need to be propagated)
     if(function.name == "constructor"):
         for var in node.ssa_variables_written:
+            
             if((var.extok.name, current_contract_name) in global_var_types):
                 print(f"Copied {var.extok.name}")
                 temp = global_var_types[(var.extok.name, current_contract_name)]
+                if(str(temp.type) == "address"):
+                    continue
                 temp.extok.name = var.extok.name
                 temp.extok.function_name = "constructor"
                 copy_token_type(var, temp)
