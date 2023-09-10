@@ -2270,7 +2270,7 @@ def _tcheck_node(node, function) -> []:
                 print(f"Copied {var.extok.name}")
                 temp = global_var_types[(var.extok.name, current_contract_name)]
                 print(f" To type: {temp.type}")
-                if(str(temp.type) == "address"):
+                if(str(var.type) == "address"):
                     continue
                 temp.extok.name = var.extok.name
                 temp.extok.function_name = "constructor"
@@ -2591,6 +2591,7 @@ def _tcheck_contract_state_var(contract):
                 querry_type(state_var)
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
+                
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
             else:
                 copy_token_type(global_var_types[(state_var.extok.name, contract.name)], state_var)
