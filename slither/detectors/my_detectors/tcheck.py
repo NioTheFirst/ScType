@@ -1435,21 +1435,12 @@ def type_bin(ir) -> bool:
         return ret
     elif (ir.type == BinaryType.SUBTRACTION):
         ret = type_bin_sub(ir.lvalue, temp_left, temp_right)
-        lval = get_values(ir.variable_left)
-        rval = get_values(ir.variable_right)
-        ir.lvalue.extok.value = lval - rval
         return ret
     elif (ir.type == BinaryType.MULTIPLICATION):
         ret = type_bin_mul(ir.lvalue, temp_left, temp_right)
-        lval = get_values(ir.variable_left)
-        rval = get_values(ir.variable_right)
-        ir.lvalue.extok.value = lval * rval
         return ret
     elif (ir.type == BinaryType.DIVISION):
         ret = type_bin_div(ir.lvalue, temp_left, temp_right)
-        lval = get_values(ir.variable_left)
-        rval = get_values(ir.variable_right)
-        ir.lvalue.extok.value = lval / rval
         return type_bin_div(ir.lvalue, temp_left, temp_right)
     elif (ir.type == BinaryType.POWER):
         return type_bin_pow(ir.lvalue, temp_left, temp_right)
@@ -1509,6 +1500,7 @@ def type_bin_pow(dest, lir, rir) -> bool:
         else:
             if(dest.extok.norm != '*'):
                 asn_norm(dest, '*')
+    handle_value_binop(dest, lir, rir, Pow)
     return False
 
 #USAGE: gets values of a binary operations and generates the result value
@@ -1533,6 +1525,8 @@ def handle_value_binop(dest, lir, rir, func):
         fval = lval / fval
     elif(func == Pow):
         fval = lval ** rval
+        if(lval == 10):
+            dest.extok.norm = rval
     dest.extok.value = fval
 
 #USAGE: typechecks addition statements
@@ -1963,6 +1957,7 @@ def combine_types(lir, rir, func = None):
 #USAGE: typechecks a multiplication statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_mul(dest, lir, rir) ->bool:
+    global Mul
     #typecheck -> 10*A + B
     ##print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
@@ -1974,14 +1969,20 @@ def type_bin_mul(dest, lir, rir) ->bool:
             type_asn(dest, rir)
         else:
             type_asn(dest, lir)
+        handle_value_binop(dest, lir, rir, Mul)
         return True
     elif(is_type_const(lir)):
-        return type_asn(dest, rir)
+        temp = type_asn(dest, rir)
+        handle_value_binop(dest, lir, rir, Mul)
+        return temp
     elif(is_type_const(rir)):
-        return type_asn(dest, lir)
+        temp = type_asn(dest, lir)
+        handle_value_binop(dest, lir, rir, Mul)
+        return temp
     else:
         tmp = combine_types(lir, rir, "mul")
         type_asn(dest, tmp)
+        handle_value_binop(dest, lir, rir, Mul)
         if(is_type_undef(dest)):
             assign_const(dest)
         return False
@@ -1989,6 +1990,7 @@ def type_bin_mul(dest, lir, rir) ->bool:
 #USAGE: typechecks a division statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_div(dest, lir, rir) ->bool:
+    global Div
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir, "div")
@@ -2001,14 +2003,20 @@ def type_bin_div(dest, lir, rir) ->bool:
             type_asni(dest, rir)
         else:
             type_asn(dest, lir)
+        handle_value_binop(dest, lir, rir, Div)
         return True
     elif(is_type_const(lir)):
-        return type_asni(dest, rir)
+        temp = type_asni(dest, rir)
+        handle_value_binop(dest, lir, rir, Div)
+        return temp
     elif(is_type_const(rir)):
-        return type_asn(dest, lir)
+        temp = type_asn(dest, lir)
+        handle_value_binop(dest, lir, rir, Div)
+        return temp
     else:
         tmp = combine_types(lir, rir, "div")
         type_asn(dest, tmp)
+        handle_value_binop(dest, lir, rir, Div)
         if(is_type_undef(dest)):
             assign_const(dest)
         return False
