@@ -1514,11 +1514,25 @@ def type_bin_pow(dest, lir, rir) -> bool:
 #USAGE: gets values of a binary operations and generates the result value
 def handle_value_binop(dest, lir, rir, func):
     global Add
+    global Sub
+    global Mul
+    global Div
+    global Pow
     lval = get_values(lir)
     rval = get_values(rir)
     fval = 'u'
-    if(func == Add):
+    if(lval == 'u' or rval == 'u'):
+        fval = 'u'
+    elif(func == Add):
         fval = lval + rval
+    elif(func == Sub):
+        fval = lval - rval
+    elif(func == Mul):
+        fval = lval * rval
+    elif(func == Div):
+        fval = lval / fval
+    elif(func == Pow):
+        fval = lval ** rval
     dest.extok.value = fval
 
 #USAGE: typechecks addition statements
@@ -1563,6 +1577,7 @@ def type_bin_add(dest, lir, rir) -> bool:
 #USAGE: typechecks subtraction statements
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_sub(dest, lir, rir) -> bool:
+    global Sub
     #dest = ir.lvalue
     #lir = ir.variable_left
     #rir = ir.variable_right
@@ -1579,17 +1594,24 @@ def type_bin_sub(dest, lir, rir) -> bool:
             type_asn(dest, rir)
         else:
             type_asn(dest, lir)
+        handle_value_binop(dest, lir, rir, Sub)
         return True
     elif(is_type_const(lir)):
-        return type_asn(dest, rir)
+        temp = type_asn(dest, rir)
+        handle_value_binop(dest, lir, rir, Sub)
+        return temp
     elif(is_type_const(rir)):
-        return type_asn(dest, lir)
+        temp = type_asn(dest, rir)
+        handle_value_binop(dest, lir, rir, Sub)
+        return temp
     elif(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
         #report error, default to left child
         add_errors(dest)
         return False
     else:
-        return type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
+        temp = type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
+        handle_value_binop(dest, lir, rir, Sub)
+        return temp
 
 #USAGE: handles traces -> takes the difference in token types and handles traces, placed in the comparison failure branch in type...add and type...sub
 #RETURNS: successful handling or not
