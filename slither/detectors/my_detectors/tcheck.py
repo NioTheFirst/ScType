@@ -698,7 +698,7 @@ def check_type(ir) -> bool:
         addback = type_asn(ir.lvalue, ir.rvalue)
         ##print(get_norm(ir.rvalue))
         #Assign value if constant int assignement
-        if(is_constant(ir.rvalue)):
+        if(is_constant(ir.rvalue) or ir.rvalue.extok.value != 'u'):
             ir.lvalue.extok.value = ir.rvalue.value
         rnorm = get_norm(ir.rvalue)
         ##print("________")
