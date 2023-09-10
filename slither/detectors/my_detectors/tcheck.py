@@ -2269,6 +2269,7 @@ def _tcheck_node(node, function) -> []:
             if((var.extok.name, current_contract_name) in global_var_types):
                 print(f"Copied {var.extok.name}")
                 temp = global_var_types[(var.extok.name, current_contract_name)]
+                print(f" To type: {temp.type}")
                 if(str(temp.type) == "address"):
                     continue
                 temp.extok.name = var.extok.name
