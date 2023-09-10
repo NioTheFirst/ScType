@@ -64,7 +64,8 @@ contract BalanceAndNormTest{
 	return(amount);
     } 
     
-    function normComarisonBad(uint256 amountA) public returns (uint256){
+    function normComarisonBad() public returns (uint256){
+	uint256 amountA = seeReserveTotal(reserveTokenA, 100);
         uint256 normAmtA = normalizeToken(reserveTokenA, amountA);
 	uint256 badSum = normAmtA + amountA;
 	return(badSum);
