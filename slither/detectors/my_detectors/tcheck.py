@@ -52,6 +52,14 @@ contract_function = {}
 constant_instance = Variable()
 constant_instance.name = "Personal Constant Instance"
 constant_instance_counter = 1
+#BINOP Labels
+Add = 1
+Sub = 2
+Mul = 3
+Div = 4
+Pow = 5
+Cmp = 6
+
 #address to label
 #address_to_num = {}
 #label to address
@@ -1502,9 +1510,21 @@ def type_bin_pow(dest, lir, rir) -> bool:
             if(dest.extok.norm != '*'):
                 asn_norm(dest, '*')
     return False
+
+#USAGE: gets values of a binary operations and generates the result value
+def handle_value_binop(dest, lir, rir, func):
+    global Add
+    lval = get_values(lir)
+    rval = get_values(rir)
+    fval = 'u'
+    if(func == Add):
+        fval = lval + rval
+    dest.extok.value = fval
+
 #USAGE: typechecks addition statements
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_add(dest, lir, rir) -> bool:
+    global Add
     #dest = ir.lvalue
     #lir = ir.variable_left
     #rir = ir.variable_right
@@ -1515,26 +1535,30 @@ def type_bin_add(dest, lir, rir) -> bool:
     ##print(";;;")
     bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "add", rir)
-    lval = get_values(lir)
-    rval = get_values(rir)
-    dest.extok.value = lval + rval
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
         else:
             type_asn(dest, lir)
+        handle_value_binop(dest, lir, rir, Add)
         return True
     elif(is_type_const(lir)):
-        return type_asn(dest, rir)
+        temp = type_asn(dest, rir)
+        handle_value_binop(dest, lir, rir, Add)
+        return temp
     elif(is_type_const(rir)):
-        return type_asn(dest, lir)
+        temp = type_asn(dest, lir)
+        handle_value_binop(dest, lir, rir, Add)
+        return temp
     elif(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
         #report error, default to left child 
         
         add_errors(dest)
         return False
     else:
-        return type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
+        temp = type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
+        handle_value_binop(dest, lir, rir, Add)
+        return temp
 
 #USAGE: typechecks subtraction statements
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
