@@ -1129,11 +1129,15 @@ def type_member(ir)->bool:
     #_lv.#print_fields()
     if(not(is_type_undef(ir.lvalue))):
         #Copy backwards from the dest (ir.lvalue) to the field
+        fieldSet = False
         for field in _lv.fields:
             _field = field.extok
             if(_field.name == _rv.name):
+                if(is_type_undef_field):
+                    fieldSet = True
                 type_asn(field, ir.lvalue)
-        return True
+                break
+        return fieldSet
 
     for field in _lv.fields:
         _field = field.extok
