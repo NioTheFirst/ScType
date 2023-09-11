@@ -1,4 +1,5 @@
-Checking BalanceAndNormTest
+Checking FieldsMapsAndArraysTest
+Checking ITypicalOracle
 Checking ITypicalTokenWrapper
 Finding type for reserveTokenA...
 address
@@ -14,7 +15,7 @@ prev address? u
 global assignment: 2
 2
 Head Addr: 2
-    Norm: 0
+    Norm: 6
     Set: {2}
 
 
@@ -32,7 +33,7 @@ address
 prev address? u
 -998
 Head Addr: -998
-    Norm: 0
+    Norm: 6
     Set: {-998}
 Param: 0
     num: []
@@ -119,270 +120,9 @@ Copied reserveTokenB
 
 
 
-seeReserveTotal
-Finding type for reserve...
-address
-prev address? u
--997
-Head Addr: -997
-    Norm: 0
-    Set: {-997}
-Finding type for amount...
-uint256
-Param: 0
-    num: []
-    den: []
-    norm: u
-    link: reserve
-    fields: []
-    fintype: -1
-Param: 1
-    num: []
-    den: []
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
-
-
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-TMP_1 = CONVERT this to address
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-TMP_3(uint256) = TMP_2 + amount_1
-amt_1(uint256) := TMP_3(uint256)
-RETURN amt_1
-
-
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -997
-Norm: u
-LF: reserve
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -997
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-new address made for this
-prev address? u
-global assignment: 3
-3
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
--997
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: -997
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: -997
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: -997
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-
-
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-TMP_1 = CONVERT this to address
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-TMP_3(uint256) = TMP_2 + amount_1
-amt_1(uint256) := TMP_3(uint256)
-RETURN amt_1
-
-
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserve
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -997
-Norm: u
-LF: reserve
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -997
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
--997
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: -997
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: -997
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: -997
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-
-
-
-addBalanceGood
-Finding type for amountA...
-uint256
-Finding type for amountB...
-uint256
+testFieldGood
+Finding type for myfield...
+MyField
 Param: 0
     num: []
     den: []
@@ -390,29 +130,21 @@ Param: 0
     link: None
     fields: []
     fintype: -1
-Param: 1
-    num: []
-    den: []
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-TMP_4(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_2,amountA_1)
-totalA_1(uint256) := TMP_4(uint256)
-TMP_5(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_3,amountB_1)
-totalB_1(uint256) := TMP_5(uint256)
-TMP_6(uint256) = totalA_1 + totalB_1
-total_1(uint256) := TMP_6(uint256)
-RETURN total_1
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
+REF_0(uint256) -> myfield_1.amount
+TMP_0 = CONVERT reserveTokenA_2 to ITypicalTokenWrapper
+TMP_1(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
+reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_2'])
+myfield_2(MyField) := ϕ(['myfield_1'])
+REF_0(-> myfield_2) = REF_0 (c)+ TMP_1
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
 [i]Type for reserveTokenA
 
-Name: reserveTokenA Function: addBalanceGood
+Name: reserveTokenA Function: testFieldGood
 Num: 
 Den: 
 Address: u
@@ -421,23 +153,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_4(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_2,amountA_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
+REF_0(uint256) -> myfield_1.amount
+[i]Type for REF_0
 
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserve
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
+Name: myfield.amount Function: testFieldGood
 Num: 
 Den: 
 Address: u
@@ -446,10 +165,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
+TMP_0 = CONVERT reserveTokenA_2 to ITypicalTokenWrapper
+Converting reserveTokenA_2
 
-Name: reserve_1 Function: seeReserveTotal
+Name: reserveTokenA Function: testFieldGood
 Num: -1
 Den: -1
 Address: 1
@@ -461,7 +180,7 @@ Finance Type: undef
 TypicalTokenWrapper
 [i]Type for TMP_0
 
-Name: TMP_0 Function: seeReserveTotal
+Name: TMP_0 Function: testFieldGood
 Num: -1
 Den: -1
 Address: 1
@@ -470,129 +189,13 @@ LF: TypicalTokenWrapper
 Value: u
 Fields: 
 Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+TMP_1(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
 1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
 [i]Type for TMP_1
 
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
+Name: TMP_1 Function: testFieldGood
 Num: 1
 Den: 
 Address: u
@@ -601,348 +204,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_4
-
-Name: TMP_4 Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalA_1(uint256) := TMP_4(uint256)
-[i]Type for totalA
-
-Name: totalA Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_5(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_3,amountB_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_5
-
-Name: TMP_5 Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalB_1(uint256) := TMP_5(uint256)
-[i]Type for totalB
-
-Name: totalB Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_6(uint256) = totalA_1 + totalB_1
-[i]Type for TMP_6
-
-Name: TMP_6 Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-total_1(uint256) := TMP_6(uint256)
-[i]Type for total
-
-Name: total Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN total_1
-
-
-reserveTokenA_2(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-TMP_4(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_2,amountA_1)
-totalA_1(uint256) := TMP_4(uint256)
-TMP_5(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_3,amountB_1)
-totalB_1(uint256) := TMP_5(uint256)
-TMP_6(uint256) = totalA_1 + totalB_1
-total_1(uint256) := TMP_6(uint256)
-RETURN total_1
-
-
-reserveTokenA_2(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_2'])
 [i]Type for reserveTokenA
 
-Name: reserveTokenA Function: addBalanceGood
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TMP_4(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_2,amountA_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
+Name: reserveTokenA Function: testFieldGood
 Num: 
 Den: 
 Address: u
@@ -951,51 +216,22 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
+myfield_2(MyField) := ϕ(['myfield_1'])
+[i]Type for myfield
 
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
+Name: myfield Function: testFieldGood
 Num: 
 Den: 
-Address: 3
+Address: u
 Norm: u
-LF: BalanceAndNormTest
+LF: None
 Value: u
-Fields: 
+Fields: amount
 Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
+REF_0(-> myfield_2) = REF_0 (c)+ TMP_1
+[i]Type for REF_0
 
-Name: TMP_2 Function: seeReserveTotal
+Name: REF_0 Function: testFieldGood
 Num: 1
 Den: 
 Address: u
@@ -1004,59 +240,45 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
 
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
 
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
+REF_0(uint256) -> myfield_1.amount
+TMP_0 = CONVERT reserveTokenA_2 to ITypicalTokenWrapper
+TMP_1(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
+reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_2'])
+myfield_2(MyField) := ϕ(['myfield_1'])
+REF_0(-> myfield_2) = REF_0 (c)+ TMP_1
 
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: testFieldGood
+Num: -1
+Den: -1
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
 Fields: 
 Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
+REF_0(uint256) -> myfield_1.amount
+[i]Type for REF_0
 
-Name: amount Function: seeReserveTotal
-Num: 
+Name: myfield.amount Function: testFieldGood
+Num: 1
 Den: 
 Address: u
-Norm: u
+Norm: 0
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
+TMP_0 = CONVERT reserveTokenA_2 to ITypicalTokenWrapper
+Converting reserveTokenA_2
 
-Name: reserve_1 Function: seeReserveTotal
+Name: reserveTokenA Function: testFieldGood
 Num: -1
 Den: -1
 Address: 1
@@ -1068,7 +290,7 @@ Finance Type: undef
 TypicalTokenWrapper
 [i]Type for TMP_0
 
-Name: TMP_0 Function: seeReserveTotal
+Name: TMP_0 Function: testFieldGood
 Num: -1
 Den: -1
 Address: 1
@@ -1077,27 +299,13 @@ LF: TypicalTokenWrapper
 Value: u
 Fields: 
 Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+TMP_1(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
 1
-[i]Type for TMP_2
+[i]Type for TMP_1
 
-Name: TMP_2 Function: seeReserveTotal
+Name: TMP_1 Function: testFieldGood
 Num: 1
 Den: 
 Address: u
@@ -1106,83 +314,81 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
+reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_2'])
+[i]Type for reserveTokenA
 
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_4
-
-Name: TMP_4 Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalA_1(uint256) := TMP_4(uint256)
-[i]Type for totalA
-
-Name: totalA Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_5(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_3,amountB_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
+Name: reserveTokenA Function: testFieldGood
 Num: 
 Den: 
 Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+myfield_2(MyField) := ϕ(['myfield_1'])
+[i]Type for myfield
+
+Name: myfield Function: testFieldGood
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
+REF_0(-> myfield_2) = REF_0 (c)+ TMP_1
+[i]Type for REF_0
+
+Name: REF_0 Function: testFieldGood
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
+REF_0(uint256) -> myfield_1.amount
+TMP_0 = CONVERT reserveTokenA_2 to ITypicalTokenWrapper
+TMP_1(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
+reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_2'])
+myfield_2(MyField) := ϕ(['myfield_1'])
+REF_0(-> myfield_2) = REF_0 (c)+ TMP_1
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: testFieldGood
+Num: -1
+Den: -1
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
 Fields: 
 Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
+REF_0(uint256) -> myfield_1.amount
+[i]Type for REF_0
 
-Name: amount Function: seeReserveTotal
-Num: 
+Name: myfield.amount Function: testFieldGood
+Num: 1
 Den: 
 Address: u
-Norm: u
+Norm: 0
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
+TMP_0 = CONVERT reserveTokenA_2 to ITypicalTokenWrapper
+Converting reserveTokenA_2
 
-Name: reserve_1 Function: seeReserveTotal
+Name: reserveTokenA Function: testFieldGood
 Num: -1
 Den: -1
 Address: 1
@@ -1194,7 +400,7 @@ Finance Type: undef
 TypicalTokenWrapper
 [i]Type for TMP_0
 
-Name: TMP_0 Function: seeReserveTotal
+Name: TMP_0 Function: testFieldGood
 Num: -1
 Den: -1
 Address: 1
@@ -1203,225 +409,65 @@ LF: TypicalTokenWrapper
 Value: u
 Fields: 
 Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+TMP_1(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
 1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
 [i]Type for TMP_1
 
-Name: TMP_1 Function: seeReserveTotal
+Name: TMP_1 Function: testFieldGood
+Num: 1, 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_2'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: testFieldGood
 Num: 
 Den: 
-Address: 3
+Address: u
 Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
+myfield_2(MyField) := ϕ(['myfield_1'])
+[i]Type for myfield
 
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
+Name: myfield Function: testFieldGood
+Num: 
 Den: 
 Address: u
-Norm: 0
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
+REF_0(-> myfield_2) = REF_0 (c)+ TMP_1
+Error with REF_0 in function testFieldGood
+Error with: REF_0 in function testFieldGood
+[i]Type for REF_0
+
+Name: REF_0 Function: testFieldGood
+Num: -1
+Den: -1
+Address: u
+Norm: u
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_5
-
-Name: TMP_5 Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalB_1(uint256) := TMP_5(uint256)
-[i]Type for totalB
-
-Name: totalB Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_6(uint256) = totalA_1 + totalB_1
-[i]Type for TMP_6
-
-Name: TMP_6 Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-total_1(uint256) := TMP_6(uint256)
-[i]Type for total
-
-Name: total Function: addBalanceGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN total_1
 
 
 
-addBalanceBuild
-Finding type for amountA...
-uint256
-Finding type for tokenC...
-address
-prev address? u
--996
-Head Addr: -996
-    Norm: 0
-    Set: {-996}
-Finding type for amountC...
-uint256
+testFieldBad
+Finding type for myfield...
+MyField
 Param: 0
     num: []
     den: []
@@ -1429,36 +475,29 @@ Param: 0
     link: None
     fields: []
     fintype: -1
-Param: 1
-    num: []
-    den: []
-    norm: u
-    link: tokenC
-    fields: []
-    fintype: -1
-Param: 2
-    num: []
-    den: []
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
 
 
-reserveTokenA_5(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-TMP_7(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_5,amountA_1)
-totalA_1(uint256) := TMP_7(uint256)
-TMP_8(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(tokenC_1,amountC_1)
-totalC_1(uint256) := TMP_8(uint256)
-TMP_9(uint256) = totalA_1 + totalC_1
-total_1(uint256) := TMP_9(uint256)
-RETURN total_1
+reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_0', 'reserveTokenB_4', 'reserveTokenB_1'])
+REF_2(uint256) -> myfield_1.amount
+TMP_2 = CONVERT reserveTokenA_4 to ITypicalTokenWrapper
+TMP_3(uint256) = HIGH_LEVEL_CALL, dest:TMP_2(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
+reserveTokenA_5(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_4', 'reserveTokenA_3'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_4', 'reserveTokenB_1', 'reserveTokenB_2'])
+myfield_2(MyField) := ϕ(['myfield_1'])
+REF_2(-> myfield_2) = REF_2 (c)+ TMP_3
+REF_4(uint256) -> myfield_2.amount
+TMP_4 = CONVERT reserveTokenB_3 to ITypicalTokenWrapper
+TMP_5(uint256) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
+reserveTokenB_4(address) := ϕ(['reserveTokenB_3', 'reserveTokenB_4', 'reserveTokenB_1'])
+myfield_3(MyField) := ϕ(['myfield_2'])
+REF_4(-> myfield_3) = REF_4 (c)+ TMP_5
 
 
-reserveTokenA_5(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
 [i]Type for reserveTokenA
 
-Name: reserveTokenA Function: addBalanceBuild
+Name: reserveTokenA Function: testFieldBad
 Num: 
 Den: 
 Address: u
@@ -1467,1053 +506,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_7(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_5,amountA_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_7
-
-Name: TMP_7 Function: addBalanceBuild
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalA_1(uint256) := TMP_7(uint256)
-[i]Type for totalA
-
-Name: totalA Function: addBalanceBuild
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_8(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(tokenC_1,amountC_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -996
-Norm: u
-LF: tokenC
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -996
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
--996
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: tokenC
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -996
-Norm: u
-LF: tokenC
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -996
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
--996
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_8
-
-Name: TMP_8 Function: addBalanceBuild
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalC_1(uint256) := TMP_8(uint256)
-[i]Type for totalC
-
-Name: totalC Function: addBalanceBuild
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_9(uint256) = totalA_1 + totalC_1
-{-996: 1, 1: -1}
-{-996: 1}
-{}
-{-996: 1}
-[{-996: 1}]
-[i]Type for TMP_9
-
-Name: TMP_9 Function: addBalanceBuild
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-total_1(uint256) := TMP_9(uint256)
-[i]Type for total
-
-Name: total Function: addBalanceBuild
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN total_1
-
-
-reserveTokenA_5(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-TMP_7(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_5,amountA_1)
-totalA_1(uint256) := TMP_7(uint256)
-TMP_8(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(tokenC_1,amountC_1)
-totalC_1(uint256) := TMP_8(uint256)
-TMP_9(uint256) = totalA_1 + totalC_1
-total_1(uint256) := TMP_9(uint256)
-RETURN total_1
-
-
-reserveTokenA_5(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-[i]Type for reserveTokenA
-
-Name: reserveTokenA Function: addBalanceBuild
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TMP_7(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_5,amountA_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: tokenC
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_7
-
-Name: TMP_7 Function: addBalanceBuild
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalA_1(uint256) := TMP_7(uint256)
-[i]Type for totalA
-
-Name: totalA Function: addBalanceBuild
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_8(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(tokenC_1,amountC_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -996
-Norm: u
-LF: tokenC
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -996
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
--996
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: tokenC
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -996
-Norm: u
-LF: tokenC
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: 
-Den: 
-Address: -996
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
--996
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_8
-
-Name: TMP_8 Function: addBalanceBuild
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalC_1(uint256) := TMP_8(uint256)
-[i]Type for totalC
-
-Name: totalC Function: addBalanceBuild
-Num: -996
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_9(uint256) = totalA_1 + totalC_1
-{-996: 1, 1: -1}
-{-996: 1}
-{}
-{-996: 1}
-[{-996: 1}]
-[i]Type for TMP_9
-
-Name: TMP_9 Function: addBalanceBuild
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-total_1(uint256) := TMP_9(uint256)
-[i]Type for total
-
-Name: total Function: addBalanceBuild
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN total_1
-
-
-
-addBalanceBad
-Finding type for amountA...
-uint256
-Finding type for amountB...
-uint256
-Param: 0
-    num: []
-    den: []
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
-Param: 1
-    num: []
-    den: []
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
-
-
-reserveTokenA_7(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_4'])
-TMP_10(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_7,amountA_1)
-totalA_1(uint256) := TMP_10(uint256)
-TMP_11(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenB_3,amountB_1)
-totalB_1(uint256) := TMP_11(uint256)
-TMP_12(uint256) = totalA_1 + totalB_1
-total_1(uint256) := TMP_12(uint256)
-RETURN total_1
-
-
-reserveTokenA_7(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-[i]Type for reserveTokenA
-
-Name: reserveTokenA Function: addBalanceBad
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_4'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_0', 'reserveTokenB_4', 'reserveTokenB_1'])
 [i]Type for reserveTokenB
 
-Name: reserveTokenB Function: addBalanceBad
+Name: reserveTokenB Function: testFieldBad
 Num: 
 Den: 
 Address: u
@@ -2522,23 +518,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_10(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_7,amountA_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
+REF_2(uint256) -> myfield_1.amount
+[i]Type for REF_2
 
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: tokenC
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
+Name: myfield.amount Function: testFieldBad
 Num: 
 Den: 
 Address: u
@@ -2547,10 +530,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
+TMP_2 = CONVERT reserveTokenA_4 to ITypicalTokenWrapper
+Converting reserveTokenA_4
 
-Name: reserve_1 Function: seeReserveTotal
+Name: reserveTokenA Function: testFieldBad
 Num: -1
 Den: -1
 Address: 1
@@ -2560,9 +543,9 @@ Value: u
 Fields: 
 Finance Type: undef
 TypicalTokenWrapper
-[i]Type for TMP_0
+[i]Type for TMP_2
 
-Name: TMP_0 Function: seeReserveTotal
+Name: TMP_2 Function: testFieldBad
 Num: -1
 Den: -1
 Address: 1
@@ -2571,39 +554,13 @@ LF: TypicalTokenWrapper
 Value: u
 Fields: 
 Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+TMP_3(uint256) = HIGH_LEVEL_CALL, dest:TMP_2(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
 1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
 [i]Type for TMP_3
 
-Name: TMP_3 Function: seeReserveTotal
+Name: TMP_3 Function: testFieldBad
 Num: 1
 Den: 
 Address: u
@@ -2612,428 +569,22 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_10
-
-Name: TMP_10 Function: addBalanceBad
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalA_1(uint256) := TMP_10(uint256)
-[i]Type for totalA
-
-Name: totalA Function: addBalanceBad
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_11(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenB_3,amountB_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 2
-Norm: u
-LF: reserveTokenB
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 2
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-2
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenB
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 2
-Norm: u
-LF: reserveTokenB
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 2
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-2
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_11
-
-Name: TMP_11 Function: addBalanceBad
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalB_1(uint256) := TMP_11(uint256)
-[i]Type for totalB
-
-Name: totalB Function: addBalanceBad
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_12(uint256) = totalA_1 + totalB_1
-Error with TMP_12 in function addBalanceBad
-Error with: TMP_12 in function addBalanceBad
-[i]Type for TMP_12
-
-Name: TMP_12 Function: addBalanceBad
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-total_1(uint256) := TMP_12(uint256)
-[i]Type for total
-
-Name: total Function: addBalanceBad
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN total_1
-
-
-reserveTokenA_7(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_4'])
-TMP_10(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_7,amountA_1)
-totalA_1(uint256) := TMP_10(uint256)
-TMP_11(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenB_3,amountB_1)
-totalB_1(uint256) := TMP_11(uint256)
-TMP_12(uint256) = totalA_1 + totalB_1
-total_1(uint256) := TMP_12(uint256)
-RETURN total_1
-
-
-reserveTokenA_7(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
+reserveTokenA_5(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_4', 'reserveTokenA_3'])
 [i]Type for reserveTokenA
 
-Name: reserveTokenA Function: addBalanceBad
-Num: -1
-Den: -1
-Address: 1
+Name: reserveTokenA Function: testFieldBad
+Num: 
+Den: 
+Address: u
 Norm: u
-LF: reserveTokenA
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
-reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_4'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_4', 'reserveTokenB_1', 'reserveTokenB_2'])
 [i]Type for reserveTokenB
 
-Name: reserveTokenB Function: addBalanceBad
+Name: reserveTokenB Function: testFieldBad
 Num: 
 Den: 
 Address: u
@@ -3042,263 +593,46 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_10(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_7,amountA_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
+myfield_2(MyField) := ϕ(['myfield_1'])
+[i]Type for myfield
 
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenB
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
+Name: myfield Function: testFieldBad
 Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Value: u
+Fields: amount
+Finance Type: undef
+REF_2(-> myfield_2) = REF_2 (c)+ TMP_3
+[i]Type for REF_2
+
+Name: REF_2 Function: testFieldBad
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
 Fields: 
 Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
+REF_4(uint256) -> myfield_2.amount
+[i]Type for REF_4
 
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
+Name: myfield.amount Function: testFieldBad
+Num: 1
 Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
 Address: u
 Norm: 0
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
+TMP_4 = CONVERT reserveTokenB_3 to ITypicalTokenWrapper
+Converting reserveTokenB_3
 
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_10
-
-Name: TMP_10 Function: addBalanceBad
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalA_1(uint256) := TMP_10(uint256)
-[i]Type for totalA
-
-Name: totalA Function: addBalanceBad
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_11(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenB_3,amountB_1)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
+Name: reserveTokenB Function: testFieldBad
 Num: -1
 Den: -1
 Address: 2
@@ -3308,9 +642,9 @@ Value: u
 Fields: 
 Finance Type: undef
 TypicalTokenWrapper
-[i]Type for TMP_0
+[i]Type for TMP_4
 
-Name: TMP_0 Function: seeReserveTotal
+Name: TMP_4 Function: testFieldBad
 Num: -1
 Den: -1
 Address: 2
@@ -3319,88 +653,219 @@ LF: TypicalTokenWrapper
 Value: u
 Fields: 
 Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+TMP_5(uint256) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
 2
-[i]Type for TMP_2
+[i]Type for TMP_5
 
-Name: TMP_2 Function: seeReserveTotal
+Name: TMP_5 Function: testFieldBad
 Num: 2
 Den: 
 Address: u
-Norm: 0
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
+reserveTokenB_4(address) := ϕ(['reserveTokenB_3', 'reserveTokenB_4', 'reserveTokenB_1'])
+[i]Type for reserveTokenB
 
-Name: TMP_3 Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
+Name: reserveTokenB Function: testFieldBad
 Num: 
 Den: 
 Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+myfield_3(MyField) := ϕ(['myfield_2'])
+[i]Type for myfield
+
+Name: myfield Function: testFieldBad
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
+REF_4(-> myfield_3) = REF_4 (c)+ TMP_5
+Error with REF_4 in function testFieldBad
+Error with: REF_4 in function testFieldBad
+[i]Type for REF_4
+
+Name: REF_4 Function: testFieldBad
+Num: 2
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Error with amount in function None
+Error with: amount in function None
+
+
+reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_0', 'reserveTokenB_4', 'reserveTokenB_1'])
+REF_2(uint256) -> myfield_1.amount
+TMP_2 = CONVERT reserveTokenA_4 to ITypicalTokenWrapper
+TMP_3(uint256) = HIGH_LEVEL_CALL, dest:TMP_2(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
+reserveTokenA_5(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_4', 'reserveTokenA_3'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_4', 'reserveTokenB_1', 'reserveTokenB_2'])
+myfield_2(MyField) := ϕ(['myfield_1'])
+REF_2(-> myfield_2) = REF_2 (c)+ TMP_3
+REF_4(uint256) -> myfield_2.amount
+TMP_4 = CONVERT reserveTokenB_3 to ITypicalTokenWrapper
+TMP_5(uint256) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
+reserveTokenB_4(address) := ϕ(['reserveTokenB_3', 'reserveTokenB_4', 'reserveTokenB_1'])
+myfield_3(MyField) := ϕ(['myfield_2'])
+REF_4(-> myfield_3) = REF_4 (c)+ TMP_5
+
+
+reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_3', 'reserveTokenA_0'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: testFieldBad
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenB_2(address) := ϕ(['reserveTokenB_0', 'reserveTokenB_4', 'reserveTokenB_1'])
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: testFieldBad
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(uint256) -> myfield_1.amount
+[i]Type for REF_2
+
+Name: myfield.amount Function: testFieldBad
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT reserveTokenA_4 to ITypicalTokenWrapper
+Converting reserveTokenA_4
+
+Name: reserveTokenA Function: testFieldBad
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_2
+
+Name: TMP_2 Function: testFieldBad
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+TMP_3(uint256) = HIGH_LEVEL_CALL, dest:TMP_2(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_3
+
+Name: TMP_3 Function: testFieldBad
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenA_5(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_5', 'reserveTokenA_4', 'reserveTokenA_3'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: testFieldBad
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenB_3(address) := ϕ(['reserveTokenB_4', 'reserveTokenB_1', 'reserveTokenB_2'])
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: testFieldBad
+Num: -1
+Den: -1
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
 Fields: 
 Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
+myfield_2(MyField) := ϕ(['myfield_1'])
+[i]Type for myfield
 
-Name: amount Function: seeReserveTotal
+Name: myfield Function: testFieldBad
 Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Value: u
+Fields: amount
+Finance Type: undef
+REF_2(-> myfield_2) = REF_2 (c)+ TMP_3
+[i]Type for REF_2
+
+Name: REF_2 Function: testFieldBad
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
 Fields: 
 Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
+REF_4(uint256) -> myfield_2.amount
+[i]Type for REF_4
 
-Name: reserve_1 Function: seeReserveTotal
+Name: myfield.amount Function: testFieldBad
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_4 = CONVERT reserveTokenB_3 to ITypicalTokenWrapper
+Converting reserveTokenB_3
+
+Name: reserveTokenB Function: testFieldBad
 Num: -1
 Den: -1
 Address: 2
@@ -3410,9 +875,9 @@ Value: u
 Fields: 
 Finance Type: undef
 TypicalTokenWrapper
-[i]Type for TMP_0
+[i]Type for TMP_4
 
-Name: TMP_0 Function: seeReserveTotal
+Name: TMP_4 Function: testFieldBad
 Num: -1
 Den: -1
 Address: 2
@@ -3421,3111 +886,71 @@ LF: TypicalTokenWrapper
 Value: u
 Fields: 
 Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+TMP_5(uint256) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:balanceOf, arguments:['msg.sender']  
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
 2
-[i]Type for TMP_2
+[i]Type for TMP_5
 
-Name: TMP_2 Function: seeReserveTotal
+Name: TMP_5 Function: testFieldBad
 Num: 2
 Den: 
 Address: u
-Norm: 0
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
+reserveTokenB_4(address) := ϕ(['reserveTokenB_3', 'reserveTokenB_4', 'reserveTokenB_1'])
+[i]Type for reserveTokenB
 
-Name: TMP_3 Function: seeReserveTotal
+Name: reserveTokenB Function: testFieldBad
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+myfield_3(MyField) := ϕ(['myfield_2'])
+[i]Type for myfield
+
+Name: myfield Function: testFieldBad
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
+REF_4(-> myfield_3) = REF_4 (c)+ TMP_5
+[i]Type for REF_4
+
+Name: REF_4 Function: testFieldBad
 Num: 2
 Den: 
 Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_11
-
-Name: TMP_11 Function: addBalanceBad
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-totalB_1(uint256) := TMP_11(uint256)
-[i]Type for totalB
-
-Name: totalB Function: addBalanceBad
-Num: 2
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_12(uint256) = totalA_1 + totalB_1
-[i]Type for TMP_12
-
-Name: TMP_12 Function: addBalanceBad
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-total_1(uint256) := TMP_12(uint256)
-[i]Type for total
-
-Name: total Function: addBalanceBad
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN total_1
-
-
-
-values
-
-
-A_1(int256) := 10(int256)
-B_1(int256) := 18(int256)
-TMP_13(int256) = A_1 + 9
-C_1(int256) := TMP_13(int256)
-
-
-A_1(int256) := 10(int256)
-[i]Type for A
-
-Name: A Function: values
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 10
-Fields: 
-Finance Type: undef
-B_1(int256) := 18(int256)
-[i]Type for B
-
-Name: B Function: values
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_13(int256) = A_1 + 9
-[i]Type for TMP_13
-
-Name: TMP_13 Function: values
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 19
-Fields: 
-Finance Type: undef
-C_1(int256) := TMP_13(int256)
-[i]Type for C
-
-Name: C Function: values
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 19
-Fields: 
-Finance Type: undef
-
-
-A_1(int256) := 10(int256)
-B_1(int256) := 18(int256)
-TMP_13(int256) = A_1 + 9
-C_1(int256) := TMP_13(int256)
-
-
-A_1(int256) := 10(int256)
-[i]Type for A
-
-Name: A Function: values
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 10
-Fields: 
-Finance Type: undef
-B_1(int256) := 18(int256)
-[i]Type for B
-
-Name: B Function: values
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_13(int256) = A_1 + 9
-[i]Type for TMP_13
-
-Name: TMP_13 Function: values
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 19
-Fields: 
-Finance Type: undef
-C_1(int256) := TMP_13(int256)
-[i]Type for C
-
-Name: C Function: values
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 19
-Fields: 
-Finance Type: undef
-
-
-
-passValue
-
-
-A_1(uint256) := 18(uint256)
-TMP_14(uint256) = INTERNAL_CALL, BalanceAndNormTest.addTen(uint256)(A_1)
-A_2(uint256) := TMP_14(uint256)
-A_3(uint256) = A_2 - 20
-A_4(uint256) = A_3 * 2
-A_5(uint256) = A_4 / 4
-TMP_15(uint256) = 10 ** A_5
-normAmt_1(uint256) := TMP_15(uint256)
-
-
-A_1(uint256) := 18(uint256)
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_14(uint256) = INTERNAL_CALL, BalanceAndNormTest.addTen(uint256)(A_1)
-x_1(uint256) := ϕ(['A_1'])
-[i]Type for x
-
-Name: x Function: addTen
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_16(uint256) = x_1 + 10
-[i]Type for TMP_16
-
-Name: TMP_16 Function: addTen
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 28
-Fields: 
-Finance Type: undef
-RETURN TMP_16
-x_1(uint256) := ϕ(['A_1'])
-[i]Type for x
-
-Name: x Function: addTen
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_16(uint256) = x_1 + 10
-[i]Type for TMP_16
-
-Name: TMP_16 Function: addTen
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 28
-Fields: 
-Finance Type: undef
-RETURN TMP_16
-[i]Type for TMP_14
-
-Name: TMP_14 Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 28
-Fields: 
-Finance Type: undef
-A_2(uint256) := TMP_14(uint256)
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 28
-Fields: 
-Finance Type: undef
-A_3(uint256) = A_2 - 20
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 8
-Fields: 
-Finance Type: undef
-A_4(uint256) = A_3 * 2
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 16
-Fields: 
-Finance Type: undef
-A_5(uint256) = A_4 / 4
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 4
-Fields: 
-Finance Type: undef
-TMP_15(uint256) = 10 ** A_5
-[i]Type for TMP_15
-
-Name: TMP_15 Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 4
-LF: None
-Value: 10000
-Fields: 
-Finance Type: undef
-normAmt_1(uint256) := TMP_15(uint256)
-[i]Type for normAmt
-
-Name: normAmt Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 4
-LF: None
-Value: 10000
-Fields: 
-Finance Type: undef
-
-
-A_1(uint256) := 18(uint256)
-TMP_14(uint256) = INTERNAL_CALL, BalanceAndNormTest.addTen(uint256)(A_1)
-A_2(uint256) := TMP_14(uint256)
-A_3(uint256) = A_2 - 20
-A_4(uint256) = A_3 * 2
-A_5(uint256) = A_4 / 4
-TMP_15(uint256) = 10 ** A_5
-normAmt_1(uint256) := TMP_15(uint256)
-
-
-A_1(uint256) := 18(uint256)
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_14(uint256) = INTERNAL_CALL, BalanceAndNormTest.addTen(uint256)(A_1)
-[i]Type for TMP_14
-
-Name: TMP_14 Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 28
-Fields: 
-Finance Type: undef
-A_2(uint256) := TMP_14(uint256)
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 28
-Fields: 
-Finance Type: undef
-A_3(uint256) = A_2 - 20
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 8
-Fields: 
-Finance Type: undef
-A_4(uint256) = A_3 * 2
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 16
-Fields: 
-Finance Type: undef
-A_5(uint256) = A_4 / 4
-[i]Type for A
-
-Name: A Function: passValue
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 4
-Fields: 
-Finance Type: undef
-TMP_15(uint256) = 10 ** A_5
-[i]Type for TMP_15
-
-Name: TMP_15 Function: passValue
-Num: 
-Den: 
-Address: u
-Norm: 4
-LF: None
-Value: 10000
-Fields: 
-Finance Type: undef
-normAmt_1(uint256) := TMP_15(uint256)
-[i]Type for normAmt
-
-Name: normAmt Function: passValue
-Num: 
-Den: 
-Address: u
-Norm: 4
-LF: None
-Value: 10000
-Fields: 
-Finance Type: undef
-
-
-
-addTen
-Finding type for x...
-uint256
-Param: 0
-    num: [-1]
-    den: [-1]
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
-
-
-x_1(uint256) := ϕ(['A_1'])
-TMP_16(uint256) = x_1 + 10
-RETURN TMP_16
-
-
-x_1(uint256) := ϕ(['A_1'])
-[i]Type for x
-
-Name: x Function: addTen
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_16(uint256) = x_1 + 10
-[i]Type for TMP_16
-
-Name: TMP_16 Function: addTen
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 28
-Fields: 
-Finance Type: undef
-RETURN TMP_16
-
-
-x_1(uint256) := ϕ(['A_1'])
-TMP_16(uint256) = x_1 + 10
-RETURN TMP_16
-
-
-x_1(uint256) := ϕ(['A_1'])
-[i]Type for x
-
-Name: x Function: addTen
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_16(uint256) = x_1 + 10
-[i]Type for TMP_16
-
-Name: TMP_16 Function: addTen
-Num: -1
-Den: -1
-Address: u
-Norm: 1
-LF: None
-Value: 28
-Fields: 
-Finance Type: undef
-RETURN TMP_16
-
-
-
-normalizeToken
-Finding type for token...
-address
-prev address? u
--995
-Head Addr: -995
-    Norm: 6
-    Set: {-995}
-Finding type for amount...
-uint256
-Param: 0
-    num: []
-    den: []
-    norm: u
-    link: token
-    fields: []
-    fintype: -1
-Param: 1
-    num: []
-    den: []
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
-
-
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-decimals_1(uint256) := TMP_18(uint8)
-TMP_19(uint256) = 18 - decimals_1
-TMP_20(uint256) = 10 ** TMP_19
-TMP_21(uint256) = amount_1 * TMP_20
-amount_2(uint256) := TMP_21(uint256)
-RETURN amount_2
-
-
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: 
-Den: 
-Address: -995
-Norm: u
-LF: token
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: 
-Den: 
-Address: -995
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
--995
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 6
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 6
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 12
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 12
-LF: None
-Value: 1000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-
-
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-decimals_1(uint256) := TMP_18(uint8)
-TMP_19(uint256) = 18 - decimals_1
-TMP_20(uint256) = 10 ** TMP_19
-TMP_21(uint256) = amount_1 * TMP_20
-amount_2(uint256) := TMP_21(uint256)
-RETURN amount_2
-
-
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: token
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: 
-Den: 
-Address: -995
-Norm: u
-LF: token
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: 
-Den: 
-Address: -995
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
--995
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 6
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 6
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 12
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 12
-LF: None
-Value: 1000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-
-
-
-normComarisonBad
-
-
-reserveTokenA_9(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-TMP_22(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_9,100)
-amountA_1(uint256) := TMP_22(uint256)
-TMP_23(uint256) = INTERNAL_CALL, BalanceAndNormTest.normalizeToken(address,uint256)(reserveTokenA_10,amountA_1)
-normAmtA_1(uint256) := TMP_23(uint256)
-TMP_24(uint256) = normAmtA_1 + amountA_1
-badSum_1(uint256) := TMP_24(uint256)
-RETURN badSum_1
-
-
-reserveTokenA_9(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-[i]Type for reserveTokenA
-
-Name: reserveTokenA Function: normComarisonBad
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_22(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_9,100)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenB
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_22
-
-Name: TMP_22 Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amountA_1(uint256) := TMP_22(uint256)
-[i]Type for amountA
-
-Name: amountA Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_23(uint256) = INTERNAL_CALL, BalanceAndNormTest.normalizeToken(address,uint256)(reserveTokenA_10,amountA_1)
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: token
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
-1
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: 1000000000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
-1
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: 1000000000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-[i]Type for TMP_23
-
-Name: TMP_23 Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-normAmtA_1(uint256) := TMP_23(uint256)
-[i]Type for normAmtA
-
-Name: normAmtA Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_24(uint256) = normAmtA_1 + amountA_1
-Error with TMP_24 in function normComarisonBad
-Error with: TMP_24 in function normComarisonBad
-[i]Type for TMP_24
-
-Name: TMP_24 Function: normComarisonBad
-Num: 1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-badSum_1(uint256) := TMP_24(uint256)
-[i]Type for badSum
-
-Name: badSum Function: normComarisonBad
-Num: 1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN badSum_1
-
-
-reserveTokenA_9(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-TMP_22(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_9,100)
-amountA_1(uint256) := TMP_22(uint256)
-TMP_23(uint256) = INTERNAL_CALL, BalanceAndNormTest.normalizeToken(address,uint256)(reserveTokenA_10,amountA_1)
-normAmtA_1(uint256) := TMP_23(uint256)
-TMP_24(uint256) = normAmtA_1 + amountA_1
-badSum_1(uint256) := TMP_24(uint256)
-RETURN badSum_1
-
-
-reserveTokenA_9(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-[i]Type for reserveTokenA
-
-Name: reserveTokenA Function: normComarisonBad
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TMP_22(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_9,100)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_22
-
-Name: TMP_22 Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amountA_1(uint256) := TMP_22(uint256)
-[i]Type for amountA
-
-Name: amountA Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_23(uint256) = INTERNAL_CALL, BalanceAndNormTest.normalizeToken(address,uint256)(reserveTokenA_10,amountA_1)
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
-1
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: 1000000000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
-1
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: 1000000000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-[i]Type for TMP_23
-
-Name: TMP_23 Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-normAmtA_1(uint256) := TMP_23(uint256)
-[i]Type for normAmtA
-
-Name: normAmtA Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_24(uint256) = normAmtA_1 + amountA_1
-[i]Type for TMP_24
-
-Name: TMP_24 Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-badSum_1(uint256) := TMP_24(uint256)
-[i]Type for badSum
-
-Name: badSum Function: normComarisonBad
-Num: 1
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN badSum_1
-
-
-
-normComarisonGood
-
-
-reserveTokenA_12(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-TMP_25(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_12,100)
-amountA_1(uint256) := TMP_25(uint256)
-TMP_26(uint256) = INTERNAL_CALL, BalanceAndNormTest.normalizeToken(address,uint256)(reserveTokenA_13,amountA_1)
-normAmtA_1(uint256) := TMP_26(uint256)
-TMP_27(uint256) = normAmtA_1 + normAmtA_1
-goodSum_1(uint256) := TMP_27(uint256)
-RETURN goodSum_1
-
-
-reserveTokenA_12(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-[i]Type for reserveTokenA
-
-Name: reserveTokenA Function: normComarisonGood
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_25(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_12,100)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_25
-
-Name: TMP_25 Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amountA_1(uint256) := TMP_25(uint256)
-[i]Type for amountA
-
-Name: amountA Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_26(uint256) = INTERNAL_CALL, BalanceAndNormTest.normalizeToken(address,uint256)(reserveTokenA_13,amountA_1)
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
 Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
-1
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: 1000000000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
-1
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: 1000000000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-[i]Type for TMP_26
-
-Name: TMP_26 Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-normAmtA_1(uint256) := TMP_26(uint256)
-[i]Type for normAmtA
-
-Name: normAmtA Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_27(uint256) = normAmtA_1 + normAmtA_1
-[i]Type for TMP_27
-
-Name: TMP_27 Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-goodSum_1(uint256) := TMP_27(uint256)
-[i]Type for goodSum
-
-Name: goodSum Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN goodSum_1
-
-
-reserveTokenA_12(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-TMP_25(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_12,100)
-amountA_1(uint256) := TMP_25(uint256)
-TMP_26(uint256) = INTERNAL_CALL, BalanceAndNormTest.normalizeToken(address,uint256)(reserveTokenA_13,amountA_1)
-normAmtA_1(uint256) := TMP_26(uint256)
-TMP_27(uint256) = normAmtA_1 + normAmtA_1
-goodSum_1(uint256) := TMP_27(uint256)
-RETURN goodSum_1
-
-
-reserveTokenA_12(address) := ϕ(['reserveTokenA_6', 'reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_14', 'reserveTokenA_8', 'reserveTokenA_11', 'reserveTokenA_4'])
-[i]Type for reserveTokenA
-
-Name: reserveTokenA Function: normComarisonGood
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TMP_25(uint256) = INTERNAL_CALL, BalanceAndNormTest.seeReserveTotal(address,uint256)(reserveTokenA_12,100)
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenA_7', 'tokenC_1', 'reserveTokenA_12', 'reserveTokenA_3', 'reserveTokenA_5', 'reserveTokenA_9', 'reserveTokenB_3', 'reserveTokenA_2'])
-[i]Type for reserve
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountB_1', 'amountA_1', 'amountB_1', 'amountA_1', 'amountC_1'])
-[i]Type for amount
-
-Name: amount Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_0 = CONVERT reserve_1 to ITypicalTokenWrapper
-Converting reserve_1
-
-Name: reserve_1 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_0
-
-Name: TMP_0 Function: seeReserveTotal
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_1 = CONVERT this to address
-Converting this
-3
-[i]Type for TMP_1
-
-Name: TMP_1 Function: seeReserveTotal
-Num: 
-Den: 
-Address: 3
-Norm: u
-LF: BalanceAndNormTest
-Value: u
-Fields: 
-Finance Type: undef
-TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
-Written func info: TypicalTokenWrapper, balanceOf
-Handling balance function!
-1
-[i]Type for TMP_2
-
-Name: TMP_2 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_3(uint256) = TMP_2 + amount_1
-[i]Type for TMP_3
-
-Name: TMP_3 Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amt_1(uint256) := TMP_3(uint256)
-[i]Type for amt
-
-Name: amt Function: seeReserveTotal
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amt_1
-[i]Type for TMP_25
-
-Name: TMP_25 Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amountA_1(uint256) := TMP_25(uint256)
-[i]Type for amountA
-
-Name: amountA Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_26(uint256) = INTERNAL_CALL, BalanceAndNormTest.normalizeToken(address,uint256)(reserveTokenA_13,amountA_1)
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
-1
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: 1000000000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-token_1(address) := ϕ(['reserveTokenA_13', 'reserveTokenA_10'])
-[i]Type for token
-
-Name: token Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-amount_1(uint256) := ϕ(['amountA_1', 'amountA_1'])
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_17 = CONVERT token_1 to ITypicalTokenWrapper
-Converting token_1
-
-Name: token_1 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
-TypicalTokenWrapper
-[i]Type for TMP_17
-
-Name: TMP_17 Function: normalizeToken
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: TypicalTokenWrapper
-Value: u
-Fields: 
-Finance Type: undef
-TMP_18(uint8) = HIGH_LEVEL_CALL, dest:TMP_17(ITypicalTokenWrapper), function:decimals, arguments:[]  
-Written func info: TypicalTokenWrapper, decimals
-Handling balance function!
-1
-[i]Type for TMP_18
-
-Name: TMP_18 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-decimals_1(uint256) := TMP_18(uint8)
-[i]Type for decimals
-
-Name: decimals Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-TMP_19(uint256) = 18 - decimals_1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: normalizeToken
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 18
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = 10 ** TMP_19
-[i]Type for TMP_20
-
-Name: TMP_20 Function: normalizeToken
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: 1000000000000000000
-Fields: 
-Finance Type: undef
-TMP_21(uint256) = amount_1 * TMP_20
-[i]Type for TMP_21
-
-Name: TMP_21 Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-amount_2(uint256) := TMP_21(uint256)
-[i]Type for amount
-
-Name: amount Function: normalizeToken
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-RETURN amount_2
-[i]Type for TMP_26
-
-Name: TMP_26 Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-normAmtA_1(uint256) := TMP_26(uint256)
-[i]Type for normAmtA
-
-Name: normAmtA Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_27(uint256) = normAmtA_1 + normAmtA_1
-[i]Type for TMP_27
-
-Name: TMP_27 Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-goodSum_1(uint256) := TMP_27(uint256)
-[i]Type for goodSum
-
-Name: goodSum Function: normComarisonGood
-Num: 1
-Den: 
-Address: u
-Norm: 18
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-RETURN goodSum_1
 Address: 1, Label: global:reserveTokenA
 Address: 2, Label: global:reserveTokenB
 Address: -999, Label: constructor:_reserveTokenA
 Address: -998, Label: constructor:_reserveTokenB
-Address: -997, Label: seeReserveTotal:reserve
-Address: 3, Label: seeReserveTotal:TMP_1
-Address: 3, Label: global:this
-Address: -996, Label: addBalanceBuild:tokenC
-Address: -995, Label: normalizeToken:token
 Head Addr: 1
     Norm: 0
-    Set: {1, -996}
+    Set: {1}
 Head Addr: 2
-    Norm: 0
+    Norm: 6
     Set: {2}
 Head Addr: -999
     Norm: 0
     Set: {-999}
 Head Addr: -998
-    Norm: 0
-    Set: {-998}
-Head Addr: -997
-    Norm: 0
-    Set: {-997}
-Head Addr: 3
-    Norm: *
-    Set: {3}
-Head Addr: -996
-    Norm: 0
-    Set: {1, -996}
-Head Addr: -995
     Norm: 6
-    Set: {-995}
-Function count: 32
+    Set: {-998}
+Function count: 3

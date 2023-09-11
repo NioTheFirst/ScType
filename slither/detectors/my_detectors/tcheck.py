@@ -1101,6 +1101,7 @@ def update_member(member, fieldf, copy_ir):
     _field = fieldf.extok
     add_field(_member.function_name, _member.name, _field.name, (_field.num_token_types, _field.den_token_types, _field.norm, _field.linked_contract))
 
+
 #USAGE: typechecks Members (i.e. a.b or a.b())
 #RETURNS: the type for a (temporary handling, will fix if any issues)
 def type_member(ir)->bool:
@@ -1125,6 +1126,14 @@ def type_member(ir)->bool:
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
     #_lv.#print_fields()
+    if(not(is_undefined(ir.lvalue))):
+        #Copy backwards from the dest (ir.lvalue) to the field
+        for field in _lv.fields:
+            _field = field.extok
+            if(_field.name == _rv.name):
+                type_asn(field, ir.lvalue)
+        return True
+
     for field in _lv.fields:
         _field = field.extok
         if(_field.name == _rv.name):
