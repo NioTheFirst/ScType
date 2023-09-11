@@ -1967,10 +1967,13 @@ def type_bin_mul(dest, lir, rir) ->bool:
     bin_norm(dest, lir, rir, "mul")
     pass_ftype(dest, lir, "mul", rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
-        if(is_type_undef(lir)):
-            type_asn(dest, rir)
+        if(is_type_undef(dest)):
+            if(is_type_undef(lir)):
+                type_asn(dest, rir)
+            else:
+                type_asn(dest, lir)
         else:
-            type_asn(dest, lir)
+            return(generate_ratios(dest, lir, rir, Mul))
         handle_value_binop(dest, lir, rir, Mul)
         return True
     elif(is_type_const(lir)):
@@ -2001,10 +2004,13 @@ def type_bin_div(dest, lir, rir) ->bool:
     #    add_error(dest)
     ##print(dest.extok)
     if(is_type_undef(lir) or is_type_undef(rir)):
-        if(is_type_undef(lir)):
-            type_asni(dest, rir)
+        if(is_type_undef(dest)):
+            if(is_type_undef(lir)):
+                type_asni(dest, rir)
+            else:
+                type_asn(dest, lir)
         else:
-            type_asn(dest, lir)
+            return(generate_ratios(dest, lir, rir, Div))
         handle_value_binop(dest, lir, rir, Div)
         return True
     elif(is_type_const(lir)):
@@ -2022,6 +2028,43 @@ def type_bin_div(dest, lir, rir) ->bool:
         if(is_type_undef(dest)):
             assign_const(dest)
         return False
+
+#USAGE: generate price ratios i.e. USDC/WETH
+def generate_ratios(dest, lir, rir, func):
+    #Currently ignored
+    return False
+    global Mul
+    global Div
+    _dest = dest.extok
+    _lir = lir.extok
+    _rir = rir.extok
+    if(not(is_type_undef(lir)) and not(is_type_undef(rir))):
+        return False
+    if(is_type_undef(dest)):
+        return False
+    else:
+        if(func == Mul):
+            if(is_type_undef(lir)):
+                copy_token_type(dest, lir)
+                copy_inv_token_type(rir, lir)
+                handle_value_binop(lir, dest, rir, Div)
+            else:
+                copy_token_type(dest, rir)
+                copy_inv_token_type(lir, rir)
+                handle_value_binop(rir, dest, lir, Div)
+        else:
+            if(is_type_undef(lir)):
+                copy_token_type(dest, lir)
+                copy_token_type(rir, lir)
+                handle_value_binop(lir, dest, rir, Mul)
+            else:
+                copy_token_type(lir, rir)
+                copy_inv_token_type(dest, rir)
+                handle_value_binop(rir, lir, dest, Div)
+        return True
+
+
+
 
 #USAGE: typechecks '>' statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
