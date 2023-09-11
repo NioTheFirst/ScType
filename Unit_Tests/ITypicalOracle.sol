@@ -1,5 +1,5 @@
-pragma solidity 0.6.12;
+pragma solidity ^0.8.0;
 
-interface ITypicalTokenWrapper{
+interface ITypicalOracle{
     function price(address A, address B) external view returns(uint256 price);
 }

@@ -609,6 +609,8 @@ def add_errors(ir):
     errors.append(ir)
     nErrs+=1
     _ir = ir.extok
+    if(_ir.function_name == None):
+        _ir.function_name = "None"
     print(f"Error with {_ir.name} in function {_ir.function_name}")
     print("Error with: " + _ir.name + " in function " + _ir.function_name)
     assign_err(ir)
