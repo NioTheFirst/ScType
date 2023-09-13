@@ -1133,7 +1133,7 @@ def type_member(ir)->bool:
         for field in _lv.fields:
             _field = field.extok
             if(_field.name == _rv.name):
-                if(is_type_undef_field):
+                if(is_type_undef(_field)):
                     fieldSet = True
                 type_asn(field, ir.lvalue)
                 break
