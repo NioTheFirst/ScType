@@ -781,7 +781,7 @@ def check_type(ir) -> bool:
                 ref = ir.lvalue
                 ref_root = ref.extok.ref_root
                 ref_field = ref.extok.ref_field
-                if(ref_root and ref_field):
+               #if(ref_root and ref_field):
                     #update_member(ir.lvalue.points_to_origin, ref_field, ir.lvalue)
             update_non_ssa(ir.lvalue)
             print("XXXX")
