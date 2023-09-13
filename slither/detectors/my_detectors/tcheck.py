@@ -1100,6 +1100,8 @@ def update_member(member, fieldf, copy_ir):
         asn_norm(fieldf, copy_ir.extok.norm)
     _member.add_field(fieldf)
     _field = fieldf.extok
+    if(not(_field.function_name)):
+        _field.function_name = _member.function_name
     add_field(_member.function_name, _member.name, _field.name, (_field.num_token_types, _field.den_token_types, _field.norm, _field.linked_contract))
 
 
