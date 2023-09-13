@@ -995,7 +995,7 @@ def handle_balance_functions(ir):
     print('Handling balance function!')
     #TODO check the address
     print(_dest.address)
-    ir.lvalue.extok.clear_token_type()
+    ir.lvalue.extok.token_type_clear()
     #if(not(dest in address_to_num))
     #if(_dest.function_name == "global"):
         #Global address, positive t_type
