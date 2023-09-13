@@ -604,7 +604,7 @@ def add_errors(ir):
     global nErrs
     global errors
     if ir in errors:
-        assign_err(ir)
+        #assign_err(ir)
         return
     errors.append(ir)
     nErrs+=1
