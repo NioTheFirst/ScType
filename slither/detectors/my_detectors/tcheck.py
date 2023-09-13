@@ -784,6 +784,7 @@ def check_type(ir) -> bool:
                 if(ref_root and ref_field):
                     update_member(ir.lvalue.points_to_origin, ref_field, ir.lvalue)
             update_non_ssa(ir.lvalue)
+            print("XXXX")
     except AttributeError:
         #do nothing
         y = 8008315
