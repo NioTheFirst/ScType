@@ -1134,6 +1134,8 @@ def type_member(ir)->bool:
         fieldSet = False
         for field in _lv.fields:
             _field = field.extok
+            if(not(_field.function_name)):
+                _field.function_name = _lv.function_name
             if(_field.name == _rv.name):
                 if(is_type_undef(_field)):
                     fieldSet = True
