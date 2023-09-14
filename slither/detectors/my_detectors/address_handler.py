@@ -71,7 +71,12 @@ class Address_label():
                f"    Norm: {self._norm}\n"
                f"    Set: {str(self._set)}")
 
-
+def get_address_label(func_name, name):
+    name_key = str(func_name) + ":" + str(name)
+    if name_key in address_to_label:
+        return(label_sets[address_to_label[name_key]])
+    else:
+        return None
 
 def new_address(ir, isGlobal):
     global global_address_counter

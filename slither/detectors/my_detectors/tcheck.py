@@ -859,9 +859,9 @@ def type_upk(ir) ->bool:
         assign_const(lval)
         return False
     if(lval.type == "address"):
-        new_address(l_val, False)
-    ##print("Reading tuple " + str(rtup) + " index " + str(rind))
-    #currently just querry the type of the left value
+        new_address(lval, False)
+    #if(isinstance(lval, UserDefinedType)):
+        
     tup_token_type = get_tuple_index(str(rtup), rind)
     if(tup_token_type):
         copy_token_tuple(lval, tup_token_type)
@@ -958,11 +958,11 @@ def querry_fc(ir) -> int:
         ##print("wfc len: " + str(len(written_func_rets)))
         if(len(written_func_rets) == 0):
             #No return value included, default to constant
-            convert_ssa(ir.lvalue)
+            #convert_ssa(ir.lvalue)
             assign_const(ir.lvalue)
         elif(len(written_func_rets) == 1):
             written_func_ret = written_func_rets[0]
-            convert_ssa(ir.lvalue)
+            #convert_ssa(ir.lvalue)
             copy_token_tuple(ir.lvalue, written_func_ret)
             #address
             print("Getting new address:")

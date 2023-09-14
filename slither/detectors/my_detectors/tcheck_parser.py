@@ -172,6 +172,7 @@ def parse_type_file(t_file, f_file = None):
             #_line[5] = normalization amt (power of 10)
             #_line[6] = (Optional) linked function if is address
             #print(line)
+            #DEPRECATED
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
@@ -211,6 +212,43 @@ def parse_type_file(t_file, f_file = None):
                 c_name = _line[1].strip()
                 allow_contract(c_name)
                 continue
+            #SUMMARY OF EXTERNAL FUNCTION (ADDRESS VERSION)
+            #assuming global address
+            #[sefa], contract_name, function_name
+            #[sefa], contract_name, function_name, N, ({copy/transfer, isAddress, isField, ...}, ...)       
+            #                                         ({copy/transfer, <Num, ...>, <Den, ...>, Norm, Value})
+            #                                         ({copy/transfer, T, F, Address})
+            #                                         ({}) -> assume basic integer null value
+            if(_line[0].strip() == "[sefa]"):
+                c_name = _line[1].strip()
+                f_name = _line[2].strip()
+                ef_types = []
+                if(len(_line) <= 3):
+                    add_ex_func(c_name, f_name, ef_types)
+                    continue
+                ret_val = int(_line[3].strip())
+                for i in range(ret_val):
+                    ret_type_tuple = _line[4+i]
+                    ret_info = extract_type_tuple(ret_type_tuple)
+                    num = [-1]
+                    denom = [-1]
+                    norm = 'u'
+                    copy = "c"
+                    value = 0
+                    addr = None
+                    if(len(ret_info) >= 5):
+                        copy = ret_info[0]
+                        num = extract_address(ret_info[1])
+                        denom = extract_address(ret_info[2])
+                        norm = int(ret_info[3].strip())
+                        value = int(ret_info[4].strip())
+                        if(len(ret_info) >= 6):
+                            addr = ret_info[5]  #No longer lf, link_function deprecated. Stores address instead
+                    ef_types.append((copy, num, denom, norm, addr))
+                add_ex_func(c_name, f_name, ef_types)
+
+
+
             #SUMMARY OF EXTERNAL FUNCTION
             if(_line[0].strip() == "[sef]"):
                 c_name = _line[1].strip()
@@ -331,6 +369,74 @@ def add_ex_func(contract_name, function_name, type_tuple):
 def get_dir_ex_func_type_tuple(contract_name, function_name):
     key = contract_name + '_' + function_name
     return(ex_func_type_hash[key])
+
+
+def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
+    key = contract_name + '_' + function_name
+    if(key in ex_func_type_hash):
+        func_tuple = ex_func_type_hash[key]
+        ret_type_tuples = []
+        pos = -1
+        for ret_var in func_tuple:
+            #print(ret_var)
+            pos+=1
+            copy = ret_var[0]
+            num_trans = ret_var[1]
+            den_trans = ret_var[2]
+            norm = ret_var[3]
+            value = ret_var[4]
+            lc = ret_var[5]
+            ftype = -1
+            if(len(ret_var) >= 7):
+                ftype = ret_var[6]
+            ret_num = []
+            ret_den = []
+            param = parameters
+            #for p in parameters:
+            #    print(p.name)
+            
+            if(len(param) == 0 or copy == "c"):
+                #No parameters, assume that the parameters are directly the types
+                for(addr in num_trans):
+                    new_addr = -1
+                    try:
+                        new_addr = int(addr.strip())
+                    except ValueError:
+                        _addr = "global:" + str(addr.strip())
+                        if(_addr in address_to_label):
+                            new_addr = address_to_label[_addr]
+                ret_type_tuple = (num_trans, den_trans, norm , lc, ftype)
+                ret_type_tuples.append(ret_type_tuple)
+                continue
+            for num in num_trans:
+                num = int(num.strip())
+                if(num == -1):
+                    ret_num.append(-1)
+                    continue
+                cur_param = param[num-1].extok
+                for n in cur_param.num_token_types:
+                    ret_num.append(n)
+                for d in cur_param.den_token_types:
+                    ret_den.append(d)
+            for den in den_trans:
+                den = int(den.strip())
+                if(den == -1):
+                    ret_den.append(-1)
+                    continue
+                cur_param = param[den-1].extok
+                for n in cur_param.num_token_types:
+                    ret_den.append(n)
+                for d in cur_param.den_token_types:
+                    ret_num.append(d)
+            if(norm > 0):
+                norm = param[norm-1].extok.norm
+            if(isinstance(lc, int) and lc > 0):
+                lc = param[lc-1].extok.linked_contract
+            ret_type_tuple = (ret_num, ret_den, norm, lc, value, ftype)
+            ret_type_tuples.append(ret_type_tuple)
+        return ret_type_tuples
+    return None
+
 
 def get_ex_func_type_tuple(contract_name, function_name, parameters):
     key = contract_name + '_' + function_name
@@ -472,3 +578,12 @@ def extract_integers(input_str):
     integer_list = [int(x) for x in input_str.split(",")]
 
     return integer_list
+
+def extract_address(input_str):
+    # Remove the brackets
+    input_str = input_str.strip("[]")
+    
+    # Split the string by commas and convert to integers
+    list = [x for x in input_str.split(",")]
+
+    return list
