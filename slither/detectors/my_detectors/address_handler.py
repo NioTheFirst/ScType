@@ -81,7 +81,7 @@ def new_address(ir, isGlobal):
     _ir = ir.extok
     print(f"prev address? {_ir.address}")
     if(_ir.address != 'u' and _ir.address != None):
-        return None
+        return label_sets[_ir.address]
     if(isGlobal):
         global_address_counter+=1
         print(f"global assignment: {global_address_counter}")
