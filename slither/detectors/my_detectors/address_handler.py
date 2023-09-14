@@ -79,6 +79,8 @@ def new_address(ir, isGlobal):
     global label_sets
     global label_to_address
     _ir = ir.extok
+    if(not(isinstance(_ir.address, int))):
+        _ir.address = 'u'
     print(f"prev address? {_ir.address}")
     if(_ir.address != 'u' and _ir.address != None):
         return label_sets[_ir.address]
