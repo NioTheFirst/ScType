@@ -199,12 +199,9 @@ def run_contract(contract_name):
 #USAGE: returns the type tuple for an external function that has been included
 #RETURNS: external function type tuple
 def get_external_type_tuple(contract_name, function_name, parameters):
-    if(contract_name ==None or function_name == None):
+    if(contract_name == None or function_name == None):
         return None
-    for p in parameters:
-        convert_ssa(p)
-        ##print_token_type(p)
-    return tcheck_parser.get_ex_func_type_tuple(contract_name, function_name, parameters)
+    return tcheck_parser.get_ex_func_type_tuple_a(contract_name, function_name, parameters)
 
 
 #USAGE: returns if a function should be typechecked
@@ -450,8 +447,7 @@ def querry_type(ir):
     if(ir.tname != None):
         uxname = ir.tname
     uxname = str(uxname)
-    print("Finding type for "+ uxname + "...")
-    print(ir.type)
+    print(f"Finding type for {uxname}({ir.type} ... )")
     if(str(ir.type) == "bool"):
         ##print("SKIP bool")
         assign_const(ir)
@@ -468,31 +464,25 @@ def querry_type(ir):
                 norm = int(input_str)
         label = new_address(ir)
         label.norm = norm
-        #label for address
-        
         print(label)
-        #TODO Do not reset temp_address_counter, create sets
-
-        return #Not yet, testing is needed TODO
-
-    
-    if(mark_iteration and not(current_function_marked)):
-        assign_const(ir)
         return
-    if not(user_type):
-        type_tuple = read_type_file(ir)
-        if(type_tuple != None):
-            _ir.clear_num()
-            _ir.clear_den()
-            save_addr = _ir.address
-            copy_token_tuple(ir, type_tuple)
-            _ir.address = save_addr
-            ##print(_ir)
-            ##print("[*]Type fetched successfully")
-            return
-        #print("[x]Failed to fetch type from type file, defaulting to human interface")
-    if (not (ask_user)):
-        return True
+    #if(mark_iteration and not(current_function_marked)):
+    #    assign_const(ir)
+    #    return
+
+    #Get type tuple for regular int (emergency usage) + TODO modify s.t. parameters passed as names?
+    type_tuple = read_type_file(ir)
+    if(type_tuple != None):
+        _ir.clear_num()
+        _ir.clear_den()
+        save_addr = _ir.address
+        copy_token_tuple(ir, type_tuple)
+        _ir.address = save_addr
+        ##print(_ir)
+        ##print("[*]Type fetched successfully")
+        return
+    #print("[x]Failed to fetch type from type file, defaulting to human interface")
+    return True
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
     num = int(input_str)
@@ -860,8 +850,8 @@ def type_upk(ir) ->bool:
         return False
     if(lval.type == "address"):
         new_address(lval, False)
-    #if(isinstance(lval, UserDefinedType)):
-        
+    if(isinstance(lval, UserDefinedType)):
+        print("NOT HANDLED CURRENTLY!")
     tup_token_type = get_tuple_index(str(rtup), rind)
     if(tup_token_type):
         copy_token_tuple(lval, tup_token_type)
@@ -948,7 +938,6 @@ def querry_fc(ir) -> int:
     included_func = get_cf_pair(cont_name, func_name)
     if(included_func != None):
         if(type_included_hlc(ir, dest, included_func) == 1):
-            ##print("INCLUDED HIGH LEVEL CALL HAS SOME UNDEFINED TYPE")
             return 2
         return 2
 

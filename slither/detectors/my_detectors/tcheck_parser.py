@@ -186,13 +186,15 @@ def parse_type_file(t_file, f_file = None):
                     den = -1
                     norm = 'u'
                     if(len(_line) > 3):
-                        num = int(_line[3].strip())
-                        den = int(_line[4].strip())
+                        #num = int(_line[3].strip())
+                        num = _line[3].strip()
+                        den = _line[4].strip()
                         norm = int(_line[5].strip())
-                    l_name = None
-                    if(len(_line) >= 7):
-                        l_name = _line[6].strip()
-                    add_var(f_name, v_name, (num, den, norm, l_name))
+                        value = int(_line[6].strip())
+                    addr = None
+                    if(len(_line) >= 8):
+                        addr = _line[7].strip()
+                    add_var(f_name, v_name, (num, den, norm, addr, value))
                     if(reuse_types):
                         reuse_types_var[v_name] = True
                 except ValueError:
@@ -328,6 +330,10 @@ def add_var(function_name, var_name, type_tuple):
 def get_var_type_tuple(function_name, var_name):
     key = function_name + "_" + var_name
     if(key in var_type_hash):
+        #cast num and den
+        tuple = var_type_hash[key]
+        tuple[0] = stringToType(tuple[0])
+        tuple[1] = stringToType(tuple[1])
         return var_type_hash[key]
     return None
 
@@ -344,6 +350,19 @@ def get_addr(function_name, var_name):
 def add_tuple(tuple_name, type_tuples):
     key = tuple_name
     tuple_type_hash[key] = type_tuples
+
+def stringToType(string):
+    type = -1
+    try:
+        type = int(string)
+    except ValueError:
+        #search address
+        gstring = "global:"+str(string)
+        if gstring in address_to_label:
+            type = address_to_label[gstring]
+        else:
+            type = -1
+    return type
 
 def get_tuple(tuple_name):
     key = tuple_name
@@ -398,13 +417,9 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
                 for(addr in num_trans):
-                    new_addr = -1
-                    try:
-                        new_addr = int(addr.strip())
-                    except ValueError:
-                        _addr = "global:" + str(addr.strip())
-                        if(_addr in address_to_label):
-                            new_addr = address_to_label[_addr]
+                    addr = stringToType(addr)
+                for(addr in den_trans):
+                    addr = stringToType(addr)
                 ret_type_tuple = (num_trans, den_trans, norm , lc, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
