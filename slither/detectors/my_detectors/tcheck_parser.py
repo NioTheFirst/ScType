@@ -416,9 +416,9 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
             
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
-                for(addr in num_trans):
+                for addr in num_trans:
                     addr = stringToType(addr)
-                for(addr in den_trans):
+                for addr in den_trans:
                     addr = stringToType(addr)
                 ret_type_tuple = (num_trans, den_trans, norm , lc, ftype)
                 ret_type_tuples.append(ret_type_tuple)
