@@ -1057,6 +1057,7 @@ def type_hlc(ir) ->bool:
     temp = ir.lvalue.name
     ##print(temp)
     #typecheck abnormal function calls
+    print("Running querryfc")
     res = querry_fc(ir)
     if(res == 2):
         return False
