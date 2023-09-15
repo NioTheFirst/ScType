@@ -246,7 +246,7 @@ def parse_type_file(t_file, f_file = None):
                         value = int(ret_info[4].strip())
                         if(len(ret_info) >= 6):
                             addr = ret_info[5]  #No longer lf, link_function deprecated. Stores address instead
-                    ef_types.append((copy, num, denom, norm, addr))
+                    ef_types.append((copy, num, denom, norm, value, addr))
                 add_ex_func(c_name, f_name, ef_types)
 
 
