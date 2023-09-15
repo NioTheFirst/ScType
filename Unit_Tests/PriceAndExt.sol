@@ -9,16 +9,16 @@ import "./ITypicalOracle.sol";
 // -999, -998, -997 temp
 // {1, -999, -998}, {2, -...}
 
-contract BalanceAndNormTest{
+contract PriceAndExtTest{
     address reserveTokenA;
     address reserveTokenB;
     address oracle;
     uint256 priceAInB;
 
-    /*constructor(address _reserveTokenA, address _reserveTokenB) public{
+    constructor(address _reserveTokenA, address _reserveTokenB) public{
 	reserveTokenA = _reserveTokenA;
 	reserveTokenB = _reserveTokenB;
-    }*/
+    }
 
     function priceIncluded(address A, address B) public returns(uint256){
         uint256 price = ITypicalTokenWrapper(A).balanceOf(address(this))/ITypicalTokenWrapper(B).balanceOf(address(this));
@@ -29,7 +29,7 @@ contract BalanceAndNormTest{
         return(priceAInB);
     }
 
-    function priceExternal(addressA, address B) public returns(uint256){
+    function priceExternal(address A, address B) public returns(uint256){
         return(ITypicalOracle(oracle).price(A, B));
     }
 	
