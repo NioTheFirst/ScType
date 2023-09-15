@@ -389,7 +389,7 @@ def get_dir_ex_func_type_tuple(contract_name, function_name):
     key = contract_name + '_' + function_name
     return(ex_func_type_hash[key])
 
-
+#Extended Function Tuple Unpacking etc in the Address version
 def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
     key = contract_name + '_' + function_name
     if(key in ex_func_type_hash):
@@ -416,14 +416,22 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
             
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
+                _num_trans = []
+                _den_trans = []
                 for addr in num_trans:
+                    #May translate from global addresses
                     addr = stringToType(addr)
+                    _num_trans.add(addr)
                 for addr in den_trans:
+                    #May translate from global addresses
                     addr = stringToType(addr)
-                ret_type_tuple = (num_trans, den_trans, norm , lc, ftype)
+                    _den_trans.add(addr)
+                ret_type_tuple = (_num_trans, _den_trans, norm , lc, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
+
             for num in num_trans:
+                #Guarantee to be integers, as it represents the index parameter
                 num = int(num.strip())
                 if(num == -1):
                     ret_num.append(-1)

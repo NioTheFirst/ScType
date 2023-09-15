@@ -1,22 +1,22 @@
 Checking ITypicalOracle
 Checking ITypicalTokenWrapper
 Checking PriceAndExtTest
-Finding type for oracle(address ... )
+Finding type for reserveTokenA(address ... )
 prev address? u
 global assignment: 1
 1
 Head Addr: 1
     Norm: 0
     Set: {1}
-Finding type for priceAInB(uint256 ... )
-Finding type for reserveTokenA(address ... )
+Finding type for reserveTokenB(address ... )
 prev address? u
 global assignment: 2
 2
 Head Addr: 2
     Norm: 0
     Set: {2}
-Finding type for reserveTokenB(address ... )
+Finding type for priceAInB(uint256 ... )
+Finding type for oracle(address ... )
 prev address? u
 global assignment: 3
 3
@@ -657,7 +657,7 @@ Converting oracle_1
 Name: oracle Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: oracle
 Value: u
@@ -669,7 +669,7 @@ TypicalOracle
 Name: TMP_7 Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: TypicalOracle
 Value: u
@@ -680,3 +680,4521 @@ TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_7(ITypicalOracle), function:price, ar
 High Call: price
 Running querryfc
 Written func info: TypicalOracle, price
+Getting new address:
+prev address? u
+-993
+Head Addr: -993
+    Norm: *
+    Set: {-993}
+[i]Type for TMP_8
+
+Name: TMP_8 Function: priceExternal
+Num: global:resereTokenA
+Den: global:reserveTokenB
+Address: -993
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+oracle_2(address) := ϕ(['oracle_2', 'oracle_1'])
+[i]Type for oracle
+
+Name: oracle Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN TMP_8
+
+
+A_1(address) := ϕ(['reserveTokenA_10'])
+B_1(address) := ϕ(['reserveTokenB_11'])
+oracle_1(address) := ϕ(['oracle_2', 'oracle_0'])
+TMP_7 = CONVERT oracle_1 to ITypicalOracle
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_7(ITypicalOracle), function:price, arguments:['A_1', 'B_1']  
+oracle_2(address) := ϕ(['oracle_2', 'oracle_1'])
+RETURN TMP_8
+
+
+A_1(address) := ϕ(['reserveTokenA_10'])
+[i]Type for A
+
+Name: A Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: A
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+B_1(address) := ϕ(['reserveTokenB_11'])
+[i]Type for B
+
+Name: B Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: B
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+oracle_1(address) := ϕ(['oracle_2', 'oracle_0'])
+[i]Type for oracle
+
+Name: oracle Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: oracle
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_7 = CONVERT oracle_1 to ITypicalOracle
+Converting oracle_1
+
+Name: oracle Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: oracle
+Value: u
+Fields: 
+Finance Type: undef
+TypicalOracle
+[i]Type for TMP_7
+
+Name: TMP_7 Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: TypicalOracle
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_7(ITypicalOracle), function:price, arguments:['A_1', 'B_1']  
+High Call: price
+Running querryfc
+Written func info: TypicalOracle, price
+Getting new address:
+prev address? u
+-992
+Head Addr: -992
+    Norm: *
+    Set: {-992}
+[i]Type for TMP_8
+
+Name: TMP_8 Function: priceExternal
+Num: global:resereTokenA
+Den: global:reserveTokenB
+Address: -992
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+oracle_2(address) := ϕ(['oracle_2', 'oracle_1'])
+[i]Type for oracle
+
+Name: oracle Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN TMP_8
+
+
+
+seeReserveTotal
+Finding type for reserve(address ... )
+prev address? u
+-991
+Head Addr: -991
+    Norm: 0
+    Set: {-991}
+Finding type for amount(uint256 ... )
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: reserve
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+
+
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+TMP_10 = CONVERT this to address
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+amt_1(uint256) := TMP_12(uint256)
+RETURN amt_1
+
+
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: reserve
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+-991
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: -991
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: -991
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: -991
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+
+
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+TMP_10 = CONVERT this to address
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+amt_1(uint256) := TMP_12(uint256)
+RETURN amt_1
+
+
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserve
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: reserve
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: 
+Den: 
+Address: -991
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+-991
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: -991
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: -991
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: -991
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+
+
+
+addPriceIncluded
+Finding type for amountA(uint256 ... )
+Finding type for amountB(uint256 ... )
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+TMP_13(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_2,amountA_1)
+totalA_1(uint256) := TMP_13(uint256)
+TMP_14(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_3,amountB_1)
+totalB_1(uint256) := TMP_14(uint256)
+TMP_15(uint256) = INTERNAL_CALL, PriceAndExtTest.priceIncluded(address,address)(reserveTokenA_4,reserveTokenB_4)
+TMP_16(uint256) = totalB_1 (c)* TMP_15
+totalBConverted_1(uint256) := TMP_16(uint256)
+TMP_17(uint256) = totalA_1 (c)+ totalBConverted_1
+total_1(uint256) := TMP_17(uint256)
+RETURN total_1
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: addPriceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: addPriceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_13(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_2,amountA_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserve
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_13
+
+Name: TMP_13 Function: addPriceIncluded
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalA_1(uint256) := TMP_13(uint256)
+[i]Type for totalA
+
+Name: totalA Function: addPriceIncluded
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_14(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_3,amountB_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_14
+
+Name: TMP_14 Function: addPriceIncluded
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalB_1(uint256) := TMP_14(uint256)
+[i]Type for totalB
+
+Name: totalB Function: addPriceIncluded
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_15(uint256) = INTERNAL_CALL, PriceAndExtTest.priceIncluded(address,address)(reserveTokenA_4,reserveTokenB_4)
+A_1(address) := ϕ(['reserveTokenA_4'])
+[i]Type for A
+
+Name: A Function: priceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: A
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+B_1(address) := ϕ(['reserveTokenB_4'])
+[i]Type for B
+
+Name: B Function: priceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: B
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_0 = CONVERT A_1 to ITypicalTokenWrapper
+Converting A_1
+
+Name: A_1 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_0
+
+Name: TMP_0 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_1 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_1
+
+Name: TMP_1 Function: priceIncluded
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_2
+
+Name: TMP_2 Function: priceIncluded
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_3 = CONVERT B_1 to ITypicalTokenWrapper
+Converting B_1
+
+Name: B_1 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_3
+
+Name: TMP_3 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_4 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_4
+
+Name: TMP_4 Function: priceIncluded
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_5(uint256) = HIGH_LEVEL_CALL, dest:TMP_3(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_4']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_5
+
+Name: TMP_5 Function: priceIncluded
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_6(uint256) = TMP_2 (c)/ TMP_5
+[i]Type for TMP_6
+
+Name: TMP_6 Function: priceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+price_1(uint256) := TMP_6(uint256)
+[i]Type for price
+
+Name: price Function: priceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN price_1
+A_1(address) := ϕ(['reserveTokenA_4'])
+[i]Type for A
+
+Name: A Function: priceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+B_1(address) := ϕ(['reserveTokenB_4'])
+[i]Type for B
+
+Name: B Function: priceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_0 = CONVERT A_1 to ITypicalTokenWrapper
+Converting A_1
+
+Name: A_1 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_0
+
+Name: TMP_0 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_1 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_1
+
+Name: TMP_1 Function: priceIncluded
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_2
+
+Name: TMP_2 Function: priceIncluded
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_3 = CONVERT B_1 to ITypicalTokenWrapper
+Converting B_1
+
+Name: B_1 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_3
+
+Name: TMP_3 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_4 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_4
+
+Name: TMP_4 Function: priceIncluded
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_5(uint256) = HIGH_LEVEL_CALL, dest:TMP_3(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_4']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_5
+
+Name: TMP_5 Function: priceIncluded
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_6(uint256) = TMP_2 (c)/ TMP_5
+[i]Type for TMP_6
+
+Name: TMP_6 Function: priceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+price_1(uint256) := TMP_6(uint256)
+[i]Type for price
+
+Name: price Function: priceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN price_1
+[i]Type for TMP_15
+
+Name: TMP_15 Function: addPriceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_16(uint256) = totalB_1 (c)* TMP_15
+[i]Type for TMP_16
+
+Name: TMP_16 Function: addPriceIncluded
+Num: 1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalBConverted_1(uint256) := TMP_16(uint256)
+[i]Type for totalBConverted
+
+Name: totalBConverted Function: addPriceIncluded
+Num: 1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_17(uint256) = totalA_1 (c)+ totalBConverted_1
+Error with TMP_17 in function addPriceIncluded
+Error with: TMP_17 in function addPriceIncluded
+[i]Type for TMP_17
+
+Name: TMP_17 Function: addPriceIncluded
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+total_1(uint256) := TMP_17(uint256)
+[i]Type for total
+
+Name: total Function: addPriceIncluded
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN total_1
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+TMP_13(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_2,amountA_1)
+totalA_1(uint256) := TMP_13(uint256)
+TMP_14(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_3,amountB_1)
+totalB_1(uint256) := TMP_14(uint256)
+TMP_15(uint256) = INTERNAL_CALL, PriceAndExtTest.priceIncluded(address,address)(reserveTokenA_4,reserveTokenB_4)
+TMP_16(uint256) = totalB_1 (c)* TMP_15
+totalBConverted_1(uint256) := TMP_16(uint256)
+TMP_17(uint256) = totalA_1 (c)+ totalBConverted_1
+total_1(uint256) := TMP_17(uint256)
+RETURN total_1
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: addPriceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: addPriceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_13(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_2,amountA_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_13
+
+Name: TMP_13 Function: addPriceIncluded
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalA_1(uint256) := TMP_13(uint256)
+[i]Type for totalA
+
+Name: totalA Function: addPriceIncluded
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_14(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_3,amountB_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_14
+
+Name: TMP_14 Function: addPriceIncluded
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalB_1(uint256) := TMP_14(uint256)
+[i]Type for totalB
+
+Name: totalB Function: addPriceIncluded
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_15(uint256) = INTERNAL_CALL, PriceAndExtTest.priceIncluded(address,address)(reserveTokenA_4,reserveTokenB_4)
+A_1(address) := ϕ(['reserveTokenA_4'])
+[i]Type for A
+
+Name: A Function: priceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+B_1(address) := ϕ(['reserveTokenB_4'])
+[i]Type for B
+
+Name: B Function: priceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_0 = CONVERT A_1 to ITypicalTokenWrapper
+Converting A_1
+
+Name: A_1 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_0
+
+Name: TMP_0 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_1 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_1
+
+Name: TMP_1 Function: priceIncluded
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_2
+
+Name: TMP_2 Function: priceIncluded
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_3 = CONVERT B_1 to ITypicalTokenWrapper
+Converting B_1
+
+Name: B_1 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_3
+
+Name: TMP_3 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_4 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_4
+
+Name: TMP_4 Function: priceIncluded
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_5(uint256) = HIGH_LEVEL_CALL, dest:TMP_3(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_4']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_5
+
+Name: TMP_5 Function: priceIncluded
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_6(uint256) = TMP_2 (c)/ TMP_5
+[i]Type for TMP_6
+
+Name: TMP_6 Function: priceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+price_1(uint256) := TMP_6(uint256)
+[i]Type for price
+
+Name: price Function: priceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN price_1
+A_1(address) := ϕ(['reserveTokenA_4'])
+[i]Type for A
+
+Name: A Function: priceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+B_1(address) := ϕ(['reserveTokenB_4'])
+[i]Type for B
+
+Name: B Function: priceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_0 = CONVERT A_1 to ITypicalTokenWrapper
+Converting A_1
+
+Name: A_1 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_0
+
+Name: TMP_0 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_1 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_1
+
+Name: TMP_1 Function: priceIncluded
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_2(uint256) = HIGH_LEVEL_CALL, dest:TMP_0(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_1']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_2
+
+Name: TMP_2 Function: priceIncluded
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_3 = CONVERT B_1 to ITypicalTokenWrapper
+Converting B_1
+
+Name: B_1 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_3
+
+Name: TMP_3 Function: priceIncluded
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_4 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_4
+
+Name: TMP_4 Function: priceIncluded
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_5(uint256) = HIGH_LEVEL_CALL, dest:TMP_3(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_4']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_5
+
+Name: TMP_5 Function: priceIncluded
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_6(uint256) = TMP_2 (c)/ TMP_5
+[i]Type for TMP_6
+
+Name: TMP_6 Function: priceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+price_1(uint256) := TMP_6(uint256)
+[i]Type for price
+
+Name: price Function: priceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN price_1
+[i]Type for TMP_15
+
+Name: TMP_15 Function: addPriceIncluded
+Num: 1
+Den: 2
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_16(uint256) = totalB_1 (c)* TMP_15
+[i]Type for TMP_16
+
+Name: TMP_16 Function: addPriceIncluded
+Num: 1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalBConverted_1(uint256) := TMP_16(uint256)
+[i]Type for totalBConverted
+
+Name: totalBConverted Function: addPriceIncluded
+Num: 1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_17(uint256) = totalA_1 (c)+ totalBConverted_1
+[i]Type for TMP_17
+
+Name: TMP_17 Function: addPriceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+total_1(uint256) := TMP_17(uint256)
+[i]Type for total
+
+Name: total Function: addPriceIncluded
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN total_1
+
+
+
+addPriceGlobal
+Finding type for amountA(uint256 ... )
+Finding type for amountB(uint256 ... )
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+
+
+reserveTokenA_6(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+reserveTokenB_6(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+priceAInB_2(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
+TMP_18(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_6,amountA_1)
+totalA_1(uint256) := TMP_18(uint256)
+TMP_19(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_7,amountB_1)
+totalB_1(uint256) := TMP_19(uint256)
+TMP_20(uint256) = INTERNAL_CALL, PriceAndExtTest.priceGlobal()()
+TMP_21(uint256) = totalB_1 (c)* TMP_20
+totalBConverted_1(uint256) := TMP_21(uint256)
+TMP_22(uint256) = totalB_1 (c)* priceAInB_5
+totalBConverted2_1(uint256) := TMP_22(uint256)
+TMP_23(uint256) = totalA_1 (c)+ totalBConverted_1
+total_1(uint256) := TMP_23(uint256)
+TMP_24(uint256) = totalA_1 (c)+ totalBConverted2_1
+total2_1(uint256) := TMP_24(uint256)
+RETURN total_1
+
+
+reserveTokenA_6(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenB_6(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+priceAInB_2(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
+[i]Type for priceAInB
+
+Name: priceAInB Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_18(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_6,amountA_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_18
+
+Name: TMP_18 Function: addPriceGlobal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalA_1(uint256) := TMP_18(uint256)
+[i]Type for totalA
+
+Name: totalA Function: addPriceGlobal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_19(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_7,amountB_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_19
+
+Name: TMP_19 Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalB_1(uint256) := TMP_19(uint256)
+[i]Type for totalB
+
+Name: totalB Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_20(uint256) = INTERNAL_CALL, PriceAndExtTest.priceGlobal()()
+priceAInB_1(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
+[i]Type for priceAInB
+
+Name: priceAInB Function: priceGlobal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN priceAInB_1
+priceAInB_1(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
+[i]Type for priceAInB
+
+Name: priceAInB Function: priceGlobal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN priceAInB_1
+[i]Type for TMP_20
+
+Name: TMP_20 Function: addPriceGlobal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_21(uint256) = totalB_1 (c)* TMP_20
+[i]Type for TMP_21
+
+Name: TMP_21 Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalBConverted_1(uint256) := TMP_21(uint256)
+[i]Type for totalBConverted
+
+Name: totalBConverted Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_22(uint256) = totalB_1 (c)* priceAInB_5
+[i]Type for TMP_22
+
+Name: TMP_22 Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalBConverted2_1(uint256) := TMP_22(uint256)
+[i]Type for totalBConverted2
+
+Name: totalBConverted2 Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_23(uint256) = totalA_1 (c)+ totalBConverted_1
+Error with TMP_23 in function addPriceGlobal
+Error with: TMP_23 in function addPriceGlobal
+[i]Type for TMP_23
+
+Name: TMP_23 Function: addPriceGlobal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+total_1(uint256) := TMP_23(uint256)
+[i]Type for total
+
+Name: total Function: addPriceGlobal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_24(uint256) = totalA_1 (c)+ totalBConverted2_1
+Error with TMP_24 in function addPriceGlobal
+Error with: TMP_24 in function addPriceGlobal
+[i]Type for TMP_24
+
+Name: TMP_24 Function: addPriceGlobal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+total2_1(uint256) := TMP_24(uint256)
+[i]Type for total2
+
+Name: total2 Function: addPriceGlobal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN total_1
+
+
+reserveTokenA_6(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+reserveTokenB_6(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+priceAInB_2(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
+TMP_18(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_6,amountA_1)
+totalA_1(uint256) := TMP_18(uint256)
+TMP_19(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_7,amountB_1)
+totalB_1(uint256) := TMP_19(uint256)
+TMP_20(uint256) = INTERNAL_CALL, PriceAndExtTest.priceGlobal()()
+TMP_21(uint256) = totalB_1 (c)* TMP_20
+totalBConverted_1(uint256) := TMP_21(uint256)
+TMP_22(uint256) = totalB_1 (c)* priceAInB_5
+totalBConverted2_1(uint256) := TMP_22(uint256)
+TMP_23(uint256) = totalA_1 (c)+ totalBConverted_1
+total_1(uint256) := TMP_23(uint256)
+TMP_24(uint256) = totalA_1 (c)+ totalBConverted2_1
+total2_1(uint256) := TMP_24(uint256)
+RETURN total_1
+
+
+reserveTokenA_6(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: addPriceGlobal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenB_6(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+priceAInB_2(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
+[i]Type for priceAInB
+
+Name: priceAInB Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_18(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_6,amountA_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_18
+
+Name: TMP_18 Function: addPriceGlobal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalA_1(uint256) := TMP_18(uint256)
+[i]Type for totalA
+
+Name: totalA Function: addPriceGlobal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_19(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_7,amountB_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_19
+
+Name: TMP_19 Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalB_1(uint256) := TMP_19(uint256)
+[i]Type for totalB
+
+Name: totalB Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_20(uint256) = INTERNAL_CALL, PriceAndExtTest.priceGlobal()()
+[i]Type for TMP_20
+
+Name: TMP_20 Function: addPriceGlobal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_21(uint256) = totalB_1 (c)* TMP_20
+[i]Type for TMP_21
+
+Name: TMP_21 Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalBConverted_1(uint256) := TMP_21(uint256)
+[i]Type for totalBConverted
+
+Name: totalBConverted Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_22(uint256) = totalB_1 (c)* priceAInB_5
+[i]Type for TMP_22
+
+Name: TMP_22 Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalBConverted2_1(uint256) := TMP_22(uint256)
+[i]Type for totalBConverted2
+
+Name: totalBConverted2 Function: addPriceGlobal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_23(uint256) = totalA_1 (c)+ totalBConverted_1
+[i]Type for TMP_23
+
+Name: TMP_23 Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+total_1(uint256) := TMP_23(uint256)
+[i]Type for total
+
+Name: total Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_24(uint256) = totalA_1 (c)+ totalBConverted2_1
+[i]Type for TMP_24
+
+Name: TMP_24 Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+total2_1(uint256) := TMP_24(uint256)
+[i]Type for total2
+
+Name: total2 Function: addPriceGlobal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN total_1
+
+
+
+addPriceExternal
+Finding type for amountA(uint256 ... )
+Finding type for amountB(uint256 ... )
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+
+
+reserveTokenA_8(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+reserveTokenB_9(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+TMP_25(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_8,amountA_1)
+totalA_1(uint256) := TMP_25(uint256)
+TMP_26(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_10,amountB_1)
+totalB_1(uint256) := TMP_26(uint256)
+TMP_27(uint256) = INTERNAL_CALL, PriceAndExtTest.priceExternal(address,address)(reserveTokenA_10,reserveTokenB_11)
+TMP_28(uint256) = totalB_1 (c)* TMP_27
+totalBConverted_1(uint256) := TMP_28(uint256)
+TMP_29(uint256) = totalA_1 (c)+ totalBConverted_1
+total_1(uint256) := TMP_29(uint256)
+RETURN total_1
+
+
+reserveTokenA_8(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTokenA_1', 'reserveTokenA_11', 'reserveTokenA_7'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: addPriceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenB_9(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_0', 'reserveTokenB_12', 'reserveTokenB_8', 'reserveTokenB_5'])
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: addPriceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_25(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenA_8,amountA_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_25
+
+Name: TMP_25 Function: addPriceExternal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalA_1(uint256) := TMP_25(uint256)
+[i]Type for totalA
+
+Name: totalA Function: addPriceExternal
+Num: 1
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_26(uint256) = INTERNAL_CALL, PriceAndExtTest.seeReserveTotal(address,uint256)(reserveTokenB_10,amountB_1)
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+reserve_1(address) := ϕ(['reserveTokenB_3', 'reserveTokenA_2', 'reserveTokenA_8', 'reserveTokenB_7', 'reserveTokenB_10', 'reserveTokenA_6'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['amountB_1', 'amountA_1', 'amountA_1', 'amountB_1', 'amountB_1', 'amountA_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_9 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_10 = CONVERT this to address
+Converting this
+4
+[i]Type for TMP_10
+
+Name: TMP_10 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 4
+Norm: u
+LF: PriceAndExtTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11(uint256) = HIGH_LEVEL_CALL, dest:TMP_9(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_10']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_11
+
+Name: TMP_11 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = TMP_11 (c)+ amount_1
+[i]Type for TMP_12
+
+Name: TMP_12 Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amt_1(uint256) := TMP_12(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN amt_1
+[i]Type for TMP_26
+
+Name: TMP_26 Function: addPriceExternal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalB_1(uint256) := TMP_26(uint256)
+[i]Type for totalB
+
+Name: totalB Function: addPriceExternal
+Num: 2
+Den: 
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_27(uint256) = INTERNAL_CALL, PriceAndExtTest.priceExternal(address,address)(reserveTokenA_10,reserveTokenB_11)
+A_1(address) := ϕ(['reserveTokenA_10'])
+[i]Type for A
+
+Name: A Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: A
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+B_1(address) := ϕ(['reserveTokenB_11'])
+[i]Type for B
+
+Name: B Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: B
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+oracle_1(address) := ϕ(['oracle_2', 'oracle_0'])
+[i]Type for oracle
+
+Name: oracle Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: oracle
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_7 = CONVERT oracle_1 to ITypicalOracle
+Converting oracle_1
+
+Name: oracle Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: oracle
+Value: u
+Fields: 
+Finance Type: undef
+TypicalOracle
+[i]Type for TMP_7
+
+Name: TMP_7 Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: TypicalOracle
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_7(ITypicalOracle), function:price, arguments:['A_1', 'B_1']  
+High Call: price
+Running querryfc
+Written func info: TypicalOracle, price
+Getting new address:
+prev address? u
+-990
+Head Addr: -990
+    Norm: *
+    Set: {-990}
+[i]Type for TMP_8
+
+Name: TMP_8 Function: priceExternal
+Num: global:resereTokenA
+Den: global:reserveTokenB
+Address: -990
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+oracle_2(address) := ϕ(['oracle_2', 'oracle_1'])
+[i]Type for oracle
+
+Name: oracle Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN TMP_8
+A_1(address) := ϕ(['reserveTokenA_10'])
+[i]Type for A
+
+Name: A Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+B_1(address) := ϕ(['reserveTokenB_11'])
+[i]Type for B
+
+Name: B Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+oracle_1(address) := ϕ(['oracle_2', 'oracle_0'])
+[i]Type for oracle
+
+Name: oracle Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: oracle
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_7 = CONVERT oracle_1 to ITypicalOracle
+Converting oracle_1
+
+Name: oracle Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: oracle
+Value: u
+Fields: 
+Finance Type: undef
+TypicalOracle
+[i]Type for TMP_7
+
+Name: TMP_7 Function: priceExternal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: TypicalOracle
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_7(ITypicalOracle), function:price, arguments:['A_1', 'B_1']  
+High Call: price
+Running querryfc
+Written func info: TypicalOracle, price
+Getting new address:
+prev address? u
+-989
+Head Addr: -989
+    Norm: *
+    Set: {-989}
+[i]Type for TMP_8
+
+Name: TMP_8 Function: priceExternal
+Num: global:resereTokenA
+Den: global:reserveTokenB
+Address: -989
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+oracle_2(address) := ϕ(['oracle_2', 'oracle_1'])
+[i]Type for oracle
+
+Name: oracle Function: priceExternal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN TMP_8
+[i]Type for TMP_27
+
+Name: TMP_27 Function: addPriceExternal
+Num: global:resereTokenA
+Den: global:reserveTokenB
+Address: -989
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_28(uint256) = totalB_1 (c)* TMP_27
+[i]Type for TMP_28
+
+Name: TMP_28 Function: addPriceExternal
+Num: 2, global:resereTokenA
+Den: global:reserveTokenB
+Address: -989
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+totalBConverted_1(uint256) := TMP_28(uint256)
+[i]Type for totalBConverted
+
+Name: totalBConverted Function: addPriceExternal
+Num: 2, global:resereTokenA
+Den: global:reserveTokenB
+Address: -989
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_29(uint256) = totalA_1 (c)+ totalBConverted_1
