@@ -916,11 +916,11 @@ def querry_fc(ir) -> int:
     global address_to_label
     if(not (isinstance(ir, HighLevelCall))):
         return 0
-    if(mark_iteration and not(current_function_marked)):
-        assign_const(ir.lvalue)
-        return 2
+    #if(mark_iteration and not(current_function_marked)):
+    #    assign_const(ir.lvalue)
+    #    return 2
     dest = ir.destination
-    convert_ssa(dest)
+    #convert_ssa(dest)
     func_name = ir.function.name
     
     if(isinstance(dest, Variable)):
