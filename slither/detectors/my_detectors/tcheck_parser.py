@@ -361,7 +361,7 @@ def stringToType(string):
         gstring = "global:"+str(string)
         if gstring in address_to_label:
             type = address_to_label[gstring]
-        elif _string = address_to_label:
+        elif _string in address_to_label:
             type = address_to_label[_string]
         else:
             type = -1
