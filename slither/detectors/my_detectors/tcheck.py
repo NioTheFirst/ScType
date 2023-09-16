@@ -954,8 +954,9 @@ def querry_fc(ir) -> int:
             #convert_ssa(ir.lvalue)
             copy_token_tuple(ir.lvalue, written_func_ret)
             #address
-            print("Getting new address:")
-            print(new_address(ir.lvalue, False))
+            if(ir.lvalue.type == str(address)):
+                print("Getting new address:")
+                print(new_address(ir.lvalue, False))
         elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
         else:
