@@ -357,9 +357,12 @@ def stringToType(string):
         type = int(string)
     except ValueError:
         #search address
+        _string = str(string)
         gstring = "global:"+str(string)
         if gstring in address_to_label:
             type = address_to_label[gstring]
+        elif _string = address_to_label:
+            type = address_to_label[_string]
         else:
             type = -1
     return type
