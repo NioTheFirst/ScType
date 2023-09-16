@@ -150,6 +150,13 @@ def get_ref(ref_name):
         return None
     return tcheck_parser.get_ref_type_tuple(ref_name)
 
+#USAGE: views the current address labels
+def print_addresses():
+    for label, address in address_to_label.items():
+        print(f"Address: {address}, Label: {label}")
+    for label, addr_label in label_sets.items():
+        print(addr_label)
+
 #USAGE: given a function name and a var name, return the token pair
 #RETURNS: tuple holding the token pair
 def get_hash(function_name, var_name):
@@ -942,6 +949,7 @@ def querry_fc(ir) -> int:
         return 2
 
     print(f"Written func info: {cont_name}, {func_name}")
+    print_addresses()
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
         ##print("wfc len: " + str(len(written_func_rets)))
