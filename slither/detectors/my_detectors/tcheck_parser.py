@@ -397,7 +397,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
         ret_type_tuples = []
         pos = -1
         for ret_var in func_tuple:
-            print("Retvar: {ret_var}")
+            print(f"Retvar: {ret_var}")
             pos+=1
             copy = ret_var[0]
             num_trans = ret_var[1]
