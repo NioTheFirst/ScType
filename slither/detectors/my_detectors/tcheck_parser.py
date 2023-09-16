@@ -421,11 +421,11 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                 for addr in num_trans:
                     #May translate from global addresses
                     addr = stringToType(addr)
-                    _num_trans.add(addr)
+                    _num_trans.append(addr)
                 for addr in den_trans:
                     #May translate from global addresses
                     addr = stringToType(addr)
-                    _den_trans.add(addr)
+                    _den_trans.append(addr)
                 ret_type_tuple = (_num_trans, _den_trans, norm , lc, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
