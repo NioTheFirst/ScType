@@ -949,7 +949,7 @@ def querry_fc(ir) -> int:
         return 2
 
     print(f"Written func info: {cont_name}, {func_name}")
-    print_addresses()
+    #print_addresses()
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
         ##print("wfc len: " + str(len(written_func_rets)))
