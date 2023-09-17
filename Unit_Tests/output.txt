@@ -1,21 +1,21 @@
 Checking ITypicalOracle
 Checking ITypicalTokenWrapper
 Checking PriceAndExtTest
-Finding type for oracle(address ... )
+Finding type for reserveTokenA(address ... )
 prev address? u
 global assignment: 1
 1
 Head Addr: 1
     Norm: 0
     Set: {1}
-Finding type for reserveTokenA(address ... )
+Finding type for reserveTokenB(address ... )
 prev address? u
 global assignment: 2
 2
 Head Addr: 2
     Norm: 0
     Set: {2}
-Finding type for reserveTokenB(address ... )
+Finding type for oracle(address ... )
 prev address? u
 global assignment: 3
 3
@@ -561,8 +561,8 @@ priceAInB_1(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
 [i]Type for priceAInB
 
 Name: priceAInB Function: priceGlobal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: u
 LF: None
@@ -657,7 +657,7 @@ Converting oracle_1
 Name: oracle Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: oracle
 Value: u
@@ -669,7 +669,7 @@ TypicalOracle
 Name: TMP_7 Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: TypicalOracle
 Value: u
@@ -684,8 +684,8 @@ Retvar: ('c', ['global:reserveTokenA'], ['global:reserveTokenB'], 0, 0, None)
 [i]Type for TMP_8
 
 Name: TMP_8 Function: priceExternal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: None
 Norm: 0
 LF: None
@@ -750,7 +750,7 @@ oracle_1(address) := ϕ(['oracle_2', 'oracle_0'])
 Name: oracle Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: oracle
 Value: u
@@ -763,7 +763,7 @@ Converting oracle_1
 Name: oracle Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: oracle
 Value: u
@@ -775,7 +775,7 @@ TypicalOracle
 Name: TMP_7 Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: TypicalOracle
 Value: u
@@ -790,8 +790,8 @@ Retvar: ('c', ['global:reserveTokenA'], ['global:reserveTokenB'], 0, 0, None)
 [i]Type for TMP_8
 
 Name: TMP_8 Function: priceExternal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: None
 Norm: 0
 LF: None
@@ -1219,7 +1219,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -1231,7 +1231,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -1258,11 +1258,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1274,7 +1274,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1295,7 +1295,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1308,7 +1308,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1350,7 +1350,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -1362,7 +1362,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -1389,11 +1389,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1405,7 +1405,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1426,7 +1426,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1439,7 +1439,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1452,7 +1452,7 @@ RETURN amt_1
 [i]Type for TMP_13
 
 Name: TMP_13 Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1465,7 +1465,7 @@ totalA_1(uint256) := TMP_13(uint256)
 [i]Type for totalA
 
 Name: totalA Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1507,7 +1507,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -1519,7 +1519,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -1546,11 +1546,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1562,7 +1562,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1583,7 +1583,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1596,7 +1596,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1638,7 +1638,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -1650,7 +1650,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -1677,11 +1677,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1693,7 +1693,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1714,7 +1714,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1727,7 +1727,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1740,7 +1740,7 @@ RETURN amt_1
 [i]Type for TMP_14
 
 Name: TMP_14 Function: addPriceIncluded
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1753,7 +1753,7 @@ totalB_1(uint256) := TMP_14(uint256)
 [i]Type for totalB
 
 Name: totalB Function: addPriceIncluded
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1795,7 +1795,7 @@ Converting A_1
 Name: A_1 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -1807,7 +1807,7 @@ TypicalTokenWrapper
 Name: TMP_0 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -1834,11 +1834,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_2
 
 Name: TMP_2 Function: priceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -1853,7 +1853,7 @@ Converting B_1
 Name: B_1 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -1865,7 +1865,7 @@ TypicalTokenWrapper
 Name: TMP_3 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -1892,11 +1892,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_5
 
 Name: TMP_5 Function: priceIncluded
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -1909,8 +1909,8 @@ TMP_6(uint256) = TMP_2 (c)/ TMP_5
 [i]Type for TMP_6
 
 Name: TMP_6 Function: priceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -1922,8 +1922,8 @@ price_1(uint256) := TMP_6(uint256)
 [i]Type for price
 
 Name: price Function: priceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -1964,7 +1964,7 @@ Converting A_1
 Name: A_1 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -1976,7 +1976,7 @@ TypicalTokenWrapper
 Name: TMP_0 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -2003,11 +2003,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_2
 
 Name: TMP_2 Function: priceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2022,7 +2022,7 @@ Converting B_1
 Name: B_1 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -2034,7 +2034,7 @@ TypicalTokenWrapper
 Name: TMP_3 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -2061,11 +2061,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_5
 
 Name: TMP_5 Function: priceIncluded
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2078,8 +2078,8 @@ TMP_6(uint256) = TMP_2 (c)/ TMP_5
 [i]Type for TMP_6
 
 Name: TMP_6 Function: priceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -2091,8 +2091,8 @@ price_1(uint256) := TMP_6(uint256)
 [i]Type for price
 
 Name: price Function: priceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -2104,8 +2104,8 @@ RETURN price_1
 [i]Type for TMP_15
 
 Name: TMP_15 Function: addPriceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -2117,7 +2117,7 @@ TMP_16(uint256) = totalB_1 (c)* TMP_15
 [i]Type for TMP_16
 
 Name: TMP_16 Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2130,7 +2130,7 @@ totalBConverted_1(uint256) := TMP_16(uint256)
 [i]Type for totalBConverted
 
 Name: totalBConverted Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2142,7 +2142,7 @@ XXXX
 TMP_17(uint256) = totalA_1 (c)+ totalBConverted_1
 
 Name: totalA Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2152,7 +2152,7 @@ Fields:
 Finance Type: undef
 
 Name: totalBConverted Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2163,7 +2163,7 @@ Finance Type: undef
 [i]Type for TMP_17
 
 Name: TMP_17 Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2176,7 +2176,7 @@ total_1(uint256) := TMP_17(uint256)
 [i]Type for total
 
 Name: total Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2208,7 +2208,7 @@ reserveTokenA_2(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTo
 Name: reserveTokenA Function: addPriceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -2261,7 +2261,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -2273,7 +2273,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -2300,11 +2300,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2316,7 +2316,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2337,7 +2337,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2350,7 +2350,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2392,7 +2392,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -2404,7 +2404,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -2431,11 +2431,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2447,7 +2447,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2468,7 +2468,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2481,7 +2481,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2494,7 +2494,7 @@ RETURN amt_1
 [i]Type for TMP_13
 
 Name: TMP_13 Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2507,7 +2507,7 @@ totalA_1(uint256) := TMP_13(uint256)
 [i]Type for totalA
 
 Name: totalA Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2549,7 +2549,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -2561,7 +2561,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -2588,11 +2588,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2604,7 +2604,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2625,7 +2625,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2638,7 +2638,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2680,7 +2680,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -2692,7 +2692,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -2719,11 +2719,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2735,7 +2735,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2756,7 +2756,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2769,7 +2769,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2782,7 +2782,7 @@ RETURN amt_1
 [i]Type for TMP_14
 
 Name: TMP_14 Function: addPriceIncluded
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2795,7 +2795,7 @@ totalB_1(uint256) := TMP_14(uint256)
 [i]Type for totalB
 
 Name: totalB Function: addPriceIncluded
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2837,7 +2837,7 @@ Converting A_1
 Name: A_1 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -2849,7 +2849,7 @@ TypicalTokenWrapper
 Name: TMP_0 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -2876,11 +2876,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_2
 
 Name: TMP_2 Function: priceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -2895,7 +2895,7 @@ Converting B_1
 Name: B_1 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -2907,7 +2907,7 @@ TypicalTokenWrapper
 Name: TMP_3 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -2934,11 +2934,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_5
 
 Name: TMP_5 Function: priceIncluded
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -2951,8 +2951,8 @@ TMP_6(uint256) = TMP_2 (c)/ TMP_5
 [i]Type for TMP_6
 
 Name: TMP_6 Function: priceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -2964,8 +2964,8 @@ price_1(uint256) := TMP_6(uint256)
 [i]Type for price
 
 Name: price Function: priceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -3006,7 +3006,7 @@ Converting A_1
 Name: A_1 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -3018,7 +3018,7 @@ TypicalTokenWrapper
 Name: TMP_0 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -3045,11 +3045,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_2
 
 Name: TMP_2 Function: priceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3064,7 +3064,7 @@ Converting B_1
 Name: B_1 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -3076,7 +3076,7 @@ TypicalTokenWrapper
 Name: TMP_3 Function: priceIncluded
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -3103,11 +3103,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_5
 
 Name: TMP_5 Function: priceIncluded
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3120,8 +3120,8 @@ TMP_6(uint256) = TMP_2 (c)/ TMP_5
 [i]Type for TMP_6
 
 Name: TMP_6 Function: priceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -3133,8 +3133,8 @@ price_1(uint256) := TMP_6(uint256)
 [i]Type for price
 
 Name: price Function: priceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -3146,8 +3146,8 @@ RETURN price_1
 [i]Type for TMP_15
 
 Name: TMP_15 Function: addPriceIncluded
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: 0
 LF: None
@@ -3159,7 +3159,7 @@ TMP_16(uint256) = totalB_1 (c)* TMP_15
 [i]Type for TMP_16
 
 Name: TMP_16 Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3172,7 +3172,7 @@ totalBConverted_1(uint256) := TMP_16(uint256)
 [i]Type for totalBConverted
 
 Name: totalBConverted Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3184,7 +3184,7 @@ XXXX
 TMP_17(uint256) = totalA_1 (c)+ totalBConverted_1
 
 Name: totalA Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3194,7 +3194,7 @@ Fields:
 Finance Type: undef
 
 Name: totalBConverted Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3205,7 +3205,7 @@ Finance Type: undef
 [i]Type for TMP_17
 
 Name: TMP_17 Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3218,7 +3218,7 @@ total_1(uint256) := TMP_17(uint256)
 [i]Type for total
 
 Name: total Function: addPriceIncluded
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3341,7 +3341,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -3353,7 +3353,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -3380,11 +3380,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3396,7 +3396,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3417,7 +3417,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3430,7 +3430,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3472,7 +3472,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -3484,7 +3484,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -3511,11 +3511,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3527,7 +3527,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3548,7 +3548,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3561,7 +3561,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3574,7 +3574,7 @@ RETURN amt_1
 [i]Type for TMP_18
 
 Name: TMP_18 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3587,7 +3587,7 @@ totalA_1(uint256) := TMP_18(uint256)
 [i]Type for totalA
 
 Name: totalA Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3629,7 +3629,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -3641,7 +3641,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -3668,11 +3668,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3684,7 +3684,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3705,7 +3705,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3718,7 +3718,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3760,7 +3760,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -3772,7 +3772,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -3799,11 +3799,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3815,7 +3815,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3836,7 +3836,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3849,7 +3849,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3862,7 +3862,7 @@ RETURN amt_1
 [i]Type for TMP_19
 
 Name: TMP_19 Function: addPriceGlobal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3875,7 +3875,7 @@ totalB_1(uint256) := TMP_19(uint256)
 [i]Type for totalB
 
 Name: totalB Function: addPriceGlobal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -3889,8 +3889,8 @@ priceAInB_1(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
 [i]Type for priceAInB
 
 Name: priceAInB Function: priceGlobal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: u
 LF: None
@@ -3903,8 +3903,8 @@ priceAInB_1(uint256) := ϕ(['priceAInB_5', 'priceAInB_0'])
 [i]Type for priceAInB
 
 Name: priceAInB Function: priceGlobal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: u
 LF: None
@@ -3916,8 +3916,8 @@ RETURN priceAInB_1
 [i]Type for TMP_20
 
 Name: TMP_20 Function: addPriceGlobal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: u
 LF: None
@@ -3929,7 +3929,7 @@ TMP_21(uint256) = totalB_1 (c)* TMP_20
 [i]Type for TMP_21
 
 Name: TMP_21 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3942,7 +3942,7 @@ totalBConverted_1(uint256) := TMP_21(uint256)
 [i]Type for totalBConverted
 
 Name: totalBConverted Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3955,7 +3955,7 @@ TMP_22(uint256) = totalB_1 (c)* priceAInB_5
 [i]Type for TMP_22
 
 Name: TMP_22 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3968,7 +3968,7 @@ totalBConverted2_1(uint256) := TMP_22(uint256)
 [i]Type for totalBConverted2
 
 Name: totalBConverted2 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3980,7 +3980,7 @@ XXXX
 TMP_23(uint256) = totalA_1 (c)+ totalBConverted_1
 
 Name: totalA Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -3990,7 +3990,7 @@ Fields:
 Finance Type: undef
 
 Name: totalBConverted Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4001,7 +4001,7 @@ Finance Type: undef
 [i]Type for TMP_23
 
 Name: TMP_23 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4014,7 +4014,7 @@ total_1(uint256) := TMP_23(uint256)
 [i]Type for total
 
 Name: total Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4026,7 +4026,7 @@ XXXX
 TMP_24(uint256) = totalA_1 (c)+ totalBConverted2_1
 
 Name: totalA Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4036,7 +4036,7 @@ Fields:
 Finance Type: undef
 
 Name: totalBConverted2 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4047,7 +4047,7 @@ Finance Type: undef
 [i]Type for TMP_24
 
 Name: TMP_24 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4060,7 +4060,7 @@ total2_1(uint256) := TMP_24(uint256)
 [i]Type for total2
 
 Name: total2 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4097,7 +4097,7 @@ reserveTokenA_6(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTo
 Name: reserveTokenA Function: addPriceGlobal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -4163,7 +4163,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -4175,7 +4175,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -4202,11 +4202,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4218,7 +4218,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4239,7 +4239,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4252,7 +4252,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4294,7 +4294,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -4306,7 +4306,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -4333,11 +4333,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4349,7 +4349,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4370,7 +4370,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4383,7 +4383,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4396,7 +4396,7 @@ RETURN amt_1
 [i]Type for TMP_18
 
 Name: TMP_18 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4409,7 +4409,7 @@ totalA_1(uint256) := TMP_18(uint256)
 [i]Type for totalA
 
 Name: totalA Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4451,7 +4451,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -4463,7 +4463,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -4490,11 +4490,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4506,7 +4506,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4527,7 +4527,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4540,7 +4540,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4582,7 +4582,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -4594,7 +4594,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -4621,11 +4621,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4637,7 +4637,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4658,7 +4658,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4671,7 +4671,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4684,7 +4684,7 @@ RETURN amt_1
 [i]Type for TMP_19
 
 Name: TMP_19 Function: addPriceGlobal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4697,7 +4697,7 @@ totalB_1(uint256) := TMP_19(uint256)
 [i]Type for totalB
 
 Name: totalB Function: addPriceGlobal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -4710,8 +4710,8 @@ TMP_20(uint256) = INTERNAL_CALL, PriceAndExtTest.priceGlobal()()
 [i]Type for TMP_20
 
 Name: TMP_20 Function: addPriceGlobal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: u
 Norm: u
 LF: None
@@ -4723,7 +4723,7 @@ TMP_21(uint256) = totalB_1 (c)* TMP_20
 [i]Type for TMP_21
 
 Name: TMP_21 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4736,7 +4736,7 @@ totalBConverted_1(uint256) := TMP_21(uint256)
 [i]Type for totalBConverted
 
 Name: totalBConverted Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4749,7 +4749,7 @@ TMP_22(uint256) = totalB_1 (c)* priceAInB_5
 [i]Type for TMP_22
 
 Name: TMP_22 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4762,7 +4762,7 @@ totalBConverted2_1(uint256) := TMP_22(uint256)
 [i]Type for totalBConverted2
 
 Name: totalBConverted2 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4774,7 +4774,7 @@ XXXX
 TMP_23(uint256) = totalA_1 (c)+ totalBConverted_1
 
 Name: totalA Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4784,7 +4784,7 @@ Fields:
 Finance Type: undef
 
 Name: totalBConverted Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4795,7 +4795,7 @@ Finance Type: undef
 [i]Type for TMP_23
 
 Name: TMP_23 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4808,7 +4808,7 @@ total_1(uint256) := TMP_23(uint256)
 [i]Type for total
 
 Name: total Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4820,7 +4820,7 @@ XXXX
 TMP_24(uint256) = totalA_1 (c)+ totalBConverted2_1
 
 Name: totalA Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4830,7 +4830,7 @@ Fields:
 Finance Type: undef
 
 Name: totalBConverted2 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4841,7 +4841,7 @@ Finance Type: undef
 [i]Type for TMP_24
 
 Name: TMP_24 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4854,7 +4854,7 @@ total2_1(uint256) := TMP_24(uint256)
 [i]Type for total2
 
 Name: total2 Function: addPriceGlobal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -4959,7 +4959,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -4971,7 +4971,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -4998,11 +4998,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5014,7 +5014,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5035,7 +5035,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5048,7 +5048,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5090,7 +5090,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -5102,7 +5102,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -5129,11 +5129,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5145,7 +5145,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5166,7 +5166,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5179,7 +5179,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5192,7 +5192,7 @@ RETURN amt_1
 [i]Type for TMP_25
 
 Name: TMP_25 Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5205,7 +5205,7 @@ totalA_1(uint256) := TMP_25(uint256)
 [i]Type for totalA
 
 Name: totalA Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5247,7 +5247,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -5259,7 +5259,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -5286,11 +5286,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5302,7 +5302,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5323,7 +5323,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5336,7 +5336,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5378,7 +5378,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -5390,7 +5390,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -5417,11 +5417,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5433,7 +5433,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5454,7 +5454,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5467,7 +5467,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5480,7 +5480,7 @@ RETURN amt_1
 [i]Type for TMP_26
 
 Name: TMP_26 Function: addPriceExternal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5493,7 +5493,7 @@ totalB_1(uint256) := TMP_26(uint256)
 [i]Type for totalB
 
 Name: totalB Function: addPriceExternal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -5535,7 +5535,7 @@ oracle_1(address) := ϕ(['oracle_2', 'oracle_0'])
 Name: oracle Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: oracle
 Value: u
@@ -5548,7 +5548,7 @@ Converting oracle_1
 Name: oracle Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: oracle
 Value: u
@@ -5560,7 +5560,7 @@ TypicalOracle
 Name: TMP_7 Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: TypicalOracle
 Value: u
@@ -5575,8 +5575,8 @@ Retvar: ('c', ['global:reserveTokenA'], ['global:reserveTokenB'], 0, 0, None)
 [i]Type for TMP_8
 
 Name: TMP_8 Function: priceExternal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: None
 Norm: 0
 LF: None
@@ -5630,7 +5630,7 @@ oracle_1(address) := ϕ(['oracle_2', 'oracle_0'])
 Name: oracle Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: oracle
 Value: u
@@ -5643,7 +5643,7 @@ Converting oracle_1
 Name: oracle Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: oracle
 Value: u
@@ -5655,7 +5655,7 @@ TypicalOracle
 Name: TMP_7 Function: priceExternal
 Num: -1
 Den: -1
-Address: 1
+Address: 3
 Norm: u
 LF: TypicalOracle
 Value: u
@@ -5670,8 +5670,8 @@ Retvar: ('c', ['global:reserveTokenA'], ['global:reserveTokenB'], 0, 0, None)
 [i]Type for TMP_8
 
 Name: TMP_8 Function: priceExternal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: None
 Norm: 0
 LF: None
@@ -5696,8 +5696,8 @@ RETURN TMP_8
 [i]Type for TMP_27
 
 Name: TMP_27 Function: addPriceExternal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: None
 Norm: 0
 LF: None
@@ -5709,7 +5709,7 @@ TMP_28(uint256) = totalB_1 (c)* TMP_27
 [i]Type for TMP_28
 
 Name: TMP_28 Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: None
 Norm: 0
@@ -5722,7 +5722,7 @@ totalBConverted_1(uint256) := TMP_28(uint256)
 [i]Type for totalBConverted
 
 Name: totalBConverted Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: None
 Norm: 0
@@ -5734,7 +5734,7 @@ XXXX
 TMP_29(uint256) = totalA_1 (c)+ totalBConverted_1
 
 Name: totalA Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5744,7 +5744,7 @@ Fields:
 Finance Type: undef
 
 Name: totalBConverted Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: None
 Norm: 0
@@ -5755,7 +5755,7 @@ Finance Type: undef
 [i]Type for TMP_29
 
 Name: TMP_29 Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5768,7 +5768,7 @@ total_1(uint256) := TMP_29(uint256)
 [i]Type for total
 
 Name: total Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5800,7 +5800,7 @@ reserveTokenA_8(address) := ϕ(['reserveTokenA_0', 'reserveTokenA_5', 'reserveTo
 Name: reserveTokenA Function: addPriceExternal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -5853,7 +5853,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -5865,7 +5865,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -5892,11 +5892,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5908,7 +5908,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5929,7 +5929,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5942,7 +5942,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -5984,7 +5984,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: reserveTokenA
 Value: u
@@ -5996,7 +5996,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 2
+Address: 1
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -6023,11 +6023,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-2
+1
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6039,7 +6039,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6060,7 +6060,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6073,7 +6073,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6086,7 +6086,7 @@ RETURN amt_1
 [i]Type for TMP_25
 
 Name: TMP_25 Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6099,7 +6099,7 @@ totalA_1(uint256) := TMP_25(uint256)
 [i]Type for totalA
 
 Name: totalA Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6141,7 +6141,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -6153,7 +6153,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -6180,11 +6180,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6196,7 +6196,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6217,7 +6217,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6230,7 +6230,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6272,7 +6272,7 @@ Converting reserve_1
 Name: reserve_1 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: reserveTokenB
 Value: u
@@ -6284,7 +6284,7 @@ TypicalTokenWrapper
 Name: TMP_9 Function: seeReserveTotal
 Num: -1
 Den: -1
-Address: 3
+Address: 2
 Norm: u
 LF: TypicalTokenWrapper
 Value: u
@@ -6311,11 +6311,11 @@ High Call: balanceOf
 Running querryfc
 Written func info: TypicalTokenWrapper, balanceOf
 Handling balance function!
-3
+2
 [i]Type for TMP_11
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6327,7 +6327,7 @@ XXXX
 TMP_12(uint256) = TMP_11 (c)+ amount_1
 
 Name: TMP_11 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6348,7 +6348,7 @@ Finance Type: undef
 [i]Type for TMP_12
 
 Name: TMP_12 Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6361,7 +6361,7 @@ amt_1(uint256) := TMP_12(uint256)
 [i]Type for amt
 
 Name: amt Function: seeReserveTotal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6374,7 +6374,7 @@ RETURN amt_1
 [i]Type for TMP_26
 
 Name: TMP_26 Function: addPriceExternal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6387,7 +6387,7 @@ totalB_1(uint256) := TMP_26(uint256)
 [i]Type for totalB
 
 Name: totalB Function: addPriceExternal
-Num: 3
+Num: 2
 Den: -1
 Address: u
 Norm: 0
@@ -6400,8 +6400,8 @@ TMP_27(uint256) = INTERNAL_CALL, PriceAndExtTest.priceExternal(address,address)(
 [i]Type for TMP_27
 
 Name: TMP_27 Function: addPriceExternal
-Num: 2
-Den: 3
+Num: 1
+Den: 2
 Address: None
 Norm: u
 LF: None
@@ -6413,7 +6413,7 @@ TMP_28(uint256) = totalB_1 (c)* TMP_27
 [i]Type for TMP_28
 
 Name: TMP_28 Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: None
 Norm: 0
@@ -6426,7 +6426,7 @@ totalBConverted_1(uint256) := TMP_28(uint256)
 [i]Type for totalBConverted
 
 Name: totalBConverted Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: None
 Norm: 0
@@ -6438,7 +6438,7 @@ XXXX
 TMP_29(uint256) = totalA_1 (c)+ totalBConverted_1
 
 Name: totalA Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6448,7 +6448,7 @@ Fields:
 Finance Type: undef
 
 Name: totalBConverted Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: None
 Norm: 0
@@ -6459,7 +6459,7 @@ Finance Type: undef
 [i]Type for TMP_29
 
 Name: TMP_29 Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6472,7 +6472,7 @@ total_1(uint256) := TMP_29(uint256)
 [i]Type for total
 
 Name: total Function: addPriceExternal
-Num: 2
+Num: 1
 Den: -1
 Address: u
 Norm: 0
@@ -6482,9 +6482,9 @@ Fields:
 Finance Type: undef
 XXXX
 RETURN total_1
-Address: 1, Label: global:oracle
-Address: 2, Label: global:reserveTokenA
-Address: 3, Label: global:reserveTokenB
+Address: 1, Label: global:reserveTokenA
+Address: 2, Label: global:reserveTokenB
+Address: 3, Label: global:oracle
 Address: -999, Label: constructor:_reserveTokenA
 Address: -998, Label: constructor:_reserveTokenB
 Address: -997, Label: priceIncluded:A
