@@ -2482,7 +2482,7 @@ def _tcheck_function_call(function, param_cache) -> []:
             copy_pc_token_type(param_cache[paramno], param)
             #update_non_ssa(param)
             #if (isinstance(param, Variable)):
-            #    print(param)
+            print(param.extok)
             #    update_non_ssa(param)
             paramno+=1
         while fentry:

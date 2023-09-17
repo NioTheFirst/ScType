@@ -76,7 +76,7 @@ def get_address_label(func_name, name):
     if name_key in address_to_label:
         return(label_sets[address_to_label[name_key]])
     else:
-        return None
+        return None   
 
 def new_address(ir, isGlobal):
     global global_address_counter
