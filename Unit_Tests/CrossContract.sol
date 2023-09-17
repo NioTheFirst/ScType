@@ -15,12 +15,14 @@ contract CrossContractTest{
 	reserveTokenB = _reserveTokenB;
     }
 
-    function testCrossContract() public{
+    function testCrossContract(uint256 val) public{
         IImportedContract ic = IImportedContract(importedContract);
 	ic.setAToken(reserveTokenA);
 	ic.setBToken(reserveTokenB);
+	val += 5;
 	(uint256 newA, uint256 newB) = ic.mixAdd(seeReserveTotal(reserveTokenA, 0), seeReserveTotal(reserveTokenB, 0));
 	uint256 badSum = newA + newB;
+	val += badSum;
     } 
 	
     function seeReserveTotal(address reserve, uint256 amount) public returns(uint256){

@@ -2493,8 +2493,8 @@ def _tcheck_function_call(function, param_cache) -> []:
                 continue
             explored.add(node)
             #clear previous nodes
-            #if(prevlen == -1):# or not(node in addback_nodes)):
-            #    _clear_type_node(node)
+            if(prevlen == -1):# or not(node in addback_nodes)):
+                _clear_type_node(node)
             addback = _tcheck_node(node, function)
             if(len(addback) > 0):
                 addback_nodes.append(node)
