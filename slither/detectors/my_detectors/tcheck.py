@@ -2270,7 +2270,7 @@ def _tcheck_ir(irs, function_name) -> []:
     return newirs
 
 #USAGE: propogates a local variables with a parameter
-def propogate_parameter(lv):
+def propogate_parameter(lv, function):
     if("_1" in lv.ssa_name and lv.extok.is_undefined()):
             #print("local...")
             pos = -1
@@ -2324,7 +2324,7 @@ def _tcheck_node(node, function) -> []:
     for lv in node.ssa_variables_read:
         print(lv)
         print(lv.extok)
-        propogate_parameter(lv)
+        propogate_parameter(lv, function)
         propogate_global(lv)
         #print(lv.extok)
     
