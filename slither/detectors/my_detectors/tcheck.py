@@ -949,13 +949,15 @@ def querry_fc(ir) -> int:
         return 2
 
     print(f"Written func info: {cont_name}, {func_name}")
-    #print_addresses()
+    #
+    
+    print_addresses()
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
         ##print("wfc len: " + str(len(written_func_rets)))
         if(len(written_func_rets) == 0):
             #No return value included, default to constant
-            #convert_ssa(ir.lvalue)
+            #convert_ssa(ir.lval
             assign_const(ir.lvalue)
         elif(len(written_func_rets) == 1):
             written_func_ret = written_func_rets[0]
@@ -1558,6 +1560,8 @@ def type_bin_add(dest, lir, rir) -> bool:
     #dest = ir.lvalue
     #lir = ir.variable_left
     #rir = ir.variable_right
+    print_token_type(lir)
+    print_token_type(rir)
     if(not (init_var(lir) and init_var(rir))):
         return False
     ##print_token_type(dest)
