@@ -2269,6 +2269,23 @@ def _tcheck_ir(irs, function_name) -> []:
             newirs.append(ir)
     return newirs
 
+#USSAGE: propogates a local variable with a global stored assignment
+def propogate_global(lv):
+    if(lv.extok.is_undefined()):
+        pos = -1
+        for i in range(len(lv.ssa_name)-1):
+            revpos = len(lv.ssa_name)-i-1
+            #print(lv.ssa_name[revpos])
+            if(lv.ssa_name[revpos] == '_'):
+                pos = revpos
+                break
+        _name = lv.ssa_name[:pos]
+        print(_name)
+        if((_name, current_contract_name) in global_var_types):
+            #print("global...")
+            copy_token_type(global_var_types[(_name, current_contract_name)], lv)
+
+
 #USAGE: typecheck a node
 #RETURNS: list of IR with undefined types
 def _tcheck_node(node, function) -> []:
@@ -2286,37 +2303,7 @@ def _tcheck_node(node, function) -> []:
     #print("Propogating parameters to SSA variables...")
     for lv in node.ssa_variables_read:
         print(lv)
-        if("_1" in lv.ssa_name and lv.extok.is_undefined()):
-            #print("local...")
-            pos = -1
-            for i in range(len(lv.ssa_name)-1):
-                revpos = len(lv.ssa_name)-i-1
-                #print(lv.ssa_name[revpos:revpos+2])   
-                if(lv.ssa_name[revpos:revpos+2] == '_1'):
-                    pos = revpos
-                    break
-            lv_subname = lv.ssa_name[:pos]
-            #lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
-            #print(lv_subname)
-            for p in function.parameters:
-                
-                if(p.name == lv_subname):
-                    lv.extok.name = lv.ssa_name
-                    lv.function_name = function.name
-                    copy_token_type(p, lv)
-        if(lv.extok.is_undefined()):
-            pos = -1
-            for i in range(len(lv.ssa_name)-1):
-                revpos = len(lv.ssa_name)-i-1
-                #print(lv.ssa_name[revpos])
-                if(lv.ssa_name[revpos] == '_'):
-                    pos = revpos
-                    break
-            _name = lv.ssa_name[:pos]
-            print(_name)
-            if((_name, current_contract_name) in global_var_types):
-                #print("global...")
-                copy_token_type(global_var_types[(_name, current_contract_name)], lv)
+        propogate_global(lv)
         #print(lv.extok)
     
     #print("End popogation")            
@@ -2324,6 +2311,10 @@ def _tcheck_node(node, function) -> []:
     for ir in node.irs_ssa:
         #DEFINE REFERENCE RELATIONS
         ir.dnode = node
+        if isinstance(ir, Phi):
+            #Phi de
+            lv = ir.lvalue
+            propogate_global(lv)
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
