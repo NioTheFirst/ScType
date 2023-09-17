@@ -2303,6 +2303,7 @@ def _tcheck_node(node, function) -> []:
     #print("Propogating parameters to SSA variables...")
     for lv in node.ssa_variables_read:
         print(lv)
+        print(lv.extok)
         propogate_global(lv)
         #print(lv.extok)
     
@@ -2315,6 +2316,7 @@ def _tcheck_node(node, function) -> []:
             #Phi de
             lv = ir.lvalue
             propogate_global(lv)
+            print(lv.extok)
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
