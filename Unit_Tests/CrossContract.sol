@@ -20,6 +20,7 @@ contract CrossContractTest{
 	ic.setAToken(reserveTokenA);
 	ic.setBToken(reserveTokenB);
 	(uint256 newA, uint256 newB) = ic.mixAdd(seeReserveTotal(reserveTokenA, 0), seeReserveTotal(reserveTokenB, 0));
+	uint256 badSum = newA + newB;
     } 
 	
     function seeReserveTotal(address reserve, uint256 amount) public returns(uint256){

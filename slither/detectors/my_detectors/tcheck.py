@@ -2747,6 +2747,7 @@ def _tcheck_contract(contract):
         if(function.name != "constructor"):
             _tcheck_contract_state_var(contract)
         else:
+            _tcheck_contract_state_var(contract)
             continue
             #Deprecated
             print("CONSTRUCTOR VARIABLES______________________________")
