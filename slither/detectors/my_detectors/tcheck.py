@@ -1008,6 +1008,7 @@ def handle_balance_functions(ir):
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
+        ir.lvalue.extok.add_den_token_type(-1)
         ir.lvalue.extok.norm = norm
         isbfunc = True
     elif(func_name == "decimals"):
