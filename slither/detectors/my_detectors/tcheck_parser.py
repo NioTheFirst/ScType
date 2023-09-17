@@ -330,10 +330,10 @@ def get_var_type_tuple(function_name, var_name):
     key = function_name + "_" + var_name
     if(key in var_type_hash):
         #cast num and den
-        temp = var_type_hash[key]
+        temp = list(var_type_hash[key])
         temp[0] = stringToType(temp[0])
         temp[1] = stringToType(temp[1])
-        return temp
+        return tuple(temp)
     return None
 
 def add_addr(function_name, var_name, norm):
