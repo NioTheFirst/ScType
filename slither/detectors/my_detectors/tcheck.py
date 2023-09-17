@@ -2313,7 +2313,7 @@ def _tcheck_node(node, function) -> []:
                     pos = revpos
                     break
             _name = lv.ssa_name[:pos]
-            #print(_name)
+            print(_name)
             if((_name, current_contract_name) in global_var_types):
                 #print("global...")
                 copy_token_type(global_var_types[(_name, current_contract_name)], lv)
@@ -2747,7 +2747,7 @@ def _tcheck_contract(contract):
         if(function.name != "constructor"):
             _tcheck_contract_state_var(contract)
         else:
-            _tcheck_contract_state_var(contract)
+            #_tcheck_contract_state_var(contract)
             continue
             #Deprecated
             print("CONSTRUCTOR VARIABLES______________________________")

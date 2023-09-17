@@ -137,15 +137,15 @@ importedContract_1(address) := ϕ(['importedContract_0'])
 TMP_0 = CONVERT importedContract_1 to IImportedContract
 ic_1(IImportedContract) := TMP_0(IImportedContract)
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setAToken, arguments:['reserveTokenA_2']  
-reserveTokenA_3(address) := ϕ(['reserveTokenA_2', 'reserveTokenA_1', 'reserveTokenA_7'])
-reserveTokenB_3(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_2', 'reserveTokenB_1'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_2', 'reserveTokenA_7', 'reserveTokenA_1'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_2', 'reserveTokenB_7', 'reserveTokenB_1'])
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setBToken, arguments:['reserveTokenB_3']  
-reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_7'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_3', 'reserveTokenA_7', 'reserveTokenA_1'])
 reserveTokenB_4(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_3', 'reserveTokenB_1'])
 TMP_3(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenA_4,0)
 TMP_4(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenB_5,0)
 TUPLE_0(uint256,uint256) = HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:mixAdd, arguments:['TMP_3', 'TMP_4']  
-reserveTokenA_7(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_6', 'reserveTokenA_7'])
+reserveTokenA_7(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_6', 'reserveTokenA_1'])
 reserveTokenB_7(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_6', 'reserveTokenB_1'])
 newA_1(uint256)= UNPACK TUPLE_0 index: 0 
 newB_1(uint256)= UNPACK TUPLE_0 index: 1 
@@ -232,7 +232,7 @@ Finance Type: undef
 XXXX
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setAToken, arguments:['reserveTokenA_2']  
 High Call: setAToken
-reserveTokenA_3(address) := ϕ(['reserveTokenA_2', 'reserveTokenA_1', 'reserveTokenA_7'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_2', 'reserveTokenA_7', 'reserveTokenA_1'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -245,7 +245,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_3(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_2', 'reserveTokenB_1'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_2', 'reserveTokenB_7', 'reserveTokenB_1'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -260,7 +260,7 @@ Finance Type: undef
 XXXX
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setBToken, arguments:['reserveTokenB_3']  
 High Call: setBToken
-reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_7'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_3', 'reserveTokenA_7', 'reserveTokenA_1'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -287,7 +287,7 @@ Fields:
 Finance Type: undef
 XXXX
 TMP_3(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenA_4,0)
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 [i]Type for reserve
 
 Name: reserve Function: seeReserveTotal
@@ -409,7 +409,7 @@ Fields:
 Finance Type: undef
 XXXX
 RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 [i]Type for reserve
 
 Name: reserve Function: seeReserveTotal
@@ -540,7 +540,7 @@ Fields:
 Finance Type: undef
 XXXX
 TMP_4(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenB_5,0)
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 [i]Type for reserve
 
 Name: reserve Function: seeReserveTotal
@@ -658,7 +658,7 @@ Fields:
 Finance Type: undef
 XXXX
 RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 [i]Type for reserve
 
 Name: reserve Function: seeReserveTotal
@@ -794,7 +794,7 @@ Running querryfc
 Written func info: ImportedContract, mixAdd
 Handling balance function!
 1
-Finding type for hlc_0([<slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f5cf197c970>, <slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f5cf197cb20>] ... )
+Finding type for hlc_0([<slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f880e9a22e0>, <slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f880e9a2490>] ... )
 [i]Type for TUPLE_0
 
 Name: TUPLE_0 Function: testCrossContract
@@ -807,7 +807,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenA_7(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_6', 'reserveTokenA_7'])
+reserveTokenA_7(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_6', 'reserveTokenA_1'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -915,15 +915,15 @@ importedContract_1(address) := ϕ(['importedContract_0'])
 TMP_0 = CONVERT importedContract_1 to IImportedContract
 ic_1(IImportedContract) := TMP_0(IImportedContract)
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setAToken, arguments:['reserveTokenA_2']  
-reserveTokenA_3(address) := ϕ(['reserveTokenA_2', 'reserveTokenA_1', 'reserveTokenA_7'])
-reserveTokenB_3(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_2', 'reserveTokenB_1'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_2', 'reserveTokenA_7', 'reserveTokenA_1'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_2', 'reserveTokenB_7', 'reserveTokenB_1'])
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setBToken, arguments:['reserveTokenB_3']  
-reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_7'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_3', 'reserveTokenA_7', 'reserveTokenA_1'])
 reserveTokenB_4(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_3', 'reserveTokenB_1'])
 TMP_3(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenA_4,0)
 TMP_4(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenB_5,0)
 TUPLE_0(uint256,uint256) = HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:mixAdd, arguments:['TMP_3', 'TMP_4']  
-reserveTokenA_7(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_6', 'reserveTokenA_7'])
+reserveTokenA_7(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_6', 'reserveTokenA_1'])
 reserveTokenB_7(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_6', 'reserveTokenB_1'])
 newA_1(uint256)= UNPACK TUPLE_0 index: 0 
 newB_1(uint256)= UNPACK TUPLE_0 index: 1 
@@ -1010,7 +1010,7 @@ Finance Type: undef
 XXXX
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setAToken, arguments:['reserveTokenA_2']  
 High Call: setAToken
-reserveTokenA_3(address) := ϕ(['reserveTokenA_2', 'reserveTokenA_1', 'reserveTokenA_7'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_2', 'reserveTokenA_7', 'reserveTokenA_1'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -1023,7 +1023,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_3(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_2', 'reserveTokenB_1'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_2', 'reserveTokenB_7', 'reserveTokenB_1'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -1038,7 +1038,7 @@ Finance Type: undef
 XXXX
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setBToken, arguments:['reserveTokenB_3']  
 High Call: setBToken
-reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_7'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_3', 'reserveTokenA_7', 'reserveTokenA_1'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -1078,7 +1078,7 @@ Fields:
 Finance Type: undef
 XXXX
 TMP_4(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenB_5,0)
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 [i]Type for reserve
 
 Name: reserve Function: seeReserveTotal
@@ -1196,7 +1196,7 @@ Fields:
 Finance Type: undef
 XXXX
 RETURN amt_1
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 [i]Type for reserve
 
 Name: reserve Function: seeReserveTotal
@@ -1332,7 +1332,7 @@ Running querryfc
 Written func info: ImportedContract, mixAdd
 Handling balance function!
 1
-Finding type for hlc_0([<slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f5cf197c970>, <slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f5cf197cb20>] ... )
+Finding type for hlc_0([<slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f880e9a22e0>, <slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f880e9a2490>] ... )
 [i]Type for TUPLE_0
 
 Name: TUPLE_0 Function: testCrossContract
@@ -1345,7 +1345,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenA_7(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_6', 'reserveTokenA_7'])
+reserveTokenA_7(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_6', 'reserveTokenA_1'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -1471,7 +1471,7 @@ Param: 1
     fintype: -1
 
 
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 TMP_6 = CONVERT reserve_1 to ITypicalTokenWrapper
 TMP_7 = CONVERT this to address
 TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_6(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_7']  
@@ -1480,7 +1480,7 @@ amt_1(uint256) := TMP_9(uint256)
 RETURN amt_1
 
 
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 [i]Type for reserve
 
 Name: reserve Function: seeReserveTotal
@@ -1600,7 +1600,7 @@ XXXX
 RETURN amt_1
 
 
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 TMP_6 = CONVERT reserve_1 to ITypicalTokenWrapper
 TMP_7 = CONVERT this to address
 TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_6(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_7']  
@@ -1609,7 +1609,7 @@ amt_1(uint256) := TMP_9(uint256)
 RETURN amt_1
 
 
-reserve_1(address) := ϕ(['reserveTokenB_5', 'reserveTokenA_4'])
+reserve_1(address) := ϕ(['reserveTokenA_4', 'reserveTokenB_5'])
 [i]Type for reserve
 
 Name: reserve Function: seeReserveTotal
