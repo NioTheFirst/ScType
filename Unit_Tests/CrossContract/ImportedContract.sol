@@ -17,8 +17,8 @@ contract ImportedContract{
     }
 
     function mixAdd(uint256 amtA, uint256 amtB) external returns (uint256, uint256){
-        int sumA = amtA + ITypicalTokenWrapper(reserveTokenA).balanceOf(address(this));
-	int sumB = amtB + ITypicalTokenWrapper(reserveTokenB).balanceOf(address(this));
+        uint256 sumA = amtA + ITypicalTokenWrapper(reserveTokenA).balanceOf(address(this));
+	uint256 sumB = amtB + ITypicalTokenWrapper(reserveTokenB).balanceOf(address(this));
 	return(sumA, sumB); 
     }
 }

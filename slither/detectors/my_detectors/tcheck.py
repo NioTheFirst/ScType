@@ -72,7 +72,7 @@ trace_to_label = {}
 #temp_address_counter = 0
 global_var_types = {}
 var_assignment_storage = {}
-read_global = False
+read_global = {}
 
 debug_print = True
 
@@ -2670,7 +2670,7 @@ def _tcheck_contract_state_var(contract):
             assign_const(state_var)
             continue
         if(True):
-            if(not(read_global)):
+            if(not(contract.name in read_global)):
                 querry_type(state_var)
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
@@ -2680,7 +2680,7 @@ def _tcheck_contract_state_var(contract):
                 copy_token_type(global_var_types[(state_var.extok.name, contract.name)], state_var)
             if(isinstance(state_var, ReferenceVariable)):
                 add_ref(state_var.name, (state_var.token_typen, state_var.token_typed, state_var.norm, state_var.link_function))
-    read_global = True
+    read_global[contract.name] = True
 #USAGE: labels which contracts that should be read (contains binary operations) also adds contract-function pairs
 #RTURNS: NULL
 def _mark_functions(contract):

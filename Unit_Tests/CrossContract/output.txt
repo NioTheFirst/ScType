@@ -183,23 +183,23 @@ Param: 0
     fintype: -1
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_7', 'reserveTokenA_0'])
-reserveTokenB_2(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_0', 'reserveTokenB_1'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_0'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_7', 'reserveTokenB_0'])
 importedContract_1(address) := ϕ(['importedContract_0'])
 TMP_0 = CONVERT importedContract_1 to IImportedContract
 ic_1(IImportedContract) := TMP_0(IImportedContract)
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setAToken, arguments:['reserveTokenA_2']  
-reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_2', 'reserveTokenA_7'])
-reserveTokenB_3(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_2', 'reserveTokenB_1'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_2'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_2', 'reserveTokenB_1', 'reserveTokenB_7'])
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setBToken, arguments:['reserveTokenB_3']  
-reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_7'])
-reserveTokenB_4(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_1', 'reserveTokenB_3'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_3', 'reserveTokenA_7', 'reserveTokenA_1'])
+reserveTokenB_4(address) := ϕ(['reserveTokenB_3', 'reserveTokenB_1', 'reserveTokenB_7'])
 val_2(uint256) = val_1 (c)+ 5
 TMP_3(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenA_4,0)
 TMP_4(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenB_5,0)
 TUPLE_0(uint256,uint256) = HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:mixAdd, arguments:['TMP_3', 'TMP_4']  
-reserveTokenA_7(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_6', 'reserveTokenA_7'])
-reserveTokenB_7(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_1', 'reserveTokenB_6'])
+reserveTokenA_7(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_6'])
+reserveTokenB_7(address) := ϕ(['reserveTokenB_6', 'reserveTokenB_1', 'reserveTokenB_7'])
 newA_1(uint256)= UNPACK TUPLE_0 index: 0 
 newB_1(uint256)= UNPACK TUPLE_0 index: 1 
 TMP_5(uint256) = newA_1 (c)+ newB_1
@@ -207,7 +207,7 @@ badSum_1(uint256) := TMP_5(uint256)
 val_3(uint256) = val_2 (c)+ badSum_1
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_7', 'reserveTokenA_0'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_0'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -220,7 +220,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_2(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_0', 'reserveTokenB_1'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_7', 'reserveTokenB_0'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -296,17 +296,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-ic_1
-
-Name: ic Function: testCrossContract
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: ImportedContract
-Value: u
-Fields: 
-Finance Type: undef
 reserveTokenA_2
 
 Name: reserveTokenA Function: testCrossContract
@@ -319,9 +308,20 @@ Value: u
 Fields: 
 Finance Type: undef
 reserveTokenA
+ic_1
+
+Name: ic Function: testCrossContract
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: ImportedContract
+Value: u
+Fields: 
+Finance Type: undef
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setAToken, arguments:['reserveTokenA_2']  
 High Call: setAToken
-reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_2', 'reserveTokenA_7'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_2'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -334,7 +334,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_3(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_2', 'reserveTokenB_1'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_2', 'reserveTokenB_1', 'reserveTokenB_7'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -347,17 +347,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-ic_1
-
-Name: ic Function: testCrossContract
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: ImportedContract
-Value: u
-Fields: 
-Finance Type: undef
 reserveTokenB_3
 
 Name: reserveTokenB Function: testCrossContract
@@ -370,9 +359,20 @@ Value: u
 Fields: 
 Finance Type: undef
 reserveTokenB
+ic_1
+
+Name: ic Function: testCrossContract
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: ImportedContract
+Value: u
+Fields: 
+Finance Type: undef
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setBToken, arguments:['reserveTokenB_3']  
 High Call: setBToken
-reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_7'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_3', 'reserveTokenA_7', 'reserveTokenA_1'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -385,7 +385,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_4(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_1', 'reserveTokenB_3'])
+reserveTokenB_4(address) := ϕ(['reserveTokenB_3', 'reserveTokenB_1', 'reserveTokenB_7'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -443,17 +443,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-ic_1
-
-Name: ic Function: testCrossContract
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: ImportedContract
-Value: u
-Fields: 
-Finance Type: undef
 reserveTokenB_5
 
 Name: None Function: None
@@ -466,6 +455,17 @@ Value: u
 Fields: 
 Finance Type: undef
 reserveTokenB
+ic_1
+
+Name: ic Function: testCrossContract
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: ImportedContract
+Value: u
+Fields: 
+Finance Type: undef
 reserveTokenA_4
 
 Name: reserveTokenA Function: testCrossContract
@@ -514,9 +514,9 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-amount_1
+reserve_1
 
-Name: None Function: None
+Name: reserve Function: seeReserveTotal
 Num: 
 Den: 
 Address: u
@@ -525,9 +525,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-reserve_1
+amount_1
 
-Name: reserve Function: seeReserveTotal
+Name: None Function: None
 Num: 
 Den: 
 Address: u
@@ -689,17 +689,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-amount_1
-
-Name: amount Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 reserve_1
 
 Name: reserve Function: seeReserveTotal
@@ -708,6 +697,17 @@ Den:
 Address: u
 Norm: u
 LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -875,17 +875,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-amount_1
-
-Name: amount Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 reserve_1
 
 Name: reserve Function: seeReserveTotal
@@ -894,6 +883,17 @@ Den:
 Address: u
 Norm: u
 LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -1046,17 +1046,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-amount_1
-
-Name: amount Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 reserve_1
 
 Name: reserve Function: seeReserveTotal
@@ -1065,6 +1054,17 @@ Den:
 Address: u
 Norm: u
 LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -1202,7 +1202,7 @@ Running querryfc
 Written func info: ImportedContract, mixAdd
 Handling balance function!
 1
-Finding type for hlc_0([<slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f39a4f004f0>, <slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f39a4f006a0>] ... )
+Finding type for hlc_0([<slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f2d261fa790>, <slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f2d261fa940>] ... )
 [i]Type for TUPLE_0
 
 Name: TUPLE_0 Function: testCrossContract
@@ -1215,7 +1215,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenA_7(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_6', 'reserveTokenA_7'])
+reserveTokenA_7(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_6'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -1228,7 +1228,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_7(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_1', 'reserveTokenB_6'])
+reserveTokenB_7(address) := ϕ(['reserveTokenB_6', 'reserveTokenB_1', 'reserveTokenB_7'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -1339,6 +1339,17 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+val_2
+
+Name: val Function: testCrossContract
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 badSum_1
 
 Name: badSum Function: testCrossContract
@@ -1351,17 +1362,6 @@ Value: u
 Fields: 
 Finance Type: undef
 badSum
-val_2
-
-Name: val Function: testCrossContract
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 val_3(uint256) = val_2 (c)+ badSum_1
 
 Name: val Function: testCrossContract
@@ -1397,23 +1397,23 @@ Finance Type: undef
 XXXX
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_7', 'reserveTokenA_0'])
-reserveTokenB_2(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_0', 'reserveTokenB_1'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_0'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_7', 'reserveTokenB_0'])
 importedContract_1(address) := ϕ(['importedContract_0'])
 TMP_0 = CONVERT importedContract_1 to IImportedContract
 ic_1(IImportedContract) := TMP_0(IImportedContract)
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setAToken, arguments:['reserveTokenA_2']  
-reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_2', 'reserveTokenA_7'])
-reserveTokenB_3(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_2', 'reserveTokenB_1'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_2'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_2', 'reserveTokenB_1', 'reserveTokenB_7'])
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setBToken, arguments:['reserveTokenB_3']  
-reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_7'])
-reserveTokenB_4(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_1', 'reserveTokenB_3'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_3', 'reserveTokenA_7', 'reserveTokenA_1'])
+reserveTokenB_4(address) := ϕ(['reserveTokenB_3', 'reserveTokenB_1', 'reserveTokenB_7'])
 val_2(uint256) = val_1 (c)+ 5
 TMP_3(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenA_4,0)
 TMP_4(uint256) = INTERNAL_CALL, CrossContractTest.seeReserveTotal(address,uint256)(reserveTokenB_5,0)
 TUPLE_0(uint256,uint256) = HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:mixAdd, arguments:['TMP_3', 'TMP_4']  
-reserveTokenA_7(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_6', 'reserveTokenA_7'])
-reserveTokenB_7(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_1', 'reserveTokenB_6'])
+reserveTokenA_7(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_6'])
+reserveTokenB_7(address) := ϕ(['reserveTokenB_6', 'reserveTokenB_1', 'reserveTokenB_7'])
 newA_1(uint256)= UNPACK TUPLE_0 index: 0 
 newB_1(uint256)= UNPACK TUPLE_0 index: 1 
 TMP_5(uint256) = newA_1 (c)+ newB_1
@@ -1421,7 +1421,7 @@ badSum_1(uint256) := TMP_5(uint256)
 val_3(uint256) = val_2 (c)+ badSum_1
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_7', 'reserveTokenA_0'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_0'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -1434,7 +1434,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_2(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_0', 'reserveTokenB_1'])
+reserveTokenB_2(address) := ϕ(['reserveTokenB_1', 'reserveTokenB_7', 'reserveTokenB_0'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -1509,17 +1509,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-ic_1
-
-Name: ic Function: testCrossContract
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: ImportedContract
-Value: u
-Fields: 
-Finance Type: undef
 reserveTokenA_2
 
 Name: reserveTokenA Function: testCrossContract
@@ -1531,9 +1520,20 @@ LF: reserveTokenA
 Value: u
 Fields: 
 Finance Type: undef
+ic_1
+
+Name: ic Function: testCrossContract
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: ImportedContract
+Value: u
+Fields: 
+Finance Type: undef
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setAToken, arguments:['reserveTokenA_2']  
 High Call: setAToken
-reserveTokenA_3(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_2', 'reserveTokenA_7'])
+reserveTokenA_3(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_2'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -1546,7 +1546,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_3(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_2', 'reserveTokenB_1'])
+reserveTokenB_3(address) := ϕ(['reserveTokenB_2', 'reserveTokenB_1', 'reserveTokenB_7'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -1559,17 +1559,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-ic_1
-
-Name: ic Function: testCrossContract
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: ImportedContract
-Value: u
-Fields: 
-Finance Type: undef
 reserveTokenB_3
 
 Name: reserveTokenB Function: testCrossContract
@@ -1581,9 +1570,20 @@ LF: reserveTokenB
 Value: u
 Fields: 
 Finance Type: undef
+ic_1
+
+Name: ic Function: testCrossContract
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: ImportedContract
+Value: u
+Fields: 
+Finance Type: undef
 HIGH_LEVEL_CALL, dest:ic_1(IImportedContract), function:setBToken, arguments:['reserveTokenB_3']  
 High Call: setBToken
-reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_7'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_3', 'reserveTokenA_7', 'reserveTokenA_1'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -1596,7 +1596,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_4(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_1', 'reserveTokenB_3'])
+reserveTokenB_4(address) := ϕ(['reserveTokenB_3', 'reserveTokenB_1', 'reserveTokenB_7'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -1654,17 +1654,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-ic_1
-
-Name: ic Function: testCrossContract
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: ImportedContract
-Value: u
-Fields: 
-Finance Type: undef
 reserveTokenB_5
 
 Name: reserveTokenB Function: None
@@ -1673,6 +1662,17 @@ Den: -1
 Address: 3
 Norm: u
 LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+ic_1
+
+Name: ic Function: testCrossContract
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: ImportedContract
 Value: u
 Fields: 
 Finance Type: undef
@@ -1736,17 +1736,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-amount_1
-
-Name: amount Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 reserve_1
 
 Name: reserve Function: seeReserveTotal
@@ -1755,6 +1744,17 @@ Den:
 Address: u
 Norm: u
 LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -1907,17 +1907,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-amount_1
-
-Name: amount Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 reserve_1
 
 Name: reserve Function: seeReserveTotal
@@ -1926,6 +1915,17 @@ Den:
 Address: u
 Norm: u
 LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -2063,7 +2063,7 @@ Running querryfc
 Written func info: ImportedContract, mixAdd
 Handling balance function!
 1
-Finding type for hlc_0([<slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f39a4f004f0>, <slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f39a4f006a0>] ... )
+Finding type for hlc_0([<slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f2d261fa790>, <slither.core.solidity_types.elementary_type.ElementaryType object at 0x7f2d261fa940>] ... )
 [i]Type for TUPLE_0
 
 Name: TUPLE_0 Function: testCrossContract
@@ -2076,7 +2076,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenA_7(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_6', 'reserveTokenA_7'])
+reserveTokenA_7(address) := ϕ(['reserveTokenA_7', 'reserveTokenA_1', 'reserveTokenA_6'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: testCrossContract
@@ -2089,7 +2089,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenB_7(address) := ϕ(['reserveTokenB_7', 'reserveTokenB_1', 'reserveTokenB_6'])
+reserveTokenB_7(address) := ϕ(['reserveTokenB_6', 'reserveTokenB_1', 'reserveTokenB_7'])
 [i]Type for reserveTokenB
 
 Name: reserveTokenB Function: testCrossContract
@@ -2200,6 +2200,17 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+val_2
+
+Name: val Function: testCrossContract
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 badSum_1
 
 Name: badSum Function: testCrossContract
@@ -2212,17 +2223,6 @@ Value: u
 Fields: 
 Finance Type: undef
 badSum
-val_2
-
-Name: val Function: testCrossContract
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 val_3(uint256) = val_2 (c)+ badSum_1
 
 Name: val Function: testCrossContract
@@ -2304,17 +2304,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-amount_1
-
-Name: amount Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 reserve_1
 
 Name: reserve Function: seeReserveTotal
@@ -2323,6 +2312,17 @@ Den:
 Address: u
 Norm: u
 LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -2466,17 +2466,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-amount_1
-
-Name: amount Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 reserve_1
 
 Name: reserve Function: seeReserveTotal
@@ -2485,6 +2474,17 @@ Den:
 Address: u
 Norm: u
 LF: reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
