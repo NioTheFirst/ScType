@@ -2269,6 +2269,26 @@ def _tcheck_ir(irs, function_name) -> []:
             newirs.append(ir)
     return newirs
 
+#USAGE: propogates a local variables with a parameter
+def propogate_parameter(lv):
+    if("_1" in lv.ssa_name and lv.extok.is_undefined()):
+            #print("local...")
+            pos = -1
+            for i in range(len(lv.ssa_name)-1):
+                revpos = len(lv.ssa_name)-i-1
+                #print(lv.ssa_name[revpos:revpos+2])   
+                if(lv.ssa_name[revpos:revpos+2] == '_1'):
+                    pos = revpos
+                    break
+            lv_subname = lv.ssa_name[:pos]
+            #lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
+            #print(lv_subname)
+            for p in function.parameters:
+
+                if(p.name == lv_subname):
+                    lv.extok.name = lv.ssa_name
+                    lv.function_name = function.name
+                    copy_token_type(p, lv)
 #USSAGE: propogates a local variable with a global stored assignment
 def propogate_global(lv):
     if(lv.extok.is_undefined()):
@@ -2304,6 +2324,7 @@ def _tcheck_node(node, function) -> []:
     for lv in node.ssa_variables_read:
         print(lv)
         print(lv.extok)
+        propogate_parameter(lv)
         propogate_global(lv)
         #print(lv.extok)
     
