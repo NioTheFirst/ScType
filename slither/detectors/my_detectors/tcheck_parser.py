@@ -172,7 +172,6 @@ def parse_type_file(t_file, f_file = None):
             #_line[5] = normalization amt (power of 10)
             #_line[6] = (Optional) linked function if is address
             #print(line)
-            #DEPRECATED
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
@@ -331,10 +330,10 @@ def get_var_type_tuple(function_name, var_name):
     key = function_name + "_" + var_name
     if(key in var_type_hash):
         #cast num and den
-        tuple = var_type_hash[key]
-        tuple[0] = stringToType(tuple[0])
-        tuple[1] = stringToType(tuple[1])
-        return var_type_hash[key]
+        temp = var_type_hash[key]
+        temp[0] = stringToType(temp[0])
+        temp[1] = stringToType(temp[1])
+        return temp
     return None
 
 def add_addr(function_name, var_name, norm):
