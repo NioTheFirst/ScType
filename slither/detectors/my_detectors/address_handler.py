@@ -1,5 +1,6 @@
 #Handles address things
 #label to normalization
+from tcheck_parser import f_type_name, f_type_num, update_start
 num_to_norm = {}
 label_sets = {}
 label_to_address = {}
@@ -74,9 +75,14 @@ class Address_label():
         return True
 
     def __str__(self):
+        f_type = "NULL"
+        if(self._finance_type in f_type_num):
+            f_type = f_type_num[self._finance_type]
+
         return(f"Head Addr: {self._head}\n"
                f"    Norm: {self._norm}\n"
-               f"    Set: {str(self._set)}")
+               f"    Set: {str(self._set)}\n"
+               f"    Fin: {f_type}")
 
 def get_address_label(func_name, name):
     name_key = str(func_name) + ":" + str(name)
