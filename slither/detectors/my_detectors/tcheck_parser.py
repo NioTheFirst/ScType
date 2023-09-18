@@ -16,13 +16,15 @@ import address_handler
 from address_handler import address_to_label, label_sets
 allowed_contracts = {}
 barred_functions = {}
-var_type_hash = {}
+var_type_hash = {}   #Exclusively for types/normalizations
+var_fin_hash = {}    #Exclusively for finance types
 in_func_ptr_hash = {}
 ex_func_type_hash = {}
 ref_type_hash = {}
 address_type_hash = {}
 tuple_type_hash = {}
 field_type_hash = {}
+MAX_PARAMETERS = 5
 
 reuse_types = True
 reuse_types_var = {}
@@ -123,8 +125,9 @@ def parse_finance_file(f_file):
             #Look for "f: "
             f_params = gen_finance_instances(line)
             if(len(f_params) == 0):
-                for i in range(5):
+                for i in range(MAX_PARAMETERS):
                     f_params.append(-1)
+            #Regular variables
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
@@ -184,15 +187,16 @@ def parse_type_file(t_file, f_file = None):
                     num = -1
                     den = -1
                     norm = 'u'
-                    if(len(_line) > 3):
-                        #num = int(_line[3].strip())
+                    addr = None
+                    if(len(_line) >= 7):
+                        #Integers (and potentially f-types)
                         num = _line[3].strip()
                         den = _line[4].strip()
                         norm = int(_line[5].strip())
                         value = int(_line[6].strip())
-                    addr = None
-                    if(len(_line) >= 8):
-                        addr = _line[7].strip()
+                    elif(len(_line) >= 4):
+                        #Addresses 
+                        addr = _line[3].strip()
                     add_var(f_name, v_name, (num, den, norm, addr, value))
                     if(reuse_types):
                         reuse_types_var[v_name] = True
