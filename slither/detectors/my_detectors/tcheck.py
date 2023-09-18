@@ -992,10 +992,12 @@ def handle_balance_functions(ir):
     _dest = dest.extok
     token_type = 'u'
     norm = 'u'
+    fin_type = -1
     isbfunc = False
     print('Handling balance function!')
     #TODO check the address
     print(_dest.address)
+    #Use this to check for changes!
     ir.lvalue.extok.token_type_clear()
     #if(not(dest in address_to_num))
     #if(_dest.function_name == "global"):
@@ -1005,11 +1007,19 @@ def handle_balance_functions(ir):
     if(label_sets[token_type].head > 0):
         token_type = label_sets[token_type].head
     norm = label_sets[token_type].norm
+    fin_type = label_sets[token_type].finance_type
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
         ir.lvalue.extok.add_den_token_type(-1)
         ir.lvalue.extok.norm = norm
+        #Financial type
+        if(fin_type == 30):
+            ir.lvalue.extok.finance_type = 30
+        elif(fin_type == 0):
+            ir.lvalue.extok.finance_type = 0
+        else:
+            ir.lvalue.extok.finacne_type = 0
         isbfunc = True
     elif(func_name == "decimals"):
         ir.lvalue.extok.value = norm

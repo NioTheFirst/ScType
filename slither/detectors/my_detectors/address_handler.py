@@ -14,6 +14,7 @@ class Address_label():
         self._head = _head
         self._set = {_head}
         self._norm = '*'
+        self._finance_type = '*' #Reserve or balance...
   
     @property
     def head(self):
@@ -23,6 +24,12 @@ class Address_label():
     def head(self, x):
         self._head = x
 
+    @property
+    def finance_type(self):
+        return(self._finance_type)
+    @finance_type.setter
+    def finance_type(self, x):
+        self._finance_type = x
     @property
     def norm(self):
         return(self._norm)

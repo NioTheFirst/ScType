@@ -139,6 +139,16 @@ def parse_finance_file(f_file):
                 else:
                     norm_tt+=(f_params[0], )
                     add_var(f_name, v_name, norm_tt)
+            elif(_line[0].strip() == "[ta]"):
+                #addresses
+                f_name = _line[1].strip()
+                v_name = _line[2].strip()
+                addr_key = f_name + ":" + v_name
+                if(addr_key in label_sets):
+                    addr = label_sets[addr_key]
+                    addr.finance_type = f_params[0]
+                else:
+                    addr.finance_type = -1
             elif(_line[0].strip() == "[sefa]"):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
