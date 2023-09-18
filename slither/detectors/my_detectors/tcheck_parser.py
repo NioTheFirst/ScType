@@ -125,6 +125,7 @@ def parse_finance_file(f_file):
             #Look for "f: "
             f_params = gen_finance_instances(line)
             if(len(f_params) == 0):
+                #No finance parameters, assume all parameters are NULL Type
                 for i in range(MAX_PARAMETERS):
                     f_params.append(-1)
             #Regular variables
@@ -132,12 +133,18 @@ def parse_finance_file(f_file):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
                 norm_tt = get_var_type_tuple(f_name, v_name)
-                norm_tt+=(f_params[0], )
-                add_var(f_name, v_name, norm_tt)
-            elif(_line[0].strip() == "[sef]"):
+                if(norm_tt == None):
+                    #Create new "variable" to be propogated by tcheck.querry_type()
+                    add_var(f_name, v_name, (-1, -1, 'u', None, 'u', f_params[0]))
+                else:
+                    norm_tt+=(f_params[0], )
+                    add_var(f_name, v_name, norm_tt)
+            elif(_line[0].strip() == "[sefa]"):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
                 ef_tts = get_dir_ex_func_type_tuple(c_name, f_name)
+                if(ef_tts == None):
+                    raise Exception("SEF object not initialized")
                 cur = 0
                 new_tts = []
                 for tt in ef_tts:
@@ -145,6 +152,7 @@ def parse_finance_file(f_file):
                     new_tts.append(tt)
                     cur+=1
                 add_ex_func(c_name, f_name, new_tts)
+            #May be deprecated?
             elif(_line[0].strip() == "[tref]"):
                 ref_name = _line[1].strip()
                 ref_tt = get_ref_type_tuple(ref_name)
@@ -247,12 +255,11 @@ def parse_type_file(t_file, f_file = None):
                         denom = extract_address(ret_info[2])
                         norm = int(ret_info[3].strip())
                         value = int(ret_info[4].strip())
-                        if(len(ret_info) >= 6):
-                            addr = ret_info[5]  #No longer lf, link_function deprecated. Stores address instead
+                    elif(len(ret_info) >= 2):
+                        copy = ret_info[0]  
+                        addr = ret_info[1]  #No longer lf, link_function deprecated. Stores address instead
                     ef_types.append((copy, num, denom, norm, value, addr))
                 add_ex_func(c_name, f_name, ef_types)
-
-
 
             #SUMMARY OF EXTERNAL FUNCTION
             if(_line[0].strip() == "[sef]"):
@@ -295,7 +302,7 @@ def parse_type_file(t_file, f_file = None):
                     denom = [int(_line[3].strip())]
                     norm = int(_line[4].strip())
                     if(len(_line) >= 6):
-                        lf = _line[5]
+                        addr = _line[5]
             #ADDRESS TYPE
             #func/global, name, norm
             #i.e. global, USDC, 6       (positive address)
@@ -316,12 +323,12 @@ def parse_type_file(t_file, f_file = None):
                 denom = [-1]
                 norm = ['u']
                 lf = None
-                if(len(_line) > 4):
+                if(len(_line) >= 7):
                     num = [ int(_line[4].strip())]
                     denom = [int(_line[5].strip())]
                     norm = [int(_line[6].strip())]
-                    if(len(_line) >= 8):
-                        lf = _line[7]
+                elif(len(_line) >= 4):
+                    addr = _line[4]
 
                 add_field(func_name, parent_name, field_name, (num, denom, norm, lf))
     parse_finance_file(f_file)
@@ -337,6 +344,8 @@ def get_var_type_tuple(function_name, var_name):
         temp = list(var_type_hash[key])
         temp[0] = stringToType(temp[0])
         temp[1] = stringToType(temp[1])
+        #cast addr
+        temp[3] = stringToType(temp[3])
         return tuple(temp)
     return None
 
