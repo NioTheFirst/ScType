@@ -469,9 +469,9 @@ def querry_type(ir):
             input_str = input()
             if(input_str != '*'):
                 norm = int(input_str)
-            label = new_address(ir)
-            label.norm = norm
-            print(label)
+        label = new_address(ir)
+        label.norm = norm
+        print(label)
         return
     #if(mark_iteration and not(current_function_marked)):
     #    assign_const(ir)
