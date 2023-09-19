@@ -2857,7 +2857,7 @@ class tcheck(AbstractDetector):
             try:
                 with open(finance_info_name, "r") as _f_file:
                     f_file = finance_info_name
-                    #print(f"Finance file: {f_file}")
+                    print(f"Finance file: {f_file}")
             except FileNotFoundError:
                 #print("Finance File not Found")
                 f_file = None
