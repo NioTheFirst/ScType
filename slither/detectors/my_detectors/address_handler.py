@@ -124,7 +124,7 @@ def type_file_new_address(name_key, isGlobal):
         else:
             temp_address_counter+=1
             upcounter = temp_address_counter
-        label = Address_label(upounter)
+        label = Address_label(upcounter)
         label_to_address[upcounter] = name_key
         label_sets[upcounter] = label
         address_to_label[name_key] = upcounter
