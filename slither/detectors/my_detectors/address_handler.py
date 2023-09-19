@@ -1,11 +1,11 @@
 #Handles address things
 #label to normalization
 import tcheck_parser
-#from tcheck_parser import f_type_name, f_type_num, update_start
+from tcheck_parser import f_type_name, f_type_num, update_start, address_to_label, label_sets
 num_to_norm = {}
-label_sets = {}
+#label_sets = {}
 label_to_address = {}
-address_to_label = {}
+#address_to_label = {}
 global_address_counter = 0
 temp_address_counter = -1000
 

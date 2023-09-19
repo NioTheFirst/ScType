@@ -13,7 +13,9 @@
 #       -get_func_type_tuple(contract_name, function_name, [parameters]) :check for existence and returns type tuple for an external function call
 #       -get_ref_type_tuple(ref_name) :check for existence and returns type tuple for a reference (arrays or maps)
 import address_handler
-from address_handler import address_to_label, label_sets
+#from address_handler import address_to_label, label_sets
+address_to_label = {}
+label_sets = {}
 allowed_contracts = {}
 barred_functions = {}
 var_type_hash = {}   #Exclusively for types/normalizations
