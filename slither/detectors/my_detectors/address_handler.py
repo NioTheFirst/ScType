@@ -1,7 +1,7 @@
 #Handles address things
 #label to normalization
 import tcheck_parser
-from tcheck_parser import f_type_name, f_type_num, update_start
+#from tcheck_parser import f_type_name, f_type_num, update_start
 num_to_norm = {}
 label_sets = {}
 label_to_address = {}
