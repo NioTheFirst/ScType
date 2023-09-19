@@ -151,7 +151,11 @@ def parse_finance_file(f_file):
                     addr = label_sets[addr_key]
                     addr.finance_type = f_params[0]
                 else:
-                    addr.finance_type = -1
+                    if(f_name == "global"):
+                        addr = address_handler.type_file_new_address(addr_key, True)
+                    else:
+                        addr = address_handler.type_file_new_address(addr_key, False)
+                    addr.finance_type = f_params[0]
             elif(_line[0].strip() == "[sefa]"):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()

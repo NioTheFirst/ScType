@@ -109,6 +109,27 @@ def get_address_label(func_name, name):
     else:
         return None   
 
+def type_file_new_address(name_key, isGlobal):
+    global global_address_counter
+    global temp_address_counter
+    global label_sets
+    global label_to_address
+    if(name_key in address_to_label):
+        return(label_sets[address_to_label[name_key]])
+    else:
+        upcounter = None
+        if(isGlobal):
+            global_address_counter+=1
+            upcounter = global_address_counter
+        else:
+            temp_address_counter+=1
+            upcounter = temp_address_counter
+        label = Address_label(upounter)
+        label_to_address[upcounter] = name_key
+        label_sets[upcounter] = label
+        address_to_label[name_key] = upcounter
+        return label
+
 def new_address(ir, isGlobal):
     global global_address_counter
     global temp_address_counter
@@ -117,9 +138,15 @@ def new_address(ir, isGlobal):
     _ir = ir.extok
     if(not(isinstance(_ir.address, int))):
         _ir.address = 'u'
+    
     print(f"prev address? {_ir.address}")
     if(_ir.address != 'u' and _ir.address != None):
         return label_sets[_ir.address]
+    name_key = str(_ir.function_name)+":"+str(_ir.name)
+    if(name_key in address_to_label):
+        _ir.address = address_to_label[name_key]
+        return label_sets[_ir.address]
+    #Create new
     if(isGlobal):
         global_address_counter+=1
         print(f"global assignment: {global_address_counter}")
