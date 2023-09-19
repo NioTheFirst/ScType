@@ -123,6 +123,7 @@ def parse_finance_file(f_file):
     if(f_file == None):
         return
     with open(f_file, 'r') as finance_file:
+        print("Reading f file...")
         for line in finance_file:
             _line = split_line(line)
             #Look for "f: "
