@@ -2,3 +2,1713 @@ Checking FinancialMeaningTest
 Checking ITypicalTokenWrapper
 Finance file: FinancialMeaningTest_ftypes.txt
 Reading f file...
+Finding type for compoundFeeRatio(uint256 ... )
+Finding type for isFeeRatio(uint256 ... )
+Finding type for owner(address ... )
+prev address? u
+Head Addr: 1
+    Norm: 0
+    Set: {1}
+    Fin: undef
+Finding type for reserveTokenA(address ... )
+prev address? u
+Head Addr: 2
+    Norm: 0
+    Set: {2}
+    Fin: reserve
+
+
+
+constructor
+Finding type for _reserveTokenA(address ... )
+prev address? u
+Head Addr: -999
+    Norm: 0
+    Set: {-999}
+    Fin: undef
+Finding type for _reserveTokenB(address ... )
+prev address? u
+Head Addr: -998
+    Norm: 0
+    Set: {-998}
+    Fin: undef
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: _reserveTokenA
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: _reserveTokenB
+    fields: []
+    fintype: -1
+
+
+reserveTokenA_1(address) := _reserveTokenA_1(address)
+reserveTokenB_1(address) := _reserveTokenB_1(address)
+
+
+_reserveTokenA_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenA_1(address) := _reserveTokenA_1(address)
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: constructor
+Num: 
+Den: 
+Address: -999
+Norm: u
+LF: _reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+Copied reserveTokenA
+ To type: None
+_reserveTokenB_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenB_1(address) := _reserveTokenB_1(address)
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: constructor
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+
+
+reserveTokenA_1(address) := _reserveTokenA_1(address)
+reserveTokenB_1(address) := _reserveTokenB_1(address)
+
+
+_reserveTokenA_1
+
+Name: _reserveTokenA Function: None
+Num: 
+Den: 
+Address: -999
+Norm: u
+LF: _reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenA_1(address) := _reserveTokenA_1(address)
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: constructor
+Num: 
+Den: 
+Address: -999
+Norm: u
+LF: _reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+Copied reserveTokenA
+ To type: None
+_reserveTokenB_1
+
+Name: _reserveTokenB Function: None
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenB_1(address) := _reserveTokenB_1(address)
+[i]Type for reserveTokenB
+
+Name: reserveTokenB Function: constructor
+Num: 
+Den: 
+Address: -998
+Norm: u
+LF: _reserveTokenB
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+
+
+
+goodFinanceFunctions
+Finding type for user(address ... )
+prev address? u
+Head Addr: -997
+    Norm: 0
+    Set: {-997}
+    Fin: undef
+Finding type for userBalance(uint256 ... )
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: user
+    fields: []
+    fintype: -1
+Param: 1
+    num: []
+    den: []
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_1', 'reserveTokenA_0'])
+owner_1(address) := ϕ(['owner_3', 'owner_0'])
+isFeeRatio_1(uint256) := ϕ(['isFeeRatio_0'])
+compoundFeeRatio_1(uint256) := ϕ(['compoundFeeRatio_0'])
+TMP_0(uint256) = userBalance_1 (c)* isFeeRatio_1
+uBalFee_1(uint256) := TMP_0(uint256)
+TMP_1(uint256) = userBalance_1 (c)- uBalFee_1
+uBalWithFee1_1(uint256) := TMP_1(uint256)
+TMP_2(uint256) = userBalance_1 (c)* compoundFeeRatio_1
+uBalWithFee2_1(uint256) := TMP_2(uint256)
+TMP_3(uint256) = INTERNAL_CALL, FinancialMeaningTest.seeReserveTotal(address,uint256)(reserveTokenA_2,uBalWithFee1_1)
+newReserveAmt_1(uint256) := TMP_3(uint256)
+TMP_4 = CONVERT reserveTokenA_3 to ITypicalTokenWrapper
+TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:transfer, arguments:['owner_2', 'newReserveAmt_1']  
+reserveTokenA_4(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_3', 'reserveTokenA_1'])
+owner_3(address) := ϕ(['owner_3', 'owner_2'])
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_1', 'reserveTokenA_0'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+owner_1(address) := ϕ(['owner_3', 'owner_0'])
+[i]Type for owner
+
+Name: owner Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+isFeeRatio_1(uint256) := ϕ(['isFeeRatio_0'])
+[i]Type for isFeeRatio
+
+Name: isFeeRatio Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+compoundFeeRatio_1(uint256) := ϕ(['compoundFeeRatio_0'])
+[i]Type for compoundFeeRatio
+
+Name: compoundFeeRatio Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+isFeeRatio_1
+
+Name: isFeeRatio Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+isFeeRatio
+userBalance_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance
+TMP_0(uint256) = userBalance_1 (c)* isFeeRatio_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+uBalFee_1(uint256) := TMP_0(uint256)
+[i]Type for uBalFee
+
+Name: uBalFee Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+uBalFee_1
+
+Name: uBalFee Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance_1
+
+Name: userBalance Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance
+TMP_1(uint256) = userBalance_1 (c)- uBalFee_1
+[i]Type for TMP_1
+
+Name: TMP_1 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+uBalWithFee1_1(uint256) := TMP_1(uint256)
+[i]Type for uBalWithFee1
+
+Name: uBalWithFee1 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+compoundFeeRatio_1
+
+Name: compoundFeeRatio Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+compoundFeeRatio
+userBalance_1
+
+Name: userBalance Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance
+TMP_2(uint256) = userBalance_1 (c)* compoundFeeRatio_1
+[i]Type for TMP_2
+
+Name: TMP_2 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+uBalWithFee2_1(uint256) := TMP_2(uint256)
+[i]Type for uBalWithFee2
+
+Name: uBalWithFee2 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenA_2
+
+Name: reserveTokenA Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenA
+uBalWithFee1_1
+
+Name: uBalWithFee1 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_3(uint256) = INTERNAL_CALL, FinancialMeaningTest.seeReserveTotal(address,uint256)(reserveTokenA_2,uBalWithFee1_1)
+[[-1], [-1], 'u', 'reserveTokenA', [], -1, 2, 'u']
+[[-1], [-1], 'u', None, [], -1, 'u', 'u']
+
+Name: reserve Function: None
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserve_1(address) := ϕ(['reserveTokenA_2'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['uBalWithFee1_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserve_1
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_6 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_6
+
+Name: TMP_6 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_7 = CONVERT this to address
+Converting this
+new address made for this
+prev address? u
+global assignment: 3
+3
+3
+[i]Type for TMP_7
+
+Name: TMP_7 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 3
+Norm: u
+LF: FinancialMeaningTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_6(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_7']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_8
+
+Name: TMP_8 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+TMP_9(uint256) = TMP_8 (c)+ amount_1
+
+Name: TMP_8 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+
+Name: amount_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+amt_1(uint256) := TMP_9(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+amt_1
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+RETURN amt_1
+
+Name: reserve Function: None
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: amount Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserve_1(address) := ϕ(['reserveTokenA_2'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['uBalWithFee1_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserve_1
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_6 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_6
+
+Name: TMP_6 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_7 = CONVERT this to address
+Converting this
+3
+[i]Type for TMP_7
+
+Name: TMP_7 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 3
+Norm: u
+LF: FinancialMeaningTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_6(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_7']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_8
+
+Name: TMP_8 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+TMP_9(uint256) = TMP_8 (c)+ amount_1
+
+Name: TMP_8 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+
+Name: amount_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+amt_1(uint256) := TMP_9(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+amt_1
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+RETURN amt_1
+[i]Type for TMP_3
+
+Name: TMP_3 Function: goodFinanceFunctions
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+newReserveAmt_1(uint256) := TMP_3(uint256)
+[i]Type for newReserveAmt
+
+Name: newReserveAmt Function: goodFinanceFunctions
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+newReserveAmt_1
+
+Name: newReserveAmt Function: goodFinanceFunctions
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+reserveTokenA_3
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserveTokenA
+owner_2
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+owner
+TMP_4 = CONVERT reserveTokenA_3 to ITypicalTokenWrapper
+Converting reserveTokenA_3
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_4
+
+Name: TMP_4 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:transfer, arguments:['owner_2', 'newReserveAmt_1']  
+High Call: transfer
+Running querryfc
+[i]Type for TMP_5
+
+Name: TMP_5 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenA_4(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_3', 'reserveTokenA_1'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+owner_3(address) := ϕ(['owner_3', 'owner_2'])
+[i]Type for owner
+
+Name: owner Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_1', 'reserveTokenA_0'])
+owner_1(address) := ϕ(['owner_3', 'owner_0'])
+isFeeRatio_1(uint256) := ϕ(['isFeeRatio_0'])
+compoundFeeRatio_1(uint256) := ϕ(['compoundFeeRatio_0'])
+TMP_0(uint256) = userBalance_1 (c)* isFeeRatio_1
+uBalFee_1(uint256) := TMP_0(uint256)
+TMP_1(uint256) = userBalance_1 (c)- uBalFee_1
+uBalWithFee1_1(uint256) := TMP_1(uint256)
+TMP_2(uint256) = userBalance_1 (c)* compoundFeeRatio_1
+uBalWithFee2_1(uint256) := TMP_2(uint256)
+TMP_3(uint256) = INTERNAL_CALL, FinancialMeaningTest.seeReserveTotal(address,uint256)(reserveTokenA_2,uBalWithFee1_1)
+newReserveAmt_1(uint256) := TMP_3(uint256)
+TMP_4 = CONVERT reserveTokenA_3 to ITypicalTokenWrapper
+TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:transfer, arguments:['owner_2', 'newReserveAmt_1']  
+reserveTokenA_4(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_3', 'reserveTokenA_1'])
+owner_3(address) := ϕ(['owner_3', 'owner_2'])
+
+
+reserveTokenA_2(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_1', 'reserveTokenA_0'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+owner_1(address) := ϕ(['owner_3', 'owner_0'])
+[i]Type for owner
+
+Name: owner Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+isFeeRatio_1(uint256) := ϕ(['isFeeRatio_0'])
+[i]Type for isFeeRatio
+
+Name: isFeeRatio Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+compoundFeeRatio_1(uint256) := ϕ(['compoundFeeRatio_0'])
+[i]Type for compoundFeeRatio
+
+Name: compoundFeeRatio Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+isFeeRatio_1
+
+Name: isFeeRatio Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance_1
+
+Name: userBalance Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance
+TMP_0(uint256) = userBalance_1 (c)* isFeeRatio_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+uBalFee_1(uint256) := TMP_0(uint256)
+[i]Type for uBalFee
+
+Name: uBalFee Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+uBalFee_1
+
+Name: uBalFee Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance_1
+
+Name: userBalance Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance
+TMP_1(uint256) = userBalance_1 (c)- uBalFee_1
+[i]Type for TMP_1
+
+Name: TMP_1 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+uBalWithFee1_1(uint256) := TMP_1(uint256)
+[i]Type for uBalWithFee1
+
+Name: uBalWithFee1 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+compoundFeeRatio_1
+
+Name: compoundFeeRatio Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance_1
+
+Name: userBalance Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+userBalance
+TMP_2(uint256) = userBalance_1 (c)* compoundFeeRatio_1
+[i]Type for TMP_2
+
+Name: TMP_2 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+uBalWithFee2_1(uint256) := TMP_2(uint256)
+[i]Type for uBalWithFee2
+
+Name: uBalWithFee2 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenA_2
+
+Name: reserveTokenA Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+uBalWithFee1_1
+
+Name: uBalWithFee1 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_3(uint256) = INTERNAL_CALL, FinancialMeaningTest.seeReserveTotal(address,uint256)(reserveTokenA_2,uBalWithFee1_1)
+[i]Type for TMP_3
+
+Name: TMP_3 Function: goodFinanceFunctions
+Num: 2
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+newReserveAmt_1(uint256) := TMP_3(uint256)
+[i]Type for newReserveAmt
+
+Name: newReserveAmt Function: goodFinanceFunctions
+Num: 2
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+newReserveAmt_1
+
+Name: newReserveAmt Function: goodFinanceFunctions
+Num: 2
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+reserveTokenA_3
+
+Name: reserveTokenA Function: None
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+owner_2
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: 1
+Norm: u
+LF: owner
+Value: u
+Fields: 
+Finance Type: undef
+TMP_4 = CONVERT reserveTokenA_3 to ITypicalTokenWrapper
+Converting reserveTokenA_3
+
+Name: reserveTokenA Function: None
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_4
+
+Name: TMP_4 Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:transfer, arguments:['owner_2', 'newReserveAmt_1']  
+High Call: transfer
+Running querryfc
+[i]Type for TMP_5
+
+Name: TMP_5 Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserveTokenA_4(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_3', 'reserveTokenA_1'])
+[i]Type for reserveTokenA
+
+Name: reserveTokenA Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+owner_3(address) := ϕ(['owner_3', 'owner_2'])
+[i]Type for owner
+
+Name: owner Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+
+
+
+seeReserveTotal
+Finding type for reserve(address ... )
+prev address? 2
+Head Addr: 2
+    Norm: 0
+    Set: {2}
+    Fin: reserve
+Finding type for amount(uint256 ... )
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: reserveTokenA
+    fields: []
+    fintype: -1
+Param: 1
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+
+
+reserve_1(address) := ϕ(['reserveTokenA_2'])
+amount_1(uint256) := ϕ(['uBalWithFee1_1'])
+TMP_6 = CONVERT reserve_1 to ITypicalTokenWrapper
+TMP_7 = CONVERT this to address
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_6(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_7']  
+TMP_9(uint256) = TMP_8 (c)+ amount_1
+amt_1(uint256) := TMP_9(uint256)
+RETURN amt_1
+
+
+reserve_1(address) := ϕ(['reserveTokenA_2'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['uBalWithFee1_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserve_1
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_6 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_6
+
+Name: TMP_6 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_7 = CONVERT this to address
+Converting this
+3
+[i]Type for TMP_7
+
+Name: TMP_7 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 3
+Norm: u
+LF: FinancialMeaningTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_6(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_7']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_8
+
+Name: TMP_8 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+TMP_9(uint256) = TMP_8 (c)+ amount_1
+
+Name: TMP_8 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+
+Name: amount_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+amt_1(uint256) := TMP_9(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+amt_1
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+RETURN amt_1
+
+
+reserve_1(address) := ϕ(['reserveTokenA_2'])
+amount_1(uint256) := ϕ(['uBalWithFee1_1'])
+TMP_6 = CONVERT reserve_1 to ITypicalTokenWrapper
+TMP_7 = CONVERT this to address
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_6(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_7']  
+TMP_9(uint256) = TMP_8 (c)+ amount_1
+amt_1(uint256) := TMP_9(uint256)
+RETURN amt_1
+
+
+reserve_1(address) := ϕ(['reserveTokenA_2'])
+[i]Type for reserve
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+amount_1(uint256) := ϕ(['uBalWithFee1_1'])
+[i]Type for amount
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+reserve_1
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+amount_1
+
+Name: amount Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_6 = CONVERT reserve_1 to ITypicalTokenWrapper
+Converting reserve_1
+
+Name: reserve_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: reserveTokenA
+Value: u
+Fields: 
+Finance Type: undef
+TypicalTokenWrapper
+[i]Type for TMP_6
+
+Name: TMP_6 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: 2
+Norm: u
+LF: TypicalTokenWrapper
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_7 = CONVERT this to address
+Converting this
+3
+[i]Type for TMP_7
+
+Name: TMP_7 Function: seeReserveTotal
+Num: 
+Den: 
+Address: 3
+Norm: u
+LF: FinancialMeaningTest
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_8(uint256) = HIGH_LEVEL_CALL, dest:TMP_6(ITypicalTokenWrapper), function:balanceOf, arguments:['TMP_7']  
+High Call: balanceOf
+Running querryfc
+Written func info: TypicalTokenWrapper, balanceOf
+Handling balance function!
+2
+[i]Type for TMP_8
+
+Name: TMP_8 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+TMP_9(uint256) = TMP_8 (c)+ amount_1
+
+Name: TMP_8 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+
+Name: amount_1 Function: seeReserveTotal
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+[i]Type for TMP_9
+
+Name: TMP_9 Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+amt_1(uint256) := TMP_9(uint256)
+[i]Type for amt
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+XXXX
+amt_1
+
+Name: amt Function: seeReserveTotal
+Num: 2
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: reserve
+RETURN amt_1
+
+
+
+slitherConstructorVariables
+Address: 1, Label: global:owner
+Address: 2, Label: global:reserveTokenA
+Address: -999, Label: constructor:_reserveTokenA
+Address: -998, Label: constructor:_reserveTokenB
+Address: -997, Label: goodFinanceFunctions:user
+Address: -996, Label: seeReserveTotal:reserve
+Address: 3, Label: seeReserveTotal:TMP_7
+Address: 3, Label: global:this
+Head Addr: 1
+    Norm: 0
+    Set: {1}
+    Fin: undef
+Head Addr: 2
+    Norm: 0
+    Set: {2}
+    Fin: reserve
+Head Addr: -999
+    Norm: 0
+    Set: {-999}
+    Fin: undef
+Head Addr: -998
+    Norm: 0
+    Set: {-998}
+    Fin: undef
+Head Addr: -997
+    Norm: 0
+    Set: {-997}
+    Fin: undef
+Head Addr: -996
+    Norm: *
+    Set: {-996}
+    Fin: undef
+Head Addr: 3
+    Norm: *
+    Set: {3}
+    Fin: NULL
+Function count: 4
