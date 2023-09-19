@@ -40,6 +40,7 @@ update_ratios = {10: -1,
                  20: -1,
                  21: -1}
 
+#Copy this into address_handler
 f_type_num = {
     -1: "undef",
     0: "raw balance",
