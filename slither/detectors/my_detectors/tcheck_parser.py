@@ -408,10 +408,12 @@ def get_tuple(tuple_name):
 
 def add_field(function_name, parent_name, field_name, type_tuples):
     key = function_name+'_'+parent_name+'_'+field_name
+    print(f"IN KEY: {key}")
     field_type_hash[key] = type_tuples
 
 def get_field(function_name, full_parent_name, field_name):
     key = function_name + '_' + full_parent_name + '_' + field_name
+    print(f"OUT KEY: {key}")
     if key in field_type_hash:
         return field_type_hash[key]
     return None
