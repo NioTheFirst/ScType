@@ -2,6 +2,37 @@ Checking FinancialMeaningTest
 Checking ITypicalTokenWrapper
 Finance file: FinancialMeaningTest_ftypes.txt
 Reading f file...
+['[*c]', 'FinancialMeaningTest']
+['[ta]', 'global', 'owner', '0']
+Head Addr: 1
+    Norm: *
+    Set: {1}
+    Fin: undef
+['[ta]', 'global', 'reserveTokenA', '0', 'f:30']
+Head Addr: 2
+    Norm: *
+    Set: {2}
+    Fin: reserve
+['[ta]', 'constructor', '_reserveTokenA', '0']
+Head Addr: -999
+    Norm: *
+    Set: {-999}
+    Fin: undef
+['[ta]', 'constructor', '_reserveTokenB', '0']
+Head Addr: -998
+    Norm: *
+    Set: {-998}
+    Fin: undef
+['[ta]', 'goodFinanceFunctions', 'user', '0']
+Head Addr: -997
+    Norm: *
+    Set: {-997}
+    Fin: undef
+['[ta]', 'seeReserveTotal', 'reserve', '0']
+Head Addr: -996
+    Norm: *
+    Set: {-996}
+    Fin: undef
 Finding type for compoundFeeRatio(uint256 ... )
 Finding type for isFeeRatio(uint256 ... )
 Finding type for owner(address ... )
@@ -185,8 +216,8 @@ Param: 1
     fintype: -1
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_1', 'reserveTokenA_0'])
-owner_1(address) := ϕ(['owner_3', 'owner_0'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_4'])
+owner_1(address) := ϕ(['owner_0', 'owner_3'])
 isFeeRatio_1(uint256) := ϕ(['isFeeRatio_0'])
 compoundFeeRatio_1(uint256) := ϕ(['compoundFeeRatio_0'])
 TMP_0(uint256) = userBalance_1 (c)* isFeeRatio_1
@@ -199,11 +230,11 @@ TMP_3(uint256) = INTERNAL_CALL, FinancialMeaningTest.seeReserveTotal(address,uin
 newReserveAmt_1(uint256) := TMP_3(uint256)
 TMP_4 = CONVERT reserveTokenA_3 to ITypicalTokenWrapper
 TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:transfer, arguments:['owner_2', 'newReserveAmt_1']  
-reserveTokenA_4(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_3', 'reserveTokenA_1'])
-owner_3(address) := ϕ(['owner_3', 'owner_2'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_4'])
+owner_3(address) := ϕ(['owner_2', 'owner_3'])
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_1', 'reserveTokenA_0'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_4'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: goodFinanceFunctions
@@ -216,7 +247,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-owner_1(address) := ϕ(['owner_3', 'owner_0'])
+owner_1(address) := ϕ(['owner_0', 'owner_3'])
 [i]Type for owner
 
 Name: owner Function: goodFinanceFunctions
@@ -305,17 +336,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-uBalFee_1
-
-Name: uBalFee Function: goodFinanceFunctions
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 userBalance_1
 
 Name: userBalance Function: None
@@ -328,6 +348,17 @@ Value: u
 Fields: 
 Finance Type: undef
 userBalance
+uBalFee_1
+
+Name: uBalFee Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 TMP_1(uint256) = userBalance_1 (c)- uBalFee_1
 [i]Type for TMP_1
 
@@ -354,18 +385,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-compoundFeeRatio_1
-
-Name: compoundFeeRatio Function: goodFinanceFunctions
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-compoundFeeRatio
 userBalance_1
 
 Name: userBalance Function: None
@@ -378,6 +397,18 @@ Value: u
 Fields: 
 Finance Type: undef
 userBalance
+compoundFeeRatio_1
+
+Name: compoundFeeRatio Function: goodFinanceFunctions
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+compoundFeeRatio
 TMP_2(uint256) = userBalance_1 (c)* compoundFeeRatio_1
 [i]Type for TMP_2
 
@@ -476,9 +507,9 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserve_1
+amount_1
 
-Name: reserve Function: seeReserveTotal
+Name: amount Function: seeReserveTotal
 Num: 
 Den: 
 Address: u
@@ -487,9 +518,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-amount_1
+reserve_1
 
-Name: amount Function: seeReserveTotal
+Name: reserve Function: seeReserveTotal
 Num: 
 Den: 
 Address: u
@@ -664,17 +695,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserve_1
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
 amount_1
 
 Name: amount Function: seeReserveTotal
@@ -683,6 +703,17 @@ Den:
 Address: u
 Norm: u
 LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserve_1
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
 Value: u
 Fields: 
 Finance Type: undef
@@ -902,7 +933,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenA_4(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_3', 'reserveTokenA_1'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_4'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: goodFinanceFunctions
@@ -915,7 +946,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-owner_3(address) := ϕ(['owner_3', 'owner_2'])
+owner_3(address) := ϕ(['owner_2', 'owner_3'])
 [i]Type for owner
 
 Name: owner Function: goodFinanceFunctions
@@ -930,8 +961,8 @@ Finance Type: undef
 XXXX
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_1', 'reserveTokenA_0'])
-owner_1(address) := ϕ(['owner_3', 'owner_0'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_4'])
+owner_1(address) := ϕ(['owner_0', 'owner_3'])
 isFeeRatio_1(uint256) := ϕ(['isFeeRatio_0'])
 compoundFeeRatio_1(uint256) := ϕ(['compoundFeeRatio_0'])
 TMP_0(uint256) = userBalance_1 (c)* isFeeRatio_1
@@ -944,11 +975,11 @@ TMP_3(uint256) = INTERNAL_CALL, FinancialMeaningTest.seeReserveTotal(address,uin
 newReserveAmt_1(uint256) := TMP_3(uint256)
 TMP_4 = CONVERT reserveTokenA_3 to ITypicalTokenWrapper
 TMP_5(bool) = HIGH_LEVEL_CALL, dest:TMP_4(ITypicalTokenWrapper), function:transfer, arguments:['owner_2', 'newReserveAmt_1']  
-reserveTokenA_4(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_3', 'reserveTokenA_1'])
-owner_3(address) := ϕ(['owner_3', 'owner_2'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_4'])
+owner_3(address) := ϕ(['owner_2', 'owner_3'])
 
 
-reserveTokenA_2(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_1', 'reserveTokenA_0'])
+reserveTokenA_2(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_0', 'reserveTokenA_4'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: goodFinanceFunctions
@@ -961,7 +992,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-owner_1(address) := ϕ(['owner_3', 'owner_0'])
+owner_1(address) := ϕ(['owner_0', 'owner_3'])
 [i]Type for owner
 
 Name: owner Function: goodFinanceFunctions
@@ -1049,17 +1080,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-uBalFee_1
-
-Name: uBalFee Function: goodFinanceFunctions
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 userBalance_1
 
 Name: userBalance Function: None
@@ -1072,6 +1092,17 @@ Value: u
 Fields: 
 Finance Type: undef
 userBalance
+uBalFee_1
+
+Name: uBalFee Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 TMP_1(uint256) = userBalance_1 (c)- uBalFee_1
 [i]Type for TMP_1
 
@@ -1098,17 +1129,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-compoundFeeRatio_1
-
-Name: compoundFeeRatio Function: goodFinanceFunctions
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 userBalance_1
 
 Name: userBalance Function: None
@@ -1121,6 +1141,17 @@ Value: u
 Fields: 
 Finance Type: undef
 userBalance
+compoundFeeRatio_1
+
+Name: compoundFeeRatio Function: goodFinanceFunctions
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 TMP_2(uint256) = userBalance_1 (c)* compoundFeeRatio_1
 [i]Type for TMP_2
 
@@ -1268,7 +1299,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserveTokenA_4(address) := ϕ(['reserveTokenA_4', 'reserveTokenA_3', 'reserveTokenA_1'])
+reserveTokenA_4(address) := ϕ(['reserveTokenA_1', 'reserveTokenA_3', 'reserveTokenA_4'])
 [i]Type for reserveTokenA
 
 Name: reserveTokenA Function: goodFinanceFunctions
@@ -1281,7 +1312,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-owner_3(address) := ϕ(['owner_3', 'owner_2'])
+owner_3(address) := ϕ(['owner_2', 'owner_3'])
 [i]Type for owner
 
 Name: owner Function: goodFinanceFunctions
@@ -1357,17 +1388,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserve_1
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
 amount_1
 
 Name: amount Function: seeReserveTotal
@@ -1376,6 +1396,17 @@ Den:
 Address: u
 Norm: u
 LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserve_1
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
 Value: u
 Fields: 
 Finance Type: undef
@@ -1533,17 +1564,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-reserve_1
-
-Name: reserve Function: seeReserveTotal
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: reserveTokenA
-Value: u
-Fields: 
-Finance Type: undef
 amount_1
 
 Name: amount Function: seeReserveTotal
@@ -1552,6 +1572,17 @@ Den:
 Address: u
 Norm: u
 LF: None
+Value: u
+Fields: 
+Finance Type: undef
+reserve_1
+
+Name: reserve Function: seeReserveTotal
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: reserveTokenA
 Value: u
 Fields: 
 Finance Type: undef

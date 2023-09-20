@@ -348,7 +348,7 @@ def parse_type_file(t_file, f_file = None):
                     num = [ int(_line[4].strip())]
                     denom = [int(_line[5].strip())]
                     norm = [int(_line[6].strip())]
-                elif(len(_line) >= 4):
+                elif(len(_line) >= 5):
                     addr = _line[4]
 
                 add_field(func_name, parent_name, field_name, (num, denom, norm, lf))
