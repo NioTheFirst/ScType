@@ -748,7 +748,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, EventCall):
         return False
     elif isinstance(ir, Index):
-        ##print("INDEX")
+        print("INDEX")
         addback = type_ref(ir)
         #return addback
     elif isinstance(ir, Member):
