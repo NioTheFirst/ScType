@@ -387,6 +387,8 @@ def add_tuple(tuple_name, type_tuples):
 
 def stringToType(string):
     type = -1
+    if(string == None):
+        return None
     try:
         type = int(string)
     except ValueError:
