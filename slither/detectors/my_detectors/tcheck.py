@@ -176,7 +176,12 @@ def add_field(function_name, parent_name, field_name, type_tuple):
 def get_field(function_name, parent_name, field_name):
     if(function_name == None or parent_name == None or field_name == None):
         return None
-    return tcheck_parser.get_field(function_name, parent_name, field_name)
+    #Some names will be off due to ssa version
+    _parent_name = parent_name.rsplit('_', 1)[0]
+    temp = tcheck_parser.get_field(function_name, parent_name, field_name)
+    if(temp == None):
+        temp = tcheck_parser.get_field(function_name, _parent_name, field_name)
+    return temp
 
 #USAGE: bar a function from being typechecked
 #RETURNS: NULL
@@ -1126,7 +1131,7 @@ def type_member(ir)->bool:
         return False
     init_var(ir.variable_left)
     init_var(ir.variable_right)
-    _lv = ir.variable_left.non_ssa_version.extok
+    _lv = ir.variable_left.extok
     #_lvname = ir.variable_left.ssa_name
     _rv = ir.variable_right.extok
     _ir = ir.lvalue.extok
