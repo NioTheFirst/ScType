@@ -217,6 +217,7 @@ def parse_type_file(t_file, f_file = None):
                     den = -1
                     norm = 'u'
                     addr = None
+                    value = 'u'
                     if(len(_line) >= 7):
                         #Integers (and potentially f-types)
                         num = _line[3].strip()

@@ -176,7 +176,7 @@ def add_field(function_name, parent_name, field_name, type_tuple):
 def get_field(function_name, parent_name, field_name):
     if(function_name == None or parent_name == None or field_name == None):
         return None
-    #Some names will be off due to ssa version
+    #Some names will be off due to ssa version/non-ssa version conflict
     _parent_name = parent_name.rsplit('_', 1)[0]
     temp = tcheck_parser.get_field(function_name, parent_name, field_name)
     if(temp == None):
