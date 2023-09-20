@@ -1138,7 +1138,7 @@ def type_member(ir)->bool:
     #if is_type_undef(ir.variable_left):
     #    #print("UNDEFINED LEFT VARIABLE IN MEMBER")
     #    return True
-    
+    print("Typing member")
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
     #_lv.#print_fields()
