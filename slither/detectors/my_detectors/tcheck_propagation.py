@@ -314,7 +314,7 @@ def copy_norm(src, dest):
 #RETURNS: null
 def copy_token_tuple(ir, tt):
     #print("Check copy_toekn_tuple")
-    #print(tt)
+    print(tt)
     _ir = ir.extok
     #print("----")
     _ir.token_type_clear()
