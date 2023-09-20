@@ -1167,7 +1167,9 @@ def type_member(ir)->bool:
             return False
     
     field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
+
     if(field_type_tuple == None):
+        print("No field found")
         #TURN OFF ASSUMPTION
         #assign_const(ir.lvalue)
         #querry_type(ir.lvalue)
