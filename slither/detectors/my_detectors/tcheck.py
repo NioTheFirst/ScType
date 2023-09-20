@@ -1131,6 +1131,7 @@ def type_member(ir)->bool:
     _ir = ir.lvalue.extok
     pf_name = _lv.function_name
     ##print(_lv.name)
+    print(_lv)
     ##print(_rv.name)
     ##print(pf_name)
     ##print(f"left var type: {ir.variable_left.type}")
