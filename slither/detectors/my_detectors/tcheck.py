@@ -1126,14 +1126,14 @@ def type_member(ir)->bool:
         return False
     init_var(ir.variable_left)
     init_var(ir.variable_right)
-    _lv = ir.variable_left.extok
+    _lv = ir.variable_left.non_ssa_version.extok
     _lvname = ir.variable_left.ssa_name
-    _rv = ir.variable_right.extok
+    _rv = ir.variable_right.non_ssa_version.extok
     _ir = ir.lvalue.extok
     pf_name = _lv.function_name
     ##print(_lv.name)
     print(_lv)
-    print(_lvname)
+    #print(_lvname)
     ##print(_rv.name)
     ##print(pf_name)
     ##print(f"left var type: {ir.variable_left.type}")
