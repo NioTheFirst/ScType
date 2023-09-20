@@ -1128,7 +1128,7 @@ def type_member(ir)->bool:
     init_var(ir.variable_right)
     _lv = ir.variable_left.non_ssa_version.extok
     _lvname = ir.variable_left.ssa_name
-    _rv = ir.variable_right.non_ssa_version.extok
+    _rv = ir.variable_right.extok
     _ir = ir.lvalue.extok
     pf_name = _lv.function_name
     ##print(_lv.name)
