@@ -752,7 +752,7 @@ def check_type(ir) -> bool:
         addback = type_ref(ir)
         #return addback
     elif isinstance(ir, Member):
-        ##print("MEMBER")
+        print("MEMBER")
         addback = type_member(ir) 
         addback =  False
     elif isinstance(ir, Return):
