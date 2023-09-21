@@ -2293,6 +2293,7 @@ def _tcheck_ir(irs, function_name) -> []:
 
 #USAGE: propogates a local variables with a parameter
 def propogate_parameter(lv, function):
+    print(lv.ssa_name)
     if("_1" in lv.ssa_name and lv.extok.is_undefined()):
             #print("local...")
             pos = -1
