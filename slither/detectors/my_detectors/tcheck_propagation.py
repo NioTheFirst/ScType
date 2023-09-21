@@ -445,9 +445,9 @@ def propagate_fields(ir):
         #is an oobject, may have fields
         for field_name, field in fields:
             #search for type tuple in type file
-            #print(_ir.function_name)
-            #print(_ir.name)
-            #print(field_name)
+            print(_ir.function_name)
+            print(_ir.name)
+            print(field_name)
             if(_ir.function_name == None or _ir.name == None or field_name == None):
                 continue
             field_tt = tcheck_parser.get_field(_ir.function_name, _ir.name, field_name)
