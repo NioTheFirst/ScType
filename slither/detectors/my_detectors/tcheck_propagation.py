@@ -155,7 +155,8 @@ def copy_inv_token_type(src, dest):
 #USAGE: copy and replace a token from a param_cache to an ir
 #RETURNS: nN/A
 def copy_pc_token_type(_src, dest):
-    src = copy.deepcopy(_src)
+    #src = copy.deepcopy(_src)
+    print(_src.extok)
     _dest = dest.extok
     _dest.token_type_clear()
     for n in src[0]:
