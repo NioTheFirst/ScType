@@ -223,7 +223,10 @@ def parse_type_file(t_file, f_file = None):
                         num = _line[3].strip()
                         den = _line[4].strip()
                         norm = int(_line[5].strip())
-                        value = int(_line[6].strip())
+                        try:
+                            value = int(_line[6].strip())
+                        except ValueError:
+                            value = 'u'
                     elif(len(_line) >= 4):
                         #Addresses 
                         addr = _line[3].strip()
@@ -269,14 +272,17 @@ def parse_type_file(t_file, f_file = None):
                     denom = [-1]
                     norm = 'u'
                     copy = "c"
-                    value = 0
+                    value = 'u'
                     addr = None
                     if(len(ret_info) >= 5):
                         copy = ret_info[0]
                         num = extract_address(ret_info[1])
                         denom = extract_address(ret_info[2])
                         norm = int(ret_info[3].strip())
-                        value = int(ret_info[4].strip())
+                        try:
+                            value = int(ret_info[4].strip())
+                        except ValueError:
+                            value = 'u'
                     elif(len(ret_info) >= 2):
                         copy = ret_info[0]  
                         addr = ret_info[1]  #No longer lf, link_function deprecated. Stores address instead
@@ -346,14 +352,15 @@ def parse_type_file(t_file, f_file = None):
                 norm = ['u']
                 value = -1
                 lf = None
-                if(len(_line) >= 7):
+                if(len(_line) >= 8):
                     num = [ int(_line[4].strip())]
                     denom = [int(_line[5].strip())]
                     norm = [int(_line[6].strip())]
+                    value = int(_)
                 elif(len(_line) >= 5):
                     addr = _line[4]
 
-                add_field(func_name, parent_name, field_name, (num, denom, norm, lf))
+                add_field(func_name, parent_name, field_name, (num, denom, norm, value, addr))
     parse_finance_file(f_file)
 
 def add_var(function_name, var_name, type_tuple):
