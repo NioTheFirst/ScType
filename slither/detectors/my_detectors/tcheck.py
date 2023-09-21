@@ -2345,7 +2345,8 @@ def _tcheck_node(node, function) -> []:
     irs = []
     #local vars read
     print("Propogating parameters and globals to SSA variables...")
-    
+    for lv in node.variables_read:
+        print(lv)
     for lv in node.ssa_variables_read:
         print(lv)
         #print(lv.extok)
