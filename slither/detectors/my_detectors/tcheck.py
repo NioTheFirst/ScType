@@ -1120,7 +1120,7 @@ def update_member(member, fieldf, copy_ir):
     _field = fieldf.extok
     if(not(_field.function_name)):
         _field.function_name = _member.function_name
-    add_field(_member.function_name, _member.name, _field.name, (_field.num_token_types, _field.den_token_types, _field.norm, _field.value, _field.address))
+    #add_field(_member.function_name, _member.name, _field.name, (_field.num_token_types, _field.den_token_types, _field.norm, _field.value, _field.address))
 
 
 #USAGE: typechecks Members (i.e. a.b or a.b())
