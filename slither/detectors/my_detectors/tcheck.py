@@ -2505,6 +2505,7 @@ def _tcheck_function_call(function, param_cache) -> []:
         #copy new types
         copy_pc_token_type(param_cache[paramno], param)
         print(param_cache[paramno])
+        print(param.extok)
         #param.parent_function = function.name
         paramno+=1
     #find return and tack it onto the end
