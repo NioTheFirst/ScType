@@ -484,6 +484,7 @@ def querry_type(ir):
 
     #Get type tuple for regular int (emergency usage) + TODO modify s.t. parameters passed as names?
     type_tuple = read_type_file(ir)
+    propagate_fields(ir)
     if(type_tuple != None):
         _ir.clear_num()
         _ir.clear_den()
@@ -575,6 +576,7 @@ def assign_err(ir):
 #RETURNS: null
 def copy_token_tuple(ir, tt):
     tcheck_propagation.copy_token_tuple(ir, tt)
+
 
 
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node

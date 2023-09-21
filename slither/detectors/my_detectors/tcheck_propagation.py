@@ -167,7 +167,10 @@ def copy_pc_token_type(_src, dest):
     if(src[3] != None):
         _dest.linked_contract = src[3]
     if(src[4] != None):
-        
+        temp = tcheck.create_iconstant()
+        #copy_token_type(field, temp)
+        #temp.extok.name = field.extok.name
+        #temp.extok.function_name = field.extok
         for field in src[4]:
             _dest.add_field(field)
     _dest.finance_type = src[5]
