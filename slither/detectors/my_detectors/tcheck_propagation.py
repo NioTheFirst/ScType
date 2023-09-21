@@ -337,8 +337,8 @@ def copy_token_tuple(ir, tt):
         _ir.norm = tt[2]
     else:
         _ir.norm = tt[2][0]
-    _ir.address = tt[3]
-    _ir.value = tt[4]
+    _ir.address = tt[4]
+    _ir.value = tt[3]
     if(len(tt) > field_tuple_start):
         _ir.finance_type = tt[5]
     propagate_fields(ir)

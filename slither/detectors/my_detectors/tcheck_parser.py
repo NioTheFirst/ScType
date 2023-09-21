@@ -230,7 +230,7 @@ def parse_type_file(t_file, f_file = None):
                     elif(len(_line) >= 4):
                         #Addresses 
                         addr = _line[3].strip()
-                    add_var(f_name, v_name, (num, den, norm, addr, value))
+                    add_var(f_name, v_name, (num, den, norm, value, addr))
                     if(reuse_types):
                         reuse_types_var[v_name] = True
                 except ValueError:
@@ -375,7 +375,7 @@ def get_var_type_tuple(function_name, var_name):
         temp[0] = stringToType(temp[0])
         temp[1] = stringToType(temp[1])
         #cast addr
-        temp[3] = stringToType(temp[3])
+        temp[4] = stringToType(temp[4])
         return tuple(temp)
     return None
 
