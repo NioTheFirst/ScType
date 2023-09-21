@@ -344,6 +344,7 @@ def parse_type_file(t_file, f_file = None):
                 num = [-1]
                 denom = [-1]
                 norm = ['u']
+                value = -1
                 lf = None
                 if(len(_line) >= 7):
                     num = [ int(_line[4].strip())]
