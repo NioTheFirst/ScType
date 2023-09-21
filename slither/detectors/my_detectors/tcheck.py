@@ -2353,7 +2353,7 @@ def _tcheck_node(node, function) -> []:
         propogate_global(lv)
         print(lv.extok)
     
-    #print("End popogation")            
+    print("End popogation")            
         
     for ir in node.irs_ssa:
         #DEFINE REFERENCE RELATIONS
