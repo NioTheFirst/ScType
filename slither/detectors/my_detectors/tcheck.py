@@ -2345,10 +2345,10 @@ def _tcheck_node(node, function) -> []:
     #print("Propogating parameters to SSA variables...")
     for lv in node.ssa_variables_read:
         print(lv)
-        print(lv.extok)
+        #print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
-        #print(lv.extok)
+        print(lv.extok)
     
     #print("End popogation")            
         
