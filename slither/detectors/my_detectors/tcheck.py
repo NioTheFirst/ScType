@@ -747,7 +747,7 @@ def check_type(ir) -> bool:
         #Phi (ssa) unpack
         addback = False
         print("Phi")
-        if(is_type_undef(ir.lvalue))
+        if(is_type_undef(ir.lvalue)):
             for rval in ir.rvalues:
                 if(not(is_type_undef(rval))):
                     type_asn(ir.lvalue, rval)
