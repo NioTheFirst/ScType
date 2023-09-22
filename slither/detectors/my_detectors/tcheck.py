@@ -1120,7 +1120,7 @@ def update_member(member, fieldf, copy_ir):
     _member = member.extok
     for field in _member.fields:
         _field = field.extok
-        if(_field.name == fieldf.extok.name):
+        if(_field.name == fieldf.extok.ref_field):
             type_asn(field, copy_ir)
             if(_field.norm != "*"):
                 asn_norm(field, copy_ir.extok.norm)
