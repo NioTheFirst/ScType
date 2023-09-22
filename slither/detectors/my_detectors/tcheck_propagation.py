@@ -304,8 +304,8 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             return True
         assign_ftype(-1, dest)
     elif(func == "assign"):
-        if(_rlf != _rrf):
-            return True
+        #if(_rlf != _rrf):
+        #    return True
         assign_ftype(_rlf, dest)
     elif(func == "pow"):
         assign_ftype(_rlf, dest)
