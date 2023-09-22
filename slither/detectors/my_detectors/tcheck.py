@@ -1116,22 +1116,25 @@ def type_hlc(ir) ->bool:
 def update_member(member, fieldf, copy_ir):
     if((isinstance(member, SolidityVariable))):
         return
-    added = False
     _member = member.extok
+    added = False
+    ptfield = None
     for field in _member.fields:
         _field = field.extok
-        if(_field.name == fieldf.extok.ref_field):
-            type_asn(field, copy_ir)
-            if(_field.norm != "*"):
-                asn_norm(field, copy_ir.extok.norm)
+        print(f"F: {_field.name}")
+        if(_field.name == fieldf.extok.name):
             added = True
+            ptfield = field
+            break
     if(added):
-        return
-    type_asn(fieldf, copy_ir)
-    if(fieldf.extok.norm != "*"):
+        type_asn(copy_ir, ptfield)
+        asn_norm(ptfield, copy_ir.extok.norm)
+        _field = ptfield.extok
+    else:
+        type_asn(copy_ir, fieldf)
         asn_norm(fieldf, copy_ir.extok.norm)
-    _member.add_field(fieldf)
-    _field = fieldf.extok
+        _member.add_field(fieldf)
+        _field = fieldf.extok
     if(not(_field.function_name)):
         _field.function_name = _member.function_name
     #add_field(_member.function_name, _member.name, _field.name, (_field.num_token_types, _field.den_token_types, _field.norm, _field.value, _field.address))
