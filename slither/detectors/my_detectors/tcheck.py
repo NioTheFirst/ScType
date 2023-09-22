@@ -1635,8 +1635,8 @@ def type_bin_sub(dest, lir, rir) -> bool:
     #dest = ir.lvalue
     #lir = ir.variable_left
     #rir = ir.variable_right
-    ##print_token_type(lir)
-    ##print_token_type(rir)
+    #print(lir.extok)
+    #print(rir)
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir)
