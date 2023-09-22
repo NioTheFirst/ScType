@@ -747,8 +747,12 @@ def check_type(ir) -> bool:
         #Phi (ssa) unpack
         addback = False
         print("Phi")
-        for rval in ir.rvalues:
-            print(rval.extok)
+        if(is_type_undef(ir.lvalue))
+            for rval in ir.rvalues:
+                if(not(is_type_undef(rval))):
+                    type_asn(ir.lvalue, rval)
+
+            
         #search global variables (deprecated)
         #_ir = ir.lvalue
         #_name = _ir.name
@@ -2366,12 +2370,14 @@ def _tcheck_node(node, function) -> []:
         #DEFINE REFERENCE RELATIONS
         ir.dnode = node
 
+        '''
         if isinstance(ir, Phi):
             #Phi de
             lv = ir.lvalue
             propogate_parameter(lv, function)
             propogate_global(lv)
             print(lv.extok)
+        '''
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
