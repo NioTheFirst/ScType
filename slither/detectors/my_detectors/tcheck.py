@@ -1129,6 +1129,7 @@ def update_member(member, fieldf, copy_ir):
     if(added):
         type_asn(copy_ir, ptfield)
         asn_norm(ptfield, copy_ir.extok.norm)
+        print(ptfield.extok)
         _field = ptfield.extok
     else:
         type_asn(copy_ir, fieldf)
