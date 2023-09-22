@@ -751,6 +751,10 @@ def check_type(ir) -> bool:
             for rval in ir.rvalues:
                 if(not(is_type_undef(rval))):
                     type_asn(ir.lvalue, rval)
+                #fields
+                _rval = rval.extok
+                for field in _rval.fields:
+                    ir.lvalue.extok.add_field(field)
 
             
         #search global variables (deprecated)

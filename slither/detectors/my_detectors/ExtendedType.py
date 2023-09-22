@@ -200,7 +200,7 @@ class ExtendedType():
 
     
     def is_undefined(self) -> bool:
-        if(len(self._num_token_types) == 0 and len(self._den_token_types) == 0 and self._address == 'u' and len(self._fields) == 0):
+        if(len(self._num_token_types) == 0 and len(self._den_token_types) == 0 and self._address == 'u'):
             return True
         return False
 
