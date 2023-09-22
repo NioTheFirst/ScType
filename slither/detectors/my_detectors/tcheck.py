@@ -746,6 +746,9 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Phi):
         #Phi (ssa) unpack
         addback = False
+        print("Phi")
+        for rval in ir.rvalues:
+            print(rval.extok)
         #search global variables (deprecated)
         #_ir = ir.lvalue
         #_name = _ir.name
