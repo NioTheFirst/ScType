@@ -700,7 +700,7 @@ def check_type(ir) -> bool:
     #        #print("___")
     #    #print("**E")
     if isinstance(ir, Assignment):
-        ##print("asgn")
+        print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
         ##print(get_norm(ir.rvalue))
         #Assign value if constant int assignement
