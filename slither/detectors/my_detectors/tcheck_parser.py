@@ -394,6 +394,7 @@ def add_tuple(tuple_name, type_tuples):
     tuple_type_hash[key] = type_tuples
 
 def stringToType(string):
+    global address_to_label
     type = -1
     if(string == None):
         return None
