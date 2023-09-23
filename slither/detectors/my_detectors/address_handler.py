@@ -114,6 +114,7 @@ def type_file_new_address(name_key, isGlobal):
     global temp_address_counter
     global label_sets
     global label_to_address
+    global address_to_label
     if(name_key in address_to_label):
         return(label_sets[address_to_label[name_key]])
     else:
