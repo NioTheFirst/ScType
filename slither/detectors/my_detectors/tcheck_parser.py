@@ -154,10 +154,6 @@ def parse_finance_file(f_file):
                     addr = label_sets[addr_key]
                     addr.finance_type = f_params[0]
                 else:
-                    if(f_name == "global"):
-                        addr = address_handler.type_file_new_address(addr_key, True)
-                    else:
-                        addr = address_handler.type_file_new_address(addr_key, False)
                     addr.finance_type = f_params[0]
                 print(addr)
             elif(_line[0].strip() == "[sefa]"):
@@ -189,6 +185,7 @@ def parse_finance_file(f_file):
                 add_field(f_name, p_name, v_name, field_tt)
 
 def parse_type_file(t_file, f_file = None):
+    global label_sets
     with open (t_file, 'r') as type_file:
         lines = []
         counter = 0
@@ -339,6 +336,12 @@ def parse_type_file(t_file, f_file = None):
                 func_name = _line[1].strip()
                 var_name = _line[2].strip()
                 _norm = _line[3].strip()
+                addr_key = func_name + ":" + var_name
+                if(not(addr_key in label_sets)):
+                    if(f_name == "global"):
+                        addr = address_handler.type_file_new_address(addr_key, True)
+                    else:
+                        addr = address_handler.type_file_new_address(addr_key, False)
                 if(_norm != '*'):
                     norm = int(_line[3].strip())
                 add_addr(func_name, var_name, norm)
