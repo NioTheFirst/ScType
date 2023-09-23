@@ -403,6 +403,7 @@ def stringToType(string):
         #search address
         _string = str(string)
         gstring = "global:"+str(string)
+        print(address_to_label)
         if gstring in address_to_label:
             type = address_to_label[gstring]
         elif _string in address_to_label:
