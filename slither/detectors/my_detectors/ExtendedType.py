@@ -82,6 +82,8 @@ class ExtendedType():
 
     @value.setter
     def value(self, value):
+        if(value == None):
+            value = 'u'
         self._value = value
 
     @property
