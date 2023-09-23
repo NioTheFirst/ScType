@@ -129,6 +129,8 @@ def type_file_new_address(name_key, isGlobal):
         label_to_address[upcounter] = name_key
         label_sets[upcounter] = label
         address_to_label[name_key] = upcounter
+        print(f"Add to address_to_label {address_to_label}")
+        
         return label
 
 def new_address(ir, isGlobal):
