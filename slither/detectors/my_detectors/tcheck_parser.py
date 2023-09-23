@@ -338,7 +338,7 @@ def parse_type_file(t_file, f_file = None):
                 _norm = _line[3].strip()
                 addr_key = func_name + ":" + var_name
                 if(not(addr_key in label_sets)):
-                    if(f_name == "global"):
+                    if(func_name == "global"):
                         addr = address_handler.type_file_new_address(addr_key, True)
                     else:
                         addr = address_handler.type_file_new_address(addr_key, False)
