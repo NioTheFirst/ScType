@@ -756,6 +756,7 @@ def check_type(ir) -> bool:
                 _rval = rval.extok
                 for field in _rval.fields:
                     ir.lvalue.extok.add_field(field)
+                break
 
             
         #search global variables (deprecated)
