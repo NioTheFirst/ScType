@@ -495,6 +495,7 @@ def querry_type(ir):
         ##print("[*]Type fetched successfully")
         return
     #print("[x]Failed to fetch type from type file, defaulting to human interface")
+    assign_const(ir)
     return True
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
