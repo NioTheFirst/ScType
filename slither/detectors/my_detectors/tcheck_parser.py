@@ -495,6 +495,8 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ret_num.append(n)
                 for d in cur_param.den_token_types:
                     ret_den.append(d)
+                for a in cur_param.address:
+                    ret_num.append(a)
             for den in den_trans:
                 den = int(den.strip())
                 if(den == -1):
@@ -505,6 +507,8 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ret_den.append(n)
                 for d in cur_param.den_token_types:
                     ret_num.append(d)
+                for a in cur_param.address:
+                    red_den.append(a)
             if(norm > 0):
                 norm = param[norm-1].extok.norm
             if(isinstance(lc, int) and lc > 0):
