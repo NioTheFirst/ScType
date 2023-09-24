@@ -2153,7 +2153,7 @@ def type_bin_gt(dest, lir, rir) -> bool:
        #assign dest as a constant (although it should not be used in arithmatic)
        assign_const(dest)
        return False
-    elif(not(compare_token_type(lir, rir))):
+    elif(not(compare_token_type(lir, rir)) and handle_trace(lir, rir) == False):
        add_errors(dest)
        return False
     assign_const(dest)
@@ -2177,7 +2177,7 @@ def type_bin_ge(dest, lir, rir) -> bool:
        #assign dest as a constant (although it should not be used in arithmatic)
        assign_const(dest)
        return False
-    elif(not(compare_token_type(lir, rir))):
+    elif(not(compare_token_type(lir, rir)) and handle_trace(lir, rir) == False):
        add_errors(dest)
        return False
     assign_const(dest)
@@ -2201,7 +2201,7 @@ def type_bin_lt(dest, lir, rir) -> bool:
        #assign dest as a constant (although it should not be used in arithmatic)
        assign_const(dest)
        return False
-    elif(not(compare_token_type(lir, rir))):
+    elif(not(compare_token_type(lir, rir)) and handle_trace(lir, rir) == False):
        add_errors(dest)
        return False
     assign_const(dest)
@@ -2225,7 +2225,7 @@ def type_bin_le(dest, lir, rir) -> bool:
        #assign dest as a constant (although it should not be used in arithmatic)
        assign_const(dest)
        return False
-    elif(not(compare_token_type(lir, rir))):
+    elif(not(compare_token_type(lir, rir)) and handle_trace(lir, rir) == False):
        add_errors(dest)
        return False
     assign_const(dest)
