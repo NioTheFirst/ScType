@@ -509,7 +509,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ret_num.append(d)
                 if(cur_param.address != 'u'):
                     ret_den.append(cur_param.address)
-            if(norm > 0):
+            if(isinstance(norm, int) and norm > 0):
                 norm = param[norm-1].extok.norm
             if(isinstance(lc, int) and lc > 0):
                 lc = param[lc-1].extok.linked_contract
