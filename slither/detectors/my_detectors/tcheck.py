@@ -1260,7 +1260,7 @@ def type_ref(ir)->bool:
     #check the parser for a pre-user-defined type
     #print(ir.variable_left.name)
     #check address
-    print(ir.lvalue.type.type)
+    #print(ir.lvalue.type.type)
     if(str(ir.lvalue.type).startswith("address")):
         ir.lvalue.extok.address = ir.variable_left.extok.address
         return False
