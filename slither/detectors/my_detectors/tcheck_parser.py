@@ -275,7 +275,10 @@ def parse_type_file(t_file, f_file = None):
                         copy = ret_info[0]
                         num = extract_address(ret_info[1])
                         denom = extract_address(ret_info[2])
-                        norm = int(ret_info[3].strip())
+                        norm = ret_info[3].strip()
+                        if (isinstance(norm.strip(), int)):
+                            norm = int(norm)
+                        #norm = int(ret_info[3].strip())
                         try:
                             value = int(ret_info[4].strip())
                         except ValueError:
@@ -458,7 +461,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
             den_trans = ret_var[2]
             norm = ret_var[3]
             value = ret_var[4]
-            lc = ret_var[5]
+            addr = ret_var[5]
             ftype = -1
             if(len(ret_var) >= 7):
                 ftype = ret_var[6]
@@ -480,7 +483,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     #May translate from global addresses
                     addr = stringToType(addr)
                     _den_trans.append(addr)
-                ret_type_tuple = (_num_trans, _den_trans, norm , lc, ftype)
+                ret_type_tuple = (_num_trans, _den_trans, norm , addr, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
 
@@ -511,9 +514,9 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ret_den.append(cur_param.address)
             if(isinstance(norm, int) and norm > 0):
                 norm = param[norm-1].extok.norm
-            if(isinstance(lc, int) and lc > 0):
-                lc = param[lc-1].extok.linked_contract
-            ret_type_tuple = (ret_num, ret_den, norm, lc, value, ftype)
+            if(isinstance(addr, int) and lc > 0):
+                addr = param[lc-1].extok.linked_contract
+            ret_type_tuple = (ret_num, ret_den, norm, addr, value, ftype)
             ret_type_tuples.append(ret_type_tuple)
         return ret_type_tuples
     return None
