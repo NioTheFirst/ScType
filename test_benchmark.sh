@@ -35,10 +35,10 @@ fi
 # Group 3: PoolTogether
 if [[ $# -eq 0 || $1 -eq 3 ]]; then
   solc-select use 0.8.4
-  #cd "Benchmark/PoolTogether/contracts/yield-source"
-  #slither --detect tcheck .
-  echo "Currently ommitted"
-  #cd "../../../../"
+  cd "../Benchmark/PoolTogether/contracts/yield-source"
+  slither --detect tcheck .
+  #echo "Currently ommitted"
+  cd "$ORIGINAL_DIR"
   execute_group 3 echo "[*] Tested 1 warning for PoolTogether"
   sleep 3
 fi
