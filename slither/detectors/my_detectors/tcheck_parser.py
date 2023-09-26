@@ -565,7 +565,7 @@ def get_ex_func_type_tuple(contract_name, function_name, parameters):
                     ret_den.append(n)
                 for d in cur_param.den_token_types:
                     ret_num.append(d)
-            if(norm > 0):
+            if(isinstance(norm, int) and norm > 0):
                 norm = param[norm-1].extok.norm
             if(isinstance(lc, int) and lc > 0):
                 lc = param[lc-1].extok.linked_contract
