@@ -1472,6 +1472,7 @@ def init_var(ir):
         _ir.norm = get_norm(ir)
     else:
         convert_ssa(ir)
+    print("end")
     return True
     ##print_token_type(ir)
     ##print("^^^^")
