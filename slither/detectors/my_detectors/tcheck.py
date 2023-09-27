@@ -1459,6 +1459,7 @@ def type_asnai(dest, sorc)->bool:
 #RETURNS: NULL
 def init_var(ir):
     #Special variables
+    print("init")
     if(not(is_variable(ir)) and str(ir) != "msg.value"):
         ##print(str(ir))
         return False
