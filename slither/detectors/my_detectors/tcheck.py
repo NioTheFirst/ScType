@@ -1981,7 +1981,7 @@ def bin_norm(dest, lir, rir, func = None):
     err = compare_norm(dest, lir, rir, func)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
-    ##print(f"lnorm: {lnorm} rnorm: {rnorm}")
+    print(f"lnorm: {lnorm} rnorm: {rnorm}")
     if(err):
         asn_norm(dest, 'u')
         return
