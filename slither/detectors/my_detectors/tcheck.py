@@ -1652,6 +1652,9 @@ def type_bin_sub(dest, lir, rir) -> bool:
     pass_ftype(dest, lir, "sub", rir)
     ##print_token_type(lir)
     ##print_token_type(rir)
+    print("SUB")
+    print(lir.extok)
+    print(rir.extok)
     if(is_type_undef(lir) or  is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
