@@ -488,6 +488,8 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
             for num in num_trans:
                 #Guarantee to be integers, as it represents the index parameter
                 num = num #int(num.strip())
+                if(isinstance(num, str)):
+                    num = int(num.strip())
                 if(num == -1):
                     ret_num.append(-1)
                     continue
@@ -500,6 +502,8 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ret_num.append(cur_param.address)
             for den in den_trans:
                 den = den #int(den.strip())
+                if(isinstance(den, str)):
+                    den = int(den.strip())
                 if(den == -1):
                     ret_den.append(-1)
                     continue
