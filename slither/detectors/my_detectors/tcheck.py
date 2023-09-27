@@ -1641,6 +1641,7 @@ def type_bin_add(dest, lir, rir) -> bool:
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_sub(dest, lir, rir) -> bool:
     global Sub
+    print("SUB1")
     #dest = ir.lvalue
     #lir = ir.variable_left
     #rir = ir.variable_right
