@@ -1924,6 +1924,7 @@ def compare_norm(lv, varA, varB, func = None):
             #if(B_norm == 0):
             #    _varB.norm = A_norm
             #    return False
+            print("z")
             add_errors(lv)
             return True
     return False
