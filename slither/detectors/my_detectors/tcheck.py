@@ -1918,6 +1918,8 @@ def compare_norm(lv, varA, varB, func = None):
     else:
         print("y")
         print(f"A: {A_norm} B: {B_norm}")
+        print(type(A_norm))
+        print(type(B_norm))
         if((not(func)) and (A_norm != B_norm)):
             #if(A_norm == 0):
             #    _varA.norm = B_norm
