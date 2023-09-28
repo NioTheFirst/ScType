@@ -1409,10 +1409,8 @@ def type_asn(dest, sorc) -> bool:
     else:
         if(is_type_undef(dest) or is_type_const(dest)):
             copy_token_type(sorc, dest)
-        elif(not(compare_token_type(sorc, dest))):
+        elif(not(compare_token_type(sorc, dest)) and and handle_trace(sorc, dest) == False):
             add_errors(dest)
-        else:
-            return False
     return False
 
 #USAGE: assigns reverse type from sorc to dest
