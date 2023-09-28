@@ -288,9 +288,15 @@ def parse_type_file(t_file, f_file = None):
                     elif(len(ret_info) >= 2):
                         copy = ret_info[0]
                         addr = ret_info[1]  #No longer lf, link_function deprecated. Stores address instead
+                        decimals = None
                         if(copy == "c"):
                             #Store the addr as the name_key
-                            addr = (address_handler.type_file_new_address(addr, True)).head
+                            _addr = address_handler.type_file_new_address(addr, True)
+                            if(len(ret_info) >= 3):
+                                decimals = int(ret_info[2])
+                            addr = _addr.head
+                            if(decimals != None):
+                                addr.norm = decimals
                     ef_types.append((copy, num, denom, norm, value, addr))
                 add_ex_func(c_name, f_name, ef_types)
 
