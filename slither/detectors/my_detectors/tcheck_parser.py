@@ -480,15 +480,15 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                 #No parameters, assume that the parameters are directly the types
                 _num_trans = []
                 _den_trans = []
-                for addr in num_trans:
+                for _addr in num_trans:
                     #May translate from global addresses
-                    addr = stringToType(addr)
-                    _num_trans.append(addr)
-                for addr in den_trans:
+                    _addr = stringToType(_addr)
+                    _num_trans.append(_addr)
+                for _addr in den_trans:
                     #May translate from global addresses
-                    addr = stringToType(addr)
-                    _den_trans.append(addr)
-                ret_type_tuple = (_num_trans, _den_trans, norm , addr, ftype)
+                    _addr = stringToType(_addr)
+                    _den_trans.append(_addr)
+                ret_type_tuple = (_num_trans, _den_trans, norm , addr, value, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
 
