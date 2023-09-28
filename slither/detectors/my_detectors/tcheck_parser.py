@@ -488,7 +488,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     #May translate from global addresses
                     _addr = stringToType(_addr)
                     _den_trans.append(_addr)
-                ret_type_tuple = (_num_trans, _den_trans, norm , addr, value, ftype)
+                ret_type_tuple = (_num_trans, _den_trans, norm , value, addr, ftype)
                 ret_type_tuples.append(ret_type_tuple)
                 continue
 
@@ -525,7 +525,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                 norm = param[norm-1].extok.norm
             if(isinstance(addr, int) and lc > 0):
                 addr = param[lc-1].extok.linked_contract
-            ret_type_tuple = (ret_num, ret_den, norm, addr, value, ftype)
+            ret_type_tuple = (ret_num, ret_den, norm, value, addr, ftype)
             ret_type_tuples.append(ret_type_tuple)
         return ret_type_tuples
     return None
