@@ -1899,6 +1899,7 @@ def compare_norm(lv, varA, varB, func = None):
     _varB = varB.extok
     A_norm = _varA.norm
     B_norm = _varB.norm
+    print(f"A: {A_norm} B: {B_norm}")
     if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
         if(isinstance(varA, Constant) and varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
             add_errors(lv)
