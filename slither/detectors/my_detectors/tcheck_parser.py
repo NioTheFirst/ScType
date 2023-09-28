@@ -296,7 +296,7 @@ def parse_type_file(t_file, f_file = None):
                                 decimals = int(ret_info[2])
                             addr = _addr.head
                             if(decimals != None):
-                                addr.norm = decimals
+                                _addr.norm = decimals
                     ef_types.append((copy, num, denom, norm, value, addr))
                 add_ex_func(c_name, f_name, ef_types)
 
