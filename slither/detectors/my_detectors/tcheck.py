@@ -1908,6 +1908,7 @@ def compare_norm(lv, varA, varB, func = None):
             add_errors(lv)
             return True
         return False
+    print("x")
     if(A_norm == 'u' or B_norm == 'u'):
         return False
     elif(A_norm == '*' or B_norm == '*'):
@@ -1915,6 +1916,7 @@ def compare_norm(lv, varA, varB, func = None):
             add_errors(lv)
             return True
     else:
+        print("y")
         if(not(func) and A_norm != B_norm):
             #if(A_norm == 0):
             #    _varA.norm = B_norm
