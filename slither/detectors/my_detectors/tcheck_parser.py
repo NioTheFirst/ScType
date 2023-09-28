@@ -276,11 +276,15 @@ def parse_type_file(t_file, f_file = None):
                         num = extract_address(ret_info[1])
                         denom = extract_address(ret_info[2])
                         norm = ret_info[3].strip()
-                        if (isinstance(norm, int)):
+                        try:
                             norm = int(norm)
+                        except ValueError:
+                            norm = norm
                         value = ret_info[4].strip()
-                        if (isinstance(value, int)):
+                        try:
                             value = int(value)
+                        except ValueError:
+                            value = value
                     elif(len(ret_info) >= 2):
                         copy = ret_info[0]  
                         addr = ret_info[1]  #No longer lf, link_function deprecated. Stores address instead
