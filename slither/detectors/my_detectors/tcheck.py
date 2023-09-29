@@ -1591,7 +1591,10 @@ def handle_value_binop(dest, lir, rir, func):
     elif(func == Mul):
         fval = lval * rval
     elif(func == Div):
-        fval = (int)(lval / rval)
+        if(rval == 0):
+            fval = 0
+        else:
+            fval = (int)(lval / rval)
     elif(func == Pow):
         fval = lval ** rval
         if(lval == 10):
