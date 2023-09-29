@@ -2350,6 +2350,7 @@ def propogate_parameter(lv, function):
                     lv.extok.name = lv.ssa_name
                     lv.function_name = function.name
                     copy_token_type(p, lv)
+                    lv.norm = p.norm
                     copy_ftype(p, lv)
 #USSAGE: propogates a local variable with a global stored assignment
 def propogate_global(lv):
@@ -2410,14 +2411,14 @@ def _tcheck_node(node, function) -> []:
         #DEFINE REFERENCE RELATIONS
         ir.dnode = node
 
-        '''
+        
         if isinstance(ir, Phi):
             #Phi de
             lv = ir.lvalue
             propogate_parameter(lv, function)
             propogate_global(lv)
             print(lv.extok)
-        '''
+        
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
