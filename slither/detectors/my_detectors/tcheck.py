@@ -963,7 +963,8 @@ def querry_fc(ir) -> int:
         return 2
     #if(cont_name != None and func_name != None):
         ##print("hlc contract name: " + cont_name + " func_name: "+ func_name)
-   
+    if(cont_name == None):
+        cont_name = dest.extok.name
     included_func = get_cf_pair(cont_name, func_name)
     if(included_func != None):
         if(type_included_hlc(ir, dest, included_func) == 1):
