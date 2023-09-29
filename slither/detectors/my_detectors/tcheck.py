@@ -2410,14 +2410,14 @@ def _tcheck_node(node, function) -> []:
         #DEFINE REFERENCE RELATIONS
         ir.dnode = node
 
-        
+        '''
         if isinstance(ir, Phi):
             #Phi de
             lv = ir.lvalue
             propogate_parameter(lv, function)
             propogate_global(lv)
             print(lv.extok)
-        
+        '''
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
