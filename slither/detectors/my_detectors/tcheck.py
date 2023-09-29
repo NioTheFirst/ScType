@@ -2355,18 +2355,27 @@ def propogate_parameter(lv, function):
 def propogate_global(lv):
     if(lv.extok.is_undefined()):
         pos = -1
-        for i in range(len(lv.ssa_name)-1):
-            revpos = len(lv.ssa_name)-i-1
-            #print(lv.ssa_name[revpos])
-            if(lv.ssa_name[revpos] == '_'):
-                pos = revpos
-                break
-        _name = lv.ssa_name[:pos]
-        print(_name)
+        ssa_name_info = convert_ssa_name(lv.ssa_name)
+        _name = ssa_name_info[0]
         if((_name, current_contract_name) in global_var_types):
             #print("global...")
             copy_token_type(global_var_types[(_name, current_contract_name)], lv)
 
+
+#USAGE: gets the name and the number of an ssa_name
+def convert_ssa_name(name):
+    _name = None
+    num = None
+     for i in range(len(name)-1):
+            revpos = len(name)-i-1
+            #print(lv.ssa_name[revpos])
+            if(name[revpos] == '_'):
+                pos = revpos
+                break
+    _name = name[:pos]
+    num = (int)([pos+1:])
+    print(_name)
+    return [_name, num]
 
 #USAGE: typecheck a node
 #RETURNS: list of IR with undefined types
