@@ -1585,9 +1585,9 @@ def handle_value_binop(dest, lir, rir, func):
     rval = get_values(rir)
     fval = 'u'
     print(f"lval:{lval} rval:{rval}")
+    print(type(lval))
     if(lval == 'u' or rval == 'u'):
         fval = 'u'
-        print("???")
     elif(func == Add):
         fval = lval + rval
     elif(func == Sub):
