@@ -2374,7 +2374,7 @@ def convert_ssa_name(name):
                 break
     _name = name[:pos]
     num = (int)(name[pos+1:])
-    print(f"Name: {_name}, Num: {num})
+    print(f"Name: {_name}, Num: {num}")
     return [_name, num]
 
 #USAGE: typecheck a node
