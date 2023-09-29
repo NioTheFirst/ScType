@@ -164,6 +164,8 @@ def copy_pc_token_type(_src, dest):
         _dest.add_num_token_type(n)
     for d in src[1]:
         _dest.add_den_token_type(d)
+    if(src[2]!= None):
+        _dest.norm = src[2]
     if(src[3] != None):
         _dest.linked_contract = src[3]
     if(src[4] != None):
