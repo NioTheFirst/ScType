@@ -2387,7 +2387,7 @@ def _tcheck_node(node, function) -> []:
         print(lv.extok)
     for lv in node.ssa_variables_written:
         print(lv)
-        #print(lv.extok)
+        print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
         print(lv.extok)
