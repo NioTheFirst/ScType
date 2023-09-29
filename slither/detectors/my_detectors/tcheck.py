@@ -2428,23 +2428,23 @@ def _tcheck_node(node, function) -> []:
     newirs = _tcheck_ir(irs, function_name)
 
     #Handle Constructor Varialbes (need to be propagated)
-    if(function.name == "constructor"):
-        for var in node.ssa_variables_written:
-            
-            if((var.extok.name, current_contract_name) in global_var_types):
-                print(f"Copied {var.extok.name}")
-                temp = global_var_types[(var.extok.name, current_contract_name)]
-                print(f" To type: {temp.type}")
-                if(str(var.type) == "address"):
-                    continue
-                temp.extok.name = var.extok.name
-                temp.extok.function_name = "constructor"
-                copy_token_type(var, temp)
-                global_var_types[(var.extok.name, current_contract_name)] = temp
-                if(var.extok.address != 'u'):
-                    #Only global addresses
-                    global_address_counter+=1
-                print(temp.extok)
+    #if(function.name == "constructor"):
+    for var in node.ssa_variables_written:
+        
+        if((var.extok.name, current_contract_name) in global_var_types):
+            print(f"Copied {var.extok.name}")
+            temp = global_var_types[(var.extok.name, current_contract_name)]
+            print(f" To type: {temp.type}")
+            if(str(var.type) == "address"):
+                continue
+            temp.extok.name = var.extok.name
+            temp.extok.function_name = fuction.name #"constructor"
+            copy_token_type(var, temp)
+            global_var_types[(var.extok.name, current_contract_name)] = temp
+            if(var.extok.address != 'u'):
+                #Only global addresses
+                global_address_counter+=1
+            print(temp.extok)
 
     for error in errors:
         if(error.dnode == None):
