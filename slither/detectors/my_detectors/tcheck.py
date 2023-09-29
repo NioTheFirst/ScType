@@ -1586,7 +1586,7 @@ def handle_value_binop(dest, lir, rir, func):
     fval = 'u'
     print(f"lval:{lval} rval:{rval}")
     print(type(lval))
-    if(lval == 'u' or rval == 'u'):
+    if(lval == 'u' or lval == "u" or rval == 'u' or rval == "u"):
         fval = 'u'
     elif(func == Add):
         fval = lval + rval
