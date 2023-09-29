@@ -2438,7 +2438,7 @@ def _tcheck_node(node, function) -> []:
             if(str(var.type) == "address"):
                 continue
             temp.extok.name = var.extok.name
-            temp.extok.function_name = fuction.name #"constructor"
+            temp.extok.function_name = function.name #"constructor"
             copy_token_type(var, temp)
             global_var_types[(var.extok.name, current_contract_name)] = temp
             if(var.extok.address != 'u'):
