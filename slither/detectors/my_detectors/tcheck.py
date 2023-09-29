@@ -964,6 +964,7 @@ def querry_fc(ir) -> int:
     #if(cont_name != None and func_name != None):
         ##print("hlc contract name: " + cont_name + " func_name: "+ func_name)
     if(cont_name == None):
+        #Contingency for undefined contract instances
         cont_name = dest.extok.name
     included_func = get_cf_pair(cont_name, func_name)
     if(included_func != None):
@@ -1586,6 +1587,7 @@ def handle_value_binop(dest, lir, rir, func):
     print(f"lval:{lval} rval:{rval}")
     if(lval == 'u' or rval == 'u'):
         fval = 'u'
+        print("???")
     elif(func == Add):
         fval = lval + rval
     elif(func == Sub):
