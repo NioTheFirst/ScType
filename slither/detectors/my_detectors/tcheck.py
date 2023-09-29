@@ -848,6 +848,7 @@ def type_conversion(ir):
     else:    
         print(ir.variable.extok)
         addback = type_asn(ir.lvalue, ir.variable)
+        ir.lvalue.extok.value = ir.variable.extok.value
         if(ir.lvalue.extok.norm != get_norm(ir.variable)):
             asn_norm(ir.lvalue, get_norm(ir.variable))
         copy_ftype(ir.variable, ir.lvalue)
