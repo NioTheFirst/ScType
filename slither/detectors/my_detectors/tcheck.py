@@ -1642,13 +1642,7 @@ def type_bin_add(dest, lir, rir) -> bool:
         temp = type_asn(dest, lir)
         handle_value_binop(dest, lir, rir, Add)
         return temp
-    '''
-    elif(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
-        #report error, default to left child 
-        
-        add_errors(dest)
-        return False
-    '''
+    
     else:
         temp = type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
         handle_value_binop(dest, lir, rir, Add)
@@ -1695,10 +1689,6 @@ def type_bin_sub(dest, lir, rir) -> bool:
         temp = type_asn(dest, rir)
         handle_value_binop(dest, lir, rir, Sub)
         return temp
-    elif(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
-        #report error, default to left child
-        add_errors(dest)
-        return False
     else:
         temp = type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
         handle_value_binop(dest, lir, rir, Sub)
