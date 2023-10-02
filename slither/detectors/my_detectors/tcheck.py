@@ -1618,6 +1618,7 @@ def type_bin_add(dest, lir, rir) -> bool:
     ##print_token_type(dest)
     ##print("initlize checks")
     ##print(";;;")
+    
     bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "add", rir)
     if(is_type_undef(lir) or  is_type_undef(rir)):
@@ -1758,6 +1759,7 @@ def handle_trace(rir, lir):
         
     _rir.resolve_labels(label_sets)
     _lir.resolve_labels(label_sets)
+    #Handle norm propogation here
     return True
 
 #USAGE: given two dictionaries with x amounts of value y, generate all possible orderings of trace to label
