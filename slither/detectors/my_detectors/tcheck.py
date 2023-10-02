@@ -1618,7 +1618,13 @@ def type_bin_add(dest, lir, rir) -> bool:
     ##print_token_type(dest)
     ##print("initlize checks")
     ##print(";;;")
-    
+    #Handle errors
+    if(not(is_type_undef(lir) or is_type_undef(rir) or is_type_const(lir) or is_type_const(rir))):
+        if(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
+            #report error, default to left child 
+            
+            add_errors(dest)
+            return False
     bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "add", rir)
     if(is_type_undef(lir) or  is_type_undef(rir)):
@@ -1636,11 +1642,13 @@ def type_bin_add(dest, lir, rir) -> bool:
         temp = type_asn(dest, lir)
         handle_value_binop(dest, lir, rir, Add)
         return temp
+    '''
     elif(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
         #report error, default to left child 
         
         add_errors(dest)
         return False
+    '''
     else:
         temp = type_asn(dest, tcheck_propagation.greater_abstract(rir, lir))
         handle_value_binop(dest, lir, rir, Add)
@@ -1658,6 +1666,13 @@ def type_bin_sub(dest, lir, rir) -> bool:
     #print(rir)
     if(not (init_var(lir) and init_var(rir))):
         return False
+    #Handle errors
+    if(not(is_type_undef(lir) or is_type_undef(rir) or is_type_const(lir) or is_type_const(rir))):
+        if(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
+            #report error, default to left child 
+            
+            add_errors(dest)
+            return False
     bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "sub", rir)
     ##print_token_type(lir)
