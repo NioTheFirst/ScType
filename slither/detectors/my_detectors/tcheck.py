@@ -2200,8 +2200,10 @@ def type_bin_ge(dest, lir, rir) -> bool:
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
+            type_asn(lir, rir)
         else:
             type_asn(dest, lir)
+            type_asn(rir, lir)
         return True
     elif(is_type_const(lir) or is_type_const(rir)):
        #assign dest as a constant (although it should not be used in arithmatic)
@@ -2224,8 +2226,10 @@ def type_bin_lt(dest, lir, rir) -> bool:
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
+            type_asn(lir, rir)
         else:
             type_asn(dest, lir)
+            type_asn(rir, lir)
         return True
     elif(is_type_const(lir) or is_type_const(rir)):
        #assign dest as a constant (although it should not be used in arithmatic)
@@ -2248,8 +2252,10 @@ def type_bin_le(dest, lir, rir) -> bool:
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(dest, rir)
+            type_asn(lir, rir)
         else:
             type_asn(dest, lir)
+            type_asn(rir, lir)
         return True
     elif(is_type_const(lir) or is_type_const(rir)):
        #assign dest as a constant (although it should not be used in arithmatic)
