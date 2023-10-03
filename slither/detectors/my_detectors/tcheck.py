@@ -2401,6 +2401,9 @@ def _tcheck_node(node, function) -> []:
     #Get rid of the mapping thing for the SSA
     #Just apply mappings for the initial parameters
     #Examine the Phi thing more closesly
+    print("Rembmered parameters?")
+    for param in function.parameters:
+        print(param)
     function_name = function.name
     irs = []
     #local vars read
