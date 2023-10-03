@@ -2403,7 +2403,7 @@ def _tcheck_node(node, function) -> []:
     #Examine the Phi thing more closesly
     print("Rembmered parameters?")
     for param in function.parameters:
-        print(param)
+        print(param.extok)
     function_name = function.name
     irs = []
     #local vars read
