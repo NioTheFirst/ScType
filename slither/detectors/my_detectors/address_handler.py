@@ -55,6 +55,8 @@ class Address_label():
 
     @norm.setter
     def norm(self, norm):
+        if(self._head == -993 and norm == 0):
+            print("Changed here")
         self._norm = norm
 
     @property
