@@ -1761,7 +1761,7 @@ def handle_trace(rir, lir):
         if(unioned):
             continue
         return False
-        
+    print("resolving...")
     _rir.resolve_labels(label_sets)
     _lir.resolve_labels(label_sets)
     #Handle norm propogation here
