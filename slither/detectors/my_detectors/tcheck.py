@@ -2360,6 +2360,7 @@ def propogate_parameter(lv, function):
                 if(p.name == lv_subname):
                     lv.extok.name = lv.ssa_name
                     lv.function_name = function.name
+                    print(f"p.norm: {p.norm}")
                     copy_token_type(p, lv)
                     lv.norm = p.norm
                     copy_ftype(p, lv)
