@@ -2356,7 +2356,7 @@ def propogate_parameter(lv, function):
             #lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
             #print(lv_subname)
             for p in function.parameters:
-
+                print(p.extok)
                 if(p.name == lv_subname):
                     lv.extok.name = lv.ssa_name
                     lv.function_name = function.name
