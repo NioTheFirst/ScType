@@ -2173,8 +2173,10 @@ def type_bin_gt(dest, lir, rir) -> bool:
     ##print(is_type_const(rir))
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
+            type_asn(lir, rir)
             type_asn(dest, rir)
         else:
+            type_asn(rir, lir)
             type_asn(dest, lir)
         return True
     elif(is_type_const(lir) or is_type_const(rir)):
