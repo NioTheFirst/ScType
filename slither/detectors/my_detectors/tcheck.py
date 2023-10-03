@@ -2360,9 +2360,9 @@ def propogate_parameter(lv, function):
                 if(p.name == lv_subname):
                     lv.extok.name = lv.ssa_name
                     lv.function_name = function.name
-                    print(f"p.norm: {p.norm}")
+                    print(f"p.norm: {p.extok.norm}")
                     copy_token_type(p, lv)
-                    lv.extok.norm = p.norm
+                    lv.extok.norm = p.extok.norm
                     copy_ftype(p, lv)
 #USSAGE: propogates a local variable with a global stored assignment
 def propogate_global(lv):
