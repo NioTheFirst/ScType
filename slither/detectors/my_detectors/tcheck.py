@@ -1031,6 +1031,8 @@ def handle_balance_functions(ir):
     if(label_sets[token_type].head > 0):
         token_type = label_sets[token_type].head
     norm = label_sets[token_type].norm
+    for addr in label_sets:
+        print(addr)
     fin_type = label_sets[token_type].finance_type
     if(func_name == "balanceOf"):
         #balanceOf, no important parameters, assign same type as dest address
@@ -1043,7 +1045,7 @@ def handle_balance_functions(ir):
         elif(fin_type == 0):
             ir.lvalue.extok.finance_type = 0
         else:
-            ir.lvalue.extok.finacne_type = 0
+            ir.lvalue.extok.finance_type = 0
         isbfunc = True
     elif(func_name == "decimals"):
         ir.lvalue.extok.value = norm
