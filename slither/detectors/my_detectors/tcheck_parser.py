@@ -291,7 +291,7 @@ def parse_type_file(t_file, f_file = None):
                             value = value
                     elif(len(ret_info) >= 2):
                         copy = ret_info[0]
-                        addr = ret_info[1]  #No longer lf, link_function deprecated. Stores address instead
+                        addr = ret_info[1].strip()  #No longer lf, link_function deprecated. Stores address instead
                         decimals = None
                         if(copy == "c"):
                             #Store the addr as the name_key
