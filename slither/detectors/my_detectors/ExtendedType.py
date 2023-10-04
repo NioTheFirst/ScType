@@ -211,7 +211,6 @@ class ExtendedType():
             return True
         return False
 
-    
 
     def is_address(self) -> bool:
         if(self._address != 'u'):

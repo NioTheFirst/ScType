@@ -547,6 +547,12 @@ def is_type_undef(ir):
     _ir = ir.extok
     return _ir.is_undefined()
 
+def is_type_address(ir):
+    if not(is_variable(ir)):
+        return False
+    _ir = ir.extok
+    return _ir.is_address()
+
 def is_type_const(ir):
     if not(is_variable(ir)):
         ##print("not variable")
@@ -1623,7 +1629,7 @@ def type_bin_add(dest, lir, rir) -> bool:
     ##print("initlize checks")
     ##print(";;;")
     #Handle errors
-    if(not(is_type_undef(lir) or is_type_undef(rir) or is_type_const(lir) or is_type_const(rir))):
+    if(not(is_type_undef(lir) or is_type_undef(rir) or is_type_const(lir) or is_type_const(rir) or is_type_address(lir) or is_type_address(rir))):
         if(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
             #report error, default to left child 
             
@@ -1631,8 +1637,8 @@ def type_bin_add(dest, lir, rir) -> bool:
             return False
     bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "add", rir)
-    if(is_type_undef(lir) or  is_type_undef(rir)):
-        if(is_type_undef(lir)):
+    if(is_type_undef(lir) or  is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
+        if(is_type_undef(lir) or is_type_address(lir)):
             type_asn(dest, rir)
         else:
             type_asn(dest, lir)
@@ -1665,7 +1671,7 @@ def type_bin_sub(dest, lir, rir) -> bool:
     if(not (init_var(lir) and init_var(rir))):
         return False
     #Handle errors
-    if(not(is_type_undef(lir) or is_type_undef(rir) or is_type_const(lir) or is_type_const(rir))):
+    if(not(is_type_undef(lir) or is_type_undef(rir) or is_type_const(lir) or is_type_const(rir) or is_type_address(lir) or is_type_address(rir))):
         if(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
             #report error, default to left child 
             
@@ -1678,8 +1684,8 @@ def type_bin_sub(dest, lir, rir) -> bool:
     print("SUB")
     print(lir.extok)
     print(rir.extok)
-    if(is_type_undef(lir) or  is_type_undef(rir)):
-        if(is_type_undef(lir)):
+    if(is_type_undef(lir) or  is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
+        if(is_type_undef(lir) or is_type_address(lir)):
             type_asn(dest, rir)
         else:
             type_asn(dest, lir)
@@ -2063,9 +2069,9 @@ def type_bin_mul(dest, lir, rir) ->bool:
         return False
     bin_norm(dest, lir, rir, "mul")
     pass_ftype(dest, lir, "mul", rir)
-    if(is_type_undef(lir) or is_type_undef(rir)):
+    if(is_type_undef(lir) or is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
         if(is_type_undef(dest)):
-            if(is_type_undef(lir)):
+            if(is_type_undef(lir) or is_type_address(lir)):
                 type_asn(dest, rir)
             else:
                 type_asn(dest, lir)
@@ -2281,6 +2287,8 @@ def is_internalcall(ir):
     if isinstance(ir, InternalCall):
         ##print("Internal call...")
         y = 8008135
+
+
 
 
 #def contains_equal(ir):
