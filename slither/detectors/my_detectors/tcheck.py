@@ -972,7 +972,7 @@ def querry_fc(ir) -> int:
     if(cont_name == None):
         #Contingency for undefined contract instances
         #cont_name = dest.extok.name
-        cont_name = dest.type[1:]
+        cont_name = str(dest.type)[1:]
     included_func = get_cf_pair(cont_name, func_name)
     if(included_func != None):
         if(type_included_hlc(ir, dest, included_func) == 1):
