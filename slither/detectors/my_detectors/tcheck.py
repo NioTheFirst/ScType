@@ -1028,6 +1028,8 @@ def handle_balance_functions(ir):
         #Global address, positive t_type
     #    token_type = address_to_num[dest]
     token_type = _dest.address
+    if(token_type == 'u'):
+        return isbfunc
     if(label_sets[token_type].head > 0):
         token_type = label_sets[token_type].head
     norm = label_sets[token_type].norm
