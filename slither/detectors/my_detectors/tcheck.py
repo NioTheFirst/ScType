@@ -1137,7 +1137,7 @@ def update_member(member, fieldf, copy_ir):
     ptfield = None
     for field in _member.fields:
         _field = field.extok
-        print(f"F: {_field.name}")
+        #print(f"F: {_field.name}")
         if(_field.name == fieldf.extok.name):
             added = True
             ptfield = field
@@ -1146,7 +1146,7 @@ def update_member(member, fieldf, copy_ir):
         type_asn(copy_ir, ptfield)
         asn_norm(ptfield, copy_ir.extok.norm)
         pass_ftype(ptfield, copy_ir, "assign")
-        print(ptfield.extok)
+        #print(ptfield.extok)
         _field = ptfield.extok
     else:
         type_asn(copy_ir, fieldf)
@@ -1173,7 +1173,7 @@ def type_member(ir)->bool:
     _ir = ir.lvalue.extok
     pf_name = _lv.function_name
     ##print(_lv.name)
-    print(_lv)
+    #print(_lv)
     #print(_lvname)
     ##print(_rv.name)
     ##print(pf_name)
@@ -1182,7 +1182,7 @@ def type_member(ir)->bool:
     #if is_type_undef(ir.variable_left):
     #    #print("UNDEFINED LEFT VARIABLE IN MEMBER")
     #    return True
-    print("Typing member")
+    #print("Typing member")
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
     #_lv.#print_fields()
@@ -1203,7 +1203,7 @@ def type_member(ir)->bool:
     for field in _lv.fields:
         _field = field.extok
         if(_field.name == _rv.name and not(is_type_undef(field))):
-            print(field.extok)
+            #print(field.extok)
             ir.lvalue.extok.token_type_clear()
             copy_token_type(field, ir.lvalue)
             copy_norm(field, ir.lvalue)
@@ -1595,7 +1595,7 @@ def handle_value_binop(dest, lir, rir, func):
     lval = get_values(lir)
     rval = get_values(rir)
     fval = 'u'
-    print(f"lval:{lval} rval:{rval}")
+    #print(f"lval:{lval} rval:{rval}")
     if(type(lval) != int or type(rval) != int):
         fval = 'u'
     elif(func == Add):
@@ -1622,8 +1622,8 @@ def type_bin_add(dest, lir, rir) -> bool:
     #dest = ir.lvalue
     #lir = ir.variable_left
     #rir = ir.variable_right
-    print(lir.extok)
-    print(rir.extok)
+   #print(lir.extok)
+    #print(rir.extok)
     if(not (init_var(lir) and init_var(rir))):
         return False
     ##print_token_type(dest)
@@ -1663,7 +1663,7 @@ def type_bin_add(dest, lir, rir) -> bool:
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_sub(dest, lir, rir) -> bool:
     global Sub
-    print("SUB1")
+    #print("SUB1")
     #dest = ir.lvalue
     #lir = ir.variable_left
     #rir = ir.variable_right
@@ -1682,9 +1682,9 @@ def type_bin_sub(dest, lir, rir) -> bool:
     pass_ftype(dest, lir, "sub", rir)
     ##print_token_type(lir)
     ##print_token_type(rir)
-    print("SUB")
-    print(lir.extok)
-    print(rir.extok)
+    #print("SUB")
+    #print(lir.extok)
+    #print(rir.extok)
     if(is_type_undef(lir) or  is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
         if(is_type_undef(lir) or is_type_address(lir)):
             type_asn(dest, rir)
@@ -1923,7 +1923,7 @@ def compare_norm(lv, varA, varB, func = None):
     _varB = varB.extok
     A_norm = _varA.norm
     B_norm = _varB.norm
-    print(f"A: {A_norm} B: {B_norm}")
+    #print(f"A: {A_norm} B: {B_norm}")
     if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
         if(isinstance(varA, Constant) and varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
             add_errors(lv)
@@ -1932,7 +1932,7 @@ def compare_norm(lv, varA, varB, func = None):
             add_errors(lv)
             return True
         return False
-    print("x")
+    #print("x")
     if(A_norm == 'u' or B_norm == 'u'):
         return False
     elif(A_norm == '*' or B_norm == '*'):
@@ -1940,10 +1940,10 @@ def compare_norm(lv, varA, varB, func = None):
             add_errors(lv)
             return True
     else:
-        print("y")
-        print(f"A: {A_norm} B: {B_norm}")
-        print(type(A_norm))
-        print(type(B_norm))
+        #print("y")
+        #print(f"A: {A_norm} B: {B_norm}")
+        #print(type(A_norm))
+        #print(type(B_norm))
         if((not(func)) and (A_norm != B_norm)):
             #if(A_norm == 0):
             #    _varA.norm = B_norm
@@ -1951,7 +1951,7 @@ def compare_norm(lv, varA, varB, func = None):
             #if(B_norm == 0):
             #    _varB.norm = A_norm
             #    return False
-            print("z")
+            #print("z")
             add_errors(lv)
             return True
     return False
@@ -2065,9 +2065,11 @@ def combine_types(lir, rir, func = None):
 def type_bin_mul(dest, lir, rir) ->bool:
     global Mul
     #typecheck -> 10*A + B
-    ##print("testing mul...")
+    print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
         return False
+    print(lir.extok)
+    print(rir.extok)
     bin_norm(dest, lir, rir, "mul")
     pass_ftype(dest, lir, "mul", rir)
     if(is_type_undef(lir) or is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
@@ -2360,8 +2362,8 @@ def _tcheck_ir(irs, function_name) -> []:
 
 #USAGE: propogates a local variables with a parameter
 def propogate_parameter(lv, function):
-    print(lv.ssa_name)
-    print(lv.name)
+    #print(lv.ssa_name)
+    #print(lv.name)
     if("_1" in lv.ssa_name and lv.extok.is_undefined()):
             #print("local...")
             pos = -1
@@ -2379,7 +2381,7 @@ def propogate_parameter(lv, function):
                 if(p.name == lv_subname):
                     lv.extok.name = lv.ssa_name
                     lv.function_name = function.name
-                    print(f"p.norm: {p.extok.norm}")
+                    #print(f"p.norm: {p.extok.norm}")
                     copy_token_type(p, lv)
                     lv.extok.norm = p.extok.norm
                     copy_ftype(p, lv)
@@ -2420,25 +2422,25 @@ def _tcheck_node(node, function) -> []:
     #Get rid of the mapping thing for the SSA
     #Just apply mappings for the initial parameters
     #Examine the Phi thing more closesly
-    print("Rembmered parameters?")
-    for param in function.parameters:
-        print(param.extok)
+    #print("Rembmered parameters?")
+    #for param in function.parameters:
+        #print(param.extok)
     function_name = function.name
     irs = []
     #local vars read
     print("Propogating parameters and globals to SSA variables...")
     for lv in node.ssa_variables_read:
-        print(lv)
+        #print(lv)
         #print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
-        print(lv.extok)
+        #print(lv.extok)
     for lv in node.ssa_variables_written:
-        print(lv)
-        print(lv.extok)
+        #print(lv)
+        #print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
-        print(lv.extok)
+        #print(lv.extok)
     print("End popogation")            
         
     for ir in node.irs_ssa:
@@ -2451,8 +2453,8 @@ def _tcheck_node(node, function) -> []:
             lv = ir.lvalue
             propogate_parameter(lv, function)
             propogate_global(lv)
-            print(lv.extok)
-        print("weee")
+            #print(lv.extok)
+        #print("weee")
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
@@ -2464,9 +2466,9 @@ def _tcheck_node(node, function) -> []:
     for var in node.ssa_variables_written:
         
         if((var.extok.name, current_contract_name) in global_var_types):
-            print(f"Copied {var.extok.name}")
+            #print(f"Copied {var.extok.name}")
             temp = global_var_types[(var.extok.name, current_contract_name)]
-            print(f" To type: {temp.type}")
+            #print(f" To type: {temp.type}")
             if(str(var.type) == "address"):
                 continue
             temp.extok.name = var.extok.name
@@ -2476,7 +2478,7 @@ def _tcheck_node(node, function) -> []:
             if(var.extok.address != 'u'):
                 #Only global addresses
                 global_address_counter+=1
-            print(temp.extok)
+            #print(temp.extok)
 
     for error in errors:
         if(error.dnode == None):
@@ -2621,7 +2623,7 @@ def _tcheck_function_call(function, param_cache) -> []:
             copy_pc_token_type(param_cache[paramno], param)
             #update_non_ssa(param)
             #if (isinstance(param, Variable)):
-            print(param.extok)
+            #print(param.extok)
             #    update_non_ssa(param)
             paramno+=1
         while fentry:
