@@ -500,7 +500,6 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     _den_trans.append(_addr)
                 ret_type_tuple = (_num_trans, _den_trans, norm , value, addr, ftype)
                 ret_type_tuples.append(ret_type_tuple)
-                
                 continue
 
             for num in num_trans:
