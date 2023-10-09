@@ -971,6 +971,7 @@ def querry_fc(ir) -> int:
         return 2
     #if(cont_name != None and func_name != None):
         ##print("hlc contract name: " + cont_name + " func_name: "+ func_name)
+    print(dest.type)
     if(cont_name == None):
         #Contingency for undefined contract instances
         #cont_name = dest.extok.name
