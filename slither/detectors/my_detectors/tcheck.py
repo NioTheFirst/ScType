@@ -2800,10 +2800,11 @@ def _tcheck_contract_state_var(contract):
                 querry_type(state_var)
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
-                
+                copy_ftype(state_var, new_constant)
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
             else:
                 copy_token_type(global_var_types[(state_var.extok.name, contract.name)], state_var)
+                copy_ftype(global_var_types[(state_var.extok.name, contract.name)], state_var)
             if(isinstance(state_var, ReferenceVariable)):
                 add_ref(state_var.name, (state_var.token_typen, state_var.token_typed, state_var.norm, state_var.link_function))
     read_global[contract.name] = True
