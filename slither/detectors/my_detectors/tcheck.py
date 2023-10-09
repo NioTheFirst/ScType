@@ -2385,6 +2385,7 @@ def propogate_parameter(lv, function):
                     lv.function_name = function.name
                     #print(f"p.norm: {p.extok.norm}")
                     copy_token_type(p, lv)
+                    
                     lv.extok.norm = p.extok.norm
                     copy_ftype(p, lv)
 #USSAGE: propogates a local variable with a global stored assignment
@@ -2398,6 +2399,7 @@ def propogate_global(lv):
             print("global...")
             print(global_var_types[(_name, current_contract_name)].extok)
             copy_token_type(global_var_types[(_name, current_contract_name)], lv)
+            copy_ftype(global_var_types[(_name, current_contract_name)], lv)
 
 
 #USAGE: gets the name and the number of an ssa_name
@@ -2479,6 +2481,7 @@ def _tcheck_node(node, function) -> []:
             temp.extok.name = var.extok.name
             temp.extok.function_name = function.name #"constructor"
             copy_token_type(var, temp)
+            copy_ftype(var, temp)
             global_var_types[(var.extok.name, current_contract_name)] = temp
             if(var.extok.address != 'u'):
                 #Only global addresses
