@@ -784,11 +784,11 @@ def check_type(ir) -> bool:
         addback = type_member(ir) 
         addback =  False
     elif isinstance(ir, Return):
-        ##print("RETURN")
+        print("RETURN")
         ir.function._returns_ssa.clear()
         for y in ir.values:
             if(init_var(y)): 
-                ##print(y.extok)
+                print(y.extok)
                 ir.function.add_return_ssa(y)
             else:
                 ir.function.add_return_ssa(create_iconstant())
