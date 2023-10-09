@@ -1374,7 +1374,8 @@ def handle_return(dest_ir, function):
         __x = x.extok
         #Replace the returns_ssa
         if(len(function.return_values_ssa) > 1):
-            tuple_types.append((__x.num_token_types.copy(), __x.den_token_types.copy(), __x.norm, __x.linked_contract, __x.finance_type))
+            #param_type = [num, den, norm, link_function, fields, finance_type, address, value]
+            tuple_types.append((__x.num_token_types.copy(), __x.den_token_types.copy(), __x.norm, __x.value, __x.address, __x.finance_type))
         else:
             if(dest_ir != None):
                 dest_ir.extok.token_type_clear()
