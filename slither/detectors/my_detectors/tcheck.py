@@ -2395,7 +2395,7 @@ def propogate_global(lv):
         _name = ssa_name_info[0]
         print(f"Globalname: {_name}")
         if((_name, current_contract_name) in global_var_types):
-            #print("global...")
+            print("global...")
             copy_token_type(global_var_types[(_name, current_contract_name)], lv)
 
 
