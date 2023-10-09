@@ -1039,7 +1039,7 @@ def handle_balance_functions(ir):
     token_type = _dest.address
     #if(token_type == 'u'):
     #    return isbfunc
-    if(label_sets[token_type].head > 0):
+    if(token_type in label_sets and label_sets[token_type].head > 0):
         token_type = label_sets[token_type].head
     norm = label_sets[token_type].norm
     #for key, addr in label_sets.items():
