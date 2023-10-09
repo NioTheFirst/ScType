@@ -2781,7 +2781,7 @@ def _tcheck_contract_state_var(contract):
         if(state_var.name in seen):
             continue
         seen[state_var.name] = True
-        ##print("State_var: "+state_var.name)
+        print("State_var: "+state_var.name)
         state_var.parent_function = "global"
         #check_type(state_var)
         if(user_type and fill_type):
