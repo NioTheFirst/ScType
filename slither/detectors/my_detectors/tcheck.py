@@ -1038,7 +1038,7 @@ def handle_balance_functions(ir):
     #    token_type = address_to_num[dest]
     #for key, addr in label_sets.items():
         #print(addr)
-    fin_type = label_sets[token_type].finance_type
+    #fin_type = label_sets[token_type].finance_type
     if(func_name == "balanceOf"):
         token_type = _dest.address
         if(token_type in label_sets):
