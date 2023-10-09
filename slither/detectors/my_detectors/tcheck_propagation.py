@@ -9,7 +9,7 @@ from tcheck import errors
 #       these functions contain handling for ABSTRACT types as well (any type > abs_buf is an ABSTRACT type)
 #       ABSTRACT types take priority over CONCRETE types (temporary handling for if statements)
 #       ABSTRACT type comparison to CONCRETE type comparison always holds true 
-from tcheck_parser import field_tuple_start, f_type_name, f_type_num, update_ratios
+from tcheck_parser import field_tuple_start, f_type_name, f_type_num, update_ratios, update_start
 
 
 f_type_add = {
@@ -243,11 +243,43 @@ def pass_update(dest, rsrcl, func, rsrcr = None):
 
     #print(f"Final dest type: {_dest.finance_type}")
 
+#USAGE: given two finance types, output the relavant result after the function
+#       does not deal with updates, main functionality is to deal with function calls
+def pass_ftype_no_ir(l_fin_type, r_fin_type, func):
+    l_pure = -1
+    r_pure = -1
+    if(l_fin_type > update_start):
+        l_pure = l_fin_type - update_start 
+    if(r_fin_type != None and r_fin_type > update_start):
+        r_pure = r_fin_type - update_start
+    key = (l_pure, r_pure)
+    if(func == "add"):
+        if key in f_type_add:
+            return f_type_add[key]
+        return None
+    if(func == "sub"):
+        if key in f_type_sub:
+            return f_type_sub[key]
+        else:
+            return None
+    elif(func == "mul"):
+        if key in f_type_mul:
+            return f_type_mul[key]
+        return None
+    elif(func == "div"):
+        if key in f_type_div:
+            return(f_type_div[key])
+        return None
+    elif(func == "compare"):
+        if(l_pure != r_pure):
+            return None
+        return -1
+    elif(func == "assign"):
+        return l_pure
+    elif(func == "pow"):
+        return l_pure
+    return None
 
-
-    
-
-    
 
 #USAGE: finance type propogation
 def pass_ftype(dest, rsrcl, func, rsrcr = None):

@@ -485,7 +485,10 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
             param = parameters
             #for p in parameters:
             #    print(p.name)
-            
+            propogate_ftype = False
+            if(ftype == 1000):
+                propogate_ftype = True
+                ftype = -1
             if(len(param) == 0 or copy == "c"):
                 #No parameters, assume that the parameters are directly the types
                 _num_trans = []
@@ -517,6 +520,8 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ret_den.append(d)
                 if(cur_param.address != 'u'):
                     ret_num.append(cur_param.address)
+                if(propogate_ftype):
+                    ftype = tcheck_propagation.pass_ftype_no_ir(ftype, cur_param.finance_type, "mul")
             for den in den_trans:
                 den = den #int(den.strip())
                 if(isinstance(den, str)):
@@ -531,6 +536,8 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ret_num.append(d)
                 if(cur_param.address != 'u'):
                     ret_den.append(cur_param.address)
+                if(propogate_ftype):
+                    ftype = tcheck_propagation.pass_ftype_no_ir(ftype, cur_param.finance_type, "div")
             if(isinstance(norm, int) and norm > 0):
                 norm = param[norm-1].extok.norm
             if(isinstance(addr, int) and lc > 0):
