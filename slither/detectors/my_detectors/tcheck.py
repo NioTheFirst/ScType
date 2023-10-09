@@ -1036,16 +1036,16 @@ def handle_balance_functions(ir):
     #if(_dest.function_name == "global"):
         #Global address, positive t_type
     #    token_type = address_to_num[dest]
-    token_type = _dest.address
-    #if(token_type == 'u'):
-    #    return isbfunc
-    if(token_type in label_sets and label_sets[token_type].head > 0):
-        token_type = label_sets[token_type].head
-    norm = label_sets[token_type].norm
     #for key, addr in label_sets.items():
         #print(addr)
     fin_type = label_sets[token_type].finance_type
     if(func_name == "balanceOf"):
+        token_type = _dest.address
+        if(token_type in label_sets):
+            if(label_sets[token_type].head > 0):
+                token_type = label_sets[token_type].head
+            norm = label_sets[token_type].norm
+            fin_type = label_sets[token_type].finance_type
         #balanceOf, no important parameters, assign same type as dest address
         ir.lvalue.extok.add_num_token_type(token_type)
         ir.lvalue.extok.add_den_token_type(-1)
@@ -1059,6 +1059,12 @@ def handle_balance_functions(ir):
             ir.lvalue.extok.finance_type = 0
         isbfunc = True
     elif(func_name == "decimals"):
+        token_type = _dest.address
+        if(token_type in label_sets):
+            if(label_sets[token_type].head > 0):
+                token_type = label_sets[token_type].head
+            norm = label_sets[token_type].norm
+            fin_type = label_sets[token_type].finance_type
         ir.lvalue.extok.value = norm
         isbfunc = True
     #WIP, transferFrom, "safe"
