@@ -961,6 +961,7 @@ def querry_fc(ir) -> int:
     func_name = ir.function.name
     
     if(isinstance(dest, Variable)):
+        #DEPRECATED
         cont_name = dest.link_function
     else:
         cont_name = str(dest)
@@ -975,7 +976,10 @@ def querry_fc(ir) -> int:
     if(cont_name == None or cont_name == "UNKNOWN"):
         #Contingency for undefined contract instances
         #cont_name = dest.extok.name
-        cont_name = str(dest.type)[1:]
+        if (str(dest.type[0]) == "I"):
+            cont_name = str(dest.type)[1:]
+        else:
+            cont_name = str(dest.type)
     included_func = get_cf_pair(cont_name, func_name)
     if(included_func != None):
         if(type_included_hlc(ir, dest, included_func) == 1):
