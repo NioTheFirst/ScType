@@ -2455,7 +2455,8 @@ def _tcheck_node(node, function) -> []:
             lv = ir.lvalue
             propogate_parameter(lv, function)
             propogate_global(lv)
-            #print(lv.extok)
+            print(lv.extok)
+            print("Phid")
         #print("weee")
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
