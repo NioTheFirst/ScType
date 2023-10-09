@@ -2396,6 +2396,7 @@ def propogate_global(lv):
         print(f"Globalname: {_name}")
         if((_name, current_contract_name) in global_var_types):
             print("global...")
+            print(global_var_types[(_name, current_contract_name)].extok)
             copy_token_type(global_var_types[(_name, current_contract_name)], lv)
 
 
