@@ -431,7 +431,8 @@ def stringToType(string):
         elif _string in address_to_label:
             type = address_to_label[_string]
         else:
-            type = -1
+            #Create new address
+            type = address_handler.type_file_new_address(addr, True)
     return type
 
 def get_tuple(tuple_name):
