@@ -1076,7 +1076,8 @@ def handle_balance_functions(ir):
         if(numargs >= 3):
             probarg = args[2]
         if(probarg ==  None):
-            break
+            print("TranferFrom does not have 3 arguments")
+            return False
         probarg.extok.add_num_token_type(token_type)
         ir.lvalue.extok.add_den_token_type(-1)
         ir.lvalue.extok.norm = norm
