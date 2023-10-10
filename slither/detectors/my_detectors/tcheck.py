@@ -1063,6 +1063,31 @@ def handle_balance_functions(ir):
         else:
             ir.lvalue.extok.finance_type = 0
         isbfunc = True
+    elif(func_name == "transferFrom"):
+        token_type = _dest.address
+        if(token_type in label_sets):
+            if(label_sets[token_type].head > 0):
+                token_type = label_sets[token_type].head
+            norm = label_sets[token_type].norm
+            fin_type = label_sets[token_type].finance_type
+        numargs = ir.nbr_arguments
+        args = ir.arguments
+        probarg = None
+        if(numargs >= 3):
+            probarg = args[2]
+        if(probarg ==  None):
+            break
+        probarg.extok.add_num_token_type(token_type)
+        ir.lvalue.extok.add_den_token_type(-1)
+        ir.lvalue.extok.norm = norm
+        #Financial type
+        if(fin_type == 30):
+            ir.lvalue.extok.finance_type = 30
+        elif(fin_type == 0):
+            ir.lvalue.extok.finance_type = 0
+        else:
+            ir.lvalue.extok.finance_type = 0
+        isbfunc = True
     elif(func_name == "decimals"):
         token_type = _dest.address
         if(token_type in label_sets):
