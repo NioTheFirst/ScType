@@ -2066,7 +2066,7 @@ def bin_norm(dest, lir, rir, func = None):
         return
     if(func == "compare"):
         return
-    if(lnorm == '*' or rnorm == '*'):
+    if(lnorm == '*' or rnorm == '*' or lnorm == "*" or rnorm == "*"):
            
         #    asn_norm(dest, lnorm)
         #    asn_norm(rir, lnorm)
