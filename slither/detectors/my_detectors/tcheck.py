@@ -2066,7 +2066,14 @@ def bin_norm(dest, lir, rir, func = None):
         return
     if(func == "compare"):
         return
-    if(lnorm == '*' or rnorm == '*'):
+    if(lnorm == 'u'):
+        if(func == "div" and isinstance(rnorm, int)):
+            asn_norm(dest, -rnorm)
+        else:
+            asn_norm(dest, rnorm)
+    elif(rnorm == 'u'):
+        asn_norm(dest, lnorm)
+    elif(lnorm == '*' or rnorm == '*' or not(isinstance(lnorm, int)) or not(isinstance(rnorm, int))):
            
         #    asn_norm(dest, lnorm)
         #    asn_norm(rir, lnorm)
@@ -2076,13 +2083,6 @@ def bin_norm(dest, lir, rir, func = None):
         #else:
         if(dest.extok.norm != '*'):
             asn_norm(dest, '*')
-    elif(lnorm == 'u'):
-        if(func == "div" and isinstance(rnorm, int)):
-            asn_norm(dest, -rnorm)
-        else:
-            asn_norm(dest, rnorm)
-    elif(rnorm == 'u'):
-        asn_norm(dest, lnorm)
     else:
         #doesn't matter which
         if(func == "mul"):
