@@ -2061,13 +2061,12 @@ def bin_norm(dest, lir, rir, func = None):
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
-    print(rnorm.type)
     if(err):
         asn_norm(dest, 'u')
         return
     if(func == "compare"):
         return
-    if(lnorm == '*' or rnorm == '*' or lnorm == "*" or rnorm == "*"):
+    if(lnorm == '*' or rnorm == '*'):
            
         #    asn_norm(dest, lnorm)
         #    asn_norm(rir, lnorm)
