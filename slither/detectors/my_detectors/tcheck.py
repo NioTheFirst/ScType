@@ -756,8 +756,11 @@ def check_type(ir) -> bool:
         print("Phi")
         if(is_type_undef(ir.lvalue)):
             for rval in ir.rvalues:
-                if(not(is_type_undef(rval) and rval.extok.finance_type != -1)):
+                if(not(is_type_undef(rval))):
                     type_asn(ir.lvalue, rval)
+                    ir.lvalue.extok.norm = rval.extok.norm
+                    if(rval.extok.finance_type != -1):
+                        ir.lvalue.extok.finance_type = rval.extok.finance_type
                 else:
                     continue
                 #fields
