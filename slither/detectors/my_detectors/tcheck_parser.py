@@ -432,7 +432,7 @@ def stringToType(string):
             type = address_to_label[_string]
         else:
             #Create new address
-            type = address_handler.type_file_new_address(gstring, True).address
+            type = address_handler.type_file_new_address(gstring, True).head
     return type
 
 def get_tuple(tuple_name):

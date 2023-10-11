@@ -34,6 +34,10 @@ Head Addr: 1
     Norm: 0
     Set: {1}
     Fin: NULL
+State_var: TIERS_LENGTH
+Finding type for TIERS_LENGTH(uint8 ... )
+State_var: drawBuffer
+Finding type for drawBuffer(IDrawBuffer ... )
 State_var: _pendingOwner
 Finding type for _pendingOwner(address ... )
 prev address? u
@@ -45,10 +49,6 @@ State_var: prizeDistributionBuffer
 Finding type for prizeDistributionBuffer(IPrizeDistributionBuffer ... )
 State_var: ticket
 Finding type for ticket(ITicket ... )
-State_var: drawBuffer
-Finding type for drawBuffer(IDrawBuffer ... )
-State_var: TIERS_LENGTH
-Finding type for TIERS_LENGTH(uint8 ... )
 
 
 
@@ -209,7 +209,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-_newOwner_1(address) := ϕ(['_pendingOwner_4', '_initialOwner_1', 'TMP_580'])
+_newOwner_1(address) := ϕ(['TMP_580', '_pendingOwner_4', '_initialOwner_1'])
 Phi
 [i]Type for _newOwner
 
@@ -223,7 +223,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-_owner_2(address) := ϕ(['_owner_0', '_owner_3'])
+_owner_2(address) := ϕ(['_owner_3', '_owner_0'])
 Phi
 [i]Type for _owner
 
@@ -316,7 +316,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-_newOwner_1(address) := ϕ(['_pendingOwner_4', '_initialOwner_1', 'TMP_580'])
+_newOwner_1(address) := ϕ(['TMP_580', '_pendingOwner_4', '_initialOwner_1'])
 Phi
 [i]Type for _newOwner
 
@@ -330,7 +330,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-_owner_2(address) := ϕ(['_owner_0', '_owner_3'])
+_owner_2(address) := ϕ(['_owner_3', '_owner_0'])
 Phi
 [i]Type for _owner
 
@@ -671,7 +671,7 @@ Name: ticket, Num: 1
 Globalname: ticket
 global...
 
-Name: PIC_4 Function: None
+Name: PIC_6 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -705,7 +705,7 @@ Name: drawBuffer, Num: 1
 Globalname: drawBuffer
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -739,7 +739,7 @@ Name: prizeDistributionBuffer, Num: 1
 Globalname: prizeDistributionBuffer
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -767,12 +767,12 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: _ticket, Num: 1
-Globalname: _ticket
 Name: _prizeDistributionBuffer, Num: 1
 Globalname: _prizeDistributionBuffer
 Name: _drawBuffer, Num: 1
 Globalname: _drawBuffer
+Name: _ticket, Num: 1
+Globalname: _ticket
 End popogation
 
 
@@ -1112,12 +1112,12 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: _ticket, Num: 1
-Globalname: _ticket
 Name: _prizeDistributionBuffer, Num: 1
 Globalname: _prizeDistributionBuffer
 Name: _drawBuffer, Num: 1
 Globalname: _drawBuffer
+Name: _ticket, Num: 1
+Globalname: _ticket
 End popogation
 
 
@@ -1154,8 +1154,8 @@ Param: 2
     fintype: -1
 
 
-drawBuffer_2(IDrawBuffer) := ϕ(['drawBuffer_1', 'drawBuffer_6', 'drawBuffer_0', 'drawBuffer_3'])
-prizeDistributionBuffer_2(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_0', 'prizeDistributionBuffer_8', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_4'])
+drawBuffer_2(IDrawBuffer) := ϕ(['drawBuffer_6', 'drawBuffer_0', 'drawBuffer_3', 'drawBuffer_1'])
+prizeDistributionBuffer_2(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_0', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_8'])
 TMP_27(uint64[][]) = SOLIDITY_CALL abi.decode()(_pickIndicesForDraws_1,uint64[][])
 pickIndices_1(uint64[][]) := TMP_27(uint64[][])
 REF_1 -> LENGTH pickIndices_1
@@ -1163,11 +1163,11 @@ REF_2 -> LENGTH _drawIds_1 (-> [])
 TMP_28(bool) = REF_1 == REF_2
 TMP_29(None) = SOLIDITY_CALL require(bool,string)(TMP_28,DrawCalc/invalid-pick-indices-length)
 TMP_30(IDrawBeacon.Draw[]) = HIGH_LEVEL_CALL, dest:drawBuffer_2(IDrawBuffer), function:getDraws, arguments:['_drawIds_1 (-> [])']  
-drawBuffer_3(IDrawBuffer) := ϕ(['drawBuffer_1', 'drawBuffer_6', 'drawBuffer_2', 'drawBuffer_3'])
-prizeDistributionBuffer_3(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_2', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_8', 'prizeDistributionBuffer_1'])
+drawBuffer_3(IDrawBuffer) := ϕ(['drawBuffer_6', 'drawBuffer_2', 'drawBuffer_3', 'drawBuffer_1'])
+prizeDistributionBuffer_3(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_4', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_2', 'prizeDistributionBuffer_8'])
 draws_1(IDrawBeacon.Draw[]) := TMP_30(IDrawBeacon.Draw[])
 TMP_31(IPrizeDistributionBuffer.PrizeDistribution[]) = HIGH_LEVEL_CALL, dest:prizeDistributionBuffer_3(IPrizeDistributionBuffer), function:getPrizeDistributions, arguments:['_drawIds_1 (-> [])']  
-prizeDistributionBuffer_4(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_4', 'prizeDistributionBuffer_8', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_3'])
+prizeDistributionBuffer_4(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_3', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_8'])
 _prizeDistributions_1(IPrizeDistributionBuffer.PrizeDistribution[]) := TMP_31(IPrizeDistributionBuffer.PrizeDistribution[])
 TMP_32(uint256[]) = INTERNAL_CALL, DrawCalculator._getNormalizedBalancesAt(address,IDrawBeacon.Draw[],IPrizeDistributionBuffer.PrizeDistribution[])(_user_1,draws_1,_prizeDistributions_1)
 userBalances_1(uint256[]) := TMP_32(uint256[])
@@ -1228,7 +1228,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-drawBuffer_2(IDrawBuffer) := ϕ(['drawBuffer_1', 'drawBuffer_6', 'drawBuffer_0', 'drawBuffer_3'])
+drawBuffer_2(IDrawBuffer) := ϕ(['drawBuffer_6', 'drawBuffer_0', 'drawBuffer_3', 'drawBuffer_1'])
 Phi
 [i]Type for drawBuffer
 
@@ -1242,7 +1242,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-prizeDistributionBuffer_2(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_0', 'prizeDistributionBuffer_8', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_4'])
+prizeDistributionBuffer_2(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_0', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_8'])
 Phi
 [i]Type for prizeDistributionBuffer
 
@@ -1444,7 +1444,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-drawBuffer_3(IDrawBuffer) := ϕ(['drawBuffer_1', 'drawBuffer_6', 'drawBuffer_2', 'drawBuffer_3'])
+drawBuffer_3(IDrawBuffer) := ϕ(['drawBuffer_6', 'drawBuffer_2', 'drawBuffer_3', 'drawBuffer_1'])
 Phi
 [i]Type for drawBuffer
 
@@ -1458,7 +1458,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-prizeDistributionBuffer_3(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_2', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_8', 'prizeDistributionBuffer_1'])
+prizeDistributionBuffer_3(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_4', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_2', 'prizeDistributionBuffer_8'])
 Phi
 [i]Type for prizeDistributionBuffer
 
@@ -1569,7 +1569,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-prizeDistributionBuffer_4(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_4', 'prizeDistributionBuffer_8', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_3'])
+prizeDistributionBuffer_4(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_3', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_8'])
 Phi
 [i]Type for prizeDistributionBuffer
 
@@ -1881,24 +1881,9 @@ End popogation
 Propogating parameters and globals to SSA variables...
 Name: i, Num: 2
 Globalname: i
-Name: _timestampsWithEndCutoffTimes, Num: 2
-Globalname: _timestampsWithEndCutoffTimes
 Name: i, Num: 2
 Globalname: i
 End popogation
-Name: _timestampsWithEndCutoffTimes, Num: 2
-Globalname: _timestampsWithEndCutoffTimes
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
 Name: i, Num: 2
 Globalname: i
 
@@ -1912,20 +1897,6 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-_timestampsWithEndCutoffTimes_2(uint64[]) := ϕ(['_timestampsWithEndCutoffTimes_3', '_timestampsWithEndCutoffTimes_1'])
-Phi
-[i]Type for _timestampsWithEndCutoffTimes
-
-Name: _timestampsWithEndCutoffTimes Function: _getNormalizedBalancesAt
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
 i_2(uint32) := ϕ(['i_1', 'i_3'])
 Phi
 init
@@ -2145,10 +2116,10 @@ XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
-Name: _timestampsWithEndCutoffTimes, Num: 3
+Name: _timestampsWithEndCutoffTimes, Num: 2
 Globalname: _timestampsWithEndCutoffTimes
 End popogation
-Name: _timestampsWithEndCutoffTimes, Num: 3
+Name: _timestampsWithEndCutoffTimes, Num: 2
 Globalname: _timestampsWithEndCutoffTimes
 
 Name: None Function: None
@@ -2161,7 +2132,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-REF_29(uint64) -> _timestampsWithEndCutoffTimes_2[i_2]
+REF_29(uint64) -> _timestampsWithEndCutoffTimes_1[i_2]
 INDEX
 [i]Type for REF_29
 
@@ -2273,7 +2244,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-_timestampsWithEndCutoffTimes_3(uint64[]) := ϕ(['_timestampsWithEndCutoffTimes_2'])
+_timestampsWithEndCutoffTimes_2(uint64[]) := ϕ(['_timestampsWithEndCutoffTimes_1'])
 Phi
 [i]Type for _timestampsWithEndCutoffTimes
 
@@ -2287,7 +2258,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-REF_29 (->_timestampsWithEndCutoffTimes_3) := TMP_55(uint64)
+REF_29 (->_timestampsWithEndCutoffTimes_2) := TMP_55(uint64)
 asgn
 init
 end
@@ -2306,10 +2277,10 @@ Finance Type: undef
 Root: None, Field: None
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: _timestampsWithEndCutoffTimes, Num: 2
-Globalname: _timestampsWithEndCutoffTimes
 Name: _timestampsWithStartCutoffTimes, Num: 1
 Globalname: _timestampsWithStartCutoffTimes
+Name: _timestampsWithEndCutoffTimes, Num: 1
+Globalname: _timestampsWithEndCutoffTimes
 Name: balances, Num: 1
 Globalname: balances
 End popogation
@@ -2337,509 +2308,13 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-TMP_57(uint256[]) = HIGH_LEVEL_CALL, dest:ticket_2(ITicket), function:getAverageBalancesBetween, arguments:['_user_1', '_timestampsWithStartCutoffTimes_1', '_timestampsWithEndCutoffTimes_2']  
+TMP_57(uint256[]) = HIGH_LEVEL_CALL, dest:ticket_2(ITicket), function:getAverageBalancesBetween, arguments:['_user_1', '_timestampsWithStartCutoffTimes_1', '_timestampsWithEndCutoffTimes_1']  
 High Call: getAverageBalancesBetween
 Running querryfc
 Written func info: Ticket, getAverageBalancesBetween
 Retvar: ('c', ['global:tokenA'], ['-1'], 6, "'u'", None)
 {'global:_owner': 1, 'global:_pendingOwner': 2, 'constructor:_owner': -999, 'calculate:_user': -998, 'getNormalizedBalancesForDrawIds:_user': -997}
 Add to address_to_label {'global:_owner': 1, 'global:_pendingOwner': 2, 'constructor:_owner': -999, 'calculate:_user': -998, 'getNormalizedBalancesForDrawIds:_user': -997, 'global:global:tokenA': 3}
-([<address_handler.Address_label object at 0x7fe280093670>], [-1], 6, "'u'", None, -1)
-[i]Type for TMP_57
-
-Name: TMP_57 Function: _getNormalizedBalancesAt
-Num: Head Addr: 3
-    Norm: *
-    Set: {3}
-    Fin: NULL
-Den: -1
-Address: None
-Norm: 6
-LF: None
-Value: 'u'
-Fields: 
-Finance Type: undef
-XXXX
-ticket_3(ITicket) := ϕ(['ticket_4', 'ticket_2', 'ticket_1'])
-Phi
-[i]Type for ticket
-
-Name: ticket Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-balances_1(uint256[]) := TMP_57(uint256[])
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for balances
-
-Name: balances Function: _getNormalizedBalancesAt
-Num: Head Addr: 3
-    Norm: *
-    Set: {3}
-    Fin: NULL
-Den: -1
-Address: None
-Norm: 6
-LF: None
-Value: 'u'
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _timestampsWithEndCutoffTimes, Num: 2
-Globalname: _timestampsWithEndCutoffTimes
-Name: _timestampsWithStartCutoffTimes, Num: 1
-Globalname: _timestampsWithStartCutoffTimes
-Name: totalSupplies, Num: 1
-Globalname: totalSupplies
-End popogation
-Name: ticket, Num: 4
-Globalname: ticket
-global...
-
-Name: ticket Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-TMP_58(uint256[]) = HIGH_LEVEL_CALL, dest:ticket_3(ITicket), function:getAverageTotalSuppliesBetween, arguments:['_timestampsWithStartCutoffTimes_1', '_timestampsWithEndCutoffTimes_2']  
-High Call: getAverageTotalSuppliesBetween
-Running querryfc
-Written func info: Ticket, getAverageTotalSuppliesBetween
-Retvar: ('c', ['global:tokenA'], ['-1'], 6, "'u'", None)
-{'global:_owner': 1, 'global:_pendingOwner': 2, 'constructor:_owner': -999, 'calculate:_user': -998, 'getNormalizedBalancesForDrawIds:_user': -997, 'global:global:tokenA': 3}
-([3], [-1], 6, "'u'", None, -1)
-[i]Type for TMP_58
-
-Name: TMP_58 Function: _getNormalizedBalancesAt
-Num: 3
-Den: -1
-Address: None
-Norm: 6
-LF: None
-Value: 'u'
-Fields: 
-Finance Type: undef
-XXXX
-ticket_4(ITicket) := ϕ(['ticket_4', 'ticket_3', 'ticket_1'])
-Phi
-[i]Type for ticket
-
-Name: ticket Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-totalSupplies_1(uint256[]) := TMP_58(uint256[])
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for totalSupplies
-
-Name: totalSupplies Function: _getNormalizedBalancesAt
-Num: 3
-Den: -1
-Address: None
-Norm: 6
-LF: None
-Value: 'u'
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: i, Num: 3
-Globalname: i
-End popogation
-TMP_56(uint32) := i_2(uint32)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for TMP_56
-
-Name: TMP_56 Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-XXXX
-i_3(uint32) = i_2 (c)+ 1
-init
-end
-init
-end
-lnorm: u rnorm: 0
-init
-end
-[i]Type for i
-
-Name: i Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: normalizedBalances, Num: 1
-Globalname: normalizedBalances
-End popogation
-REF_36 -> LENGTH _draws_1
-[i]Type for REF_36
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-TMP_60 = new uint256[](REF_36)
-[i]Type for TMP_60
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-normalizedBalances_1(uint256[]) := TMP_60(uint256)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for normalizedBalances
-
-Name: normalizedBalances Function: _getNormalizedBalancesAt
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: i_scope_0, Num: 1
-Globalname: i_scope_0
-End popogation
-i_scope_0_1(uint256) := 0(uint256)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for i_scope_0
-
-Name: i_scope_0 Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
-Propogating parameters and globals to SSA variables...
-Name: i_scope_0, Num: 2
-Globalname: i_scope_0
-Name: i_scope_0, Num: 2
-Globalname: i_scope_0
-End popogation
-Name: i_scope_0, Num: 2
-Globalname: i_scope_0
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-i_scope_0_2(uint256) := ϕ(['i_scope_0_3', 'i_scope_0_1'])
-Phi
-init
-end
-[i]Type for i_scope_0
-
-Name: i_scope_0 Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-XXXX
-REF_37 -> LENGTH _draws_1
-[i]Type for REF_37
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-TMP_61(bool) = i_scope_0_2 < REF_37
-init
-end
-init
-end
-lnorm: u rnorm: u
-init
-end
-init
-end
-[i]Type for TMP_61
-
-Name: TMP_61 Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
-Propogating parameters and globals to SSA variables...
-End popogation
-REF_38(uint256) -> totalSupplies_1[i_scope_0_2]
-INDEX
-[i]Type for REF_38
-
-Name: totalSupplies Function: _getNormalizedBalancesAt
-Num: 3
-Den: -1
-Address: None
-Norm: 6
-LF: None
-Value: 'u'
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-TMP_62(bool) = REF_38 > 0
-init
-end
-init
-end
-lnorm: 6 rnorm: 0
-[i]Type for TMP_62
-
-Name: TMP_62 Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_63(None) = SOLIDITY_CALL require(bool,string)(TMP_62,DrawCalc/total-supply-zero)
-[i]Type for TMP_63
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: normalizedBalances, Num: 2
-Globalname: normalizedBalances
-End popogation
-Name: normalizedBalances, Num: 2
-Globalname: normalizedBalances
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-REF_39(uint256) -> normalizedBalances_1[i_scope_0_2]
-INDEX
-[i]Type for REF_39
-
-Name: normalizedBalances Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-REF_40(uint256) -> balances_1[i_scope_0_2]
-INDEX
-[i]Type for REF_40
-
-Name: balances Function: _getNormalizedBalancesAt
-Num: Head Addr: 3
-    Norm: *
-    Set: {3}
-    Fin: NULL
-Den: -1
-Address: None
-Norm: 6
-LF: None
-Value: 'u'
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-TMP_64(uint256) = REF_40 (c)* 1000000000000000000
-testing mul...
-init
-end
-init
-end
-
-Name: balances Function: _getNormalizedBalancesAt
-Num: Head Addr: 3
-    Norm: *
-    Set: {3}
-    Fin: NULL
-Den: -1
-Address: None
-Norm: 6
-LF: None
-Value: 'u'
-Fields: 
-Finance Type: undef
-
-Name: 1000000000000000000 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-lnorm: 6 rnorm: 18
-init
-end
-[i]Type for TMP_64
-
-Name: TMP_64 Function: _getNormalizedBalancesAt
-Num: Head Addr: 3
-    Norm: *
-    Set: {3}
-    Fin: NULL
-Den: -1
-Address: None
-Norm: 24
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-REF_41(uint256) -> totalSupplies_1[i_scope_0_2]
-INDEX
-[i]Type for REF_41
-
-Name: totalSupplies Function: _getNormalizedBalancesAt
-Num: 3
-Den: -1
-Address: None
-Norm: 6
-LF: None
-Value: 'u'
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-TMP_65(uint256) = TMP_64 (c)/ REF_41
-init
-end
-init
-end
-lnorm: 24 rnorm: 6
-init
-end
-init
-end
-init
-end
-lnorm: 24 rnorm: 6
-init
-end
-Head Addr: 3
-    Norm: *
-    Set: {3}
-    Fin: NULL
 Executing Group 10
 [*] Tested 1 warnings for Pool Together v4
 Group 10 complete
