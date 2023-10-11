@@ -1378,9 +1378,11 @@ def type_fc(ir) -> bool:
         if isinstance( ret_obj, Variable):
             if isinstance(ret_obj, list):
                 type_asn(ir.lvalue, ret_obj[0])
+                ir.lvalue.extok.norm = ret_obj[0].norm
                 copy_ftype(ret_obj[0], ir.lvalue)
             else:
                 type_asn(ir.lvalue, ret_obj)
+                ir.lvalue.extok.norm = ret_obj.norm
                 copy_ftype(ret_obj, ir.lvalue)
         else:
             add_tuple(ir.lvalue.name, ret_obj)
