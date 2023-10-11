@@ -1377,7 +1377,7 @@ def type_fc(ir) -> bool:
         if(not(ir.lvalue)):
             return False
         ret_obj = ir.function.get_parameter_cache_return(added)
-        print(f"Previous result: {ret_obj.extok}")
+        #print(f"Previous result: {ret_obj.extok}")
         if isinstance( ret_obj, Variable):
             if isinstance(ret_obj, list):
                 type_asn(ir.lvalue, ret_obj[0])
