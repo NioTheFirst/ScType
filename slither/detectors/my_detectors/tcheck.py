@@ -2061,6 +2061,7 @@ def bin_norm(dest, lir, rir, func = None):
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
     print(f"lnorm: {lnorm} rnorm: {rnorm}")
+    print(rnorm.type)
     if(err):
         asn_norm(dest, 'u')
         return
