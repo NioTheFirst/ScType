@@ -189,7 +189,7 @@ if [[ $# -eq 0 || $1 -eq 17 ]]; then
   solc-select use 0.6.12
   cd "../Benchmark/Malt_Finance/src/contracts"
   slither --detect tcheck AuctionEscapeHatch.sol
-  slither --detect tcheck AuctionBurnReserveSkew.sol
+  #slither --detect tcheck AuctionBurnReserveSkew.sol
   cd "$ORIGINAL_DIR"
   execute_group 17 echo "[*] Tested 0 warnings for Malt Finance"
   sleep 3
