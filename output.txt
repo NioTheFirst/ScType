@@ -1,72 +1,51 @@
-Switched global version to 0.8.6
-Checking DrawCalculator
-Checking PrizeDistributionBuffer
-Checking PrizeDistributor
-Checking IControlledToken
-Checking IDrawBeacon
-Checking IDrawBuffer
-Checking IDrawCalculator
-Checking IPrizeDistributionBuffer
-Checking IPrizeDistributor
-Checking ITicket
-Checking DrawRingBufferLib
-Checking ExtendedSafeCastLib
-Checking ObservationLib
-Checking OverflowSafeComparatorLib
-Checking RingBufferLib
-Checking TwabLib
+Switched global version to 0.6.12
+Checking CDP
+Checking FixedPointMath
+Checking IDetailedERC20
+Checking Math
+Checking SafeMath
 Checking IERC20
 Checking SafeERC20
 Checking Address
-Checking SafeCast
-Checking Manageable
-Checking Ownable
-Checking RNGInterface
-Add to address_to_label {'global:_owner': 1}
-Add to address_to_label {'global:_owner': 1, 'global:_pendingOwner': 2}
-Add to address_to_label {'global:_owner': 1, 'global:_pendingOwner': 2, 'constructor:_owner': -999}
-Add to address_to_label {'global:_owner': 1, 'global:_pendingOwner': 2, 'constructor:_owner': -999, 'calculate:_user': -998}
-Add to address_to_label {'global:_owner': 1, 'global:_pendingOwner': 2, 'constructor:_owner': -999, 'calculate:_user': -998, 'getNormalizedBalancesForDrawIds:_user': -997}
-State_var: _owner
-Finding type for _owner(address ... )
-prev address? u
-Head Addr: 1
-    Norm: 0
-    Set: {1}
-    Fin: NULL
-State_var: TIERS_LENGTH
-Finding type for TIERS_LENGTH(uint8 ... )
-State_var: drawBuffer
-Finding type for drawBuffer(IDrawBuffer ... )
-State_var: _pendingOwner
-Finding type for _pendingOwner(address ... )
-prev address? u
-Head Addr: 2
-    Norm: 0
-    Set: {2}
-    Fin: NULL
-State_var: prizeDistributionBuffer
-Finding type for prizeDistributionBuffer(IPrizeDistributionBuffer ... )
-State_var: ticket
-Finding type for ticket(ITicket ... )
 
 
 
-constructor
-Finding type for _owner(address ... )
-prev address? u
-Head Addr: -999
-    Norm: 0
-    Set: {-999}
-    Fin: NULL
-Finding type for _ticket(ITicket ... )
-Finding type for _drawBuffer(IDrawBuffer ... )
-Finding type for _prizeDistributionBuffer(IPrizeDistributionBuffer ... )
+update
+Finding type for _self(CDP.Data ... )
+update
+_self
+totalDeposited
+OUT KEY: update__self_totalDeposited
+update
+_self
+totalDebt
+OUT KEY: update__self_totalDebt
+update
+_self
+totalCredit
+OUT KEY: update__self_totalCredit
+update
+_self
+lastDeposit
+OUT KEY: update__self_lastDeposit
+update
+_self
+lastAccumulatedYieldWeight
+OUT KEY: update__self_lastAccumulatedYieldWeight
+Finding type for _ctx(CDP.Context ... )
+update
+_ctx
+collateralizationLimit
+OUT KEY: update__ctx_collateralizationLimit
+update
+_ctx
+accumulatedYieldWeight
+OUT KEY: update__ctx_accumulatedYieldWeight
 Param: 0
-    num: []
-    den: []
+    num: [-1]
+    den: [-1]
     norm: u
-    link: _owner
+    link: None
     fields: []
     fintype: -1
 Param: 1
@@ -76,1232 +55,93 @@ Param: 1
     link: None
     fields: []
     fintype: -1
-Param: 2
-    num: [-1]
-    den: [-1]
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
-Param: 3
-    num: [-1]
-    den: [-1]
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
 
 
-INTERNAL_CALL, Ownable.constructor(address)(_owner_1)
-TMP_13 = CONVERT _ticket_1 to address
-TMP_14 = CONVERT 0 to address
-TMP_15(bool) = TMP_13 != TMP_14
-TMP_16(None) = SOLIDITY_CALL require(bool,string)(TMP_15,DrawCalc/ticket-not-zero)
-TMP_17 = CONVERT _prizeDistributionBuffer_1 to address
-TMP_18 = CONVERT 0 to address
-TMP_19(bool) = TMP_17 != TMP_18
-TMP_20(None) = SOLIDITY_CALL require(bool,string)(TMP_19,DrawCalc/pdb-not-zero)
-TMP_21 = CONVERT _drawBuffer_1 to address
-TMP_22 = CONVERT 0 to address
-TMP_23(bool) = TMP_21 != TMP_22
-TMP_24(None) = SOLIDITY_CALL require(bool,string)(TMP_23,DrawCalc/dh-not-zero)
-ticket_1(ITicket) := _ticket_1(ITicket)
-drawBuffer_1(IDrawBuffer) := _drawBuffer_1(IDrawBuffer)
-prizeDistributionBuffer_1(IPrizeDistributionBuffer) := _prizeDistributionBuffer_1(IPrizeDistributionBuffer)
-Emit Deployed(_ticket_1,_drawBuffer_1,_prizeDistributionBuffer_1)
+TMP_0(uint256) = LIBRARY_CALL, dest:CDP, function:CDP.getEarnedYield(CDP.Data,CDP.Context), arguments:['_self_1 (-> [])', '_ctx_1 (-> [])'] 
+_earnedYield_1(uint256) := TMP_0(uint256)
+REF_1(uint256) -> _self_1 (-> []).totalDebt
+TMP_1(bool) = _earnedYield_1 > REF_1
+CONDITION TMP_1
+REF_2(uint256) -> _self_1 (-> []).totalDebt
+_currentTotalDebt_1(uint256) := REF_2(uint256)
+REF_6(uint256) -> _self_1 (-> []).totalDebt
+REF_7(uint256) -> _self_1 (-> []).totalDebt
+TMP_3(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['REF_7', '_earnedYield_1'] 
+_self_2 (-> [])(CDP.Data) := ϕ(['_self_1 (-> [])'])
+REF_6 (->_self_2 (-> [])) := TMP_3(uint256)
+REF_3(uint256) -> _self_1 (-> []).totalDebt
+_self_3 (-> [])(CDP.Data) := ϕ(['_self_1 (-> [])'])
+REF_3 (->_self_3 (-> [])) := 0(uint256)
+_self_5 (-> [])(CDP.Data) := ϕ(['_self_2 (-> [])', '_self_4 (-> [])'])
+REF_9(FixedPointMath.FixedDecimal) -> _self_5 (-> []).lastAccumulatedYieldWeight
+REF_10(FixedPointMath.FixedDecimal) -> _ctx_1 (-> []).accumulatedYieldWeight
+_self_6 (-> [])(CDP.Data) := ϕ(['_self_5 (-> [])'])
+REF_9 (->_self_6 (-> [])) := REF_10(FixedPointMath.FixedDecimal)
+REF_4(uint256) -> _self_3 (-> []).totalCredit
+TMP_2(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_earnedYield_1', '_currentTotalDebt_1'] 
+_self_4 (-> [])(CDP.Data) := ϕ(['_self_3 (-> [])'])
+REF_4 (->_self_4 (-> [])) := TMP_2(uint256)
 
 
 Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
+Name: _self, Num: 1 (-> [])
+Globalname: _self
+Name: _ctx, Num: 1 (-> [])
+Globalname: _ctx
+Name: _earnedYield, Num: 1
+Globalname: _earnedYield
 End popogation
-INTERNAL_CALL, Ownable.constructor(address)(_owner_1)
-init
-end
-[[], [], 'u', '_owner', [], -1, -999, 'u']
+TMP_0(uint256) = LIBRARY_CALL, dest:CDP, function:CDP.getEarnedYield(CDP.Data,CDP.Context), arguments:['_self_1 (-> [])', '_ctx_1 (-> [])'] 
+Written func info: CDP, getEarnedYield
+Retvar: ('c', ['global:token'], ['-1'], 0, "'u'", None)
+{}
+Add to address_to_label {'global:global:token': 1}
+([1], [-1], 0, "'u'", None, -1)
+[i]Type for TMP_0
 
-Name: _initialOwner Function: None
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-Propogating parameters and globals to SSA variables...
-End popogation
-
-Name: _initialOwner_1 Function: None
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-_initialOwner_1(address) := ϕ(['_owner_1', '_owner_1', '_owner_1'])
-Phi
-[i]Type for _initialOwner
-
-Name: _initialOwner Function: constructor
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
-INTERNAL_CALL, Ownable._setOwner(address)(_initialOwner_1)
-init
-end
-[[], [], 'u', '_owner', [], -1, -999, 'u']
-
-Name: _newOwner Function: None
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-Propogating parameters and globals to SSA variables...
-End popogation
-
-Name: _newOwner_1 Function: None
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-Name: _owner, Num: 2
-Globalname: _owner
-global...
-
-Name: PIC_1 Function: None
-Num: -1
+Name: TMP_0 Function: update
+Num: 1
 Den: -1
-Address: 1
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-_newOwner_1(address) := ϕ(['TMP_580', '_pendingOwner_4', '_initialOwner_1'])
-Phi
-[i]Type for _newOwner
-
-Name: _newOwner Function: _setOwner
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-_owner_2(address) := ϕ(['_owner_3', '_owner_0'])
-Phi
-[i]Type for _owner
-
-Name: _owner Function: _setOwner
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _oldOwner, Num: 1
-Globalname: _oldOwner
-End popogation
-_oldOwner_1(address) := _owner_2(address)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for _oldOwner
-
-Name: _oldOwner Function: _setOwner
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _owner, Num: 3
-Globalname: _owner
-global...
-
-Name: PIC_1 Function: None
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-End popogation
-_owner_3(address) := _newOwner_1(address)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for _owner
-
-Name: _owner Function: _setOwner
-Num: -1
-Den: -1
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
-Propogating parameters and globals to SSA variables...
-End popogation
-
-Name: _newOwner_1 Function: _setOwner
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-
-Name: _owner Function: _setOwner
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-_newOwner_1(address) := ϕ(['TMP_580', '_pendingOwner_4', '_initialOwner_1'])
-Phi
-[i]Type for _newOwner
-
-Name: _newOwner Function: _setOwner
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-_owner_2(address) := ϕ(['_owner_3', '_owner_0'])
-Phi
-[i]Type for _owner
-
-Name: _owner Function: _setOwner
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _oldOwner, Num: 1
-Globalname: _oldOwner
-End popogation
-_oldOwner_1(address) := _owner_2(address)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for _oldOwner
-
-Name: _oldOwner Function: _setOwner
-Num: -1
-Den: -1
-Address: 1
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
-_owner_3(address) := _newOwner_1(address)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for _owner
-
-Name: _owner Function: _setOwner
-Num: -1
-Den: -1
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
-Propogating parameters and globals to SSA variables...
-End popogation
-
-Name: _initialOwner_1 Function: constructor
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-_initialOwner_1(address) := ϕ(['_owner_1', '_owner_1', '_owner_1'])
-Phi
-[i]Type for _initialOwner
-
-Name: _initialOwner Function: constructor
-Num: 
-Den: 
-Address: -999
-Norm: u
-LF: _owner
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
-INTERNAL_CALL, Ownable._setOwner(address)(_initialOwner_1)
-init
-end
-Propogating parameters and globals to SSA variables...
-Name: _ticket, Num: 1
-Globalname: _ticket
-End popogation
-TMP_13 = CONVERT _ticket_1 to address
-Converting _ticket_1
-
-Name: _ticket_1 Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_13
-
-Name: TMP_13 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_14 = CONVERT 0 to address
-Converting 0
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_14
-
-Name: TMP_14 Function: constructor
-Num: -1
-Den: -1
-Address: u
+Address: None
 Norm: 0
 LF: None
-Value: u
+Value: 'u'
 Fields: 
 Finance Type: undef
 XXXX
-TMP_15(bool) = TMP_13 != TMP_14
-[i]Type for TMP_15
-
-Name: TMP_15 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_16(None) = SOLIDITY_CALL require(bool,string)(TMP_15,DrawCalc/ticket-not-zero)
-[i]Type for TMP_16
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _prizeDistributionBuffer, Num: 1
-Globalname: _prizeDistributionBuffer
-End popogation
-TMP_17 = CONVERT _prizeDistributionBuffer_1 to address
-Converting _prizeDistributionBuffer_1
-
-Name: _prizeDistributionBuffer_1 Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_17
-
-Name: TMP_17 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_18 = CONVERT 0 to address
-Converting 0
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_18
-
-Name: TMP_18 Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_19(bool) = TMP_17 != TMP_18
-[i]Type for TMP_19
-
-Name: TMP_19 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_20(None) = SOLIDITY_CALL require(bool,string)(TMP_19,DrawCalc/pdb-not-zero)
-[i]Type for TMP_20
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _drawBuffer, Num: 1
-Globalname: _drawBuffer
-End popogation
-TMP_21 = CONVERT _drawBuffer_1 to address
-Converting _drawBuffer_1
-
-Name: _drawBuffer_1 Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_21
-
-Name: TMP_21 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_22 = CONVERT 0 to address
-Converting 0
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_22
-
-Name: TMP_22 Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_23(bool) = TMP_21 != TMP_22
-[i]Type for TMP_23
-
-Name: TMP_23 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_24(None) = SOLIDITY_CALL require(bool,string)(TMP_23,DrawCalc/dh-not-zero)
-[i]Type for TMP_24
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _ticket, Num: 1
-Globalname: _ticket
-Name: ticket, Num: 1
-Globalname: ticket
-global...
-
-Name: PIC_6 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-End popogation
-ticket_1(ITicket) := _ticket_1(ITicket)
+_earnedYield_1(uint256) := TMP_0(uint256)
 asgn
 init
 end
 Finance type key: (-1, -1)
-[i]Type for ticket
+[i]Type for _earnedYield
 
-Name: ticket Function: constructor
-Num: -1
+Name: _earnedYield Function: update
+Num: 1
 Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _drawBuffer, Num: 1
-Globalname: _drawBuffer
-Name: drawBuffer, Num: 1
-Globalname: drawBuffer
-global...
-
-Name: PIC_3 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-End popogation
-drawBuffer_1(IDrawBuffer) := _drawBuffer_1(IDrawBuffer)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for drawBuffer
-
-Name: drawBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _prizeDistributionBuffer, Num: 1
-Globalname: _prizeDistributionBuffer
-Name: prizeDistributionBuffer, Num: 1
-Globalname: prizeDistributionBuffer
-global...
-
-Name: PIC_5 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-End popogation
-prizeDistributionBuffer_1(IPrizeDistributionBuffer) := _prizeDistributionBuffer_1(IPrizeDistributionBuffer)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for prizeDistributionBuffer
-
-Name: prizeDistributionBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _prizeDistributionBuffer, Num: 1
-Globalname: _prizeDistributionBuffer
-Name: _drawBuffer, Num: 1
-Globalname: _drawBuffer
-Name: _ticket, Num: 1
-Globalname: _ticket
-End popogation
-
-
-INTERNAL_CALL, Ownable.constructor(address)(_owner_1)
-TMP_13 = CONVERT _ticket_1 to address
-TMP_14 = CONVERT 0 to address
-TMP_15(bool) = TMP_13 != TMP_14
-TMP_16(None) = SOLIDITY_CALL require(bool,string)(TMP_15,DrawCalc/ticket-not-zero)
-TMP_17 = CONVERT _prizeDistributionBuffer_1 to address
-TMP_18 = CONVERT 0 to address
-TMP_19(bool) = TMP_17 != TMP_18
-TMP_20(None) = SOLIDITY_CALL require(bool,string)(TMP_19,DrawCalc/pdb-not-zero)
-TMP_21 = CONVERT _drawBuffer_1 to address
-TMP_22 = CONVERT 0 to address
-TMP_23(bool) = TMP_21 != TMP_22
-TMP_24(None) = SOLIDITY_CALL require(bool,string)(TMP_23,DrawCalc/dh-not-zero)
-ticket_1(ITicket) := _ticket_1(ITicket)
-drawBuffer_1(IDrawBuffer) := _drawBuffer_1(IDrawBuffer)
-prizeDistributionBuffer_1(IPrizeDistributionBuffer) := _prizeDistributionBuffer_1(IPrizeDistributionBuffer)
-Emit Deployed(_ticket_1,_drawBuffer_1,_prizeDistributionBuffer_1)
-
-
-Propogating parameters and globals to SSA variables...
-End popogation
-Propogating parameters and globals to SSA variables...
-End popogation
-INTERNAL_CALL, Ownable.constructor(address)(_owner_1)
-init
-end
-Propogating parameters and globals to SSA variables...
-Name: _ticket, Num: 1
-Globalname: _ticket
-End popogation
-TMP_13 = CONVERT _ticket_1 to address
-Converting _ticket_1
-
-Name: _ticket_1 Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_13
-
-Name: TMP_13 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_14 = CONVERT 0 to address
-Converting 0
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
+Address: None
 Norm: 0
 LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_14
-
-Name: TMP_14 Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_15(bool) = TMP_13 != TMP_14
-[i]Type for TMP_15
-
-Name: TMP_15 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_16(None) = SOLIDITY_CALL require(bool,string)(TMP_15,DrawCalc/ticket-not-zero)
-[i]Type for TMP_16
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
+Value: 'u'
 Fields: 
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: _prizeDistributionBuffer, Num: 1
-Globalname: _prizeDistributionBuffer
+Name: _self, Num: 1 (-> [])
+Globalname: _self
 End popogation
-TMP_17 = CONVERT _prizeDistributionBuffer_1 to address
-Converting _prizeDistributionBuffer_1
-
-Name: _prizeDistributionBuffer_1 Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+REF_1(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
 init
 end
-[i]Type for TMP_17
-
-Name: TMP_17 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_18 = CONVERT 0 to address
-Converting 0
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 init
 end
-[i]Type for TMP_18
-
-Name: TMP_18 Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_19(bool) = TMP_17 != TMP_18
-[i]Type for TMP_19
-
-Name: TMP_19 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_20(None) = SOLIDITY_CALL require(bool,string)(TMP_19,DrawCalc/pdb-not-zero)
-[i]Type for TMP_20
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _drawBuffer, Num: 1
-Globalname: _drawBuffer
-End popogation
-TMP_21 = CONVERT _drawBuffer_1 to address
-Converting _drawBuffer_1
-
-Name: _drawBuffer_1 Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_21
-
-Name: TMP_21 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_22 = CONVERT 0 to address
-Converting 0
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-[i]Type for TMP_22
-
-Name: TMP_22 Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_23(bool) = TMP_21 != TMP_22
-[i]Type for TMP_23
-
-Name: TMP_23 Function: constructor
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_24(None) = SOLIDITY_CALL require(bool,string)(TMP_23,DrawCalc/dh-not-zero)
-[i]Type for TMP_24
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _ticket, Num: 1
-Globalname: _ticket
-End popogation
-ticket_1(ITicket) := _ticket_1(ITicket)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for ticket
-
-Name: ticket Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _drawBuffer, Num: 1
-Globalname: _drawBuffer
-End popogation
-drawBuffer_1(IDrawBuffer) := _drawBuffer_1(IDrawBuffer)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for drawBuffer
-
-Name: drawBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _prizeDistributionBuffer, Num: 1
-Globalname: _prizeDistributionBuffer
-End popogation
-prizeDistributionBuffer_1(IPrizeDistributionBuffer) := _prizeDistributionBuffer_1(IPrizeDistributionBuffer)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for prizeDistributionBuffer
-
-Name: prizeDistributionBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _prizeDistributionBuffer, Num: 1
-Globalname: _prizeDistributionBuffer
-Name: _drawBuffer, Num: 1
-Globalname: _drawBuffer
-Name: _ticket, Num: 1
-Globalname: _ticket
-End popogation
-
-
-
-calculate
-Finding type for _user(address ... )
-prev address? u
-Head Addr: -998
-    Norm: 0
-    Set: {-998}
-    Fin: NULL
-Finding type for _drawIds(uint32[] ... )
-Finding type for _pickIndicesForDraws(bytes ... )
-Param: 0
-    num: []
-    den: []
-    norm: u
-    link: _user
-    fields: []
-    fintype: -1
-Param: 1
-    num: [-1]
-    den: [-1]
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
-Param: 2
-    num: []
-    den: []
-    norm: u
-    link: None
-    fields: []
-    fintype: -1
-
-
-drawBuffer_2(IDrawBuffer) := ϕ(['drawBuffer_6', 'drawBuffer_0', 'drawBuffer_3', 'drawBuffer_1'])
-prizeDistributionBuffer_2(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_0', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_8'])
-TMP_27(uint64[][]) = SOLIDITY_CALL abi.decode()(_pickIndicesForDraws_1,uint64[][])
-pickIndices_1(uint64[][]) := TMP_27(uint64[][])
-REF_1 -> LENGTH pickIndices_1
-REF_2 -> LENGTH _drawIds_1 (-> [])
-TMP_28(bool) = REF_1 == REF_2
-TMP_29(None) = SOLIDITY_CALL require(bool,string)(TMP_28,DrawCalc/invalid-pick-indices-length)
-TMP_30(IDrawBeacon.Draw[]) = HIGH_LEVEL_CALL, dest:drawBuffer_2(IDrawBuffer), function:getDraws, arguments:['_drawIds_1 (-> [])']  
-drawBuffer_3(IDrawBuffer) := ϕ(['drawBuffer_6', 'drawBuffer_2', 'drawBuffer_3', 'drawBuffer_1'])
-prizeDistributionBuffer_3(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_4', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_2', 'prizeDistributionBuffer_8'])
-draws_1(IDrawBeacon.Draw[]) := TMP_30(IDrawBeacon.Draw[])
-TMP_31(IPrizeDistributionBuffer.PrizeDistribution[]) = HIGH_LEVEL_CALL, dest:prizeDistributionBuffer_3(IPrizeDistributionBuffer), function:getPrizeDistributions, arguments:['_drawIds_1 (-> [])']  
-prizeDistributionBuffer_4(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_3', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_8'])
-_prizeDistributions_1(IPrizeDistributionBuffer.PrizeDistribution[]) := TMP_31(IPrizeDistributionBuffer.PrizeDistribution[])
-TMP_32(uint256[]) = INTERNAL_CALL, DrawCalculator._getNormalizedBalancesAt(address,IDrawBeacon.Draw[],IPrizeDistributionBuffer.PrizeDistribution[])(_user_1,draws_1,_prizeDistributions_1)
-userBalances_1(uint256[]) := TMP_32(uint256[])
-TMP_33(bytes) = SOLIDITY_CALL abi.encodePacked()(_user_1)
-TMP_34(bytes32) = SOLIDITY_CALL keccak256(bytes)(TMP_33)
-_userRandomNumber_1(bytes32) := TMP_34(bytes32)
-TUPLE_0(uint256[],bytes) = INTERNAL_CALL, DrawCalculator._calculatePrizesAwardable(uint256[],bytes32,IDrawBeacon.Draw[],uint64[][],IPrizeDistributionBuffer.PrizeDistribution[])(userBalances_1,_userRandomNumber_1,draws_1,pickIndices_1,_prizeDistributions_1)
-RETURN TUPLE_0
-
-
-Propogating parameters and globals to SSA variables...
-End popogation
-Name: drawBuffer, Num: 2
-Globalname: drawBuffer
-global...
-
-Name: drawBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-Name: prizeDistributionBuffer, Num: 2
-Globalname: prizeDistributionBuffer
-global...
-
-Name: prizeDistributionBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-drawBuffer_2(IDrawBuffer) := ϕ(['drawBuffer_6', 'drawBuffer_0', 'drawBuffer_3', 'drawBuffer_1'])
-Phi
-[i]Type for drawBuffer
-
-Name: drawBuffer Function: calculate
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-prizeDistributionBuffer_2(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_0', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_8'])
-Phi
-[i]Type for prizeDistributionBuffer
-
-Name: prizeDistributionBuffer Function: calculate
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _pickIndicesForDraws, Num: 1
-Globalname: _pickIndicesForDraws
-Name: pickIndices, Num: 1
-Globalname: pickIndices
-End popogation
-TMP_27(uint64[][]) = SOLIDITY_CALL abi.decode()(_pickIndicesForDraws_1,uint64[][])
-[i]Type for TMP_27
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-pickIndices_1(uint64[][]) := TMP_27(uint64[][])
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for pickIndices
-
-Name: pickIndices Function: calculate
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: pickIndices, Num: 1
-Globalname: pickIndices
-Name: _drawIds, Num: 1 (-> [])
-Globalname: _drawIds
-End popogation
-REF_1 -> LENGTH pickIndices_1
+No field found
 [i]Type for REF_1
 
-Name: None Function: None
+Name: _self.totalDebt Function: update
 Num: 
 Den: 
 Address: u
@@ -1310,179 +150,68 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Root: None, Field: None
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
 XXXX
-REF_2 -> LENGTH _drawIds_1 (-> [])
+TMP_1(bool) = _earnedYield_1 > REF_1
+init
+end
+init
+end
+lnorm: 0 rnorm: u
+[i]Type for TMP_1
+
+Name: TMP_1 Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+Propogating parameters and globals to SSA variables...
+Name: _self, Num: 1 (-> [])
+Globalname: _self
+Name: _currentTotalDebt, Num: 1
+Globalname: _currentTotalDebt
+End popogation
+REF_2(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
 [i]Type for REF_2
 
-Name: None Function: None
-Num: 
-Den: 
+Name: _self.totalDebt Function: update
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Root: None, Field: None
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
 XXXX
-TMP_28(bool) = REF_1 == REF_2
-[i]Type for TMP_28
-
-Name: TMP_28 Function: calculate
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-TMP_29(None) = SOLIDITY_CALL require(bool,string)(TMP_28,DrawCalc/invalid-pick-indices-length)
-[i]Type for TMP_29
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _drawIds, Num: 1 (-> [])
-Globalname: _drawIds
-Name: draws, Num: 1
-Globalname: draws
-End popogation
-Name: drawBuffer, Num: 3
-Globalname: drawBuffer
-global...
-
-Name: drawBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-Name: prizeDistributionBuffer, Num: 3
-Globalname: prizeDistributionBuffer
-global...
-
-Name: prizeDistributionBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-TMP_30(IDrawBeacon.Draw[]) = HIGH_LEVEL_CALL, dest:drawBuffer_2(IDrawBuffer), function:getDraws, arguments:['_drawIds_1 (-> [])']  
-High Call: getDraws
-Running querryfc
-Written func info: DrawBuffer, getDraws
-Retvar: ('c', [-1], [-1], 'u', 'u', None)
-([-1], [-1], 'u', 'u', None, -1)
-calculate
-TMP_30
-winningRandomNumber
-OUT KEY: calculate_TMP_30_winningRandomNumber
-calculate
-TMP_30
-drawId
-OUT KEY: calculate_TMP_30_drawId
-calculate
-TMP_30
-timestamp
-OUT KEY: calculate_TMP_30_timestamp
-calculate
-TMP_30
-beaconPeriodStartedAt
-OUT KEY: calculate_TMP_30_beaconPeriodStartedAt
-calculate
-TMP_30
-beaconPeriodSeconds
-OUT KEY: calculate_TMP_30_beaconPeriodSeconds
-[i]Type for TMP_30
-
-Name: TMP_30 Function: calculate
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-drawBuffer_3(IDrawBuffer) := ϕ(['drawBuffer_6', 'drawBuffer_2', 'drawBuffer_3', 'drawBuffer_1'])
-Phi
-[i]Type for drawBuffer
-
-Name: drawBuffer Function: calculate
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-prizeDistributionBuffer_3(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_4', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_2', 'prizeDistributionBuffer_8'])
-Phi
-[i]Type for prizeDistributionBuffer
-
-Name: prizeDistributionBuffer Function: calculate
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-draws_1(IDrawBeacon.Draw[]) := TMP_30(IDrawBeacon.Draw[])
+_currentTotalDebt_1(uint256) := REF_2(uint256)
 asgn
 init
 end
 Finance type key: (-1, -1)
-[i]Type for draws
+[i]Type for _currentTotalDebt
 
-Name: draws Function: calculate
+Name: _currentTotalDebt Function: update
 Num: -1
 Den: -1
-Address: None
+Address: u
 Norm: u
 LF: None
 Value: u
@@ -1490,28 +219,17 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: _drawIds, Num: 1 (-> [])
-Globalname: _drawIds
-Name: _prizeDistributions, Num: 1
-Globalname: _prizeDistributions
+Name: _self, Num: 1 (-> [])
+Globalname: _self
+Name: _self, Num: 2 (-> [])
+Globalname: _self
 End popogation
-Name: prizeDistributionBuffer, Num: 4
-Globalname: prizeDistributionBuffer
-global...
-
-Name: prizeDistributionBuffer Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+Name: _self, Num: 2 (-> [])
+Globalname: _self
 
 Name: None Function: None
-Num: -1
-Den: -1
+Num: 
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -1519,61 +237,15 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-TMP_31(IPrizeDistributionBuffer.PrizeDistribution[]) = HIGH_LEVEL_CALL, dest:prizeDistributionBuffer_3(IPrizeDistributionBuffer), function:getPrizeDistributions, arguments:['_drawIds_1 (-> [])']  
-High Call: getPrizeDistributions
-Running querryfc
-Written func info: PrizeDistributionBuffer, getPrizeDistributions
-Retvar: ('c', [-1], [-1], 'u', 'u', None)
-([-1], [-1], 'u', 'u', None, -1)
-calculate
-TMP_31
-bitRangeSize
-OUT KEY: calculate_TMP_31_bitRangeSize
-calculate
-TMP_31
-matchCardinality
-OUT KEY: calculate_TMP_31_matchCardinality
-calculate
-TMP_31
-startTimestampOffset
-OUT KEY: calculate_TMP_31_startTimestampOffset
-calculate
-TMP_31
-endTimestampOffset
-OUT KEY: calculate_TMP_31_endTimestampOffset
-calculate
-TMP_31
-maxPicksPerUser
-OUT KEY: calculate_TMP_31_maxPicksPerUser
-calculate
-TMP_31
-numberOfPicks
-OUT KEY: calculate_TMP_31_numberOfPicks
-calculate
-TMP_31
-tiers
-OUT KEY: calculate_TMP_31_tiers
-calculate
-TMP_31
-prize
-OUT KEY: calculate_TMP_31_prize
-[i]Type for TMP_31
+REF_6(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
+[i]Type for REF_6
 
-Name: TMP_31 Function: calculate
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-prizeDistributionBuffer_4(IPrizeDistributionBuffer) := ϕ(['prizeDistributionBuffer_3', 'prizeDistributionBuffer_4', 'prizeDistributionBuffer_1', 'prizeDistributionBuffer_8'])
-Phi
-[i]Type for prizeDistributionBuffer
-
-Name: prizeDistributionBuffer Function: calculate
+Name: _self.totalDebt Function: update
 Num: -1
 Den: -1
 Address: u
@@ -1582,189 +254,94 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
 XXXX
-_prizeDistributions_1(IPrizeDistributionBuffer.PrizeDistribution[]) := TMP_31(IPrizeDistributionBuffer.PrizeDistribution[])
+REF_7(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
+[i]Type for REF_7
+
+Name: _self.totalDebt Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
+XXXX
+TMP_3(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['REF_7', '_earnedYield_1'] 
+init
+end
+init
+end
+lnorm: u rnorm: 0
+init
+end
+[i]Type for TMP_3
+
+Name: TMP_3 Function: update
+Num: 1
+Den: -1
+Address: None
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+_self_2 (-> [])(CDP.Data) := ϕ(['_self_1 (-> [])'])
+Phi
+[i]Type for _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalDebt
+Finance Type: undef
+XXXX
+REF_6 (->_self_2 (-> [])) := TMP_3(uint256)
 asgn
 init
 end
 Finance type key: (-1, -1)
-[i]Type for _prizeDistributions
+[i]Type for REF_6
 
-Name: _prizeDistributions Function: calculate
-Num: -1
+Name: REF_6 Function: update
+Num: 1
 Den: -1
 Address: None
-Norm: u
+Norm: 0
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: userBalances, Num: 1
-Globalname: userBalances
-End popogation
-TMP_32(uint256[]) = INTERNAL_CALL, DrawCalculator._getNormalizedBalancesAt(address,IDrawBeacon.Draw[],IPrizeDistributionBuffer.PrizeDistribution[])(_user_1,draws_1,_prizeDistributions_1)
+Root: _self_1 (-> []), Field: totalDebt
 init
 end
-init
-end
-init
-end
-[[], [], 'u', '_user', [], -1, -998, 'u']
-
-Name: _user Function: None
-Num: 
-Den: 
-Address: -998
-Norm: u
-LF: _user
-Value: u
-Fields: 
-Finance Type: undef
-[[-1], [-1], 'u', None, [], -1, None, 'u']
-
-Name: _draws Function: None
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-[[-1], [-1], 'u', None, [], -1, None, 'u']
-
-Name: _prizeDistributions Function: None
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Propogating parameters and globals to SSA variables...
-End popogation
-
-Name: _user_1 Function: None
-Num: 
-Den: 
-Address: -998
-Norm: u
-LF: _user
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-
-Name: _draws_1 Function: None
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-
-Name: _prizeDistributions_1 Function: None
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-Name: ticket, Num: 2
-Globalname: ticket
-global...
-
-Name: ticket Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-_user_1(address) := ϕ(['_user_1', '_user_1'])
-Phi
-[i]Type for _user
-
-Name: _user Function: _getNormalizedBalancesAt
-Num: 
-Den: 
-Address: -998
-Norm: u
-LF: _user
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-_draws_1(IDrawBeacon.Draw[]) := ϕ(['draws_1', '_draws_1'])
-Phi
-[i]Type for _draws
-
-Name: _draws Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-_prizeDistributions_1(IPrizeDistributionBuffer.PrizeDistribution[]) := ϕ(['_prizeDistributions_1', '_prizeDistributions_1'])
-Phi
-[i]Type for _prizeDistributions
-
-Name: _prizeDistributions Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-ticket_2(ITicket) := ϕ(['ticket_4', 'ticket_1', 'ticket_0'])
-Phi
-[i]Type for ticket
-
-Name: ticket Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+Finance type key: (-1, -1)
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: _timestampsWithStartCutoffTimes, Num: 1
-Globalname: _timestampsWithStartCutoffTimes
+Name: _self, Num: 3 (-> [])
+Globalname: _self
 End popogation
-REF_21 -> LENGTH _draws_1
-[i]Type for REF_21
+Name: _self, Num: 3 (-> [])
+Globalname: _self
 
 Name: None Function: None
 Num: 
@@ -1775,98 +352,51 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Root: None, Field: None
-XXXX
-TMP_50 = new uint64[](REF_21)
-[i]Type for TMP_50
+Phid
+REF_3(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
+[i]Type for REF_3
 
-Name: None Function: None
-Num: 
-Den: 
+Name: _self.totalDebt Function: update
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
 XXXX
-_timestampsWithStartCutoffTimes_1(uint64[]) := TMP_50(uint64)
+_self_3 (-> [])(CDP.Data) := ϕ(['_self_1 (-> [])'])
+Phi
+[i]Type for _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalDebt
+Finance Type: undef
+XXXX
+REF_3 (->_self_3 (-> [])) := 0(uint256)
 asgn
 init
 end
 Finance type key: (-1, -1)
-[i]Type for _timestampsWithStartCutoffTimes
+[i]Type for REF_3
 
-Name: _timestampsWithStartCutoffTimes Function: _getNormalizedBalancesAt
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: _timestampsWithEndCutoffTimes, Num: 1
-Globalname: _timestampsWithEndCutoffTimes
-End popogation
-REF_22 -> LENGTH _draws_1
-[i]Type for REF_22
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-TMP_52 = new uint64[](REF_22)
-[i]Type for TMP_52
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-_timestampsWithEndCutoffTimes_1(uint64[]) := TMP_52(uint64)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for _timestampsWithEndCutoffTimes
-
-Name: _timestampsWithEndCutoffTimes Function: _getNormalizedBalancesAt
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-Name: i, Num: 1
-Globalname: i
-End popogation
-i_1(uint32) := 0(uint256)
-asgn
-init
-end
-Finance type key: (-1, -1)
-[i]Type for i
-
-Name: i Function: _getNormalizedBalancesAt
+Name: REF_3 Function: update
 Num: -1
 Den: -1
 Address: u
@@ -1875,17 +405,15 @@ LF: None
 Value: 0
 Fields: 
 Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
 XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
-Propogating parameters and globals to SSA variables...
-Name: i, Num: 2
-Globalname: i
-Name: i, Num: 2
-Globalname: i
-End popogation
-Name: i, Num: 2
-Globalname: i
+Name: _self, Num: 5 (-> [])
+Globalname: _self
 
 Name: None Function: None
 Num: 
@@ -1897,13 +425,536 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-i_2(uint32) := ϕ(['i_1', 'i_3'])
+_self_5 (-> [])(CDP.Data) := ϕ(['_self_2 (-> [])', '_self_4 (-> [])'])
 Phi
+[i]Type for _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+Propogating parameters and globals to SSA variables...
+Name: _ctx, Num: 1 (-> [])
+Globalname: _ctx
+Name: _self, Num: 6 (-> [])
+Globalname: _self
+End popogation
+Name: _self, Num: 6 (-> [])
+Globalname: _self
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Phid
+REF_9(FixedPointMath.FixedDecimal) -> _self_5 (-> []).lastAccumulatedYieldWeight
+MEMBER
 init
 end
-[i]Type for i
+init
+end
+OUT KEY: update__self_lastAccumulatedYieldWeight
+OUT KEY: update__lastAccumulatedYieldWeight
+No field found
+[i]Type for REF_9
 
-Name: i Function: _getNormalizedBalancesAt
+Name: _self.lastAccumulatedYieldWeight Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_5 (-> []), Field: lastAccumulatedYieldWeight
+init
+end
+Finance type key: (-1, -1)
+XXXX
+REF_10(FixedPointMath.FixedDecimal) -> _ctx_1 (-> []).accumulatedYieldWeight
+MEMBER
+init
+end
+init
+end
+No field found
+[i]Type for REF_10
+
+Name: _ctx.accumulatedYieldWeight Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _ctx_1 (-> []), Field: accumulatedYieldWeight
+init
+end
+Finance type key: (-1, -1)
+XXXX
+_self_6 (-> [])(CDP.Data) := ϕ(['_self_5 (-> [])'])
+Phi
+[i]Type for _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: lastAccumulatedYieldWeight
+Finance Type: undef
+XXXX
+REF_9 (->_self_6 (-> [])) := REF_10(FixedPointMath.FixedDecimal)
+asgn
+init
+end
+Finance type key: (-1, -1)
+[i]Type for REF_9
+
+Name: REF_9 Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_5 (-> []), Field: lastAccumulatedYieldWeight
+init
+end
+Finance type key: (-1, -1)
+XXXX
+Propogating parameters and globals to SSA variables...
+Name: _self, Num: 4 (-> [])
+Globalname: _self
+End popogation
+Name: _self, Num: 4 (-> [])
+Globalname: _self
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Phid
+REF_4(uint256) -> _self_3 (-> []).totalCredit
+MEMBER
+init
+end
+init
+end
+OUT KEY: update__self_totalCredit
+OUT KEY: update__totalCredit
+No field found
+[i]Type for REF_4
+
+Name: _self.totalCredit Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_3 (-> []), Field: totalCredit
+init
+end
+Finance type key: (-1, -1)
+XXXX
+TMP_2(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_earnedYield_1', '_currentTotalDebt_1'] 
+init
+end
+init
+end
+lnorm: 0 rnorm: u
+init
+end
+[i]Type for TMP_2
+
+Name: TMP_2 Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+_self_4 (-> [])(CDP.Data) := ϕ(['_self_3 (-> [])'])
+Phi
+[i]Type for _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalCredit
+Finance Type: undef
+XXXX
+REF_4 (->_self_4 (-> [])) := TMP_2(uint256)
+asgn
+init
+end
+Finance type key: (-1, -1)
+[i]Type for REF_4
+
+Name: REF_4 Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_3 (-> []), Field: totalCredit
+init
+end
+Finance type key: (-1, -1)
+XXXX
+
+
+TMP_0(uint256) = LIBRARY_CALL, dest:CDP, function:CDP.getEarnedYield(CDP.Data,CDP.Context), arguments:['_self_1 (-> [])', '_ctx_1 (-> [])'] 
+_earnedYield_1(uint256) := TMP_0(uint256)
+REF_1(uint256) -> _self_1 (-> []).totalDebt
+TMP_1(bool) = _earnedYield_1 > REF_1
+CONDITION TMP_1
+REF_2(uint256) -> _self_1 (-> []).totalDebt
+_currentTotalDebt_1(uint256) := REF_2(uint256)
+REF_6(uint256) -> _self_1 (-> []).totalDebt
+REF_7(uint256) -> _self_1 (-> []).totalDebt
+TMP_3(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['REF_7', '_earnedYield_1'] 
+_self_2 (-> [])(CDP.Data) := ϕ(['_self_1 (-> [])'])
+REF_6 (->_self_2 (-> [])) := TMP_3(uint256)
+REF_3(uint256) -> _self_1 (-> []).totalDebt
+_self_3 (-> [])(CDP.Data) := ϕ(['_self_1 (-> [])'])
+REF_3 (->_self_3 (-> [])) := 0(uint256)
+_self_5 (-> [])(CDP.Data) := ϕ(['_self_2 (-> [])', '_self_4 (-> [])'])
+REF_9(FixedPointMath.FixedDecimal) -> _self_5 (-> []).lastAccumulatedYieldWeight
+REF_10(FixedPointMath.FixedDecimal) -> _ctx_1 (-> []).accumulatedYieldWeight
+_self_6 (-> [])(CDP.Data) := ϕ(['_self_5 (-> [])'])
+REF_9 (->_self_6 (-> [])) := REF_10(FixedPointMath.FixedDecimal)
+REF_4(uint256) -> _self_3 (-> []).totalCredit
+TMP_2(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_earnedYield_1', '_currentTotalDebt_1'] 
+_self_4 (-> [])(CDP.Data) := ϕ(['_self_3 (-> [])'])
+REF_4 (->_self_4 (-> [])) := TMP_2(uint256)
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Propogating parameters and globals to SSA variables...
+Name: _self, Num: 1 (-> [])
+Globalname: _self
+Name: _ctx, Num: 1 (-> [])
+Globalname: _ctx
+Name: _earnedYield, Num: 1
+Globalname: _earnedYield
+End popogation
+TMP_0(uint256) = LIBRARY_CALL, dest:CDP, function:CDP.getEarnedYield(CDP.Data,CDP.Context), arguments:['_self_1 (-> [])', '_ctx_1 (-> [])'] 
+Written func info: CDP, getEarnedYield
+Retvar: ('c', ['global:token'], ['-1'], 0, "'u'", None)
+{'global:global:token': 1}
+([1], [-1], 0, "'u'", None, -1)
+[i]Type for TMP_0
+
+Name: TMP_0 Function: update
+Num: 1
+Den: -1
+Address: None
+Norm: 0
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+XXXX
+_earnedYield_1(uint256) := TMP_0(uint256)
+asgn
+init
+end
+Finance type key: (-1, -1)
+[i]Type for _earnedYield
+
+Name: _earnedYield Function: update
+Num: 1
+Den: -1
+Address: None
+Norm: 0
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+XXXX
+Propogating parameters and globals to SSA variables...
+Name: _self, Num: 1 (-> [])
+Globalname: _self
+End popogation
+REF_1(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
+init
+end
+[i]Type for REF_1
+
+Name: _self.totalDebt Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
+XXXX
+TMP_1(bool) = _earnedYield_1 > REF_1
+init
+end
+init
+end
+lnorm: 0 rnorm: u
+[i]Type for TMP_1
+
+Name: TMP_1 Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+Propogating parameters and globals to SSA variables...
+Name: _self, Num: 1 (-> [])
+Globalname: _self
+Name: _currentTotalDebt, Num: 1
+Globalname: _currentTotalDebt
+End popogation
+REF_2(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
+init
+end
+[i]Type for REF_2
+
+Name: _self.totalDebt Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
+XXXX
+_currentTotalDebt_1(uint256) := REF_2(uint256)
+asgn
+init
+end
+Finance type key: (-1, -1)
+[i]Type for _currentTotalDebt
+
+Name: _currentTotalDebt Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+Propogating parameters and globals to SSA variables...
+Name: _self, Num: 1 (-> [])
+Globalname: _self
+Name: _self, Num: 2 (-> [])
+Globalname: _self
+End popogation
+Name: _self, Num: 2 (-> [])
+Globalname: _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalDebt
+Finance Type: undef
+Phid
+REF_6(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
+init
+end
+[i]Type for REF_6
+
+Name: _self.totalDebt Function: update
+Num: 1
+Den: -1
+Address: None
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
+XXXX
+REF_7(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
+init
+end
+[i]Type for REF_7
+
+Name: _self.totalDebt Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
+XXXX
+TMP_3(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['REF_7', '_earnedYield_1'] 
+init
+end
+init
+end
+lnorm: u rnorm: 0
+init
+end
+[i]Type for TMP_3
+
+Name: TMP_3 Function: update
+Num: 1
+Den: -1
+Address: None
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+_self_2 (-> [])(CDP.Data) := ϕ(['_self_1 (-> [])'])
+Phi
+[i]Type for _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalDebt
+Finance Type: undef
+XXXX
+REF_6 (->_self_2 (-> [])) := TMP_3(uint256)
+asgn
+init
+end
+1
+-1
+Finance type key: (-1, -1)
+[i]Type for REF_6
+
+Name: REF_6 Function: update
+Num: 1
+Den: -1
+Address: None
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
+XXXX
+Propogating parameters and globals to SSA variables...
+Name: _self, Num: 3 (-> [])
+Globalname: _self
+End popogation
+Name: _self, Num: 3 (-> [])
+Globalname: _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalDebt
+Finance Type: undef
+Phid
+REF_3(uint256) -> _self_1 (-> []).totalDebt
+MEMBER
+init
+end
+init
+end
+init
+end
+[i]Type for REF_3
+
+Name: _self.totalDebt Function: update
 Num: -1
 Den: -1
 Address: u
@@ -1912,34 +963,33 @@ LF: None
 Value: 0
 Fields: 
 Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
 XXXX
-REF_23 -> LENGTH _draws_1
-[i]Type for REF_23
+_self_3 (-> [])(CDP.Data) := ϕ(['_self_1 (-> [])'])
+Phi
+[i]Type for _self
 
-Name: None Function: None
+Name: _self Function: update
 Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Value: u
-Fields: 
+Fields: totalDebt
 Finance Type: undef
-Root: None, Field: None
 XXXX
-TMP_53(bool) = i_2 < REF_23
+REF_3 (->_self_3 (-> [])) := 0(uint256)
+asgn
 init
 end
-init
-end
-lnorm: u rnorm: u
-init
-end
-init
-end
-[i]Type for TMP_53
+Finance type key: (-1, -1)
+[i]Type for REF_3
 
-Name: TMP_53 Function: _getNormalizedBalancesAt
+Name: REF_3 Function: update
 Num: -1
 Den: -1
 Address: u
@@ -1948,15 +998,17 @@ LF: None
 Value: 0
 Fields: 
 Finance Type: undef
+Root: _self_1 (-> []), Field: totalDebt
+init
+end
+Finance type key: (-1, -1)
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: _timestampsWithStartCutoffTimes, Num: 2
-Globalname: _timestampsWithStartCutoffTimes
 End popogation
-Name: _timestampsWithStartCutoffTimes, Num: 2
-Globalname: _timestampsWithStartCutoffTimes
+Name: _self, Num: 5 (-> [])
+Globalname: _self
 
-Name: None Function: None
+Name: _self Function: update
 Num: 
 Den: 
 Address: u
@@ -1966,126 +1018,11 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-REF_24(uint64) -> _timestampsWithStartCutoffTimes_1[i_2]
-INDEX
-[i]Type for REF_24
-
-Name: _timestampsWithStartCutoffTimes Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-REF_25(IDrawBeacon.Draw) -> _draws_1[i_2]
-INDEX
-[i]Type for REF_25
-
-Name: _draws Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-REF_26(uint64) -> REF_25.timestamp
-MEMBER
-init
-end
-init
-end
-OUT KEY: _getNormalizedBalancesAt__draws_timestamp
-OUT KEY: _getNormalizedBalancesAt__timestamp
-No field found
-[i]Type for REF_26
-
-Name: _draws.timestamp Function: _getNormalizedBalancesAt
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: REF_25, Field: timestamp
-init
-end
-Finance type key: (-1, -1)
-XXXX
-REF_27(IPrizeDistributionBuffer.PrizeDistribution) -> _prizeDistributions_1[i_2]
-INDEX
-[i]Type for REF_27
-
-Name: _prizeDistributions Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-REF_28(uint32) -> REF_27.startTimestampOffset
-MEMBER
-init
-end
-init
-end
-OUT KEY: _getNormalizedBalancesAt__prizeDistributions_startTimestampOffset
-OUT KEY: _getNormalizedBalancesAt__startTimestampOffset
-No field found
-[i]Type for REF_28
-
-Name: _prizeDistributions.startTimestampOffset Function: _getNormalizedBalancesAt
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: REF_27, Field: startTimestampOffset
-init
-end
-Finance type key: (-1, -1)
-XXXX
-TMP_54(uint64) = REF_26 - REF_28
-init
-end
-init
-end
-lnorm: u rnorm: u
-init
-end
-[i]Type for TMP_54
-
-Name: TMP_54 Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-_timestampsWithStartCutoffTimes_2(uint64[]) := ϕ(['_timestampsWithStartCutoffTimes_1'])
+_self_5 (-> [])(CDP.Data) := ϕ(['_self_2 (-> [])', '_self_4 (-> [])'])
 Phi
-[i]Type for _timestampsWithStartCutoffTimes
+[i]Type for _self
 
-Name: _timestampsWithStartCutoffTimes Function: _getNormalizedBalancesAt
+Name: _self Function: update
 Num: 
 Den: 
 Address: u
@@ -2095,14 +1032,93 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-REF_24 (->_timestampsWithStartCutoffTimes_2) := TMP_54(uint64)
+Propogating parameters and globals to SSA variables...
+Name: _ctx, Num: 1 (-> [])
+Globalname: _ctx
+Name: _self, Num: 6 (-> [])
+Globalname: _self
+End popogation
+Name: _self, Num: 6 (-> [])
+Globalname: _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: lastAccumulatedYieldWeight
+Finance Type: undef
+Phid
+REF_9(FixedPointMath.FixedDecimal) -> _self_5 (-> []).lastAccumulatedYieldWeight
+MEMBER
+init
+end
+init
+end
+[i]Type for REF_9
+
+Name: _self.lastAccumulatedYieldWeight Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _self_5 (-> []), Field: lastAccumulatedYieldWeight
+init
+end
+Finance type key: (-1, -1)
+XXXX
+REF_10(FixedPointMath.FixedDecimal) -> _ctx_1 (-> []).accumulatedYieldWeight
+MEMBER
+init
+end
+init
+end
+init
+end
+[i]Type for REF_10
+
+Name: _ctx.accumulatedYieldWeight Function: update
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Root: _ctx_1 (-> []), Field: accumulatedYieldWeight
+init
+end
+Finance type key: (-1, -1)
+XXXX
+_self_6 (-> [])(CDP.Data) := ϕ(['_self_5 (-> [])'])
+Phi
+[i]Type for _self
+
+Name: _self Function: update
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: lastAccumulatedYieldWeight
+Finance Type: undef
+XXXX
+REF_9 (->_self_6 (-> [])) := REF_10(FixedPointMath.FixedDecimal)
 asgn
 init
 end
 Finance type key: (-1, -1)
-[i]Type for REF_24
+[i]Type for REF_9
 
-Name: REF_24 Function: _getNormalizedBalancesAt
+Name: REF_9 Function: update
 Num: -1
 Den: -1
 Address: u
@@ -2111,211 +1127,136 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Root: None, Field: None
+Root: _self_5 (-> []), Field: lastAccumulatedYieldWeight
+init
+end
+Finance type key: (-1, -1)
 XXXX
 Propogating parameters and globals to SSA variables...
+Name: _self, Num: 4 (-> [])
+Globalname: _self
 End popogation
-Propogating parameters and globals to SSA variables...
-Name: _timestampsWithEndCutoffTimes, Num: 2
-Globalname: _timestampsWithEndCutoffTimes
-End popogation
-Name: _timestampsWithEndCutoffTimes, Num: 2
-Globalname: _timestampsWithEndCutoffTimes
+Name: _self, Num: 4 (-> [])
+Globalname: _self
 
-Name: None Function: None
+Name: _self Function: update
 Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Value: u
-Fields: 
+Fields: totalCredit
 Finance Type: undef
 Phid
-REF_29(uint64) -> _timestampsWithEndCutoffTimes_1[i_2]
-INDEX
-[i]Type for REF_29
-
-Name: _timestampsWithEndCutoffTimes Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: None, Field: None
-XXXX
-REF_30(IDrawBeacon.Draw) -> _draws_1[i_2]
-INDEX
-[i]Type for REF_30
-
-Name: _draws Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: timestamp
-Finance Type: undef
-Root: None, Field: None
-XXXX
-REF_31(uint64) -> REF_30.timestamp
+REF_4(uint256) -> _self_3 (-> []).totalCredit
 MEMBER
 init
 end
 init
 end
-[i]Type for REF_31
+[i]Type for REF_4
 
-Name: _draws.timestamp Function: _getNormalizedBalancesAt
+Name: _self.totalCredit Function: update
 Num: -1
 Den: -1
 Address: u
-Norm: u
+Norm: 0
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Root: REF_30, Field: timestamp
+Root: _self_3 (-> []), Field: totalCredit
 init
 end
 Finance type key: (-1, -1)
 XXXX
-REF_32(IPrizeDistributionBuffer.PrizeDistribution) -> _prizeDistributions_1[i_2]
-INDEX
-[i]Type for REF_32
+TMP_2(uint256) = LIBRARY_CALL, dest:SafeMath, function:SafeMath.sub(uint256,uint256), arguments:['_earnedYield_1', '_currentTotalDebt_1'] 
+init
+end
+init
+end
+lnorm: 0 rnorm: u
+init
+end
+[i]Type for TMP_2
 
-Name: _prizeDistributions Function: _getNormalizedBalancesAt
-Num: -1
-Den: -1
-Address: None
-Norm: u
-LF: None
-Value: u
-Fields: startTimestampOffset
-Finance Type: undef
-Root: None, Field: None
-XXXX
-REF_33(uint32) -> REF_32.endTimestampOffset
-MEMBER
-init
-end
-init
-end
-OUT KEY: _getNormalizedBalancesAt__prizeDistributions_endTimestampOffset
-OUT KEY: _getNormalizedBalancesAt__endTimestampOffset
-No field found
-[i]Type for REF_33
-
-Name: _prizeDistributions.endTimestampOffset Function: _getNormalizedBalancesAt
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Root: REF_32, Field: endTimestampOffset
-init
-end
-Finance type key: (-1, -1)
-XXXX
-TMP_55(uint64) = REF_31 - REF_33
-init
-end
-init
-end
-lnorm: u rnorm: u
-init
-end
-[i]Type for TMP_55
-
-Name: TMP_55 Function: _getNormalizedBalancesAt
+Name: TMP_2 Function: update
 Num: -1
 Den: -1
 Address: u
-Norm: u
+Norm: 0
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
 XXXX
-_timestampsWithEndCutoffTimes_2(uint64[]) := ϕ(['_timestampsWithEndCutoffTimes_1'])
+_self_4 (-> [])(CDP.Data) := ϕ(['_self_3 (-> [])'])
 Phi
-[i]Type for _timestampsWithEndCutoffTimes
+[i]Type for _self
 
-Name: _timestampsWithEndCutoffTimes Function: _getNormalizedBalancesAt
+Name: _self Function: update
 Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
 Value: u
-Fields: 
+Fields: totalCredit
 Finance Type: undef
 XXXX
-REF_29 (->_timestampsWithEndCutoffTimes_2) := TMP_55(uint64)
+REF_4 (->_self_4 (-> [])) := TMP_2(uint256)
 asgn
 init
 end
 Finance type key: (-1, -1)
-[i]Type for REF_29
+[i]Type for REF_4
 
-Name: REF_29 Function: _getNormalizedBalancesAt
+Name: REF_4 Function: update
 Num: -1
 Den: -1
 Address: u
-Norm: u
+Norm: 0
 LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Root: None, Field: None
+Root: _self_3 (-> []), Field: totalCredit
+init
+end
+Finance type key: (-1, -1)
 XXXX
-Propogating parameters and globals to SSA variables...
-Name: _timestampsWithStartCutoffTimes, Num: 1
-Globalname: _timestampsWithStartCutoffTimes
-Name: _timestampsWithEndCutoffTimes, Num: 1
-Globalname: _timestampsWithEndCutoffTimes
-Name: balances, Num: 1
-Globalname: balances
-End popogation
-Name: ticket, Num: 3
-Globalname: ticket
-global...
 
-Name: ticket Function: constructor
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Phid
-TMP_57(uint256[]) = HIGH_LEVEL_CALL, dest:ticket_2(ITicket), function:getAverageBalancesBetween, arguments:['_user_1', '_timestampsWithStartCutoffTimes_1', '_timestampsWithEndCutoffTimes_1']  
-High Call: getAverageBalancesBetween
-Running querryfc
-Written func info: Ticket, getAverageBalancesBetween
-Retvar: ('c', ['global:tokenA'], ['-1'], 6, "'u'", None)
-{'global:_owner': 1, 'global:_pendingOwner': 2, 'constructor:_owner': -999, 'calculate:_user': -998, 'getNormalizedBalancesForDrawIds:_user': -997}
-Add to address_to_label {'global:_owner': 1, 'global:_pendingOwner': 2, 'constructor:_owner': -999, 'calculate:_user': -998, 'getNormalizedBalancesForDrawIds:_user': -997, 'global:global:tokenA': 3}
-Executing Group 10
-[*] Tested 1 warnings for Pool Together v4
-Group 10 complete
+
+checkHealth
+
+
+
+isHealthy
+
+
+
+getUpdatedTotalDebt
+
+
+
+getUpdatedTotalCredit
+
+
+
+getEarnedYield
+
+
+
+getCollateralizationRatio
+Address: 1, Label: global:global:token
+Head Addr: 1
+    Norm: *
+    Set: {1}
+    Fin: NULL
+Function count: 1
+Executing Group 16
+[*] Tested 0 warnings for yAxis p2
+Group 16 complete
 Testing complete
