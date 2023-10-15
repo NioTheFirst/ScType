@@ -1253,7 +1253,7 @@ def type_member(ir)->bool:
             return False
     
     field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
-
+    print(f"FTT: {field_type_tuple}")
     if(field_type_tuple == None):
         print("No field found")
         #TURN OFF ASSUMPTION
