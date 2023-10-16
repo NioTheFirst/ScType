@@ -379,7 +379,14 @@ def parse_type_file(t_file, f_file = None):
                     norm = [int(_line[6].strip())]
                     value = int(_line[7].strip())
                 elif(len(_line) >= 5):
-                    addr = _line[4]
+                    if(isinstance(addr, int)):
+                        addr = _line[4]
+                    else:
+                        if("global" in addr):
+                            addr = address_handler.type_file_new_address(_line[4], True)
+                        else:
+                            addr = address_handler.type_file_new_address(_line[4], False)
+                    norm = _line[5]
 
                 add_field(func_name, parent_name, field_name, (num, denom, norm, value, addr))
     parse_finance_file(f_file)
