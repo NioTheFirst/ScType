@@ -1201,7 +1201,7 @@ def update_member(member, fieldf, copy_ir):
         print(ptfield.extok)
         _field = ptfield.extok
     else:
-        copy_token_tuple(copy_ir, fieldf)
+        copy_token_type(copy_ir, fieldf)
         pass_ftype(fieldf, copy_ir, "assign")
         asn_norm(fieldf, copy_ir.extok.norm)
         _member.add_field(fieldf)
