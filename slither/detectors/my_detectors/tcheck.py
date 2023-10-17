@@ -1175,6 +1175,12 @@ def update_member(member, fieldf, copy_ir):
     if((isinstance(member, SolidityVariable))):
         return
     _member = member.extok
+
+    print("#################")
+    print(f"Member: {member.extok}")
+    print(f"Fieldf: {fieldf.extok}")
+    print(f"Copy_ir: {copy_ir.extok}")
+
     added = False
     ptfield = None
     for field in _member.fields:
@@ -1196,6 +1202,8 @@ def update_member(member, fieldf, copy_ir):
         pass_ftype(fieldf, copy_ir, "assign")
         asn_norm(fieldf, copy_ir.extok.norm)
         _member.add_field(fieldf)
+        print("Add new member...")
+
         _field = fieldf.extok
     if(not(_field.function_name)):
         _field.function_name = _member.function_name
