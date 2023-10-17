@@ -1194,14 +1194,14 @@ def update_member(member, fieldf, copy_ir):
     print()
     print(f"Added: {added}")
     if(added):
-        type_asn(ptfield, copy_ir)
+        copy_token_type(copy_ir, ptfield)
         asn_norm(ptfield, copy_ir.extok.norm)
         pass_ftype(ptfield, copy_ir, "assign")
         print("Added to member...")
         print(ptfield.extok)
         _field = ptfield.extok
     else:
-        type_asn(fieldf, copy_ir)
+        copy_token_tuple(copy_ir, fieldf)
         pass_ftype(fieldf, copy_ir, "assign")
         asn_norm(fieldf, copy_ir.extok.norm)
         _member.add_field(fieldf)
