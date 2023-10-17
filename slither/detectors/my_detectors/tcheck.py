@@ -2854,6 +2854,7 @@ def _tcheck_contract_state_var(contract):
         if(True):
             if(not(contract.name in read_global)):
                 querry_type(state_var)
+                print("querrying!!!")
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
                 copy_ftype(state_var, new_constant)
