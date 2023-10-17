@@ -20,8 +20,6 @@ Add to address_to_label {'global:savingsAccount': 1, 'global:_owner': 2, 'initia
 Add to address_to_label {'global:savingsAccount': 1, 'global:_owner': 2, 'initialize:_owner': -999, 'initialize:_savingsAccount': -998, 'updateSavingsAccount:_savingsAccount': -997, 'updateProtocolAddresses:_asset': -996, 'updateProtocolAddresses:_liquidityToken': -995}
 Add to address_to_label {'global:savingsAccount': 1, 'global:_owner': 2, 'initialize:_owner': -999, 'initialize:_savingsAccount': -998, 'updateSavingsAccount:_savingsAccount': -997, 'updateProtocolAddresses:_asset': -996, 'updateProtocolAddresses:_liquidityToken': -995, 'emergencyWithdraw:_asset': -994}
 Add to address_to_label {'global:savingsAccount': 1, 'global:_owner': 2, 'initialize:_owner': -999, 'initialize:_savingsAccount': -998, 'updateSavingsAccount:_savingsAccount': -997, 'updateProtocolAddresses:_asset': -996, 'updateProtocolAddresses:_liquidityToken': -995, 'emergencyWithdraw:_asset': -994, 'emergencyWithdraw:_wallet': -993}
-State_var: liquidityToken
-Finding type for liquidityToken(mapping(address => address) ... )
 State_var: _owner
 Finding type for _owner(address ... )
 prev address? u
@@ -29,12 +27,19 @@ Head Addr: 2
     Norm: 0
     Set: {2}
     Fin: NULL
+querrying!!!
 State_var: _ENTERED
 Finding type for _ENTERED(uint256 ... )
+querrying!!!
 State_var: _NOT_ENTERED
 Finding type for _NOT_ENTERED(uint256 ... )
+querrying!!!
 State_var: _status
 Finding type for _status(uint256 ... )
+querrying!!!
+State_var: liquidityToken
+Finding type for liquidityToken(mapping(address => address) ... )
+querrying!!!
 State_var: savingsAccount
 Finding type for savingsAccount(address ... )
 prev address? u
@@ -42,10 +47,13 @@ Head Addr: 1
     Norm: 0
     Set: {1}
     Fin: NULL
+querrying!!!
 State_var: _initialized
 Finding type for _initialized(bool ... )
+querrying!!!
 State_var: _initializing
 Finding type for _initializing(bool ... )
+querrying!!!
 
 
 
@@ -120,11 +128,11 @@ INTERNAL_CALL, OwnableUpgradeable.transferOwnership(address)(_owner_1)
 Propogating parameters and globals to SSA variables...
 End popogation
 INTERNAL_CALL, YearnYield._updateSavingsAccount(address)(_savingsAccount_1)
-State_var: liquidityToken
 State_var: _owner
 State_var: _ENTERED
 State_var: _NOT_ENTERED
 State_var: _status
+State_var: liquidityToken
 State_var: savingsAccount
 State_var: _initialized
 State_var: _initializing
@@ -173,11 +181,11 @@ MODIFIER_CALL, OwnableUpgradeable.onlyOwner()()
 Propogating parameters and globals to SSA variables...
 End popogation
 INTERNAL_CALL, YearnYield._updateSavingsAccount(address)(_savingsAccount_1)
-State_var: liquidityToken
 State_var: _owner
 State_var: _ENTERED
 State_var: _NOT_ENTERED
 State_var: _status
+State_var: liquidityToken
 State_var: savingsAccount
 State_var: _initialized
 State_var: _initializing
@@ -185,11 +193,11 @@ State_var: _initializing
 
 
 _updateSavingsAccount
-State_var: liquidityToken
 State_var: _owner
 State_var: _ENTERED
 State_var: _NOT_ENTERED
 State_var: _status
+State_var: liquidityToken
 State_var: savingsAccount
 State_var: _initialized
 State_var: _initializing
@@ -242,7 +250,7 @@ Name: liquidityToken, Num: 1
 Globalname: liquidityToken
 global...
 
-Name: PIC_1 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -410,11 +418,11 @@ Root: None, Field: None
 XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
-State_var: liquidityToken
 State_var: _owner
 State_var: _ENTERED
 State_var: _NOT_ENTERED
 State_var: _status
+State_var: liquidityToken
 State_var: savingsAccount
 State_var: _initialized
 State_var: _initializing
@@ -451,7 +459,7 @@ Param: 1
     fintype: -1
 
 
-liquidityToken_2(mapping(address => address)) := ϕ(['liquidityToken_4', 'liquidityToken_7', 'liquidityToken_0', 'liquidityToken_10', 'liquidityToken_12', 'liquidityToken_1'])
+liquidityToken_2(mapping(address => address)) := ϕ(['liquidityToken_0', 'liquidityToken_10', 'liquidityToken_1', 'liquidityToken_4', 'liquidityToken_12', 'liquidityToken_7'])
 MODIFIER_CALL, OwnableUpgradeable.onlyOwner()()
 MODIFIER_CALL, ReentrancyGuard.nonReentrant()()
 TMP_34 = CONVERT 0 to address
@@ -503,7 +511,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-liquidityToken_2(mapping(address => address)) := ϕ(['liquidityToken_4', 'liquidityToken_7', 'liquidityToken_0', 'liquidityToken_10', 'liquidityToken_12', 'liquidityToken_1'])
+liquidityToken_2(mapping(address => address)) := ϕ(['liquidityToken_0', 'liquidityToken_10', 'liquidityToken_1', 'liquidityToken_4', 'liquidityToken_12', 'liquidityToken_7'])
 Phi
 [i]Type for liquidityToken
 
@@ -531,7 +539,7 @@ Name: _owner, Num: 2
 Globalname: _owner
 global...
 
-Name: PIC_2 Function: None
+Name: PIC_1 Function: None
 Num: -1
 Den: -1
 Address: 2
@@ -551,7 +559,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-_owner_2(address) := ϕ(['_owner_5', '_owner_1', '_owner_0', '_owner_8'])
+_owner_2(address) := ϕ(['_owner_5', '_owner_1', '_owner_8', '_owner_0'])
 Phi
 [i]Type for _owner
 
@@ -594,7 +602,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-_owner_2(address) := ϕ(['_owner_5', '_owner_1', '_owner_0', '_owner_8'])
+_owner_2(address) := ϕ(['_owner_5', '_owner_1', '_owner_8', '_owner_0'])
 Phi
 [i]Type for _owner
 
@@ -784,7 +792,7 @@ Name: _NOT_ENTERED, Num: 2
 Globalname: _NOT_ENTERED
 global...
 
-Name: PIC_4 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -808,7 +816,7 @@ Name: _ENTERED, Num: 1
 Globalname: _ENTERED
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_2 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -832,7 +840,7 @@ Name: _status, Num: 2
 Globalname: _status
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -880,7 +888,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-_status_2(uint256) := ϕ(['_status_1', '_status_4', '_status_0'])
+_status_2(uint256) := ϕ(['_status_1', '_status_0', '_status_4'])
 Phi
 [i]Type for _status
 
@@ -927,7 +935,7 @@ Name: _status, Num: 3
 Globalname: _status
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -1073,7 +1081,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-_status_2(uint256) := ϕ(['_status_1', '_status_4', '_status_0'])
+_status_2(uint256) := ϕ(['_status_1', '_status_0', '_status_4'])
 Phi
 [i]Type for _status
 
