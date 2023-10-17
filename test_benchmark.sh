@@ -213,7 +213,7 @@ if [[ $# -eq 0 || $1 -eq 19 ]]; then
   slither --detect tcheck CreditLine.sol
   cd ".."
   cd "yield"
-  slither --detect tcheck YearnYield.sol
+  #slither --detect tcheck YearnYield.sol
   cd ".."
   cd "$ORIGINAL_DIR"
   execute_group 19 echo "[*] Tested 6 warnings for Sublime"

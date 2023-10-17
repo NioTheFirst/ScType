@@ -382,7 +382,7 @@ def parse_type_file(t_file, f_file = None):
                     if(isinstance(addr, int)):
                         addr = _line[4]
                     else:
-                        if("global" in addr):
+                        if("global" in _line[4]):
                             addr = address_handler.type_file_new_address(_line[4], True)
                         else:
                             addr = address_handler.type_file_new_address(_line[4], False)
