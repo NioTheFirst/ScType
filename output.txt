@@ -28,24 +28,6 @@ Add to address_to_label {'global:owner': 1, 'global:pendingOwner': 2, 'balanceOf
 Add to address_to_label {'global:owner': 1, 'global:pendingOwner': 2, 'balanceOf:user': -999, 'transfer:to': -998, 'transferFrom:from': -997, 'transferFrom:to': -996, 'approve:spender': -995, 'increaseAllowance:spender': -994, 'permit:owner_': -993, 'permit:spender': -992, 'burn:to': -991, 'burnFrom:from': -990}
 Add to address_to_label {'global:owner': 1, 'global:pendingOwner': 2, 'balanceOf:user': -999, 'transfer:to': -998, 'transferFrom:from': -997, 'transferFrom:to': -996, 'approve:spender': -995, 'increaseAllowance:spender': -994, 'permit:owner_': -993, 'permit:spender': -992, 'burn:to': -991, 'burnFrom:from': -990, 'burnFrom:to': -989}
 Add to address_to_label {'global:owner': 1, 'global:pendingOwner': 2, 'balanceOf:user': -999, 'transfer:to': -998, 'transferFrom:from': -997, 'transferFrom:to': -996, 'approve:spender': -995, 'increaseAllowance:spender': -994, 'permit:owner_': -993, 'permit:spender': -992, 'burn:to': -991, 'burnFrom:from': -990, 'burnFrom:to': -989, 'buyBack:_routerAddress': -988}
-State_var: validRouters
-Finding type for validRouters(mapping(address => bool) ... )
-querrying!!!
-State_var: yusdToken
-Finding type for yusdToken(IERC20 ... )
-querrying!!!
-State_var: DOMAIN_SEPARATOR_CHAIN_ID
-Finding type for DOMAIN_SEPARATOR_CHAIN_ID(uint256 ... )
-querrying!!!
-State_var: LOCK_TIME
-Finding type for LOCK_TIME(uint256 ... )
-querrying!!!
-State_var: effectiveYetiTokenBalance
-Finding type for effectiveYetiTokenBalance(uint256 ... )
-querrying!!!
-State_var: totalSupply
-Finding type for totalSupply(uint256 ... )
-querrying!!!
 State_var: users
 Finding type for users(mapping(address => sYETIToken.User) ... )
 global
@@ -57,17 +39,29 @@ users
 lockedUntil
 OUT KEY: global_users_lockedUntil
 querrying!!!
-State_var: yetiToken
-Finding type for yetiToken(IYETIToken ... )
+State_var: lastBuybackPrice
+Finding type for lastBuybackPrice(uint256 ... )
+querrying!!!
+State_var: yusdToken
+Finding type for yusdToken(IERC20 ... )
+querrying!!!
+State_var: lastBuybackTime
+Finding type for lastBuybackTime(uint256 ... )
+querrying!!!
+State_var: DOMAIN_SEPARATOR_CHAIN_ID
+Finding type for DOMAIN_SEPARATOR_CHAIN_ID(uint256 ... )
+querrying!!!
+State_var: _DOMAIN_SEPARATOR
+Finding type for _DOMAIN_SEPARATOR(bytes32 ... )
+querrying!!!
+State_var: PERMIT_SIGNATURE_HASH
+Finding type for PERMIT_SIGNATURE_HASH(bytes32 ... )
+querrying!!!
+State_var: nonces
+Finding type for nonces(mapping(address => uint256) ... )
 querrying!!!
 State_var: allowance
 Finding type for allowance(mapping(address => mapping(address => uint256)) ... )
-querrying!!!
-State_var: addressesSet
-Finding type for addressesSet(bool ... )
-querrying!!!
-State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-Finding type for EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA(string ... )
 querrying!!!
 State_var: owner
 Finding type for owner(address ... )
@@ -76,6 +70,27 @@ Head Addr: 1
     Norm: 0
     Set: {1}
     Fin: NULL
+querrying!!!
+State_var: validRouters
+Finding type for validRouters(mapping(address => bool) ... )
+querrying!!!
+State_var: LOCK_TIME
+Finding type for LOCK_TIME(uint256 ... )
+querrying!!!
+State_var: effectiveYetiTokenBalance
+Finding type for effectiveYetiTokenBalance(uint256 ... )
+querrying!!!
+State_var: totalSupply
+Finding type for totalSupply(uint256 ... )
+querrying!!!
+State_var: yetiToken
+Finding type for yetiToken(IYETIToken ... )
+querrying!!!
+State_var: addressesSet
+Finding type for addressesSet(bool ... )
+querrying!!!
+State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
+Finding type for EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA(string ... )
 querrying!!!
 State_var: pendingOwner
 Finding type for pendingOwner(address ... )
@@ -93,21 +108,6 @@ Finding type for transferRatio(uint256 ... )
 querrying!!!
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
 Finding type for DOMAIN_SEPARATOR_SIGNATURE_HASH(bytes32 ... )
-querrying!!!
-State_var: lastBuybackPrice
-Finding type for lastBuybackPrice(uint256 ... )
-querrying!!!
-State_var: lastBuybackTime
-Finding type for lastBuybackTime(uint256 ... )
-querrying!!!
-State_var: _DOMAIN_SEPARATOR
-Finding type for _DOMAIN_SEPARATOR(bytes32 ... )
-querrying!!!
-State_var: PERMIT_SIGNATURE_HASH
-Finding type for PERMIT_SIGNATURE_HASH(bytes32 ... )
-querrying!!!
-State_var: nonces
-Finding type for nonces(mapping(address => uint256) ... )
 querrying!!!
 
 
@@ -128,7 +128,7 @@ Param: 0
     fintype: -1
 
 
-users_1(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_6', 'users_0', 'users_2'])
+users_1(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_0', 'users_6', 'users_2'])
 REF_74(sYETIToken.User) -> users_1[user_1]
 REF_75(uint128) -> REF_74.balance
 RETURN REF_75
@@ -140,7 +140,7 @@ Name: users, Num: 1
 Globalname: users
 global...
 
-Name: PIC_7 Function: None
+Name: PIC_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -160,7 +160,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-users_1(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_6', 'users_0', 'users_2'])
+users_1(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_0', 'users_6', 'users_2'])
 Phi
 [i]Type for users
 
@@ -265,7 +265,7 @@ Fields:
 Finance Type: undef
 
 
-users_1(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_6', 'users_0', 'users_2'])
+users_1(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_0', 'users_6', 'users_2'])
 REF_74(sYETIToken.User) -> users_1[user_1]
 REF_75(uint128) -> REF_74.balance
 RETURN REF_75
@@ -284,7 +284,7 @@ Value: u
 Fields: balance
 Finance Type: undef
 Phid
-users_1(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_6', 'users_0', 'users_2'])
+users_1(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_0', 'users_6', 'users_2'])
 Phi
 [i]Type for users
 
@@ -397,27 +397,27 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -440,7 +440,7 @@ Param: 1
     fintype: -1
 
 
-addressesSet_1(bool) := ϕ(['addressesSet_3', 'addressesSet_0'])
+addressesSet_1(bool) := ϕ(['addressesSet_0', 'addressesSet_3'])
 MODIFIER_CALL, BoringOwnable.onlyOwner()()
 TMP_254 = ! addressesSet_2 
 TMP_255(None) = SOLIDITY_CALL require(bool,string)(TMP_254,addresses already set)
@@ -455,7 +455,7 @@ Name: addressesSet, Num: 1
 Globalname: addressesSet
 global...
 
-Name: PIC_10 Function: None
+Name: PIC_16 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -475,7 +475,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-addressesSet_1(bool) := ϕ(['addressesSet_3', 'addressesSet_0'])
+addressesSet_1(bool) := ϕ(['addressesSet_0', 'addressesSet_3'])
 Phi
 [i]Type for addressesSet
 
@@ -497,7 +497,7 @@ Name: addressesSet, Num: 2
 Globalname: addressesSet
 global...
 
-Name: PIC_10 Function: None
+Name: PIC_16 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -540,7 +540,7 @@ Name: yetiToken, Num: 1
 Globalname: yetiToken
 global...
 
-Name: PIC_8 Function: None
+Name: PIC_15 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -585,7 +585,7 @@ Name: yusdToken, Num: 1
 Globalname: yusdToken
 global...
 
-Name: PIC_2 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -628,7 +628,7 @@ Name: addressesSet, Num: 3
 Globalname: addressesSet
 global...
 
-Name: PIC_10 Function: None
+Name: PIC_16 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -668,7 +668,7 @@ Finance Type: undef
 XXXX
 
 
-addressesSet_1(bool) := ϕ(['addressesSet_3', 'addressesSet_0'])
+addressesSet_1(bool) := ϕ(['addressesSet_0', 'addressesSet_3'])
 MODIFIER_CALL, BoringOwnable.onlyOwner()()
 TMP_254 = ! addressesSet_2 
 TMP_255(None) = SOLIDITY_CALL require(bool,string)(TMP_254,addresses already set)
@@ -690,7 +690,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-addressesSet_1(bool) := ϕ(['addressesSet_3', 'addressesSet_0'])
+addressesSet_1(bool) := ϕ(['addressesSet_0', 'addressesSet_3'])
 Phi
 [i]Type for addressesSet
 
@@ -829,77 +829,77 @@ Value: True
 Fields: 
 Finance Type: undef
 XXXX
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
 _transfer
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
 _useAllowance
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -983,27 +983,27 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -1112,27 +1112,27 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -1411,27 +1411,27 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -1459,7 +1459,7 @@ Param: 1
     fintype: -1
 
 
-allowance_4(mapping(address => mapping(address => uint256))) := ϕ(['allowance_0', 'allowance_6', 'allowance_1', 'allowance_2', 'allowance_5', 'allowance_3'])
+allowance_4(mapping(address => mapping(address => uint256))) := ϕ(['allowance_6', 'allowance_2', 'allowance_5', 'allowance_3', 'allowance_1', 'allowance_0'])
 REF_93(mapping(address => uint256)) -> allowance_4[msg.sender]
 REF_94(uint256) -> REF_93[spender_1]
 allowance_5(mapping(address => mapping(address => uint256))) := ϕ(['allowance_4'])
@@ -1494,7 +1494,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-allowance_4(mapping(address => mapping(address => uint256))) := ϕ(['allowance_0', 'allowance_6', 'allowance_1', 'allowance_2', 'allowance_5', 'allowance_3'])
+allowance_4(mapping(address => mapping(address => uint256))) := ϕ(['allowance_6', 'allowance_2', 'allowance_5', 'allowance_3', 'allowance_1', 'allowance_0'])
 Phi
 [i]Type for allowance
 
@@ -1509,8 +1509,6 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: amount, Num: 1
-Globalname: amount
 Name: allowance, Num: 5
 Globalname: allowance
 global...
@@ -1524,6 +1522,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Name: amount, Num: 1
+Globalname: amount
 End popogation
 
 Name: None Function: None
@@ -1633,7 +1633,7 @@ Fields:
 Finance Type: undef
 
 
-allowance_4(mapping(address => mapping(address => uint256))) := ϕ(['allowance_0', 'allowance_6', 'allowance_1', 'allowance_2', 'allowance_5', 'allowance_3'])
+allowance_4(mapping(address => mapping(address => uint256))) := ϕ(['allowance_6', 'allowance_2', 'allowance_5', 'allowance_3', 'allowance_1', 'allowance_0'])
 REF_93(mapping(address => uint256)) -> allowance_4[msg.sender]
 REF_94(uint256) -> REF_93[spender_1]
 allowance_5(mapping(address => mapping(address => uint256))) := ϕ(['allowance_4'])
@@ -1655,7 +1655,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-allowance_4(mapping(address => mapping(address => uint256))) := ϕ(['allowance_0', 'allowance_6', 'allowance_1', 'allowance_2', 'allowance_5', 'allowance_3'])
+allowance_4(mapping(address => mapping(address => uint256))) := ϕ(['allowance_6', 'allowance_2', 'allowance_5', 'allowance_3', 'allowance_1', 'allowance_0'])
 Phi
 [i]Type for allowance
 
@@ -1779,27 +1779,27 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -1878,27 +1878,27 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -1972,8 +1972,8 @@ Param: 6
     fintype: -1
 
 
-nonces_1(mapping(address => uint256)) := ϕ(['nonces_3', 'nonces_0'])
-PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_0', 'PERMIT_SIGNATURE_HASH_2'])
+nonces_1(mapping(address => uint256)) := ϕ(['nonces_0', 'nonces_3'])
+PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_2', 'PERMIT_SIGNATURE_HASH_0'])
 TMP_284 = CONVERT 0 to address
 TMP_285(bool) = owner__1 != TMP_284
 TMP_286(None) = SOLIDITY_CALL require(bool,string)(TMP_285,Zero owner)
@@ -2002,7 +2002,7 @@ Name: nonces, Num: 1
 Globalname: nonces
 global...
 
-Name: PIC_21 Function: None
+Name: PIC_8 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -2026,7 +2026,7 @@ Name: PERMIT_SIGNATURE_HASH, Num: 1
 Globalname: PERMIT_SIGNATURE_HASH
 global...
 
-Name: PIC_20 Function: None
+Name: PIC_7 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -2046,7 +2046,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-nonces_1(mapping(address => uint256)) := ϕ(['nonces_3', 'nonces_0'])
+nonces_1(mapping(address => uint256)) := ϕ(['nonces_0', 'nonces_3'])
 Phi
 [i]Type for nonces
 
@@ -2060,7 +2060,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_0', 'PERMIT_SIGNATURE_HASH_2'])
+PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_2', 'PERMIT_SIGNATURE_HASH_0'])
 Phi
 [i]Type for PERMIT_SIGNATURE_HASH
 
@@ -2201,13 +2201,11 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: v, Num: 1
-Globalname: v
 Name: nonces, Num: 2
 Globalname: nonces
 global...
 
-Name: PIC_21 Function: None
+Name: PIC_8 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -2216,12 +2214,14 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Name: s, Num: 1
-Globalname: s
-Name: value, Num: 1
-Globalname: value
 Name: r, Num: 1
 Globalname: r
+Name: value, Num: 1
+Globalname: value
+Name: v, Num: 1
+Globalname: v
+Name: s, Num: 1
+Globalname: s
 End popogation
 
 Name: None Function: None
@@ -2381,7 +2381,7 @@ Name: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA, Num: 1
 Globalname: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
 global...
 
-Name: PIC_11 Function: None
+Name: PIC_17 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -2436,7 +2436,7 @@ Name: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA, Num: 2
 Globalname: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
 global...
 
-Name: PIC_11 Function: None
+Name: PIC_17 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -2455,7 +2455,7 @@ Name: _DOMAIN_SEPARATOR, Num: 2
 Globalname: _DOMAIN_SEPARATOR
 global...
 
-Name: PIC_19 Function: None
+Name: PIC_6 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -2479,7 +2479,7 @@ Name: DOMAIN_SEPARATOR_CHAIN_ID, Num: 4
 Globalname: DOMAIN_SEPARATOR_CHAIN_ID
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -2630,7 +2630,7 @@ Name: DOMAIN_SEPARATOR_SIGNATURE_HASH, Num: 1
 Globalname: DOMAIN_SEPARATOR_SIGNATURE_HASH
 global...
 
-Name: PIC_16 Function: None
+Name: PIC_21 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -3428,8 +3428,8 @@ Globalname: value
 End popogation
 
 
-nonces_1(mapping(address => uint256)) := ϕ(['nonces_3', 'nonces_0'])
-PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_0', 'PERMIT_SIGNATURE_HASH_2'])
+nonces_1(mapping(address => uint256)) := ϕ(['nonces_0', 'nonces_3'])
+PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_2', 'PERMIT_SIGNATURE_HASH_0'])
 TMP_284 = CONVERT 0 to address
 TMP_285(bool) = owner__1 != TMP_284
 TMP_286(None) = SOLIDITY_CALL require(bool,string)(TMP_285,Zero owner)
@@ -3476,7 +3476,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-nonces_1(mapping(address => uint256)) := ϕ(['nonces_3', 'nonces_0'])
+nonces_1(mapping(address => uint256)) := ϕ(['nonces_0', 'nonces_3'])
 Phi
 [i]Type for nonces
 
@@ -3490,7 +3490,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_0', 'PERMIT_SIGNATURE_HASH_2'])
+PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_2', 'PERMIT_SIGNATURE_HASH_0'])
 Phi
 [i]Type for PERMIT_SIGNATURE_HASH
 
@@ -3603,14 +3603,14 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+Name: r, Num: 1
+Globalname: r
+Name: value, Num: 1
+Globalname: value
 Name: v, Num: 1
 Globalname: v
 Name: s, Num: 1
 Globalname: s
-Name: value, Num: 1
-Globalname: value
-Name: r, Num: 1
-Globalname: r
 End popogation
 
 Name: nonces Function: permit
@@ -3898,8 +3898,8 @@ Globalname: value
 End popogation
 
 
-nonces_1(mapping(address => uint256)) := ϕ(['nonces_3', 'nonces_0'])
-PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_0', 'PERMIT_SIGNATURE_HASH_2'])
+nonces_1(mapping(address => uint256)) := ϕ(['nonces_0', 'nonces_3'])
+PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_2', 'PERMIT_SIGNATURE_HASH_0'])
 TMP_284 = CONVERT 0 to address
 TMP_285(bool) = owner__1 != TMP_284
 TMP_286(None) = SOLIDITY_CALL require(bool,string)(TMP_285,Zero owner)
@@ -3946,7 +3946,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-nonces_1(mapping(address => uint256)) := ϕ(['nonces_3', 'nonces_0'])
+nonces_1(mapping(address => uint256)) := ϕ(['nonces_0', 'nonces_3'])
 Phi
 [i]Type for nonces
 
@@ -3960,7 +3960,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_0', 'PERMIT_SIGNATURE_HASH_2'])
+PERMIT_SIGNATURE_HASH_1(bytes32) := ϕ(['PERMIT_SIGNATURE_HASH_2', 'PERMIT_SIGNATURE_HASH_0'])
 Phi
 [i]Type for PERMIT_SIGNATURE_HASH
 
@@ -4073,14 +4073,14 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+Name: r, Num: 1
+Globalname: r
+Name: value, Num: 1
+Globalname: value
 Name: v, Num: 1
 Globalname: v
 Name: s, Num: 1
 Globalname: s
-Name: value, Num: 1
-Globalname: value
-Name: r, Num: 1
-Globalname: r
 End popogation
 
 Name: nonces Function: permit
@@ -4366,27 +4366,27 @@ Propogating parameters and globals to SSA variables...
 Name: value, Num: 1
 Globalname: value
 End popogation
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -4401,11 +4401,11 @@ Param: 0
     fintype: -1
 
 
-totalSupply_1(uint256) := ϕ(['totalSupply_0', 'totalSupply_2', 'totalSupply_4'])
+totalSupply_1(uint256) := ϕ(['totalSupply_2', 'totalSupply_0', 'totalSupply_4'])
 LOCK_TIME_1(uint256) := ϕ(['LOCK_TIME_0'])
-effectiveYetiTokenBalance_1(uint256) := ϕ(['effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_0', 'effectiveYetiTokenBalance_11'])
+effectiveYetiTokenBalance_1(uint256) := ϕ(['effectiveYetiTokenBalance_11', 'effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_0'])
 yetiToken_2(IYETIToken) := ϕ(['yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_0', 'yetiToken_5'])
-users_5(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_6', 'users_0', 'users_2'])
+users_5(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_0', 'users_6', 'users_2'])
 REF_99(sYETIToken.User) -> users_5[msg.sender]
 user_1(sYETIToken.User) := REF_99(sYETIToken.User)
 TMP_304(bool) = totalSupply_1 == 0
@@ -4429,8 +4429,8 @@ users_6(mapping(address => sYETIToken.User)) := ϕ(['users_5'])
 REF_104 (->users_6) := user_3(sYETIToken.User)
 totalSupply_2(uint256) = totalSupply_1 + shares_3
 HIGH_LEVEL_CALL, dest:yetiToken_2(IYETIToken), function:sendToSYETI, arguments:['msg.sender', 'amount_1']  
-effectiveYetiTokenBalance_2(uint256) := ϕ(['effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_1', 'effectiveYetiTokenBalance_11'])
-yetiToken_3(IYETIToken) := ϕ(['yetiToken_2', 'yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_5'])
+effectiveYetiTokenBalance_2(uint256) := ϕ(['effectiveYetiTokenBalance_11', 'effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_1', 'effectiveYetiTokenBalance_6'])
+yetiToken_3(IYETIToken) := ϕ(['yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_5', 'yetiToken_2'])
 TMP_301(uint256) = LIBRARY_CALL, dest:BoringMath, function:BoringMath.add(uint256,uint256), arguments:['effectiveYetiTokenBalance_2', 'amount_1'] 
 effectiveYetiTokenBalance_3(uint256) := TMP_301(uint256)
 TMP_302 = CONVERT 0 to address
@@ -4444,7 +4444,7 @@ Name: totalSupply, Num: 1
 Globalname: totalSupply
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_14 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -4468,7 +4468,7 @@ Name: LOCK_TIME, Num: 1
 Globalname: LOCK_TIME
 global...
 
-Name: PIC_4 Function: None
+Name: PIC_12 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -4492,7 +4492,7 @@ Name: effectiveYetiTokenBalance, Num: 1
 Globalname: effectiveYetiTokenBalance
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_13 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -4540,7 +4540,7 @@ Name: users, Num: 5
 Globalname: users
 global...
 
-Name: PIC_7 Function: None
+Name: PIC_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -4560,7 +4560,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-totalSupply_1(uint256) := ϕ(['totalSupply_0', 'totalSupply_2', 'totalSupply_4'])
+totalSupply_1(uint256) := ϕ(['totalSupply_2', 'totalSupply_0', 'totalSupply_4'])
 Phi
 [i]Type for totalSupply
 
@@ -4588,7 +4588,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-effectiveYetiTokenBalance_1(uint256) := ϕ(['effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_0', 'effectiveYetiTokenBalance_11'])
+effectiveYetiTokenBalance_1(uint256) := ϕ(['effectiveYetiTokenBalance_11', 'effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_0'])
 Phi
 [i]Type for effectiveYetiTokenBalance
 
@@ -4616,7 +4616,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-users_5(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_6', 'users_0', 'users_2'])
+users_5(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_0', 'users_6', 'users_2'])
 Phi
 [i]Type for users
 
@@ -4962,6 +4962,9 @@ TMP_297(uint128) = LIBRARY_CALL, dest:BoringMath, function:BoringMath.to128(uint
 Written func info: BoringMath, to128
 Handling balance function!
 u
+prev address? u
+global assignment: 4
+4
 Finding type for TMP_297(uint128 ... )
 [i]Type for TMP_297
 
@@ -5186,7 +5189,10 @@ XXXX
 TMP_299(uint128) = LIBRARY_CALL, dest:BoringMath, function:BoringMath.to128(uint256), arguments:['TMP_298'] 
 Written func info: BoringMath, to128
 Handling balance function!
-u
+Head Addr: 4
+    Norm: *
+    Set: {4}
+    Fin: NULL
 Finding type for TMP_299(uint128 ... )
 [i]Type for TMP_299
 
@@ -5306,7 +5312,7 @@ Name: users, Num: 6
 Globalname: users
 global...
 
-Name: PIC_7 Function: None
+Name: PIC_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -5390,7 +5396,7 @@ Name: totalSupply, Num: 2
 Globalname: totalSupply
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_14 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -5438,7 +5444,7 @@ Name: effectiveYetiTokenBalance, Num: 2
 Globalname: effectiveYetiTokenBalance
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_13 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -5484,7 +5490,7 @@ Finance Type: undef
 Phid
 HIGH_LEVEL_CALL, dest:yetiToken_2(IYETIToken), function:sendToSYETI, arguments:['msg.sender', 'amount_1']  
 High Call: sendToSYETI
-effectiveYetiTokenBalance_2(uint256) := ϕ(['effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_1', 'effectiveYetiTokenBalance_11'])
+effectiveYetiTokenBalance_2(uint256) := ϕ(['effectiveYetiTokenBalance_11', 'effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_1', 'effectiveYetiTokenBalance_6'])
 Phi
 [i]Type for effectiveYetiTokenBalance
 
@@ -5498,7 +5504,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-yetiToken_3(IYETIToken) := ϕ(['yetiToken_2', 'yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_5'])
+yetiToken_3(IYETIToken) := ϕ(['yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_5', 'yetiToken_2'])
 Phi
 [i]Type for yetiToken
 
@@ -5519,7 +5525,7 @@ Name: effectiveYetiTokenBalance, Num: 3
 Globalname: effectiveYetiTokenBalance
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_13 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -5644,11 +5650,11 @@ Fields:
 Finance Type: undef
 
 
-totalSupply_1(uint256) := ϕ(['totalSupply_0', 'totalSupply_2', 'totalSupply_4'])
+totalSupply_1(uint256) := ϕ(['totalSupply_2', 'totalSupply_0', 'totalSupply_4'])
 LOCK_TIME_1(uint256) := ϕ(['LOCK_TIME_0'])
-effectiveYetiTokenBalance_1(uint256) := ϕ(['effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_0', 'effectiveYetiTokenBalance_11'])
+effectiveYetiTokenBalance_1(uint256) := ϕ(['effectiveYetiTokenBalance_11', 'effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_0'])
 yetiToken_2(IYETIToken) := ϕ(['yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_0', 'yetiToken_5'])
-users_5(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_6', 'users_0', 'users_2'])
+users_5(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_0', 'users_6', 'users_2'])
 REF_99(sYETIToken.User) -> users_5[msg.sender]
 user_1(sYETIToken.User) := REF_99(sYETIToken.User)
 TMP_304(bool) = totalSupply_1 == 0
@@ -5672,8 +5678,8 @@ users_6(mapping(address => sYETIToken.User)) := ϕ(['users_5'])
 REF_104 (->users_6) := user_3(sYETIToken.User)
 totalSupply_2(uint256) = totalSupply_1 + shares_3
 HIGH_LEVEL_CALL, dest:yetiToken_2(IYETIToken), function:sendToSYETI, arguments:['msg.sender', 'amount_1']  
-effectiveYetiTokenBalance_2(uint256) := ϕ(['effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_1', 'effectiveYetiTokenBalance_11'])
-yetiToken_3(IYETIToken) := ϕ(['yetiToken_2', 'yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_5'])
+effectiveYetiTokenBalance_2(uint256) := ϕ(['effectiveYetiTokenBalance_11', 'effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_1', 'effectiveYetiTokenBalance_6'])
+yetiToken_3(IYETIToken) := ϕ(['yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_5', 'yetiToken_2'])
 TMP_301(uint256) = LIBRARY_CALL, dest:BoringMath, function:BoringMath.add(uint256,uint256), arguments:['effectiveYetiTokenBalance_2', 'amount_1'] 
 effectiveYetiTokenBalance_3(uint256) := TMP_301(uint256)
 TMP_302 = CONVERT 0 to address
@@ -5738,7 +5744,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-totalSupply_1(uint256) := ϕ(['totalSupply_0', 'totalSupply_2', 'totalSupply_4'])
+totalSupply_1(uint256) := ϕ(['totalSupply_2', 'totalSupply_0', 'totalSupply_4'])
 Phi
 [i]Type for totalSupply
 
@@ -5766,7 +5772,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-effectiveYetiTokenBalance_1(uint256) := ϕ(['effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_0', 'effectiveYetiTokenBalance_11'])
+effectiveYetiTokenBalance_1(uint256) := ϕ(['effectiveYetiTokenBalance_11', 'effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_0'])
 Phi
 [i]Type for effectiveYetiTokenBalance
 
@@ -5794,7 +5800,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-users_5(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_6', 'users_0', 'users_2'])
+users_5(mapping(address => sYETIToken.User)) := ϕ(['users_8', 'users_1', 'users_0', 'users_6', 'users_2'])
 Phi
 [i]Type for users
 
@@ -6145,7 +6151,10 @@ XXXX
 TMP_297(uint128) = LIBRARY_CALL, dest:BoringMath, function:BoringMath.to128(uint256), arguments:['shares_3'] 
 Written func info: BoringMath, to128
 Handling balance function!
-u
+Head Addr: 4
+    Norm: *
+    Set: {4}
+    Fin: NULL
 Finding type for TMP_297(uint128 ... )
 [i]Type for TMP_297
 
@@ -6376,7 +6385,10 @@ XXXX
 TMP_299(uint128) = LIBRARY_CALL, dest:BoringMath, function:BoringMath.to128(uint256), arguments:['TMP_298'] 
 Written func info: BoringMath, to128
 Handling balance function!
-u
+Head Addr: 4
+    Norm: *
+    Set: {4}
+    Fin: NULL
 Finding type for TMP_299(uint128 ... )
 [i]Type for TMP_299
 
@@ -6622,7 +6634,7 @@ Finance Type: undef
 Phid
 HIGH_LEVEL_CALL, dest:yetiToken_2(IYETIToken), function:sendToSYETI, arguments:['msg.sender', 'amount_1']  
 High Call: sendToSYETI
-effectiveYetiTokenBalance_2(uint256) := ϕ(['effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_6', 'effectiveYetiTokenBalance_1', 'effectiveYetiTokenBalance_11'])
+effectiveYetiTokenBalance_2(uint256) := ϕ(['effectiveYetiTokenBalance_11', 'effectiveYetiTokenBalance_3', 'effectiveYetiTokenBalance_1', 'effectiveYetiTokenBalance_6'])
 Phi
 [i]Type for effectiveYetiTokenBalance
 
@@ -6636,7 +6648,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-yetiToken_3(IYETIToken) := ϕ(['yetiToken_2', 'yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_5'])
+yetiToken_3(IYETIToken) := ϕ(['yetiToken_1', 'yetiToken_7', 'yetiToken_3', 'yetiToken_5', 'yetiToken_2'])
 Phi
 [i]Type for yetiToken
 
@@ -6767,52 +6779,52 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
 _burn
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -6896,27 +6908,27 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -7025,27 +7037,27 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-State_var: validRouters
+State_var: users
+State_var: lastBuybackPrice
 State_var: yusdToken
+State_var: lastBuybackTime
 State_var: DOMAIN_SEPARATOR_CHAIN_ID
+State_var: _DOMAIN_SEPARATOR
+State_var: PERMIT_SIGNATURE_HASH
+State_var: nonces
+State_var: allowance
+State_var: owner
+State_var: validRouters
 State_var: LOCK_TIME
 State_var: effectiveYetiTokenBalance
 State_var: totalSupply
-State_var: users
 State_var: yetiToken
-State_var: allowance
 State_var: addressesSet
 State_var: EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
-State_var: owner
 State_var: pendingOwner
 State_var: lastRebaseTime
 State_var: transferRatio
 State_var: DOMAIN_SEPARATOR_SIGNATURE_HASH
-State_var: lastBuybackPrice
-State_var: lastBuybackTime
-State_var: _DOMAIN_SEPARATOR
-State_var: PERMIT_SIGNATURE_HASH
-State_var: nonces
 
 
 
@@ -7081,13 +7093,13 @@ Param: 2
     fintype: -1
 
 
-yusdToken_2(IERC20) := ϕ(['yusdToken_11', 'yusdToken_1', 'yusdToken_4', 'yusdToken_6', 'yusdToken_0', 'yusdToken_9'])
+yusdToken_2(IERC20) := ϕ(['yusdToken_0', 'yusdToken_9', 'yusdToken_11', 'yusdToken_1', 'yusdToken_4', 'yusdToken_6'])
 MODIFIER_CALL, BoringOwnable.onlyOwner()()
 TMP_323(bool) = _YUSDToSell_1 != 0
 TMP_324(None) = SOLIDITY_CALL require(bool,string)(TMP_323,Zero amount)
 TMP_325 = CONVERT this to address
 TMP_326(uint256) = HIGH_LEVEL_CALL, dest:yusdToken_3(IERC20), function:balanceOf, arguments:['TMP_325']  
-yusdToken_4(IERC20) := ϕ(['yusdToken_11', 'yusdToken_1', 'yusdToken_4', 'yusdToken_6', 'yusdToken_9', 'yusdToken_3'])
+yusdToken_4(IERC20) := ϕ(['yusdToken_9', 'yusdToken_3', 'yusdToken_11', 'yusdToken_1', 'yusdToken_4', 'yusdToken_6'])
 TMP_327(bool) = TMP_326 >= _YUSDToSell_1
 TMP_328(None) = SOLIDITY_CALL require(bool,string)(TMP_327,Not enough YUSD in contract)
 INTERNAL_CALL, sYETIToken._buyBack(address,uint256,uint256)(_routerAddress_1,_YUSDToSell_1,_YETIOutMin_1)
@@ -7119,7 +7131,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-yusdToken_2(IERC20) := ϕ(['yusdToken_11', 'yusdToken_1', 'yusdToken_4', 'yusdToken_6', 'yusdToken_0', 'yusdToken_9'])
+yusdToken_2(IERC20) := ϕ(['yusdToken_0', 'yusdToken_9', 'yusdToken_11', 'yusdToken_1', 'yusdToken_4', 'yusdToken_6'])
 Phi
 [i]Type for yusdToken
 
@@ -7142,7 +7154,7 @@ Name: owner, Num: 7
 Globalname: owner
 global...
 
-Name: PIC_12 Function: None
+Name: PIC_10 Function: None
 Num: -1
 Den: -1
 Address: 1
@@ -7162,7 +7174,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-owner_7(address) := ϕ(['owner_4', 'owner_6', 'owner_3', 'owner_0', 'owner_1'])
+owner_7(address) := ϕ(['owner_4', 'owner_6', 'owner_0', 'owner_3', 'owner_1'])
 Phi
 [i]Type for owner
 
@@ -7219,7 +7231,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-owner_7(address) := ϕ(['owner_4', 'owner_6', 'owner_3', 'owner_0', 'owner_1'])
+owner_7(address) := ϕ(['owner_4', 'owner_6', 'owner_0', 'owner_3', 'owner_1'])
 Phi
 [i]Type for owner
 
@@ -7355,6 +7367,9 @@ Running querryfc
 Written func info: ERC20, balanceOf
 Handling balance function!
 u
+prev address? u
+global assignment: 5
+5
 Executing Group 20
 [*] Tested 0 warnings for Yeti Finance
 Group 20 complete
