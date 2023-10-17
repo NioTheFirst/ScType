@@ -1190,6 +1190,9 @@ def update_member(member, fieldf, copy_ir):
             added = True
             ptfield = field
             break
+
+    print()
+    print(f"Added: {added}")
     if(added):
         type_asn(copy_ir, ptfield)
         asn_norm(ptfield, copy_ir.extok.norm)
