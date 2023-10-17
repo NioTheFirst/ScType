@@ -1456,8 +1456,8 @@ def type_asn(dest, sorc) -> bool:
     #dest = ir.lvalue
     #sorc = ir.variable_right
     init_var(sorc)
-    #print("_______________")
-    #print(sorc.extok)
+    print("_______________")
+    print(sorc.extok)
     #print(dest.extok)
     #asn_norm(dest, get_norm(sorc))
     if(is_type_undef(sorc)):
