@@ -1039,6 +1039,8 @@ def handle_balance_functions(ir):
     print('Handling balance function!')
     #TODO check the address
     print(_dest.address)
+    if(_dest.address == 'u'):
+        _dest.address = new_address(dest, True)
     #Use this to check for changes!
     ir.lvalue.extok.token_type_clear()
     #if(not(dest in address_to_num))

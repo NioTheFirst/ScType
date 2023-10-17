@@ -210,7 +210,7 @@ if [[ $# -eq 0 || $1 -eq 19 ]]; then
   solc-select use 0.7.6
   cd "../Benchmark/Sublime/contracts"
   cd "CreditLine"
-  #slither --detect tcheck CreditLine.sol
+  slither --detect tcheck CreditLine.sol
   cd ".."
   cd "yield"
   slither --detect tcheck YearnYield.sol
