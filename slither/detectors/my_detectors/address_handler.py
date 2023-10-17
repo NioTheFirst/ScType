@@ -32,7 +32,7 @@ class Address_label():
     def __init__(self, _head):
         self._head = _head
         self._set = {_head}
-        self._norm = '*'
+        self._norm = 'u'
         self._finance_type = '*' #Reserve or balance...
   
     @property
