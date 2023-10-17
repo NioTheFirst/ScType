@@ -1188,7 +1188,8 @@ def update_member(member, fieldf, copy_ir):
         type_asn(copy_ir, ptfield)
         asn_norm(ptfield, copy_ir.extok.norm)
         pass_ftype(ptfield, copy_ir, "assign")
-        #print(ptfield.extok)
+        print("Added to member...")
+        print(ptfield.extok)
         _field = ptfield.extok
     else:
         type_asn(copy_ir, fieldf)
