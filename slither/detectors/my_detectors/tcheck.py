@@ -1017,7 +1017,7 @@ def querry_fc(ir) -> int:
             ##print("bad function call")
         ##print("COPIED")
         return 2
-
+    exit(0)
     #Special functions:
     if(handle_balance_functions(ir)):
         return 2
