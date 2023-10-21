@@ -1017,10 +1017,11 @@ def querry_fc(ir) -> int:
             ##print("bad function call")
         ##print("COPIED")
         return 2
-    exit(0)
+    
     #Special functions:
     if(handle_balance_functions(ir)):
         return 2
+    exit(0)
     return 0
 
 #USAGE: propogates types etc from a set of balance-related functions. Currently supports the functions with names in `balance_funcs`.
