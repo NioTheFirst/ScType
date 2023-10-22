@@ -1,7 +1,6 @@
 # ICSE 2024 Submission: SCType type checker
 
 =======
-dddd
 Ratios and External functions need to be provided for the type file
 
 SCType is a Solidity type checker written in Python 3. 
