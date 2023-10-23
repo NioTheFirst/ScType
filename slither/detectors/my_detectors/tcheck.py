@@ -1945,6 +1945,17 @@ def get_norm(ir):
 
     if(not(isinstance(ir, Constant)) or (not(isinstance(ir.value, int)))):
         return _ir.norm
+    elif(type(_ir.value) == int):
+        if(_ir.value % 10 != 0):
+            return power+1
+        power = 0
+        copy_val = _ir.value
+        while (copy_val > 0 and copy_val%10 == 0):
+            copy_val = copy_val/10
+            power+=1
+        if(power >= 5 or copy_val == 1):
+            ##print(power)
+            return power
     else:
         ##print("val: " + str(ir.value))
         if(ir.value % 10 != 0):
