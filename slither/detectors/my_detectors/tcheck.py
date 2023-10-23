@@ -1660,7 +1660,11 @@ def handle_value_binop(dest, lir, rir, func):
     fval = 'u'
     #print(f"lval:{lval} rval:{rval}")
     if(type(lval) != int or type(rval) != int):
-        fval = 'u'
+        if(type(lval) == int):
+            fval = lval
+        if(type(rval) == int):
+            fval = rval
+        #fval = 'u'
     elif(func == Add):
         fval = lval + rval
     elif(func == Sub):
