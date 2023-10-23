@@ -1942,10 +1942,8 @@ def get_norm(ir):
         return 'u'
     _ir = ir.extok
     #TEST
-
-    if(not(isinstance(ir, Constant)) or (not(isinstance(ir.value, int)))):
-        return _ir.norm
-    elif(type(_ir.value) == int):
+    #If ir already has a value in the Extended Type
+    if(type(_ir.value) == int):
         if(_ir.value % 10 != 0):
             return power+1
         power = 0
@@ -1956,6 +1954,10 @@ def get_norm(ir):
         if(power >= 5 or copy_val == 1):
             ##print(power)
             return power
+
+    #ir is a constant or undefined
+    if(not(isinstance(ir, Constant)) or (not(isinstance(ir.value, int)))):
+        return _ir.norm
     else:
         ##print("val: " + str(ir.value))
         if(ir.value % 10 != 0):
