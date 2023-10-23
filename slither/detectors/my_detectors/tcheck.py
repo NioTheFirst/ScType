@@ -1943,7 +1943,7 @@ def get_norm(ir):
     _ir = ir.extok
     #TEST
     #If ir already has a value in the Extended Type
-    if(type(_ir.value) == int):
+    if(type(_ir.norm) != int and type(_ir.value) == int):
         if(_ir.value % 10 != 0):
             return power+1
         power = 0
