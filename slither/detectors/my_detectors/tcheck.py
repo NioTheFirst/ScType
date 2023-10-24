@@ -1475,9 +1475,10 @@ def type_asn(dest, sorc) -> bool:
     init_var(sorc)
     print("_______________")
     print(sorc.extok)
-    #print(dest.extok)
+    print(dest.extok)
     #asn_norm(dest, get_norm(sorc))
     if(is_type_undef(sorc)):
+        print("Undefined?")
         return True
     elif(is_type_const(sorc)):
         if(is_type_undef(dest)):
