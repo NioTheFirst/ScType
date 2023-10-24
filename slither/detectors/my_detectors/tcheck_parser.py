@@ -307,7 +307,7 @@ def parse_type_file(t_file, f_file = None):
                 add_ex_func(c_name, f_name, ef_types)
 
             #SPECIAL FUNCTION
-            if(_lines[0].strip() == "[spexf]"):
+            if(_line[0].strip() == "[spexf]"):
                 #Derive information about the parameters
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
