@@ -964,7 +964,7 @@ def querry_fc(ir) -> int:
     dest = ir.destination
     #convert_ssa(dest)
     func_name = ir.function.name
-    cont_name == None #TODO
+    cont_name = None #TODO
     
     if(isinstance(dest, Variable)):
         #DEPRECATED
