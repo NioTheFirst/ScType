@@ -758,6 +758,13 @@ def check_type(ir) -> bool:
         print("Phi")
         if(is_type_undef(ir.lvalue)):
             for rval in ir.rvalues:
+                print(rval.extok)
+
+            print()
+            print()
+            print("END==================================")
+            for rval in ir.rvalues:
+                #print(rval.extok)
                 if(not(is_type_undef(rval))):
                     type_asn(ir.lvalue, rval)
                     ir.lvalue.extok.norm = rval.extok.norm
