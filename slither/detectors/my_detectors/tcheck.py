@@ -1481,6 +1481,7 @@ def type_asn(dest, sorc) -> bool:
         print("Undefined?")
         return True
     elif(is_type_const(sorc)):
+        print("XXXX")
         if(is_type_undef(dest)):
             print("COPY HERE")
             copy_token_type(sorc, dest)
