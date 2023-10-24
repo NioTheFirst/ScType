@@ -2890,6 +2890,7 @@ def _tcheck_contract_state_var(contract):
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
             else:
                 stored_state = global_var_types[(state_var.extok.name, contract.name)]
+                print(stored_state.extok)
                 copy_token_type(stored_state, state_var)
                 copy_ftype(stored_state, state_var)
                 state_var.extok.norm = stored_state.extok.norm
