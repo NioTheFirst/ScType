@@ -2488,9 +2488,11 @@ def propogate_global(lv):
         print(f"Globalname: {_name}")
         if((_name, current_contract_name) in global_var_types):
             print("global...")
-            print(global_var_types[(_name, current_contract_name)].extok)
-            copy_token_type(global_var_types[(_name, current_contract_name)], lv)
-            copy_ftype(global_var_types[(_name, current_contract_name)], lv)
+            stored_state = global_var_types[(_name, current_contract_name)]
+            print(stored_state.extok)
+            copy_token_type(stored_state, lv)
+            copy_ftype(stored_state, lv)
+            lv.extok.norm = stored_state.extok.norm
 
 
 #USAGE: gets the name and the number of an ssa_name
