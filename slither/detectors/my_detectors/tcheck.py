@@ -2976,7 +2976,8 @@ def _tcheck_contract(contract):
         #Override state variables only for the constructor
         current_function_marked = True
         if(function.name != "constructor"):
-            _tcheck_contract_state_var(contract)
+            #_tcheck_contract_state_var(contract)
+            y = None
         else:
             #_tcheck_contract_state_var(contract)
             continue
