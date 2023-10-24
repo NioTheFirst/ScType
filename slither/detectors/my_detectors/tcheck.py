@@ -1478,16 +1478,16 @@ def type_asn(dest, sorc) -> bool:
     print(dest.extok)
     #asn_norm(dest, get_norm(sorc))
     if(is_type_undef(sorc)):
-        print("Undefined?")
+        #print("Undefined?")
         return True
     elif(is_type_const(sorc)):
-        print("XXXX")
-        if(is_type_undef(dest)):
+        #print("XXXX")
+        if(is_type_undef(dest) or is_type_const(dest)):
             print("COPY HERE")
             copy_token_type(sorc, dest)
         return False
     else:
-        print(f"Is it undefined? {is_type_undef(dest)}, Const? {is_type_const(dest)}")
+        #print(f"Is it undefined? {is_type_undef(dest)}, Const? {is_type_const(dest)}")
         if(is_type_undef(dest) or is_type_const(dest)):
             copy_token_type(sorc, dest)
         elif(not(compare_token_type(sorc, dest)) and handle_trace(sorc, dest) == False):
