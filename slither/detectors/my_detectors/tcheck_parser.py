@@ -26,6 +26,7 @@ ref_type_hash = {}
 address_type_hash = {}
 tuple_type_hash = {}
 field_type_hash = {}
+spex_func_type_hash = {}
 MAX_PARAMETERS = 5
 
 reuse_types = True
@@ -301,8 +302,58 @@ def parse_type_file(t_file, f_file = None):
                             addr = _addr.head
                             if(decimals != None):
                                 _addr.norm = decimals
+                                norm = decimals
                     ef_types.append((copy, num, denom, norm, value, addr))
                 add_ex_func(c_name, f_name, ef_types)
+
+            #SPECIAL FUNCTION
+            if(_lines[0].strip() == "[spexf]"):
+                #Derive information about the parameters
+                c_name = _line[1].strip()
+                f_name = _line[2].strip()
+                param_types = []
+                #Do not include unless there are parameters in question that are important
+                num_params = int(_line[3].strip())
+                for param in range (num_params):
+                    param_tuple = _line[4+param].strip()
+                    tuple_info = extract_type_tuple(param_tuple)
+                    num = [-1]
+                    denom = [-1]
+                    norm = 'u'
+                    copy = "c"
+                    value = 'u'
+                    addr = 'u'
+                    if(len(tuple_info) >= 5):
+                        copy = tuple_info[0]
+                        #num and den are either: concrete addresses (i.e. USDC) or relative parameters (i.e. 1, 2)
+                        num = extract_address(tuple_info[1])
+                        denom = extract_address(tuple_info[2])
+                        #norm is either int, 'u', or 'c'
+                        norm = tuple_info[3].strip()
+                        try:
+                            norm = int(norm)
+                        except ValueError:
+                            norm = norm
+                            #value is just value
+                        value = tuple_info[4].strip()
+                        try:
+                            value = int(value)
+                        except ValueError:
+                            value = value
+                    elif(len(tuple_info) >= 2):
+                        #I don't know if this will get used, hopefully not
+                        copy = tuple_info[0]
+                        addr = tuple_info[1].strip()  #No longer lf, link_function deprecated. Stores address instead
+                        decimals = None
+                        if(copy == "c"):
+                            #Store the addr as the name_key
+                            _addr = address_handler.type_file_new_address(addr, True)
+                            if(len(tuple_info) >= 3):
+                                decimals = int(tuple_info[2])
+                            addr = _addr.head
+                            if(decimals != None):
+                                _addr.norm = decimals
+                    param_types.append((copy, num, denom, norm, value, addr))
 
             #SUMMARY OF EXTERNAL FUNCTION
             if(_line[0].strip() == "[sef]"):
