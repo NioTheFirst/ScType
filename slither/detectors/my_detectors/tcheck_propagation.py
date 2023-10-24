@@ -133,6 +133,7 @@ def copy_token_type(dest, src):
     if _src.linked_contract:
         _dest.linked_contract = _src.linked_contract
     _dest.value = _src.value
+    print(f"Source address: {_src.address}")
     _dest.address = _src.address
     for field in _src.fields:
         _dest.add_field(field)
