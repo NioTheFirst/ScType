@@ -1484,6 +1484,7 @@ def type_asn(dest, sorc) -> bool:
             copy_token_type(sorc, dest)
         return False
     else:
+        print(f"Is it undefined? {is_type_undef(dest)}, Const? {is_type_const(dest)}")
         if(is_type_undef(dest) or is_type_const(dest)):
             copy_token_type(sorc, dest)
         elif(not(compare_token_type(sorc, dest)) and handle_trace(sorc, dest) == False):
