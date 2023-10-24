@@ -964,12 +964,13 @@ def querry_fc(ir) -> int:
     dest = ir.destination
     #convert_ssa(dest)
     func_name = ir.function.name
-    
+    '''
     if(isinstance(dest, Variable)):
         #DEPRECATED
         cont_name = dest.link_function
     else:
         cont_name = str(dest)
+    '''
     #TODO
     ##print_token_type(dest)
     if(str(ir.lvalue.type) == "bool"):
