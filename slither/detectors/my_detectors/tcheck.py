@@ -990,7 +990,7 @@ def querry_fc(ir) -> int:
     if(cont_name == None or cont_name == "UNKNOWN"):
         #Contingency for undefined contract instances
         #cont_name = dest.extok.name
-        if (str(dest.type)[0] == "I"):
+        if (str(dest.type)[0] == "I" or str(dest.type)[0] == "i"):
             cont_name = str(dest.type)[1:]
         else:
             cont_name = str(dest.type)
