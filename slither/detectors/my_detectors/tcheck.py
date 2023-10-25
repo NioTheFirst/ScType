@@ -979,6 +979,8 @@ def querry_fc(ir) -> int:
     else:
         cont_name = str(dest)
     '''
+    if(not (isinstance(dest, Variable))):
+        cont_name = str(dest)
     #TODO
     ##print_token_type(dest)
     if(str(ir.lvalue.type) == "bool"):
