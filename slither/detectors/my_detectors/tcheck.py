@@ -477,6 +477,7 @@ def querry_type(ir):
                 norm = int(input_str)
         label = new_address(ir)
         label.norm = norm
+        ir.extok.norm = norm
         print(label)
         return
     #if(mark_iteration and not(current_function_marked)):
