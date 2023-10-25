@@ -1336,7 +1336,7 @@ def type_ref(ir)->bool:
     #if(str(ir.lvalue.type) == "address"):
 
     #check if the right value already has a type?
-    if not(is_type_undef(ir.variable_left)):
+    if not(is_type_undef(ir.variable_left) or is_type_const(ir.variable_left)):
         print("REFERENCE LEFT VALUE PROPAGATION")
         print(ir.variable_left.extok)
         ir.lvalue.extok.token_type_clear()
