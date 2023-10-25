@@ -504,6 +504,7 @@ def querry_type(ir):
     assign_const(ir)
     norm = get_norm(ir)
     #Assign norm to constants
+    print(f"Value: {get_values(ir)}")
     if(norm != 'u'):
         ir.extok.norm = norm
     return True
