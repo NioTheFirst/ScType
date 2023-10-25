@@ -2489,6 +2489,8 @@ def propogate_global(lv):
         ssa_name_info = convert_ssa_name(lv.ssa_name)
         _name = ssa_name_info[0]
         print(f"Globalname: {_name}")
+
+        
         if((_name, current_contract_name) in global_var_types):
             print("global...")
             stored_state = global_var_types[(_name, current_contract_name)]
@@ -2901,6 +2903,8 @@ def _tcheck_contract_state_var(contract):
                 copy_ftype(state_var, new_constant)
                 new_constant.extok.norm = state_var.extok.norm
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
+                print(f"Saved name: {state_var.extok.name}")
+                print(new_constant.extok)
             else:
                 stored_state = global_var_types[(state_var.extok.name, contract.name)]
                 print(stored_state.extok)
