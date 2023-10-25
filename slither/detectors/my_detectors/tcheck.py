@@ -2483,6 +2483,7 @@ def propogate_parameter(lv, function):
                     copy_ftype(p, lv)
 #USSAGE: propogates a local variable with a global stored assignment
 def propogate_global(lv):
+    global global_var_types
     if(lv.extok.is_undefined()):
         pos = -1
         ssa_name_info = convert_ssa_name(lv.ssa_name)
