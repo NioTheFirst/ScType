@@ -1338,6 +1338,7 @@ def type_ref(ir)->bool:
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left)):
         print("REFERENCE LEFT VALUE PROPAGATION")
+        print(ir.variable_left.extok)
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_left, ir.lvalue)
         copy_norm(ir.variable_left, ir.lvalue)
