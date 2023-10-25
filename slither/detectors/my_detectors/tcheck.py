@@ -1337,7 +1337,7 @@ def type_ref(ir)->bool:
 
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left)):
-        ##print("REFERENCE LEFT VALUE PROPAGATION")
+        print("REFERENCE LEFT VALUE PROPAGATION")
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_left, ir.lvalue)
         copy_norm(ir.variable_left, ir.lvalue)
@@ -1346,7 +1346,7 @@ def type_ref(ir)->bool:
 
     #check if the index of the variable has a type that is not a constant
     if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
-        ##print("REFERENCE RIGHT VALUE PROPAGATION")
+        print("REFERENCE RIGHT VALUE PROPAGATION")
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_right, ir.lvalue)
         copy_norm(ir.variable_right, ir.lvalue)
