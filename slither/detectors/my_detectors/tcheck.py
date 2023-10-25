@@ -480,6 +480,8 @@ def querry_type(ir):
         ir.extok.norm = norm
         print(label)
         return
+
+
     #if(mark_iteration and not(current_function_marked)):
     #    assign_const(ir)
     #    return
@@ -494,12 +496,20 @@ def querry_type(ir):
         copy_token_tuple(ir, type_tuple)
         _ir.address = save_addr
         ##print(_ir)
-        ##print("[*]Type fetched successfully")
+        print("[*]Type fetched successfully")
         return
     #print("[x]Failed to fetch type from type file, defaulting to human interface")
     #Commented out to get necessary(?) functions
+
     assign_const(ir)
+    norm = get_norm(ir)
+    #Assign norm to constants
+    if(norm != 'u'):
+        ir.extok.norm = norm
     return True
+    
+
+    #Currently deprecated
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
     num = int(input_str)
