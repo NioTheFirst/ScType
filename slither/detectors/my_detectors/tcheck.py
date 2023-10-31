@@ -762,6 +762,7 @@ def check_type(ir) -> bool:
     elif isinstance(ir, TypeConversion):
         type_conversion(ir)
     elif isinstance(ir, Unpack):
+
         #Unpack tuple
         addback = type_upk(ir)
     elif isinstance(ir, Phi):
@@ -1044,7 +1045,7 @@ def querry_fc(ir) -> int:
     #Special functions:
     if(handle_balance_functions(ir)):
         return 2
-    exit(0)
+    #exit(0)
     return 0
 
 #USAGE: propogates types etc from a set of balance-related functions. Currently supports the functions with names in `balance_funcs`.
