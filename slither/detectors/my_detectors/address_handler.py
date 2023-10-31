@@ -68,6 +68,7 @@ class Address_label():
         self._set = x
 
     def union(self, a):
+        print(f"Head,Norm: {self.head}, {self._norm}   {a.head}, {a.norm}")
         if(a.head > 0 and self.head > 0 and a.head != self.head):
             return False
         if(self._norm != '*' and a.norm != '*'):

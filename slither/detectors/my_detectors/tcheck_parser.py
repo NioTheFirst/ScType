@@ -404,6 +404,9 @@ def parse_type_file(t_file, f_file = None):
             if(_line[0].strip() == "[ta]"):
                 func_name = _line[1].strip()
                 var_name = _line[2].strip()
+
+                #Allow third parameter to be global variable if known? 
+                #Automatic propogation...
                 _norm = _line[3].strip()
                 addr_key = func_name + ":" + var_name
                 if(not(addr_key in label_sets)):
