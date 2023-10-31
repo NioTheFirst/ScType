@@ -1811,6 +1811,12 @@ def handle_trace(rir, lir):
     rdtt = _rir.den_token_types.copy()
     lntt = _lir.num_token_types.copy()
     ldtt = _lir.den_token_types.copy()
+    
+    #Check norm here instead of within address_handler
+    if(_rir.norm != '*' and _lir.norm != '*' and _rir.norm != 'u' and _lir.norm != 'u'):
+            if(_rir.norm != _lir.norm):
+                return False
+
     #Reduce numerators
     n_dict = {}
     for rn in rntt:

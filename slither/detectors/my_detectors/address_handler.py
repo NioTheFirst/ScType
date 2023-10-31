@@ -71,10 +71,8 @@ class Address_label():
         print(f"Head,Norm: {self.head}, {self._norm}   {a.head}, {a.norm}")
         if(a.head > 0 and self.head > 0 and a.head != self.head):
             return False
-        if(self._norm != '*' and a.norm != '*'):
-            if(self._norm != a.norm):
-                return False
-        elif(self.head < 0):
+        
+        if(self.head < 0):
             if(a.head < 0 and self.head < a.head):
                 a.head = self.head
                 a.norm = self.norm
