@@ -74,20 +74,20 @@ class Address_label():
         if(self._norm != '*' and a.norm != '*'):
             if(self._norm != a.norm):
                 return False
-        elif(self._head < 0):
-            if(a.head < 0 and self._head < a.head):
-                a.head = self._head
-                a.norm = self._norm
+        elif(self.head < 0):
+            if(a.head < 0 and self.head < a.head):
+                a.head = self.head
+                a.norm = self.norm
             else:
-                self._head = a.head
-                self._norm = a.norm
+                self.head = a.head
+                self.norm = a.norm
         else:
-            if(a.head < 0 or self._head < a.head):
-                a.head = self._head
-                a.norm = self._norm
+            if(a.head < 0 or self.head < a.head):
+                a.head = self.head
+                a.norm = self.norm
             else:
-                self._head = a.head
-                self._norm = a.norm
+                self.head = a.head
+                self.norm = a.norm
         temp_set = set()
         temp_set = temp_set.union(self._set)
         temp_set = temp_set.union(a.set)
