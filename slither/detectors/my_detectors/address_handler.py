@@ -72,6 +72,10 @@ class Address_label():
         if(a.head > 0 and self.head > 0 and a.head != self.head):
             return False
         
+
+        if(self.norm != '*' and a.norm != '*' and self.norm != 'u' and a.norm != 'u'):
+            if(self.norm != a.norm):
+                return False
         if(self.head < 0):
             if(a.head < 0 and self.head < a.head):
                 a.head = self.head
