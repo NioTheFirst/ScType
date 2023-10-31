@@ -1266,6 +1266,17 @@ def type_member(ir)->bool:
     #    #print("UNDEFINED LEFT VARIABLE IN MEMBER")
     #    return True
     #print("Typing member")
+
+    #Check for field in typefile first:
+    field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
+    print(f"FTT: {field_type_tuple}")
+    if(field_type_tuple == None):
+        print("No field found")
+        #TURN OFF ASSUMPTION
+        #assign_const(ir.lvalue)
+        #querry_type(ir.lvalue)
+        return True
+
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
     #_lv.#print_fields()
@@ -1274,7 +1285,6 @@ def type_member(ir)->bool:
         fieldSet = False
         for field in _lv.fields:
             _field = field.extok
-            print(field)
             if(not(_field.function_name)):
                 _field.function_name = _lv.function_name
             if(_field.name == _rv.name):
@@ -1294,14 +1304,6 @@ def type_member(ir)->bool:
             copy_ftype(field, ir.lvalue)
             return False
     
-    field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
-    print(f"FTT: {field_type_tuple}")
-    if(field_type_tuple == None):
-        print("No field found")
-        #TURN OFF ASSUMPTION
-        #assign_const(ir.lvalue)
-        #querry_type(ir.lvalue)
-        return True
     ir.lvalue.extok.token_type_clear()
     copy_token_tuple(ir.lvalue, field_type_tuple)
     temp = create_iconstant()
