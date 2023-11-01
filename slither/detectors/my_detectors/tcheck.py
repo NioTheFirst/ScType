@@ -2944,14 +2944,14 @@ def _tcheck_contract_state_var(contract):
 def _mark_functions(contract):
     for function in contract.functions_declared:
         ##print(f"Checking... {function.name} Visibility: {function.visibility}")
-        if(not (function.entry_point and (read_internal or function.visibility == "external" or function.visibility == "public"))):
-            function_check[function.name] = False
-            ##print("[x] Not visible ")
-            continue
         fentry = {function.entry_point}
         #add contract-function pair
         print(f"Mark functions Adding: {contract.name}, {function.name}")
         add_cf_pair(contract.name, function.name, function)
+        if(not (function.entry_point and (read_internal or function.visibility == "external" or function.visibility == "public"))):
+            function_check[function.name] = False
+            ##print("[x] Not visible ")
+            continue
         contains_bin = False
         while fentry:
             node = fentry.pop()
