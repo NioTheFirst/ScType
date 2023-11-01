@@ -1010,7 +1010,9 @@ def querry_fc(ir) -> int:
         else:
             cont_name = str(dest.type)
     included_func = get_cf_pair(cont_name, func_name)
+    print(f"Found: {included_func}")
     if(included_func != None):
+
         if(type_included_hlc(ir, dest, included_func) == 1):
             return 2
         return 2

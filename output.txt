@@ -11,6 +11,10 @@ Reading f file...
 ['[t]', 'global', 'balance', 'f: 0']
 ['[t]', 'global', 'tPWF', '1', '2', '0', 'f: 12']
 ['[t]', 'global', 'tokenToShare', '2', '1', '0', 'f:12']
+Mark functions Adding: IIdleToken, balanceOf
+Mark functions Adding: IIdleToken, tokenPriceWithFee
+Mark functions Adding: IIdleToken, mintIdleToken
+Mark functions Adding: IIdleToken, redeemIdleToken
 State_var: balance
 Finding type for balance(uint256 ... )
 {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997}
@@ -30,14 +34,14 @@ LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
-State_var: tokenToShare
-Finding type for tokenToShare(uint256 ... )
+State_var: tPWF
+Finding type for tPWF(uint256 ... )
 {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
 (-1, -1, 'u', None, 1, 12)
 [*]Type fetched successfully
 querrying!!!
 Source address: u
-Saved name: tokenToShare
+Saved name: tPWF
 
 Name: PIC_2 Function: None
 Num: -1
@@ -48,14 +52,14 @@ LF: None
 Value: u
 Fields: 
 Finance Type: simple fee ratio
-State_var: tPWF
-Finding type for tPWF(uint256 ... )
+State_var: tokenToShare
+Finding type for tokenToShare(uint256 ... )
 {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
 (-1, -1, 'u', None, 1, 12)
 [*]Type fetched successfully
 querrying!!!
 Source address: u
-Saved name: tPWF
+Saved name: tokenToShare
 
 Name: PIC_3 Function: None
 Num: -1
@@ -224,7 +228,7 @@ Name: tPWF, Num: 1
 Globalname: tPWF
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_2 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -436,7 +440,7 @@ Name: tokenToShare, Num: 1
 Globalname: tokenToShare
 global...
 
-Name: PIC_2 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -713,6 +717,12 @@ Reading f file...
 ['[t]', 'global', 'idleToken', '-1', '-1', '0', 'IIdleToken']
 ['[t]', 'global', 'underlyingAsset']
 ['[t]', 'redeemToken', 'redeemAmount', '1', '-1', '0', 'f:0']
+Mark functions Adding: IdleYieldSource, initialize
+Mark functions Adding: IdleYieldSource, depositToken
+Mark functions Adding: IdleYieldSource, supplyTokenTo
+Mark functions Adding: IdleYieldSource, redeemToken
+Mark functions Adding: IdleYieldSource, transferERC20
+Mark functions Adding: IdleYieldSource, sponsor
 State_var: idleToken
 Finding type for idleToken(address ... )
 prev address? u
@@ -1282,14 +1292,14 @@ Param: 0
     fintype: 0
 
 
-idleToken_8(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_8(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 TMP_19(int256) = 1 (c)+ 1
 a_1(int256) := TMP_19(int256)
 TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
 redeemedShare_1(uint256) := TMP_20(uint256)
 TMP_21 = CONVERT idleToken_9 to IIdleToken
 TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
-idleToken_10(address) := ϕ(['idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3'])
 redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
 Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
 
@@ -1321,7 +1331,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_8(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_8(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -1633,7 +1643,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_4(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_4(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -1763,7 +1773,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-idleToken_5(address) := ϕ(['idleToken_7', 'idleToken_4', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_5(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -1804,7 +1814,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_4(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_4(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -1916,7 +1926,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-idleToken_5(address) := ϕ(['idleToken_7', 'idleToken_4', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_5(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -2518,7 +2528,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-idleToken_10(address) := ϕ(['idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -2579,14 +2589,14 @@ Globalname: redeemAmount
 End popogation
 
 
-idleToken_8(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_8(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 TMP_19(int256) = 1 (c)+ 1
 a_1(int256) := TMP_19(int256)
 TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
 redeemedShare_1(uint256) := TMP_20(uint256)
 TMP_21 = CONVERT idleToken_9 to IIdleToken
 TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
-idleToken_10(address) := ϕ(['idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3'])
 redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
 Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
 
@@ -2604,7 +2614,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_8(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_8(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -2876,7 +2886,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-idleToken_10(address) := ϕ(['idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -2976,7 +2986,7 @@ Param: 2
     fintype: -1
 
 
-idleToken_11(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_11(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 TMP_24(bool) = erc20Token_1 != idleToken_11
 TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
 Emit TransferredERC20(msg.sender,to_1,amount_1,erc20Token_1)
@@ -3009,7 +3019,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_11(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_11(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
@@ -3060,7 +3070,7 @@ Source address: -993
 End popogation
 
 
-idleToken_11(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_11(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 TMP_24(bool) = erc20Token_1 != idleToken_11
 TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
 Emit TransferredERC20(msg.sender,to_1,amount_1,erc20Token_1)
@@ -3079,7 +3089,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_11(address) := ϕ(['idleToken_0', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5'])
+idleToken_11(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_10', 'idleToken_7', 'idleToken_0', 'idleToken_3'])
 Phi
 [i]Type for idleToken
 
