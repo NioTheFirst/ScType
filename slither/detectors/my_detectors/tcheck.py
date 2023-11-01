@@ -2948,6 +2948,7 @@ def _mark_functions(contract):
             continue
         fentry = {function.entry_point}
         #add contract-function pair
+        print(f"Mark functions Adding: {contract.name}, {function.name}")
         add_cf_pair(contract.name, function.name, function)
         contains_bin = False
         while fentry:
