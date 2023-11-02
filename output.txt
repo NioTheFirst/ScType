@@ -1,4 +1,1021 @@
 Switched global version to 0.8.4
+Analyzed_contracts_count: 1
+total compilations: -1
+Checking IIdleToken
+Name: balanceOf, [<slither.core.cfg.node.Node object at 0x7f58a98507f0>, <slither.core.cfg.node.Node object at 0x7f58a978fb50>]
+Name: tokenPriceWithFee, [<slither.core.cfg.node.Node object at 0x7f58a978fdf0>, <slither.core.cfg.node.Node object at 0x7f58a978fd90>]
+Name: mintIdleToken, [<slither.core.cfg.node.Node object at 0x7f58a978fd00>, <slither.core.cfg.node.Node object at 0x7f58a97a8130>]
+Name: redeemIdleToken, [<slither.core.cfg.node.Node object at 0x7f58a97a82b0>, <slither.core.cfg.node.Node object at 0x7f58a97a8400>]
+Name: slitherConstructorVariables, [<slither.core.cfg.node.Node object at 0x7f58a97a8700>, <slither.core.cfg.node.Node object at 0x7f58a97a8a60>, <slither.core.cfg.node.Node object at 0x7f58a97a8bb0>]
+End Checking...
+Finance file: IIdleToken_ftypes.txt
+Add to address_to_label {'balanceOf:a': -999}
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998}
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997}
+Reading f file...
+['[*c]', 'IIdleToken']
+['']
+['[xf]', 'redeemIdleToken']
+['[t]', 'global', 'balance', 'f: 0']
+['[t]', 'global', 'tPWF', '1', '2', '0', 'f: 12']
+['[t]', 'global', 'tokenToShare', '2', '1', '0', 'f:12']
+Checking... balanceOf Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a98507f0>, <slither.core.cfg.node.Node object at 0x7f58a978fb50>]
+Mark functions Adding: IIdleToken, balanceOf
+
+
+balance_1(uint256) := ϕ(['balance_0'])
+RETURN balance_1
+
+
+Checking... tokenPriceWithFee Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a978fdf0>, <slither.core.cfg.node.Node object at 0x7f58a978fd90>]
+Mark functions Adding: IIdleToken, tokenPriceWithFee
+
+
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+RETURN tPWF_1
+
+
+Checking... mintIdleToken Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a978fd00>, <slither.core.cfg.node.Node object at 0x7f58a97a8130>]
+Mark functions Adding: IIdleToken, mintIdleToken
+
+
+RETURN amt_1
+
+
+Checking... redeemIdleToken Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a97a82b0>, <slither.core.cfg.node.Node object at 0x7f58a97a8400>]
+Mark functions Adding: IIdleToken, redeemIdleToken
+
+
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+RETURN TMP_0
+
+
+Checking... slitherConstructorVariables Visibility: internal
+[<slither.core.cfg.node.Node object at 0x7f58a97a8700>, <slither.core.cfg.node.Node object at 0x7f58a97a8a60>, <slither.core.cfg.node.Node object at 0x7f58a97a8bb0>]
+Mark functions Adding: IIdleToken, slitherConstructorVariables
+
+
+
+
+State_var: tokenToShare
+Finding type for tokenToShare(uint256 ... )
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997}
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
+(-1, -1, 'u', None, 1, 12)
+[*]Type fetched successfully
+querrying!!!
+Source address: u
+Saved name: tokenToShare
+
+Name: PIC_1 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+State_var: balance
+Finding type for balance(uint256 ... )
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
+(-1, -1, 'u', None, 1, 0)
+[*]Type fetched successfully
+querrying!!!
+Source address: u
+Saved name: balance
+
+Name: PIC_2 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+State_var: tPWF
+Finding type for tPWF(uint256 ... )
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
+(-1, -1, 'u', None, 1, 12)
+[*]Type fetched successfully
+querrying!!!
+Source address: u
+Saved name: tPWF
+
+Name: PIC_3 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+
+
+
+balanceOf
+Finding type for a(address ... )
+prev address? u
+Head Addr: -999
+    Norm: 6
+    Set: {-999}
+    Fin: NULL
+Param: 0
+    num: []
+    den: []
+    norm: 6
+    link: a
+    fields: []
+    fintype: -1
+FIND RETURN
+ENTRY_POINT
+balanceOf(address)
+ENTRY_POINT
+RETURN (balance)
+
+
+balance_1(uint256) := ϕ(['balance_0'])
+RETURN balance_1
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Name: balance, Num: 1
+Globalname: balance
+global...
+
+Name: PIC_2 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Phid
+balance_1(uint256) := ϕ(['balance_0'])
+Phi
+[i]Type for balance
+
+Name: balance Function: balanceOf
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
+RETURN balance_1
+RETURN
+init
+end
+
+Name: balance Function: balanceOf
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+
+
+balance_1(uint256) := ϕ(['balance_0'])
+RETURN balance_1
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+
+Name: balance Function: balanceOf
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Phid
+balance_1(uint256) := ϕ(['balance_0'])
+Phi
+[i]Type for balance
+
+Name: balance Function: balanceOf
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
+RETURN balance_1
+RETURN
+init
+end
+
+Name: balance Function: balanceOf
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+
+
+
+tokenPriceWithFee
+Finding type for a(address ... )
+prev address? u
+Head Addr: -998
+    Norm: 6
+    Set: {-998}
+    Fin: NULL
+Param: 0
+    num: []
+    den: []
+    norm: 6
+    link: a
+    fields: []
+    fintype: -1
+FIND RETURN
+ENTRY_POINT
+tokenPriceWithFee(address)
+ENTRY_POINT
+RETURN (tPWF)
+
+
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+RETURN tPWF_1
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Name: tPWF, Num: 1
+Globalname: tPWF
+global...
+
+Name: PIC_3 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+Source address: u
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+Phid
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+Phi
+[i]Type for tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
+RETURN tPWF_1
+RETURN
+init
+end
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+
+
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+RETURN tPWF_1
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+Phid
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+Phi
+[i]Type for tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
+RETURN tPWF_1
+RETURN
+init
+end
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+
+
+
+mintIdleToken
+Finding type for amt(uint256 ... )
+Value: u
+Finding type for b(bool ... )
+Finding type for a(address ... )
+prev address? u
+Head Addr: -997
+    Norm: 6
+    Set: {-997}
+    Fin: NULL
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+Param: 1
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+Param: 2
+    num: []
+    den: []
+    norm: 6
+    link: a
+    fields: []
+    fintype: -1
+FIND RETURN
+ENTRY_POINT
+mintIdleToken(uint256,bool,address)
+ENTRY_POINT
+RETURN (amt)
+
+
+RETURN amt_1
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Propogating parameters and globals to SSA variables...
+Source address: u
+Name: amt, Num: 1
+Globalname: amt
+End popogation
+RETURN amt_1
+RETURN
+init
+end
+
+Name: amt Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+
+RETURN amt_1
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Propogating parameters and globals to SSA variables...
+Source address: u
+Name: amt, Num: 1
+Globalname: amt
+End popogation
+RETURN amt_1
+RETURN
+init
+end
+
+Name: amt Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+
+
+redeemIdleToken
+Finding type for share(uint256 ... )
+Value: u
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: None
+    fields: []
+    fintype: -1
+FIND RETURN
+ENTRY_POINT
+redeemIdleToken(uint256)
+ENTRY_POINT
+RETURN (share * tokenToShare)
+
+
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+RETURN TMP_0
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Name: tokenToShare, Num: 1
+Globalname: tokenToShare
+global...
+
+Name: PIC_1 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+Source address: u
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+Phid
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+Phi
+[i]Type for tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+XXXX
+Propogating parameters and globals to SSA variables...
+Source address: u
+Name: share, Num: 1
+Globalname: share
+End popogation
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+testing mul...
+init
+end
+init
+end
+
+Name: share Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: tokenToShare Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+lnorm: u rnorm: u
+init
+end
+_______________
+
+Name: tokenToShare Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: updated simple fee ratio
+COPY HERE
+Source address: u
+[i]Type for TMP_0
+
+Name: TMP_0 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: updated simple fee ratio
+XXXX
+RETURN TMP_0
+RETURN
+init
+end
+
+Name: TMP_0 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: updated simple fee ratio
+
+
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+RETURN TMP_0
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+
+Name: tokenToShare Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+Phid
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+Phi
+[i]Type for tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+XXXX
+Propogating parameters and globals to SSA variables...
+Source address: u
+Name: share, Num: 1
+Globalname: share
+End popogation
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+testing mul...
+init
+end
+init
+end
+
+Name: share Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: tokenToShare Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+lnorm: u rnorm: u
+init
+end
+_______________
+
+Name: tokenToShare Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: updated simple fee ratio
+COPY HERE
+Source address: u
+[i]Type for TMP_0
+
+Name: TMP_0 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: updated simple fee ratio
+XXXX
+RETURN TMP_0
+RETURN
+init
+end
+
+Name: TMP_0 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: updated simple fee ratio
+Source address: u
+
+
+
+slitherConstructorVariables
+Address: -999, Label: balanceOf:a
+Address: -998, Label: tokenPriceWithFee:a
+Address: -997, Label: mintIdleToken:a
+Address: 1, Label: global:u
+Head Addr: -999
+    Norm: 6
+    Set: {-999}
+    Fin: NULL
+Head Addr: -998
+    Norm: 6
+    Set: {-998}
+    Fin: NULL
+Head Addr: -997
+    Norm: 6
+    Set: {-997}
+    Fin: NULL
+Head Addr: 1
+    Norm: u
+    Set: {1}
+    Fin: NULL
+Function count: 4
+Analyzed_contracts_count: 2
+total compilations: -1
+Checking IdleYieldSource
+Name: initialize, [<slither.core.cfg.node.Node object at 0x7f58a98c1460>, <slither.core.cfg.node.Node object at 0x7f58a98bb340>, <slither.core.cfg.node.Node object at 0x7f58a9878b80>]
+Name: depositToken, [<slither.core.cfg.node.Node object at 0x7f58a98bb550>, <slither.core.cfg.node.Node object at 0x7f58a98789a0>]
+Name: _totalShare, [<slither.core.cfg.node.Node object at 0x7f58a9878970>, <slither.core.cfg.node.Node object at 0x7f58a98780d0>]
+Name: _tokenToShares, [<slither.core.cfg.node.Node object at 0x7f58a98786a0>, <slither.core.cfg.node.Node object at 0x7f58a9875a30>, <slither.core.cfg.node.Node object at 0x7f58a9875c40>]
+Name: _sharesToToken, [<slither.core.cfg.node.Node object at 0x7f58a9875f70>, <slither.core.cfg.node.Node object at 0x7f58a97262e0>]
+Name: _price, [<slither.core.cfg.node.Node object at 0x7f58a9726610>, <slither.core.cfg.node.Node object at 0x7f58a9726850>]
+Name: _depositToIdle, [<slither.core.cfg.node.Node object at 0x7f58a97269a0>, <slither.core.cfg.node.Node object at 0x7f58a9726f40>]
+Name: supplyTokenTo, [<slither.core.cfg.node.Node object at 0x7f58a9726af0>, <slither.core.cfg.node.Node object at 0x7f58a96778b0>, <slither.core.cfg.node.Node object at 0x7f58a96779a0>, <slither.core.cfg.node.Node object at 0x7f58a9677a60>]
+Name: redeemToken, [<slither.core.cfg.node.Node object at 0x7f58a9677e50>, <slither.core.cfg.node.Node object at 0x7f58a9681490>, <slither.core.cfg.node.Node object at 0x7f58a9681610>, <slither.core.cfg.node.Node object at 0x7f58a9681700>, <slither.core.cfg.node.Node object at 0x7f58a96817c0>]
+Name: transferERC20, [<slither.core.cfg.node.Node object at 0x7f58a96106a0>, <slither.core.cfg.node.Node object at 0x7f58a96108b0>, <slither.core.cfg.node.Node object at 0x7f58a9610970>]
+Name: sponsor, [<slither.core.cfg.node.Node object at 0x7f58a9610880>, <slither.core.cfg.node.Node object at 0x7f58a961a2e0>, <slither.core.cfg.node.Node object at 0x7f58a961a3a0>]
+Name: slitherConstructorConstantVariables, [<slither.core.cfg.node.Node object at 0x7f58a9627130>]
+Checking IIdleToken
+Name: balanceOf, []
+Name: tokenPriceWithFee, []
+Name: mintIdleToken, []
+Name: redeemIdleToken, []
+End Checking...
+Finance file: IdleYieldSource_ftypes.txt
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2}
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3}
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996}
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995}
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994}
+Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
+Reading f file...
+['[*c]', 'IdleYieldSource']
+['[xf]', 'transferERC20']
+['[t]', 'global', 'ONE_IDLE_TOKEN', '-1', '-1', '0']
+['[t]', 'global', 'idleToken', '-1', '-1', '0', 'IIdleToken']
+['[t]', 'global', 'underlyingAsset']
+['[t]', 'redeemToken', 'redeemAmount', '1', '-1', '0', 'f:0']
+Checking... initialize Visibility: public
+[<slither.core.cfg.node.Node object at 0x7f58a98c1460>, <slither.core.cfg.node.Node object at 0x7f58a98bb340>, <slither.core.cfg.node.Node object at 0x7f58a9878b80>]
+Mark functions Adding: IdleYieldSource, initialize
+
+
+idleToken_1(address) := _idleToken_1(address)
+Emit IdleYieldSourceInitialized(idleToken_1)
+
+
+Checking... depositToken Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a98bb550>, <slither.core.cfg.node.Node object at 0x7f58a98789a0>]
+Mark functions Adding: IdleYieldSource, depositToken
+
+
+underlyingAsset_1(address) := ϕ(['underlyingAsset_0'])
+RETURN underlyingAsset_1
+
+
+Checking... _totalShare Visibility: internal
+[<slither.core.cfg.node.Node object at 0x7f58a9878970>, <slither.core.cfg.node.Node object at 0x7f58a98780d0>]
+Mark functions Adding: IdleYieldSource, _totalShare
+
+
+idleToken_2(address) := ϕ(['idleToken_0', 'idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
+TMP_1 = CONVERT idleToken_2 to IIdleToken
+TMP_2 = CONVERT this to address
+TMP_3(uint256) = HIGH_LEVEL_CALL, dest:TMP_1(IIdleToken), function:balanceOf, arguments:['TMP_2']  
+idleToken_3(address) := ϕ(['idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_2', 'idleToken_7', 'idleToken_10'])
+RETURN TMP_3
+
+
+Checking... _tokenToShares Visibility: internal
+[<slither.core.cfg.node.Node object at 0x7f58a98786a0>, <slither.core.cfg.node.Node object at 0x7f58a9875a30>, <slither.core.cfg.node.Node object at 0x7f58a9875c40>]
+Mark functions Adding: IdleYieldSource, _tokenToShares
+
+
+tokens_1(uint256) := ϕ(['mintAmount_1', 'redeemAmount_1'])
+ONE_IDLE_TOKEN_1(uint256) := ϕ(['ONE_IDLE_TOKEN_2', 'ONE_IDLE_TOKEN_4', 'ONE_IDLE_TOKEN_0'])
+TMP_4(uint256) = tokens_1 (c)* ONE_IDLE_TOKEN_1
+TMP_5(uint256) = INTERNAL_CALL, IdleYieldSource._price()()
+TMP_6(uint256) = TMP_4 (c)/ TMP_5
+shares_1(uint256) := TMP_6(uint256)
+RETURN shares_1
+
+
+Checking... _sharesToToken Visibility: internal
+[<slither.core.cfg.node.Node object at 0x7f58a9875f70>, <slither.core.cfg.node.Node object at 0x7f58a97262e0>]
+Mark functions Adding: IdleYieldSource, _sharesToToken
+
+
+ONE_IDLE_TOKEN_3(uint256) := ϕ(['ONE_IDLE_TOKEN_2', 'ONE_IDLE_TOKEN_4', 'ONE_IDLE_TOKEN_0'])
+TMP_7(uint256) = INTERNAL_CALL, IdleYieldSource._price()()
+TMP_8(uint256) = shares_1 (c)* TMP_7
+TMP_9(uint256) = TMP_8 (c)/ ONE_IDLE_TOKEN_4
+tokens_1(uint256) := TMP_9(uint256)
+
+
+Checking... _price Visibility: internal
+[<slither.core.cfg.node.Node object at 0x7f58a9726610>, <slither.core.cfg.node.Node object at 0x7f58a9726850>]
+Mark functions Adding: IdleYieldSource, _price
+
+
+idleToken_4(address) := ϕ(['idleToken_0', 'idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
+TMP_10 = CONVERT idleToken_4 to IIdleToken
+TMP_11 = CONVERT this to address
+TMP_12(uint256) = HIGH_LEVEL_CALL, dest:TMP_10(IIdleToken), function:tokenPriceWithFee, arguments:['TMP_11']  
+idleToken_5(address) := ϕ(['idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10'])
+RETURN TMP_12
+
+
+Checking... _depositToIdle Visibility: internal
+[<slither.core.cfg.node.Node object at 0x7f58a97269a0>, <slither.core.cfg.node.Node object at 0x7f58a9726f40>]
+Mark functions Adding: IdleYieldSource, _depositToIdle
+
+
+mintAmount_1(uint256) := ϕ(['mintAmount_1', 'amount_1'])
+idleToken_6(address) := ϕ(['idleToken_0', 'idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
+TMP_13 = CONVERT idleToken_6 to IIdleToken
+TMP_14 = CONVERT 0 to address
+TMP_15(uint256) = HIGH_LEVEL_CALL, dest:TMP_13(IIdleToken), function:mintIdleToken, arguments:['mintAmount_1', 'False', 'TMP_14']  
+idleToken_7(address) := ϕ(['idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_6', 'idleToken_7', 'idleToken_10'])
+RETURN TMP_15
+
+
+Checking... supplyTokenTo Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a9726af0>, <slither.core.cfg.node.Node object at 0x7f58a96778b0>, <slither.core.cfg.node.Node object at 0x7f58a96779a0>, <slither.core.cfg.node.Node object at 0x7f58a9677a60>]
+Mark functions Adding: IdleYieldSource, supplyTokenTo
+
+
+TMP_16(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(mintAmount_1)
+mintedTokenShares_1(uint256) := TMP_16(uint256)
+TMP_17(uint256) = INTERNAL_CALL, IdleYieldSource._depositToIdle(uint256)(mintAmount_1)
+Emit SuppliedTokenTo(msg.sender,mintedTokenShares_1,mintAmount_1,to_1)
+
+
+Checking... redeemToken Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a9677e50>, <slither.core.cfg.node.Node object at 0x7f58a9681490>, <slither.core.cfg.node.Node object at 0x7f58a9681610>, <slither.core.cfg.node.Node object at 0x7f58a9681700>, <slither.core.cfg.node.Node object at 0x7f58a96817c0>]
+Mark functions Adding: IdleYieldSource, redeemToken
+
+
+idleToken_8(address) := ϕ(['idleToken_0', 'idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
+TMP_19(int256) = 1 (c)+ 1
+a_1(int256) := TMP_19(int256)
+TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
+redeemedShare_1(uint256) := TMP_20(uint256)
+TMP_21 = CONVERT idleToken_9 to IIdleToken
+TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
+idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10'])
+redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
+Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
+
+
+Checking... transferERC20 Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a96106a0>, <slither.core.cfg.node.Node object at 0x7f58a96108b0>, <slither.core.cfg.node.Node object at 0x7f58a9610970>]
+Mark functions Adding: IdleYieldSource, transferERC20
+
+
+idleToken_11(address) := ϕ(['idleToken_0', 'idleToken_1', 'idleToken_3', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
+TMP_24(bool) = erc20Token_1 != idleToken_11
+TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
+Emit TransferredERC20(msg.sender,to_1,amount_1,erc20Token_1)
+
+
+Checking... sponsor Visibility: external
+[<slither.core.cfg.node.Node object at 0x7f58a9610880>, <slither.core.cfg.node.Node object at 0x7f58a961a2e0>, <slither.core.cfg.node.Node object at 0x7f58a961a3a0>]
+Mark functions Adding: IdleYieldSource, sponsor
+
+
+TMP_27(uint256) = INTERNAL_CALL, IdleYieldSource._depositToIdle(uint256)(amount_1)
+Emit Sponsored(msg.sender,amount_1)
+
+
+Checking... slitherConstructorConstantVariables Visibility: internal
+[<slither.core.cfg.node.Node object at 0x7f58a9627130>]
+Mark functions Adding: IdleYieldSource, slitherConstructorConstantVariables
+
+
+
+
+State_var: idleToken
+Finding type for idleToken(address ... )
+prev address? u
+Head Addr: 2
+    Norm: 0
+    Set: {2}
+    Fin: NULL
+querrying!!!
+Source address: 2
+Saved name: idleToken
+
+Name: PIC_5 Function: None
+Num: -1
+Den: -1
+Address: 2
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+State_var: ONE_IDLE_TOKEN
+Finding type for ONE_IDLE_TOKEN(uint256 ... )
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
+(-1, -1, 'u', None, 1, -1)
+[*]Type fetched successfully
+querrying!!!
+Source address: u
+Saved name: ONE_IDLE_TOKEN
+
+Name: PIC_6 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+State_var: underlyingAsset
+Finding type for underlyingAsset(address ... )
+prev address? u
+Head Addr: 3
+    Norm: 6
+    Set: {3}
+    Fin: NULL
+querrying!!!
+Source address: 3
+Saved name: underlyingAsset
+
+Name: PIC_7 Function: None
+Num: -1
+Den: -1
+Address: 3
+Norm: 6
+LF: underlyingAsset
+Value: u
+Fields: 
+Finance Type: undef
+Finance file: IIdleToken_ftypes.txt
+Reading f file...
+['[*c]', 'IIdleToken']
+['']
+['[xf]', 'redeemIdleToken']
+['[t]', 'global', 'balance', 'f: 0']
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
+['[t]', 'global', 'tPWF', '1', '2', '0', 'f: 12']
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
+['[t]', 'global', 'tokenToShare', '2', '1', '0', 'f:12']
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
+Checking... balanceOf Visibility: external
+[]
+Mark functions Adding: IIdleToken, balanceOf
+
+
 Executing Group 3
 [*] Tested 1 warning for PoolTogether
 Group 3 complete
