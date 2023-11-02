@@ -1009,7 +1009,8 @@ def querry_fc(ir) -> int:
             cont_name = str(dest.type)[1:]
         else:
             cont_name = str(dest.type)
-    included_func = get_cf_pair(cont_name, func_name)
+    #Use original contract name instead of reduced name for interfaces etc.
+    included_func = get_cf_pair(str(dest.type), func_name)
     print(f"Found: {included_func}")
     if(included_func != None):
 

@@ -15,35 +15,18 @@ Mark functions Adding: IIdleToken, balanceOf
 Mark functions Adding: IIdleToken, tokenPriceWithFee
 Mark functions Adding: IIdleToken, mintIdleToken
 Mark functions Adding: IIdleToken, redeemIdleToken
-State_var: tokenToShare
-Finding type for tokenToShare(uint256 ... )
+Mark functions Adding: IIdleToken, slitherConstructorVariables
+State_var: tPWF
+Finding type for tPWF(uint256 ... )
 {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997}
 Add to address_to_label {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
 (-1, -1, 'u', None, 1, 12)
 [*]Type fetched successfully
 querrying!!!
 Source address: u
-Saved name: tokenToShare
-
-Name: PIC_1 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: simple fee ratio
-State_var: tPWF
-Finding type for tPWF(uint256 ... )
-{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
-(-1, -1, 'u', None, 1, 12)
-[*]Type fetched successfully
-querrying!!!
-Source address: u
 Saved name: tPWF
 
-Name: PIC_2 Function: None
+Name: PIC_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -61,7 +44,7 @@ querrying!!!
 Source address: u
 Saved name: balance
 
-Name: PIC_3 Function: None
+Name: PIC_2 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -70,6 +53,24 @@ LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
+State_var: tokenToShare
+Finding type for tokenToShare(uint256 ... )
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
+(-1, -1, 'u', None, 1, 12)
+[*]Type fetched successfully
+querrying!!!
+Source address: u
+Saved name: tokenToShare
+
+Name: PIC_3 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
 
 
 
@@ -99,7 +100,7 @@ Name: balance, Num: 1
 Globalname: balance
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_2 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -228,7 +229,7 @@ Name: tPWF, Num: 1
 Globalname: tPWF
 global...
 
-Name: PIC_2 Function: None
+Name: PIC_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -440,7 +441,7 @@ Name: tokenToShare, Num: 1
 Globalname: tokenToShare
 global...
 
-Name: PIC_1 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -719,28 +720,16 @@ Reading f file...
 ['[t]', 'redeemToken', 'redeemAmount', '1', '-1', '0', 'f:0']
 Mark functions Adding: IdleYieldSource, initialize
 Mark functions Adding: IdleYieldSource, depositToken
+Mark functions Adding: IdleYieldSource, _totalShare
+Mark functions Adding: IdleYieldSource, _tokenToShares
+Mark functions Adding: IdleYieldSource, _sharesToToken
+Mark functions Adding: IdleYieldSource, _price
+Mark functions Adding: IdleYieldSource, _depositToIdle
 Mark functions Adding: IdleYieldSource, supplyTokenTo
 Mark functions Adding: IdleYieldSource, redeemToken
 Mark functions Adding: IdleYieldSource, transferERC20
 Mark functions Adding: IdleYieldSource, sponsor
-State_var: ONE_IDLE_TOKEN
-Finding type for ONE_IDLE_TOKEN(uint256 ... )
-{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
-(-1, -1, 'u', None, 1, -1)
-[*]Type fetched successfully
-querrying!!!
-Source address: u
-Saved name: ONE_IDLE_TOKEN
-
-Name: PIC_5 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+Mark functions Adding: IdleYieldSource, slitherConstructorConstantVariables
 State_var: idleToken
 Finding type for idleToken(address ... )
 prev address? u
@@ -752,12 +741,30 @@ querrying!!!
 Source address: 2
 Saved name: idleToken
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
 Norm: 0
 LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+State_var: ONE_IDLE_TOKEN
+Finding type for ONE_IDLE_TOKEN(uint256 ... )
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
+(-1, -1, 'u', None, 1, -1)
+[*]Type fetched successfully
+querrying!!!
+Source address: u
+Saved name: ONE_IDLE_TOKEN
+
+Name: PIC_6 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -792,6 +799,10 @@ Reading f file...
 {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
 ['[t]', 'global', 'tokenToShare', '2', '1', '0', 'f:12']
 {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
+Mark functions Adding: IIdleToken, balanceOf
+Mark functions Adding: IIdleToken, tokenPriceWithFee
+Mark functions Adding: IIdleToken, mintIdleToken
+Mark functions Adding: IIdleToken, redeemIdleToken
 
 
 
@@ -823,7 +834,7 @@ Name: idleToken, Num: 1
 Globalname: idleToken
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
@@ -1175,9 +1186,9 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+Source address: -995
 Name: mintedTokenShares, Num: 1
 Globalname: mintedTokenShares
-Source address: -995
 Source address: u
 Name: mintAmount, Num: 1
 Globalname: mintAmount
@@ -1310,7 +1321,7 @@ Name: idleToken, Num: 8
 Globalname: idleToken
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
@@ -1472,7 +1483,7 @@ Name: ONE_IDLE_TOKEN, Num: 1
 Globalname: ONE_IDLE_TOKEN
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_6 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -1622,7 +1633,7 @@ Name: idleToken, Num: 4
 Globalname: idleToken
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
@@ -1663,7 +1674,7 @@ Name: idleToken, Num: 5
 Globalname: idleToken
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
@@ -2422,7 +2433,7 @@ Name: idleToken, Num: 9
 Globalname: idleToken
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
@@ -2439,7 +2450,7 @@ Name: idleToken, Num: 10
 Globalname: idleToken
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
@@ -3002,7 +3013,7 @@ Name: idleToken, Num: 11
 Globalname: idleToken
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
