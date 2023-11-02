@@ -939,8 +939,8 @@ def type_included_hlc(ir, dest, function):
             return 1
     #generate param cache
     new_param_cache = function_hlc_param_cache(ir)
-    ##print("High level cal param_cache")
-    ##print_param_cache(new_param_cache)
+    print("High level cal param_cache")
+    print_param_cache(new_param_cache)
     added = -100
     #if(not(mark_iteration) or current_function_marked):
     added = add_param_cache(function, new_param_cache)
