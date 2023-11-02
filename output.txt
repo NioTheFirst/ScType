@@ -63,14 +63,14 @@ LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
-State_var: tPWF
-Finding type for tPWF(uint256 ... )
+State_var: tokenToShare
+Finding type for tokenToShare(uint256 ... )
 {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
 (-1, -1, 'u', None, 1, 12)
 [*]Type fetched successfully
 querrying!!!
 Source address: u
-Saved name: tPWF
+Saved name: tokenToShare
 
 Name: PIC_2 Function: None
 Num: -1
@@ -81,14 +81,14 @@ LF: None
 Value: u
 Fields: 
 Finance Type: simple fee ratio
-State_var: tokenToShare
-Finding type for tokenToShare(uint256 ... )
+State_var: tPWF
+Finding type for tPWF(uint256 ... )
 {'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1}
 (-1, -1, 'u', None, 1, 12)
 [*]Type fetched successfully
 querrying!!!
 Source address: u
-Saved name: tokenToShare
+Saved name: tPWF
 
 Name: PIC_3 Function: None
 Num: -1
@@ -267,7 +267,7 @@ Name: tPWF, Num: 1
 Globalname: tPWF
 global...
 
-Name: PIC_2 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -489,7 +489,7 @@ Name: tokenToShare, Num: 1
 Globalname: tokenToShare
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_2 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -783,11 +783,11 @@ RETURN underlyingAsset_1
 Mark functions Adding: IdleYieldSource, _totalShare
 
 
-idleToken_2(address) := ϕ(['idleToken_10', 'idleToken_3', 'idleToken_0', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
+idleToken_2(address) := ϕ(['idleToken_5', 'idleToken_7', 'idleToken_3', 'idleToken_10', 'idleToken_0', 'idleToken_1'])
 TMP_1 = CONVERT idleToken_2 to IIdleToken
 TMP_2 = CONVERT this to address
 TMP_3(uint256) = HIGH_LEVEL_CALL, dest:TMP_1(IIdleToken), function:balanceOf, arguments:['TMP_2']  
-idleToken_3(address) := ϕ(['idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_2', 'idleToken_7'])
+idleToken_3(address) := ϕ(['idleToken_5', 'idleToken_2', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1'])
 RETURN TMP_3
 
 
@@ -816,23 +816,23 @@ tokens_1(uint256) := TMP_9(uint256)
 Mark functions Adding: IdleYieldSource, _price
 
 
-idleToken_4(address) := ϕ(['idleToken_10', 'idleToken_3', 'idleToken_0', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
+idleToken_4(address) := ϕ(['idleToken_5', 'idleToken_7', 'idleToken_3', 'idleToken_10', 'idleToken_0', 'idleToken_1'])
 TMP_10 = CONVERT idleToken_4 to IIdleToken
 TMP_11 = CONVERT this to address
 TMP_12(uint256) = HIGH_LEVEL_CALL, dest:TMP_10(IIdleToken), function:tokenPriceWithFee, arguments:['TMP_11']  
-idleToken_5(address) := ϕ(['idleToken_4', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
+idleToken_5(address) := ϕ(['idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10', 'idleToken_3', 'idleToken_1'])
 RETURN TMP_12
 
 
 Mark functions Adding: IdleYieldSource, _depositToIdle
 
 
-mintAmount_1(uint256) := ϕ(['amount_1', 'mintAmount_1'])
-idleToken_6(address) := ϕ(['idleToken_10', 'idleToken_3', 'idleToken_0', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
+mintAmount_1(uint256) := ϕ(['mintAmount_1', 'amount_1'])
+idleToken_6(address) := ϕ(['idleToken_5', 'idleToken_7', 'idleToken_3', 'idleToken_10', 'idleToken_0', 'idleToken_1'])
 TMP_13 = CONVERT idleToken_6 to IIdleToken
 TMP_14 = CONVERT 0 to address
 TMP_15(uint256) = HIGH_LEVEL_CALL, dest:TMP_13(IIdleToken), function:mintIdleToken, arguments:['mintAmount_1', 'False', 'TMP_14']  
-idleToken_7(address) := ϕ(['idleToken_10', 'idleToken_6', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
+idleToken_7(address) := ϕ(['idleToken_5', 'idleToken_6', 'idleToken_7', 'idleToken_10', 'idleToken_3', 'idleToken_1'])
 RETURN TMP_15
 
 
@@ -848,14 +848,14 @@ Emit SuppliedTokenTo(msg.sender,mintedTokenShares_1,mintAmount_1,to_1)
 Mark functions Adding: IdleYieldSource, redeemToken
 
 
-idleToken_8(address) := ϕ(['idleToken_10', 'idleToken_3', 'idleToken_0', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
+idleToken_8(address) := ϕ(['idleToken_5', 'idleToken_7', 'idleToken_3', 'idleToken_10', 'idleToken_0', 'idleToken_1'])
 TMP_19(int256) = 1 (c)+ 1
 a_1(int256) := TMP_19(int256)
 TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
 redeemedShare_1(uint256) := TMP_20(uint256)
 TMP_21 = CONVERT idleToken_9 to IIdleToken
 TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
-idleToken_10(address) := ϕ(['idleToken_9', 'idleToken_10', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
+idleToken_10(address) := ϕ(['idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3', 'idleToken_1'])
 redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
 Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
 
@@ -863,7 +863,7 @@ Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
 Mark functions Adding: IdleYieldSource, transferERC20
 
 
-idleToken_11(address) := ϕ(['idleToken_10', 'idleToken_3', 'idleToken_0', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
+idleToken_11(address) := ϕ(['idleToken_5', 'idleToken_7', 'idleToken_3', 'idleToken_10', 'idleToken_0', 'idleToken_1'])
 TMP_24(bool) = erc20Token_1 != idleToken_11
 TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
 Emit TransferredERC20(msg.sender,to_1,amount_1,erc20Token_1)
@@ -881,24 +881,6 @@ Mark functions Adding: IdleYieldSource, slitherConstructorConstantVariables
 
 
 
-State_var: ONE_IDLE_TOKEN
-Finding type for ONE_IDLE_TOKEN(uint256 ... )
-{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
-(-1, -1, 'u', None, 1, -1)
-[*]Type fetched successfully
-querrying!!!
-Source address: u
-Saved name: ONE_IDLE_TOKEN
-
-Name: PIC_5 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 State_var: idleToken
 Finding type for idleToken(address ... )
 prev address? u
@@ -910,12 +892,30 @@ querrying!!!
 Source address: 2
 Saved name: idleToken
 
-Name: PIC_6 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: 2
 Norm: 0
 LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+State_var: ONE_IDLE_TOKEN
+Finding type for ONE_IDLE_TOKEN(uint256 ... )
+{'balanceOf:a': -999, 'tokenPriceWithFee:a': -998, 'mintIdleToken:a': -997, 'global:u': 1, 'global:idleToken': 2, 'global:underlyingAsset': 3, 'initialize:_idleToken': -996, 'supplyTokenTo:to': -995, 'transferERC20:erc20Token': -994, 'transferERC20:to': -993}
+(-1, -1, 'u', None, 1, -1)
+[*]Type fetched successfully
+querrying!!!
+Source address: u
+Saved name: ONE_IDLE_TOKEN
+
+Name: PIC_6 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef

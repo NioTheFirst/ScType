@@ -943,8 +943,8 @@ def type_included_hlc(ir, dest, function):
     print_param_cache(new_param_cache)
     added = -100
     #if(not(mark_iteration) or current_function_marked):
-    print("Included ir: ")
-    view_ir(function.entry_point)
+    #print("Included ir: ")
+    #view_ir(function.entry_point)
     added = add_param_cache(function, new_param_cache)
     if(added == -100):
         ##print("added")
@@ -2948,7 +2948,7 @@ def _tcheck_contract_state_var(contract):
 #RTURNS: NULL
 def _mark_functions(contract):
     for function in contract.functions_declared:
-        ##print(f"Checking... {function.name} Visibility: {function.visibility}")
+        print(f"Checking... {function.name} Visibility: {function.visibility}")
         fentry = {function.entry_point}
         #add contract-function pair
         print(f"Mark functions Adding: {contract.name}, {function.name}")
