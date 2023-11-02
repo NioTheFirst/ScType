@@ -2954,7 +2954,7 @@ def _mark_functions(contract):
         fentry = {function.entry_point}
         #add contract-function pair
         print(f"Mark functions Adding: {contract.name}, {function.name}")
-        view_ir({function.entry_point})
+        #view_ir({function.entry_point})
         add_cf_pair(contract.name, function.name, function)
         if(not (function.entry_point and (read_internal or function.visibility == "external" or function.visibility == "public"))):
             function_check[function.name] = False
