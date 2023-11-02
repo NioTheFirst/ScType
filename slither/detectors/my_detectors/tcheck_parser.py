@@ -681,6 +681,9 @@ def get_ref_type_tuple(ref_name):
 
 def add_in_func(contract_name, function_name, in_func):
     key = contract_name + '_' + function_name
+    if(key in in_func_ptr_hash):
+        #Do not modify thing already in hash.
+        return
     in_func_ptr_hash[key] = in_func
 
 def get_in_func_ptr(contract_name, function_name):

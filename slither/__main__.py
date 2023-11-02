@@ -90,7 +90,7 @@ def process_all(
     results_printers = []
     analyzed_contracts_count = 0
     total_compilations = len(compilations)
-    print("TComp: {total_compilations}")
+    print(f"TComp: {total_compilations}")
     for compilation in compilations:
         (
             slither,
