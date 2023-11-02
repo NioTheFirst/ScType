@@ -3100,7 +3100,9 @@ class tcheck(AbstractDetector):
         for contract in self.contracts:
             print(f"Checking {contract.name}")
             for function in contract.functions_declared:
-                print(function.nodes)
+                print(f"Name: {function.name}, {function.nodes}")
+            print("End Checking...")
+            
         for contract in self.contracts:
             #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
