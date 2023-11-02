@@ -85,6 +85,7 @@ def process_all(
     detector_classes: List[Type[AbstractDetector]],
     printer_classes: List[Type[AbstractPrinter]],
 ) -> Tuple[List[Slither], List[Dict], List[Dict], int]:
+    global total_compilations
     compilations = compile_all(target, **vars(args))
     slither_instances = []
     results_detectors = []
