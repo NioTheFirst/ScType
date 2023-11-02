@@ -2679,6 +2679,7 @@ def remap_return(function):
     fentry = {function.entry_point}
     explored = set()
     print("FIND RETURN")
+    print(function.entry_point)
     print(function.full_name)
     return_ssa_mapping = {}
     for ir_ssa in function.returns_ssa:
