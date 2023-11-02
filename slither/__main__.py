@@ -80,7 +80,6 @@ def process_single(
 
 
 def process_all(
-    global total_compilations
     target: str,
     args: argparse.Namespace,
     detector_classes: List[Type[AbstractDetector]],
