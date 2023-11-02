@@ -21,7 +21,7 @@ from crytic_compile import compile_all, is_supported
 
 from slither.detectors import all_detectors
 from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.tcheck_modules import total_compilations
+from slither.tcheck_module import total_compilations
 from slither.printers import all_printers
 from slither.printers.abstract_printer import AbstractPrinter
 from slither.slither import Slither
