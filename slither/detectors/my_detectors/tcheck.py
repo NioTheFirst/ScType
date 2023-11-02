@@ -2678,8 +2678,8 @@ def _clear_type_node(node):
 def remap_return(function):
     fentry = {function.entry_point}
     explored = set()
-    ##print("FIND RETURN")
-    ##print(function.full_name)
+    print("FIND RETURN")
+    print(function.full_name)
     return_ssa_mapping = {}
     for ir_ssa in function.returns_ssa:
         try:
