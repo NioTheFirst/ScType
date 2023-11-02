@@ -21,6 +21,7 @@ from crytic_compile import compile_all, is_supported
 
 from slither.detectors import all_detectors
 from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither.detectors.my_detectors.tcheck import total_compilation
 from slither.printers import all_printers
 from slither.printers.abstract_printer import AbstractPrinter
 from slither.slither import Slither
@@ -79,6 +80,7 @@ def process_single(
 
 
 def process_all(
+    global total_compilations
     target: str,
     args: argparse.Namespace,
     detector_classes: List[Type[AbstractDetector]],
@@ -90,7 +92,6 @@ def process_all(
     results_printers = []
     analyzed_contracts_count = 0
     total_compilations = len(compilations)
-    print(f"TComp: {total_compilations}")
     for compilation in compilations:
         (
             slither,

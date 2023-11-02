@@ -33,6 +33,7 @@ current_function_marked = False
 type_file = ""
 write_typefile = True
 maxTokens = 10
+total_compilation = 0
 debug_pow_pc = None
 tempVar = defaultdict(list) #list storing temp variables (refreshed every node call)
 strgVar = defaultdict(list) #list storing storage variables (kept through all calls)
@@ -3096,7 +3097,9 @@ class tcheck(AbstractDetector):
         global function_count
         global address_to_label
         global label_sets
+        global total_compilation
         assign_const(constant_instance)
+        print(f"total compilations: {total_compilation}")
         for contract in self.contracts:
             print(f"Checking {contract.name}")
             for function in contract.functions_declared:
