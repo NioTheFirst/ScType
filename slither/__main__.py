@@ -89,6 +89,7 @@ def process_all(
     results_detectors = []
     results_printers = []
     analyzed_contracts_count = 0
+    print("Processing All!")
     for compilation in compilations:
         (
             slither,
