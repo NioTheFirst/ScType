@@ -46,7 +46,7 @@ from slither.exceptions import SlitherException
 
 logging.basicConfig()
 logger = logging.getLogger("Slither")
-
+total_compilations = 0
 
 ###################################################################################
 ###################################################################################
@@ -89,7 +89,8 @@ def process_all(
     results_detectors = []
     results_printers = []
     analyzed_contracts_count = 0
-    print("Processing All!")
+    total_compilations = len(compilations)
+    print("TComp: {total_compilations}")
     for compilation in compilations:
         (
             slither,
