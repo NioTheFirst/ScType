@@ -3097,7 +3097,7 @@ class tcheck(AbstractDetector):
         global address_to_label
         global label_sets
         assign_const(constant_instance)
-        for contract in self.slither.contracts:
+        for contract in self.contracts:
             print(f"Checking {contract.name}")
             for function in contract.functions_declared:
                 print(function.nodes)
