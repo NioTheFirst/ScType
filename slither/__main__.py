@@ -47,7 +47,6 @@ from slither.exceptions import SlitherException
 
 logging.basicConfig()
 logger = logging.getLogger("Slither")
-total_compilations = 0
 
 ###################################################################################
 ###################################################################################
@@ -85,7 +84,6 @@ def process_all(
     detector_classes: List[Type[AbstractDetector]],
     printer_classes: List[Type[AbstractPrinter]],
 ) -> Tuple[List[Slither], List[Dict], List[Dict], int]:
-    global total_compilation
     compilations = compile_all(target, **vars(args))
     slither_instances = []
     results_detectors = []
