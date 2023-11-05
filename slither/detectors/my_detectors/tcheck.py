@@ -3169,7 +3169,7 @@ class tcheck(AbstractDetector):
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
                 print("continuing...")
                 continue
-            #print("Running check on ")
+            print(f"Running check on {contract.name}")
             errorsx = _tcheck_contract(contract)
             #print("xxxxxx")
             #print(f"Errors: {errorsx}")
