@@ -13,7 +13,7 @@ from slither.core.solidity_types import UserDefinedType, ArrayType
 from slither.core.declarations import Structure, Contract
 from slither.core.solidity_types.elementary_type import ElementaryType
 from slither.core.declarations.modifier import Modifier
-from slither.tcheck_module import total_compilations
+from slither import tcheck_module
 import copy
 import linecache
 import os
@@ -3097,8 +3097,8 @@ class tcheck(AbstractDetector):
         global function_count
         global address_to_label
         global label_sets
-        global total_compilations
         assign_const(constant_instance)
+        total_compilations = tcheck_module.get_total_compilations()
         print(f"total compilations: {total_compilations}")
         for contract in self.contracts:
             print(f"Checking {contract.name}")
