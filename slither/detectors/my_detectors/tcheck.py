@@ -3014,7 +3014,7 @@ def _tcheck_contract(contract):
     #Reset update ratios
     reset_update_ratios()
     for function in contract.functions_declared:
-        ##print("Reading Function: " + function.name)
+        print("Reading Function: " + function.name)
         if not(function_check[function.name]):
             ##print("Function " + function.name + " not marked")
             if(mark_iteration):
@@ -3169,6 +3169,7 @@ class tcheck(AbstractDetector):
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
                 print("continuing...")
                 continue
+            #print("Running check on ")
             errorsx = _tcheck_contract(contract)
             #print("xxxxxx")
             #print(f"Errors: {errorsx}")
