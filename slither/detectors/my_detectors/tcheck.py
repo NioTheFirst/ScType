@@ -2971,6 +2971,7 @@ def _mark_functions(contract):
         while fentry:
             node = fentry.pop()
             for ir in node.irs_ssa:
+                #print(ir)
                 if(isinstance(ir, Binary)):
                     contains_bin = True
                     break
@@ -2986,10 +2987,10 @@ def _mark_functions(contract):
             for son in node.sons:
                 fentry.add(son)
         function_check[function.name] = contains_bin
-        #if contains_bin:
-        #    #print("[o] Marked")
-        #else:
-        #    #print("[x] No Binary")
+        if contains_bin:
+            print("[*]Marked")
+        else:
+            print("[X]No Binary")
 
 
 #TODO--------------------------------------------------------
