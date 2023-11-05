@@ -2960,10 +2960,10 @@ def _mark_functions(contract):
         #print(function.nodes)
         fentry = {function.entry_point}
         #add contract-function pair
-        print(f"Mark functions Adding: {contract.name}, {function.name}")
+        print(f"Mark functions Adding: {contract.name}, {function.name}, {hasExternal}")
         #view_ir({function.entry_point})
         add_cf_pair(contract.name, function.name, function)
-        if(not (function.entry_point and (not hasExternal or function.visibility == "external" or function.visibility == "public"))):
+        if(not (function.entry_point and (not(hasExternal) or function.visibility == "external" or function.visibility == "public"))):
             function_check[function.name] = False
             ##print("[x] Not visible ")
             continue
