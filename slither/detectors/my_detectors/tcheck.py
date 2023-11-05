@@ -2949,8 +2949,8 @@ def _tcheck_contract_state_var(contract):
 #RTURNS: NULL
 def _mark_functions(contract):
     for function in contract.functions_declared:
-        print(f"Checking... {function.name} Visibility: {function.visibility}")
-        print(function.nodes)
+        #print(f"Checking... {function.name} Visibility: {function.visibility}")
+        #print(function.nodes)
         fentry = {function.entry_point}
         #add contract-function pair
         print(f"Mark functions Adding: {contract.name}, {function.name}")

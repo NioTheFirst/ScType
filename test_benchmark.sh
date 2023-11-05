@@ -46,10 +46,10 @@ fi
 # Group 4: Tracer
 if [[ $# -eq 0 || $1 -eq 4 ]]; then
   solc-select use 0.8.4
-  #cd "Benchmark/Tracer/src/contracts/lib"
-  #slither --detect tcheck .
+  cd "../Benchmark/Tracer/src/contracts/lib"
+  slither --detect tcheck .
   echo "Currently ommitted"
-  #cd "../../../../../"
+  cd "$ORIGINAL_DIR"
   execute_group 4 echo "[*] Tested 1 warning for Tracer"
   sleep 3
 fi
