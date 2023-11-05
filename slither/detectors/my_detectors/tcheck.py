@@ -3100,13 +3100,13 @@ class tcheck(AbstractDetector):
         assign_const(constant_instance)
         total_compilations = tcheck_module.get_total_compilations()
         print(f"total compilations: {total_compilations}, contracts: {len(self.contracts)}")
-        
+        '''
         for contract in self.contracts:
             print(f"Checking {contract.name}")
             for function in contract.functions_declared:
                 print(f"Name: {function.name}")
         print("End Checking...")
-    
+        '''
         for contract in self.contracts:
             #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
