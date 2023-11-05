@@ -3159,6 +3159,7 @@ class tcheck(AbstractDetector):
             seen_contracts[contract.name] = True
             user_type = u_provide_type[contract.name]
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
+                print("continuing...")
                 continue
             errorsx = _tcheck_contract(contract)
             #print("xxxxxx")
