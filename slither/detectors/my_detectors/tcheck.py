@@ -2824,7 +2824,7 @@ def _tcheck_function(function) -> []:
     ##print("Function Visibility (test): "+function.visibility)
     fvisibl = function.visibility
     new_param_cache = None
-    if(fvisibl == 'public' or fvisibl == 'external' or read_internal):
+    if(True): #fvisibl == 'public' or fvisibl == 'external' or read_internal):
         for fparam in function.parameters:
             ##print(fparam.name)
             fparam.parent_function = function.name
@@ -3016,7 +3016,7 @@ def _tcheck_contract(contract):
     for function in contract.functions_declared:
         print("Reading Function: " + function.name)
         if not(function_check[function.name]):
-            ##print("Function " + function.name + " not marked")
+            #print("Function " + function.name + " not marked")
             if(mark_iteration):
                 ##print("Mark Iterations TRUE, proceeding anyway")
                 current_function_marked = False
@@ -3025,8 +3025,9 @@ def _tcheck_contract(contract):
         else:
             current_function_marked = True
         if not function.entry_point:
+            #print("No Entry point")
             continue
-
+        print("Checking funcion...")
         #current_function_marked = True
         #SKIP
         ##print("[*i*]External Function: " + function.name)
