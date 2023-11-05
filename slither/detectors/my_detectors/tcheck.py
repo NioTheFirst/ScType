@@ -2965,7 +2965,7 @@ def _mark_functions(contract):
         add_cf_pair(contract.name, function.name, function)
         if(not (function.entry_point and (not(hasExternal) or function.visibility == "external" or function.visibility == "public"))):
             function_check[function.name] = False
-            ##print("[x] Not visible ")
+            print("[x] Not visible ")
             continue
         contains_bin = False
         while fentry:
