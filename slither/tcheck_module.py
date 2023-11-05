@@ -1,6 +1,6 @@
 total_compilations = -1
 
-def update_total_compilations(int total):
+def update_total_compilations(total):
     global total_compilations
     total_compilations = total
 
