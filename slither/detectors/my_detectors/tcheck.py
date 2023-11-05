@@ -3099,7 +3099,7 @@ class tcheck(AbstractDetector):
         global label_sets
         assign_const(constant_instance)
         total_compilations = tcheck_module.get_total_compilations()
-        print(f"total compilations: {total_compilations}")
+        print(f"total compilations: {total_compilations}, contracts: {len(self.contracts)}")
         '''
         for contract in self.contracts:
             print(f"Checking {contract.name}")
