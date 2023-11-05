@@ -2948,6 +2948,13 @@ def _tcheck_contract_state_var(contract):
 #USAGE: labels which contracts that should be read (contains binary operations) also adds contract-function pairs
 #RTURNS: NULL
 def _mark_functions(contract):
+    #Check for any external. If none, check internal (TODO add a feature to allow internal function type checking)
+    hasExternal = read_internal
+    for function in contract.functions_declared:
+        if(function.visibility == "external" or function.visibility == "public"):
+            hasExternal = True
+            
+
     for function in contract.functions_declared:
         #print(f"Checking... {function.name} Visibility: {function.visibility}")
         #print(function.nodes)
@@ -2956,7 +2963,7 @@ def _mark_functions(contract):
         print(f"Mark functions Adding: {contract.name}, {function.name}")
         #view_ir({function.entry_point})
         add_cf_pair(contract.name, function.name, function)
-        if(not (function.entry_point and (read_internal or function.visibility == "external" or function.visibility == "public"))):
+        if(not (function.entry_point and (hasExternal or function.visibility == "external" or function.visibility == "public"))):
             function_check[function.name] = False
             ##print("[x] Not visible ")
             continue
