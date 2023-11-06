@@ -2692,11 +2692,12 @@ def _clear_type_node(node):
 
                 print(f"[i] {ir.lvalue.name} cleared")
                 ##print(_ir)
-        #Clear variables read
-        for var in node.ssa_local_variables_read:
-            _var = var.extok
-            _var.token_type_clear()
-            _var.norm = 'u'
+    #Clear variables read
+    for var in node.ssa_local_variables_read:
+        _var = var.extok
+        _var.token_type_clear()
+        _var.norm = 'u'
+        _var.finance_type = -1
         #if(debug_pow_pc):
         ###    for pc in debug_pow_pc:
         #      #print("CCCCCC")
