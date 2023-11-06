@@ -935,6 +935,7 @@ def type_included_hlc(ir, dest, function):
     for param in ir.arguments:
         ##print(param)
         init_var(param)
+        print(param.extok)
         if(is_type_const(param)):
             assign_const(param)
         elif(is_type_undef(param)):
