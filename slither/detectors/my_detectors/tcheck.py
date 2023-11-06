@@ -1261,11 +1261,11 @@ def type_member(ir)->bool:
     _rv = ir.variable_right.extok
     _ir = ir.lvalue.extok
     pf_name = _lv.function_name
-    ##print(_lv.name)
+    print(_lv.name)
     #print(_lv)
     #print(_lvname)
-    ##print(_rv.name)
-    ##print(pf_name)
+    print(_rv.name)
+    print(pf_name)
     ##print(f"left var type: {ir.variable_left.type}")
     ##print(f"left var structure elems: {ir.variable_left.type.type.elems}")
     #if is_type_undef(ir.variable_left):
