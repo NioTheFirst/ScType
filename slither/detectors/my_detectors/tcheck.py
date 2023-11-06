@@ -2686,7 +2686,7 @@ def _clear_type_node(node):
                 _ir.norm = 'u'
                 #update_non_ssa(ir.lvalue)
 
-                #print("[i] " + ir.lvalue.name + " cleared")
+                print(f"[i] {ir.lvalue.name} cleared")
                 ##print(_ir)
         #if(debug_pow_pc):
         ###    for pc in debug_pow_pc:
