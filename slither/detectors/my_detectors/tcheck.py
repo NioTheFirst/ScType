@@ -2691,7 +2691,7 @@ def _clear_type_node(node):
                 ##print(_ir)
         #Clear variables read
         for var in node.ssa_local_variables_read:
-            _var = var.lvalue.extok
+            _var = var.extok
             _var.token_type_clear()
             _var.norm = 'u'
         #if(debug_pow_pc):
