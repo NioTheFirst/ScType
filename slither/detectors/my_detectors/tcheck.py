@@ -2568,7 +2568,7 @@ def _tcheck_node(node, function) -> []:
     print("Propogating parameters and globals to SSA variables...")
     print(node.ssa_state_variables_read)
     print(node.ssa_local_variables_read)
-    for lv in node.local_state_variables_read:
+    for lv in node.ssa_local_variables_read:
         print(lv)
         #print(lv.extok)
         propogate_parameter(lv, function)
