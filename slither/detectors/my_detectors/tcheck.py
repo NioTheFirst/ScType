@@ -2677,6 +2677,7 @@ def _clear_type_node(node):
         #        #print_param_cache(pc)
         #        #print("AFTER")
         ##print(ir)
+        #Clear lvalue
         if(has_lvalue(ir) and is_variable(ir.lvalue)):
             ##print("has variable")
             if(isinstance(ir.lvalue, TemporaryVariable) or isinstance(ir.lvalue, LocalIRVariable)):
@@ -2688,6 +2689,11 @@ def _clear_type_node(node):
 
                 print(f"[i] {ir.lvalue.name} cleared")
                 ##print(_ir)
+        #Clear variables read
+        for var in node.ssa_local_variables_read:
+            _var = var.lvalue.extok
+            _var.token_type_clear()
+            _var.norm = 'u'
         #if(debug_pow_pc):
         ###    for pc in debug_pow_pc:
         #      #print("CCCCCC")
