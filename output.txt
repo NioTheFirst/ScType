@@ -1440,8 +1440,8 @@ IF_LOOP i < n
 EXPRESSION total += arr[i]
 END_LOOP
 EXPRESSION i ++
-RETURN total
 IF_LOOP i < n
+RETURN total
 
 
 arr_1(uint256[]) := ϕ(['arr_1'])
@@ -1450,7 +1450,7 @@ n_1(uint256) := REF_0(uint256)
 total_1(uint256) := 0(uint256)
 i_1(uint256) := 0(uint256)
 total_2(uint256) := ϕ(['total_3', 'total_1'])
-i_2(uint256) := ϕ(['i_1', 'i_3'])
+i_2(uint256) := ϕ(['i_3', 'i_1'])
 TMP_8(bool) = i_2 < n_1
 CONDITION TMP_8
 REF_1(uint256) -> arr_1[i_2]
@@ -1653,14 +1653,14 @@ XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
-Name: i, Num: 2
-Globalname: i
 Name: n, Num: 1
 Globalname: n
 Name: i, Num: 2
 Globalname: i
 Name: total, Num: 2
 Globalname: total
+Name: i, Num: 2
+Globalname: i
 End popogation
 Name: total, Num: 2
 Globalname: total
@@ -1750,18 +1750,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
-i_2(uint256) := ϕ(['i_1', 'i_3'])
+i_2(uint256) := ϕ(['i_3', 'i_1'])
 Phi
-
-Name: i Function: sum
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: None Function: None
 Num: 
@@ -1770,6 +1760,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -2056,7 +2056,7 @@ n_1(uint256) := REF_0(uint256)
 total_1(uint256) := 0(uint256)
 i_1(uint256) := 0(uint256)
 total_2(uint256) := ϕ(['total_3', 'total_1'])
-i_2(uint256) := ϕ(['i_1', 'i_3'])
+i_2(uint256) := ϕ(['i_3', 'i_1'])
 TMP_8(bool) = i_2 < n_1
 CONDITION TMP_8
 REF_1(uint256) -> arr_1[i_2]
@@ -2259,14 +2259,14 @@ XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
-Name: i, Num: 2
-Globalname: i
 Name: n, Num: 1
 Globalname: n
 Name: i, Num: 2
 Globalname: i
 Name: total, Num: 2
 Globalname: total
+Name: i, Num: 2
+Globalname: i
 End popogation
 Name: total, Num: 2
 Globalname: total
@@ -2356,7 +2356,7 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
-i_2(uint256) := ϕ(['i_1', 'i_3'])
+i_2(uint256) := ϕ(['i_3', 'i_1'])
 Phi
 
 Name: i Function: sum
@@ -2365,7 +2365,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 
@@ -2375,7 +2375,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -2391,7 +2391,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 
@@ -2414,7 +2414,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 XXXX
@@ -2423,7 +2423,7 @@ init
 end
 init
 end
-lnorm: u rnorm: u
+lnorm: 0 rnorm: u
 init
 end
 _______________
@@ -2434,7 +2434,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 
@@ -2459,7 +2459,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 
@@ -2482,7 +2482,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 XXXX
@@ -2568,7 +2568,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 
@@ -2590,9 +2590,9 @@ Name: TMP_9 Function: sum
 Num: -1
 Den: -1
 Address: u
-Norm: u
+Norm: 0
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 XXXX
@@ -2634,7 +2634,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 2
 Fields: 
 Finance Type: undef
 XXXX
@@ -2699,7 +2699,7 @@ n_1(uint256) := ϕ(['len_1'])
 total_1(uint256) := 0(uint256)
 i_1(uint256) := 0(uint256)
 total_2(uint256) := ϕ(['total_1', 'total_3'])
-i_2(uint256) := ϕ(['i_3', 'i_1'])
+i_2(uint256) := ϕ(['i_1', 'i_3'])
 TMP_10(bool) = i_2 < n_1
 CONDITION TMP_10
 REF_2(uint256) -> arr_1[i_2]
@@ -2884,11 +2884,11 @@ XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
-Name: i, Num: 2
-Globalname: i
 Source address: u
 Name: n, Num: 1
 Globalname: n
+Name: i, Num: 2
+Globalname: i
 Name: i, Num: 2
 Globalname: i
 Name: total, Num: 2
@@ -2982,18 +2982,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
-i_2(uint256) := ϕ(['i_3', 'i_1'])
+i_2(uint256) := ϕ(['i_1', 'i_3'])
 Phi
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 
 Name: i Function: sumN
 Num: -1
@@ -3002,6 +2992,16 @@ Address: u
 Norm: u
 LF: None
 Value: 0
+Fields: 
+Finance Type: undef
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
 Fields: 
 Finance Type: undef
 
@@ -3287,7 +3287,7 @@ n_1(uint256) := ϕ(['len_1'])
 total_1(uint256) := 0(uint256)
 i_1(uint256) := 0(uint256)
 total_2(uint256) := ϕ(['total_1', 'total_3'])
-i_2(uint256) := ϕ(['i_3', 'i_1'])
+i_2(uint256) := ϕ(['i_1', 'i_3'])
 TMP_10(bool) = i_2 < n_1
 CONDITION TMP_10
 REF_2(uint256) -> arr_1[i_2]
@@ -3472,11 +3472,11 @@ XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
-Name: i, Num: 2
-Globalname: i
 Source address: u
 Name: n, Num: 1
 Globalname: n
+Name: i, Num: 2
+Globalname: i
 Name: i, Num: 2
 Globalname: i
 Name: total, Num: 2
@@ -3570,7 +3570,7 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
-i_2(uint256) := ϕ(['i_3', 'i_1'])
+i_2(uint256) := ϕ(['i_1', 'i_3'])
 Phi
 
 Name: i Function: sumN
@@ -3579,7 +3579,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -3589,7 +3589,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 0
+Value: 1
 Fields: 
 Finance Type: undef
 
@@ -3605,7 +3605,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -3628,7 +3628,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 XXXX
@@ -3637,7 +3637,7 @@ init
 end
 init
 end
-lnorm: 0 rnorm: u
+lnorm: u rnorm: u
 init
 end
 _______________
@@ -3648,7 +3648,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -3673,7 +3673,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -3696,7 +3696,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 XXXX
@@ -3782,7 +3782,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -3804,9 +3804,9 @@ Name: TMP_11 Function: sumN
 Num: -1
 Den: -1
 Address: u
-Norm: 0
+Norm: u
 LF: None
-Value: 1
+Value: 0
 Fields: 
 Finance Type: undef
 XXXX
@@ -3848,7 +3848,7 @@ Den: -1
 Address: u
 Norm: u
 LF: None
-Value: 2
+Value: 1
 Fields: 
 Finance Type: undef
 XXXX
@@ -4192,11 +4192,11 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: len, Num: 1
-Globalname: len
-Source address: u
 Name: arr, Num: 1
 Globalname: arr
+Source address: u
+Name: len, Num: 1
+Globalname: len
 End popogation
 TMP_14(uint256) = INTERNAL_CALL, LibMath.sumN(uint256[],uint256)(arr_1,len_1)
 [i]Type for TMP_14
@@ -4263,11 +4263,11 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: len, Num: 1
-Globalname: len
-Source address: u
 Name: arr, Num: 1
 Globalname: arr
+Source address: u
+Name: len, Num: 1
+Globalname: len
 End popogation
 TMP_14(uint256) = INTERNAL_CALL, LibMath.sumN(uint256[],uint256)(arr_1,len_1)
 [i]Type for TMP_14
@@ -4637,11 +4637,11 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: a, Num: 1
-Globalname: a
-Source address: u
 Name: b, Num: 1
 Globalname: b
+Source address: u
+Name: a, Num: 1
+Globalname: a
 End popogation
 TMP_17(bool) = a_1 < b_1
 init
@@ -4757,11 +4757,11 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: a, Num: 1
-Globalname: a
-Source address: u
 Name: b, Num: 1
 Globalname: b
+Source address: u
+Name: a, Num: 1
+Globalname: a
 End popogation
 TMP_17(bool) = a_1 < b_1
 init
@@ -5131,11 +5131,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -5143,9 +5143,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -5458,11 +5465,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -5470,9 +5477,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -5908,9 +5922,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -5970,9 +5991,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -6333,9 +6361,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -6405,9 +6440,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -6628,8 +6670,8 @@ NEW VARIABLE _notionalValue = notionalValue(position,price)
 NEW VARIABLE marginValue = margin(position,price)
 NEW VARIABLE signedNotionalValue = LibMath.toInt256(_notionalValue)
 IF signedNotionalValue - marginValue < 0
+RETURN 0
 RETURN uint256(signedNotionalValue - marginValue)
-RETURN 0
 
 
 TMP_6(uint256) = INTERNAL_CALL, Balances.notionalValue(Balances.Position,uint256)(position_1,price_1)
@@ -6641,10 +6683,10 @@ signedNotionalValue_1(int256) := TMP_8(int256)
 TMP_9(int256) = signedNotionalValue_1 (c)- marginValue_1
 TMP_10(bool) = TMP_9 < 0
 CONDITION TMP_10
+RETURN 0
 TMP_11(int256) = signedNotionalValue_1 (c)- marginValue_1
 TMP_12 = CONVERT TMP_11 to uint256
 RETURN TMP_12
-RETURN 0
 
 
 Propogating parameters and globals to SSA variables...
@@ -6797,11 +6839,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -6809,9 +6851,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -7123,11 +7172,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -7135,9 +7184,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -7617,9 +7673,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -7689,9 +7752,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -8049,9 +8119,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -8121,9 +8198,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -8757,6 +8841,22 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+End popogation
+RETURN 0
+RETURN
+init
+end
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Propogating parameters and globals to SSA variables...
 Name: marginValue, Num: 1
 Globalname: marginValue
 End popogation
@@ -8865,22 +8965,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Propogating parameters and globals to SSA variables...
-End popogation
-RETURN 0
-RETURN
-init
-end
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 
 
 TMP_6(uint256) = INTERNAL_CALL, Balances.notionalValue(Balances.Position,uint256)(position_1,price_1)
@@ -8892,10 +8976,10 @@ signedNotionalValue_1(int256) := TMP_8(int256)
 TMP_9(int256) = signedNotionalValue_1 (c)- marginValue_1
 TMP_10(bool) = TMP_9 < 0
 CONDITION TMP_10
+RETURN 0
 TMP_11(int256) = signedNotionalValue_1 (c)- marginValue_1
 TMP_12 = CONVERT TMP_11 to uint256
 RETURN TMP_12
-RETURN 0
 
 
 Propogating parameters and globals to SSA variables...
@@ -9048,11 +9132,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -9060,9 +9144,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -9374,11 +9465,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -9386,9 +9477,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -9868,9 +9966,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -9940,9 +10045,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -10300,9 +10412,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -10372,9 +10491,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -11008,6 +11134,22 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+End popogation
+RETURN 0
+RETURN
+init
+end
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Propogating parameters and globals to SSA variables...
 Name: marginValue, Num: 1
 Globalname: marginValue
 End popogation
@@ -11112,22 +11254,6 @@ Num: -1
 Den: -1
 Address: u
 Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Propogating parameters and globals to SSA variables...
-End popogation
-RETURN 0
-RETURN
-init
-end
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
 LF: None
 Value: u
 Fields: 
@@ -11390,9 +11516,16 @@ init
 end
 init
 end
-position_1
-base
-minimumMargin
+
+Name: position_1 Function: minimumMargin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 OUT KEY: minimumMargin_position_1_base
 OUT KEY: minimumMargin_position_base
 FTT: None
@@ -11625,11 +11758,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -11637,9 +11770,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -11951,11 +12091,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -11963,9 +12103,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -12677,9 +12824,16 @@ init
 end
 init
 end
-position_1
-base
-minimumMargin
+
+Name: position_1 Function: minimumMargin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: minimumMargin_position_1_base
 OUT KEY: minimumMargin_position_base
 FTT: None
@@ -12922,11 +13076,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -12934,9 +13088,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -13248,11 +13409,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -13260,9 +13421,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -13855,17 +14023,17 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: position, Num: 1
-Globalname: position
-Source address: u
-Name: liquidationGasCost, Num: 1
-Globalname: liquidationGasCost
-Source address: u
 Name: trueMaxLeverage, Num: 1
 Globalname: trueMaxLeverage
 Source address: u
 Name: price, Num: 1
 Globalname: price
+Source address: u
+Name: liquidationGasCost, Num: 1
+Globalname: liquidationGasCost
+Source address: u
+Name: position, Num: 1
+Globalname: position
 Name: minMargin, Num: 1
 Globalname: minMargin
 End popogation
@@ -14110,9 +14278,16 @@ init
 end
 init
 end
-position_1
-base
-minimumMargin
+
+Name: position_1 Function: minimumMargin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: minimumMargin_position_1_base
 OUT KEY: minimumMargin_position_base
 FTT: None
@@ -14339,11 +14514,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -14351,9 +14526,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -14665,11 +14847,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -14677,9 +14859,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -15387,9 +15576,16 @@ init
 end
 init
 end
-position_1
-base
-minimumMargin
+
+Name: position_1 Function: minimumMargin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: minimumMargin_position_1_base
 OUT KEY: minimumMargin_position_base
 FTT: None
@@ -15616,11 +15812,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -15628,9 +15824,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -15942,11 +16145,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -15954,9 +16157,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -16542,11 +16752,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: position, Num: 1
-Globalname: position
-Source address: u
 Name: price, Num: 1
 Globalname: price
+Source address: u
+Name: position, Num: 1
+Globalname: position
 Name: _margin, Num: 1
 Globalname: _margin
 End popogation
@@ -16761,9 +16971,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -16833,9 +17050,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -17193,9 +17417,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -17265,9 +17496,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -17690,17 +17928,17 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: position, Num: 1
-Globalname: position
-Source address: u
-Name: liquidationGasCost, Num: 1
-Globalname: liquidationGasCost
-Source address: u
 Name: trueMaxLeverage, Num: 1
 Globalname: trueMaxLeverage
 Source address: u
 Name: price, Num: 1
 Globalname: price
+Source address: u
+Name: liquidationGasCost, Num: 1
+Globalname: liquidationGasCost
+Source address: u
+Name: position, Num: 1
+Globalname: position
 Name: minMargin, Num: 1
 Globalname: minMargin
 End popogation
@@ -17945,9 +18183,16 @@ init
 end
 init
 end
-position_1
-base
-minimumMargin
+
+Name: position_1 Function: minimumMargin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: minimumMargin_position_1_base
 OUT KEY: minimumMargin_position_base
 FTT: None
@@ -18174,11 +18419,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -18186,9 +18431,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -18500,11 +18752,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -18512,9 +18764,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -19222,9 +19481,16 @@ init
 end
 init
 end
-position_1
-base
-minimumMargin
+
+Name: position_1 Function: minimumMargin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: minimumMargin_position_1_base
 OUT KEY: minimumMargin_position_base
 FTT: None
@@ -19451,11 +19717,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -19463,9 +19729,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -19777,11 +20050,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: price, Num: 1
-Globalname: price
-Source address: u
 Name: position, Num: 1
 Globalname: position
+Source address: u
+Name: price, Num: 1
+Globalname: price
 End popogation
 REF_2(int256) -> position_1.base
 MEMBER
@@ -19789,9 +20062,16 @@ init
 end
 init
 end
-position_1
-base
-notionalValue
+
+Name: position_1 Function: notionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 OUT KEY: notionalValue_position_1_base
 OUT KEY: notionalValue_position_base
 FTT: None
@@ -20377,11 +20657,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: position, Num: 1
-Globalname: position
-Source address: u
 Name: price, Num: 1
 Globalname: price
+Source address: u
+Name: position, Num: 1
+Globalname: position
 Name: _margin, Num: 1
 Globalname: _margin
 End popogation
@@ -20596,9 +20876,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -20668,9 +20955,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -21028,9 +21322,16 @@ init
 end
 init
 end
-position_1
-quote
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_quote
 OUT KEY: margin_position_quote
 FTT: None
@@ -21100,9 +21401,16 @@ init
 end
 init
 end
-position_1
-base
-margin
+
+Name: position_1 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
 OUT KEY: margin_position_1_base
 OUT KEY: margin_position_base
 FTT: None
@@ -21624,9 +21932,6 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: orderB, Num: 1
-Globalname: orderB
-Source address: u
 Name: fillA, Num: 1
 Globalname: fillA
 Source address: u
@@ -21635,6 +21940,9 @@ Globalname: orderA
 Source address: u
 Name: fillB, Num: 1
 Globalname: fillB
+Source address: u
+Name: orderB, Num: 1
+Globalname: orderB
 End popogation
 REF_11(uint256) -> orderA_1.amount
 MEMBER
@@ -21642,9 +21950,16 @@ init
 end
 init
 end
-orderA
-amount
-None
+
+Name: orderA Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_11
@@ -21742,9 +22057,16 @@ init
 end
 init
 end
-orderB
-amount
-None
+
+Name: orderB Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_12
@@ -21880,9 +22202,6 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: orderB, Num: 1
-Globalname: orderB
-Source address: u
 Name: fillA, Num: 1
 Globalname: fillA
 Source address: u
@@ -21891,6 +22210,9 @@ Globalname: orderA
 Source address: u
 Name: fillB, Num: 1
 Globalname: fillB
+Source address: u
+Name: orderB, Num: 1
+Globalname: orderB
 End popogation
 REF_11(uint256) -> orderA_1.amount
 MEMBER
@@ -21898,9 +22220,16 @@ init
 end
 init
 end
-orderA
-amount
-None
+
+Name: orderA Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_11
@@ -21968,16 +22297,17 @@ end
 init
 end
 init
-end
-_______________
-
-Name: fillA Function: None
+eniid
+Nmount
+ame: fillA Function: None
 Num: 
 Den: 
 Address: u
 Norm: u
 LF: None
-Value: u
+V
+
+alue: u
 Fields: 
 Finance Type: undef
 
@@ -22008,9 +22338,16 @@ init
 end
 init
 end
-orderB
-amount
-None
+
+Name: orderB Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_12
@@ -22204,7 +22541,7 @@ Param: 1
     den: [-1]
     norm: u
     link: None
-    fields: [<slither.core.variables.structure_variable.StructureVariable object at 0x7f5747d602b0>]
+    fields: [<slither.core.variables.structure_variable.StructureVariable object at 0x7f16dce5d1f0>]
     fintype: -1
 Param: 2
     num: [-1]
@@ -22262,22 +22599,22 @@ TMP_34(bool) = REF_25 == REF_27
 CONDITION TMP_34
 REF_28(int256) -> position_1.base
 TMP_35(int256) = REF_28 (c)- signedAmount_1
-newBase_2(int256) := TMP_35(int256)
+newBase_3(int256) := TMP_35(int256)
 REF_29(int256) -> position_1.quote
 TMP_36(int256) = REF_29 (c)+ quoteChange_1
 TMP_37(int256) = TMP_36 (c)- fee_1
-newQuote_2(int256) := TMP_37(int256)
+newQuote_3(int256) := TMP_37(int256)
 REF_23(int256) -> position_1.base
 TMP_31(int256) = REF_23 (c)+ signedAmount_1
-newBase_4(int256) := TMP_31(int256)
-newQuote_3(int256) := ϕ(['newQuote_1', 'newQuote_2'])
-newBase_3(int256) := ϕ(['newBase_1', 'newBase_2'])
-newQuote_5(int256) := ϕ(['newQuote_1', 'newQuote_4'])
-newBase_5(int256) := ϕ(['newBase_1', 'newBase_4'])
+newBase_2(int256) := TMP_31(int256)
+newQuote_4(int256) := ϕ(['newQuote_3', 'newQuote_1'])
+newBase_4(int256) := ϕ(['newBase_3', 'newBase_1'])
+newQuote_5(int256) := ϕ(['newQuote_2', 'newQuote_1'])
+newBase_5(int256) := ϕ(['newBase_2', 'newBase_1'])
 REF_24(int256) -> position_1.quote
 TMP_32(int256) = REF_24 (c)- quoteChange_1
 TMP_33(int256) = TMP_32 (c)+ fee_1
-newQuote_4(int256) := TMP_33(int256)
+newQuote_2(int256) := TMP_33(int256)
 TMP_38 = new Position(newQuote_5,newBase_5)
 newPosition_1(Balances.Position) := TMP_38(Balances.Position)
 RETURN newPosition_1
@@ -22298,9 +22635,16 @@ init
 end
 init
 end
-trade
-amount
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_14
@@ -22429,9 +22773,16 @@ init
 end
 init
 end
-trade
-price
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_16
@@ -22538,10 +22889,10 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: signedAmount, Num: 1
-Globalname: signedAmount
 Name: signedPrice, Num: 1
 Globalname: signedPrice
+Name: signedAmount, Num: 1
+Globalname: signedAmount
 Name: quoteChange, Num: 1
 Globalname: quoteChange
 End popogation
@@ -22647,11 +22998,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: trade, Num: 1
-Globalname: trade
-Source address: u
 Name: feeRate, Num: 1
 Globalname: feeRate
+Source address: u
+Name: trade, Num: 1
+Globalname: trade
 Name: fee, Num: 1
 Globalname: fee
 End popogation
@@ -22661,9 +23012,16 @@ init
 end
 init
 end
-trade
-amount
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_18
@@ -22731,9 +23089,16 @@ init
 end
 init
 end
-trade
-price
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_19
@@ -22969,11 +23334,11 @@ Finance Type: simple fee ratio
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: amount, Num: 1
-Globalname: amount
-Source address: u
 Name: executionPrice, Num: 1
 Globalname: executionPrice
+Source address: u
+Name: amount, Num: 1
+Globalname: amount
 Name: quoteChange, Num: 1
 Globalname: quoteChange
 End popogation
@@ -23078,11 +23443,11 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: quoteChange, Num: 1
-Globalname: quoteChange
 Source address: u
 Name: feeRate, Num: 1
 Globalname: feeRate
+Name: quoteChange, Num: 1
+Globalname: quoteChange
 Name: fee, Num: 1
 Globalname: fee
 End popogation
@@ -23347,11 +23712,11 @@ Finance Type: simple fee ratio
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: amount, Num: 1
-Globalname: amount
-Source address: u
 Name: executionPrice, Num: 1
 Globalname: executionPrice
+Source address: u
+Name: amount, Num: 1
+Globalname: amount
 Name: quoteChange, Num: 1
 Globalname: quoteChange
 End popogation
@@ -23456,11 +23821,11 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: quoteChange, Num: 1
-Globalname: quoteChange
 Source address: u
 Name: feeRate, Num: 1
 Globalname: feeRate
+Name: quoteChange, Num: 1
+Globalname: quoteChange
 Name: fee, Num: 1
 Globalname: fee
 End popogation
@@ -23749,9 +24114,16 @@ init
 end
 init
 end
-trade
-side
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_20
@@ -23808,9 +24180,16 @@ MEMBER
 init
 init
 end
-Perpetuals
-Side
-global
+
+Name: Perpetuals Function: global
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 OUT KEY: global_Perpetuals_Side
 OUT KEY: global_Perpetuals_Side
 FTT: None
@@ -23870,9 +24249,16 @@ init
 end
 init
 end
-REF_21
-Long
-applyTrade
+
+Name: REF_21 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 OUT KEY: applyTrade_REF_21_Long
 OUT KEY: applyTrade_REF_Long
 FTT: None
@@ -23950,9 +24336,16 @@ init
 end
 init
 end
-trade
-side
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, side, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_25
@@ -24019,9 +24412,16 @@ MEMBER
 init
 init
 end
-Perpetuals
-Side
-global
+
+Name: Perpetuals Function: global
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: Side, Long
+Finance Type: undef
 OUT KEY: global_Perpetuals_Side
 OUT KEY: global_Perpetuals_Side
 FTT: None
@@ -24091,9 +24491,16 @@ init
 end
 init
 end
-REF_26
-Short
-applyTrade
+
+Name: REF_26 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 OUT KEY: applyTrade_REF_26_Short
 OUT KEY: applyTrade_REF_Short
 FTT: None
@@ -24161,12 +24568,12 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: signedAmount, Num: 1
-Globalname: signedAmount
 Source address: u
 Name: position, Num: 1
 Globalname: position
-Name: newBase, Num: 2
+Name: signedAmount, Num: 1
+Globalname: signedAmount
+Name: newBase, Num: 3
 Globalname: newBase
 End popogation
 REF_28(int256) -> position_1.base
@@ -24175,9 +24582,16 @@ init
 end
 init
 end
-position
-base
-None
+
+Name: position Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_28
@@ -24269,7 +24683,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-newBase_2(int256) := TMP_35(int256)
+newBase_3(int256) := TMP_35(int256)
 asgn
 init
 end
@@ -24315,7 +24729,7 @@ Name: position, Num: 1
 Globalname: position
 Name: fee, Num: 1
 Globalname: fee
-Name: newQuote, Num: 2
+Name: newQuote, Num: 3
 Globalname: newQuote
 End popogation
 REF_29(int256) -> position_1.quote
@@ -24324,9 +24738,16 @@ init
 end
 init
 end
-position
-quote
-None
+
+Name: position Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_29
@@ -24458,7 +24879,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-newQuote_2(int256) := TMP_37(int256)
+newQuote_3(int256) := TMP_37(int256)
 asgn
 init
 end
@@ -24497,12 +24918,12 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: signedAmount, Num: 1
-Globalname: signedAmount
 Source address: u
 Name: position, Num: 1
 Globalname: position
-Name: newBase, Num: 4
+Name: signedAmount, Num: 1
+Globalname: signedAmount
+Name: newBase, Num: 2
 Globalname: newBase
 End popogation
 REF_23(int256) -> position_1.base
@@ -24511,9 +24932,16 @@ init
 end
 init
 end
-position
-base
-None
+
+Name: position Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_23
@@ -24615,7 +25043,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-newBase_4(int256) := TMP_31(int256)
+newBase_2(int256) := TMP_31(int256)
 asgn
 init
 end
@@ -24655,7 +25083,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
-Name: newQuote, Num: 3
+Name: newQuote, Num: 4
 Globalname: newQuote
 
 Name: None Function: None
@@ -24668,7 +25096,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-Name: newBase, Num: 3
+Name: newBase, Num: 4
 Globalname: newBase
 
 Name: None Function: None
@@ -24681,18 +25109,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-newQuote_3(int256) := ϕ(['newQuote_1', 'newQuote_2'])
+newQuote_4(int256) := ϕ(['newQuote_3', 'newQuote_1'])
 Phi
-
-Name: newQuote Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: newQuote Function: applyTrade
 Num: 
@@ -24701,6 +25119,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -24743,18 +25171,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
-newBase_3(int256) := ϕ(['newBase_1', 'newBase_2'])
+newBase_4(int256) := ϕ(['newBase_3', 'newBase_1'])
 Phi
-
-Name: newBase Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: newBase Function: applyTrade
 Num: 
@@ -24763,6 +25181,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -24833,18 +25261,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-newQuote_5(int256) := ϕ(['newQuote_1', 'newQuote_4'])
+newQuote_5(int256) := ϕ(['newQuote_2', 'newQuote_1'])
 Phi
-
-Name: newQuote Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: None Function: None
 Num: 
@@ -24853,6 +25271,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -24895,18 +25323,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
-newBase_5(int256) := ϕ(['newBase_1', 'newBase_4'])
+newBase_5(int256) := ϕ(['newBase_2', 'newBase_1'])
 Phi
-
-Name: newBase Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: newBase Function: applyTrade
 Num: 
@@ -24915,6 +25333,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -24965,7 +25393,7 @@ Name: position, Num: 1
 Globalname: position
 Name: fee, Num: 1
 Globalname: fee
-Name: newQuote, Num: 4
+Name: newQuote, Num: 2
 Globalname: newQuote
 End popogation
 REF_24(int256) -> position_1.quote
@@ -24974,9 +25402,16 @@ init
 end
 init
 end
-position
-quote
-None
+
+Name: position Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_24
@@ -25118,7 +25553,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-newQuote_4(int256) := TMP_33(int256)
+newQuote_2(int256) := TMP_33(int256)
 asgn
 init
 end
@@ -25257,22 +25692,22 @@ TMP_34(bool) = REF_25 == REF_27
 CONDITION TMP_34
 REF_28(int256) -> position_1.base
 TMP_35(int256) = REF_28 (c)- signedAmount_1
-newBase_2(int256) := TMP_35(int256)
+newBase_3(int256) := TMP_35(int256)
 REF_29(int256) -> position_1.quote
 TMP_36(int256) = REF_29 (c)+ quoteChange_1
 TMP_37(int256) = TMP_36 (c)- fee_1
-newQuote_2(int256) := TMP_37(int256)
+newQuote_3(int256) := TMP_37(int256)
 REF_23(int256) -> position_1.base
 TMP_31(int256) = REF_23 (c)+ signedAmount_1
-newBase_4(int256) := TMP_31(int256)
-newQuote_3(int256) := ϕ(['newQuote_1', 'newQuote_2'])
-newBase_3(int256) := ϕ(['newBase_1', 'newBase_2'])
-newQuote_5(int256) := ϕ(['newQuote_1', 'newQuote_4'])
-newBase_5(int256) := ϕ(['newBase_1', 'newBase_4'])
+newBase_2(int256) := TMP_31(int256)
+newQuote_4(int256) := ϕ(['newQuote_3', 'newQuote_1'])
+newBase_4(int256) := ϕ(['newBase_3', 'newBase_1'])
+newQuote_5(int256) := ϕ(['newQuote_2', 'newQuote_1'])
+newBase_5(int256) := ϕ(['newBase_2', 'newBase_1'])
 REF_24(int256) -> position_1.quote
 TMP_32(int256) = REF_24 (c)- quoteChange_1
 TMP_33(int256) = TMP_32 (c)+ fee_1
-newQuote_4(int256) := TMP_33(int256)
+newQuote_2(int256) := TMP_33(int256)
 TMP_38 = new Position(newQuote_5,newBase_5)
 newPosition_1(Balances.Position) := TMP_38(Balances.Position)
 RETURN newPosition_1
@@ -25293,9 +25728,16 @@ init
 end
 init
 end
-trade
-amount
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, side, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_14
@@ -25424,9 +25866,16 @@ init
 end
 init
 end
-trade
-price
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, side, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_16
@@ -25543,10 +25992,10 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: signedAmount, Num: 1
-Globalname: signedAmount
 Name: signedPrice, Num: 1
 Globalname: signedPrice
+Name: signedAmount, Num: 1
+Globalname: signedAmount
 Name: quoteChange, Num: 1
 Globalname: quoteChange
 End popogation
@@ -25652,11 +26101,11 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: trade, Num: 1
-Globalname: trade
-Source address: u
 Name: feeRate, Num: 1
 Globalname: feeRate
+Source address: u
+Name: trade, Num: 1
+Globalname: trade
 Name: fee, Num: 1
 Globalname: fee
 End popogation
@@ -25666,9 +26115,16 @@ init
 end
 init
 end
-trade
-amount
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, side, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_18
@@ -25736,9 +26192,16 @@ init
 end
 init
 end
-trade
-price
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, side, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_19
@@ -25979,9 +26442,16 @@ init
 end
 init
 end
-trade
-side
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, side, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_20
@@ -26048,9 +26518,16 @@ MEMBER
 init
 init
 end
-Perpetuals
-Side
-global
+
+Name: Perpetuals Function: global
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: Side, Long, Short
+Finance Type: undef
 OUT KEY: global_Perpetuals_Side
 OUT KEY: global_Perpetuals_Side
 FTT: None
@@ -26120,9 +26597,16 @@ init
 end
 init
 end
-REF_21
-Long
-applyTrade
+
+Name: REF_21 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 OUT KEY: applyTrade_REF_21_Long
 OUT KEY: applyTrade_REF_Long
 FTT: None
@@ -26210,9 +26694,16 @@ init
 end
 init
 end
-trade
-side
-None
+
+Name: trade Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: price, side, amount
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_25
@@ -26279,9 +26770,16 @@ MEMBER
 init
 init
 end
-Perpetuals
-Side
-global
+
+Name: Perpetuals Function: global
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: Side, Long, Short
+Finance Type: undef
 OUT KEY: global_Perpetuals_Side
 OUT KEY: global_Perpetuals_Side
 FTT: None
@@ -26351,9 +26849,16 @@ init
 end
 init
 end
-REF_26
-Short
-applyTrade
+
+Name: REF_26 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 OUT KEY: applyTrade_REF_26_Short
 OUT KEY: applyTrade_REF_Short
 FTT: None
@@ -26431,12 +26936,12 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: signedAmount, Num: 1
-Globalname: signedAmount
 Source address: u
 Name: position, Num: 1
 Globalname: position
-Name: newBase, Num: 2
+Name: signedAmount, Num: 1
+Globalname: signedAmount
+Name: newBase, Num: 3
 Globalname: newBase
 End popogation
 REF_28(int256) -> position_1.base
@@ -26445,9 +26950,16 @@ init
 end
 init
 end
-position
-base
-None
+
+Name: position Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_28
@@ -26549,7 +27061,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-newBase_2(int256) := TMP_35(int256)
+newBase_3(int256) := TMP_35(int256)
 asgn
 init
 end
@@ -26595,7 +27107,7 @@ Name: position, Num: 1
 Globalname: position
 Name: fee, Num: 1
 Globalname: fee
-Name: newQuote, Num: 2
+Name: newQuote, Num: 3
 Globalname: newQuote
 End popogation
 REF_29(int256) -> position_1.quote
@@ -26604,9 +27116,16 @@ init
 end
 init
 end
-position
-quote
-None
+
+Name: position Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_29
@@ -26748,7 +27267,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-newQuote_2(int256) := TMP_37(int256)
+newQuote_3(int256) := TMP_37(int256)
 asgn
 init
 end
@@ -26787,12 +27306,12 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: signedAmount, Num: 1
-Globalname: signedAmount
 Source address: u
 Name: position, Num: 1
 Globalname: position
-Name: newBase, Num: 4
+Name: signedAmount, Num: 1
+Globalname: signedAmount
+Name: newBase, Num: 2
 Globalname: newBase
 End popogation
 REF_23(int256) -> position_1.base
@@ -26801,9 +27320,16 @@ init
 end
 init
 end
-position
-base
-None
+
+Name: position Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_23
@@ -26905,7 +27431,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-newBase_4(int256) := TMP_31(int256)
+newBase_2(int256) := TMP_31(int256)
 asgn
 init
 end
@@ -26945,7 +27471,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
-Name: newQuote, Num: 3
+Name: newQuote, Num: 4
 Globalname: newQuote
 
 Name: newQuote Function: applyTrade
@@ -26958,7 +27484,7 @@ Value: 0
 Fields: 
 Finance Type: undef
 Phid
-Name: newBase, Num: 3
+Name: newBase, Num: 4
 Globalname: newBase
 
 Name: newBase Function: applyTrade
@@ -26971,18 +27497,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 Phid
-newQuote_3(int256) := ϕ(['newQuote_1', 'newQuote_2'])
+newQuote_4(int256) := ϕ(['newQuote_3', 'newQuote_1'])
 Phi
-
-Name: newQuote Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: newQuote Function: applyTrade
 Num: 
@@ -26991,6 +27507,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -27033,18 +27559,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
-newBase_3(int256) := ϕ(['newBase_1', 'newBase_2'])
+newBase_4(int256) := ϕ(['newBase_3', 'newBase_1'])
 Phi
-
-Name: newBase Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: newBase Function: applyTrade
 Num: 
@@ -27053,6 +27569,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -27123,18 +27649,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 Phid
-newQuote_5(int256) := ϕ(['newQuote_1', 'newQuote_4'])
+newQuote_5(int256) := ϕ(['newQuote_2', 'newQuote_1'])
 Phi
-
-Name: newQuote Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: newQuote Function: applyTrade
 Num: 
@@ -27143,6 +27659,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -27185,18 +27711,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
-newBase_5(int256) := ϕ(['newBase_1', 'newBase_4'])
+newBase_5(int256) := ϕ(['newBase_2', 'newBase_1'])
 Phi
-
-Name: newBase Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 
 Name: newBase Function: applyTrade
 Num: 
@@ -27205,6 +27721,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
 Fields: 
 Finance Type: undef
 
@@ -27255,7 +27781,7 @@ Name: position, Num: 1
 Globalname: position
 Name: fee, Num: 1
 Globalname: fee
-Name: newQuote, Num: 4
+Name: newQuote, Num: 2
 Globalname: newQuote
 End popogation
 REF_24(int256) -> position_1.quote
@@ -27264,9 +27790,16 @@ init
 end
 init
 end
-position
-quote
-None
+
+Name: position Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 FTT: None
 No field found
 [i]Type for REF_24
@@ -27408,7 +27941,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-newQuote_4(int256) := TMP_33(int256)
+newQuote_2(int256) := TMP_33(int256)
 asgn
 init
 end
@@ -27700,11 +28233,11 @@ Finance Type: simple fee ratio
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: amount, Num: 1
-Globalname: amount
-Source address: u
 Name: executionPrice, Num: 1
 Globalname: executionPrice
+Source address: u
+Name: amount, Num: 1
+Globalname: amount
 Name: quoteChange, Num: 1
 Globalname: quoteChange
 End popogation
@@ -27809,11 +28342,11 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: quoteChange, Num: 1
-Globalname: quoteChange
 Source address: u
 Name: feeRate, Num: 1
 Globalname: feeRate
+Name: quoteChange, Num: 1
+Globalname: quoteChange
 Name: fee, Num: 1
 Globalname: fee
 End popogation
@@ -28091,11 +28624,11 @@ Finance Type: simple fee ratio
 XXXX
 Propogating parameters and globals to SSA variables...
 Source address: u
-Name: amount, Num: 1
-Globalname: amount
-Source address: u
 Name: executionPrice, Num: 1
 Globalname: executionPrice
+Source address: u
+Name: amount, Num: 1
+Globalname: amount
 Name: quoteChange, Num: 1
 Globalname: quoteChange
 End popogation
@@ -28200,11 +28733,11 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Name: quoteChange, Num: 1
-Globalname: quoteChange
 Source address: u
 Name: feeRate, Num: 1
 Globalname: feeRate
+Name: quoteChange, Num: 1
+Globalname: quoteChange
 Name: fee, Num: 1
 Globalname: fee
 End popogation
@@ -29068,11 +29601,11 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+Name: scaler, Num: 1
+Globalname: scaler
 Source address: u
 Name: amount, Num: 1
 Globalname: amount
-Name: scaler, Num: 1
-Globalname: scaler
 End popogation
 TMP_44(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['amount_1'] 
 Found: toInt256
@@ -29705,11 +30238,11 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+Name: scaler, Num: 1
+Globalname: scaler
 Source address: u
 Name: wadAmount, Num: 1
 Globalname: wadAmount
-Name: scaler, Num: 1
-Globalname: scaler
 End popogation
 TMP_50(uint256) = wadAmount_1 (c)/ scaler_1
 init

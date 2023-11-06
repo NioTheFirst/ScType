@@ -1260,9 +1260,11 @@ def type_member(ir)->bool:
     #_lvname = ir.variable_left.ssa_name
     _rv = ir.variable_right.extok
     _ir = ir.lvalue.extok
+    if(_lv.function_name == None):
+        _lv.function_name = ir.lvalue.extok.function_name
     pf_name = _lv.function_name
     #print(_lv.name)
-    print(_lv)
+    
     #print(_lvname)
     #print(_rv.name)
     #print(pf_name)
