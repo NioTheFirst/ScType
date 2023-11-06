@@ -305,12 +305,14 @@ def add_param_cache(function, new_param_cache):
     match_param = -100
     #for pc in fpc:
         ##print_param_cache(pc)
+    print(f"New param cache {new_param_cache}")
     if(len(fpc) == 0):
         add_param = True
     for a in range(len(fpc)):
         cur_param_cache = fpc[a]
         paramno = 0
         dif_cur_param = False
+        print(f"Old param cache: {cur_param_cache}")
         for cur_param in cur_param_cache:
             #compare cur_param with new_param_cache[paramno]
             seen_n = {}
