@@ -2693,6 +2693,7 @@ def _clear_type_node(node):
                 print(f"[i] {ir.lvalue.name} cleared")
                 ##print(_ir)
     #Clear variables read
+    '''
     for var in node.ssa_local_variables_read:
         _var = var.extok
         _var.token_type_clear()
@@ -2703,6 +2704,7 @@ def _clear_type_node(node):
         #      #print("CCCCCC")
         #      #print_param_cache(pc)
         #      #print("XXXXXX")
+    '''
 
 #USAGE: searches a function for a RETURN node, if it doesn't exist, do stuff
 #RETURNS: return node
