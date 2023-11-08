@@ -2750,7 +2750,9 @@ def _propogate_all_parameters(function):
         if node in explored:
             continue
         explored.add(node)
+        print("Propogating All")
         for var in node.ssa_local_variables_read:
+            print(var)
             propogate_parameter(var, function)
         for son in node.sons:
             fentry.add(son)
