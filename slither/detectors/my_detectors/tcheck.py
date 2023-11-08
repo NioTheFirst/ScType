@@ -2494,7 +2494,7 @@ def propogate_parameter(lv, function, clear_initial_parameters = False):
     print(f"Ssa_name: {lv.ssa_name}, name: {lv.name}")
     #print(lv.name)
     print(lv.extok)
-    if("_1" in lv.ssa_name and lv.extok.is_undefined() and clear_initial_parameters):
+    if("_1" in lv.ssa_name and (lv.extok.is_undefined() or clear_initial_parameters)):
             #print("local...")
             pos = -1
             for i in range(len(lv.ssa_name)-1):
