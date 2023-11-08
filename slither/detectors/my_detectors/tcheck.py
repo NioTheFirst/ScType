@@ -2896,7 +2896,7 @@ def _tcheck_function(function) -> []:
     function_count+=1
 
     #Propogate parameters
-    _propogate_all_parameters(function)
+    #_propogate_all_parameters(function)
 
     #WORKLIST ALGORITHM
     prevlen = -1
