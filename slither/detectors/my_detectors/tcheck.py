@@ -2751,7 +2751,7 @@ def _propogate_all_parameters(function):
             continue
         explored.add(node)
         for var in node.ssa_local_variables_read:
-            propogate_parameter(var)
+            propogate_parameter(var, function)
         for son in node.sons:
             fentry.add(son)
         
@@ -2792,6 +2792,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     remap_return(function)
 
     #Propogate parameters
+    _propogate_all_parameters(function)
 
 
     #WORKLIST ALGORITHM
@@ -2891,6 +2892,10 @@ def _tcheck_function(function) -> []:
     remap_return(function)
     #Append to function count
     function_count+=1
+
+    #Propogate parameters
+    _propogate_all_parameters(function)
+
     #WORKLIST ALGORITHM
     prevlen = -1
     curlen = -1
