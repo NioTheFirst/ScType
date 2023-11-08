@@ -2490,11 +2490,11 @@ def _tcheck_ir(irs, function_name) -> []:
     return newirs
 
 #USAGE: propogates a local variables with a parameter
-def propogate_parameter(lv, function):
+def propogate_parameter(lv, function, clear_initial_parameters = False):
     print(f"Ssa_name: {lv.ssa_name}, name: {lv.name}")
     #print(lv.name)
     print(lv.extok)
-    if("_1" in lv.ssa_name and lv.extok.is_undefined()):
+    if("_1" in lv.ssa_name and lv.extok.is_undefined() and clear_initial_parameters):
             #print("local...")
             pos = -1
             for i in range(len(lv.ssa_name)-1):
@@ -2753,7 +2753,7 @@ def _propogate_all_parameters(function):
         print("Propogating All")
         for var in node.ssa_local_variables_read:
             print(var)
-            propogate_parameter(var, function)
+            propogate_parameter(var, function, True)
         for son in node.sons:
             fentry.add(son)
         

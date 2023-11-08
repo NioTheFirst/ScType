@@ -59,6 +59,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: None Function: None
@@ -82,6 +85,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -158,8 +163,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -204,9 +209,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -215,9 +220,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -261,7 +266,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -420,8 +425,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -466,9 +471,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -477,9 +482,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -523,7 +528,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -653,8 +658,11 @@ ENTRY_POINT
 abs(int256)
 ENTRY_POINT
 IF x > 0
-RETURN int256(x)
 RETURN int256(- 1 * x)
+RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: None Function: None
@@ -678,6 +686,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: abs
@@ -689,6 +699,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: abs
@@ -704,12 +716,12 @@ Finance Type: undef
 
 TMP_3(bool) = x_1 > 0
 CONDITION TMP_3
-TMP_4 = CONVERT x_1 to int256
-RETURN TMP_4
 TMP_5(uint256) = 0 (c)- 1
 TMP_6(uint256) = TMP_5 (c)* x_1
 TMP_7 = CONVERT TMP_6 to int256
 RETURN TMP_7
+TMP_4 = CONVERT x_1 to int256
+RETURN TMP_4
 
 
 Propogating parameters and globals to SSA variables...
@@ -719,7 +731,7 @@ End popogation
 [i] TMP_3 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9c2e0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85f4c0>]
 x_1
 
 Name: x_1 Function: abs
@@ -782,123 +794,12 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] TMP_4 cleared
-Propogating parameters and globals to SSA variables...
-[]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9c2e0>]
-x_1
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: x_1, name: x
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: x_1, name: x
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-End popogation
-TMP_4 = CONVERT x_1 to int256
-Converting x_1
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-init
-end
-_______________
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: TMP_4 Function: abs
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-COPY HERE
-Source address: u
-[i]Type for TMP_4
-
-Name: TMP_4 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-RETURN TMP_4
-RETURN
-init
-end
-
-Name: TMP_4 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 [i] TMP_5 cleared
 [i] TMP_6 cleared
 [i] TMP_7 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9c2e0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85f4c0>]
 x_1
 
 Name: x_1 Function: abs
@@ -1112,92 +1013,10 @@ LF: None
 Value: -1
 Fields: 
 Finance Type: undef
-
-
-TMP_3(bool) = x_1 > 0
-CONDITION TMP_3
-TMP_4 = CONVERT x_1 to int256
-RETURN TMP_4
-TMP_5(uint256) = 0 (c)- 1
-TMP_6(uint256) = TMP_5 (c)* x_1
-TMP_7 = CONVERT TMP_6 to int256
-RETURN TMP_7
-
-
-Propogating parameters and globals to SSA variables...
-[]
-[]
-End popogation
-[i] TMP_3 cleared
-Propogating parameters and globals to SSA variables...
-[]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9c2e0>]
-x_1
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: x_1, name: x
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: x_1, name: x
-
-Name: x_1 Function: abs
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-End popogation
-TMP_3(bool) = x_1 > 0
-init
-end
-init
-end
-lnorm: u rnorm: 0
-[i]Type for TMP_3
-
-Name: TMP_3 Function: abs
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
 [i] TMP_4 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9c2e0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85f4c0>]
 x_1
 
 Name: x_1 Function: abs
@@ -1305,12 +1124,94 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+
+
+TMP_3(bool) = x_1 > 0
+CONDITION TMP_3
+TMP_5(uint256) = 0 (c)- 1
+TMP_6(uint256) = TMP_5 (c)* x_1
+TMP_7 = CONVERT TMP_6 to int256
+RETURN TMP_7
+TMP_4 = CONVERT x_1 to int256
+RETURN TMP_4
+
+
+Propogating parameters and globals to SSA variables...
+[]
+[]
+End popogation
+[i] TMP_3 cleared
+Propogating parameters and globals to SSA variables...
+[]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85f4c0>]
+x_1
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: x_1, name: x
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: x_1, name: x
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+End popogation
+TMP_3(bool) = x_1 > 0
+init
+end
+init
+end
+lnorm: u rnorm: 0
+[i]Type for TMP_3
+
+Name: TMP_3 Function: abs
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
 [i] TMP_5 cleared
 [i] TMP_6 cleared
 [i] TMP_7 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9c2e0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85f4c0>]
 x_1
 
 Name: x_1 Function: abs
@@ -1522,6 +1423,117 @@ Address: u
 Norm: 0
 LF: None
 Value: -1
+Fields: 
+Finance Type: undef
+[i] TMP_4 cleared
+Propogating parameters and globals to SSA variables...
+[]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85f4c0>]
+x_1
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: x_1, name: x
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: x_1, name: x
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+End popogation
+TMP_4 = CONVERT x_1 to int256
+Converting x_1
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+init
+end
+_______________
+
+Name: x_1 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: TMP_4 Function: abs
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+COPY HERE
+Source address: u
+[i]Type for TMP_4
+
+Name: TMP_4 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN TMP_4
+RETURN
+init
+end
+
+Name: TMP_4 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
 Fields: 
 Finance Type: undef
 Reading Function: sum
@@ -1552,8 +1564,11 @@ IF_LOOP i < n
 EXPRESSION total += arr[i]
 END_LOOP
 EXPRESSION i ++
-RETURN total
 IF_LOOP i < n
+RETURN total
+Propogating All
+Propogating All
+arr_1
 Ssa_name: arr_1, name: arr
 
 Name: None Function: None
@@ -1577,6 +1592,11 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+Propogating All
+Propogating All
+Propogating All
+i_2
 Ssa_name: i_2, name: i
 
 Name: None Function: None
@@ -1588,6 +1608,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+n_1
 Ssa_name: n_1, name: n
 
 Name: None Function: None
@@ -1599,17 +1620,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: i_2, name: i
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+Propogating All
+total_2
 Ssa_name: total_2, name: total
 
 Name: None Function: None
@@ -1621,6 +1633,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+arr_1
 Ssa_name: arr_1, name: arr
 
 Name: arr_1 Function: sum
@@ -1632,6 +1645,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+i_2
 Ssa_name: i_2, name: i
 
 Name: None Function: None
@@ -1643,6 +1657,22 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+Propogating All
+i_2
+Ssa_name: i_2, name: i
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Propogating All
+total_2
 Ssa_name: total_2, name: total
 
 Name: None Function: None
@@ -1743,7 +1773,7 @@ XXXX
 [i] n cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab1f0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eb3d0>]
 arr_1
 
 Name: arr Function: sum
@@ -2006,7 +2036,7 @@ End popogation
 [i] TMP_8 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9cb80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab490>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85fd60>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eb670>]
 i_2
 
 Name: None Function: None
@@ -2101,19 +2131,6 @@ Fields:
 Finance Type: undef
 Name: n, Num: 1
 Globalname: n
-Ssa_name: total_2, name: total
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: total, Num: 2
-Globalname: total
 Ssa_name: i_2, name: i
 
 Name: None Function: None
@@ -2127,6 +2144,19 @@ Fields:
 Finance Type: undef
 Name: i, Num: 2
 Globalname: i
+Ssa_name: total_2, name: total
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: total, Num: 2
+Globalname: total
 End popogation
 Ssa_name: total_2, name: total
 
@@ -2371,39 +2401,7 @@ XXXX
 [i] total cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9cb80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab880>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab1f0>]
-i_2
-
-Name: i Function: sum
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-Ssa_name: i_2, name: i
-
-Name: i Function: sum
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-
-Name: i Function: sum
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eba60>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eb3d0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85fd60>]
 total_2
 
 Name: total Function: sum
@@ -2482,7 +2480,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+i_2
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
 Ssa_name: i_2, name: i
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
 
 Name: i Function: sum
 Num: -1
@@ -2529,6 +2548,17 @@ Finance Type: undef
 Copied ftype
 Name: arr, Num: 1
 Globalname: arr
+Ssa_name: i_2, name: i
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
 Ssa_name: total_3, name: total
 
 Name: None Function: None
@@ -2608,7 +2638,7 @@ End popogation
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9cb80>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85fd60>]
 i_2
 
 Name: i Function: sum
@@ -2750,7 +2780,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab880>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eba60>]
 total_2
 
 Name: total Function: sum
@@ -2898,7 +2928,7 @@ XXXX
 [i] n cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab1f0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eb3d0>]
 arr_1
 
 Name: arr Function: sum
@@ -3161,7 +3191,7 @@ End popogation
 [i] TMP_8 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9cb80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab490>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85fd60>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eb670>]
 i_2
 
 Name: i Function: sum
@@ -3256,19 +3286,6 @@ Fields:
 Finance Type: undef
 Name: n, Num: 1
 Globalname: n
-Ssa_name: total_2, name: total
-
-Name: total Function: sum
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-Name: total, Num: 2
-Globalname: total
 Ssa_name: i_2, name: i
 
 Name: i Function: sum
@@ -3282,6 +3299,19 @@ Fields:
 Finance Type: undef
 Name: i, Num: 2
 Globalname: i
+Ssa_name: total_2, name: total
+
+Name: total Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+Name: total, Num: 2
+Globalname: total
 End popogation
 Ssa_name: total_2, name: total
 
@@ -3526,39 +3556,7 @@ XXXX
 [i] total cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9cb80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab880>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab1f0>]
-i_2
-
-Name: i Function: sum
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Ssa_name: i_2, name: i
-
-Name: i Function: sum
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-
-Name: i Function: sum
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eba60>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eb3d0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85fd60>]
 total_2
 
 Name: total Function: sum
@@ -3637,7 +3635,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+i_2
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
 Ssa_name: i_2, name: i
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
 
 Name: i Function: sum
 Num: -1
@@ -3684,6 +3703,17 @@ Finance Type: undef
 Copied ftype
 Name: arr, Num: 1
 Globalname: arr
+Ssa_name: i_2, name: i
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
 Ssa_name: total_3, name: total
 
 Name: total Function: sum
@@ -3763,7 +3793,7 @@ End popogation
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9cb80>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85fd60>]
 i_2
 
 Name: i Function: sum
@@ -3905,7 +3935,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab880>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eba60>]
 total_2
 
 Name: total Function: sum
@@ -4003,6 +4033,12 @@ EXPRESSION total += arr[i]
 RETURN total
 EXPRESSION i ++
 IF_LOOP i < n
+Propogating All
+Propogating All
+Propogating All
+Propogating All
+Propogating All
+n_1
 Ssa_name: n_1, name: n
 
 Name: None Function: None
@@ -4026,6 +4062,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+i_2
 Ssa_name: i_2, name: i
 
 Name: None Function: None
@@ -4037,6 +4074,21 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+Propogating All
+i_2
+Ssa_name: i_2, name: i
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+arr_1
 Ssa_name: arr_1, name: arr
 
 Name: None Function: None
@@ -4060,17 +4112,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
-Ssa_name: i_2, name: i
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+total_2
 Ssa_name: total_2, name: total
 
 Name: None Function: None
@@ -4082,6 +4124,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+total_2
 Ssa_name: total_2, name: total
 
 Name: None Function: None
@@ -4093,6 +4137,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+i_2
 Ssa_name: i_2, name: i
 
 Name: None Function: None
@@ -4378,7 +4424,7 @@ End popogation
 [i] TMP_10 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9cca0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5130>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85fe80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6310>]
 n_1
 
 Name: n Function: sumN
@@ -4771,7 +4817,39 @@ End popogation
 [i] total cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5760>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5130>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5a60>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6310>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6940>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6c40>]
+i_2
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+Ssa_name: i_2, name: i
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
 arr_1
 
 Name: arr Function: sumN
@@ -4818,38 +4896,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-i_2
-
-Name: i Function: sumN
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-Ssa_name: i_2, name: i
-
-Name: i Function: sumN
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
-
-Name: i Function: sumN
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 total_2
 
 Name: total Function: sumN
@@ -4874,6 +4920,17 @@ Fields:
 Finance Type: undef
 
 Name: total Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+Ssa_name: i_2, name: i
+
+Name: i Function: sumN
 Num: -1
 Den: -1
 Address: u
@@ -4907,17 +4964,6 @@ Finance Type: undef
 Copied ftype
 Name: arr, Num: 1
 Globalname: arr
-Ssa_name: i_2, name: i
-
-Name: i Function: sumN
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 0
-Fields: 
-Finance Type: undef
 Ssa_name: total_2, name: total
 
 Name: total Function: sumN
@@ -5002,7 +5048,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5a60>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6c40>]
 total_2
 
 Name: total Function: sumN
@@ -5065,7 +5111,7 @@ Finance Type: undef
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5130>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6310>]
 i_2
 
 Name: i Function: sumN
@@ -5479,7 +5525,7 @@ End popogation
 [i] TMP_10 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490b9cca0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5130>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da85fe80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6310>]
 n_1
 
 Name: n Function: sumN
@@ -5872,7 +5918,39 @@ End popogation
 [i] total cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5760>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5130>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5a60>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6310>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6940>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6c40>]
+i_2
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+Ssa_name: i_2, name: i
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
 arr_1
 
 Name: arr Function: sumN
@@ -5919,38 +5997,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-i_2
-
-Name: i Function: sumN
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Ssa_name: i_2, name: i
-
-Name: i Function: sumN
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-
-Name: i Function: sumN
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
 total_2
 
 Name: total Function: sumN
@@ -5983,6 +6029,17 @@ LF: None
 Value: 0
 Fields: 
 Finance Type: undef
+Ssa_name: i_2, name: i
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
 Ssa_name: arr_1, name: arr
 
 Name: arr_1 Function: sumN
@@ -6008,17 +6065,6 @@ Finance Type: undef
 Copied ftype
 Name: arr, Num: 1
 Globalname: arr
-Ssa_name: i_2, name: i
-
-Name: i Function: sumN
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
 Ssa_name: total_2, name: total
 
 Name: total Function: sumN
@@ -6103,7 +6149,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5a60>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6c40>]
 total_2
 
 Name: total Function: sumN
@@ -6166,7 +6212,7 @@ Finance Type: undef
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bb5130>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7f6310>]
 i_2
 
 Name: i Function: sumN
@@ -6328,6 +6374,9 @@ mean(uint256[])
 ENTRY_POINT
 NEW VARIABLE n = arr.length
 RETURN sum(arr) / n
+Propogating All
+Propogating All
+arr_1
 Ssa_name: arr_1, name: arr
 
 Name: None Function: None
@@ -6351,6 +6400,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+arr_1
 Ssa_name: arr_1, name: arr
 
 Name: arr_1 Function: mean
@@ -6362,6 +6413,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+n_1
 Ssa_name: n_1, name: n
 
 Name: None Function: None
@@ -6389,7 +6441,7 @@ End popogation
 [i] n cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbe430>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da800610>]
 arr_1
 
 Name: arr_1 Function: mean
@@ -6503,7 +6555,7 @@ XXXX
 [i] TMP_13 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbe430>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbe6d0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da800610>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da8008b0>]
 arr_1
 
 Name: arr_1 Function: mean
@@ -6665,7 +6717,7 @@ End popogation
 [i] n cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbe430>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da800610>]
 arr_1
 
 Name: arr_1 Function: mean
@@ -6779,7 +6831,7 @@ XXXX
 [i] TMP_13 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbe430>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbe6d0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da800610>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da8008b0>]
 arr_1
 
 Name: arr_1 Function: mean
@@ -6954,6 +7006,9 @@ ENTRY_POINT
 meanN(uint256[],uint256)
 ENTRY_POINT
 RETURN sumN(arr,len) / len
+Propogating All
+Propogating All
+len_1
 Ssa_name: len_1, name: len
 
 Name: None Function: None
@@ -6977,6 +7032,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+arr_1
 Ssa_name: arr_1, name: arr
 
 Name: None Function: None
@@ -7015,7 +7071,7 @@ End popogation
 [i] TMP_15 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab820>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbee50>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eba00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809070>]
 len_1
 
 Name: len_1 Function: meanN
@@ -7170,7 +7226,7 @@ End popogation
 [i] TMP_15 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bab820>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbee50>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da7eba00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809070>]
 len_1
 
 Name: len_1 Function: meanN
@@ -7342,6 +7398,9 @@ ENTRY_POINT
 IF a < b
 RETURN b
 RETURN a
+Propogating All
+Propogating All
+b_1
 Ssa_name: b_1, name: b
 
 Name: None Function: None
@@ -7365,6 +7424,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+a_1
 Ssa_name: a_1, name: a
 
 Name: None Function: None
@@ -7388,6 +7448,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+b_1
 Ssa_name: b_1, name: b
 
 Name: b_1 Function: min
@@ -7399,6 +7461,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+a_1
 Ssa_name: a_1, name: a
 
 Name: a_1 Function: min
@@ -7425,7 +7489,7 @@ End popogation
 [i] TMP_16 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbee20>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8550>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da800d00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809730>]
 b_1
 
 Name: b_1 Function: min
@@ -7533,7 +7597,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbee20>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da800d00>]
 b_1
 
 Name: b_1 Function: min
@@ -7594,7 +7658,7 @@ Fields:
 Finance Type: undef
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8550>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809730>]
 a_1
 
 Name: a_1 Function: min
@@ -7668,7 +7732,7 @@ End popogation
 [i] TMP_16 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbee20>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8550>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da800d00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809730>]
 b_1
 
 Name: b_1 Function: min
@@ -7776,7 +7840,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bbee20>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da800d00>]
 b_1
 
 Name: b_1 Function: min
@@ -7837,7 +7901,7 @@ Fields:
 Finance Type: undef
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8550>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809730>]
 a_1
 
 Name: a_1 Function: min
@@ -7928,6 +7992,9 @@ ENTRY_POINT
 IF a < b
 RETURN b
 RETURN a
+Propogating All
+Propogating All
+a_1
 Ssa_name: a_1, name: a
 
 Name: None Function: None
@@ -7951,6 +8018,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+b_1
 Ssa_name: b_1, name: b
 
 Name: None Function: None
@@ -7974,6 +8042,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+b_1
 Ssa_name: b_1, name: b
 
 Name: b_1 Function: signedMin
@@ -7985,6 +8055,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+a_1
 Ssa_name: a_1, name: a
 
 Name: a_1 Function: signedMin
@@ -8011,7 +8083,7 @@ End popogation
 [i] TMP_17 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8ca0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8520>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809e80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809700>]
 a_1
 
 Name: a_1 Function: signedMin
@@ -8119,7 +8191,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8520>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809700>]
 b_1
 
 Name: b_1 Function: signedMin
@@ -8180,7 +8252,7 @@ Fields:
 Finance Type: undef
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8ca0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809e80>]
 a_1
 
 Name: a_1 Function: signedMin
@@ -8254,7 +8326,7 @@ End popogation
 [i] TMP_17 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8ca0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8520>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809e80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809700>]
 a_1
 
 Name: a_1 Function: signedMin
@@ -8362,7 +8434,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8520>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809700>]
 b_1
 
 Name: b_1 Function: signedMin
@@ -8423,7 +8495,7 @@ Fields:
 Finance Type: undef
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490bc8ca0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da809e80>]
 a_1
 
 Name: a_1 Function: signedMin
@@ -8492,6 +8564,7 @@ FIND RETURN
 OTHER_ENTRYPOINT POSITIVE_INT256_MAX = 2 ** 255 - 1
 slitherConstructorConstantVariables()
 OTHER_ENTRYPOINT POSITIVE_INT256_MAX = 2 ** 255 - 1
+Propogating All
 
 
 
@@ -8636,6 +8709,9 @@ ENTRY_POINT
 notionalValue(Balances.Position,uint256)
 ENTRY_POINT
 RETURN PRBMathUD60x18.mul(uint256(PRBMathSD59x18.abs(position.base)),price)
+Propogating All
+Propogating All
+position_1
 Ssa_name: position_1, name: position
 
 Name: None Function: None
@@ -8659,6 +8735,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+price_1
 Ssa_name: price_1, name: price
 
 Name: None Function: None
@@ -8850,7 +8927,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f4c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed06a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0250>]
 position_1
 
 Name: position Function: notionalValue
@@ -9363,7 +9440,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f4c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed06a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0250>]
 position_1
 
 Name: position Function: notionalValue
@@ -9758,6 +9835,9 @@ margin(Balances.Position,uint256)
 ENTRY_POINT
 NEW VARIABLE signedPrice = LibMath.toInt256(price)
 RETURN position.quote + PRBMathSD59x18.mul(position.base,signedPrice)
+Propogating All
+Propogating All
+price_1
 Ssa_name: price_1, name: price
 
 Name: None Function: None
@@ -9781,6 +9861,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+position_1
 Ssa_name: position_1, name: position
 
 Name: None Function: None
@@ -9804,6 +9886,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+signedPrice_1
 Ssa_name: signedPrice_1, name: signedPrice
 
 Name: None Function: None
@@ -9984,7 +10067,7 @@ XXXX
 [i] signedPrice cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f040>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0220>]
 price_1
 
 Name: price Function: margin
@@ -10138,7 +10221,7 @@ XXXX
 [i] TMP_5 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28feb0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8eda0d0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8eda250>]
 position_1
 
 Name: position Function: margin
@@ -10661,7 +10744,7 @@ XXXX
 [i] signedPrice cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f040>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0220>]
 price_1
 
 Name: price Function: margin
@@ -10815,7 +10898,7 @@ XXXX
 [i] TMP_5 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28feb0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8eda0d0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8eda250>]
 position_1
 
 Name: position Function: margin
@@ -11231,8 +11314,11 @@ NEW VARIABLE _notionalValue = notionalValue(position,price)
 NEW VARIABLE marginValue = margin(position,price)
 NEW VARIABLE signedNotionalValue = LibMath.toInt256(_notionalValue)
 IF signedNotionalValue - marginValue < 0
-RETURN 0
 RETURN uint256(signedNotionalValue - marginValue)
+RETURN 0
+Propogating All
+Propogating All
+position_1
 Ssa_name: position_1, name: position
 
 Name: None Function: None
@@ -11256,6 +11342,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+price_1
 Ssa_name: price_1, name: price
 
 Name: None Function: None
@@ -11279,6 +11366,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+position_1
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: leveragedNotionalValue
@@ -11290,6 +11379,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+price_1
 Ssa_name: price_1, name: price
 
 Name: price_1 Function: leveragedNotionalValue
@@ -11301,6 +11391,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+_notionalValue_1
 Ssa_name: _notionalValue_1, name: _notionalValue
 
 Name: None Function: None
@@ -11312,6 +11404,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+signedNotionalValue_1
 Ssa_name: signedNotionalValue_1, name: signedNotionalValue
 
 Name: None Function: None
@@ -11323,6 +11417,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+marginValue_1
 Ssa_name: marginValue_1, name: marginValue
 
 Name: None Function: None
@@ -11334,6 +11429,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+signedNotionalValue_1
 Ssa_name: signedNotionalValue_1, name: signedNotionalValue
 
 Name: None Function: None
@@ -11345,6 +11442,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+marginValue_1
 Ssa_name: marginValue_1, name: marginValue
 
 Name: None Function: None
@@ -11356,6 +11454,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
 
 
 TMP_6(uint256) = INTERNAL_CALL, Balances.notionalValue(Balances.Position,uint256)(position_1,price_1)
@@ -11367,10 +11466,10 @@ signedNotionalValue_1(int256) := TMP_8(int256)
 TMP_9(int256) = signedNotionalValue_1 (c)- marginValue_1
 TMP_10(bool) = TMP_9 < 0
 CONDITION TMP_10
-RETURN 0
 TMP_11(int256) = signedNotionalValue_1 (c)- marginValue_1
 TMP_12 = CONVERT TMP_11 to uint256
 RETURN TMP_12
+RETURN 0
 
 
 Propogating parameters and globals to SSA variables...
@@ -11381,7 +11480,7 @@ End popogation
 [i] _notionalValue cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299d00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f490>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8edaee0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0670>]
 position_1
 
 Name: position_1 Function: leveragedNotionalValue
@@ -11568,7 +11667,7 @@ XXXX
 [i] marginValue cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299d00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f490>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8edaee0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0670>]
 position_1
 
 Name: position_1 Function: leveragedNotionalValue
@@ -11753,7 +11852,7 @@ XXXX
 [i] signedNotionalValue cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299e80>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee50a0>]
 _notionalValue_1
 
 Name: _notionalValue Function: leveragedNotionalValue
@@ -11852,6 +11951,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -11863,6 +11965,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -11916,8 +12020,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -11962,9 +12066,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -11973,9 +12077,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -12019,7 +12123,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -12169,8 +12273,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -12215,9 +12319,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -12226,9 +12330,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -12272,7 +12376,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -12438,7 +12542,7 @@ XXXX
 [i] TMP_10 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2243a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224130>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5580>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5310>]
 signedNotionalValue_1
 
 Name: signedNotionalValue Function: leveragedNotionalValue
@@ -12590,29 +12694,11 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-[]
-[]
-End popogation
-RETURN 0
-RETURN
-init
-end
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 [i] TMP_11 cleared
 [i] TMP_12 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2243a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224130>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5580>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5310>]
 signedNotionalValue_1
 
 Name: signedNotionalValue Function: leveragedNotionalValue
@@ -12809,6 +12895,24 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating parameters and globals to SSA variables...
+[]
+[]
+End popogation
+RETURN 0
+RETURN
+init
+end
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 
 
 TMP_6(uint256) = INTERNAL_CALL, Balances.notionalValue(Balances.Position,uint256)(position_1,price_1)
@@ -12820,10 +12924,10 @@ signedNotionalValue_1(int256) := TMP_8(int256)
 TMP_9(int256) = signedNotionalValue_1 (c)- marginValue_1
 TMP_10(bool) = TMP_9 < 0
 CONDITION TMP_10
-RETURN 0
 TMP_11(int256) = signedNotionalValue_1 (c)- marginValue_1
 TMP_12 = CONVERT TMP_11 to uint256
 RETURN TMP_12
+RETURN 0
 
 
 Propogating parameters and globals to SSA variables...
@@ -12834,7 +12938,7 @@ End popogation
 [i] _notionalValue cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299d00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f490>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8edaee0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0670>]
 position_1
 
 Name: position_1 Function: leveragedNotionalValue
@@ -13021,7 +13125,7 @@ XXXX
 [i] marginValue cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299d00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f490>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8edaee0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0670>]
 position_1
 
 Name: position_1 Function: leveragedNotionalValue
@@ -13206,7 +13310,7 @@ XXXX
 [i] signedNotionalValue cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299e80>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee50a0>]
 _notionalValue_1
 
 Name: _notionalValue Function: leveragedNotionalValue
@@ -13305,6 +13409,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -13316,6 +13423,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -13369,8 +13478,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -13415,9 +13524,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -13426,9 +13535,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -13472,7 +13581,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -13622,8 +13731,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -13668,9 +13777,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -13679,9 +13788,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -13725,7 +13834,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -13891,7 +14000,7 @@ XXXX
 [i] TMP_10 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2243a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224130>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5580>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5310>]
 signedNotionalValue_1
 
 Name: signedNotionalValue Function: leveragedNotionalValue
@@ -14043,29 +14152,11 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-[]
-[]
-End popogation
-RETURN 0
-RETURN
-init
-end
-
-Name: 0 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 [i] TMP_11 cleared
 [i] TMP_12 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2243a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224130>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5580>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5310>]
 signedNotionalValue_1
 
 Name: signedNotionalValue Function: leveragedNotionalValue
@@ -14258,6 +14349,24 @@ Num: -1
 Den: -1
 Address: u
 Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Propogating parameters and globals to SSA variables...
+[]
+[]
+End popogation
+RETURN 0
+RETURN
+init
+end
+
+Name: 0 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: 0
 LF: None
 Value: u
 Fields: 
@@ -14324,6 +14433,9 @@ NEW VARIABLE _notionalValue = notionalValue(position,price)
 NEW VARIABLE adjustedLiquidationGasCost = liquidationGasCost * 6
 NEW VARIABLE minimumMarginWithoutGasCost = PRBMathUD60x18.div(_notionalValue,maximumLeverage)
 RETURN adjustedLiquidationGasCost + minimumMarginWithoutGasCost
+Propogating All
+Propogating All
+position_1
 Ssa_name: position_1, name: position
 
 Name: None Function: None
@@ -14347,6 +14459,10 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+Propogating All
+Propogating All
+price_1
 Ssa_name: price_1, name: price
 
 Name: None Function: None
@@ -14370,6 +14486,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+position_1
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: minimumMargin
@@ -14381,6 +14498,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+liquidationGasCost_1
 Ssa_name: liquidationGasCost_1, name: liquidationGasCost
 
 Name: None Function: None
@@ -14404,6 +14523,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+maximumLeverage_1
 Ssa_name: maximumLeverage_1, name: maximumLeverage
 
 Name: None Function: None
@@ -14427,6 +14548,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+_notionalValue_1
 Ssa_name: _notionalValue_1, name: _notionalValue
 
 Name: None Function: None
@@ -14438,6 +14560,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+adjustedLiquidationGasCost_1
 Ssa_name: adjustedLiquidationGasCost_1, name: adjustedLiquidationGasCost
 
 Name: None Function: None
@@ -14449,6 +14573,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+minimumMarginWithoutGasCost_1
 Ssa_name: minimumMarginWithoutGasCost_1, name: minimumMarginWithoutGasCost
 
 Name: None Function: None
@@ -14743,7 +14868,7 @@ XXXX
 [i] TMP_13 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f22e5e0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6f7c0>]
 position_1
 
 Name: position Function: minimumMargin
@@ -14914,7 +15039,7 @@ End popogation
 [i] _notionalValue cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299cd0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f22e5e0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8edaeb0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6f7c0>]
 price_1
 
 Name: price Function: minimumMargin
@@ -15105,6 +15230,9 @@ ENTRY_POINT
 notionalValue(Balances.Position,uint256)
 ENTRY_POINT
 RETURN PRBMathUD60x18.mul(uint256(PRBMathSD59x18.abs(position.base)),price)
+Propogating All
+Propogating All
+position_1
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: notionalValue
@@ -15128,6 +15256,7 @@ Value: u
 Fields: base
 Finance Type: undef
 Copied ftype
+price_1
 Ssa_name: price_1, name: price
 
 Name: price_1 Function: notionalValue
@@ -15232,16 +15361,6 @@ Phid
 position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
 Phi
 
-Name: position_1 Function: leveragedNotionalValue
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
 Name: position_1 Function: minimumMargin
 Num: 
 Den: 
@@ -15250,6 +15369,16 @@ Norm: u
 LF: None
 Value: u
 Fields: base
+Finance Type: undef
+
+Name: position_1 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
 Finance Type: undef
 
 
@@ -15294,9 +15423,9 @@ XXXX
 price_1(uint256) := ϕ(['price_1', 'price_1'])
 Phi
 
-Name: price_1 Function: leveragedNotionalValue
-Num: -1
-Den: -1
+Name: price_1 Function: minimumMargin
+Num: 
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -15304,9 +15433,9 @@ Value: u
 Fields: 
 Finance Type: undef
 
-Name: price_1 Function: minimumMargin
-Num: 
-Den: 
+Name: price_1 Function: leveragedNotionalValue
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
@@ -15358,7 +15487,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f4c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed06a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0250>]
 position_1
 
 Name: position Function: notionalValue
@@ -15738,16 +15867,6 @@ Phid
 position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
 Phi
 
-Name: position_1 Function: leveragedNotionalValue
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
 Name: position_1 Function: minimumMargin
 Num: 
 Den: 
@@ -15756,6 +15875,16 @@ Norm: u
 LF: None
 Value: u
 Fields: base
+Finance Type: undef
+
+Name: position_1 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
 Finance Type: undef
 
 
@@ -15800,9 +15929,9 @@ XXXX
 price_1(uint256) := ϕ(['price_1', 'price_1'])
 Phi
 
-Name: price_1 Function: leveragedNotionalValue
-Num: -1
-Den: -1
+Name: price_1 Function: minimumMargin
+Num: 
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -15810,9 +15939,9 @@ Value: u
 Fields: 
 Finance Type: undef
 
-Name: price_1 Function: minimumMargin
-Num: 
-Den: 
+Name: price_1 Function: leveragedNotionalValue
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
@@ -15864,7 +15993,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f4c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed06a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0250>]
 position_1
 
 Name: position Function: notionalValue
@@ -16220,7 +16349,7 @@ XXXX
 [i] adjustedLiquidationGasCost cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224850>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5a30>]
 liquidationGasCost_1
 
 Name: liquidationGasCost Function: minimumMargin
@@ -16414,7 +16543,7 @@ XXXX
 [i] minimumMarginWithoutGasCost cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224ca0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f22eb50>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5e80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6fd30>]
 maximumLeverage_1
 
 Name: maximumLeverage Function: minimumMargin
@@ -16627,7 +16756,7 @@ XXXX
 [i] TMP_17 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f22edc0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6ffa0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78250>]
 adjustedLiquidationGasCost_1
 
 Name: adjustedLiquidationGasCost Function: minimumMargin
@@ -17053,7 +17182,7 @@ XXXX
 [i] TMP_13 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f22e5e0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6f7c0>]
 position_1
 
 Name: position Function: minimumMargin
@@ -17234,7 +17363,7 @@ End popogation
 [i] _notionalValue cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f299cd0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f22e5e0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8edaeb0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6f7c0>]
 price_1
 
 Name: price Function: minimumMargin
@@ -17425,6 +17554,9 @@ ENTRY_POINT
 notionalValue(Balances.Position,uint256)
 ENTRY_POINT
 RETURN PRBMathUD60x18.mul(uint256(PRBMathSD59x18.abs(position.base)),price)
+Propogating All
+Propogating All
+position_1
 Ssa_name: position_1, name: position
 
 Name: position Function: notionalValue
@@ -17436,6 +17568,7 @@ LF: None
 Value: u
 Fields: base
 Finance Type: undef
+price_1
 Ssa_name: price_1, name: price
 
 Name: price Function: notionalValue
@@ -17528,16 +17661,6 @@ Phid
 position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
 Phi
 
-Name: position_1 Function: leveragedNotionalValue
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
 Name: position_1 Function: minimumMargin
 Num: 
 Den: 
@@ -17546,6 +17669,16 @@ Norm: u
 LF: None
 Value: u
 Fields: base
+Finance Type: undef
+
+Name: position_1 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
 Finance Type: undef
 
 
@@ -17590,9 +17723,9 @@ XXXX
 price_1(uint256) := ϕ(['price_1', 'price_1'])
 Phi
 
-Name: price_1 Function: leveragedNotionalValue
-Num: -1
-Den: -1
+Name: price_1 Function: minimumMargin
+Num: 
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -17600,9 +17733,9 @@ Value: u
 Fields: 
 Finance Type: undef
 
-Name: price_1 Function: minimumMargin
-Num: 
-Den: 
+Name: price_1 Function: leveragedNotionalValue
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
@@ -17654,7 +17787,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f4c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed06a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0250>]
 position_1
 
 Name: position Function: notionalValue
@@ -18034,16 +18167,6 @@ Phid
 position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
 Phi
 
-Name: position_1 Function: leveragedNotionalValue
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
 Name: position_1 Function: minimumMargin
 Num: 
 Den: 
@@ -18052,6 +18175,16 @@ Norm: u
 LF: None
 Value: u
 Fields: base
+Finance Type: undef
+
+Name: position_1 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
 Finance Type: undef
 
 
@@ -18096,9 +18229,9 @@ XXXX
 price_1(uint256) := ϕ(['price_1', 'price_1'])
 Phi
 
-Name: price_1 Function: leveragedNotionalValue
-Num: -1
-Den: -1
+Name: price_1 Function: minimumMargin
+Num: 
+Den: 
 Address: u
 Norm: u
 LF: None
@@ -18106,9 +18239,9 @@ Value: u
 Fields: 
 Finance Type: undef
 
-Name: price_1 Function: minimumMargin
-Num: 
-Den: 
+Name: price_1 Function: leveragedNotionalValue
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
@@ -18160,7 +18293,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f4c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28f070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed06a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0250>]
 position_1
 
 Name: position Function: notionalValue
@@ -18516,7 +18649,7 @@ XXXX
 [i] adjustedLiquidationGasCost cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224850>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5a30>]
 liquidationGasCost_1
 
 Name: liquidationGasCost Function: minimumMargin
@@ -18710,7 +18843,7 @@ XXXX
 [i] minimumMarginWithoutGasCost cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224ca0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f22eb50>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ee5e80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6fd30>]
 maximumLeverage_1
 
 Name: maximumLeverage Function: minimumMargin
@@ -18923,7 +19056,7 @@ XXXX
 [i] TMP_17 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f22edc0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237070>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6ffa0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78250>]
 adjustedLiquidationGasCost_1
 
 Name: adjustedLiquidationGasCost Function: minimumMargin
@@ -19127,52 +19260,9 @@ IF _margin < 0
 END_IF
 RETURN (uint256(_margin) >= minMargin)
 RETURN false
-Ssa_name: price_1, name: price
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: price_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
-Ssa_name: trueMaxLeverage_1, name: trueMaxLeverage
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: trueMaxLeverage_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
+Propogating All
+Propogating All
+liquidationGasCost_1
 Ssa_name: liquidationGasCost_1, name: liquidationGasCost
 
 Name: None Function: None
@@ -19196,6 +19286,31 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+trueMaxLeverage_1
+Ssa_name: trueMaxLeverage_1, name: trueMaxLeverage
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: trueMaxLeverage_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+position_1
 Ssa_name: position_1, name: position
 
 Name: None Function: None
@@ -19219,7 +19334,19 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+price_1
 Ssa_name: price_1, name: price
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
 
 Name: price_1 Function: marginIsValid
 Num: -1
@@ -19230,6 +19357,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Copied ftype
+Propogating All
+position_1
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: marginIsValid
@@ -19241,6 +19371,20 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+price_1
+Ssa_name: price_1, name: price
+
+Name: price_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Propogating All
+_margin_1
 Ssa_name: _margin_1, name: _margin
 
 Name: None Function: None
@@ -19252,6 +19396,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+Propogating All
+_margin_1
 Ssa_name: _margin_1, name: _margin
 
 Name: None Function: None
@@ -19263,6 +19410,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+minMargin_1
 Ssa_name: minMargin_1, name: minMargin
 
 Name: None Function: None
@@ -19274,6 +19422,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
 
 
 TMP_18(uint256) = INTERNAL_CALL, Balances.minimumMargin(Balances.Position,uint256,uint256,uint256)(position_1,price_1,liquidationGasCost_1,trueMaxLeverage_1)
@@ -19296,10 +19445,10 @@ End popogation
 [i] minMargin cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237310>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237430>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224dc0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237c70>]
-price_1
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6fb80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78610>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78e50>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e784f0>]
+liquidationGasCost_1
 
-Name: price_1 Function: marginIsValid
+Name: liquidationGasCost_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -19308,9 +19457,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: price_1, name: price
+Ssa_name: liquidationGasCost_1, name: liquidationGasCost
 
-Name: price_1 Function: marginIsValid
+Name: liquidationGasCost_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -19320,7 +19469,7 @@ Value: u
 Fields: 
 Finance Type: undef
 
-Name: price_1 Function: marginIsValid
+Name: liquidationGasCost_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -19361,38 +19510,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-liquidationGasCost_1
-
-Name: liquidationGasCost_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: liquidationGasCost_1, name: liquidationGasCost
-
-Name: liquidationGasCost_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: liquidationGasCost_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 position_1
 
 Name: position_1 Function: marginIsValid
@@ -19425,6 +19542,17 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+price_1
+
+Name: price_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: price_1, name: price
 
 Name: price_1 Function: marginIsValid
@@ -19436,9 +19564,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: trueMaxLeverage_1, name: trueMaxLeverage
 
-Name: trueMaxLeverage_1 Function: marginIsValid
+Name: price_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -19458,9 +19585,31 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Ssa_name: trueMaxLeverage_1, name: trueMaxLeverage
+
+Name: trueMaxLeverage_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: price_1, name: price
+
+Name: price_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -19548,39 +19697,7 @@ XXXX
 [i] _margin cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237310>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237c70>]
-price_1
-
-Name: price_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: price_1, name: price
-
-Name: price_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: price_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78e50>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e784f0>]
 position_1
 
 Name: position_1 Function: marginIsValid
@@ -19613,7 +19730,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+price_1
+
+Name: price_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: price_1, name: price
+
+Name: price_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 
 Name: price_1 Function: marginIsValid
 Num: -1
@@ -19627,6 +19765,17 @@ Finance Type: undef
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: price_1, name: price
+
+Name: price_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -19732,7 +19881,7 @@ XXXX
 [i] TMP_20 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2420a0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84280>]
 _margin_1
 
 Name: _margin Function: marginIsValid
@@ -19857,7 +20006,7 @@ End popogation
 [i] TMP_22 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2420a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237df0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84280>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78fd0>]
 _margin_1
 
 Name: _margin Function: marginIsValid
@@ -20120,10 +20269,10 @@ End popogation
 [i] minMargin cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237310>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237430>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f224dc0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237c70>]
-price_1
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e6fb80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78610>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78e50>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e784f0>]
+liquidationGasCost_1
 
-Name: price_1 Function: marginIsValid
+Name: liquidationGasCost_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -20132,9 +20281,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: price_1, name: price
+Ssa_name: liquidationGasCost_1, name: liquidationGasCost
 
-Name: price_1 Function: marginIsValid
+Name: liquidationGasCost_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -20144,7 +20293,7 @@ Value: u
 Fields: 
 Finance Type: undef
 
-Name: price_1 Function: marginIsValid
+Name: liquidationGasCost_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -20185,38 +20334,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-liquidationGasCost_1
-
-Name: liquidationGasCost_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: liquidationGasCost_1, name: liquidationGasCost
-
-Name: liquidationGasCost_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: liquidationGasCost_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 position_1
 
 Name: position_1 Function: marginIsValid
@@ -20249,6 +20366,17 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+price_1
+
+Name: price_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: price_1, name: price
 
 Name: price_1 Function: marginIsValid
@@ -20260,9 +20388,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: trueMaxLeverage_1, name: trueMaxLeverage
 
-Name: trueMaxLeverage_1 Function: marginIsValid
+Name: price_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -20282,9 +20409,31 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Ssa_name: trueMaxLeverage_1, name: trueMaxLeverage
+
+Name: trueMaxLeverage_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: price_1, name: price
+
+Name: price_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -20372,39 +20521,7 @@ XXXX
 [i] _margin cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237310>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237c70>]
-price_1
-
-Name: price_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: price_1, name: price
-
-Name: price_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: price_1 Function: marginIsValid
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78e50>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e784f0>]
 position_1
 
 Name: position_1 Function: marginIsValid
@@ -20437,7 +20554,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+price_1
+
+Name: price_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: price_1, name: price
+
+Name: price_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 
 Name: price_1 Function: marginIsValid
 Num: -1
@@ -20451,6 +20589,17 @@ Finance Type: undef
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: price_1, name: price
+
+Name: price_1 Function: marginIsValid
 Num: -1
 Den: -1
 Address: u
@@ -20556,7 +20705,7 @@ XXXX
 [i] TMP_20 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2420a0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84280>]
 _margin_1
 
 Name: _margin Function: marginIsValid
@@ -20681,7 +20830,7 @@ End popogation
 [i] TMP_22 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2420a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237df0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84280>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78fd0>]
 _margin_1
 
 Name: _margin Function: marginIsValid
@@ -21026,6 +21175,9 @@ ENTRY_POINT
 fillAmount(Perpetuals.Order,uint256,Perpetuals.Order,uint256)
 ENTRY_POINT
 RETURN LibMath.min(orderA.amount - fillA,orderB.amount - fillB)
+Propogating All
+Propogating All
+fillB_1
 Ssa_name: fillB_1, name: fillB
 
 Name: None Function: None
@@ -21049,6 +21201,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+fillA_1
 Ssa_name: fillA_1, name: fillA
 
 Name: None Function: None
@@ -21072,29 +21225,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
-Ssa_name: orderA_1, name: orderA
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: orderA_1 Function: fillAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
+orderB_1
 Ssa_name: orderB_1, name: orderB
 
 Name: None Function: None
@@ -21109,6 +21240,30 @@ Finance Type: undef
 Source address: u
 
 Name: orderB_1 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+orderA_1
+Ssa_name: orderA_1, name: orderA
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: orderA_1 Function: fillAmount
 Num: -1
 Den: -1
 Address: u
@@ -21137,7 +21292,7 @@ End popogation
 [i] TMP_25 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2429a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237c40>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fd0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242850>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84b80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78e20>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84a30>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e8b1f0>]
 fillB_1
 
 Name: fillB_1 Function: fillAmount
@@ -21202,38 +21357,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-orderA_1
-
-Name: orderA_1 Function: fillAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: orderA_1, name: orderA
-
-Name: orderA_1 Function: fillAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: orderA_1 Function: fillAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 orderB_1
 
 Name: orderB_1 Function: fillAmount
@@ -21266,6 +21389,38 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+orderA_1
+
+Name: orderA_1 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: orderA_1, name: orderA
+
+Name: orderA_1 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: orderA_1 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: fillB_1, name: fillB
 
 Name: fillB_1 Function: fillAmount
@@ -21288,9 +21443,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: orderA_1, name: orderA
+Ssa_name: orderB_1, name: orderB
 
-Name: orderA_1 Function: fillAmount
+Name: orderB_1 Function: fillAmount
 Num: -1
 Den: -1
 Address: u
@@ -21299,9 +21454,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: orderB_1, name: orderB
+Ssa_name: orderA_1, name: orderA
 
-Name: orderB_1 Function: fillAmount
+Name: orderA_1 Function: fillAmount
 Num: -1
 Den: -1
 Address: u
@@ -21601,7 +21756,7 @@ End popogation
 [i] TMP_25 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f2429a0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f237c40>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fd0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242850>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84b80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e78e20>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84a30>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e8b1f0>]
 fillB_1
 
 Name: fillB_1 Function: fillAmount
@@ -21666,38 +21821,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-orderA_1
-
-Name: orderA_1 Function: fillAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: amount
-Finance Type: undef
-Ssa_name: orderA_1, name: orderA
-
-Name: orderA_1 Function: fillAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: amount
-Finance Type: undef
-
-Name: orderA_1 Function: fillAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: amount
-Finance Type: undef
 orderB_1
 
 Name: orderB_1 Function: fillAmount
@@ -21730,6 +21853,38 @@ LF: None
 Value: u
 Fields: amount
 Finance Type: undef
+orderA_1
+
+Name: orderA_1 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
+Ssa_name: orderA_1, name: orderA
+
+Name: orderA_1 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
+
+Name: orderA_1 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
 Ssa_name: fillB_1, name: fillB
 
 Name: fillB_1 Function: fillAmount
@@ -21752,9 +21907,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: orderA_1, name: orderA
+Ssa_name: orderB_1, name: orderB
 
-Name: orderA_1 Function: fillAmount
+Name: orderB_1 Function: fillAmount
 Num: -1
 Den: -1
 Address: u
@@ -21763,9 +21918,9 @@ LF: None
 Value: u
 Fields: amount
 Finance Type: undef
-Ssa_name: orderB_1, name: orderB
+Ssa_name: orderA_1, name: orderA
 
-Name: orderB_1 Function: fillAmount
+Name: orderA_1 Function: fillAmount
 Num: -1
 Den: -1
 Address: u
@@ -22116,7 +22271,7 @@ OUT KEY: applyTrade_trade_side
 Finding type for feeRate(uint256 ... )
 (-1, -1, 'u', 'u', 1, 12)
 [*]Type fetched successfully
-New param cache [[[-1], [-1], 'u', None, [], -1, 'u', 'u'], [[-1], [-1], 'u', None, [<slither.core.variables.structure_variable.StructureVariable object at 0x7f148ff5ecd0>], -1, 'u', 'u'], [[-1], [-1], 'u', None, [], 12, 'u', 'u']]
+New param cache [[[-1], [-1], 'u', None, [], -1, 'u', 'u'], [[-1], [-1], 'u', None, [<slither.core.variables.structure_variable.StructureVariable object at 0x7f64d9c1feb0>], -1, 'u', 'u'], [[-1], [-1], 'u', None, [], 12, 'u', 'u']]
 Param: 0
     num: [-1]
     den: [-1]
@@ -22129,7 +22284,7 @@ Param: 1
     den: [-1]
     norm: u
     link: None
-    fields: [<slither.core.variables.structure_variable.StructureVariable object at 0x7f148ff5ecd0>]
+    fields: [<slither.core.variables.structure_variable.StructureVariable object at 0x7f64d9c1feb0>]
     fintype: -1
 Param: 2
     num: [-1]
@@ -22159,6 +22314,9 @@ EXPRESSION newQuote = position.quote - quoteChange + fee
 NEW VARIABLE newPosition = Position(newQuote,newBase)
 END_IF
 RETURN newPosition
+Propogating All
+Propogating All
+trade_1
 Ssa_name: trade_1, name: trade
 
 Name: None Function: None
@@ -22182,6 +22340,8 @@ Value: u
 Fields: amount
 Finance Type: undef
 Copied ftype
+Propogating All
+trade_1
 Ssa_name: trade_1, name: trade
 
 Name: trade_1 Function: applyTrade
@@ -22193,6 +22353,8 @@ LF: None
 Value: u
 Fields: amount
 Finance Type: undef
+Propogating All
+signedAmount_1
 Ssa_name: signedAmount_1, name: signedAmount
 
 Name: None Function: None
@@ -22204,6 +22366,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+signedPrice_1
 Ssa_name: signedPrice_1, name: signedPrice
 
 Name: None Function: None
@@ -22215,6 +22378,20 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+trade_1
+Ssa_name: trade_1, name: trade
+
+Name: trade_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: amount
+Finance Type: undef
+feeRate_1
 Ssa_name: feeRate_1, name: feeRate
 
 Name: None Function: None
@@ -22238,6 +22415,10 @@ Value: u
 Fields: 
 Finance Type: simple fee ratio
 Copied ftype
+Propogating All
+Propogating All
+Propogating All
+trade_1
 Ssa_name: trade_1, name: trade
 
 Name: trade_1 Function: applyTrade
@@ -22249,6 +22430,8 @@ LF: None
 Value: u
 Fields: amount
 Finance Type: undef
+Propogating All
+trade_1
 Ssa_name: trade_1, name: trade
 
 Name: trade_1 Function: applyTrade
@@ -22260,17 +22443,20 @@ LF: None
 Value: u
 Fields: amount
 Finance Type: undef
-Ssa_name: trade_1, name: trade
+Propogating All
+signedAmount_1
+Ssa_name: signedAmount_1, name: signedAmount
 
-Name: trade_1 Function: applyTrade
-Num: -1
-Den: -1
+Name: None Function: None
+Num: 
+Den: 
 Address: u
 Norm: u
 LF: None
 Value: u
-Fields: amount
+Fields: 
 Finance Type: undef
+position_1
 Ssa_name: position_1, name: position
 
 Name: None Function: None
@@ -22294,28 +22480,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
-Ssa_name: signedAmount_1, name: signedAmount
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+Propogating All
+fee_1
 Ssa_name: fee_1, name: fee
 
 Name: None Function: None
@@ -22327,6 +22493,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+quoteChange_1
 Ssa_name: quoteChange_1, name: quoteChange
 
 Name: None Function: None
@@ -22338,6 +22505,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: applyTrade
@@ -22349,6 +22517,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+signedAmount_1
 Ssa_name: signedAmount_1, name: signedAmount
 
 Name: None Function: None
@@ -22360,6 +22530,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
 Ssa_name: position_1, name: position
 
 Name: position_1 Function: applyTrade
@@ -22371,6 +22542,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+Propogating All
+Propogating All
+fee_1
 Ssa_name: fee_1, name: fee
 
 Name: None Function: None
@@ -22382,6 +22557,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+quoteChange_1
 Ssa_name: quoteChange_1, name: quoteChange
 
 Name: None Function: None
@@ -22393,6 +22569,20 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Propogating All
+newBase_5
 Ssa_name: newBase_5, name: newBase
 
 Name: None Function: None
@@ -22404,6 +22594,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+newQuote_5
 Ssa_name: newQuote_5, name: newQuote
 
 Name: None Function: None
@@ -22415,6 +22606,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+newPosition_1
 Ssa_name: newPosition_1, name: newPosition
 
 Name: None Function: None
@@ -22483,7 +22676,7 @@ End popogation
 [i] signedAmount cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -22651,6 +22844,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -22662,6 +22858,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -22715,8 +22913,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -22761,9 +22959,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -22772,9 +22970,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -22818,7 +23016,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -22968,8 +23166,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -23014,9 +23212,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -23025,9 +23223,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -23071,7 +23269,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -23237,7 +23435,7 @@ XXXX
 [i] signedPrice cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -23422,7 +23620,7 @@ XXXX
 [i] quoteChange cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25aa30>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25adc0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9ac10>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9afa0>]
 signedAmount_1
 
 Name: signedAmount Function: applyTrade
@@ -23635,39 +23833,7 @@ XXXX
 [i] fee cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f24a700>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
-feeRate_1
-
-Name: feeRate_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: simple fee ratio
-Ssa_name: feeRate_1, name: feeRate
-
-Name: feeRate_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: simple fee ratio
-
-Name: feeRate_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: simple fee ratio
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e8b8e0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -23700,7 +23866,28 @@ LF: None
 Value: u
 Fields: amount, price
 Finance Type: undef
+feeRate_1
+
+Name: feeRate_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
 Ssa_name: feeRate_1, name: feeRate
+
+Name: feeRate_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
 
 Name: feeRate_1 Function: applyTrade
 Num: -1
@@ -23722,6 +23909,17 @@ LF: None
 Value: u
 Fields: amount, price
 Finance Type: undef
+Ssa_name: feeRate_1, name: feeRate
+
+Name: feeRate_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
 Ssa_name: fee_1, name: fee
 
 Name: None Function: None
@@ -23922,29 +24120,9 @@ ENTRY_POINT
 NEW VARIABLE quoteChange = PRBMathUD60x18.mul(amount,executionPrice)
 NEW VARIABLE fee = PRBMathUD60x18.mul(quoteChange,feeRate).toInt256()
 RETURN fee
-Ssa_name: executionPrice_1, name: executionPrice
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: executionPrice_1 Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
+Propogating All
+Propogating All
+amount_1
 Ssa_name: amount_1, name: amount
 
 Name: None Function: None
@@ -23968,6 +24146,32 @@ Value: -1
 Fields: 
 Finance Type: raw balance
 Copied ftype
+executionPrice_1
+Ssa_name: executionPrice_1, name: executionPrice
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: executionPrice_1 Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Propogating All
+quoteChange_1
 Ssa_name: quoteChange_1, name: quoteChange
 
 Name: None Function: None
@@ -23979,6 +24183,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+feeRate_1
 Ssa_name: feeRate_1, name: feeRate
 
 Name: None Function: None
@@ -24002,6 +24207,8 @@ Value: u
 Fields: 
 Finance Type: simple fee ratio
 Copied ftype
+Propogating All
+fee_1
 Ssa_name: fee_1, name: fee
 
 Name: None Function: None
@@ -24159,7 +24366,39 @@ XXXX
 [i] quoteChange cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25ab20>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7e20>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42040>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0c70>]
+amount_1
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+Ssa_name: amount_1, name: amount
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
 executionPrice_1
 
 Name: executionPrice Function: getFee
@@ -24206,28 +24445,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-amount_1
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 
 Name: amount Function: getFee
 Num: 
@@ -24263,17 +24481,6 @@ Finance Type: undef
 Copied ftype
 Name: executionPrice, Num: 1
 Globalname: executionPrice
-Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 Ssa_name: quoteChange_1, name: quoteChange
 
 Name: None Function: None
@@ -24371,7 +24578,7 @@ XXXX
 [i] fee cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7fa0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e28b0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e421c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e2f0d0>]
 quoteChange_1
 
 Name: quoteChange Function: getFee
@@ -24578,6 +24785,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -24589,6 +24799,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -24642,8 +24854,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -24688,9 +24900,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -24699,9 +24911,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -24745,7 +24957,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -24895,8 +25107,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -24941,9 +25153,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -24952,9 +25164,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -24998,7 +25210,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -25162,7 +25374,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201370>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42550>]
 fee_1
 
 Name: fee Function: getFee
@@ -25367,7 +25579,39 @@ XXXX
 [i] quoteChange cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25ab20>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7e20>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42040>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0c70>]
+amount_1
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+Ssa_name: amount_1, name: amount
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
 executionPrice_1
 
 Name: executionPrice Function: getFee
@@ -25414,28 +25658,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-amount_1
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 
 Name: amount Function: getFee
 Num: 
@@ -25471,17 +25694,6 @@ Finance Type: undef
 Copied ftype
 Name: executionPrice, Num: 1
 Globalname: executionPrice
-Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 Ssa_name: quoteChange_1, name: quoteChange
 
 Name: quoteChange Function: getFee
@@ -25576,7 +25788,7 @@ XXXX
 [i] fee cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7fa0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e28b0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e421c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e2f0d0>]
 quoteChange_1
 
 Name: quoteChange Function: getFee
@@ -25783,6 +25995,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -25794,6 +26009,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -25847,8 +26064,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -25893,9 +26110,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -25904,9 +26121,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -25950,7 +26167,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -26100,8 +26317,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -26146,9 +26363,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -26157,9 +26374,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -26203,7 +26420,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -26367,7 +26584,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201370>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42550>]
 fee_1
 
 Name: fee Function: getFee
@@ -26599,7 +26816,7 @@ XXXX
 [i] TMP_30 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -26836,7 +27053,7 @@ XXXX
 [i] TMP_34 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -27094,39 +27311,7 @@ XXXX
 [i] newBase cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25a790>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25aa30>]
-position_1
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9ac10>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9a970>]
 signedAmount_1
 
 Name: signedAmount Function: applyTrade
@@ -27159,7 +27344,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 
 Name: position_1 Function: applyTrade
 Num: -1
@@ -27173,6 +27379,17 @@ Finance Type: undef
 Ssa_name: signedAmount_1, name: signedAmount
 
 Name: signedAmount Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
 Num: -1
 Den: -1
 Address: u
@@ -27341,39 +27558,7 @@ XXXX
 [i] newQuote cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25a790>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e2520>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e2070>]
-position_1
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base
-Finance Type: undef
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ea3700>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ea3250>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9a970>]
 fee_1
 
 Name: fee Function: applyTrade
@@ -27438,7 +27623,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
 
 Name: position_1 Function: applyTrade
 Num: -1
@@ -27470,6 +27676,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
 Finance Type: undef
 Ssa_name: newQuote_3, name: newQuote
 
@@ -27672,39 +27889,7 @@ XXXX
 [i] newBase cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25a790>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25aa30>]
-position_1
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9ac10>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9a970>]
 signedAmount_1
 
 Name: signedAmount Function: applyTrade
@@ -27737,7 +27922,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 
 Name: position_1 Function: applyTrade
 Num: -1
@@ -27758,6 +27964,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
 Finance Type: undef
 Ssa_name: newBase_2, name: newBase
 
@@ -28285,39 +28502,7 @@ XXXX
 [i] newQuote cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25a790>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e2520>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e2070>]
-position_1
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ea3700>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ea3250>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9a970>]
 fee_1
 
 Name: fee Function: applyTrade
@@ -28382,7 +28567,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 
 Name: position_1 Function: applyTrade
 Num: -1
@@ -28414,6 +28620,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
 Finance Type: undef
 Ssa_name: newQuote_2, name: newQuote
 
@@ -28625,7 +28842,7 @@ XXXX
 [i] newPosition cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f24ab80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f24aa90>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e8bd60>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e8bc70>]
 newBase_5
 
 Name: newBase Function: applyTrade
@@ -28779,7 +28996,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7730>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e38910>]
 newPosition_1
 
 Name: newPosition Function: applyTrade
@@ -28899,7 +29116,7 @@ End popogation
 [i] signedAmount cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -29091,6 +29308,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -29102,6 +29322,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -29155,8 +29377,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -29201,9 +29423,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -29212,9 +29434,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -29258,7 +29480,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -29408,8 +29630,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -29454,9 +29676,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -29465,9 +29687,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -29511,7 +29733,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -29677,7 +29899,7 @@ XXXX
 [i] signedPrice cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -29872,7 +30094,7 @@ XXXX
 [i] quoteChange cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25aa30>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25adc0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9ac10>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9afa0>]
 signedAmount_1
 
 Name: signedAmount Function: applyTrade
@@ -30085,39 +30307,7 @@ XXXX
 [i] fee cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f24a700>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
-feeRate_1
-
-Name: feeRate_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: simple fee ratio
-Ssa_name: feeRate_1, name: feeRate
-
-Name: feeRate_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: simple fee ratio
-
-Name: feeRate_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: simple fee ratio
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e8b8e0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -30150,7 +30340,28 @@ LF: None
 Value: u
 Fields: amount, price, side
 Finance Type: undef
+feeRate_1
+
+Name: feeRate_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
 Ssa_name: feeRate_1, name: feeRate
+
+Name: feeRate_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
 
 Name: feeRate_1 Function: applyTrade
 Num: -1
@@ -30172,6 +30383,17 @@ LF: None
 Value: u
 Fields: amount, price, side
 Finance Type: undef
+Ssa_name: feeRate_1, name: feeRate
+
+Name: feeRate_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: simple fee ratio
 Ssa_name: fee_1, name: fee
 
 Name: fee Function: applyTrade
@@ -30553,7 +30775,7 @@ XXXX
 [i] TMP_30 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -30820,7 +31042,7 @@ XXXX
 [i] TMP_34 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f242fa0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e84ca0>]
 trade_1
 
 Name: trade_1 Function: applyTrade
@@ -31088,39 +31310,7 @@ XXXX
 [i] newBase cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25a790>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25aa30>]
-position_1
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9ac10>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9a970>]
 signedAmount_1
 
 Name: signedAmount Function: applyTrade
@@ -31153,7 +31343,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 
 Name: position_1 Function: applyTrade
 Num: -1
@@ -31174,6 +31385,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
 Finance Type: undef
 Ssa_name: newBase_3, name: newBase
 
@@ -31345,39 +31567,7 @@ XXXX
 [i] newQuote cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25a790>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e2520>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e2070>]
-position_1
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ea3700>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ea3250>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9a970>]
 fee_1
 
 Name: fee Function: applyTrade
@@ -31442,7 +31632,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 
 Name: position_1 Function: applyTrade
 Num: -1
@@ -31474,6 +31685,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
 Finance Type: undef
 Ssa_name: newQuote_3, name: newQuote
 
@@ -31686,39 +31908,7 @@ XXXX
 [i] newBase cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25a790>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25aa30>]
-position_1
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9ac10>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9a970>]
 signedAmount_1
 
 Name: signedAmount Function: applyTrade
@@ -31751,7 +31941,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 
 Name: position_1 Function: applyTrade
 Num: -1
@@ -31772,6 +31983,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
 Finance Type: undef
 Ssa_name: newBase_2, name: newBase
 
@@ -32299,39 +32521,7 @@ XXXX
 [i] newQuote cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25a790>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e2520>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e2070>]
-position_1
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-Ssa_name: position_1, name: position
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
-
-Name: position_1 Function: applyTrade
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: base, quote
-Finance Type: undef
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ea3700>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ea3250>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9a970>]
 fee_1
 
 Name: fee Function: applyTrade
@@ -32396,7 +32586,28 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+position_1
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
+Finance Type: undef
 
 Name: position_1 Function: applyTrade
 Num: -1
@@ -32428,6 +32639,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: position_1, name: position
+
+Name: position_1 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base, quote
 Finance Type: undef
 Ssa_name: newQuote_2, name: newQuote
 
@@ -32639,7 +32861,7 @@ XXXX
 [i] newPosition cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f24ab80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f24aa90>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e8bd60>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e8bc70>]
 newBase_5
 
 Name: newBase Function: applyTrade
@@ -32793,7 +33015,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7730>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e38910>]
 newPosition_1
 
 Name: newPosition Function: applyTrade
@@ -32899,6 +33121,21 @@ ENTRY_POINT
 NEW VARIABLE quoteChange = PRBMathUD60x18.mul(amount,executionPrice)
 NEW VARIABLE fee = PRBMathUD60x18.mul(quoteChange,feeRate).toInt256()
 RETURN fee
+Propogating All
+Propogating All
+amount_1
+Ssa_name: amount_1, name: amount
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+executionPrice_1
 Ssa_name: executionPrice_1, name: executionPrice
 
 Name: executionPrice_1 Function: getFee
@@ -32922,17 +33159,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
-Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
+Propogating All
+quoteChange_1
 Ssa_name: quoteChange_1, name: quoteChange
 
 Name: quoteChange Function: getFee
@@ -32944,6 +33172,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
+feeRate_1
 Ssa_name: feeRate_1, name: feeRate
 
 Name: feeRate Function: getFee
@@ -32955,6 +33184,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: simple fee ratio
+Propogating All
+fee_1
 Ssa_name: fee_1, name: fee
 
 Name: fee Function: getFee
@@ -33125,7 +33356,39 @@ XXXX
 [i] quoteChange cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25ab20>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7e20>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42040>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0c70>]
+amount_1
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+Ssa_name: amount_1, name: amount
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
 executionPrice_1
 
 Name: executionPrice Function: getFee
@@ -33172,28 +33435,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-amount_1
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 
 Name: amount Function: getFee
 Num: 
@@ -33229,17 +33471,6 @@ Finance Type: undef
 Copied ftype
 Name: executionPrice, Num: 1
 Globalname: executionPrice
-Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 Ssa_name: quoteChange_1, name: quoteChange
 
 Name: quoteChange Function: getFee
@@ -33334,7 +33565,7 @@ XXXX
 [i] fee cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7fa0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e28b0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e421c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e2f0d0>]
 quoteChange_1
 
 Name: quoteChange Function: getFee
@@ -33541,6 +33772,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -33552,6 +33786,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -33605,8 +33841,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -33651,9 +33887,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -33662,9 +33898,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -33708,7 +33944,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -33858,8 +34094,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -33904,9 +34140,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -33915,9 +34151,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -33961,7 +34197,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -34125,7 +34361,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201370>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42550>]
 fee_1
 
 Name: fee Function: getFee
@@ -34343,7 +34579,39 @@ XXXX
 [i] quoteChange cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f25ab20>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7e20>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42040>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8ed0c70>]
+amount_1
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+Ssa_name: amount_1, name: amount
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
+
+Name: amount Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: raw balance
 executionPrice_1
 
 Name: executionPrice Function: getFee
@@ -34390,28 +34658,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-amount_1
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 
 Name: amount Function: getFee
 Num: 
@@ -34447,17 +34694,6 @@ Finance Type: undef
 Copied ftype
 Name: executionPrice, Num: 1
 Globalname: executionPrice
-Ssa_name: amount_1, name: amount
-
-Name: amount Function: getFee
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: -1
-Fields: 
-Finance Type: raw balance
 Ssa_name: quoteChange_1, name: quoteChange
 
 Name: quoteChange Function: getFee
@@ -34552,7 +34788,7 @@ XXXX
 [i] fee cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1f7fa0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f1e28b0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e421c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e2f0d0>]
 quoteChange_1
 
 Name: quoteChange Function: getFee
@@ -34759,6 +34995,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -34770,6 +35009,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -34823,8 +35064,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -34869,9 +35110,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -34880,9 +35121,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -34926,7 +35167,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -35076,8 +35317,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -35122,9 +35363,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -35133,9 +35374,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -35179,7 +35420,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -35343,7 +35584,7 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201370>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42550>]
 fee_1
 
 Name: fee Function: getFee
@@ -35434,6 +35675,9 @@ tokenToWad(uint256,uint256)
 ENTRY_POINT
 NEW VARIABLE scaler = 10 ** (MAX_DECIMALS - tokenDecimals)
 RETURN amount.toInt256() * scaler.toInt256()
+Propogating All
+Propogating All
+tokenDecimals_1
 Ssa_name: tokenDecimals_1, name: tokenDecimals
 
 Name: None Function: None
@@ -35457,6 +35701,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+amount_1
 Ssa_name: amount_1, name: amount
 
 Name: None Function: None
@@ -35480,6 +35726,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+scaler_1
 Ssa_name: scaler_1, name: scaler
 
 Name: None Function: None
@@ -35561,8 +35808,8 @@ XXXX
 [i] TMP_43 cleared
 [i] scaler cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f148f201520>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201a90>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64d8e42700>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42c70>]
 tokenDecimals_1
 
 Name: tokenDecimals_1 Function: tokenToWad
@@ -35607,9 +35854,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: tokenDecimals_1, name: tokenDecimals
+Ssa_name: MAX_DECIMALS_1, name: MAX_DECIMALS
 
-Name: tokenDecimals_1 Function: tokenToWad
+Name: MAX_DECIMALS Function: tokenToWad
 Num: -1
 Den: -1
 Address: u
@@ -35618,9 +35865,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: MAX_DECIMALS_1, name: MAX_DECIMALS
+Ssa_name: tokenDecimals_1, name: tokenDecimals
 
-Name: MAX_DECIMALS Function: tokenToWad
+Name: tokenDecimals_1 Function: tokenToWad
 Num: -1
 Den: -1
 Address: u
@@ -35747,7 +35994,7 @@ XXXX
 [i] TMP_46 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28fe80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201d30>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9ad00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42f10>]
 amount_1
 
 Name: amount_1 Function: tokenToWad
@@ -35937,6 +36184,9 @@ toInt256(uint256)
 ENTRY_POINT
 EXPRESSION require(bool,string)(x <= POSITIVE_INT256_MAX,uint256 overflow)
 RETURN int256(x)
+Propogating All
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -35948,6 +36198,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Propogating All
+x_1
 Ssa_name: x_1, name: x
 
 Name: x_1 Function: toInt256
@@ -36001,8 +36253,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -36047,9 +36299,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -36058,9 +36310,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -36104,7 +36356,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -36254,8 +36506,8 @@ Finance Type: undef
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f1490c042e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64da8434c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -36300,9 +36552,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
+Ssa_name: x_1, name: x
 
-Name: POSITIVE_INT256_MAX Function: toInt256
+Name: x_1 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -36311,9 +36563,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: x_1, name: x
+Ssa_name: POSITIVE_INT256_MAX_1, name: POSITIVE_INT256_MAX
 
-Name: x_1 Function: toInt256
+Name: POSITIVE_INT256_MAX Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -36357,7 +36609,7 @@ XXXX
 [i] TMP_2 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f1490c0ebe0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64da84fdc0>]
 x_1
 
 Name: x_1 Function: toInt256
@@ -36613,8 +36865,8 @@ XXXX
 [i] TMP_43 cleared
 [i] scaler cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f148f201520>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201a90>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64d8e42700>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42c70>]
 tokenDecimals_1
 
 Name: tokenDecimals_1 Function: tokenToWad
@@ -36659,9 +36911,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: tokenDecimals_1, name: tokenDecimals
+Ssa_name: MAX_DECIMALS_1, name: MAX_DECIMALS
 
-Name: tokenDecimals_1 Function: tokenToWad
+Name: MAX_DECIMALS Function: tokenToWad
 Num: -1
 Den: -1
 Address: u
@@ -36670,9 +36922,9 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: MAX_DECIMALS_1, name: MAX_DECIMALS
+Ssa_name: tokenDecimals_1, name: tokenDecimals
 
-Name: MAX_DECIMALS Function: tokenToWad
+Name: tokenDecimals_1 Function: tokenToWad
 Num: -1
 Den: -1
 Address: u
@@ -36797,7 +37049,7 @@ XXXX
 [i] TMP_46 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f28fe80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201d30>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e9ad00>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42f10>]
 amount_1
 
 Name: amount_1 Function: tokenToWad
@@ -37086,6 +37338,9 @@ wadToToken(uint256,uint256)
 ENTRY_POINT
 NEW VARIABLE scaler = uint256(10 ** (MAX_DECIMALS - tokenDecimals))
 RETURN uint256(wadAmount / scaler)
+Propogating All
+Propogating All
+tokenDecimals_1
 Ssa_name: tokenDecimals_1, name: tokenDecimals
 
 Name: None Function: None
@@ -37109,6 +37364,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+Propogating All
+scaler_1
 Ssa_name: scaler_1, name: scaler
 
 Name: None Function: None
@@ -37120,6 +37377,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+wadAmount_1
 Ssa_name: wadAmount_1, name: wadAmount
 
 Name: None Function: None
@@ -37214,8 +37472,8 @@ XXXX
 [i] TMP_49 cleared
 [i] scaler cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f148f20a2e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f20a820>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64d8e4b4c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e4ba00>]
 tokenDecimals_1
 
 Name: tokenDecimals_1 Function: wadToToken
@@ -37448,7 +37706,7 @@ XXXX
 [i] TMP_51 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f20abe0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201760>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e4bdc0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42940>]
 scaler_1
 
 Name: scaler Function: wadToToken
@@ -37683,8 +37941,8 @@ XXXX
 [i] TMP_49 cleared
 [i] scaler cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f148f20a2e0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f20a820>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f64d8e4b4c0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e4ba00>]
 tokenDecimals_1
 
 Name: tokenDecimals_1 Function: wadToToken
@@ -37913,7 +38171,7 @@ XXXX
 [i] TMP_51 cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f20abe0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f148f201760>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e4bdc0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f64d8e42940>]
 scaler_1
 
 Name: scaler Function: wadToToken
@@ -38127,6 +38385,7 @@ FIND RETURN
 OTHER_ENTRYPOINT MAX_DECIMALS = 18
 slitherConstructorConstantVariables()
 OTHER_ENTRYPOINT MAX_DECIMALS = 18
+Propogating All
 
 
 
