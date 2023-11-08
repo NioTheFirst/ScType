@@ -2740,6 +2740,20 @@ def remap_return(function):
         except AttributeError:
             a = 2
 
+#USAGE: propogates all of the parameters in a function to their first reference in the SSA.
+#       uses "propogate_parameter"
+def _propogate_all_parameters(function):
+    explored = set()
+    fentry = {function.entry_point}
+    while fentry:
+        node = fentry.pop()
+        if node in explored:
+            continue
+        explored.add(node)
+        for var in node.ssa_local_variables_read:
+            propogate_parameter(var)
+        for son in node.sons:
+            fentry.add(son)
         
 #USAGE: typecheck a function call
 #       given a param_cache for the input data
@@ -2776,6 +2790,10 @@ def _tcheck_function_call(function, param_cache) -> []:
     #find return and tack it onto the end
     #typecheck function
     remap_return(function)
+
+    #Propogate parameters
+
+
     #WORKLIST ALGORITHM
     prevlen = -1
     curlen = -1
