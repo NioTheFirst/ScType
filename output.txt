@@ -42,6 +42,42 @@ Mark functions Adding: HourlyBondSubscriptionLending, slitherConstructorVariable
 [x] Not visible 
 Mark functions Adding: HourlyBondSubscriptionLending, slitherConstructorConstantVariables, True
 [x] Not visible 
+State_var: hourlyBondMetadata
+Finding type for hourlyBondMetadata(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata) ... )
+global
+hourlyBondMetadata
+yieldAccumulator
+OUT KEY: global_hourlyBondMetadata_yieldAccumulator
+global
+hourlyBondMetadata
+buyingSpeed
+OUT KEY: global_hourlyBondMetadata_buyingSpeed
+global
+hourlyBondMetadata
+withdrawingSpeed
+OUT KEY: global_hourlyBondMetadata_withdrawingSpeed
+global
+hourlyBondMetadata
+lastBought
+OUT KEY: global_hourlyBondMetadata_lastBought
+global
+hourlyBondMetadata
+lastWithdrawn
+OUT KEY: global_hourlyBondMetadata_lastWithdrawn
+Value: u
+querrying!!!
+Source address: u
+Saved name: hourlyBondMetadata
+
+Name: PIC_1 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 State_var: lendingMeta
 Finding type for lendingMeta(mapping(address => BaseLending.LendingMetadata) ... )
 global
@@ -65,7 +101,23 @@ querrying!!!
 Source address: u
 Saved name: lendingMeta
 
-Name: PIC_1 Function: None
+Name: PIC_2 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+State_var: withdrawalWindow
+Finding type for withdrawalWindow(uint256 ... )
+Value: u
+querrying!!!
+Source address: u
+Saved name: withdrawalWindow
+
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -81,7 +133,7 @@ querrying!!!
 Source address: u
 Saved name: FP32
 
-Name: PIC_2 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -110,58 +162,6 @@ querrying!!!
 Source address: u
 Saved name: hourlyBondAccounts
 
-Name: PIC_3 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: amount
-Finance Type: undef
-State_var: hourlyBondMetadata
-Finding type for hourlyBondMetadata(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata) ... )
-global
-hourlyBondMetadata
-yieldAccumulator
-OUT KEY: global_hourlyBondMetadata_yieldAccumulator
-global
-hourlyBondMetadata
-buyingSpeed
-OUT KEY: global_hourlyBondMetadata_buyingSpeed
-global
-hourlyBondMetadata
-withdrawingSpeed
-OUT KEY: global_hourlyBondMetadata_withdrawingSpeed
-global
-hourlyBondMetadata
-lastBought
-OUT KEY: global_hourlyBondMetadata_lastBought
-global
-hourlyBondMetadata
-lastWithdrawn
-OUT KEY: global_hourlyBondMetadata_lastWithdrawn
-Value: u
-querrying!!!
-Source address: u
-Saved name: hourlyBondMetadata
-
-Name: PIC_4 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-State_var: yieldChangePerSecondFP
-Finding type for yieldChangePerSecondFP(uint256 ... )
-Value: u
-querrying!!!
-Source address: u
-Saved name: yieldChangePerSecondFP
-
 Name: PIC_5 Function: None
 Num: -1
 Den: -1
@@ -169,23 +169,7 @@ Address: u
 Norm: u
 LF: None
 Value: u
-Fields: 
-Finance Type: undef
-State_var: withdrawalWindow
-Finding type for withdrawalWindow(uint256 ... )
-Value: u
-querrying!!!
-Source address: u
-Saved name: withdrawalWindow
-
-Name: PIC_6 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
+Fields: amount
 Finance Type: undef
 State_var: borrowYieldAccumulators
 Finding type for borrowYieldAccumulators(mapping(address => BaseLending.YieldAccumulator) ... )
@@ -206,7 +190,7 @@ querrying!!!
 Source address: u
 Saved name: borrowYieldAccumulators
 
-Name: PIC_7 Function: None
+Name: PIC_6 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -222,7 +206,7 @@ querrying!!!
 Source address: u
 Saved name: borrowingFactorPercent
 
-Name: PIC_8 Function: None
+Name: PIC_7 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -238,6 +222,22 @@ querrying!!!
 Source address: u
 Saved name: maxHourlyYieldFP
 
+Name: PIC_8 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+State_var: yieldChangePerSecondFP
+Finding type for yieldChangePerSecondFP(uint256 ... )
+Value: u
+querrying!!!
+Source address: u
+Saved name: yieldChangePerSecondFP
+
 Name: PIC_9 Function: None
 Num: -1
 Den: -1
@@ -250,6 +250,7 @@ Finance Type: undef
 continuing...
 Running check on HourlyBondSubscriptionLending
 Reading Function: setWithdrawalWindow
+Function setWithdrawalWindow not marked
 Checking funcion...
 
 
@@ -306,7 +307,7 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f5a6e26d0a0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7efc45928d00>]
 window_1
 
 Name: window_1 Function: setWithdrawalWindow
@@ -365,7 +366,7 @@ Name: withdrawalWindow, Num: 1
 Globalname: withdrawalWindow
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -428,7 +429,7 @@ Propogating parameters and globals to SSA variables...
 End popogation
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f5a6e26d0a0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7efc45928d00>]
 window_1
 
 Name: window_1 Function: setWithdrawalWindow
@@ -526,6 +527,7 @@ Finance Type: undef
 XXXX
 Source address: u
 Reading Function: _makeHourlyBond
+Function _makeHourlyBond not marked
 Checking funcion...
 
 

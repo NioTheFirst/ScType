@@ -29,7 +29,7 @@ from address_handler import global_address_counter, temp_address_counter, num_to
 seen_contracts = {}
 user_type = False
 fill_type = False
-mark_iteration = True
+mark_iteration = False
 current_function_marked = False
 type_file = ""
 write_typefile = True
