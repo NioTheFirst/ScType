@@ -3071,7 +3071,7 @@ def _tcheck_contract(contract):
     for function in contract.functions_declared:
         print("Reading Function: " + function.name)
         if not(function_check[function.name]):
-            #print("Function " + function.name + " not marked")
+            print("Function " + function.name + " not marked")
             if(mark_iteration):
                 ##print("Mark Iterations TRUE, proceeding anyway")
                 current_function_marked = False
