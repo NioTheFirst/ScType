@@ -2688,6 +2688,7 @@ def _clear_type_node(node):
                 _ir = ir.lvalue.extok
                 _ir.token_type_clear()
                 _ir.norm = 'u'
+                _ir.finance_type = -1
                 #update_non_ssa(ir.lvalue)
 
                 print(f"[i] {ir.lvalue.name} cleared")
@@ -2794,7 +2795,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     remap_return(function)
 
     #Propogate parameters
-    #_propogate_all_parameters(function)
+    _propogate_all_parameters(function)
 
 
     #WORKLIST ALGORITHM
