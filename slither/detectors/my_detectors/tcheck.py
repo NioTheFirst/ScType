@@ -2794,7 +2794,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     remap_return(function)
 
     #Propogate parameters
-    _propogate_all_parameters(function)
+    #_propogate_all_parameters(function)
 
 
     #WORKLIST ALGORITHM
