@@ -588,6 +588,7 @@ def assign_const(ir):
     ir.token_typen.clear()
     ir.token_typed.clear()
     ir.add_token_typen(-1)
+    _ir.value = 'u'
     ir.add_token_typed(-1)
 
 #USAGE: assigns an IR to the error type (-2) this stops infinite lioops
