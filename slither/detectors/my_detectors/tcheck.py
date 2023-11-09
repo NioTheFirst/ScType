@@ -1050,7 +1050,7 @@ def querry_fc(ir) -> int:
     #Special functions:
     if(handle_balance_functions(ir)):
         return 2
-    #exit(0)
+    exit(0)
     return 0
 
 #USAGE: propogates types etc from a set of balance-related functions. Currently supports the functions with names in `balance_funcs`.
@@ -1329,6 +1329,7 @@ def type_member(ir)->bool:
 def type_ref(ir)->bool:
     global mark_iteration
     global current_function_marked
+    global label_sets
     if(mark_iteration and not(current_function_marked)):
         assign_const(ir.lvalue)
         return False
@@ -1359,10 +1360,18 @@ def type_ref(ir)->bool:
     #check if the index of the variable has a type that is not a constant
     if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
         print("REFERENCE RIGHT VALUE PROPAGATION")
-        ir.lvalue.extok.token_type_clear()
-        copy_token_type(ir.variable_right, ir.lvalue)
-        copy_norm(ir.variable_right, ir.lvalue)
-        copy_ftype(ir.variable_right, ir.lvalue)
+        if(ir.variable_right.extok.is_address()):
+            ir.lvalue.extok.token_type_clear()
+            addr = ir.variable_right.extok.address
+            head_addr = label_sets[addr].head
+            norm = label_sets[addr].norm
+            ir.lvalue.extok.add_num_token_type(head_addr)
+            ir.lvalue.extok.norm = norm
+        else:
+            ir.lvalue.extok.token_type_clear()
+            copy_token_type(ir.variable_right, ir.lvalue)
+            copy_norm(ir.variable_right, ir.lvalue)
+            copy_ftype(ir.variable_right, ir.lvalue)
         return False
 
     #check the parser for a pre-user-defined type
@@ -1372,7 +1381,7 @@ def type_ref(ir)->bool:
     if(str(ir.lvalue.type).startswith("address")):
         ir.lvalue.extok.address = ir.variable_left.extok.address
         return False
-    ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
+    ref_tuple = (ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
         ##print("REFERENCE TYPE READ")
         copy_token_tuple(ir.lvalue, ref_tuple)

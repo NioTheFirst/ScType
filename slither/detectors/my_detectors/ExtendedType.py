@@ -29,6 +29,8 @@ class ExtendedType():
         self._address = 'u'
         self._norm = 'u'
         self._value = 'u'
+        #All references have an assumed type: once they are set on the lhs, they are locked.
+        self._reference_locked = False
         #TODO address lf should automatically be set to its name
         self._linked_contract = None
         self._fields = []
