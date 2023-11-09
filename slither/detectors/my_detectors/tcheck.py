@@ -1022,8 +1022,6 @@ def querry_fc(ir) -> int:
     #Use original contract name instead of reduced name for interfaces etc.
     included_func = get_cf_pair(cont_name, func_name)
     print(f"Found: {included_func}")
-    if (str(dest.type)[0] == "I" or str(dest.type)[0] == "i"):
-        cont_name = str(dest.type)[1:]
 
     if(included_func != None):
 
@@ -1033,7 +1031,8 @@ def querry_fc(ir) -> int:
 
     print(f"Written func info: {cont_name}, {func_name}")
     #
-    
+    if (str(dest.type)[0] == "I" or str(dest.type)[0] == "i"):
+        cont_name = str(dest.type)[1:]
     #print_addresses()
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
@@ -2526,7 +2525,7 @@ def propogate_parameter(lv, function, clear_initial_parameters = False):
                     print(lv.extok)
                     print("Copied ftype")
 #USSAGE: propogates a local variable with a global stored assignment
-def propogate_global(lv, hlc_name = None):
+def propogate_global(lv):
     global global_var_types
     global current_contract_name
     if(lv.extok.is_undefined()):
