@@ -2528,11 +2528,12 @@ def propogate_parameter(lv, function, clear_initial_parameters = False):
 #USSAGE: propogates a local variable with a global stored assignment
 def propogate_global(lv, hlc_name = None):
     global global_var_types
+    global current_contract_name
     if(lv.extok.is_undefined()):
         pos = -1
         ssa_name_info = convert_ssa_name(lv.ssa_name)
         _name = ssa_name_info[0]
-        print(f"Globalname: {_name}")
+        print(f"Globalname: {_name}, contract_name: {current_contract_name}")
         if((_name, current_contract_name) in global_var_types):
             print("global...")
             stored_state = global_var_types[(_name, current_contract_name)]
