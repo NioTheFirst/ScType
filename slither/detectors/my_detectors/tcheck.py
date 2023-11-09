@@ -2533,15 +2533,6 @@ def propogate_global(lv, hlc_name = None):
         ssa_name_info = convert_ssa_name(lv.ssa_name)
         _name = ssa_name_info[0]
         print(f"Globalname: {_name}")
-
-        if(hlc != None):
-            if((_name, hlc_name) in global_var_types):
-                print("global...")
-                stored_state = global_var_types[(_name, hlc_name)]
-                print(stored_state.extok)
-                copy_token_type(stored_state, lv)
-                copy_ftype(stored_state, lv)
-                lv.extok.norm = stored_state.extok.norm
         if((_name, current_contract_name) in global_var_types):
             print("global...")
             stored_state = global_var_types[(_name, current_contract_name)]
