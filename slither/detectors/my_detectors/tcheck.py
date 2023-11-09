@@ -997,25 +997,15 @@ def querry_fc(ir) -> int:
     dest = ir.destination
     #convert_ssa(dest)
     func_name = ir.function.name
-    cont_name = None #TODO
-    '''
-    if(isinstance(dest, Variable)):
-        #DEPRECATED
-        cont_name = dest.link_function
-    else:
-        cont_name = str(dest)
-    '''
+    cont_name = None
+    isVar = True
     if(not (isinstance(dest, Variable))):
         cont_name = str(dest)
-    #TODO
-    ##print_token_type(dest)
+        isVar = False
     if(str(ir.lvalue.type) == "bool"):
         assign_const(ir.lvalue)
         return 2
-    #if(cont_name != None and func_name != None):
-        ##print("hlc contract name: " + cont_name + " func_name: "+ func_name)
-    
-    if(cont_name == None or cont_name == "UNKNOWN"):
+    if(isVar):
         #Contingency for undefined contract instances
         #cont_name = dest.extok.name
         cont_name = str(dest.type)
@@ -1031,7 +1021,7 @@ def querry_fc(ir) -> int:
 
     print(f"Written func info: {cont_name}, {func_name}")
     #
-    if (str(dest.type)[0] == "I" or str(dest.type)[0] == "i"):
+    if (isVar and str(dest.type)[0] == "I" or str(dest.type)[0] == "i"):
         cont_name = str(dest.type)[1:]
     #print_addresses()
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)

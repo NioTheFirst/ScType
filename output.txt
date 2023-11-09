@@ -44,23 +44,6 @@ Mark functions Adding: IIdleToken, redeemIdleToken, True
 [*]Marked
 Mark functions Adding: IIdleToken, slitherConstructorVariables, True
 [x] Not visible 
-State_var: balance
-Finding type for balance(uint256 ... )
-(-1, -1, 'u', 'u', 3, 0)
-[*]Type fetched successfully
-querrying!!!
-Source address: u
-Saved name: balance
-
-Name: PIC_1 Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
 State_var: tokenToShare
 Finding type for tokenToShare(uint256 ... )
 (2, 1, -12, 'u', 4, 40)
@@ -69,7 +52,7 @@ querrying!!!
 Source address: u
 Saved name: tokenToShare
 
-Name: PIC_2 Function: None
+Name: PIC_1 Function: None
 Num: 2
 Den: 1
 Address: u
@@ -78,6 +61,23 @@ LF: None
 Value: u
 Fields: 
 Finance Type: price/exchange rate
+State_var: balance
+Finding type for balance(uint256 ... )
+(-1, -1, 'u', 'u', 3, 0)
+[*]Type fetched successfully
+querrying!!!
+Source address: u
+Saved name: balance
+
+Name: PIC_2 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
 State_var: tPWF
 Finding type for tPWF(uint256 ... )
 (1, 2, 12, 'u', 4, 40)
@@ -149,7 +149,7 @@ Name: tokenToShare, Num: 1
 Globalname: tokenToShare, contract_name: IIdleToken
 global...
 
-Name: PIC_2 Function: None
+Name: PIC_1 Function: None
 Num: 2
 Den: 1
 Address: u
@@ -186,8 +186,8 @@ Finance Type: price/exchange rate
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00f40>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83c14340>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afdb460>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540afdb820>]
 share_1
 
 Name: None Function: None
@@ -409,8 +409,8 @@ Finance Type: price/exchange rate
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00f40>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83c14340>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afdb460>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540afdb820>]
 share_1
 
 Name: share_1 Function: redeemIdleToken
@@ -802,14 +802,14 @@ EXPRESSION redeemedUnderlyingAsset += redeemedShare
 EXPRESSION RedeemedToken(msg.sender,redeemedShare,redeemAmount)
 
 
-idleToken_8(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_8(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 TMP_19(int256) = 1 (c)+ 1
 a_1(int256) := TMP_19(int256)
 TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
 redeemedShare_1(uint256) := TMP_20(uint256)
 TMP_21 = CONVERT idleToken_9 to IIdleToken
 TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
-idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3'])
+idleToken_10(address) := ϕ(['idleToken_9', 'idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
 redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
 redeemedUnderlyingAsset_2(uint256) = redeemedUnderlyingAsset_1 (c)+ redeemedShare_1
 Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
@@ -855,7 +855,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_8(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_8(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -974,7 +974,7 @@ XXXX
 [i] redeemedShare cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dac0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03850>]
 redeemAmount_1
 
 Name: None Function: None
@@ -1253,8 +1253,8 @@ XXXX
 [i] TMP_6 cleared
 [i] shares cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83a80d90>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a8dd60>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540ae55d60>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae61af0>]
 tokens_1
 
 Name: tokens Function: _tokenToShares
@@ -1476,7 +1476,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_4(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_4(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -1494,7 +1494,7 @@ XXXX
 [i] TMP_11 cleared
 [i] TMP_12 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83a98e80>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540ae6ec10>]
 []
 idleToken_4
 Ssa_name: idleToken_4, name: idleToken
@@ -1684,75 +1684,70 @@ Value: u
 Fields: 
 Finance Type: undef
 Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Globalname: tPWF, contract_name: IIdleToken
+global...
 
-Name: None Function: None
-Num: 
-Den: 
+Name: PIC_3 Function: None
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
+Source address: u
+
+Name: None Function: None
+Num: 1
+Den: 2
+Address: u
+Norm: 12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
 Phid
 tPWF_1(uint256) := ϕ(['tPWF_0'])
 Phi
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-
-END==================================
 [i]Type for tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 XXXX
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00400>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afc88e0>]
 []
 tPWF_1
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 End popogation
 RETURN tPWF_1
 RETURN
@@ -1760,14 +1755,14 @@ init
 end
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Propogating parameters and globals to SSA variables...
 []
 []
@@ -1775,84 +1770,65 @@ End popogation
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Phid
 tPWF_1(uint256) := ϕ(['tPWF_0'])
 Phi
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-
-END==================================
 [i]Type for tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 XXXX
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00400>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afc88e0>]
 []
 tPWF_1
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 End popogation
 RETURN tPWF_1
 RETURN
@@ -1860,29 +1836,29 @@ init
 end
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Source address: u
 Source address: u
 [i]Type for TMP_12
 
 Name: TMP_12 Function: _price
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 XXXX
-idleToken_5(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10', 'idleToken_3'])
+idleToken_5(address) := ϕ(['idleToken_4', 'idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -1902,14 +1878,14 @@ init
 end
 
 Name: TMP_12 Function: _price
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Propogating parameters and globals to SSA variables...
 []
 []
@@ -1936,7 +1912,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_4(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_4(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -1954,7 +1930,7 @@ XXXX
 [i] TMP_11 cleared
 [i] TMP_12 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83a98e80>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540ae6ec10>]
 []
 idleToken_4
 Ssa_name: idleToken_4, name: idleToken
@@ -2118,84 +2094,65 @@ End popogation
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Phid
 tPWF_1(uint256) := ϕ(['tPWF_0'])
 Phi
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-
-END==================================
 [i]Type for tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 XXXX
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00400>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afc88e0>]
 []
 tPWF_1
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 End popogation
 RETURN tPWF_1
 RETURN
@@ -2203,14 +2160,14 @@ init
 end
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Propogating parameters and globals to SSA variables...
 []
 []
@@ -2218,84 +2175,65 @@ End popogation
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Phid
 tPWF_1(uint256) := ϕ(['tPWF_0'])
 Phi
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-
-END==================================
 [i]Type for tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 XXXX
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00400>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afc88e0>]
 []
 tPWF_1
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 Ssa_name: tPWF_1, name: tPWF
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
-Name: tPWF, Num: 1
-Globalname: tPWF, contract_name: IdleToken
+Finance Type: price/exchange rate
 End popogation
 RETURN tPWF_1
 RETURN
@@ -2303,29 +2241,29 @@ init
 end
 
 Name: tPWF Function: tokenPriceWithFee
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Source address: u
 Source address: u
 [i]Type for TMP_12
 
 Name: TMP_12 Function: _price
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 XXXX
-idleToken_5(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10', 'idleToken_3'])
+idleToken_5(address) := ϕ(['idleToken_4', 'idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -2345,71 +2283,56 @@ init
 end
 
 Name: TMP_12 Function: _price
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 Source address: u
 Source address: u
 [i]Type for TMP_5
 
 Name: TMP_5 Function: _tokenToShares
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 XXXX
 TMP_6(uint256) = TMP_4 (c)/ TMP_5
 init
 end
 init
 end
-lnorm: 18 rnorm: u
+lnorm: 18 rnorm: 12
+Finance type key: (0, 40)
 init
 end
-_______________
-
-Name: TMP_4 Function: _tokenToShares
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-
-Name: TMP_6 Function: _tokenToShares
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-COPY HERE
 Source address: u
 init
 end
 init
 end
-lnorm: 18 rnorm: u
+lnorm: 18 rnorm: 12
+Finance type key: (0, 40)
+init
+end
+Source address: u
+2
+1
 [i]Type for TMP_6
 
 Name: TMP_6 Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2422,10 +2345,10 @@ end
 _______________
 
 Name: TMP_6 Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2440,16 +2363,15 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-COPY HERE
 Source address: u
 Finance type key: (0, -1)
 [i]Type for shares
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2457,14 +2379,14 @@ Finance Type: raw balance
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a98280>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae61fd0>]
 shares_1
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2472,20 +2394,20 @@ Finance Type: raw balance
 Ssa_name: shares_1, name: shares
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2493,10 +2415,10 @@ Finance Type: raw balance
 Ssa_name: shares_1, name: shares
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2508,10 +2430,10 @@ init
 end
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2635,8 +2557,8 @@ XXXX
 [i] TMP_6 cleared
 [i] shares cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83a80d90>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a8dd60>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540ae55d60>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae61af0>]
 tokens_1
 
 Name: tokens Function: _tokenToShares
@@ -2817,14 +2739,14 @@ end
 _______________
 
 Name: PIC_10 Function: None
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 
 Name: TMP_5 Function: _tokenToShares
 Num: 
@@ -2835,61 +2757,47 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Source address: u
 [i]Type for TMP_5
 
 Name: TMP_5 Function: _tokenToShares
-Num: 
-Den: 
+Num: 1
+Den: 2
 Address: u
-Norm: u
+Norm: 12
 LF: None
 Value: u
 Fields: 
-Finance Type: undef
+Finance Type: price/exchange rate
 XXXX
 TMP_6(uint256) = TMP_4 (c)/ TMP_5
 init
 end
 init
 end
-lnorm: 18 rnorm: u
+lnorm: 18 rnorm: 12
+Finance type key: (0, 40)
 init
 end
-_______________
-
-Name: TMP_4 Function: _tokenToShares
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-
-Name: TMP_6 Function: _tokenToShares
-Num: 
-Den: 
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-COPY HERE
 Source address: u
 init
 end
 init
 end
-lnorm: 18 rnorm: u
+lnorm: 18 rnorm: 12
+Finance type key: (0, 40)
+init
+end
+Source address: u
+2
+1
 [i]Type for TMP_6
 
 Name: TMP_6 Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2902,10 +2810,10 @@ end
 _______________
 
 Name: TMP_6 Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2920,16 +2828,15 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-COPY HERE
 Source address: u
 Finance type key: (0, -1)
 [i]Type for shares
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2937,14 +2844,14 @@ Finance Type: raw balance
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a98280>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae61fd0>]
 shares_1
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2952,20 +2859,20 @@ Finance Type: raw balance
 Ssa_name: shares_1, name: shares
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2973,10 +2880,10 @@ Finance Type: raw balance
 Ssa_name: shares_1, name: shares
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -2988,10 +2895,10 @@ init
 end
 
 Name: shares Function: _tokenToShares
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3001,10 +2908,10 @@ Source address: u
 [i]Type for TMP_20
 
 Name: TMP_20 Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3017,10 +2924,10 @@ end
 _______________
 
 Name: TMP_20 Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3035,16 +2942,15 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-COPY HERE
 Source address: u
 Finance type key: (0, -1)
 [i]Type for redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3054,15 +2960,15 @@ XXXX
 [i] TMP_22 cleared
 [i] redeemedUnderlyingAsset cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83a2de80>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dfd0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540ae03c10>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03d60>]
 redeemedShare_1
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3070,20 +2976,20 @@ Finance Type: raw balance
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3128,10 +3034,10 @@ Finance Type: undef
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3244,31 +3150,31 @@ init
 end
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 High level cal param_cache
 Param: 0
-    num: [-1]
-    den: [-1]
-    norm: 18
+    num: [2]
+    den: [1]
+    norm: 6
     link: None
     fields: []
     fintype: 0
-New param cache [[[-1], [-1], 18, None, [], 0, 'u', 'u']]
+New param cache [[[2], [1], 6, None, [], 0, 'u', 'u']]
 Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u']]
-[[-1], [-1], 18, None, [], 0, 'u', 'u']
+[[2], [1], 6, None, [], 0, 'u', 'u']
 
 Name: share Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3295,10 +3201,10 @@ Finance Type: undef
 Source address: u
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3346,15 +3252,15 @@ Finance Type: price/exchange rate
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00f40>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83c14340>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afdb460>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540afdb820>]
 share_1
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3362,20 +3268,20 @@ Finance Type: raw balance
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3395,10 +3301,10 @@ Finance Type: price/exchange rate
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3423,10 +3329,10 @@ init
 end
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3441,27 +3347,29 @@ LF: None
 Value: u
 Fields: 
 Finance Type: price/exchange rate
-lnorm: 18 rnorm: -12
+lnorm: 6 rnorm: -12
 Finance type key: (0, 40)
+Source address: u
+Source address: u
 init
 end
 _______________
 
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
+Name: PIC_20 Function: None
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: -12
+Norm: u
 LF: None
 Value: u
 Fields: 
-Finance Type: price/exchange rate
+Finance Type: undef
 
 Name: TMP_0 Function: redeemIdleToken
 Num: 
 Den: 
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3470,10 +3378,10 @@ Source address: u
 [i]Type for TMP_0
 
 Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3485,10 +3393,10 @@ init
 end
 
 Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3535,15 +3443,15 @@ Finance Type: price/exchange rate
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00f40>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83c14340>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afdb460>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540afdb820>]
 share_1
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3551,20 +3459,20 @@ Finance Type: raw balance
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3584,10 +3492,10 @@ Finance Type: price/exchange rate
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3612,10 +3520,10 @@ init
 end
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3630,27 +3538,29 @@ LF: None
 Value: u
 Fields: 
 Finance Type: price/exchange rate
-lnorm: 18 rnorm: -12
+lnorm: 6 rnorm: -12
 Finance type key: (0, 40)
+Source address: u
+Source address: u
 init
 end
 _______________
 
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
+Name: PIC_21 Function: None
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: -12
+Norm: u
 LF: None
 Value: u
 Fields: 
-Finance Type: price/exchange rate
+Finance Type: undef
 
 Name: TMP_0 Function: redeemIdleToken
 Num: 
 Den: 
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3659,10 +3569,10 @@ Source address: u
 [i]Type for TMP_0
 
 Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3674,10 +3584,10 @@ init
 end
 
 Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3687,16 +3597,16 @@ Source address: u
 [i]Type for TMP_22
 
 Name: TMP_22 Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 XXXX
-idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3'])
+idleToken_10(address) := ϕ(['idleToken_9', 'idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -3717,10 +3627,10 @@ end
 _______________
 
 Name: TMP_22 Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3740,10 +3650,10 @@ Finance type key: (0, -1)
 [i]Type for redeemedUnderlyingAsset
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3752,14 +3662,14 @@ XXXX
 [i] redeemedUnderlyingAsset cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a374c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dfd0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae0c250>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03d60>]
 redeemedUnderlyingAsset_1
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3767,20 +3677,20 @@ Finance Type: raw balance
 Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -3788,38 +3698,6 @@ Finance Type: raw balance
 redeemedShare_1
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-Ssa_name: redeemedShare_1, name: redeemedShare
-
-Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-
-Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
-
-Name: redeemedUnderlyingAsset Function: redeemToken
 Num: 2
 Den: 1
 Address: u
@@ -3831,10 +3709,42 @@ Finance Type: raw balance
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+
+Name: redeemedShare Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2, 2
+Den: 1, 1
+Address: u
+Norm: -6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3858,46 +3768,23 @@ init
 end
 init
 end
-Finance type key: (0, 0)
-init
-end
-_______________
-
-Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-
-Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-Source address: u
+Error with redeemedUnderlyingAsset in function redeemToken
+Error with: redeemedUnderlyingAsset in function redeemToken
 [i]Type for redeemedUnderlyingAsset
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
 Value: u
 Fields: 
-Finance Type: raw balance
+Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dac0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dfd0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03850>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03d60>]
 redeemAmount_1
 
 Name: redeemAmount_1 Function: redeemToken
@@ -3947,10 +3834,10 @@ Finance Type: raw balance
 redeemedShare_1
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -3958,20 +3845,20 @@ Finance Type: raw balance
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4004,10 +3891,10 @@ Globalname: redeemAmount, contract_name: IdleYieldSource
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4015,14 +3902,14 @@ Finance Type: raw balance
 End popogation
 
 
-idleToken_8(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_8(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 TMP_19(int256) = 1 (c)+ 1
 a_1(int256) := TMP_19(int256)
 TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
 redeemedShare_1(uint256) := TMP_20(uint256)
 TMP_21 = CONVERT idleToken_9 to IIdleToken
 TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
-idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3'])
+idleToken_10(address) := ϕ(['idleToken_9', 'idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
 redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
 redeemedUnderlyingAsset_2(uint256) = redeemedUnderlyingAsset_1 (c)+ redeemedShare_1
 Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
@@ -4054,7 +3941,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_8(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_8(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -4173,7 +4060,7 @@ XXXX
 [i] redeemedShare cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dac0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03850>]
 redeemAmount_1
 
 Name: redeemAmount_1 Function: redeemToken
@@ -4268,11 +4155,11 @@ init
 end
 _______________
 
-Name: PIC_11 Function: None
-Num: -1
-Den: -1
+Name: PIC_19 Function: None
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4287,15 +4174,14 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-COPY HERE
 Source address: u
 [i]Type for TMP_20
 
 Name: TMP_20 Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4308,10 +4194,10 @@ end
 _______________
 
 Name: TMP_20 Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4326,16 +4212,15 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-COPY HERE
 Source address: u
 Finance type key: (0, -1)
 [i]Type for redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4345,15 +4230,15 @@ XXXX
 [i] TMP_22 cleared
 [i] redeemedUnderlyingAsset cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83a2de80>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dfd0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540ae03c10>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03d60>]
 redeemedShare_1
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4361,20 +4246,20 @@ Finance Type: raw balance
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4405,10 +4290,10 @@ Finance Type: undef
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4507,31 +4392,31 @@ init
 end
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 High level cal param_cache
 Param: 0
-    num: [-1]
-    den: [-1]
-    norm: 18
+    num: [2]
+    den: [1]
+    norm: 6
     link: None
     fields: []
     fintype: 0
-New param cache [[[-1], [-1], 18, None, [], 0, 'u', 'u']]
+New param cache [[[2], [1], 6, None, [], 0, 'u', 'u']]
 Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u']]
-[[-1], [-1], 18, None, [], 0, 'u', 'u']
+[[2], [1], 6, None, [], 0, 'u', 'u']
 
 Name: share Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4547,10 +4432,10 @@ share_1
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4558,10 +4443,10 @@ Finance Type: raw balance
 Source address: u
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4609,15 +4494,15 @@ Finance Type: price/exchange rate
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00f40>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83c14340>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afdb460>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540afdb820>]
 share_1
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4625,20 +4510,20 @@ Finance Type: raw balance
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4658,10 +4543,10 @@ Finance Type: price/exchange rate
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4686,10 +4571,10 @@ init
 end
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4704,27 +4589,29 @@ LF: None
 Value: u
 Fields: 
 Finance Type: price/exchange rate
-lnorm: 18 rnorm: -12
+lnorm: 6 rnorm: -12
 Finance type key: (0, 40)
+Source address: u
+Source address: u
 init
 end
 _______________
 
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
+Name: PIC_23 Function: None
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: -12
+Norm: u
 LF: None
 Value: u
 Fields: 
-Finance Type: price/exchange rate
+Finance Type: undef
 
 Name: TMP_0 Function: redeemIdleToken
 Num: 
 Den: 
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -4733,10 +4620,10 @@ Source address: u
 [i]Type for TMP_0
 
 Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -4748,10 +4635,10 @@ init
 end
 
 Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -4798,15 +4685,15 @@ Finance Type: price/exchange rate
 XXXX
 [i] TMP_0 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83c00f40>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83c14340>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540afdb460>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540afdb820>]
 share_1
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4814,20 +4701,20 @@ Finance Type: raw balance
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4847,10 +4734,10 @@ Finance Type: price/exchange rate
 Ssa_name: share_1, name: share
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4875,10 +4762,10 @@ init
 end
 
 Name: share_1 Function: redeemIdleToken
-Num: -1
-Den: -1
+Num: 2, 2
+Den: 1, 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -4893,27 +4780,29 @@ LF: None
 Value: u
 Fields: 
 Finance Type: price/exchange rate
-lnorm: 18 rnorm: -12
+lnorm: 6 rnorm: -12
 Finance type key: (0, 40)
+Source address: u
+Source address: u
 init
 end
 _______________
 
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
+Name: PIC_24 Function: None
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: -12
+Norm: u
 LF: None
 Value: u
 Fields: 
-Finance Type: price/exchange rate
+Finance Type: undef
 
 Name: TMP_0 Function: redeemIdleToken
 Num: 
 Den: 
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -4922,10 +4811,10 @@ Source address: u
 [i]Type for TMP_0
 
 Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -4937,10 +4826,10 @@ init
 end
 
 Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -4950,16 +4839,16 @@ Source address: u
 [i]Type for TMP_22
 
 Name: TMP_22 Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 XXXX
-idleToken_10(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10', 'idleToken_3'])
+idleToken_10(address) := ϕ(['idleToken_9', 'idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -4980,10 +4869,10 @@ end
 _______________
 
 Name: TMP_22 Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -5003,10 +4892,10 @@ Finance type key: (0, -1)
 [i]Type for redeemedUnderlyingAsset
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -5015,14 +4904,14 @@ XXXX
 [i] redeemedUnderlyingAsset cleared
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a374c0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dfd0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae0c250>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03d60>]
 redeemedUnderlyingAsset_1
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -5030,20 +4919,20 @@ Finance Type: raw balance
 Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
+Num: 2, 2, 2
+Den: 1, 1, 1
 Address: u
-Norm: 6
+Norm: -6
 LF: None
 Value: u
 Fields: 
@@ -5051,38 +4940,6 @@ Finance Type: raw balance
 redeemedShare_1
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-Ssa_name: redeemedShare_1, name: redeemedShare
-
-Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-
-Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
-
-Name: redeemedUnderlyingAsset Function: redeemToken
 Num: 2
 Den: 1
 Address: u
@@ -5094,10 +4951,42 @@ Finance Type: raw balance
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+
+Name: redeemedShare Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2, 2, 2
+Den: 1, 1, 1
+Address: u
+Norm: -6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -5121,20 +5010,7 @@ init
 end
 init
 end
-Finance type key: (0, 0)
-init
-end
-_______________
-
-Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
+[i]Type for redeemedUnderlyingAsset
 
 Name: redeemedUnderlyingAsset Function: redeemToken
 Num: 
@@ -5144,23 +5020,11 @@ Norm: u
 LF: None
 Value: u
 Fields: 
-Finance Type: raw balance
-Source address: u
-[i]Type for redeemedUnderlyingAsset
-
-Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2
-Den: 1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
+Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dac0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2dfd0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03850>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03d60>]
 redeemAmount_1
 
 Name: redeemAmount_1 Function: redeemToken
@@ -5210,10 +5074,10 @@ Finance Type: raw balance
 redeemedShare_1
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -5221,20 +5085,20 @@ Finance Type: raw balance
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
 Finance Type: raw balance
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -5267,10 +5131,10 @@ Globalname: redeemAmount, contract_name: IdleYieldSource
 Ssa_name: redeemedShare_1, name: redeemedShare
 
 Name: redeemedShare Function: redeemToken
-Num: -1
-Den: -1
+Num: 2
+Den: 1
 Address: u
-Norm: 18
+Norm: 6
 LF: None
 Value: u
 Fields: 
@@ -5328,7 +5192,7 @@ EXPRESSION require(bool,string)(erc20Token != idleToken,IdleYieldSource/idleDai-
 EXPRESSION TransferredERC20(msg.sender,to,amount,erc20Token)
 
 
-idleToken_11(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_11(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 TMP_24(bool) = erc20Token_1 != idleToken_11
 TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
 Emit TransferredERC20(msg.sender,to_1,amount_1,erc20Token_1)
@@ -5374,7 +5238,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_11(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_11(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -5390,8 +5254,8 @@ Finance Type: undef
 XXXX
 [i] TMP_24 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83a378b0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a37df0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540ae0c640>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae0cb80>]
 erc20Token_1
 
 Name: None Function: None
@@ -5448,17 +5312,6 @@ LF: idleToken
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: idleToken_11, name: idleToken
-
-Name: idleToken Function: transferERC20
-Num: -1
-Den: -1
-Address: 5
-Norm: 0
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: erc20Token_1, name: erc20Token
 
 Name: erc20Token_1 Function: transferERC20
@@ -5467,6 +5320,17 @@ Den:
 Address: -994
 Norm: 6
 LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: idleToken_11, name: idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 5
+Norm: 0
+LF: idleToken
 Value: u
 Fields: 
 Finance Type: undef
@@ -5499,7 +5363,39 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a37700>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2d6d0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a37df0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae0cb80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae0c490>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03460>]
+erc20Token_1
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -994
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -994
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -994
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
 amount_1
 
 Name: None Function: None
@@ -5590,28 +5486,7 @@ LF: to
 Value: u
 Fields: 
 Finance Type: undef
-erc20Token_1
-
-Name: erc20Token_1 Function: transferERC20
-Num: 
-Den: 
-Address: -994
-Norm: 6
-LF: erc20Token
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: erc20Token_1, name: erc20Token
-
-Name: erc20Token_1 Function: transferERC20
-Num: 
-Den: 
-Address: -994
-Norm: 6
-LF: erc20Token
-Value: u
-Fields: 
-Finance Type: undef
 
 Name: erc20Token_1 Function: transferERC20
 Num: 
@@ -5658,21 +5533,10 @@ LF: to
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: erc20Token_1, name: erc20Token
-
-Name: erc20Token_1 Function: transferERC20
-Num: 
-Den: 
-Address: -994
-Norm: 6
-LF: erc20Token
-Value: u
-Fields: 
-Finance Type: undef
 End popogation
 
 
-idleToken_11(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_11(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 TMP_24(bool) = erc20Token_1 != idleToken_11
 TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
 Emit TransferredERC20(msg.sender,to_1,amount_1,erc20Token_1)
@@ -5704,7 +5568,7 @@ Value: u
 Fields: 
 Finance Type: undef
 Phid
-idleToken_11(address) := ϕ(['idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_0', 'idleToken_10', 'idleToken_3'])
+idleToken_11(address) := ϕ(['idleToken_3', 'idleToken_10', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7'])
 Phi
 [i]Type for idleToken
 
@@ -5720,8 +5584,8 @@ Finance Type: undef
 XXXX
 [i] TMP_24 cleared
 Propogating parameters and globals to SSA variables...
-[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f3e83a378b0>]
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a37df0>]
+[<slither.slithir.variables.state_variable.StateIRVariable object at 0x7f540ae0c640>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae0cb80>]
 erc20Token_1
 
 Name: erc20Token_1 Function: transferERC20
@@ -5766,17 +5630,6 @@ LF: idleToken
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: idleToken_11, name: idleToken
-
-Name: idleToken Function: transferERC20
-Num: -1
-Den: -1
-Address: 5
-Norm: 0
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: erc20Token_1, name: erc20Token
 
 Name: erc20Token_1 Function: transferERC20
@@ -5785,6 +5638,17 @@ Den:
 Address: -994
 Norm: 6
 LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: idleToken_11, name: idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 5
+Norm: 0
+LF: idleToken
 Value: u
 Fields: 
 Finance Type: undef
@@ -5817,7 +5681,39 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 []
-[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a37700>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a2d6d0>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f3e83a37df0>]
+[<slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae0cb80>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae0c490>, <slither.slithir.variables.local_variable.LocalIRVariable object at 0x7f540ae03460>]
+erc20Token_1
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -994
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -994
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -994
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
 amount_1
 
 Name: amount_1 Function: transferERC20
@@ -5896,28 +5792,7 @@ LF: to
 Value: u
 Fields: 
 Finance Type: undef
-erc20Token_1
-
-Name: erc20Token_1 Function: transferERC20
-Num: 
-Den: 
-Address: -994
-Norm: 6
-LF: erc20Token
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: erc20Token_1, name: erc20Token
-
-Name: erc20Token_1 Function: transferERC20
-Num: 
-Den: 
-Address: -994
-Norm: 6
-LF: erc20Token
-Value: u
-Fields: 
-Finance Type: undef
 
 Name: erc20Token_1 Function: transferERC20
 Num: 
@@ -5961,17 +5836,6 @@ Den:
 Address: -993
 Norm: 0
 LF: to
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: erc20Token_1, name: erc20Token
-
-Name: erc20Token_1 Function: transferERC20
-Num: 
-Den: 
-Address: -994
-Norm: 6
-LF: erc20Token
 Value: u
 Fields: 
 Finance Type: undef
