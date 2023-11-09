@@ -33,7 +33,7 @@ MAX_PARAMETERS = 5
 reuse_types = True
 reuse_types_var = {}
 
-field_tuple_start = 5
+field_tuple_start = 6
 update_start = 100
 
 #Update ratios should be reset every single contract
