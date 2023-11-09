@@ -1349,7 +1349,7 @@ def type_ref(ir)->bool:
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left) or is_type_const(ir.variable_left)):
         print("REFERENCE LEFT VALUE PROPAGATION")
-        print(ir.variable_left.extok)
+        #print(ir.variable_left.extok)
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_left, ir.lvalue)
         copy_norm(ir.variable_left, ir.lvalue)
@@ -1508,9 +1508,9 @@ def type_asn(dest, sorc) -> bool:
     #dest = ir.lvalue
     #sorc = ir.variable_right
     init_var(sorc)
-    print("_______________")
-    print(sorc.extok)
-    print(dest.extok)
+    #print("_______________")
+    #print(sorc.extok)
+    #print(dest.extok)
     #asn_norm(dest, get_norm(sorc))
     if(is_type_undef(sorc)):
         #print("Undefined?")
@@ -1518,7 +1518,7 @@ def type_asn(dest, sorc) -> bool:
     elif(is_type_const(sorc)):
         #print("XXXX")
         if(is_type_undef(dest) or is_type_const(dest)):
-            print("COPY HERE")
+            #print("COPY HERE")
             copy_token_type(sorc, dest)
         return False
     else:
@@ -1574,7 +1574,7 @@ def type_asnai(dest, sorc)->bool:
 #RETURNS: NULL
 def init_var(ir):
     #Special variables
-    print("init")
+    #print("init")
     if(not(is_variable(ir)) and str(ir) != "msg.value"):
         ##print(str(ir))
         return False
@@ -1587,7 +1587,7 @@ def init_var(ir):
         _ir.norm = get_norm(ir)
     else:
         convert_ssa(ir)
-    print("end")
+    #print("end")
     return True
     ##print_token_type(ir)
     ##print("^^^^")
@@ -2190,11 +2190,11 @@ def combine_types(lir, rir, func = None):
 def type_bin_mul(dest, lir, rir) ->bool:
     global Mul
     #typecheck -> 10*A + B
-    print("testing mul...")
+    #print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    print(lir.extok)
-    print(rir.extok)
+    #print(lir.extok)
+    #print(rir.extok)
     bin_norm(dest, lir, rir, "mul")
     pass_ftype(dest, lir, "mul", rir)
     if(is_type_undef(lir) or is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
@@ -2565,16 +2565,16 @@ def _tcheck_node(node, function) -> []:
     irs = []
     #local vars read
     print("Propogating parameters and globals to SSA variables...")
-    print(node.ssa_state_variables_read)
-    print(node.ssa_local_variables_read)
+    #print(node.ssa_state_variables_read)
+    #print(node.ssa_local_variables_read)
     for lv in node.ssa_local_variables_read:
-        print(lv)
-        print(lv.extok)
+        #print(lv)
+        #print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
-        print(lv.extok)
+        #print(lv.extok)
     for lv in node.ssa_state_variables_read:
-        print(lv)
+        #print(lv)
         #print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
@@ -2602,8 +2602,8 @@ def _tcheck_node(node, function) -> []:
             lv = ir.lvalue
             propogate_parameter(lv, function)
             propogate_global(lv)
-            print(lv.extok)
-            print("Phid")
+            #print(lv.extok)
+            #print("Phid")
         #print("weee")
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
@@ -2720,7 +2720,7 @@ def remap_return(function):
     explored = set()
     while(fentry):
         node = fentry.pop()
-        print(node)
+        #print(node)
         if(node in explored):
             continue
         explored.add(node)
@@ -2880,7 +2880,7 @@ def _tcheck_function(function) -> []:
         new_param_cache = function_param_cache(function)
         if(not(mark_iteration) or current_function_marked):
             added = add_param_cache(function, new_param_cache)
-        print_param_cache(new_param_cache)
+        #print_param_cache(new_param_cache)
     else:
         #do not care about internal functions in initial iteration
         return addback_nodes
@@ -2979,17 +2979,17 @@ def _tcheck_contract_state_var(contract):
         if(True):
             if(not(contract.name in read_global)):
                 querry_type(state_var)
-                print("querrying!!!")
+                #print("querrying!!!")
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
                 copy_ftype(state_var, new_constant)
                 new_constant.extok.norm = state_var.extok.norm
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
-                print(f"Saved name: {state_var.extok.name}")
-                print(new_constant.extok)
+                #print(f"Saved name: {state_var.extok.name}")
+                #print(new_constant.extok)
             else:
                 stored_state = global_var_types[(state_var.extok.name, contract.name)]
-                print(stored_state.extok)
+                #print(stored_state.extok)
                 copy_token_type(stored_state, state_var)
                 copy_ftype(stored_state, state_var)
                 state_var.extok.norm = stored_state.extok.norm
@@ -3096,7 +3096,7 @@ def _tcheck_contract(contract):
             print("CONSTRUCTOR VARIABLES______________________________")
             for var in function.ssa_variables_written:
                 if((var.extok.name, contract.name) in global_var_types):
-                    print(f"Copied {var.extok.name}")
+                    #print(f"Copied {var.extok.name}")
                     temp = global_var_types[(var.extok.name, contract.name)]
                     temp.extok.name = var.extok.name
                     temp.extok.function_name = "constructor"
@@ -3105,7 +3105,7 @@ def _tcheck_contract(contract):
                     if(var.extok.address != 'u'):
                         #Only global addresses
                         global_address_counter+=1
-                    print(temp.extok)
+                    #print(temp.extok)
         
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
@@ -3219,7 +3219,7 @@ class tcheck(AbstractDetector):
             seen_contracts[contract.name] = True
             user_type = u_provide_type[contract.name]
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
-                print("continuing...")
+                #print("continuing...")
                 continue
             print(f"Running check on {contract.name}")
             errorsx = _tcheck_contract(contract)
