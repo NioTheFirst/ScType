@@ -2867,7 +2867,7 @@ def _tcheck_function(function) -> []:
     if(check_bar(function.name)):
         ##print("wooo")
         return addback_nodes
-    ##print("Function name: "+function.name)
+    print("Function name: "+function.name)
     ##print("Function Visibility (test): "+function.visibility)
     fvisibl = function.visibility
     new_param_cache = None
