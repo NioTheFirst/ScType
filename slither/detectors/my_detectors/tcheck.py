@@ -929,9 +929,10 @@ def type_upk(ir) ->bool:
 
 #USAGE: typechecks an included external call
 #RETURNS: success of typecheck
-def type_included_hlc(ir, dest, function):
+def type_included_hlc(ir, dest, function, contract_name):
     global mark_iteration
     global current_function_marked
+    global current_contract_name
     #function is the fentry point
     if(mark_iteration and not(current_function_marked)):
         return 2
@@ -955,9 +956,12 @@ def type_included_hlc(ir, dest, function):
     added = add_param_cache(function, new_param_cache)
     if(added == -100):
         ##print("added")
+        save_contract_name = current_contract_name
+        current_contract_name = contract_name
         addback = _tcheck_function_call(function, new_param_cache)
         #deal with return value (single) TODO
         handle_return(ir.lvalue, function)
+        current_contract_name = save_contract_name
         if(len(addback) != 0):
             return 2
     else:
@@ -1023,7 +1027,7 @@ def querry_fc(ir) -> int:
 
     if(included_func != None):
 
-        if(type_included_hlc(ir, dest, included_func) == 1):
+        if(type_included_hlc(ir, dest, included_func, cont_name) == 1):
             return 2
         return 2
 
@@ -2522,7 +2526,7 @@ def propogate_parameter(lv, function, clear_initial_parameters = False):
                     print(lv.extok)
                     print("Copied ftype")
 #USSAGE: propogates a local variable with a global stored assignment
-def propogate_global(lv):
+def propogate_global(lv, hlc_name = None):
     global global_var_types
     if(lv.extok.is_undefined()):
         pos = -1
@@ -2530,7 +2534,14 @@ def propogate_global(lv):
         _name = ssa_name_info[0]
         print(f"Globalname: {_name}")
 
-        
+        if(hlc != None):
+            if((_name, hlc_name) in global_var_types):
+                print("global...")
+                stored_state = global_var_types[(_name, hlc_name)]
+                print(stored_state.extok)
+                copy_token_type(stored_state, lv)
+                copy_ftype(stored_state, lv)
+                lv.extok.norm = stored_state.extok.norm
         if((_name, current_contract_name) in global_var_types):
             print("global...")
             stored_state = global_var_types[(_name, current_contract_name)]
