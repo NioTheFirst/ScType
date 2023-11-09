@@ -690,6 +690,9 @@ def add_in_func(contract_name, function_name, in_func):
 def get_in_func_ptr(contract_name, function_name):
     key = contract_name + '_' + function_name
     if(key in in_func_ptr_hash):
+        funcptr = in_func_ptr_hash[key]
+        if(funcptr.entry_point == None):
+            return None
         return in_func_ptr_hash[key]
     return None
 
