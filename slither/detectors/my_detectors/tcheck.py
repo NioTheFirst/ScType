@@ -1014,13 +1014,13 @@ def querry_fc(ir) -> int:
     if(cont_name == None or cont_name == "UNKNOWN"):
         #Contingency for undefined contract instances
         #cont_name = dest.extok.name
-        if (str(dest.type)[0] == "I" or str(dest.type)[0] == "i"):
-            cont_name = str(dest.type)[1:]
-        else:
-            cont_name = str(dest.type)
+        cont_name = str(dest.type)
     #Use original contract name instead of reduced name for interfaces etc.
     included_func = get_cf_pair(cont_name, func_name)
     print(f"Found: {included_func}")
+    if (str(dest.type)[0] == "I" or str(dest.type)[0] == "i"):
+        cont_name = str(dest.type)[1:]
+
     if(included_func != None):
 
         if(type_included_hlc(ir, dest, included_func) == 1):

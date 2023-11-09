@@ -213,7 +213,8 @@ class ExtendedType():
 
 
     def is_address(self) -> bool:
-        if(self._address != 'u' and self._address != None):            return True 
+        if(self._address != 'u' and self._address != None):            
+            return True 
         return False
 
     def token_type_clear(self):
