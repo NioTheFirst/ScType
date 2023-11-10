@@ -942,9 +942,9 @@ def type_included_hlc(ir, dest, function, contract_name):
         print(param.extok)
         if(is_type_const(param)):
             assign_const(param)
-        elif(is_type_undef(param)):
+        #elif(is_type_undef(param)):
             #undefined type
-            return 1
+        #    return 1
     #generate param cache
     new_param_cache = function_hlc_param_cache(ir)
     print("High level cal param_cache")
