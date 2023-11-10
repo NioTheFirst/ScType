@@ -1025,7 +1025,7 @@ def querry_fc(ir) -> int:
     #    cont_name = str(dest.type)[1:]
     #print_addresses()
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
-    if(written_func_info == None):
+    if(written_func_rets == None):
         cont_name = cont_name[1:]
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
