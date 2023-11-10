@@ -1381,7 +1381,7 @@ def type_ref(ir)->bool:
     if(str(ir.lvalue.type).startswith("address")):
         ir.lvalue.extok.address = ir.variable_left.extok.address
         return False
-    ref_tuple = (ir.variable_left.non_ssa_version.name)
+    ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
         ##print("REFERENCE TYPE READ")
         print(f"REf tuple: {ref_tuple}")
