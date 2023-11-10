@@ -42,8 +42,25 @@ Mark functions Adding: HourlyBondSubscriptionLending, slitherConstructorVariable
 [x] Not visible 
 Mark functions Adding: HourlyBondSubscriptionLending, slitherConstructorConstantVariables, True
 [x] Not visible 
-State_var: FP32
-Finding type for FP32(uint256 ... )
+State_var: yieldChangePerSecondFP
+Finding type for yieldChangePerSecondFP(uint256 ... )
+Value: u
+Source address: u
+State_var: hourlyBondAccounts
+Finding type for hourlyBondAccounts(mapping(address => mapping(address => HourlyBond)) ... )
+global
+hourlyBondAccounts
+amount
+OUT KEY: global_hourlyBondAccounts_amount
+([-1], [-1], ['u'], -1, 'u', 0)
+global
+hourlyBondAccounts
+yieldQuotientFP
+OUT KEY: global_hourlyBondAccounts_yieldQuotientFP
+global
+hourlyBondAccounts
+moduloHour
+OUT KEY: global_hourlyBondAccounts_moduloHour
 Value: u
 Source address: u
 State_var: hourlyBondMetadata
@@ -114,29 +131,12 @@ State_var: maxHourlyYieldFP
 Finding type for maxHourlyYieldFP(uint256 ... )
 Value: u
 Source address: u
-State_var: hourlyBondAccounts
-Finding type for hourlyBondAccounts(mapping(address => mapping(address => HourlyBond)) ... )
-global
-hourlyBondAccounts
-amount
-OUT KEY: global_hourlyBondAccounts_amount
-([-1], [-1], ['u'], -1, 'u', 0)
-global
-hourlyBondAccounts
-yieldQuotientFP
-OUT KEY: global_hourlyBondAccounts_yieldQuotientFP
-global
-hourlyBondAccounts
-moduloHour
-OUT KEY: global_hourlyBondAccounts_moduloHour
-Value: u
-Source address: u
 State_var: withdrawalWindow
 Finding type for withdrawalWindow(uint256 ... )
 Value: u
 Source address: u
-State_var: yieldChangePerSecondFP
-Finding type for yieldChangePerSecondFP(uint256 ... )
+State_var: FP32
+Finding type for FP32(uint256 ... )
 Value: u
 Source address: u
 Running check on HourlyBondSubscriptionLending
@@ -172,7 +172,7 @@ bond
 moduloHour
 OUT KEY: updateHourlyBondAmount_bond_moduloHour
 Value: u
-New param cache [[[], [], 0, 'issuer', [], -1, -999, 'u'], [[-1], [-1], 'u', None, [<slither.core.variables.structure_variable.StructureVariable object at 0x7fbc7ffca1f0>], -1, 'u', 'u']]
+New param cache [[[], [], 0, 'issuer', [], -1, -999, 'u'], [[-1], [-1], 'u', None, [<slither.core.variables.structure_variable.StructureVariable object at 0x7f151c710100>], -1, 'u', 'u']]
 FIND RETURN
 ENTRY_POINT
 updateHourlyBondAmount(address,HourlyBond)
@@ -180,8 +180,8 @@ updateHourlyBondAmount(address,HourlyBond)
 
 issuer_1(address) := ϕ(['issuer_1'])
 bond_1(HourlyBond) := ϕ(["bond_1 (-> ['hourlyBondAccounts'])"])
-lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
-hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
+hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 REF_22(uint256) -> bond_1.yieldQuotientFP
 yieldQuotientFP_1(uint256) := REF_22(uint256)
 TMP_54(bool) = yieldQuotientFP_1 > 0
@@ -274,7 +274,7 @@ Name: lendingMeta, Num: 5
 Globalname: lendingMeta, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -299,7 +299,7 @@ Name: hourlyBondMetadata, Num: 3
 Globalname: hourlyBondMetadata, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_2 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -350,7 +350,7 @@ Value: u
 Fields: amount
 Finance Type: undef
 XXXX
-lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
+lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
 Phi
 [i]Type for lendingMeta
 
@@ -364,7 +364,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 Phi
 [i]Type for hourlyBondMetadata
 
@@ -559,6 +559,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] TMP_55 cleared
 [i] yA cleared
 Propogating parameters and globals to SSA variables...
@@ -584,17 +586,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: hourlyBondMetadata_3, name: hourlyBondMetadata
 
 Name: hourlyBondMetadata Function: updateHourlyBondAmount
@@ -603,6 +594,17 @@ Den: -1
 Address: u
 Norm: u
 LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
 Value: u
 Fields: 
 Finance Type: undef
@@ -635,7 +637,7 @@ Name: lendingMeta, Num: 6
 Globalname: lendingMeta, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -729,8 +731,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Propogating All
-timeDelta_1
-Ssa_name: timeDelta_1, name: timeDelta
+accumulator_1 (-> ['bondMeta'])
+Ssa_name: accumulator_1 (-> ['bondMeta']), name: accumulator
 
 Name: None Function: None
 Num: 
@@ -741,8 +743,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-accumulator_1 (-> ['bondMeta'])
-Ssa_name: accumulator_1 (-> ['bondMeta']), name: accumulator
+timeDelta_1
+Ssa_name: timeDelta_1, name: timeDelta
 
 Name: None Function: None
 Num: 
@@ -916,8 +918,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Propogating All
-timeDelta_2
-Ssa_name: timeDelta_2, name: timeDelta
+borrowAccumulator_1 (-> ['borrowYieldAccumulators'])
+Ssa_name: borrowAccumulator_1 (-> ['borrowYieldAccumulators']), name: borrowAccumulator
 
 Name: None Function: None
 Num: 
@@ -928,8 +930,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-borrowAccumulator_1 (-> ['borrowYieldAccumulators'])
-Ssa_name: borrowAccumulator_1 (-> ['borrowYieldAccumulators']), name: borrowAccumulator
+timeDelta_2
+Ssa_name: timeDelta_2, name: timeDelta
 
 Name: None Function: None
 Num: 
@@ -1033,7 +1035,7 @@ Name: lendingMeta, Num: 11
 Globalname: lendingMeta, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -1058,7 +1060,7 @@ Name: borrowYieldAccumulators, Num: 1
 Globalname: borrowYieldAccumulators, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_4 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -1083,7 +1085,7 @@ Name: maxHourlyYieldFP, Num: 2
 Globalname: maxHourlyYieldFP, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_7 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -1108,7 +1110,7 @@ Name: borrowingFactorPercent, Num: 1
 Globalname: borrowingFactorPercent, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_6 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -1146,7 +1148,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-lendingMeta_11(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
+lendingMeta_11(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
 Phi
 [i]Type for lendingMeta
 
@@ -1442,17 +1444,6 @@ XXXX
 [i] accumulator cleared
 [i] bondMeta cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: timeDelta_1, name: timeDelta
-
-Name: timeDelta Function: getUpdatedHourlyYield
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulator_1 (-> ['bondMeta']), name: accumulator
 
 Name: accumulator Function: getUpdatedHourlyYield
@@ -1490,6 +1481,17 @@ Fields: lastUpdated
 Finance Type: undef
 Name: accumulator, Num: 1 (-> ['bondMeta'])
 Globalname: accumulator, contract_name: HourlyBondSubscriptionLending
+Ssa_name: timeDelta_1, name: timeDelta
+
+Name: timeDelta Function: getUpdatedHourlyYield
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: accumulator_2 (-> ['bondMeta']), name: accumulator
 
 Name: None Function: None
@@ -1885,7 +1887,7 @@ Name: FP32, Num: 1
 Globalname: FP32, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_1 Function: None
+Name: PIC_9 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -1895,18 +1897,8 @@ Value: u
 Fields: 
 Finance Type: undef
 Source address: u
-yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(['yA_1 (-> [])', "borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])"])
+yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(["borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])", 'yA_1 (-> [])'])
 Phi
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 
 Name: None Function: None
 Num: 
@@ -1926,6 +1918,16 @@ Norm: u
 LF: None
 Value: u
 Fields: lastUpdated
+Finance Type: undef
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
 Finance Type: undef
 
 
@@ -2117,6 +2119,17 @@ Finance Type: undef
 Copied ftype
 Name: yieldAccumulator, Num: 1 (-> [])
 Globalname: yieldAccumulator, contract_name: HourlyBondSubscriptionLending
+Ssa_name: FP32_1, name: FP32
+
+Name: FP32 Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: secondsDelta_1, name: secondsDelta
 
 Name: secondsDelta Function: calcCumulativeYieldFP
@@ -2130,17 +2143,6 @@ Fields:
 Finance Type: undef
 Name: secondsDelta, Num: 1
 Globalname: secondsDelta, contract_name: HourlyBondSubscriptionLending
-Ssa_name: FP32_1, name: FP32
-
-Name: FP32 Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: None Function: None
@@ -2448,8 +2450,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: i_1, name: i
@@ -2482,6 +2482,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] accumulatorFP cleared
@@ -2589,18 +2591,8 @@ Fields:
 Finance Type: undef
 Name: i, Num: 2
 Globalname: i, contract_name: HourlyBondSubscriptionLending
-accumulatorFP_2(uint256) := ϕ(['accumulatorFP_1', 'accumulatorFP_3'])
+accumulatorFP_2(uint256) := ϕ(['accumulatorFP_3', 'accumulatorFP_1'])
 Phi
-
-Name: accumulatorFP Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 3600
-Fields: 
-Finance Type: undef
 
 Name: None Function: None
 Num: 
@@ -2609,6 +2601,16 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+
+Name: accumulatorFP Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 3600
 Fields: 
 Finance Type: undef
 
@@ -2679,6 +2681,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] TMP_75 cleared
 [i] TMP_76 cleared
 [i] accumulatorFP cleared
@@ -2741,6 +2745,17 @@ LF: None
 Value: 3600
 Fields: 
 Finance Type: undef
+Ssa_name: FP32_1, name: FP32
+
+Name: FP32 Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
 
 Name: yieldAccumulator_1 (-> []) Function: calcCumulativeYieldFP
@@ -2766,17 +2781,6 @@ Finance Type: undef
 Copied ftype
 Name: yieldAccumulator, Num: 1 (-> [])
 Globalname: yieldAccumulator, contract_name: HourlyBondSubscriptionLending
-Ssa_name: FP32_1, name: FP32
-
-Name: FP32 Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulatorFP_3, name: accumulatorFP
 
 Name: None Function: None
@@ -2902,8 +2906,6 @@ Value: 3600
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_77 cleared
 [i] i cleared
 Propogating parameters and globals to SSA variables...
@@ -3072,18 +3074,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(['yA_1 (-> [])', "borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])"])
+yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(["borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])", 'yA_1 (-> [])'])
 Phi
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 
 Name: None Function: None
 Num: 
@@ -3103,6 +3095,16 @@ Norm: u
 LF: None
 Value: u
 Fields: lastUpdated
+Finance Type: undef
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
 Finance Type: undef
 
 
@@ -3294,6 +3296,17 @@ Finance Type: undef
 Copied ftype
 Name: yieldAccumulator, Num: 1 (-> [])
 Globalname: yieldAccumulator, contract_name: HourlyBondSubscriptionLending
+Ssa_name: FP32_1, name: FP32
+
+Name: FP32 Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: secondsDelta_1, name: secondsDelta
 
 Name: secondsDelta Function: calcCumulativeYieldFP
@@ -3307,17 +3320,6 @@ Fields:
 Finance Type: undef
 Name: secondsDelta, Num: 1
 Globalname: secondsDelta, contract_name: HourlyBondSubscriptionLending
-Ssa_name: FP32_1, name: FP32
-
-Name: FP32 Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -3645,8 +3647,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: i_1, name: i
@@ -3679,6 +3679,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] accumulatorFP cleared
@@ -3786,7 +3788,7 @@ Fields:
 Finance Type: undef
 Name: i, Num: 2
 Globalname: i, contract_name: HourlyBondSubscriptionLending
-accumulatorFP_2(uint256) := ϕ(['accumulatorFP_1', 'accumulatorFP_3'])
+accumulatorFP_2(uint256) := ϕ(['accumulatorFP_3', 'accumulatorFP_1'])
 Phi
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -3876,6 +3878,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] TMP_75 cleared
 [i] TMP_76 cleared
 [i] accumulatorFP cleared
@@ -3938,6 +3942,17 @@ LF: None
 Value: 3600
 Fields: 
 Finance Type: undef
+Ssa_name: FP32_1, name: FP32
+
+Name: FP32 Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
 
 Name: yieldAccumulator_1 (-> []) Function: calcCumulativeYieldFP
@@ -3963,17 +3978,6 @@ Finance Type: undef
 Copied ftype
 Name: yieldAccumulator, Num: 1 (-> [])
 Globalname: yieldAccumulator, contract_name: HourlyBondSubscriptionLending
-Ssa_name: FP32_1, name: FP32
-
-Name: FP32 Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulatorFP_3, name: accumulatorFP
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -4099,8 +4103,6 @@ Value: 3600
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_77 cleared
 [i] i cleared
 Propogating parameters and globals to SSA variables...
@@ -4365,7 +4367,7 @@ Name: lendingMeta, Num: 12
 Globalname: lendingMeta, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -4472,7 +4474,7 @@ Name: borrowYieldAccumulators, Num: 2
 Globalname: borrowYieldAccumulators, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_4 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -4482,17 +4484,6 @@ Value: u
 Fields: 
 Finance Type: undef
 Source address: u
-Ssa_name: borrowYieldAccumulators_2, name: borrowYieldAccumulators
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: issuer_1, name: issuer
 
 Name: issuer Function: getUpdatedHourlyYield
@@ -4501,6 +4492,17 @@ Den:
 Address: -999
 Norm: 0
 LF: issuer
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: borrowYieldAccumulators_2, name: borrowYieldAccumulators
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -4867,7 +4869,7 @@ Name: maxHourlyYieldFP, Num: 3
 Globalname: maxHourlyYieldFP, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_6 Function: None
+Name: PIC_7 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -4942,30 +4944,6 @@ ENTRY_POINT
 min(uint256,uint256)
 Propogating All
 Propogating All
-b_1
-Ssa_name: b_1, name: b
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: b_1 Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Copied ftype
 a_1
 Ssa_name: a_1, name: a
 
@@ -4987,6 +4965,30 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+b_1
+Ssa_name: b_1, name: b
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: b_1 Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 Copied ftype
@@ -5120,17 +5122,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -5162,6 +5153,17 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 End popogation
@@ -5331,17 +5333,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -5373,6 +5364,17 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 End popogation
@@ -6197,30 +6199,6 @@ ENTRY_POINT
 min(uint256,uint256)
 Propogating All
 Propogating All
-b_1
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: b_1 Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
 a_1
 Ssa_name: a_1, name: a
 
@@ -6236,6 +6214,30 @@ Finance Type: undef
 Source address: u
 
 Name: a_1 Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+b_1
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: b_1 Function: min
 Num: -1
 Den: -1
 Address: u
@@ -6447,17 +6449,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -6489,6 +6480,17 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 End popogation
@@ -6730,17 +6732,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -6772,6 +6763,17 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 End popogation
@@ -7190,30 +7192,6 @@ ENTRY_POINT
 min(uint256,uint256)
 Propogating All
 Propogating All
-b_1
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: b_1 Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
 a_1
 Ssa_name: a_1, name: a
 
@@ -7229,6 +7207,30 @@ Finance Type: undef
 Source address: u
 
 Name: a_1 Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+b_1
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: b_1 Function: min
 Num: -1
 Den: -1
 Address: u
@@ -7440,17 +7442,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -7482,6 +7473,17 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 End popogation
@@ -7723,17 +7725,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -7765,6 +7756,17 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 End popogation
@@ -8150,30 +8152,6 @@ Value: u
 Fields: 
 Finance Type: undef
 Propogating All
-totalLendingInBucket_1
-Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: totalLendingInBucket_1 Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
 bucketTarget_1
 Ssa_name: bucketTarget_1, name: bucketTarget
 
@@ -8246,6 +8224,30 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+totalLendingInBucket_1
+Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
 Propogating All
 yieldDiff_1
 Ssa_name: yieldDiff_1, name: yieldDiff
@@ -8297,7 +8299,18 @@ Value: u
 Fields: 
 Finance Type: undef
 Propogating All
-Propogating All
+yieldFP_2
+Ssa_name: yieldFP_2, name: yieldFP
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 bucketMaxYield_1
 Ssa_name: bucketMaxYield_1, name: bucketMaxYield
 
@@ -8322,18 +8335,7 @@ Value: 1
 Fields: 
 Finance Type: undef
 Copied ftype
-yieldFP_3
-Ssa_name: yieldFP_3, name: yieldFP
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+Propogating All
 Propogating All
 Propogating All
 bucketMaxYield_1
@@ -8555,7 +8557,7 @@ Name: yieldChangePerSecondFP, Num: 1
 Globalname: yieldChangePerSecondFP, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_9 Function: None
+Name: PIC_1 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -8728,7 +8730,7 @@ Value: 1
 Fields: 
 Finance Type: undef
 XXXX
-yieldChangePerSecondFP_1(uint256) := ϕ(['yieldChangePerSecondFP_2', 'yieldChangePerSecondFP_0'])
+yieldChangePerSecondFP_1(uint256) := ϕ(['yieldChangePerSecondFP_0', 'yieldChangePerSecondFP_2'])
 Phi
 [i]Type for yieldChangePerSecondFP
 
@@ -9016,31 +9018,6 @@ XXXX
 [i] TMP_32 cleared
 [i] TMP_33 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
-
-Name: totalLendingInBucket Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: totalLendingInBucket_1 Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
-Name: totalLendingInBucket, Num: 1
-Globalname: totalLendingInBucket, contract_name: HourlyBondSubscriptionLending
 Ssa_name: bucketTarget_1, name: bucketTarget
 
 Name: bucketTarget Function: updatedYieldFP
@@ -9104,7 +9081,7 @@ Name: withdrawingSpeed, Num: 1
 Globalname: withdrawingSpeed, contract_name: HourlyBondSubscriptionLending
 Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
 
-Name: totalLendingInBucket_1 Function: updatedYieldFP
+Name: totalLendingInBucket Function: updatedYieldFP
 Num: 
 Den: 
 Address: u
@@ -9188,6 +9165,31 @@ Finance Type: undef
 Copied ftype
 Name: withdrawingSpeed, Num: 1
 Globalname: withdrawingSpeed, contract_name: HourlyBondSubscriptionLending
+Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: totalLendingInBucket, Num: 1
+Globalname: totalLendingInBucket, contract_name: HourlyBondSubscriptionLending
 End popogation
 TMP_31(bool) = totalLendingInBucket_1 >= bucketTarget_1
 lnorm: u rnorm: 0
@@ -9232,7 +9234,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] TMP_34 cleared
 [i] yieldFP cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: yieldDiff_1, name: yieldDiff
@@ -9297,6 +9298,85 @@ Finance Type: undef
 Name: yieldFP, Num: 2
 Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
 End popogation
+yieldFP_2(uint256) = yieldFP_1 (c)+ yieldDiff_1
+Source address: u
+[i]Type for yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_34 cleared
+[i] yieldFP cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: yieldDiff_1, name: yieldDiff
+
+Name: yieldDiff Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: yieldFP_1, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 1
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldDiff_1, name: yieldDiff
+
+Name: yieldDiff Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: yieldFP_1, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 1
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldFP_4, name: yieldFP
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 4
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+End popogation
 TMP_34(uint256) = INTERNAL_CALL, BaseLending.min(uint256,uint256)(yieldFP_1,yieldDiff_1)
 New param cache [[[], [], 'u', None, [], -1, 'u', 'u'], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
 Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 0, None, [], -1, 'u']]
@@ -9327,30 +9407,6 @@ ENTRY_POINT
 min(uint256,uint256)
 Propogating All
 Propogating All
-b_1
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: b_1 Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
 a_1
 Ssa_name: a_1, name: a
 
@@ -9366,6 +9422,30 @@ Finance Type: undef
 Source address: u
 
 Name: a_1 Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+b_1
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: b_1 Function: min
 Num: -1
 Den: -1
 Address: u
@@ -9541,17 +9621,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -9577,6 +9646,17 @@ Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
 Num: -1
 Den: -1
 Address: u
@@ -9788,17 +9868,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -9824,6 +9893,17 @@ Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
 Num: -1
 Den: -1
 Address: u
@@ -9932,7 +10012,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-yieldFP_2(uint256) = yieldFP_1 (c)- TMP_34
+yieldFP_4(uint256) = yieldFP_1 (c)- TMP_34
 Source address: u
 [i]Type for yieldFP
 
@@ -9946,100 +10026,9 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] yieldFP cleared
-Propogating parameters and globals to SSA variables...
-Ssa_name: yieldDiff_1, name: yieldDiff
-
-Name: yieldDiff Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_1, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 1
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldDiff_1, name: yieldDiff
-
-Name: yieldDiff Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_1, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 1
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldFP_3, name: yieldFP
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 3
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-End popogation
-yieldFP_3(uint256) = yieldFP_1 (c)+ yieldDiff_1
-Source address: u
-[i]Type for yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_35 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: bucketMaxYield_1, name: bucketMaxYield
-
-Name: bucketMaxYield Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_3, name: yieldFP
+Ssa_name: yieldFP_2, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: -1
@@ -10061,7 +10050,7 @@ LF: None
 Value: 1
 Fields: 
 Finance Type: undef
-Ssa_name: yieldFP_3, name: yieldFP
+Ssa_name: yieldFP_2, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: -1
@@ -10070,10 +10059,21 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: bucketMaxYield_1, name: bucketMaxYield
+
+Name: bucketMaxYield Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 End popogation
-TMP_35(bool) = yieldFP_3 > bucketMaxYield_1
+TMP_35(bool) = yieldFP_2 > bucketMaxYield_1
 lnorm: u rnorm: 0
 [i]Type for TMP_35
 
@@ -10089,6 +10089,8 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] yieldFP cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: bucketMaxYield_1, name: bucketMaxYield
@@ -10113,7 +10115,7 @@ LF: None
 Value: 1
 Fields: 
 Finance Type: undef
-Ssa_name: yieldFP_4, name: yieldFP
+Ssa_name: yieldFP_3, name: yieldFP
 
 Name: None Function: None
 Num: 
@@ -10124,10 +10126,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Name: yieldFP, Num: 4
+Name: yieldFP, Num: 3
 Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
 End popogation
-yieldFP_4(uint256) := bucketMaxYield_1(uint256)
+yieldFP_3(uint256) := bucketMaxYield_1(uint256)
 asgn
 Source address: u
 Finance type key: (-1, -1)
@@ -10497,7 +10499,7 @@ Value: 1
 Fields: 
 Finance Type: undef
 XXXX
-yieldChangePerSecondFP_1(uint256) := ϕ(['yieldChangePerSecondFP_2', 'yieldChangePerSecondFP_0'])
+yieldChangePerSecondFP_1(uint256) := ϕ(['yieldChangePerSecondFP_0', 'yieldChangePerSecondFP_2'])
 Phi
 [i]Type for yieldChangePerSecondFP
 
@@ -10785,31 +10787,6 @@ XXXX
 [i] TMP_32 cleared
 [i] TMP_33 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
-
-Name: totalLendingInBucket Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: totalLendingInBucket_1 Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
-Name: totalLendingInBucket, Num: 1
-Globalname: totalLendingInBucket, contract_name: HourlyBondSubscriptionLending
 Ssa_name: bucketTarget_1, name: bucketTarget
 
 Name: bucketTarget Function: updatedYieldFP
@@ -10873,7 +10850,7 @@ Name: withdrawingSpeed, Num: 1
 Globalname: withdrawingSpeed, contract_name: HourlyBondSubscriptionLending
 Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
 
-Name: totalLendingInBucket_1 Function: updatedYieldFP
+Name: totalLendingInBucket Function: updatedYieldFP
 Num: 
 Den: 
 Address: u
@@ -10957,6 +10934,31 @@ Finance Type: undef
 Copied ftype
 Name: withdrawingSpeed, Num: 1
 Globalname: withdrawingSpeed, contract_name: HourlyBondSubscriptionLending
+Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: totalLendingInBucket, Num: 1
+Globalname: totalLendingInBucket, contract_name: HourlyBondSubscriptionLending
 End popogation
 TMP_31(bool) = totalLendingInBucket_1 >= bucketTarget_1
 lnorm: u rnorm: 0
@@ -11001,7 +11003,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] TMP_34 cleared
 [i] yieldFP cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: yieldDiff_1, name: yieldDiff
@@ -11066,6 +11067,85 @@ Finance Type: undef
 Name: yieldFP, Num: 2
 Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
 End popogation
+yieldFP_2(uint256) = yieldFP_1 (c)+ yieldDiff_1
+Source address: u
+[i]Type for yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_34 cleared
+[i] yieldFP cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: yieldDiff_1, name: yieldDiff
+
+Name: yieldDiff Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: yieldFP_1, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 1
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldDiff_1, name: yieldDiff
+
+Name: yieldDiff Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: yieldFP_1, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 1
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldFP_4, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 4
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+End popogation
 TMP_34(uint256) = INTERNAL_CALL, BaseLending.min(uint256,uint256)(yieldFP_1,yieldDiff_1)
 New param cache [[[], [], 'u', None, [], -1, 'u', 'u'], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
 Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 0, None, [], -1, 'u']]
@@ -11096,30 +11176,6 @@ ENTRY_POINT
 min(uint256,uint256)
 Propogating All
 Propogating All
-b_1
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: b_1 Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
 a_1
 Ssa_name: a_1, name: a
 
@@ -11135,6 +11191,30 @@ Finance Type: undef
 Source address: u
 
 Name: a_1 Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+b_1
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: b_1 Function: min
 Num: -1
 Den: -1
 Address: u
@@ -11310,17 +11390,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -11346,6 +11415,17 @@ Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
 Num: -1
 Den: -1
 Address: u
@@ -11557,17 +11637,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -11593,6 +11662,17 @@ Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
 Num: -1
 Den: -1
 Address: u
@@ -11701,7 +11781,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-yieldFP_2(uint256) = yieldFP_1 (c)- TMP_34
+yieldFP_4(uint256) = yieldFP_1 (c)- TMP_34
 Source address: u
 [i]Type for yieldFP
 
@@ -11715,100 +11795,9 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] yieldFP cleared
-Propogating parameters and globals to SSA variables...
-Ssa_name: yieldDiff_1, name: yieldDiff
-
-Name: yieldDiff Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_1, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 1
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldDiff_1, name: yieldDiff
-
-Name: yieldDiff Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_1, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 1
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldFP_3, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 3
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-End popogation
-yieldFP_3(uint256) = yieldFP_1 (c)+ yieldDiff_1
-Source address: u
-[i]Type for yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_35 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: bucketMaxYield_1, name: bucketMaxYield
-
-Name: bucketMaxYield Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: 0
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_3, name: yieldFP
+Ssa_name: yieldFP_2, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: -1
@@ -11830,7 +11819,7 @@ LF: None
 Value: 1
 Fields: 
 Finance Type: undef
-Ssa_name: yieldFP_3, name: yieldFP
+Ssa_name: yieldFP_2, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: -1
@@ -11839,10 +11828,21 @@ Address: u
 Norm: u
 LF: None
 Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: bucketMaxYield_1, name: bucketMaxYield
+
+Name: bucketMaxYield Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 1
 Fields: 
 Finance Type: undef
 End popogation
-TMP_35(bool) = yieldFP_3 > bucketMaxYield_1
+TMP_35(bool) = yieldFP_2 > bucketMaxYield_1
 lnorm: u rnorm: 0
 [i]Type for TMP_35
 
@@ -11858,6 +11858,8 @@ Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
 End popogation
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] yieldFP cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: bucketMaxYield_1, name: bucketMaxYield
@@ -11882,7 +11884,7 @@ LF: None
 Value: 1
 Fields: 
 Finance Type: undef
-Ssa_name: yieldFP_4, name: yieldFP
+Ssa_name: yieldFP_3, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: 
@@ -11893,10 +11895,10 @@ LF: None
 Value: 1
 Fields: 
 Finance Type: undef
-Name: yieldFP, Num: 4
+Name: yieldFP, Num: 3
 Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
 End popogation
-yieldFP_4(uint256) := bucketMaxYield_1(uint256)
+yieldFP_3(uint256) := bucketMaxYield_1(uint256)
 asgn
 Source address: u
 Finance type key: (-1, -1)
@@ -12169,17 +12171,6 @@ XXXX
 [i] TMP_87 cleared
 [i] borrowAccumulator cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: timeDelta_2, name: timeDelta
-
-Name: timeDelta Function: getUpdatedHourlyYield
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: borrowAccumulator_1 (-> ['borrowYieldAccumulators']), name: borrowAccumulator
 
 Name: borrowAccumulator Function: getUpdatedHourlyYield
@@ -12212,6 +12203,17 @@ Norm: 0
 LF: issuer
 Value: u
 Fields: hourlyYieldFP, lastUpdated
+Finance Type: undef
+Ssa_name: timeDelta_2, name: timeDelta
+
+Name: timeDelta Function: getUpdatedHourlyYield
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
 Finance Type: undef
 Ssa_name: borrowAccumulator_2 (-> ['borrowYieldAccumulators']), name: borrowAccumulator
 
@@ -12241,7 +12243,7 @@ Name: borrowYieldAccumulators, Num: 3
 Globalname: borrowYieldAccumulators, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_4 Function: None
+Name: PIC_5 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -12613,7 +12615,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(['yA_1 (-> [])', "borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])"])
+yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(["borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])", 'yA_1 (-> [])'])
 Phi
 [i]Type for yieldAccumulator
 
@@ -12774,6 +12776,17 @@ LF: issuer
 Value: u
 Fields: accumulatorFP, hourlyYieldFP, lastUpdated
 Finance Type: undef
+Ssa_name: FP32_1, name: FP32
+
+Name: FP32 Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: secondsDelta_1, name: secondsDelta
 
 Name: secondsDelta Function: calcCumulativeYieldFP
@@ -12787,17 +12800,6 @@ Fields:
 Finance Type: undef
 Name: secondsDelta, Num: 1
 Globalname: secondsDelta, contract_name: HourlyBondSubscriptionLending
-Ssa_name: FP32_1, name: FP32
-
-Name: FP32 Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -13125,8 +13127,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: i_1, name: i
@@ -13159,6 +13159,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] accumulatorFP cleared
@@ -13266,7 +13268,7 @@ Fields:
 Finance Type: undef
 Name: i, Num: 2
 Globalname: i, contract_name: HourlyBondSubscriptionLending
-accumulatorFP_2(uint256) := ϕ(['accumulatorFP_1', 'accumulatorFP_3'])
+accumulatorFP_2(uint256) := ϕ(['accumulatorFP_3', 'accumulatorFP_1'])
 Phi
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -13356,6 +13358,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] TMP_75 cleared
 [i] TMP_76 cleared
 [i] accumulatorFP cleared
@@ -13404,17 +13408,6 @@ LF: None
 Value: 3600
 Fields: 
 Finance Type: undef
-Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
-
-Name: yieldAccumulator Function: calcCumulativeYieldFP
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: accumulatorFP, hourlyYieldFP, lastUpdated
-Finance Type: undef
 Ssa_name: FP32_1, name: FP32
 
 Name: FP32 Function: calcCumulativeYieldFP
@@ -13425,6 +13418,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
+
+Name: yieldAccumulator Function: calcCumulativeYieldFP
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
+Fields: accumulatorFP, hourlyYieldFP, lastUpdated
 Finance Type: undef
 Ssa_name: accumulatorFP_3, name: accumulatorFP
 
@@ -13551,8 +13555,6 @@ Value: 3600
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_77 cleared
 [i] i cleared
 Propogating parameters and globals to SSA variables...
@@ -13719,7 +13721,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(['yA_1 (-> [])', "borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])"])
+yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(["borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])", 'yA_1 (-> [])'])
 Phi
 [i]Type for yieldAccumulator
 
@@ -13880,6 +13882,17 @@ LF: issuer
 Value: u
 Fields: accumulatorFP, hourlyYieldFP, lastUpdated
 Finance Type: undef
+Ssa_name: FP32_1, name: FP32
+
+Name: FP32 Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: secondsDelta_1, name: secondsDelta
 
 Name: secondsDelta Function: calcCumulativeYieldFP
@@ -13893,17 +13906,6 @@ Fields:
 Finance Type: undef
 Name: secondsDelta, Num: 1
 Globalname: secondsDelta, contract_name: HourlyBondSubscriptionLending
-Ssa_name: FP32_1, name: FP32
-
-Name: FP32 Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -14231,8 +14233,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: i_1, name: i
@@ -14265,6 +14265,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] accumulatorFP cleared
@@ -14372,7 +14374,7 @@ Fields:
 Finance Type: undef
 Name: i, Num: 2
 Globalname: i, contract_name: HourlyBondSubscriptionLending
-accumulatorFP_2(uint256) := ϕ(['accumulatorFP_1', 'accumulatorFP_3'])
+accumulatorFP_2(uint256) := ϕ(['accumulatorFP_3', 'accumulatorFP_1'])
 Phi
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -14462,6 +14464,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] TMP_75 cleared
 [i] TMP_76 cleared
 [i] accumulatorFP cleared
@@ -14510,17 +14514,6 @@ LF: None
 Value: 3600
 Fields: 
 Finance Type: undef
-Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
-
-Name: yieldAccumulator Function: calcCumulativeYieldFP
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: accumulatorFP, hourlyYieldFP, lastUpdated
-Finance Type: undef
 Ssa_name: FP32_1, name: FP32
 
 Name: FP32 Function: calcCumulativeYieldFP
@@ -14531,6 +14524,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
+
+Name: yieldAccumulator Function: calcCumulativeYieldFP
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
+Fields: accumulatorFP, hourlyYieldFP, lastUpdated
 Finance Type: undef
 Ssa_name: accumulatorFP_3, name: accumulatorFP
 
@@ -14657,8 +14661,6 @@ Value: 3600
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_77 cleared
 [i] i cleared
 Propogating parameters and globals to SSA variables...
@@ -14917,7 +14919,7 @@ Name: borrowingFactorPercent, Num: 6
 Globalname: borrowingFactorPercent, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_5 Function: None
+Name: PIC_6 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -15896,7 +15898,7 @@ Value: u
 Fields: yieldAccumulator, buyingSpeed, withdrawingSpeed
 Finance Type: undef
 XXXX
-lendingMeta_11(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
+lendingMeta_11(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
 Phi
 [i]Type for lendingMeta
 
@@ -16212,17 +16214,6 @@ XXXX
 [i] accumulator cleared
 [i] bondMeta cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: timeDelta_1, name: timeDelta
-
-Name: timeDelta Function: getUpdatedHourlyYield
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulator_1 (-> ['bondMeta']), name: accumulator
 
 Name: accumulator Function: getUpdatedHourlyYield
@@ -16260,6 +16251,17 @@ Fields: lastUpdated
 Finance Type: undef
 Name: accumulator, Num: 1 (-> ['bondMeta'])
 Globalname: accumulator, contract_name: HourlyBondSubscriptionLending
+Ssa_name: timeDelta_1, name: timeDelta
+
+Name: timeDelta Function: getUpdatedHourlyYield
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: accumulator_2 (-> ['bondMeta']), name: accumulator
 
 Name: accumulator Function: getUpdatedHourlyYield
@@ -16628,17 +16630,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: borrowYieldAccumulators_2, name: borrowYieldAccumulators
-
-Name: None Function: None
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: issuer_1, name: issuer
 
 Name: issuer Function: getUpdatedHourlyYield
@@ -16647,6 +16638,17 @@ Den:
 Address: -999
 Norm: 0
 LF: issuer
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: borrowYieldAccumulators_2, name: borrowYieldAccumulators
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
@@ -17813,30 +17815,6 @@ Value: u
 Fields: 
 Finance Type: undef
 Propogating All
-totalLendingInBucket_1
-Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
-
-Name: totalLendingInBucket_1 Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 1
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: totalLendingInBucket_1 Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
 bucketTarget_1
 Ssa_name: bucketTarget_1, name: bucketTarget
 
@@ -17909,6 +17887,30 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
+totalLendingInBucket_1
+Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
 Propogating All
 yieldDiff_1
 Ssa_name: yieldDiff_1, name: yieldDiff
@@ -17960,7 +17962,18 @@ Value: u
 Fields: 
 Finance Type: undef
 Propogating All
-Propogating All
+yieldFP_2
+Ssa_name: yieldFP_2, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 bucketMaxYield_1
 Ssa_name: bucketMaxYield_1, name: bucketMaxYield
 
@@ -17985,18 +17998,7 @@ Value: 1
 Fields: 
 Finance Type: undef
 Copied ftype
-yieldFP_3
-Ssa_name: yieldFP_3, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
+Propogating All
 Propogating All
 Propogating All
 bucketMaxYield_1
@@ -18392,7 +18394,7 @@ Value: 1
 Fields: 
 Finance Type: undef
 XXXX
-yieldChangePerSecondFP_1(uint256) := ϕ(['yieldChangePerSecondFP_2', 'yieldChangePerSecondFP_0'])
+yieldChangePerSecondFP_1(uint256) := ϕ(['yieldChangePerSecondFP_0', 'yieldChangePerSecondFP_2'])
 Phi
 [i]Type for yieldChangePerSecondFP
 
@@ -18680,31 +18682,6 @@ XXXX
 [i] TMP_32 cleared
 [i] TMP_33 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
-
-Name: totalLendingInBucket Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: totalLendingInBucket_1 Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
-Name: totalLendingInBucket, Num: 1
-Globalname: totalLendingInBucket, contract_name: HourlyBondSubscriptionLending
 Ssa_name: bucketTarget_1, name: bucketTarget
 
 Name: bucketTarget Function: updatedYieldFP
@@ -18768,7 +18745,7 @@ Name: withdrawingSpeed, Num: 1
 Globalname: withdrawingSpeed, contract_name: HourlyBondSubscriptionLending
 Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
 
-Name: totalLendingInBucket_1 Function: updatedYieldFP
+Name: totalLendingInBucket Function: updatedYieldFP
 Num: 
 Den: 
 Address: u
@@ -18852,6 +18829,31 @@ Finance Type: undef
 Copied ftype
 Name: withdrawingSpeed, Num: 1
 Globalname: withdrawingSpeed, contract_name: HourlyBondSubscriptionLending
+Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: totalLendingInBucket, Num: 1
+Globalname: totalLendingInBucket, contract_name: HourlyBondSubscriptionLending
 End popogation
 TMP_31(bool) = totalLendingInBucket_1 >= bucketTarget_1
 lnorm: u rnorm: 0
@@ -18896,7 +18898,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] TMP_34 cleared
 [i] yieldFP cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: yieldDiff_1, name: yieldDiff
@@ -18961,6 +18962,85 @@ Finance Type: undef
 Name: yieldFP, Num: 2
 Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
 End popogation
+yieldFP_2(uint256) = yieldFP_1 (c)+ yieldDiff_1
+Source address: u
+[i]Type for yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_34 cleared
+[i] yieldFP cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: yieldDiff_1, name: yieldDiff
+
+Name: yieldDiff Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: yieldFP_1, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 1
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldDiff_1, name: yieldDiff
+
+Name: yieldDiff Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: yieldFP_1, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 1
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldFP_4, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 4
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+End popogation
 TMP_34(uint256) = INTERNAL_CALL, BaseLending.min(uint256,uint256)(yieldFP_1,yieldDiff_1)
 New param cache [[[], [], 'u', None, [], -1, 'u', 'u'], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
 Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 0, None, [], -1, 'u']]
@@ -18991,30 +19071,6 @@ ENTRY_POINT
 min(uint256,uint256)
 Propogating All
 Propogating All
-b_1
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: b_1 Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
 a_1
 Ssa_name: a_1, name: a
 
@@ -19030,6 +19086,30 @@ Finance Type: undef
 Source address: u
 
 Name: a_1 Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+b_1
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: b_1 Function: min
 Num: -1
 Den: -1
 Address: u
@@ -19205,17 +19285,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -19241,6 +19310,17 @@ Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
 Num: -1
 Den: -1
 Address: u
@@ -19452,17 +19532,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -19488,6 +19557,17 @@ Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
 Num: -1
 Den: -1
 Address: u
@@ -19596,7 +19676,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-yieldFP_2(uint256) = yieldFP_1 (c)- TMP_34
+yieldFP_4(uint256) = yieldFP_1 (c)- TMP_34
 Source address: u
 [i]Type for yieldFP
 
@@ -19610,88 +19690,19 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] yieldFP cleared
-Propogating parameters and globals to SSA variables...
-Ssa_name: yieldDiff_1, name: yieldDiff
-
-Name: yieldDiff Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_1, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 1
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldDiff_1, name: yieldDiff
-
-Name: yieldDiff Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_1, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 1
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldFP_3, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 3
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-End popogation
-yieldFP_3(uint256) = yieldFP_1 (c)+ yieldDiff_1
-Source address: u
-[i]Type for yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_35 cleared
 Propogating parameters and globals to SSA variables...
+Ssa_name: yieldFP_2, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: bucketMaxYield_1, name: bucketMaxYield
 
 Name: bucketMaxYield Function: updatedYieldFP
@@ -19717,7 +19728,7 @@ Finance Type: undef
 Copied ftype
 Name: bucketMaxYield, Num: 1
 Globalname: bucketMaxYield, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldFP_3, name: yieldFP
+Ssa_name: yieldFP_2, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: -1
@@ -19753,19 +19764,8 @@ Finance Type: undef
 Copied ftype
 Name: bucketMaxYield, Num: 1
 Globalname: bucketMaxYield, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldFP_3, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 End popogation
-TMP_35(bool) = yieldFP_3 > bucketMaxYield_1
+TMP_35(bool) = yieldFP_2 > bucketMaxYield_1
 lnorm: u rnorm: 0
 Source address: u
 Source address: u
@@ -19781,6 +19781,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] yieldFP cleared
@@ -19807,7 +19809,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: yieldFP_4, name: yieldFP
+Ssa_name: yieldFP_3, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: 
@@ -19818,10 +19820,10 @@ LF: None
 Value: 1
 Fields: 
 Finance Type: undef
-Name: yieldFP, Num: 4
+Name: yieldFP, Num: 3
 Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
 End popogation
-yieldFP_4(uint256) := bucketMaxYield_1(uint256)
+yieldFP_3(uint256) := bucketMaxYield_1(uint256)
 asgn
 Source address: u
 Finance type key: (-1, -1)
@@ -20206,7 +20208,7 @@ Value: 1
 Fields: 
 Finance Type: undef
 XXXX
-yieldChangePerSecondFP_1(uint256) := ϕ(['yieldChangePerSecondFP_2', 'yieldChangePerSecondFP_0'])
+yieldChangePerSecondFP_1(uint256) := ϕ(['yieldChangePerSecondFP_0', 'yieldChangePerSecondFP_2'])
 Phi
 [i]Type for yieldChangePerSecondFP
 
@@ -20494,31 +20496,6 @@ XXXX
 [i] TMP_32 cleared
 [i] TMP_33 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
-
-Name: totalLendingInBucket Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: totalLendingInBucket_1 Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
-Name: totalLendingInBucket, Num: 1
-Globalname: totalLendingInBucket, contract_name: HourlyBondSubscriptionLending
 Ssa_name: bucketTarget_1, name: bucketTarget
 
 Name: bucketTarget Function: updatedYieldFP
@@ -20582,7 +20559,7 @@ Name: withdrawingSpeed, Num: 1
 Globalname: withdrawingSpeed, contract_name: HourlyBondSubscriptionLending
 Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
 
-Name: totalLendingInBucket_1 Function: updatedYieldFP
+Name: totalLendingInBucket Function: updatedYieldFP
 Num: 
 Den: 
 Address: u
@@ -20666,6 +20643,31 @@ Finance Type: undef
 Copied ftype
 Name: withdrawingSpeed, Num: 1
 Globalname: withdrawingSpeed, contract_name: HourlyBondSubscriptionLending
+Ssa_name: totalLendingInBucket_1, name: totalLendingInBucket
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: totalLendingInBucket_1 Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: totalLendingInBucket, Num: 1
+Globalname: totalLendingInBucket, contract_name: HourlyBondSubscriptionLending
 End popogation
 TMP_31(bool) = totalLendingInBucket_1 >= bucketTarget_1
 lnorm: u rnorm: 0
@@ -20710,7 +20712,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] TMP_34 cleared
 [i] yieldFP cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: yieldDiff_1, name: yieldDiff
@@ -20775,6 +20776,85 @@ Finance Type: undef
 Name: yieldFP, Num: 2
 Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
 End popogation
+yieldFP_2(uint256) = yieldFP_1 (c)+ yieldDiff_1
+Source address: u
+[i]Type for yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_34 cleared
+[i] yieldFP cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: yieldDiff_1, name: yieldDiff
+
+Name: yieldDiff Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: yieldFP_1, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 1
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldDiff_1, name: yieldDiff
+
+Name: yieldDiff Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: yieldFP_1, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 1
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldFP_4, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: yieldFP, Num: 4
+Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
+End popogation
 TMP_34(uint256) = INTERNAL_CALL, BaseLending.min(uint256,uint256)(yieldFP_1,yieldDiff_1)
 New param cache [[[], [], 'u', None, [], -1, 'u', 'u'], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
 Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 0, None, [], -1, 'u']]
@@ -20805,30 +20885,6 @@ ENTRY_POINT
 min(uint256,uint256)
 Propogating All
 Propogating All
-b_1
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Source address: u
-
-Name: b_1 Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Copied ftype
 a_1
 Ssa_name: a_1, name: a
 
@@ -20844,6 +20900,30 @@ Finance Type: undef
 Source address: u
 
 Name: a_1 Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+b_1
+Ssa_name: b_1, name: b
+
+Name: b Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: b_1 Function: min
 Num: -1
 Den: -1
 Address: u
@@ -21019,17 +21099,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -21055,6 +21124,17 @@ Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
 Num: -1
 Den: -1
 Address: u
@@ -21266,17 +21346,6 @@ Finance Type: undef
 XXXX
 [i] TMP_48 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: b_1, name: b
-
-Name: b Function: min
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
@@ -21302,6 +21371,17 @@ Finance Type: undef
 Ssa_name: a_1, name: a
 
 Name: a Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: b_1, name: b
+
+Name: b Function: min
 Num: -1
 Den: -1
 Address: u
@@ -21410,7 +21490,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-yieldFP_2(uint256) = yieldFP_1 (c)- TMP_34
+yieldFP_4(uint256) = yieldFP_1 (c)- TMP_34
 Source address: u
 [i]Type for yieldFP
 
@@ -21424,88 +21504,19 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-[i] yieldFP cleared
-Propogating parameters and globals to SSA variables...
-Ssa_name: yieldDiff_1, name: yieldDiff
-
-Name: yieldDiff Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_1, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 1
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldDiff_1, name: yieldDiff
-
-Name: yieldDiff Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Ssa_name: yieldFP_1, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 1
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldFP_3, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-Name: yieldFP, Num: 3
-Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
-End popogation
-yieldFP_3(uint256) = yieldFP_1 (c)+ yieldDiff_1
-Source address: u
-[i]Type for yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_35 cleared
 Propogating parameters and globals to SSA variables...
+Ssa_name: yieldFP_2, name: yieldFP
+
+Name: yieldFP Function: updatedYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: bucketMaxYield_1, name: bucketMaxYield
 
 Name: bucketMaxYield Function: updatedYieldFP
@@ -21531,7 +21542,7 @@ Finance Type: undef
 Copied ftype
 Name: bucketMaxYield, Num: 1
 Globalname: bucketMaxYield, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldFP_3, name: yieldFP
+Ssa_name: yieldFP_2, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: -1
@@ -21567,19 +21578,8 @@ Finance Type: undef
 Copied ftype
 Name: bucketMaxYield, Num: 1
 Globalname: bucketMaxYield, contract_name: HourlyBondSubscriptionLending
-Ssa_name: yieldFP_3, name: yieldFP
-
-Name: yieldFP Function: updatedYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 End popogation
-TMP_35(bool) = yieldFP_3 > bucketMaxYield_1
+TMP_35(bool) = yieldFP_2 > bucketMaxYield_1
 lnorm: u rnorm: 0
 Source address: u
 Source address: u
@@ -21595,6 +21595,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] yieldFP cleared
@@ -21621,7 +21623,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: yieldFP_4, name: yieldFP
+Ssa_name: yieldFP_3, name: yieldFP
 
 Name: yieldFP Function: updatedYieldFP
 Num: 
@@ -21632,10 +21634,10 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Name: yieldFP, Num: 4
+Name: yieldFP, Num: 3
 Globalname: yieldFP, contract_name: HourlyBondSubscriptionLending
 End popogation
-yieldFP_4(uint256) := bucketMaxYield_1(uint256)
+yieldFP_3(uint256) := bucketMaxYield_1(uint256)
 asgn
 Source address: u
 Finance type key: (-1, -1)
@@ -21918,17 +21920,6 @@ XXXX
 [i] TMP_87 cleared
 [i] borrowAccumulator cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: timeDelta_2, name: timeDelta
-
-Name: timeDelta Function: getUpdatedHourlyYield
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: borrowAccumulator_1 (-> ['borrowYieldAccumulators']), name: borrowAccumulator
 
 Name: borrowAccumulator Function: getUpdatedHourlyYield
@@ -21961,6 +21952,17 @@ Norm: 0
 LF: issuer
 Value: u
 Fields: hourlyYieldFP, lastUpdated
+Finance Type: undef
+Ssa_name: timeDelta_2, name: timeDelta
+
+Name: timeDelta Function: getUpdatedHourlyYield
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
 Finance Type: undef
 Ssa_name: borrowAccumulator_2 (-> ['borrowYieldAccumulators']), name: borrowAccumulator
 
@@ -22358,7 +22360,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(['yA_1 (-> [])', "borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])"])
+yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(["borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])", 'yA_1 (-> [])'])
 Phi
 [i]Type for yieldAccumulator
 
@@ -22519,6 +22521,17 @@ LF: issuer
 Value: u
 Fields: accumulatorFP, hourlyYieldFP, lastUpdated
 Finance Type: undef
+Ssa_name: FP32_1, name: FP32
+
+Name: FP32 Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: secondsDelta_1, name: secondsDelta
 
 Name: secondsDelta Function: calcCumulativeYieldFP
@@ -22532,17 +22545,6 @@ Fields:
 Finance Type: undef
 Name: secondsDelta, Num: 1
 Globalname: secondsDelta, contract_name: HourlyBondSubscriptionLending
-Ssa_name: FP32_1, name: FP32
-
-Name: FP32 Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -22870,8 +22872,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: i_1, name: i
@@ -22904,6 +22904,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] accumulatorFP cleared
@@ -23011,7 +23013,7 @@ Fields:
 Finance Type: undef
 Name: i, Num: 2
 Globalname: i, contract_name: HourlyBondSubscriptionLending
-accumulatorFP_2(uint256) := ϕ(['accumulatorFP_1', 'accumulatorFP_3'])
+accumulatorFP_2(uint256) := ϕ(['accumulatorFP_3', 'accumulatorFP_1'])
 Phi
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -23101,6 +23103,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] TMP_75 cleared
 [i] TMP_76 cleared
 [i] accumulatorFP cleared
@@ -23149,17 +23153,6 @@ LF: None
 Value: 3600
 Fields: 
 Finance Type: undef
-Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
-
-Name: yieldAccumulator Function: calcCumulativeYieldFP
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: accumulatorFP, hourlyYieldFP, lastUpdated
-Finance Type: undef
 Ssa_name: FP32_1, name: FP32
 
 Name: FP32 Function: calcCumulativeYieldFP
@@ -23170,6 +23163,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
+
+Name: yieldAccumulator Function: calcCumulativeYieldFP
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
+Fields: accumulatorFP, hourlyYieldFP, lastUpdated
 Finance Type: undef
 Ssa_name: accumulatorFP_3, name: accumulatorFP
 
@@ -23296,8 +23300,6 @@ Value: 3600
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_77 cleared
 [i] i cleared
 Propogating parameters and globals to SSA variables...
@@ -23464,7 +23466,7 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(['yA_1 (-> [])', "borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])"])
+yieldAccumulator_1 (-> [])(BaseLending.YieldAccumulator) := ϕ(["borrowAccumulator_1 (-> ['borrowYieldAccumulators'])", "accumulator_1 (-> ['bondMeta'])", 'yA_1 (-> [])'])
 Phi
 [i]Type for yieldAccumulator
 
@@ -23625,6 +23627,17 @@ LF: issuer
 Value: u
 Fields: accumulatorFP, hourlyYieldFP, lastUpdated
 Finance Type: undef
+Ssa_name: FP32_1, name: FP32
+
+Name: FP32 Function: calcCumulativeYieldFP
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: secondsDelta_1, name: secondsDelta
 
 Name: secondsDelta Function: calcCumulativeYieldFP
@@ -23638,17 +23651,6 @@ Fields:
 Finance Type: undef
 Name: secondsDelta, Num: 1
 Globalname: secondsDelta, contract_name: HourlyBondSubscriptionLending
-Ssa_name: FP32_1, name: FP32
-
-Name: FP32 Function: calcCumulativeYieldFP
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -23976,8 +23978,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] i cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: i_1, name: i
@@ -24010,6 +24010,8 @@ Value: 0
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] accumulatorFP cleared
@@ -24117,7 +24119,7 @@ Fields:
 Finance Type: undef
 Name: i, Num: 2
 Globalname: i, contract_name: HourlyBondSubscriptionLending
-accumulatorFP_2(uint256) := ϕ(['accumulatorFP_1', 'accumulatorFP_3'])
+accumulatorFP_2(uint256) := ϕ(['accumulatorFP_3', 'accumulatorFP_1'])
 Phi
 
 Name: accumulatorFP Function: calcCumulativeYieldFP
@@ -24207,6 +24209,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] TMP_75 cleared
 [i] TMP_76 cleared
 [i] accumulatorFP cleared
@@ -24255,17 +24259,6 @@ LF: None
 Value: 3600
 Fields: 
 Finance Type: undef
-Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
-
-Name: yieldAccumulator Function: calcCumulativeYieldFP
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: accumulatorFP, hourlyYieldFP, lastUpdated
-Finance Type: undef
 Ssa_name: FP32_1, name: FP32
 
 Name: FP32 Function: calcCumulativeYieldFP
@@ -24276,6 +24269,17 @@ Norm: u
 LF: None
 Value: u
 Fields: 
+Finance Type: undef
+Ssa_name: yieldAccumulator_1 (-> []), name: yieldAccumulator
+
+Name: yieldAccumulator Function: calcCumulativeYieldFP
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
+Fields: accumulatorFP, hourlyYieldFP, lastUpdated
 Finance Type: undef
 Ssa_name: accumulatorFP_3, name: accumulatorFP
 
@@ -24402,8 +24406,6 @@ Value: 3600
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] TMP_77 cleared
 [i] i cleared
 Propogating parameters and globals to SSA variables...
@@ -25550,8 +25552,6 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] oldAmount cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: bond_1, name: bond
@@ -25634,7 +25634,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -25666,11 +25666,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -25681,12 +25681,12 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 oldAmount_1(uint256) := REF_24(uint256)
 asgn
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 [i]Type for oldAmount
 
 Name: oldAmount Function: updateHourlyBondAmount
@@ -25697,22 +25697,11 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 [i] TMP_56 cleared
 [i] bond cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
-
-Name: yieldQuotientFP Function: updateHourlyBondAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: yA_1 (-> ['TMP_55']), name: yA
 
 Name: yA Function: updateHourlyBondAmount
@@ -25800,6 +25789,17 @@ Finance Type: undef
 Copied ftype
 Name: bond, Num: 1
 Globalname: bond, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
+
+Name: yieldQuotientFP Function: updateHourlyBondAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: bond_2, name: bond
 
 Name: None Function: None
@@ -25843,7 +25843,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -25875,11 +25875,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: False
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Add new member...
 XXXX
 REF_26(uint256) -> bond_1.amount
@@ -25898,7 +25898,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -25930,11 +25930,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -25945,7 +25945,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 REF_27(uint256) -> yA_1 (-> ['TMP_55']).accumulatorFP
 MEMBER
@@ -25963,7 +25963,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Root: yA_1 (-> ['TMP_55']), Field: accumulatorFP
 #################
 Member: 
@@ -25995,11 +25995,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (20, -1)
 Added to member...
 
 Name: accumulatorFP Function: None
@@ -26010,11 +26010,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 XXXX
 TMP_56(uint256) = INTERNAL_CALL, BaseLending.applyInterest(uint256,uint256,uint256)(REF_26,REF_27,yieldQuotientFP_1)
-New param cache [[[-1], [-1], 'u', None, [], -1, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
-[[-1], [-1], 'u', None, [], -1, 'u', -1]
+New param cache [[[-1], [-1], 'u', None, [], 0, 'u', -1], [[-1], [-1], 'u', None, [], 20, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
+[[-1], [-1], 'u', None, [], 0, 'u', -1]
 
 Name: balance Function: None
 Num: -1
@@ -26024,8 +26024,8 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
-[[-1], [-1], 'u', None, [], -1, 'u', -1]
+Finance Type: raw balance
+[[-1], [-1], 'u', None, [], 20, 'u', -1]
 
 Name: accumulatorFP Function: None
 Num: -1
@@ -26035,7 +26035,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 [[-1], [-1], 'u', None, [], -1, 'u', 'u']
 
 Name: yieldQuotientFP Function: None
@@ -26074,7 +26074,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Copied ftype
 accumulatorFP_1
 Ssa_name: accumulatorFP_1, name: accumulatorFP
@@ -26098,7 +26098,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Copied ftype
 yieldQuotientFP_1
 Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
@@ -26150,7 +26150,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Copied ftype
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
@@ -26173,7 +26173,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Copied ftype
 Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
 
@@ -26210,9 +26210,9 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
-accumulatorFP_1(uint256) := ϕ(['REF_27', 'cumulativeYield_1'])
+accumulatorFP_1(uint256) := ϕ(['cumulativeYield_1', 'REF_27'])
 Phi
 [i]Type for accumulatorFP
 
@@ -26224,7 +26224,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 XXXX
 yieldQuotientFP_1(uint256) := ϕ(['yieldQuotientFP_1', 'yieldQuotientFP_1'])
 Phi
@@ -26253,7 +26253,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -26264,7 +26264,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
 
 Name: yieldQuotientFP Function: applyInterest
@@ -26286,7 +26286,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -26297,7 +26297,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
 
 Name: yieldQuotientFP Function: applyInterest
@@ -26312,6 +26312,7 @@ Finance Type: undef
 End popogation
 TMP_27(uint256) = balance_1 (c)* accumulatorFP_1
 lnorm: 0 rnorm: 0
+Finance type key: (0, 20)
 Source address: u
 [i]Type for TMP_27
 
@@ -26323,7 +26324,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 TMP_28(uint256) = TMP_27 (c)/ yieldQuotientFP_1
 lnorm: 0 rnorm: u
@@ -26338,7 +26339,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 RETURN TMP_28
 RETURN
@@ -26351,7 +26352,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 [i] balance cleared
 [i] accumulatorFP cleared
 [i] yieldQuotientFP cleared
@@ -26378,7 +26379,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Copied ftype
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
@@ -26401,7 +26402,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Copied ftype
 Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
 
@@ -26438,9 +26439,9 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
-accumulatorFP_1(uint256) := ϕ(['REF_27', 'cumulativeYield_1'])
+accumulatorFP_1(uint256) := ϕ(['cumulativeYield_1', 'REF_27'])
 Phi
 [i]Type for accumulatorFP
 
@@ -26452,7 +26453,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 XXXX
 yieldQuotientFP_1(uint256) := ϕ(['yieldQuotientFP_1', 'yieldQuotientFP_1'])
 Phi
@@ -26481,7 +26482,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -26492,7 +26493,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
 
 Name: yieldQuotientFP Function: applyInterest
@@ -26514,7 +26515,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -26525,7 +26526,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
 
 Name: yieldQuotientFP Function: applyInterest
@@ -26540,6 +26541,7 @@ Finance Type: undef
 End popogation
 TMP_27(uint256) = balance_1 (c)* accumulatorFP_1
 lnorm: 0 rnorm: 0
+Finance type key: (0, 20)
 Source address: u
 [i]Type for TMP_27
 
@@ -26551,7 +26553,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 TMP_28(uint256) = TMP_27 (c)/ yieldQuotientFP_1
 lnorm: 0 rnorm: u
@@ -26566,7 +26568,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 RETURN TMP_28
 RETURN
@@ -26579,7 +26581,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Source address: u
 Source address: u
 [i]Type for TMP_56
@@ -26592,7 +26594,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 bond_2(HourlyBond) := ϕ(['bond_1'])
 Phi
@@ -26624,7 +26626,7 @@ XXXX
 REF_25 (->bond_2) := TMP_56(uint256)
 asgn
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 [i]Type for REF_25
 
 Name: REF_25 Function: updateHourlyBondAmount
@@ -26635,7 +26637,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -26657,7 +26659,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Copy_ir: 
 Name: REF_25 Function: updateHourlyBondAmount
 Num: -1
@@ -26667,11 +26669,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: None
@@ -26682,7 +26684,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 [i] TMP_57 cleared
 [i] deltaAmount cleared
@@ -26710,7 +26712,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: bond_2, name: bond
 
 Name: bond Function: updateHourlyBondAmount
@@ -26734,7 +26736,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: None Function: None
@@ -26764,7 +26766,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_2, Field: amount
 #################
 Member: 
@@ -26796,11 +26798,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -26811,9 +26813,12 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 TMP_57(uint256) = REF_28 (c)- oldAmount_1
+Finance type key: (2, 0)
+Error with TMP_57 in function updateHourlyBondAmount
+Error with: TMP_57 in function updateHourlyBondAmount
 Source address: u
 [i]Type for TMP_57
 
@@ -26844,17 +26849,6 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -26864,6 +26858,17 @@ Address: u
 Norm: 0
 LF: None
 Value: 2
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
 Fields: 
 Finance Type: undef
 Ssa_name: lendingMeta_8, name: lendingMeta
@@ -26881,7 +26886,7 @@ Name: lendingMeta, Num: 8
 Globalname: lendingMeta, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_3 Function: None
+Name: PIC_4 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -26891,17 +26896,6 @@ Value: u
 Fields: 
 Finance Type: undef
 Source address: u
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: lendingMeta_8, name: lendingMeta
 
 Name: None Function: None
@@ -26922,6 +26916,17 @@ Address: u
 Norm: 0
 LF: None
 Value: 2
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
 Fields: 
 Finance Type: undef
 Ssa_name: lendingMeta_8, name: lendingMeta
@@ -27099,8 +27104,8 @@ Source address: u
 
 issuer_1(address) := ϕ(['issuer_1'])
 bond_1(HourlyBond) := ϕ(["bond_1 (-> ['hourlyBondAccounts'])"])
-lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
-hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
+hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 REF_22(uint256) -> bond_1.yieldQuotientFP
 yieldQuotientFP_1(uint256) := REF_22(uint256)
 TMP_54(bool) = yieldQuotientFP_1 > 0
@@ -27241,7 +27246,7 @@ Value: u
 Fields: yieldQuotientFP, amount
 Finance Type: undef
 XXXX
-lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
+lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
 Phi
 [i]Type for lendingMeta
 
@@ -27255,7 +27260,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 Phi
 [i]Type for hourlyBondMetadata
 
@@ -27460,6 +27465,8 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
+Propogating parameters and globals to SSA variables...
+End popogation
 [i] TMP_55 cleared
 [i] yA cleared
 Propogating parameters and globals to SSA variables...
@@ -27485,17 +27492,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: hourlyBondMetadata_3, name: hourlyBondMetadata
 
 Name: hourlyBondMetadata Function: updateHourlyBondAmount
@@ -27504,6 +27500,17 @@ Den: -1
 Address: u
 Norm: u
 LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
 Value: u
 Fields: 
 Finance Type: undef
@@ -27593,8 +27600,6 @@ Value: u
 Fields: accumulatorFP
 Finance Type: undef
 XXXX
-Propogating parameters and globals to SSA variables...
-End popogation
 [i] oldAmount cleared
 Propogating parameters and globals to SSA variables...
 Ssa_name: bond_1, name: bond
@@ -27677,7 +27682,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -27709,11 +27714,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -27724,12 +27729,12 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 oldAmount_1(uint256) := REF_24(uint256)
 asgn
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 [i]Type for oldAmount
 
 Name: oldAmount Function: updateHourlyBondAmount
@@ -27740,22 +27745,11 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 [i] TMP_56 cleared
 [i] bond cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
-
-Name: yieldQuotientFP Function: updateHourlyBondAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: yA_1 (-> ['TMP_55']), name: yA
 
 Name: yA Function: updateHourlyBondAmount
@@ -27843,6 +27837,17 @@ Finance Type: undef
 Copied ftype
 Name: bond, Num: 1
 Globalname: bond, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
+
+Name: yieldQuotientFP Function: updateHourlyBondAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: bond_2, name: bond
 
 Name: bond Function: updateHourlyBondAmount
@@ -27886,7 +27891,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -27908,7 +27913,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Copy_ir: 
 Name: bond_1.amount Function: updateHourlyBondAmount
 Num: -1
@@ -27918,11 +27923,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -27933,7 +27938,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 REF_26(uint256) -> bond_1.amount
 MEMBER
@@ -27951,7 +27956,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -27983,11 +27988,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -27998,7 +28003,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 REF_27(uint256) -> yA_1 (-> ['TMP_55']).accumulatorFP
 MEMBER
@@ -28015,7 +28020,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Root: yA_1 (-> ['TMP_55']), Field: accumulatorFP
 #################
 Member: 
@@ -28047,11 +28052,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (20, -1)
 Added to member...
 
 Name: accumulatorFP Function: updateHourlyBondAmount
@@ -28062,11 +28067,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 XXXX
 TMP_56(uint256) = INTERNAL_CALL, BaseLending.applyInterest(uint256,uint256,uint256)(REF_26,REF_27,yieldQuotientFP_1)
-New param cache [[[-1], [-1], 'u', None, [], -1, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
-Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
+New param cache [[[-1], [-1], 'u', None, [], 0, 'u', -1], [[-1], [-1], 'u', None, [], 20, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
+Old param cache: [[[-1], [-1], 'u', None, [], 0, 'u'], [[-1], [-1], 'u', None, [], 20, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
 Source address: u
 [i]Type for TMP_56
 
@@ -28078,7 +28083,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 bond_2(HourlyBond) := ϕ(['bond_1'])
 Phi
@@ -28110,7 +28115,7 @@ XXXX
 REF_25 (->bond_2) := TMP_56(uint256)
 asgn
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 [i]Type for REF_25
 
 Name: REF_25 Function: updateHourlyBondAmount
@@ -28121,7 +28126,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -28143,7 +28148,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Copy_ir: 
 Name: REF_25 Function: updateHourlyBondAmount
 Num: -1
@@ -28153,11 +28158,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -28168,7 +28173,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 [i] TMP_57 cleared
 [i] deltaAmount cleared
@@ -28196,7 +28201,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: bond_2, name: bond
 
 Name: bond Function: updateHourlyBondAmount
@@ -28220,7 +28225,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -28250,7 +28255,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_2, Field: amount
 #################
 Member: 
@@ -28282,11 +28287,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -28297,9 +28302,10 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 TMP_57(uint256) = REF_28 (c)- oldAmount_1
+Finance type key: (2, 0)
 Source address: u
 [i]Type for TMP_57
 
@@ -28330,17 +28336,6 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -28351,17 +28346,6 @@ Norm: 0
 LF: None
 Value: 2
 Fields: 
-Finance Type: undef
-Ssa_name: lendingMeta_8, name: lendingMeta
-
-Name: lendingMeta Function: updateHourlyBondAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: totalLending
 Finance Type: undef
 Ssa_name: issuer_1, name: issuer
 
@@ -28385,6 +28369,17 @@ LF: None
 Value: u
 Fields: totalLending
 Finance Type: undef
+Ssa_name: lendingMeta_8, name: lendingMeta
+
+Name: lendingMeta Function: updateHourlyBondAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalLending
+Finance Type: undef
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -28394,6 +28389,17 @@ Address: u
 Norm: 0
 LF: None
 Value: 2
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
 Fields: 
 Finance Type: undef
 Ssa_name: lendingMeta_8, name: lendingMeta
@@ -28581,8 +28587,8 @@ Source address: u
 
 issuer_1(address) := ϕ(['issuer_1'])
 bond_1(HourlyBond) := ϕ(["bond_1 (-> ['hourlyBondAccounts'])"])
-lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
-hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
+hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 REF_22(uint256) -> bond_1.yieldQuotientFP
 yieldQuotientFP_1(uint256) := REF_22(uint256)
 TMP_54(bool) = yieldQuotientFP_1 > 0
@@ -28709,7 +28715,7 @@ Value: u
 Fields: yieldQuotientFP, amount
 Finance Type: undef
 XXXX
-lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
+lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
 Phi
 [i]Type for lendingMeta
 
@@ -28723,7 +28729,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 Phi
 [i]Type for hourlyBondMetadata
 
@@ -28919,6 +28925,8 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+End popogation
+Propogating parameters and globals to SSA variables...
 Ssa_name: issuer_1, name: issuer
 
 Name: issuer Function: updateHourlyBondAmount
@@ -28941,17 +28949,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: hourlyBondMetadata_3, name: hourlyBondMetadata
 
 Name: hourlyBondMetadata Function: updateHourlyBondAmount
@@ -28960,6 +28957,17 @@ Den: -1
 Address: u
 Norm: u
 LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
 Value: u
 Fields: 
 Finance Type: undef
@@ -29050,8 +29058,6 @@ Fields: accumulatorFP
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-End popogation
-Propogating parameters and globals to SSA variables...
 Ssa_name: bond_1, name: bond
 
 Name: bond_1 Function: updateHourlyBondAmount
@@ -29112,7 +29118,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 End popogation
 REF_24(uint256) -> bond_1.amount
 MEMBER
@@ -29130,7 +29136,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -29162,11 +29168,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -29177,12 +29183,12 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 oldAmount_1(uint256) := REF_24(uint256)
 asgn
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 [i]Type for oldAmount
 
 Name: oldAmount Function: updateHourlyBondAmount
@@ -29193,20 +29199,9 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 Propogating parameters and globals to SSA variables...
-Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
-
-Name: yieldQuotientFP Function: updateHourlyBondAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: yA_1 (-> ['TMP_55']), name: yA
 
 Name: yA Function: updateHourlyBondAmount
@@ -29294,6 +29289,17 @@ Finance Type: undef
 Copied ftype
 Name: bond, Num: 1
 Globalname: bond, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
+
+Name: yieldQuotientFP Function: updateHourlyBondAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: bond_2, name: bond
 
 Name: bond Function: updateHourlyBondAmount
@@ -29337,7 +29343,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -29359,7 +29365,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Copy_ir: 
 Name: bond_1.amount Function: updateHourlyBondAmount
 Num: -1
@@ -29369,11 +29375,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -29384,7 +29390,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 REF_26(uint256) -> bond_1.amount
 MEMBER
@@ -29402,7 +29408,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -29434,11 +29440,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -29449,7 +29455,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 REF_27(uint256) -> yA_1 (-> ['TMP_55']).accumulatorFP
 MEMBER
@@ -29466,7 +29472,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Root: yA_1 (-> ['TMP_55']), Field: accumulatorFP
 #################
 Member: 
@@ -29498,11 +29504,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (20, -1)
 Added to member...
 
 Name: accumulatorFP Function: updateHourlyBondAmount
@@ -29513,11 +29519,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 XXXX
 TMP_56(uint256) = INTERNAL_CALL, BaseLending.applyInterest(uint256,uint256,uint256)(REF_26,REF_27,yieldQuotientFP_1)
-New param cache [[[-1], [-1], 'u', None, [], -1, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
-Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
+New param cache [[[-1], [-1], 'u', None, [], 0, 'u', -1], [[-1], [-1], 'u', None, [], 20, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
+Old param cache: [[[-1], [-1], 'u', None, [], 0, 'u'], [[-1], [-1], 'u', None, [], 20, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
 Source address: u
 [i]Type for TMP_56
 
@@ -29529,7 +29535,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 bond_2(HourlyBond) := ϕ(['bond_1'])
 Phi
@@ -29561,7 +29567,7 @@ XXXX
 REF_25 (->bond_2) := TMP_56(uint256)
 asgn
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 [i]Type for REF_25
 
 Name: REF_25 Function: updateHourlyBondAmount
@@ -29572,7 +29578,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -29594,7 +29600,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Copy_ir: 
 Name: REF_25 Function: updateHourlyBondAmount
 Num: -1
@@ -29604,11 +29610,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -29619,7 +29625,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 Propogating parameters and globals to SSA variables...
 Ssa_name: bond_2, name: bond
@@ -29645,7 +29651,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: bond_2, name: bond
 
 Name: bond Function: updateHourlyBondAmount
@@ -29669,7 +29675,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -29697,7 +29703,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_2, Field: amount
 #################
 Member: 
@@ -29729,11 +29735,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -29744,9 +29750,10 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 TMP_57(uint256) = REF_28 (c)- oldAmount_1
+Finance type key: (2, 0)
 Source address: u
 [i]Type for TMP_57
 
@@ -29777,17 +29784,6 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -29798,17 +29794,6 @@ Norm: 0
 LF: None
 Value: 2
 Fields: 
-Finance Type: undef
-Ssa_name: lendingMeta_8, name: lendingMeta
-
-Name: lendingMeta Function: updateHourlyBondAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: totalLending
 Finance Type: undef
 Ssa_name: issuer_1, name: issuer
 
@@ -29832,6 +29817,17 @@ LF: None
 Value: u
 Fields: totalLending
 Finance Type: undef
+Ssa_name: lendingMeta_8, name: lendingMeta
+
+Name: lendingMeta Function: updateHourlyBondAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalLending
+Finance Type: undef
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -29841,6 +29837,17 @@ Address: u
 Norm: 0
 LF: None
 Value: 2
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
 Fields: 
 Finance Type: undef
 Ssa_name: lendingMeta_8, name: lendingMeta
@@ -30028,8 +30035,8 @@ Source address: u
 
 issuer_1(address) := ϕ(['issuer_1'])
 bond_1(HourlyBond) := ϕ(["bond_1 (-> ['hourlyBondAccounts'])"])
-lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
-hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
+hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 REF_22(uint256) -> bond_1.yieldQuotientFP
 yieldQuotientFP_1(uint256) := REF_22(uint256)
 TMP_54(bool) = yieldQuotientFP_1 > 0
@@ -30156,7 +30163,7 @@ Value: u
 Fields: yieldQuotientFP, amount
 Finance Type: undef
 XXXX
-lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1', 'lendingMeta_4'])
+lendingMeta_5(mapping(address => BaseLending.LendingMetadata)) := ϕ(['lendingMeta_4', 'lendingMeta_10', 'lendingMeta_12', 'lendingMeta_8', 'lendingMeta_0', 'lendingMeta_1'])
 Phi
 [i]Type for lendingMeta
 
@@ -30170,7 +30177,7 @@ Value: u
 Fields: 
 Finance Type: undef
 XXXX
-hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+hourlyBondMetadata_3(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 Phi
 [i]Type for hourlyBondMetadata
 
@@ -30366,6 +30373,8 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
+End popogation
+Propogating parameters and globals to SSA variables...
 Ssa_name: issuer_1, name: issuer
 
 Name: issuer Function: updateHourlyBondAmount
@@ -30388,17 +30397,6 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: hourlyBondMetadata_3, name: hourlyBondMetadata
 
 Name: hourlyBondMetadata Function: updateHourlyBondAmount
@@ -30407,6 +30405,17 @@ Den: -1
 Address: u
 Norm: u
 LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
 Value: u
 Fields: 
 Finance Type: undef
@@ -30497,8 +30506,6 @@ Fields: accumulatorFP
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-End popogation
-Propogating parameters and globals to SSA variables...
 Ssa_name: bond_1, name: bond
 
 Name: bond_1 Function: updateHourlyBondAmount
@@ -30559,7 +30566,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 End popogation
 REF_24(uint256) -> bond_1.amount
 MEMBER
@@ -30577,7 +30584,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -30609,11 +30616,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -30624,12 +30631,12 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 oldAmount_1(uint256) := REF_24(uint256)
 asgn
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 [i]Type for oldAmount
 
 Name: oldAmount Function: updateHourlyBondAmount
@@ -30640,20 +30647,9 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 Propogating parameters and globals to SSA variables...
-Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
-
-Name: yieldQuotientFP Function: updateHourlyBondAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: yA_1 (-> ['TMP_55']), name: yA
 
 Name: yA Function: updateHourlyBondAmount
@@ -30741,6 +30737,17 @@ Finance Type: undef
 Copied ftype
 Name: bond, Num: 1
 Globalname: bond, contract_name: HourlyBondSubscriptionLending
+Ssa_name: yieldQuotientFP_1, name: yieldQuotientFP
+
+Name: yieldQuotientFP Function: updateHourlyBondAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 Ssa_name: bond_2, name: bond
 
 Name: bond Function: updateHourlyBondAmount
@@ -30784,7 +30791,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -30806,7 +30813,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Copy_ir: 
 Name: bond_1.amount Function: updateHourlyBondAmount
 Num: -1
@@ -30816,11 +30823,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -30831,7 +30838,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 REF_26(uint256) -> bond_1.amount
 MEMBER
@@ -30849,7 +30856,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -30881,11 +30888,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (0, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -30896,7 +30903,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 REF_27(uint256) -> yA_1 (-> ['TMP_55']).accumulatorFP
 MEMBER
@@ -30913,7 +30920,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Root: yA_1 (-> ['TMP_55']), Field: accumulatorFP
 #################
 Member: 
@@ -30945,11 +30952,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (20, -1)
 Added to member...
 
 Name: accumulatorFP Function: updateHourlyBondAmount
@@ -30960,11 +30967,11 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 XXXX
 TMP_56(uint256) = INTERNAL_CALL, BaseLending.applyInterest(uint256,uint256,uint256)(REF_26,REF_27,yieldQuotientFP_1)
-New param cache [[[-1], [-1], 'u', None, [], -1, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
-Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
+New param cache [[[-1], [-1], 'u', None, [], 0, 'u', -1], [[-1], [-1], 'u', None, [], 20, 'u', -1], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
+Old param cache: [[[-1], [-1], 'u', None, [], 0, 'u'], [[-1], [-1], 'u', None, [], 20, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
 Source address: u
 [i]Type for TMP_56
 
@@ -30976,7 +30983,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 bond_2(HourlyBond) := ϕ(['bond_1'])
 Phi
@@ -31008,7 +31015,7 @@ XXXX
 REF_25 (->bond_2) := TMP_56(uint256)
 asgn
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 [i]Type for REF_25
 
 Name: REF_25 Function: updateHourlyBondAmount
@@ -31019,7 +31026,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_1, Field: amount
 #################
 Member: 
@@ -31041,7 +31048,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Copy_ir: 
 Name: REF_25 Function: updateHourlyBondAmount
 Num: -1
@@ -31051,11 +31058,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -31066,7 +31073,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 Propogating parameters and globals to SSA variables...
 Ssa_name: bond_2, name: bond
@@ -31092,7 +31099,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: bond_2, name: bond
 
 Name: bond Function: updateHourlyBondAmount
@@ -31116,7 +31123,7 @@ Norm: 0
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -31144,7 +31151,7 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 Root: bond_2, Field: amount
 #################
 Member: 
@@ -31176,11 +31183,11 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 
 Added: True
 Source address: u
-Finance type key: (-1, -1)
+Finance type key: (2, -1)
 Added to member...
 
 Name: amount Function: updateHourlyBondAmount
@@ -31191,9 +31198,10 @@ Norm: 0
 LF: None
 Value: 1
 Fields: 
-Finance Type: undef
+Finance Type: accrued balance
 XXXX
 TMP_57(uint256) = REF_28 (c)- oldAmount_1
+Finance type key: (2, 0)
 Source address: u
 [i]Type for TMP_57
 
@@ -31224,17 +31232,6 @@ Fields:
 Finance Type: undef
 XXXX
 Propogating parameters and globals to SSA variables...
-Ssa_name: issuer_1, name: issuer
-
-Name: issuer Function: updateHourlyBondAmount
-Num: 
-Den: 
-Address: -999
-Norm: 0
-LF: issuer
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -31245,17 +31242,6 @@ Norm: 0
 LF: None
 Value: 2
 Fields: 
-Finance Type: undef
-Ssa_name: lendingMeta_8, name: lendingMeta
-
-Name: lendingMeta Function: updateHourlyBondAmount
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: totalLending
 Finance Type: undef
 Ssa_name: issuer_1, name: issuer
 
@@ -31279,6 +31265,17 @@ LF: None
 Value: u
 Fields: totalLending
 Finance Type: undef
+Ssa_name: lendingMeta_8, name: lendingMeta
+
+Name: lendingMeta Function: updateHourlyBondAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: totalLending
+Finance Type: undef
 Ssa_name: deltaAmount_1, name: deltaAmount
 
 Name: deltaAmount Function: updateHourlyBondAmount
@@ -31288,6 +31285,17 @@ Address: u
 Norm: 0
 LF: None
 Value: 2
+Fields: 
+Finance Type: undef
+Ssa_name: issuer_1, name: issuer
+
+Name: issuer Function: updateHourlyBondAmount
+Num: 
+Den: 
+Address: -999
+Norm: 0
+LF: issuer
+Value: u
 Fields: 
 Finance Type: undef
 Ssa_name: lendingMeta_8, name: lendingMeta
@@ -31496,7 +31504,7 @@ ENTRY_POINT
 viewHourlyBondAmount(address,address)
 
 
-hourlyBondMetadata_5(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+hourlyBondMetadata_5(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 hourlyBondAccounts_5(mapping(address => mapping(address => HourlyBond))) := ϕ(['hourlyBondAccounts_4', 'hourlyBondAccounts_0', 'hourlyBondAccounts_5'])
 REF_31(mapping(address => HourlyBond)) -> hourlyBondAccounts_5[issuer_1]
 REF_32(HourlyBond) -> REF_31[holder_1]
@@ -31536,7 +31544,7 @@ Name: hourlyBondMetadata, Num: 5
 Globalname: hourlyBondMetadata, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_2 Function: None
+Name: PIC_3 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -31561,7 +31569,7 @@ Name: hourlyBondAccounts, Num: 5
 Globalname: hourlyBondAccounts, contract_name: HourlyBondSubscriptionLending
 global...
 
-Name: PIC_7 Function: None
+Name: PIC_2 Function: None
 Num: -1
 Den: -1
 Address: u
@@ -31571,7 +31579,7 @@ Value: u
 Fields: amount
 Finance Type: undef
 Source address: u
-hourlyBondMetadata_5(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+hourlyBondMetadata_5(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 Phi
 [i]Type for hourlyBondMetadata
 
@@ -31669,17 +31677,6 @@ LF: issuer
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: holder_1, name: holder
-
-Name: holder_1 Function: viewHourlyBondAmount
-Num: 
-Den: 
-Address: -997
-Norm: 0
-LF: holder
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: hourlyBondAccounts_5, name: hourlyBondAccounts
 
 Name: hourlyBondAccounts Function: viewHourlyBondAmount
@@ -31690,6 +31687,17 @@ Norm: u
 LF: None
 Value: u
 Fields: amount
+Finance Type: undef
+Ssa_name: holder_1, name: holder
+
+Name: holder_1 Function: viewHourlyBondAmount
+Num: 
+Den: 
+Address: -997
+Norm: 0
+LF: holder
+Value: u
+Fields: 
 Finance Type: undef
 Ssa_name: bond_1 (-> ['hourlyBondAccounts']), name: bond
 
@@ -32074,6 +32082,18 @@ Fields:
 Finance Type: undef
 Copied ftype
 Propogating All
+timeDelta_1
+Ssa_name: timeDelta_1, name: timeDelta
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
 yA_1 (-> [])
 Ssa_name: yA_1 (-> []), name: yA
 
@@ -32098,18 +32118,6 @@ Value: u
 Fields: 
 Finance Type: undef
 Copied ftype
-timeDelta_1
-Ssa_name: timeDelta_1, name: timeDelta
-
-Name: None Function: None
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
 [i] yA cleared
 [i] timestamp cleared
 Propogating parameters and globals to SSA variables...
@@ -32379,31 +32387,6 @@ Finance Type: undef
 XXXX
 [i] TMP_92 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: yA_1 (-> []), name: yA
-
-Name: yA_1 (-> []) Function: viewCumulativeYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: lastUpdated
-Finance Type: undef
-Source address: u
-
-Name: yA_1 (-> []) Function: viewCumulativeYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: lastUpdated
-Finance Type: undef
-Copied ftype
-Name: yA, Num: 1 (-> [])
-Globalname: yA, contract_name: HourlyBondSubscriptionLending
 Ssa_name: timeDelta_1, name: timeDelta
 
 Name: timeDelta Function: viewCumulativeYieldFP
@@ -32451,6 +32434,31 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Ssa_name: yA_1 (-> []), name: yA
+
+Name: yA_1 (-> []) Function: viewCumulativeYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: lastUpdated
+Finance Type: undef
+Source address: u
+
+Name: yA_1 (-> []) Function: viewCumulativeYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: lastUpdated
+Finance Type: undef
+Copied ftype
+Name: yA, Num: 1 (-> [])
+Globalname: yA, contract_name: HourlyBondSubscriptionLending
 End popogation
 TMP_92(uint256) = INTERNAL_CALL, HourlyBondSubscriptionLending.calcCumulativeYieldFP(BaseLending.YieldAccumulator,uint256)(yA_1 (-> []),timeDelta_1)
 New param cache [[[], [], 'u', None, [lastUpdated], -1, 'u', 'u'], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
@@ -32759,31 +32767,6 @@ Finance Type: undef
 XXXX
 [i] TMP_92 cleared
 Propogating parameters and globals to SSA variables...
-Ssa_name: yA_1 (-> []), name: yA
-
-Name: yA_1 (-> []) Function: viewCumulativeYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: lastUpdated
-Finance Type: undef
-Source address: u
-
-Name: yA_1 (-> []) Function: viewCumulativeYieldFP
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: lastUpdated
-Finance Type: undef
-Copied ftype
-Name: yA, Num: 1 (-> [])
-Globalname: yA, contract_name: HourlyBondSubscriptionLending
 Ssa_name: timeDelta_1, name: timeDelta
 
 Name: timeDelta Function: viewCumulativeYieldFP
@@ -32831,6 +32814,31 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
+Ssa_name: yA_1 (-> []), name: yA
+
+Name: yA_1 (-> []) Function: viewCumulativeYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: lastUpdated
+Finance Type: undef
+Source address: u
+
+Name: yA_1 (-> []) Function: viewCumulativeYieldFP
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: lastUpdated
+Finance Type: undef
+Copied ftype
+Name: yA, Num: 1 (-> [])
+Globalname: yA, contract_name: HourlyBondSubscriptionLending
 End popogation
 TMP_92(uint256) = INTERNAL_CALL, HourlyBondSubscriptionLending.calcCumulativeYieldFP(BaseLending.YieldAccumulator,uint256)(yA_1 (-> []),timeDelta_1)
 New param cache [[[], [], 'u', None, [lastUpdated], -1, 'u', 'u'], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
@@ -33127,7 +33135,7 @@ Finance Type: undef
 XXXX
 TMP_60(uint256) = INTERNAL_CALL, BaseLending.applyInterest(uint256,uint256,uint256)(REF_37,cumulativeYield_1,yieldQuotientFP_1)
 New param cache [[[], [], 'u', None, [], -1, 'u', 'u'], [[-1], [-1], 0, None, [], -1, 'u', 3600], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
-Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
+Old param cache: [[[-1], [-1], 'u', None, [], 0, 'u'], [[-1], [-1], 'u', None, [], 20, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
 [[], [], 'u', None, [], -1, 'u', 'u']
 
 Name: balance Function: None
@@ -33177,7 +33185,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Source address: u
 
 Name: balance_1 Function: applyInterest
@@ -33201,7 +33209,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: simple interest ratio
 Source address: u
 
 Name: accumulatorFP_1 Function: applyInterest
@@ -33335,7 +33343,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 
 END==================================
@@ -33350,9 +33358,9 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
-accumulatorFP_1(uint256) := ϕ(['REF_27', 'cumulativeYield_1'])
+accumulatorFP_1(uint256) := ϕ(['cumulativeYield_1', 'REF_27'])
 Phi
 [i]Type for accumulatorFP
 
@@ -33393,7 +33401,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -33426,7 +33434,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -33463,7 +33471,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 TMP_28(uint256) = TMP_27 (c)/ yieldQuotientFP_1
 lnorm: 0 rnorm: u
@@ -33478,7 +33486,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 RETURN TMP_28
 RETURN
@@ -33491,7 +33499,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 [i] balance cleared
 [i] accumulatorFP cleared
 [i] yieldQuotientFP cleared
@@ -33589,7 +33597,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 
 END==================================
@@ -33604,9 +33612,9 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
-accumulatorFP_1(uint256) := ϕ(['REF_27', 'cumulativeYield_1'])
+accumulatorFP_1(uint256) := ϕ(['cumulativeYield_1', 'REF_27'])
 Phi
 [i]Type for accumulatorFP
 
@@ -33647,7 +33655,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -33680,7 +33688,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -33717,7 +33725,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 TMP_28(uint256) = TMP_27 (c)/ yieldQuotientFP_1
 lnorm: 0 rnorm: u
@@ -33732,7 +33740,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 RETURN TMP_28
 RETURN
@@ -33745,7 +33753,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Source address: u
 Source address: u
 [i]Type for TMP_60
@@ -33758,7 +33766,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 TMP_61(uint256) = REF_36 (c)+ TMP_60
 Source address: u
@@ -33772,7 +33780,7 @@ Norm: u
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 RETURN TMP_61
 RETURN
@@ -33785,7 +33793,7 @@ Norm: u
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] TMP_62 cleared
@@ -33906,7 +33914,7 @@ Fields:
 Finance Type: undef
 
 
-hourlyBondMetadata_5(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+hourlyBondMetadata_5(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 hourlyBondAccounts_5(mapping(address => mapping(address => HourlyBond))) := ϕ(['hourlyBondAccounts_4', 'hourlyBondAccounts_0', 'hourlyBondAccounts_5'])
 REF_31(mapping(address => HourlyBond)) -> hourlyBondAccounts_5[issuer_1]
 REF_32(HourlyBond) -> REF_31[holder_1]
@@ -33953,7 +33961,7 @@ LF: None
 Value: u
 Fields: amount
 Finance Type: undef
-hourlyBondMetadata_5(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_4', 'hourlyBondMetadata_6', 'hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_0'])
+hourlyBondMetadata_5(mapping(address => HourlyBondSubscriptionLending.HourlyBondMetadata)) := ϕ(['hourlyBondMetadata_2', 'hourlyBondMetadata_7', 'hourlyBondMetadata_6', 'hourlyBondMetadata_0', 'hourlyBondMetadata_4'])
 Phi
 [i]Type for hourlyBondMetadata
 
@@ -34027,17 +34035,6 @@ LF: issuer
 Value: u
 Fields: 
 Finance Type: undef
-Ssa_name: holder_1, name: holder
-
-Name: holder_1 Function: viewHourlyBondAmount
-Num: 
-Den: 
-Address: -997
-Norm: 0
-LF: holder
-Value: u
-Fields: 
-Finance Type: undef
 Ssa_name: hourlyBondAccounts_5, name: hourlyBondAccounts
 
 Name: hourlyBondAccounts Function: viewHourlyBondAmount
@@ -34048,6 +34045,17 @@ Norm: u
 LF: None
 Value: u
 Fields: amount
+Finance Type: undef
+Ssa_name: holder_1, name: holder
+
+Name: holder_1 Function: viewHourlyBondAmount
+Num: 
+Den: 
+Address: -997
+Norm: 0
+LF: holder
+Value: u
+Fields: 
 Finance Type: undef
 Ssa_name: bond_1 (-> ['hourlyBondAccounts']), name: bond
 
@@ -34653,7 +34661,7 @@ Finance Type: undef
 XXXX
 TMP_60(uint256) = INTERNAL_CALL, BaseLending.applyInterest(uint256,uint256,uint256)(REF_37,cumulativeYield_1,yieldQuotientFP_1)
 New param cache [[[], [], 'u', None, [], -1, 'u', 'u'], [[-1], [-1], 0, None, [], -1, 'u', 3600], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
-Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
+Old param cache: [[[-1], [-1], 'u', None, [], 0, 'u'], [[-1], [-1], 'u', None, [], 20, 'u'], [[-1], [-1], 'u', None, [], -1, 'u']]
 [[], [], 'u', None, [], -1, 'u', 'u']
 
 Name: balance Function: None
@@ -34703,7 +34711,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Source address: u
 
 Name: balance_1 Function: applyInterest
@@ -34861,7 +34869,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 
 END==================================
@@ -34876,9 +34884,9 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
-accumulatorFP_1(uint256) := ϕ(['REF_27', 'cumulativeYield_1'])
+accumulatorFP_1(uint256) := ϕ(['cumulativeYield_1', 'REF_27'])
 Phi
 [i]Type for accumulatorFP
 
@@ -34919,7 +34927,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -34952,7 +34960,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -34989,7 +34997,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 TMP_28(uint256) = TMP_27 (c)/ yieldQuotientFP_1
 lnorm: 0 rnorm: u
@@ -35004,7 +35012,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 RETURN TMP_28
 RETURN
@@ -35017,7 +35025,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 [i] balance cleared
 [i] accumulatorFP cleared
 [i] yieldQuotientFP cleared
@@ -35115,7 +35123,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 
 
 END==================================
@@ -35130,9 +35138,9 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
-accumulatorFP_1(uint256) := ϕ(['REF_27', 'cumulativeYield_1'])
+accumulatorFP_1(uint256) := ϕ(['cumulativeYield_1', 'REF_27'])
 Phi
 [i]Type for accumulatorFP
 
@@ -35173,7 +35181,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -35206,7 +35214,7 @@ Norm: u
 LF: None
 Value: -1
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Ssa_name: accumulatorFP_1, name: accumulatorFP
 
 Name: accumulatorFP Function: applyInterest
@@ -35243,7 +35251,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 TMP_28(uint256) = TMP_27 (c)/ yieldQuotientFP_1
 lnorm: 0 rnorm: u
@@ -35258,7 +35266,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 RETURN TMP_28
 RETURN
@@ -35271,7 +35279,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Source address: u
 Source address: u
 [i]Type for TMP_60
@@ -35284,7 +35292,7 @@ Norm: 0
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 TMP_61(uint256) = REF_36 (c)+ TMP_60
 Source address: u
@@ -35298,7 +35306,7 @@ Norm: u
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 XXXX
 RETURN TMP_61
 RETURN
@@ -35311,7 +35319,7 @@ Norm: u
 LF: None
 Value: -3600
 Fields: 
-Finance Type: undef
+Finance Type: raw balance
 Propogating parameters and globals to SSA variables...
 End popogation
 [i] TMP_62 cleared

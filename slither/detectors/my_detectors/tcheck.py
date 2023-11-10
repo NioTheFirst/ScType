@@ -1360,14 +1360,14 @@ def type_ref(ir)->bool:
     #check if the index of the variable has a type that is not a constant
     if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
         print("REFERENCE RIGHT VALUE PROPAGATION")
-        '''if(ir.variable_right.extok.is_address()):
+        if(ir.variable_right.extok.is_address()):
             ir.lvalue.extok.token_type_clear()
             addr = ir.variable_right.extok.address
             head_addr = label_sets[addr].head
             norm = label_sets[addr].norm
             ir.lvalue.extok.add_num_token_type(head_addr)
             ir.lvalue.extok.norm = norm
-        else:'''
+        else:
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_right, ir.lvalue)
         copy_norm(ir.variable_right, ir.lvalue)
@@ -1385,7 +1385,7 @@ def type_ref(ir)->bool:
     if(ref_tuple != None):
         ##print("REFERENCE TYPE READ")
         print(f"REf tuple: {ref_tuple}")
-        #copy_token_tuple(ir.lvalue, ref_tuple)
+        copy_token_tuple(ir.lvalue, ref_tuple)
         return False
 
     #no other options, just querry the user (try not to let this happen)
