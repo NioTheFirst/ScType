@@ -2516,6 +2516,7 @@ def propogate_parameter(lv, function, clear_initial_parameters = False):
             for p in function.parameters:
                 #print(p.extok)
                 if(p.name == lv_subname):
+                    lv.extok.token_type_clear()
                     lv.extok.name = lv.ssa_name
                     lv.extok.function_name = function.name
                     #print(f"p.norm: {p.extok.norm}")
