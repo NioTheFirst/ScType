@@ -934,8 +934,8 @@ def type_included_hlc(ir, dest, function, contract_name):
     global current_function_marked
     global current_contract_name
     #function is the fentry point
-    if(mark_iteration and not(current_function_marked)):
-        return 2
+    #if(mark_iteration and not(current_function_marked)):
+    #    return 2
     for param in ir.arguments:
         ##print(param)
         init_var(param)
