@@ -612,6 +612,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ftype = tcheck_propagation.pass_ftype_no_ir(ftype, cur_param.finance_type, "div")
             if(isinstance(norm, int) and norm > 0):
                 norm = param[norm-1].extok.norm
+                print(f"hers norm: {norm}")
             if(isinstance(addr, int) and lc > 0):
                 addr = param[lc-1].extok.address
             ret_type_tuple = (ret_num, ret_den, norm, value, addr, ftype)
