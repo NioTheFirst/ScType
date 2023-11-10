@@ -162,11 +162,11 @@ if [[ $# -eq 0 || $1 -eq 15 ]]; then
   #slither --detect tcheck TwapOracle.sol
   cd "../"
   cd "dex/router"
-  slither --detect tcheck .
+  #slither --detect tcheck .
   echo "Currently Omitted (9)"
   cd "../../"
   cd "dex-v2/router"
-  #slither --detect tcheck .
+  slither --detect tcheck .
   echo "Currently Omitted (3)"
   cd "../../"
   cd "$ORIGINAL_DIR"

@@ -1021,9 +1021,12 @@ def querry_fc(ir) -> int:
 
     print(f"Written func info: {cont_name}, {func_name}")
     #
-    if (isVar and (str(dest.type)[0] == "I" or str(dest.type)[0] == "i")):
-        cont_name = str(dest.type)[1:]
+    #if (isVar and (str(dest.type)[0] == "I" or str(dest.type)[0] == "i")):
+    #    cont_name = str(dest.type)[1:]
     #print_addresses()
+    written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
+    if(written_func_info == None):
+        cont_name = cont_name[1:]
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
         ##print("wfc len: " + str(len(written_func_rets)))
