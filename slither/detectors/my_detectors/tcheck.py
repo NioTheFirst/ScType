@@ -2635,6 +2635,7 @@ def _tcheck_node(node, function) -> []:
                 continue
             temp.extok.name = var.extok.name
             temp.extok.function_name = function.name #"constructor"
+            temp.extok.token_type_clear()
             copy_token_type(var, temp)
             copy_ftype(var, temp)
             temp.extok.norm = var.extok.norm
