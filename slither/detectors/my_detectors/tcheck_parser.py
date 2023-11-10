@@ -419,6 +419,8 @@ def parse_type_file(t_file, f_file = None):
                         addr = address_handler.type_file_new_address(addr_key, False)
                 if(_norm != '*'):
                     norm = int(_line[3].strip())
+                else:
+                    norm = _norm
                 add_addr(func_name, var_name, norm)
             #FIELD TYPE
             if(_line[0].strip() == "[t*]"):
