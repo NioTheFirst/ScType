@@ -470,6 +470,7 @@ def get_var_type_tuple(function_name, var_name):
 
 def add_addr(function_name, var_name, norm):
     key = function_name + "_" + var_name
+    print("fAddr:{key} : {norm}")
     address_type_hash[key] = norm
 
 def get_addr(function_name, var_name):
