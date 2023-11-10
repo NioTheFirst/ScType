@@ -1366,6 +1366,7 @@ def type_ref(ir)->bool:
             head_addr = label_sets[addr].head
             norm = label_sets[addr].norm
             ir.lvalue.extok.add_num_token_type(head_addr)
+            ir.lvalue.extok.add_den_token_type(-1)
             ir.lvalue.extok.norm = norm
         else:
             ir.lvalue.extok.token_type_clear()
