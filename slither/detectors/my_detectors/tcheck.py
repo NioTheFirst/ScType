@@ -110,7 +110,7 @@ def add_hash(function_name, var_name, num, den, norm, lf):
 #USAGE: adds a contract, function pair
 #RETURNS: NULL
 def add_cf_pair(contract_name, function_name, function):
-    if(contract_name == None or function_name == None or function.fentry == None):
+    if(contract_name == None or function_name == None or function.entry_point == None):
         return False
     tcheck_parser.add_in_func(contract_name, function_name, function)
 
