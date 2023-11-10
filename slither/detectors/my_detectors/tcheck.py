@@ -1368,10 +1368,10 @@ def type_ref(ir)->bool:
             ir.lvalue.extok.add_num_token_type(head_addr)
             ir.lvalue.extok.norm = norm
         else:
-        ir.lvalue.extok.token_type_clear()
-        copy_token_type(ir.variable_right, ir.lvalue)
-        copy_norm(ir.variable_right, ir.lvalue)
-        copy_ftype(ir.variable_right, ir.lvalue)
+            ir.lvalue.extok.token_type_clear()
+            copy_token_type(ir.variable_right, ir.lvalue)
+            copy_norm(ir.variable_right, ir.lvalue)
+            copy_ftype(ir.variable_right, ir.lvalue)
         return False
 
     #check the parser for a pre-user-defined type
