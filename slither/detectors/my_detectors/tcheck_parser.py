@@ -33,7 +33,7 @@ MAX_PARAMETERS = 5
 reuse_types = True
 reuse_types_var = {}
 
-field_tuple_start = 6
+field_tuple_start = 5
 update_start = 100
 
 #Update ratios should be reset every single contract
@@ -399,7 +399,7 @@ def parse_type_file(t_file, f_file = None):
                     norm = int(_line[4].strip())
                     if(len(_line) >= 6):
                         addr = _line[5]
-                add_ref(ref_name, (num, denom, norm , value, addr))
+                #add_ref(ref_name, (num, denom, norm , value, addr))
             #ADDRESS TYPE
             #func/global, name, norm
             #i.e. global, USDC, 6       (positive address)
