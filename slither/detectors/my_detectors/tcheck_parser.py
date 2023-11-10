@@ -399,7 +399,7 @@ def parse_type_file(t_file, f_file = None):
                     norm = int(_line[4].strip())
                     if(len(_line) >= 6):
                         addr = _line[5]
-                #add_ref(ref_name, (num, denom, norm , value, addr))
+                add_ref(ref_name, (num, denom, norm , value, addr))
             #ADDRESS TYPE
             #func/global, name, norm
             #i.e. global, USDC, 6       (positive address)
