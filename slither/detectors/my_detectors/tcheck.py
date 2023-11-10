@@ -1384,6 +1384,7 @@ def type_ref(ir)->bool:
     ref_tuple = (ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
         ##print("REFERENCE TYPE READ")
+        print(f"REf tuple: {ref_tuple}")
         copy_token_tuple(ir.lvalue, ref_tuple)
         return False
 
