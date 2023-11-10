@@ -555,8 +555,8 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
             ret_num = []
             ret_den = []
             param = parameters
-            #for p in parameters:
-            #    print(p.name)
+            for p in parameters:
+                print(p.name)
             propogate_ftype = False
             if(ftype == 1000):
                 propogate_ftype = True
