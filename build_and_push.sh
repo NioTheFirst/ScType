@@ -21,6 +21,6 @@ git add -A
 git commit -m "$1"
 
 # Push changes to GitHub
-git push origin master
+git push --set-upstream origin ICSE24Artifact
 
 echo "Repository committed and pushed successfully."
