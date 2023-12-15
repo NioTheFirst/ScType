@@ -394,11 +394,17 @@ def parse_type_file(t_file, f_file = None):
                 addr = 'u'
                 value = 'u'
                 if(len(_line) > 2):
-                    num =[ int(_line[2].strip())]
-                    denom = [int(_line[3].strip())]
+                    num =extract_address(_line[2].strip())
+                    denom = extract_address(_line[3].strip())
                     norm = int(_line[4].strip())
                     if(len(_line) >= 6):
                         addr = _line[5]
+                    if(len(_line) >= 7):
+                        value = _line[6]
+                        try:
+                            value = int(value)
+                        except ValueError:
+                            value = value
                 add_ref(ref_name, (num, denom, norm , value, addr))
             #ADDRESS TYPE
             #func/global, name, norm
