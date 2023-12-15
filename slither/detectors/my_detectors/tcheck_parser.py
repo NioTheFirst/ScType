@@ -693,7 +693,17 @@ def add_ref(ref_name, type_tuple):
 def get_ref_type_tuple(ref_name):
     key = ref_name
     if(key in ref_type_hash):
-        return ref_type_hash[key]
+        temp = list(ref_type_hash[key])
+        print(temp)
+        for n in range(len(temp[0])):
+            print(temp[0][n])
+            temp[0][n] = stringToType(temp[0][n])
+        #temp[0] = stringToType(temp[0])
+        for d in range(len(temp[1])):
+            temp[1][n] = stringToType(temp[1][d])
+        #temp[1] = stringToType(temp[1])
+        temp[4] = stringToType(temp[4])
+        return tuple(temp)
     return None
 
 def add_in_func(contract_name, function_name, in_func):
