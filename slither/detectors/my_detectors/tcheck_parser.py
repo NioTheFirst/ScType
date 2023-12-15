@@ -430,13 +430,13 @@ def parse_type_file(t_file, f_file = None):
                 num = [-1]
                 denom = [-1]
                 norm = ['u']
-                value = -1
+                value = 'u'
                 addr = 'u'
                 if(len(_line) >= 8):
                     num = [ int(_line[4].strip())]
                     denom = [int(_line[5].strip())]
                     norm = [int(_line[6].strip())]
-                    value = int(_line[7].strip())
+                    value = _line[7].strip()
                 elif(len(_line) >= 5):
                     norm = int(_line[5].strip())
                     if(isinstance(addr, int)):
