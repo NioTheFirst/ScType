@@ -443,6 +443,10 @@ def parse_type_file(t_file, f_file = None):
                     denom = [int(_line[5].strip())]
                     norm = [int(_line[6].strip())]
                     value = _line[7].strip()
+                    try:
+                        value = int(value)
+                    except ValueError:
+                        value = value
                 elif(len(_line) >= 5):
                     norm = int(_line[5].strip())
                     if(isinstance(addr, int)):
