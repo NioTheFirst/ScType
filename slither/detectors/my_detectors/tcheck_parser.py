@@ -504,10 +504,11 @@ def get_addr(function_name, var_name):
         return address_type_hash[key]
     else:
         if(reuse_addr and var_name in reuse_addr_types):
-            add_addr(function, var_name, reuse_addr_types[var_name])
+            add_addr(function_name, var_name, reuse_addr_types[var_name])
         else:
             #Add null address (automatic)
-            return add_addr(function_name, var_name, 0)
+            add_addr(function_name, var_name, 0)
+        return address_type_hash[key]
     #Deprecated
     return None
 
