@@ -1,1 +1,3885 @@
 Switched global version to 0.8.4
+Analyzed_contracts_count: 1
+total compilations: 2, contracts: 1
+contract name: IIdleToken
+Finance file: IIdleToken_ftypes.txt
+Add to address_to_label {'balanceOf:a': -999}
+Addr:balanceOf_a : 6
+Add to address_to_label {'balanceOf:a': -999, 'global:tokA': 1}
+Addr:global_tokA : 6
+Add to address_to_label {'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2}
+Addr:global_tokB : 18
+Reading f file...
+['[t]', 'global', 'balance', 'f: 0']
+['[t]', 'global', 'tPWF', 'global:tokA', 'global:tokB', '12', 'f: 40']
+List: [-1, -1, 'u', 'u', 'global:tokA']
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2}
+['[t]', 'global', 'tokenToShare', 'global:tokB', 'global:tokA', '-12', 'f:40']
+List: ['global:tokB', 'global:tokA', -12, 'u', 'u']
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2}
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2}
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2}
+Add to address_to_label {'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3}
+Mark functions Adding: IIdleToken, balanceOf, True
+[X]No Binary
+Mark functions Adding: IIdleToken, tokenPriceWithFee, True
+[X]No Binary
+Mark functions Adding: IIdleToken, mintIdleToken, True
+[X]No Binary
+Mark functions Adding: IIdleToken, redeemIdleToken, True
+[*]Marked
+Mark functions Adding: IIdleToken, slitherConstructorVariables, True
+[x] Not visible 
+State_var: tokenToShare
+Finding type for tokenToShare(uint256 ... )
+List: [2, 1, -12, 'u', 3, 40]
+(2, 1, -12, 'u', 3, 40)
+[*]Type fetched successfully
+Source address: u
+State_var: tPWF
+Finding type for tPWF(uint256 ... )
+List: [-1, -1, 'u', 'u', 1, 40]
+(-1, -1, 'u', 'u', 1, 40)
+[*]Type fetched successfully
+Source address: u
+State_var: balance
+Finding type for balance(uint256 ... )
+List: [-1, -1, 'u', None, 'u', 0]
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3}
+(-1, -1, 'u', None, 3, 0)
+[*]Type fetched successfully
+Source address: u
+Running check on IIdleToken
+Reading Function: balanceOf
+Function balanceOf not marked
+Reading Function: tokenPriceWithFee
+Function tokenPriceWithFee not marked
+Reading Function: mintIdleToken
+Function mintIdleToken not marked
+Reading Function: redeemIdleToken
+Checking funcion...
+
+
+
+redeemIdleToken
+Function name: redeemIdleToken
+Finding type for share(uint256 ... )
+Value: u
+New param cache [[[-1], [-1], 'u', None, [], -1, 'u', 'u']]
+FIND RETURN
+ENTRY_POINT
+redeemIdleToken(uint256)
+
+
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+RETURN TMP_0
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: tokenToShare, Num: 1
+Globalname: tokenToShare, contract_name: IIdleToken
+global...
+
+Name: PIC_1 Function: None
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Source address: u
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+Phi
+[i]Type for tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+[i] TMP_0 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: share_1, name: share
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: share_1 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: share, Num: 1
+Globalname: share, contract_name: IIdleToken
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: share_1 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: share, Num: 1
+Globalname: share, contract_name: IIdleToken
+End popogation
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+lnorm: u rnorm: -12
+Source address: u
+[i]Type for TMP_0
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+RETURN TMP_0
+RETURN
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+
+
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+RETURN TMP_0
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+Phi
+[i]Type for tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+[i] TMP_0 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: share_1 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: share, Num: 1
+Globalname: share, contract_name: IIdleToken
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: share_1 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: share, Num: 1
+Globalname: share, contract_name: IIdleToken
+End popogation
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+lnorm: u rnorm: -12
+Source address: u
+[i]Type for TMP_0
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+RETURN TMP_0
+RETURN
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Source address: u
+Reading Function: slitherConstructorVariables
+Function slitherConstructorVariables not marked
+Address: -999, Label: balanceOf:a
+Address: 1, Label: global:tokA
+Address: 2, Label: global:tokB
+Address: 3, Label: global:u
+Head Addr: -999
+    Norm: u
+    Set: {-999}
+    Fin: NULL
+Head Addr: 1
+    Norm: u
+    Set: {1}
+    Fin: NULL
+Head Addr: 2
+    Norm: u
+    Set: {2}
+    Fin: NULL
+Head Addr: 3
+    Norm: u
+    Set: {3}
+    Fin: NULL
+Function count: 1
+Time elapsed: 0.006248950958251953
+Analyzed_contracts_count: 2
+total compilations: 2, contracts: 2
+contract name: IdleYieldSource
+Finance file: IdleYieldSource_ftypes.txt
+Add to address_to_label {'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4}
+Addr:global_idleToken : 0
+Add to address_to_label {'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5}
+Addr:global_underlyingAsset : 6
+Add to address_to_label {'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998}
+Addr:initialize__idleToken : 0
+Add to address_to_label {'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997}
+Addr:supplyTokenTo_to : 0
+Add to address_to_label {'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997, 'transferERC20:erc20Token': -996}
+Addr:transferERC20_erc20Token : 6
+Reading f file...
+['[t]', 'redeemToken', 'redeemAmount', '1', '-1', '0', 'f:0']
+List: ['global:tokB', '-1', 18, 'u', 'u']
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997, 'transferERC20:erc20Token': -996}
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997, 'transferERC20:erc20Token': -996}
+Mark functions Adding: IdleYieldSource, initialize, True
+[X]No Binary
+Mark functions Adding: IdleYieldSource, depositToken, True
+[X]No Binary
+Mark functions Adding: IdleYieldSource, _totalShare, True
+[x] Not visible 
+Mark functions Adding: IdleYieldSource, _tokenToShares, True
+[x] Not visible 
+Mark functions Adding: IdleYieldSource, _sharesToToken, True
+[x] Not visible 
+Mark functions Adding: IdleYieldSource, _price, True
+[x] Not visible 
+Mark functions Adding: IdleYieldSource, _depositToIdle, True
+[x] Not visible 
+Mark functions Adding: IdleYieldSource, supplyTokenTo, True
+[X]No Binary
+Mark functions Adding: IdleYieldSource, redeemToken, True
+[*]Marked
+Mark functions Adding: IdleYieldSource, transferERC20, True
+[*]Marked
+Mark functions Adding: IdleYieldSource, sponsor, True
+[X]No Binary
+Mark functions Adding: IdleYieldSource, slitherConstructorConstantVariables, True
+[x] Not visible 
+State_var: idleToken
+Finding type for idleToken(address ... )
+prev address? u
+Head Addr: 4
+    Norm: 0
+    Set: {4}
+    Fin: NULL
+Source address: 4
+State_var: ONE_IDLE_TOKEN
+Finding type for ONE_IDLE_TOKEN(uint256 ... )
+Value: u
+Source address: u
+State_var: underlyingAsset
+Finding type for underlyingAsset(address ... )
+prev address? u
+Head Addr: 5
+    Norm: 6
+    Set: {5}
+    Fin: NULL
+Source address: 5
+contract name: IIdleToken
+Finance file: IIdleToken_ftypes.txt
+Addr:balanceOf_a : 6
+List: [-1, -1, 'u', 'u', 1, 40]
+Addr:global_tokA : 6
+Addr:global_tokB : 18
+List: [2, 1, -12, 'u', 3, 40]
+Reading f file...
+['[t]', 'global', 'balance', 'f: 0']
+List: [-1, -1, 'u', None, 'u', 0]
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997, 'transferERC20:erc20Token': -996}
+['[t]', 'global', 'tPWF', 'global:tokA', 'global:tokB', '12', 'f: 40']
+List: [-1, -1, 'u', 'u', 'global:tokA']
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997, 'transferERC20:erc20Token': -996}
+['[t]', 'global', 'tokenToShare', 'global:tokB', 'global:tokA', '-12', 'f:40']
+List: ['global:tokB', 'global:tokA', -12, 'u', 'u']
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997, 'transferERC20:erc20Token': -996}
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997, 'transferERC20:erc20Token': -996}
+{'balanceOf:a': -999, 'global:tokA': 1, 'global:tokB': 2, 'global:u': 3, 'global:idleToken': 4, 'global:underlyingAsset': 5, 'initialize:_idleToken': -998, 'supplyTokenTo:to': -997, 'transferERC20:erc20Token': -996}
+Mark functions Adding: IIdleToken, balanceOf, True
+[x] Not visible 
+Mark functions Adding: IIdleToken, tokenPriceWithFee, True
+[x] Not visible 
+Mark functions Adding: IIdleToken, mintIdleToken, True
+[x] Not visible 
+Mark functions Adding: IIdleToken, redeemIdleToken, True
+[x] Not visible 
+Running check on IdleYieldSource
+Reading Function: initialize
+Function initialize not marked
+Reading Function: depositToken
+Function depositToken not marked
+Reading Function: _totalShare
+Function _totalShare not marked
+Reading Function: _tokenToShares
+Function _tokenToShares not marked
+Reading Function: _sharesToToken
+Function _sharesToToken not marked
+Reading Function: _price
+Function _price not marked
+Reading Function: _depositToIdle
+Function _depositToIdle not marked
+Reading Function: supplyTokenTo
+Function supplyTokenTo not marked
+Reading Function: redeemToken
+Checking funcion...
+
+
+
+redeemToken
+Function name: redeemToken
+Finding type for redeemAmount(uint256 ... )
+List: [2, -1, 18, 'u', 3, 0]
+(2, -1, 18, 'u', 3, 0)
+[*]Type fetched successfully
+New param cache [[[2], [-1], 18, None, [], 0, 'u', 'u']]
+FIND RETURN
+ENTRY_POINT
+redeemToken(uint256)
+
+
+idleToken_8(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+TMP_19(int256) = 1 (c)+ 1
+a_1(int256) := TMP_19(int256)
+TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
+redeemedShare_1(uint256) := TMP_20(uint256)
+TMP_21 = CONVERT idleToken_9 to IIdleToken
+TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
+idleToken_10(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10'])
+redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
+redeemedUnderlyingAsset_2(uint256) = redeemedUnderlyingAsset_1 (c)+ redeemedShare_1
+Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: idleToken_8, name: idleToken
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: idleToken, Num: 8
+Globalname: idleToken, contract_name: IdleYieldSource
+global...
+
+Name: PIC_5 Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+idleToken_8(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: redeemToken
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_19 cleared
+[i] a cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: a_1, name: a
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: a, Num: 1
+Globalname: a, contract_name: IdleYieldSource
+End popogation
+TMP_19(int256) = 1 (c)+ 1
+Source address: u
+[i]Type for TMP_19
+
+Name: TMP_19 Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 2
+Fields: 
+Finance Type: undef
+XXXX
+a_1(int256) := TMP_19(int256)
+asgn
+Source address: u
+Finance type key: (-1, -1)
+[i]Type for a
+
+Name: a Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 2
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_20 cleared
+[i] redeemedShare cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: redeemAmount_1, name: redeemAmount
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: redeemAmount, Num: 1
+Globalname: redeemAmount, contract_name: IdleYieldSource
+Ssa_name: redeemAmount_1, name: redeemAmount
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: redeemAmount, Num: 1
+Globalname: redeemAmount, contract_name: IdleYieldSource
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: redeemedShare, Num: 1
+Globalname: redeemedShare, contract_name: IdleYieldSource
+End popogation
+TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
+New param cache [[[], [], 18, None, [], 0, 'u', 'u']]
+[[], [], 18, None, [], 0, 'u', 'u']
+
+Name: tokens Function: None
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+FIND RETURN
+ENTRY_POINT
+_tokenToShares(uint256)
+Propogating All
+Propogating All
+tokens_1
+Ssa_name: tokens_1, name: tokens
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Propogating All
+shares_1
+Ssa_name: shares_1, name: shares
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+[i] tokens cleared
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tokens_1, name: tokens
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: tokens, Num: 1
+Globalname: tokens, contract_name: IdleYieldSource
+Ssa_name: ONE_IDLE_TOKEN_1, name: ONE_IDLE_TOKEN
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: ONE_IDLE_TOKEN, Num: 1
+Globalname: ONE_IDLE_TOKEN, contract_name: IdleYieldSource
+global...
+
+Name: PIC_6 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+tokens_1(uint256) := ϕ(['redeemAmount_1', 'mintAmount_1'])
+Phi
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+
+END==================================
+[i]Type for tokens
+
+Name: tokens Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+ONE_IDLE_TOKEN_1(uint256) := ϕ(['ONE_IDLE_TOKEN_4', 'ONE_IDLE_TOKEN_0', 'ONE_IDLE_TOKEN_2'])
+Phi
+[i]Type for ONE_IDLE_TOKEN
+
+Name: ONE_IDLE_TOKEN Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_4 cleared
+[i] TMP_5 cleared
+[i] TMP_6 cleared
+[i] shares cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: tokens_1, name: tokens
+
+Name: tokens Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: tokens, Num: 1
+Globalname: tokens, contract_name: IdleYieldSource
+Ssa_name: ONE_IDLE_TOKEN_1, name: ONE_IDLE_TOKEN
+
+Name: ONE_IDLE_TOKEN Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: tokens_1, name: tokens
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: tokens, Num: 1
+Globalname: tokens, contract_name: IdleYieldSource
+Ssa_name: ONE_IDLE_TOKEN_1, name: ONE_IDLE_TOKEN
+
+Name: ONE_IDLE_TOKEN Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: shares_1, name: shares
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: shares, Num: 1
+Globalname: shares, contract_name: IdleYieldSource
+End popogation
+TMP_4(uint256) = tokens_1 (c)* ONE_IDLE_TOKEN_1
+lnorm: 18 rnorm: u
+Source address: u
+[i]Type for TMP_4
+
+Name: TMP_4 Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+TMP_5(uint256) = INTERNAL_CALL, IdleYieldSource._price()()
+New param cache []
+FIND RETURN
+ENTRY_POINT
+_price()
+Propogating All
+Propogating All
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: idleToken_4, name: idleToken
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: idleToken, Num: 4
+Globalname: idleToken, contract_name: IdleYieldSource
+global...
+
+Name: PIC_5 Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+idleToken_4(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_10 cleared
+[i] TMP_11 cleared
+[i] TMP_12 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: idleToken_4, name: idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: idleToken_4, name: idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+End popogation
+Ssa_name: idleToken_5, name: idleToken
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: idleToken, Num: 5
+Globalname: idleToken, contract_name: IdleYieldSource
+global...
+
+Name: PIC_5 Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+TMP_10 = CONVERT idleToken_4 to IIdleToken
+Converting idleToken_4
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+IdleToken
+[i]Type for TMP_10
+
+Name: TMP_10 Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: IdleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11 = CONVERT this to address
+Converting this
+new address made for this
+prev address? u
+global assignment: 6
+6
+6
+[i]Type for TMP_11
+
+Name: TMP_11 Function: _price
+Num: -1
+Den: -1
+Address: 6
+Norm: u
+LF: IdleYieldSource
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = HIGH_LEVEL_CALL, dest:TMP_10(IIdleToken), function:tokenPriceWithFee, arguments:['TMP_11']  
+High Call: tokenPriceWithFee
+Running querryfc
+Found: tokenPriceWithFee
+
+Name: TMP_11 Function: _price
+Num: -1
+Den: -1
+Address: 6
+Norm: u
+LF: IdleYieldSource
+Value: u
+Fields: 
+Finance Type: undef
+High level cal param_cache
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: u
+    link: IdleYieldSource
+    fields: []
+    fintype: -1
+New param cache [[[-1], [-1], 'u', 'IdleYieldSource', [], -1, 6, 'u']]
+[[-1], [-1], 'u', 'IdleYieldSource', [], -1, 6, 'u']
+
+Name: a Function: None
+Num: -1
+Den: -1
+Address: 6
+Norm: u
+LF: IdleYieldSource
+Value: u
+Fields: 
+Finance Type: undef
+FIND RETURN
+ENTRY_POINT
+tokenPriceWithFee(address)
+Propogating All
+Propogating All
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tPWF_1, name: tPWF
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: tPWF, Num: 1
+Globalname: tPWF, contract_name: IIdleToken
+global...
+
+Name: PIC_2 Function: None
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Source address: u
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+Phi
+[i]Type for tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+End popogation
+RETURN tPWF_1
+RETURN
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+Phi
+[i]Type for tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+End popogation
+RETURN tPWF_1
+RETURN
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Source address: u
+Source address: u
+[i]Type for TMP_12
+
+Name: TMP_12 Function: _price
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+idleToken_5(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN TMP_12
+RETURN
+
+Name: TMP_12 Function: _price
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: idleToken_4, name: idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+idleToken_4(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_10 cleared
+[i] TMP_11 cleared
+[i] TMP_12 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: idleToken_4, name: idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: idleToken_4, name: idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+End popogation
+Ssa_name: idleToken_5, name: idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+TMP_10 = CONVERT idleToken_4 to IIdleToken
+Converting idleToken_4
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+IdleToken
+[i]Type for TMP_10
+
+Name: TMP_10 Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: IdleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_11 = CONVERT this to address
+Converting this
+6
+[i]Type for TMP_11
+
+Name: TMP_11 Function: _price
+Num: 
+Den: 
+Address: 6
+Norm: u
+LF: IdleYieldSource
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_12(uint256) = HIGH_LEVEL_CALL, dest:TMP_10(IIdleToken), function:tokenPriceWithFee, arguments:['TMP_11']  
+High Call: tokenPriceWithFee
+Running querryfc
+Found: tokenPriceWithFee
+
+Name: TMP_11 Function: _price
+Num: 
+Den: 
+Address: 6
+Norm: u
+LF: IdleYieldSource
+Value: u
+Fields: 
+Finance Type: undef
+High level cal param_cache
+Param: 0
+    num: []
+    den: []
+    norm: u
+    link: IdleYieldSource
+    fields: []
+    fintype: -1
+New param cache [[[], [], 'u', 'IdleYieldSource', [], -1, 6, 'u']]
+Old param cache: [[[-1], [-1], 'u', 'IdleYieldSource', [], -1, 6]]
+[[], [], 'u', 'IdleYieldSource', [], -1, 6, 'u']
+
+Name: a Function: None
+Num: 
+Den: 
+Address: 6
+Norm: u
+LF: IdleYieldSource
+Value: u
+Fields: 
+Finance Type: undef
+FIND RETURN
+ENTRY_POINT
+tokenPriceWithFee(address)
+Propogating All
+Propogating All
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+Phi
+[i]Type for tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+End popogation
+RETURN tPWF_1
+RETURN
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+tPWF_1(uint256) := ϕ(['tPWF_0'])
+Phi
+[i]Type for tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tPWF_1, name: tPWF
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+End popogation
+RETURN tPWF_1
+RETURN
+
+Name: tPWF Function: tokenPriceWithFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Source address: u
+Source address: u
+[i]Type for TMP_12
+
+Name: TMP_12 Function: _price
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+idleToken_5(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: _price
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+RETURN TMP_12
+RETURN
+
+Name: TMP_12 Function: _price
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Source address: u
+Source address: u
+[i]Type for TMP_5
+
+Name: TMP_5 Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+TMP_6(uint256) = TMP_4 (c)/ TMP_5
+lnorm: 18 rnorm: u
+Finance type key: (0, 40)
+lnorm: 18 rnorm: u
+Finance type key: (0, 40)
+[i]Type for TMP_6
+
+Name: TMP_6 Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+shares_1(uint256) := TMP_6(uint256)
+asgn
+Source address: u
+Finance type key: (0, -1)
+[i]Type for shares
+
+Name: shares Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: shares_1, name: shares
+
+Name: shares Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: shares_1, name: shares
+
+Name: shares Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+End popogation
+RETURN shares_1
+RETURN
+
+Name: shares Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+[i] tokens cleared
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tokens_1, name: tokens
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: tokens, Num: 1
+Globalname: tokens, contract_name: IdleYieldSource
+Ssa_name: ONE_IDLE_TOKEN_1, name: ONE_IDLE_TOKEN
+
+Name: ONE_IDLE_TOKEN Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+tokens_1(uint256) := ϕ(['redeemAmount_1', 'mintAmount_1'])
+Phi
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+
+
+END==================================
+[i]Type for tokens
+
+Name: tokens Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+ONE_IDLE_TOKEN_1(uint256) := ϕ(['ONE_IDLE_TOKEN_4', 'ONE_IDLE_TOKEN_0', 'ONE_IDLE_TOKEN_2'])
+Phi
+[i]Type for ONE_IDLE_TOKEN
+
+Name: ONE_IDLE_TOKEN Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_4 cleared
+[i] TMP_5 cleared
+[i] TMP_6 cleared
+[i] shares cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: tokens_1, name: tokens
+
+Name: tokens Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: tokens, Num: 1
+Globalname: tokens, contract_name: IdleYieldSource
+Ssa_name: ONE_IDLE_TOKEN_1, name: ONE_IDLE_TOKEN
+
+Name: ONE_IDLE_TOKEN Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: tokens_1, name: tokens
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: tokens_1 Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: tokens, Num: 1
+Globalname: tokens, contract_name: IdleYieldSource
+Ssa_name: ONE_IDLE_TOKEN_1, name: ONE_IDLE_TOKEN
+
+Name: ONE_IDLE_TOKEN Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: shares_1, name: shares
+
+Name: shares Function: _tokenToShares
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: shares, Num: 1
+Globalname: shares, contract_name: IdleYieldSource
+End popogation
+TMP_4(uint256) = tokens_1 (c)* ONE_IDLE_TOKEN_1
+lnorm: 18 rnorm: u
+Source address: u
+[i]Type for TMP_4
+
+Name: TMP_4 Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+TMP_5(uint256) = INTERNAL_CALL, IdleYieldSource._price()()
+New param cache []
+Old param cache: []
+Source address: u
+[i]Type for TMP_5
+
+Name: TMP_5 Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+TMP_6(uint256) = TMP_4 (c)/ TMP_5
+lnorm: 18 rnorm: u
+Finance type key: (0, 40)
+lnorm: 18 rnorm: u
+Finance type key: (0, 40)
+[i]Type for TMP_6
+
+Name: TMP_6 Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+shares_1(uint256) := TMP_6(uint256)
+asgn
+Source address: u
+Finance type key: (0, -1)
+[i]Type for shares
+
+Name: shares Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: shares_1, name: shares
+
+Name: shares Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: shares_1, name: shares
+
+Name: shares Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+End popogation
+RETURN shares_1
+RETURN
+
+Name: shares Function: _tokenToShares
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+Source address: u
+[i]Type for TMP_20
+
+Name: TMP_20 Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+redeemedShare_1(uint256) := TMP_20(uint256)
+asgn
+Source address: u
+Finance type key: (0, -1)
+[i]Type for redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+[i] TMP_21 cleared
+[i] TMP_22 cleared
+[i] redeemedUnderlyingAsset cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: idleToken_9, name: idleToken
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: idleToken, Num: 9
+Globalname: idleToken, contract_name: IdleYieldSource
+global...
+
+Name: PIC_5 Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: idleToken_9, name: idleToken
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: redeemedUnderlyingAsset, Num: 1
+Globalname: redeemedUnderlyingAsset, contract_name: IdleYieldSource
+End popogation
+Ssa_name: idleToken_10, name: idleToken
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: idleToken, Num: 10
+Globalname: idleToken, contract_name: IdleYieldSource
+global...
+
+Name: PIC_5 Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+TMP_21 = CONVERT idleToken_9 to IIdleToken
+Converting idleToken_9
+
+Name: None Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+IdleToken
+[i]Type for TMP_21
+
+Name: TMP_21 Function: redeemToken
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: IdleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
+High Call: redeemIdleToken
+Running querryfc
+Found: redeemIdleToken
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+High level cal param_cache
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: 18
+    link: None
+    fields: []
+    fintype: 0
+New param cache [[[-1], [-1], 18, None, [], 0, 'u', 'u']]
+Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u']]
+[[-1], [-1], 18, None, [], 0, 'u', 'u']
+
+Name: share Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+FIND RETURN
+ENTRY_POINT
+redeemIdleToken(uint256)
+Propogating All
+Propogating All
+share_1
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+Phi
+[i]Type for tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+[i] TMP_0 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+End popogation
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+lnorm: 18 rnorm: -12
+Finance type key: (0, 40)
+Source address: u
+[i]Type for TMP_0
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+RETURN TMP_0
+RETURN
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+Phi
+[i]Type for tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+[i] TMP_0 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+End popogation
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+lnorm: 18 rnorm: -12
+Finance type key: (0, 40)
+Source address: u
+[i]Type for TMP_0
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+RETURN TMP_0
+RETURN
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+Source address: u
+[i]Type for TMP_22
+
+Name: TMP_22 Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+idleToken_10(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: redeemToken
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
+asgn
+Source address: u
+Finance type key: (0, -1)
+[i]Type for redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+[i] redeemedUnderlyingAsset cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedUnderlyingAsset_2, name: redeemedUnderlyingAsset
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: redeemedUnderlyingAsset, Num: 2
+Globalname: redeemedUnderlyingAsset, contract_name: IdleYieldSource
+End popogation
+redeemedUnderlyingAsset_2(uint256) = redeemedUnderlyingAsset_1 (c)+ redeemedShare_1
+Finance type key: (0, 0)
+Source address: u
+[i]Type for redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: redeemAmount_1, name: redeemAmount
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: redeemAmount, Num: 1
+Globalname: redeemAmount, contract_name: IdleYieldSource
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemAmount_1, name: redeemAmount
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: redeemAmount, Num: 1
+Globalname: redeemAmount, contract_name: IdleYieldSource
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+End popogation
+
+
+idleToken_8(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+TMP_19(int256) = 1 (c)+ 1
+a_1(int256) := TMP_19(int256)
+TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
+redeemedShare_1(uint256) := TMP_20(uint256)
+TMP_21 = CONVERT idleToken_9 to IIdleToken
+TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
+idleToken_10(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10'])
+redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
+redeemedUnderlyingAsset_2(uint256) = redeemedUnderlyingAsset_1 (c)+ redeemedShare_1
+Emit RedeemedToken(msg.sender,redeemedShare_1,redeemAmount_1)
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: idleToken_8, name: idleToken
+
+Name: idleToken Function: redeemToken
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+idleToken_8(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: redeemToken
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_19 cleared
+[i] a cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: a_1, name: a
+
+Name: a Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: 2
+Fields: 
+Finance Type: undef
+Name: a, Num: 1
+Globalname: a, contract_name: IdleYieldSource
+End popogation
+TMP_19(int256) = 1 (c)+ 1
+Source address: u
+[i]Type for TMP_19
+
+Name: TMP_19 Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 2
+Fields: 
+Finance Type: undef
+XXXX
+a_1(int256) := TMP_19(int256)
+asgn
+Source address: u
+Finance type key: (-1, -1)
+[i]Type for a
+
+Name: a Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 0
+LF: None
+Value: 2
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_20 cleared
+[i] redeemedShare cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: redeemAmount_1, name: redeemAmount
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: redeemAmount, Num: 1
+Globalname: redeemAmount, contract_name: IdleYieldSource
+Ssa_name: redeemAmount_1, name: redeemAmount
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: redeemAmount, Num: 1
+Globalname: redeemAmount, contract_name: IdleYieldSource
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: redeemedShare, Num: 1
+Globalname: redeemedShare, contract_name: IdleYieldSource
+End popogation
+TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
+New param cache [[[], [], 18, None, [], 0, 'u', 'u']]
+Old param cache: [[[], [], 18, None, [], 0, 'u']]
+Source address: u
+[i]Type for TMP_20
+
+Name: TMP_20 Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+redeemedShare_1(uint256) := TMP_20(uint256)
+asgn
+Source address: u
+Finance type key: (0, -1)
+[i]Type for redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+[i] TMP_21 cleared
+[i] TMP_22 cleared
+[i] redeemedUnderlyingAsset cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: idleToken_9, name: idleToken
+
+Name: idleToken Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: idleToken_9, name: idleToken
+
+Name: idleToken Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: redeemedUnderlyingAsset, Num: 1
+Globalname: redeemedUnderlyingAsset, contract_name: IdleYieldSource
+End popogation
+Ssa_name: idleToken_10, name: idleToken
+
+Name: idleToken Function: redeemToken
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+TMP_21 = CONVERT idleToken_9 to IIdleToken
+Converting idleToken_9
+
+Name: idleToken Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+IdleToken
+[i]Type for TMP_21
+
+Name: TMP_21 Function: redeemToken
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: IdleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
+High Call: redeemIdleToken
+Running querryfc
+Found: redeemIdleToken
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+High level cal param_cache
+Param: 0
+    num: [-1]
+    den: [-1]
+    norm: 18
+    link: None
+    fields: []
+    fintype: 0
+New param cache [[[-1], [-1], 18, None, [], 0, 'u', 'u']]
+Old param cache: [[[-1], [-1], 'u', None, [], -1, 'u']]
+[[-1], [-1], 18, None, [], 0, 'u', 'u']
+
+Name: share Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+FIND RETURN
+ENTRY_POINT
+redeemIdleToken(uint256)
+Propogating All
+Propogating All
+share_1
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+Phi
+[i]Type for tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+[i] TMP_0 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+End popogation
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+lnorm: 18 rnorm: -12
+Finance type key: (0, 40)
+Source address: u
+[i]Type for TMP_0
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+RETURN TMP_0
+RETURN
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
+Phi
+[i]Type for tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+XXXX
+[i] TMP_0 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: tokenToShare_1, name: tokenToShare
+
+Name: tokenToShare Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: -12
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+Ssa_name: share_1, name: share
+
+Name: share_1 Function: redeemIdleToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+End popogation
+TMP_0(uint256) = share_1 (c)* tokenToShare_1
+lnorm: 18 rnorm: -12
+Finance type key: (0, 40)
+Source address: u
+[i]Type for TMP_0
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+RETURN TMP_0
+RETURN
+
+Name: TMP_0 Function: redeemIdleToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+Source address: u
+[i]Type for TMP_22
+
+Name: TMP_22 Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+idleToken_10(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: redeemToken
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
+asgn
+Source address: u
+Finance type key: (0, -1)
+[i]Type for redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+[i] redeemedUnderlyingAsset cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedUnderlyingAsset_1, name: redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: 6
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemedUnderlyingAsset_2, name: redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: redeemedUnderlyingAsset, Num: 2
+Globalname: redeemedUnderlyingAsset, contract_name: IdleYieldSource
+End popogation
+redeemedUnderlyingAsset_2(uint256) = redeemedUnderlyingAsset_1 (c)+ redeemedShare_1
+Finance type key: (0, 0)
+Source address: u
+[i]Type for redeemedUnderlyingAsset
+
+Name: redeemedUnderlyingAsset Function: redeemToken
+Num: 2
+Den: 1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: redeemAmount_1, name: redeemAmount
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: redeemAmount, Num: 1
+Globalname: redeemAmount, contract_name: IdleYieldSource
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Ssa_name: redeemAmount_1, name: redeemAmount
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Source address: u
+
+Name: redeemAmount_1 Function: redeemToken
+Num: 
+Den: 
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+Copied ftype
+Name: redeemAmount, Num: 1
+Globalname: redeemAmount, contract_name: IdleYieldSource
+Ssa_name: redeemedShare_1, name: redeemedShare
+
+Name: redeemedShare Function: redeemToken
+Num: -1
+Den: -1
+Address: u
+Norm: 18
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+End popogation
+Source address: u
+Reading Function: transferERC20
+Checking funcion...
+
+
+
+transferERC20
+Function name: transferERC20
+Finding type for erc20Token(address ... )
+prev address? u
+Head Addr: -996
+    Norm: 6
+    Set: {-996}
+    Fin: NULL
+Finding type for to(address ... )
+Addr:transferERC20_to : 0
+prev address? u
+-995
+Head Addr: -995
+    Norm: 0
+    Set: {-995}
+    Fin: NULL
+Finding type for amount(uint256 ... )
+Value: u
+New param cache [[[], [], 6, 'erc20Token', [], -1, -996, 'u'], [[], [], 0, 'to', [], -1, -995, 'u'], [[-1], [-1], 'u', None, [], -1, 'u', 'u']]
+FIND RETURN
+ENTRY_POINT
+transferERC20(address,address,uint256)
+
+
+idleToken_11(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+TMP_24(bool) = erc20Token_1 != idleToken_11
+TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
+Emit TransferredERC20(msg.sender,to_1,amount_1,erc20Token_1)
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: idleToken_11, name: idleToken
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Name: idleToken, Num: 11
+Globalname: idleToken, contract_name: IdleYieldSource
+global...
+
+Name: PIC_5 Function: None
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Source address: 4
+idleToken_11(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_24 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: -996
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -996
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Ssa_name: idleToken_11, name: idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: idleToken_11, name: idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -996
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+End popogation
+TMP_24(bool) = erc20Token_1 != idleToken_11
+[i]Type for TMP_24
+
+Name: TMP_24 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
+[i]Type for TMP_25
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: to_1, name: to
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: -995
+
+Name: to_1 Function: transferERC20
+Num: 
+Den: 
+Address: -995
+Norm: 0
+LF: to
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -996
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: amount_1, name: amount
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: amount_1 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: amount, Num: 1
+Globalname: amount, contract_name: IdleYieldSource
+Ssa_name: to_1, name: to
+
+Name: to_1 Function: transferERC20
+Num: 
+Den: 
+Address: -995
+Norm: 0
+LF: to
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -996
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: amount_1, name: amount
+
+Name: amount_1 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: amount_1 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: amount, Num: 1
+Globalname: amount, contract_name: IdleYieldSource
+End popogation
+
+
+idleToken_11(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+TMP_24(bool) = erc20Token_1 != idleToken_11
+TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
+Emit TransferredERC20(msg.sender,to_1,amount_1,erc20Token_1)
+
+
+Propogating parameters and globals to SSA variables...
+End popogation
+Ssa_name: idleToken_11, name: idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+idleToken_11(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_0', 'idleToken_7', 'idleToken_10'])
+Phi
+[i]Type for idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+[i] TMP_24 cleared
+Propogating parameters and globals to SSA variables...
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -996
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: idleToken_11, name: idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: idleToken_11, name: idleToken
+
+Name: idleToken Function: transferERC20
+Num: -1
+Den: -1
+Address: 4
+Norm: 0
+LF: idleToken
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -996
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+End popogation
+TMP_24(bool) = erc20Token_1 != idleToken_11
+[i]Type for TMP_24
+
+Name: TMP_24 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
+[i]Type for TMP_25
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+XXXX
+Propogating parameters and globals to SSA variables...
+Ssa_name: to_1, name: to
+
+Name: to_1 Function: transferERC20
+Num: 
+Den: 
+Address: -995
+Norm: 0
+LF: to
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -996
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: amount_1, name: amount
+
+Name: amount_1 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: amount_1 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: amount, Num: 1
+Globalname: amount, contract_name: IdleYieldSource
+Ssa_name: to_1, name: to
+
+Name: to_1 Function: transferERC20
+Num: 
+Den: 
+Address: -995
+Norm: 0
+LF: to
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: erc20Token_1, name: erc20Token
+
+Name: erc20Token_1 Function: transferERC20
+Num: 
+Den: 
+Address: -996
+Norm: 6
+LF: erc20Token
+Value: u
+Fields: 
+Finance Type: undef
+Ssa_name: amount_1, name: amount
+
+Name: amount_1 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Source address: u
+
+Name: amount_1 Function: transferERC20
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+Copied ftype
+Name: amount, Num: 1
+Globalname: amount, contract_name: IdleYieldSource
+End popogation
+Reading Function: sponsor
+Function sponsor not marked
+Reading Function: slitherConstructorConstantVariables
+Function slitherConstructorConstantVariables not marked
+Address: -999, Label: balanceOf:a
+Address: 1, Label: global:tokA
+Address: 2, Label: global:tokB
+Address: 3, Label: global:u
+Address: 4, Label: global:idleToken
+Address: 5, Label: global:underlyingAsset
+Address: -998, Label: initialize:_idleToken
+Address: -997, Label: supplyTokenTo:to
+Address: -996, Label: transferERC20:erc20Token
+Address: 6, Label: _price:TMP_11
+Address: 6, Label: global:this
+Address: -995, Label: transferERC20:to
+Head Addr: -999
+    Norm: u
+    Set: {-999}
+    Fin: NULL
+Head Addr: 1
+    Norm: u
+    Set: {1}
+    Fin: NULL
+Head Addr: 2
+    Norm: u
+    Set: {2}
+    Fin: NULL
+Head Addr: 3
+    Norm: u
+    Set: {3}
+    Fin: NULL
+Head Addr: 4
+    Norm: 0
+    Set: {4}
+    Fin: NULL
+Head Addr: 5
+    Norm: 6
+    Set: {5}
+    Fin: NULL
+Head Addr: -998
+    Norm: u
+    Set: {-998}
+    Fin: NULL
+Head Addr: -997
+    Norm: u
+    Set: {-997}
+    Fin: NULL
+Head Addr: -996
+    Norm: 6
+    Set: {-996}
+    Fin: NULL
+Head Addr: 6
+    Norm: u
+    Set: {6}
+    Fin: NULL
+Head Addr: -995
+    Norm: 0
+    Set: {-995}
+    Fin: NULL
+Function count: 9
+Time elapsed: 0.06091570854187012
+Executing Group 3
+[*] Tested 1 warning for PoolTogether
+Group 3 complete
+Testing complete

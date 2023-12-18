@@ -477,6 +477,7 @@ def parse_type_file(t_file, f_file = None):
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
+    print(f"Adding {key}: {type_tuple}")
     var_type_hash[key] = type_tuple
 
 def get_var_type_tuple(function_name, var_name):
