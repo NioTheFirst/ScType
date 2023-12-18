@@ -493,6 +493,10 @@ def get_addr(function_name, var_name):
     key = function_name + "_" + var_name
     if(key in address_type_hash):
         return address_type_hash[key]
+    else:
+        #Add null address (automatic)
+        return add_addr(function_name, var_name, 0)
+    #Deprecated
     return None
 
 def add_tuple(tuple_name, type_tuples):
