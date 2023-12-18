@@ -187,6 +187,9 @@ def parse_finance_file(f_file):
                 p_name = _line[2].strip()
                 v_name = _line[3].strip()
                 field_tt = get_field(f_name, p_name, v_name)
+                if(field_tt == None):
+                    add_field(f_name, p_name, v_name, (-1, -1, 'u', 'u', 'u'))
+                    field_tt = get_field(f_name, p_name, v_name)
                 field_tt += (f_params[0], )
                 add_field(f_name, p_name, v_name, field_tt)
 
@@ -233,6 +236,7 @@ def parse_type_file(t_file, f_file = None):
                     elif(len(_line) >= 4):
                         #Addresses 
                         addr = _line[3].strip()
+                        
                     add_var(f_name, v_name, (num, den, norm, value, addr))
                     if(reuse_types):
                         reuse_types_var[v_name] = True
