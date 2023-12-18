@@ -229,15 +229,16 @@ def parse_type_file(t_file, f_file = None):
                     norm = 'u'
                     addr = 'u'
                     value = 'u'
-                    if(len(_line) >= 7):
+                    if(len(_line) >= 6):
                         #Integers (and potentially f-types)
                         num = _line[3].strip()
                         den = _line[4].strip()
                         norm = int(_line[5].strip())
-                        try:
-                            value = int(_line[6].strip())
-                        except ValueError:
-                            value = 'u'
+                        if(len(_line >= 7)):
+                            try:
+                                value = int(_line[6].strip())
+                            except ValueError:
+                                value = 'u'
                     elif(len(_line) >= 4):
                         #Addresses 
                         addr = _line[3].strip()
