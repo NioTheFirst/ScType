@@ -2634,7 +2634,7 @@ def _tcheck_node(node, function) -> []:
     for var in node.ssa_variables_written:
         
         if((var.extok.name, current_contract_name) in global_var_types):
-            #print(f"Copied {var.extok.name}")
+            print(f"Copied {var.extok.name}")
             temp = global_var_types[(var.extok.name, current_contract_name)]
             #print(f" To type: {temp.type}")
             if(str(var.type) == "address"):

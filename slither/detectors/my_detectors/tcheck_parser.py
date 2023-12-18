@@ -484,6 +484,7 @@ def get_var_type_tuple(function_name, var_name):
     if(key in var_type_hash):
         #cast num and den
         temp = list(var_type_hash[key])
+        print(f"List: {temp}")
         temp[0] = stringToType(temp[0])
         temp[1] = stringToType(temp[1])
         #cast addr
