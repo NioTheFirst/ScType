@@ -32,6 +32,9 @@ MAX_PARAMETERS = 5
 
 reuse_types = True
 reuse_types_var = {}
+reuse_addr = True
+reuse_addr_types = {}
+
 
 field_tuple_start = 5
 update_start = 100
@@ -195,6 +198,8 @@ def parse_finance_file(f_file):
 
 def parse_type_file(t_file, f_file = None):
     global label_sets
+    global reuse_addr
+    global reuse_addr_types
     with open (t_file, 'r') as type_file:
         lines = []
         counter = 0
@@ -432,6 +437,8 @@ def parse_type_file(t_file, f_file = None):
                 else:
                     norm = _norm
                 add_addr(func_name, var_name, norm)
+                if(reuse_addr):
+                    reuse_addr_types[var_name] = norm
             #FIELD TYPE
             if(_line[0].strip() == "[t*]"):
                 func_name = _line[1].strip()
@@ -490,12 +497,17 @@ def add_addr(function_name, var_name, norm):
     address_type_hash[key] = norm
 
 def get_addr(function_name, var_name):
+    global reuse_addr
+    global reuse_addr_types
     key = function_name + "_" + var_name
     if(key in address_type_hash):
         return address_type_hash[key]
     else:
-        #Add null address (automatic)
-        return add_addr(function_name, var_name, 0)
+        if(reuse_addr and var_name in reuse_addr_types):
+            add_addr(function, var_name, reuse_addr_types[var_name])
+        else:
+            #Add null address (automatic)
+            return add_addr(function_name, var_name, 0)
     #Deprecated
     return None
 
