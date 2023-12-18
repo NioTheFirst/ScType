@@ -234,7 +234,7 @@ def parse_type_file(t_file, f_file = None):
                         num = _line[3].strip()
                         den = _line[4].strip()
                         norm = int(_line[5].strip())
-                        if(len(_line >= 7)):
+                        if(len(_line) >= 7):
                             try:
                                 value = int(_line[6].strip())
                             except ValueError:
