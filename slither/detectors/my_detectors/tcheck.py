@@ -18,6 +18,7 @@ import copy
 import linecache
 import os
 import sys
+import time
 script_dir = os.path.dirname( __file__ )
 sys.path.append(script_dir)
 import tcheck_parser
@@ -3185,6 +3186,7 @@ class tcheck(AbstractDetector):
                 print(f"Name: {function.name}")
         print("End Checking...")
         '''
+        start_time = time.time()
         for contract in self.contracts:
             #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
@@ -3274,5 +3276,7 @@ class tcheck(AbstractDetector):
             #            info += ["\t= ", node, "\n"]
             #        res = self.generate_result(info)
             #        results.append(res)
+        end_time = time.time()
         print(f"Function count: {function_count}")
+        print(f"Time elapsed: {end_time - start_time}")
         return results
