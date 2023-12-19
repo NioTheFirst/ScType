@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Get time
+start_time=$(date +%s.%N)
+
 # Save the current directory
 ORIGINAL_DIR="$(pwd)"
 
@@ -320,4 +323,11 @@ if [[ $# -eq 0 || $1 -eq 29 ]]; then
   sleep 3
 fi
 
+#Get end time
+end_time=$(date +%s.%N)
+
+#Get elapsed time
+elapsed_time=$(echo "$end_time - $start_time" | bc)
+
+echo "Elapsed time: $elapsed_time seconds"
 echo "Testing complete"
