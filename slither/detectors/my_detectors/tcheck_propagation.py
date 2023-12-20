@@ -57,6 +57,7 @@ f_type_sub = {
     (30, 1): 30,
     (30, 2): 30,
     (30, 3): 30,
+    (30, 30): 30,
     (50, 0): 50, #debt - any balance
     (50, 1): 50,
     (50, 2): 50,
@@ -82,6 +83,7 @@ f_type_mul = {
     (21, 0):23,
     (22, 20):22, #simple intrest * simple interest ratio = simple interest
     (20, 22):22,
+    (30, 30):30,
     (23, 21):23, #compound interest * compound interest ratio = compound interest
     (21, 23): 23, 
     (40, 0) : 0, #price/exchange rate * any balance = corresponding balance
@@ -113,6 +115,7 @@ f_type_div = {
     (21, 23): 23, 
     (40, 0) : 0, #price/exchange rate * any balance = corresponding balance
     (0, 40) : 0,
+    (30, 30): 30,
     (40, 1) : 1,
     (1, 40) : 1,
     (40, 2) : 2,
