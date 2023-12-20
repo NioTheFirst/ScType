@@ -26,8 +26,10 @@ f_type_add = {
     (13, 13) : 13, #trans fee + trans fee
     (30, 0): 30,#reserve - any balance
     (30, 1): 30,
+    (30, 30): 30,
     (30, 2): 30,
     (30, 3): 30,
+    
     (50, 0): 50, #debt + any balance
     (0, 50): 50,
     (50, 1): 50,
