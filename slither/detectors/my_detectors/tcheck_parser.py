@@ -34,6 +34,8 @@ reuse_types = True
 reuse_types_var = {}
 reuse_addr = True
 reuse_addr_types = {}
+reuse_fin = True
+reuse_fin_types = {}
 
 
 field_tuple_start = 5
@@ -124,6 +126,8 @@ def gen_finance_instances(line):
 
 
 def parse_finance_file(f_file):
+    global reuse_fin
+    global reuse_fin_types
     #Same structure as token_type parser
     if(f_file == None):
         return
@@ -142,6 +146,8 @@ def parse_finance_file(f_file):
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
+                if(reuse_fin and not(v_name in reuse_fin_types)):
+                    reuse_fin_types[v_name] = f_params[0]
                 norm_tt = get_var_type_tuple(f_name, v_name)
                 if(norm_tt == None):
                     #Create new "variable" to be propogated by tcheck.querry_type()
@@ -149,10 +155,13 @@ def parse_finance_file(f_file):
                 else:
                     norm_tt+=(f_params[0], )
                     add_var(f_name, v_name, norm_tt)
+                
             elif(_line[0].strip() == "[ta]"):
                 #addresses
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
+                if(reuse_fin and not(v_name in reuse_fin_types)):
+                    reuse_fin_types[v_name] = f_params[0]
                 addr_key = f_name + ":" + v_name
                 addr = None
                 if(addr_key in label_sets):
@@ -190,6 +199,8 @@ def parse_finance_file(f_file):
                 p_name = _line[2].strip()
                 v_name = _line[3].strip()
                 field_tt = get_field(f_name, p_name, v_name)
+                if(reuse_fin and not(v_name in reuse_fin_types)):
+                    reuse_fin_types[v_name] = f_params[0]
                 if(field_tt == None):
                     add_field(f_name, p_name, v_name, (-1, -1, 'u', 'u', 'u'))
                     field_tt = get_field(f_name, p_name, v_name)
@@ -482,6 +493,8 @@ def add_var(function_name, var_name, type_tuple):
     var_type_hash[key] = type_tuple
 
 def get_var_type_tuple(function_name, var_name):
+    global reuse_fin
+    global reuse_fin_types
     key = function_name + "_" + var_name
     if(key in var_type_hash):
         #cast num and den
@@ -491,6 +504,8 @@ def get_var_type_tuple(function_name, var_name):
         temp[1] = stringToType(temp[1])
         #cast addr
         temp[4] = stringToType(temp[4])
+        if(len(temp) < 6 and reuse_fin and var_name in reuse_fin_types):
+            list.append(reuse_fin_types[var_name])
         return tuple(temp)
     return None
 
