@@ -565,7 +565,9 @@ def add_ex_func(contract_name, function_name, type_tuple):
 
 def get_dir_ex_func_type_tuple(contract_name, function_name):
     key = contract_name + '_' + function_name
-    return(ex_func_type_hash[key])
+    if(key in ex_func_type_hash):
+        return(ex_func_type_hash[key])
+    return None
 
 #Extended Function Tuple Unpacking etc in the Address version
 def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
