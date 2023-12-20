@@ -785,7 +785,7 @@ def check_type(ir) -> bool:
             print("END==================================")
             for rval in ir.rvalues:
                 #print(rval.extok)
-                if(not(is_type_undef(rval))):
+                if(not(is_type_undef(rval) or is_type_const(rval))):
                     type_asn(ir.lvalue, rval)
                     ir.lvalue.extok.norm = rval.extok.norm
                     if(rval.extok.finance_type != -1):
