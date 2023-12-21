@@ -801,7 +801,7 @@ def check_type(ir) -> bool:
                 set = True
                 break
             if(set == False):
-                for rval in rvalues:
+                for rval in ir.rvalues:
                     if(isinstance(rval.extok.norm, int)):
                         ir.lvalue.extok.norm = rval.extok.norm
                         if(rval.extok.finance_type != -1):
