@@ -1007,6 +1007,8 @@ def querry_fc(ir) -> int:
     global current_function_marked
     global address_to_label
     if(not (isinstance(ir, HighLevelCall))):
+        if(handle_balance_functions(ir)):
+           return 2
         return 0
     #if(mark_iteration and not(current_function_marked)):
     #    assign_const(ir.lvalue)
