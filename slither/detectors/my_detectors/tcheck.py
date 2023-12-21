@@ -783,6 +783,7 @@ def check_type(ir) -> bool:
             print()
             print()
             print("END==================================")
+            set = False
             for rval in ir.rvalues:
                 #print(rval.extok)
                 if(not(is_type_undef(rval) or is_type_const(rval))):
@@ -790,13 +791,28 @@ def check_type(ir) -> bool:
                     ir.lvalue.extok.norm = rval.extok.norm
                     if(rval.extok.finance_type != -1):
                         ir.lvalue.extok.finance_type = rval.extok.finance_type
+
                 else:
                     continue
                 #fields
                 _rval = rval.extok
                 for field in _rval.fields:
                     ir.lvalue.extok.add_field(field)
+                set = True
                 break
+            if(set):
+                for rval in rvalues:
+                    if(isinstance(rval.extok.norm, int)):
+                        ir.lvalue.extok.norm = rval.extok.norm
+                        if(rval.extok.finance_type != -1):
+                            ir.lvalue.extok.finance_type = rval.extok.finance_type
+                        else:
+                            continue
+                    _rval = rval.extok
+                    for field in _rval.fields:
+                        ir.lvalue.extok.add_field(field)
+
+
 
             
         #search global variables (deprecated)
@@ -2074,6 +2090,7 @@ def compare_norm(lv, varA, varB, func = None):
             add_errors(lv)
             return True
         return False
+    
     #print("x")
     if(A_norm == 'u' or B_norm == 'u'):
         return False
