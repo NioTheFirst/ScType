@@ -800,7 +800,7 @@ def check_type(ir) -> bool:
                     ir.lvalue.extok.add_field(field)
                 set = True
                 break
-            if(set):
+            if(set == False):
                 for rval in rvalues:
                     if(isinstance(rval.extok.norm, int)):
                         ir.lvalue.extok.norm = rval.extok.norm
