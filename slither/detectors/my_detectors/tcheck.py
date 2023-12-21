@@ -2864,6 +2864,8 @@ def _tcheck_function_call(function, param_cache) -> []:
         #load in parameters
         paramno = 0
         for param in function.parameters:
+            if(paramno == len(param_cache)):
+                break
             copy_pc_token_type(param_cache[paramno], param)
             #update_non_ssa(param)
             #if (isinstance(param, Variable)):
