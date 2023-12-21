@@ -2762,6 +2762,7 @@ def _propogate_all_parameters(function):
     fentry = {function.entry_point}
     while fentry:
         node = fentry.pop()
+        print(node)
         if node in explored:
             continue
         explored.add(node)
