@@ -1759,7 +1759,7 @@ def type_bin_add(dest, lir, rir) -> bool:
             
             add_errors(dest)
             return False
-        bin_norm(dest, lir, rir)
+    bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "add", rir)
     if(is_type_undef(lir) or  is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
         if(is_type_undef(lir) or is_type_address(lir)):
@@ -1801,7 +1801,7 @@ def type_bin_sub(dest, lir, rir) -> bool:
             
             add_errors(dest)
             return False
-        bin_norm(dest, lir, rir)
+    bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "sub", rir)
     ##print_token_type(lir)
     ##print_token_type(rir)
