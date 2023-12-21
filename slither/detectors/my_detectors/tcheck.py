@@ -110,7 +110,7 @@ def add_hash(function_name, var_name, num, den, norm, lf):
 
 #USAGE: gets the alias of a contract name for included external functions
 def get_alias(used_name):
-    return tcheck_propagation.get_alias(used_name)
+    return tcheck_parser.get_alias(used_name)
 
 #USAGE: adds a contract, function pair
 #RETURNS: NULL
