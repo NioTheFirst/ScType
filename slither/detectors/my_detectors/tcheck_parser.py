@@ -505,7 +505,7 @@ def get_var_type_tuple(function_name, var_name):
         #cast addr
         temp[4] = stringToType(temp[4])
         if(len(temp) < 6 and reuse_fin and var_name in reuse_fin_types):
-            list.append(reuse_fin_types[var_name])
+            list.add(reuse_fin_types[var_name])
         return tuple(temp)
     return None
 
