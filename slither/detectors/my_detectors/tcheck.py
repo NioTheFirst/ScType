@@ -1122,7 +1122,7 @@ def handle_balance_functions(ir):
         else:
             ir.lvalue.extok.finance_type = 0
         isbfunc = True
-    elif(func_name == "transferFrom"):
+    elif(func_name == "transferFrom" or func_name == "safeTransferFrom"):
         token_type = _dest.address
         if(token_type in label_sets):
             if(label_sets[token_type].head > 0):
@@ -1137,6 +1137,11 @@ def handle_balance_functions(ir):
         if(probarg ==  None):
             print("TranferFrom does not have 3 arguments")
             return False
+        #Test for safe
+        if(not(is_type_const(probarg) or is_type_undef(probarg))):
+            if(len(probarg.extok.den_token_types) != 0):
+                add_error(probarg)
+                return False
         probarg.extok.add_num_token_type(token_type)
         ir.lvalue.extok.add_den_token_type(-1)
         ir.lvalue.extok.norm = norm
