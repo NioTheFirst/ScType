@@ -29,6 +29,7 @@ tuple_type_hash = {}
 field_type_hash = {}
 spex_func_type_hash = {}
 MAX_PARAMETERS = 5
+contract_name_aliases = {}
 
 reuse_types = True
 reuse_types_var = {}
@@ -226,6 +227,12 @@ def parse_type_file(t_file, f_file = None):
             #_line[5] = normalization amt (power of 10)
             #_line[6] = (Optional) linked function if is address
             #print(line)
+            if(_line[0].strip() == "[alias]"):
+                #Alias for contract names
+                used_name = _line[1].strip()
+                actual_name = _line[2].strip()
+                add_alias(used_name, actual_name)
+
             if(_line[0].strip() == "[t]"):
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
@@ -508,6 +515,15 @@ def get_var_type_tuple(function_name, var_name):
             temp.append(reuse_fin_types[var_name])
         return tuple(temp)
     return None
+
+def add_alias(used_name, actual_name):
+    contract_name_aliases[used_name] = actual_name
+
+def get_alias(used_name):
+    if(used_name in contract_name_aliases):
+        return contract_name_aliases[used_name]
+    else:
+        return None
 
 def add_addr(function_name, var_name, norm):
     key = function_name + "_" + var_name

@@ -108,6 +108,10 @@ def add_hash(function_name, var_name, num, den, norm, lf):
     type_hashtable[composite_key] = values
     return composite_key
 
+#USAGE: gets the alias of a contract name for included external functions
+def get_alias(used_name):
+    return tcheck_propagation.get_alias(used_name)
+
 #USAGE: adds a contract, function pair
 #RETURNS: NULL
 def add_cf_pair(contract_name, function_name, function):
@@ -1032,6 +1036,12 @@ def querry_fc(ir) -> int:
     included_func = get_cf_pair(cont_name, func_name)
     if(included_func == None):
         included_func = get_cf_pair(cont_name[1:], func_name)
+    if(included_func == None):
+        aliased_cont_name = get_alias(cont_name)
+        if(aliased_cont_name == None):
+            aliased_cont_name = get_alias(cont_name[1:])
+        if(aliased_cont_name != None):
+            included_func = get_cf_pair(aliased_cont_name, func_name)
     print(f"Found: {included_func}")
 
     if(included_func != None):
