@@ -2835,6 +2835,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     for param in function.parameters:
         #clear previous types
         #copy new types
+        print(f"Param: {param}")
         copy_pc_token_type(param_cache[paramno], param)
         print(param_cache[paramno])
         print(param.extok)
