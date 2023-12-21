@@ -496,13 +496,16 @@ def querry_type(ir):
 
     #Get type tuple for regular int (emergency usage) + TODO modify s.t. parameters passed as names?
     type_tuple = read_type_file(ir)
+    
     propagate_fields(ir)
     if(type_tuple != None):
         _ir.clear_num()
         _ir.clear_den()
         save_addr = _ir.address
         copy_token_tuple(ir, type_tuple)
-        _ir.address = save_addr
+        if(_ir.address == 'u'):
+            _ir.address = save_addr
+        
         ##print(_ir)
         print("[*]Type fetched successfully")
         return
