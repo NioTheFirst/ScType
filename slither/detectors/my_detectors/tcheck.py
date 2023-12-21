@@ -1685,7 +1685,7 @@ def type_bin_pow(dest, lir, rir) -> bool:
             asn_norm(dest, pow_const)
         else:
             if(dest.extok.norm != '*'):
-                asn_norm(dest, '*')
+                asn_norm(dest, 'u')
     else:
         type_asn(dest, lir)
         l_norm = get_norm(lir)
@@ -1700,7 +1700,7 @@ def type_bin_pow(dest, lir, rir) -> bool:
                     type_asnai(dest, lir)
         else:
             if(dest.extok.norm != '*'):
-                asn_norm(dest, '*')
+                asn_norm(dest, 'u')
     handle_value_binop(dest, lir, rir, Pow)
     return False
 
