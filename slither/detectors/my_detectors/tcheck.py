@@ -2248,8 +2248,9 @@ def type_bin_mul(dest, lir, rir) ->bool:
     #print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    #print(lir.extok)
-    #print(rir.extok)
+    print("Mul...")
+    print(lir.extok)
+    print(rir.extok)
     bin_norm(dest, lir, rir, "mul")
     pass_ftype(dest, lir, "mul", rir)
     if(is_type_undef(lir) or is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
