@@ -163,6 +163,7 @@ def copy_inv_token_type(src, dest):
 def copy_pc_token_type(_src, dest):
     #src = copy.deepcopy(_src)
     #print(_src.extok)
+    print(_src)
     src = _src
     _dest = dest.extok
     _dest.token_type_clear()
