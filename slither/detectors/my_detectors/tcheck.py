@@ -2567,7 +2567,7 @@ def propogate_parameter(lv, function, clear_initial_parameters = False):
                     lv.extok.token_type_clear()
                     lv.extok.name = lv.ssa_name
                     lv.extok.function_name = function.name
-                    #print(f"p.norm: {p.extok.norm}")
+                    print(f"saved parameter: {p.extok}")
                     copy_token_type(p, lv)
                     
                     lv.extok.norm = p.extok.norm
