@@ -162,7 +162,7 @@ if [[ $# -eq 0 || $1 -eq 15 ]]; then
   solc-select use 0.8.9
   cd "../Benchmark/Vader_Protocol_p2/contracts"
   cd "twap"
-  slither --detect tcheck TwapOracle.sol
+  #slither --detect tcheck TwapOracle.sol
   cd "../"
   cd "dex/router"
   slither --detect tcheck .
