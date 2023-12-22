@@ -1330,6 +1330,7 @@ def type_member(ir)->bool:
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
     #_lv.#print_fields()
+    print(f"Current field: {ir.lvalue.extok}")
     if(not(is_type_undef(ir.lvalue))):
         #Copy backwards from the dest (ir.lvalue) to the field
         fieldSet = False
