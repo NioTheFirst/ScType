@@ -790,34 +790,35 @@ def check_type(ir) -> bool:
             print()
             print()
             print("END==================================")
-            set = False
-            for rval in ir.rvalues:
-                #print(rval.extok)
-                if(not(is_type_undef(rval) or is_type_const(rval))):
-                    type_asn(ir.lvalue, rval)
-                    ir.lvalue.extok.norm = rval.extok.norm
-                    if(rval.extok.finance_type != -1):
-                        ir.lvalue.extok.finance_type = rval.extok.finance_type
-
-                else:
-                    continue
-                #fields
-                _rval = rval.extok
-                for field in _rval.fields:
-                    ir.lvalue.extok.add_field(field)
-                set = True
-                break
-            if(set == False):
+            if(not(propogate_parameter(ir.lvalue))):
+                set = False
                 for rval in ir.rvalues:
-                    if(isinstance(rval.extok.norm, int)):
+                    #print(rval.extok)
+                    if(not(is_type_undef(rval) or is_type_const(rval))):
+                        type_asn(ir.lvalue, rval)
                         ir.lvalue.extok.norm = rval.extok.norm
                         if(rval.extok.finance_type != -1):
                             ir.lvalue.extok.finance_type = rval.extok.finance_type
-                        else:
-                            continue
+
+                    else:
+                        continue
+                    #fields
                     _rval = rval.extok
                     for field in _rval.fields:
                         ir.lvalue.extok.add_field(field)
+                    set = True
+                    break
+                if(set == False):
+                    for rval in ir.rvalues:
+                        if(isinstance(rval.extok.norm, int)):
+                            ir.lvalue.extok.norm = rval.extok.norm
+                            if(rval.extok.finance_type != -1):
+                                ir.lvalue.extok.finance_type = rval.extok.finance_type
+                            else:
+                                continue
+                        _rval = rval.extok
+                        for field in _rval.fields:
+                            ir.lvalue.extok.add_field(field)
 
 
 
@@ -2572,6 +2573,8 @@ def propogate_parameter(lv, function, clear_initial_parameters = False):
                     copy_ftype(p, lv)
                     print(lv.extok)
                     print("Copied ftype")
+                    return True
+    return False
 #USSAGE: propogates a local variable with a global stored assignment
 def propogate_global(lv):
     global global_var_types
