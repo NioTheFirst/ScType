@@ -184,6 +184,7 @@ def copy_pc_token_type(_src, dest):
     _dest.finance_type = src[5]
     _dest.address = src[6]
     _dest.value = src[7]
+    print(f"Prop result: {_dest}")
 
 
 #USAGE: copies a finance type
