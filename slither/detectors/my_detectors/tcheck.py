@@ -506,7 +506,7 @@ def querry_type(ir):
         if(_ir.address == 'u'):
             _ir.address = save_addr
         
-        ##print(_ir)
+        print(_ir)
         print("[*]Type fetched successfully")
         return
     #print("[x]Failed to fetch type from type file, defaulting to human interface")
@@ -2237,7 +2237,7 @@ def combine_types(lir, rir, func = None):
     elif(func == "div"):
         copy_token_type(lir, tmp)
         copy_inv_token_type(rir, tmp)
-    print(f"Tmp: {tmp.extok}")
+    #print(f"Tmp: {tmp.extok}")
     return tmp
 
 
