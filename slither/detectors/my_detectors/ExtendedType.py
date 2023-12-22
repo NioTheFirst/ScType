@@ -161,7 +161,7 @@ class ExtendedType():
     def norm(self, a):
         #if(a == -404):
         #    a = '*'
-        if(a < 3):
+        if(isinstance(a, int) and a < 3):
             return
         self._norm = a
     
