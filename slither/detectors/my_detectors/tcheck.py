@@ -2747,7 +2747,7 @@ def _clear_type_node(node):
                 _ir.token_type_clear()
                 _ir.norm = 'u'
                 _ir.finance_type = -1
-                for field in _lv.fields:
+                for field in _ir.fields:
                     field.extok.token_type_clear()
                 #update_non_ssa(ir.lvalue)
 
