@@ -475,7 +475,7 @@ def querry_type(ir):
     if(str(ir.type) == "bytes"):
         ##print("SKIP bytes")
         return
-    if(str(ir.type).startswith("address") or "=> address" in str(ir.type)):
+    if(str(ir.type).startswith("address") or "=> address" in str(ir.type) or get_addr(ir) != None):
         #Address array and Mappings resulting in addressess.
         norm = get_addr(ir)
         if(norm == None):
