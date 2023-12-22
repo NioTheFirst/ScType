@@ -510,7 +510,8 @@ def get_var_type_tuple(function_name, var_name):
         temp[0] = stringToType(temp[0])
         temp[1] = stringToType(temp[1])
         #cast addr
-        temp[4] = stringToType(temp[4])
+        if(temo[4] != 'u'):
+            temp[4] = stringToType(temp[4])
         if(len(temp) < 6 and reuse_fin and var_name in reuse_fin_types):
             temp.append(reuse_fin_types[var_name])
         return tuple(temp)
