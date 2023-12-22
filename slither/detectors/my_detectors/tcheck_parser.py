@@ -530,13 +530,15 @@ def add_addr(function_name, var_name, norm):
     print(f"Addr:{key} : {norm}")
     address_type_hash[key] = norm
 
-def get_addr(function_name, var_name):
+def get_addr(function_name, var_name, chk_exists = False):
     global reuse_addr
     global reuse_addr_types
     key = function_name + "_" + var_name
     if(key in address_type_hash):
         return address_type_hash[key]
     else:
+        if(chk_exists):
+            return None
         if(reuse_addr and var_name in reuse_addr_types):
             add_addr(function_name, var_name, reuse_addr_types[var_name])
         else:

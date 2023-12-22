@@ -412,13 +412,13 @@ def read_type_file(ir):
     return tcheck_parser.get_var_type_tuple(function_name, var_name)
 
 #USAGE: gets an address from the type file
-def get_addr(ir):
+def get_addr(ir, chk_exists = False):
     _ir = ir.extok
     function_name = ir.parent_function
     var_name = _ir.name
     if(_ir.name == None):
         return None
-    return tcheck_parser.get_addr(function_name, var_name)
+    return tcheck_parser.get_addr(function_name, var_name, chk_exists)
         
 
 def append_typefile(ir, num = None, den = None, norm = None, lf = None):
@@ -475,7 +475,7 @@ def querry_type(ir):
     if(str(ir.type) == "bytes"):
         ##print("SKIP bytes")
         return
-    if(str(ir.type).startswith("address") or "=> address" in str(ir.type) or get_addr(ir) != None):
+    if(str(ir.type).startswith("address") or "=> address" in str(ir.type) or get_addr(ir, True) != None):
         #Address array and Mappings resulting in addressess.
         norm = get_addr(ir)
         if(norm == None):
