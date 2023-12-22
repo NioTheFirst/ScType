@@ -2948,6 +2948,7 @@ def _tcheck_function(function) -> []:
             ##print(fparam.name)
             fparam.parent_function = function.name
             querry_type(fparam)
+            print(f"Param1: {fparam.extok}")
         #generate param_cache
         new_param_cache = function_param_cache(function)
         if(not(mark_iteration) or current_function_marked):
@@ -2978,7 +2979,7 @@ def _tcheck_function(function) -> []:
         explored = set()
         paramno = 0
         for param in function.parameters:
-            #print(new_param_cache[paramno])
+            print(new_param_cache[paramno])
             copy_pc_token_type(new_param_cache[paramno], param)
             print(f"Param:{param.extok}")
             paramno+=1
