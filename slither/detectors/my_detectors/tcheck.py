@@ -3111,7 +3111,7 @@ def _mark_functions(contract):
             for son in node.sons:
                 fentry.add(son)
         function_check[function.name] = contains_bin
-        return
+        continue
         if contains_bin:
             print("[*]Marked")
         else:

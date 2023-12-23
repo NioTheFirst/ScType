@@ -138,7 +138,7 @@ def copy_token_type(dest, src):
     if _src.linked_contract:
         _dest.linked_contract = _src.linked_contract
     _dest.value = _src.value
-    print(f"Source address: {_src.address}")
+    #print(f"Source address: {_src.address}")
     _dest.address = _src.address
     for field in _src.fields:
         _dest.add_field(field)
@@ -163,15 +163,15 @@ def copy_inv_token_type(src, dest):
 def copy_pc_token_type(_src, dest):
     #src = copy.deepcopy(_src)
     #print(_src.extok)
-    print(_src)
+    #print(_src)
     src = _src
     src[0] = _src[0].copy()
     src[1] = _src[1].copy()
     _dest = dest.extok
     _dest.token_type_clear()
-    print(src)
+    #print(src)
     for n in src[0]:
-        print(n)
+        #print(n)
         _dest.add_num_token_type(n)
     for d in src[1]:
         _dest.add_den_token_type(d)
@@ -189,7 +189,7 @@ def copy_pc_token_type(_src, dest):
     _dest.finance_type = src[5]
     _dest.address = src[6]
     _dest.value = src[7]
-    print(f"Prop result: {_dest}")
+    #print(f"Prop result: {_dest}")
 
 
 #USAGE: copies a finance type
@@ -320,7 +320,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             pass_update(dest, rsrcl, func, rsrcr)
             return False
     key = (_rlfp, _rrfp)
-    print(f"Finance type key: {key}")
+    #print(f"Finance type key: {key}")
     if(func == "add"):
         if key in f_type_add:
             assign_ftype(f_type_add[key], dest)
@@ -370,7 +370,7 @@ def copy_norm(src, dest):
 #RETURNS: null
 def copy_token_tuple(ir, tt):
     #print("Check copy_toekn_tuple")
-    print(tt)
+    #print(tt)
     _ir = ir.extok
     #print("----")
     _ir.token_type_clear()
@@ -429,7 +429,7 @@ def _compare_token_type(A_types, B_types):
     Apos = len(A_types)-1
     Bpos = len(B_types)-1
     while(Apos >= 0 or Bpos >= 0):
-        print(A_types[Apos])
+        #print(A_types[Apos])
         if(Apos > -1 and A_types[Apos]>=abs_buf):
             if(A_types[Apos] > B_types[Bpos]):
                 B_buffer+=1
@@ -498,9 +498,9 @@ def propagate_fields(ir):
         #is an oobject, may have fields
         for field_name, field in fields:
             #search for type tuple in type file
-            print(_ir.function_name)
-            print(_ir.name)
-            print(field_name)
+            #print(_ir.function_name)
+            #print(_ir.name)
+           # print(field_name)
             if(_ir.function_name == None or _ir.name == None or field_name == None):
                 continue
             field_tt = tcheck_parser.get_field(_ir.function_name, _ir.name, field_name)
