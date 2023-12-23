@@ -55,8 +55,6 @@ class Address_label():
 
     @norm.setter
     def norm(self, norm):
-        if(self._head == -993 and norm == 0):
-            print("Changed here")
         self._norm = norm
 
     @property
@@ -68,7 +66,7 @@ class Address_label():
         self._set = x
 
     def union(self, a):
-        print(f"Head,Norm: {self.head}, {self._norm}   {a.head}, {a.norm}")
+        #print(f"Head,Norm: {self.head}, {self._norm}   {a.head}, {a.norm}")
         if(a.head > 0 and self.head > 0 and a.head != self.head):
             return False
         
@@ -134,7 +132,7 @@ def type_file_new_address(name_key, isGlobal):
         label_to_address[upcounter] = name_key
         label_sets[upcounter] = label
         address_to_label[name_key] = upcounter
-        print(f"Add to address_to_label {address_to_label}")
+        #print(f"Add to address_to_label {address_to_label}")
         
         return label
 
@@ -148,7 +146,7 @@ def new_address(ir, isGlobal):
     if(not(isinstance(_ir.address, int))):
         _ir.address = 'u'
     
-    print(f"prev address? {_ir.address}")
+    #print(f"prev address? {_ir.address}")
     if(_ir.address != 'u' and _ir.address != None):
         return label_sets[_ir.address]
     name_key = str(_ir.function_name)+":"+str(_ir.name)
@@ -158,7 +156,7 @@ def new_address(ir, isGlobal):
     #Create new
     if(isGlobal):
         global_address_counter+=1
-        print(f"global assignment: {global_address_counter}")
+        #print(f"global assignment: {global_address_counter}")
         _ir.address = global_address_counter
     else:
         temp_address_counter+=1
@@ -168,6 +166,6 @@ def new_address(ir, isGlobal):
     name_key = str(_ir.function_name)+":"+str(_ir.name)
     label_to_address[_ir.address] = name_key
     address_to_label[name_key] = _ir.address
-    print(_ir.address)
+    #print(_ir.address)
     return label
         
