@@ -133,7 +133,7 @@ def parse_finance_file(f_file):
     if(f_file == None):
         return
     with open(f_file, 'r') as finance_file:
-        print("Reading f file...")
+        #print("Reading f file...")
         for line in finance_file:
             _line = split_line(line)
             #Look for "f: "
@@ -174,7 +174,7 @@ def parse_finance_file(f_file):
                     else:
                         addr = address_handler.type_file_new_address(addr_key, False)
                     addr.finance_type = f_params[0]
-                print(addr)
+                #print(addr)
             elif(_line[0].strip() == "[sefa]"):
                 c_name = _line[1].strip()
                 f_name = _line[2].strip()
@@ -496,7 +496,7 @@ def parse_type_file(t_file, f_file = None):
 
 def add_var(function_name, var_name, type_tuple):
     key = function_name + '_' + var_name
-    print(f"Adding {key}: {type_tuple}")
+    #(f"Adding {key}: {type_tuple}")
     var_type_hash[key] = type_tuple
 
 def get_var_type_tuple(function_name, var_name):
@@ -506,7 +506,7 @@ def get_var_type_tuple(function_name, var_name):
     if(key in var_type_hash):
         #cast num and den
         temp = list(var_type_hash[key])
-        print(f"List: {temp}")
+        #print(f"List: {temp}")
         temp[0] = stringToType(temp[0])
         temp[1] = stringToType(temp[1])
         #cast addr
@@ -528,7 +528,7 @@ def get_alias(used_name):
 
 def add_addr(function_name, var_name, norm):
     key = function_name + "_" + var_name
-    print(f"Addr:{key} : {norm}")
+    #print(f"Addr:{key} : {norm}")
     address_type_hash[key] = norm
 
 def get_addr(function_name, var_name, chk_exists = False):
@@ -564,7 +564,7 @@ def stringToType(string):
         #search address
         _string = str(string)
         gstring = "global:"+str(string)
-        print(address_to_label)
+        #(address_to_label)
         if gstring in address_to_label:
             type = address_to_label[gstring]
         elif _string in address_to_label:
@@ -582,12 +582,12 @@ def get_tuple(tuple_name):
 
 def add_field(function_name, parent_name, field_name, type_tuples):
     key = function_name+'_'+parent_name+'_'+field_name
-    print(f"IN KEY: {key}")
+    #print(f"IN KEY: {key}")
     field_type_hash[key] = type_tuples
 
 def get_field(function_name, full_parent_name, field_name):
     key = function_name + '_' + full_parent_name + '_' + field_name
-    print(f"OUT KEY: {key}")
+    #print(f"OUT KEY: {key}")
     if key in field_type_hash:
         return field_type_hash[key]
     return None
@@ -611,7 +611,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
         ret_type_tuples = []
         pos = -1
         for ret_var in func_tuple:
-            print(f"Retvar: {ret_var}")
+            #print(f"Retvar: {ret_var}")
             pos+=1
             copy = ret_var[0]
             num_trans = ret_var[1]
@@ -625,8 +625,8 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
             ret_num = []
             ret_den = []
             param = parameters
-            for p in parameters:
-                print(p.name)
+            #for p in parameters:
+                #print(p.name)
             propogate_ftype = False
             if(ftype == 1000):
                 propogate_ftype = True
@@ -682,7 +682,7 @@ def get_ex_func_type_tuple_a(contract_name, function_name, parameters):
                     ftype = tcheck_propagation.pass_ftype_no_ir(ftype, cur_param.finance_type, "div")
             if(isinstance(norm, int) and norm > 0):
                 norm = param[norm-1].extok.norm
-                print(f"hers norm: {norm}")
+                #print(f"hers norm: {norm}")
             if(isinstance(addr, int) and lc > 0):
                 addr = param[lc-1].extok.address
             ret_type_tuple = (ret_num, ret_den, norm, value, addr, ftype)
@@ -754,9 +754,9 @@ def get_ref_type_tuple(ref_name):
     key = ref_name
     if(key in ref_type_hash):
         temp = list(ref_type_hash[key])
-        print(temp)
+        #print(temp)
         for n in range(len(temp[0])):
-            print(temp[0][n])
+            #print(temp[0][n])
             temp[0][n] = stringToType(temp[0][n])
         #temp[0] = stringToType(temp[0])
         for d in range(len(temp[1])):
