@@ -856,17 +856,17 @@ def check_type(ir) -> bool:
     #DEBUG
     try:
         if ir.lvalue and is_variable(ir.lvalue):
-            print("[i]Type for "+ir.lvalue.name)
-            print(ir.lvalue.extok)
+            #print("[i]Type for "+ir.lvalue.name)
+            #print(ir.lvalue.extok)
             if(isinstance(ir.lvalue, ReferenceVariable)):
                 ref = ir.lvalue
                 ref_root = ref.extok.ref_root
                 ref_field = ref.extok.ref_field
-                print(f"Root: {ref_root}, Field: {ref_field}")
+                #print(f"Root: {ref_root}, Field: {ref_field}")
                 if(ref_root and ref_field):
                     update_member(ir.lvalue.points_to_origin, ref_field, ir.lvalue)
             update_non_ssa(ir.lvalue)
-            print("XXXX")
+            #print("XXXX")
     except AttributeError:
         #do nothing
         y = 8008315
@@ -888,7 +888,7 @@ def type_conversion(ir):
     #if(debug_print):
         #convert_ssa(ir.lvalue)
     #convert_ssa(ir.variable)
-    print(f"Converting {str(ir.variable)}")
+    #print(f"Converting {str(ir.variable)}")
     if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
         #TMPxxx  CONVERT address(this)
         assign_const(ir.lvalue)
@@ -897,7 +897,7 @@ def type_conversion(ir):
         if(name_key in address_to_label):
             _addr = address_to_label[name_key]
         else:
-            print(f"new address made for {str(ir.variable)}")
+            #print(f"new address made for {str(ir.variable)}")
             addr = new_address(ir.lvalue, True)
             _addr = addr.head
             label_to_address[addr] = name_key
@@ -906,7 +906,7 @@ def type_conversion(ir):
         ir.lvalue.extok.address = _addr
         ir.lvalue.norm = 0
         ir.lvalue.link_function = current_contract_name
-        print(_addr)
+        #print(_addr)
         #addback = copy_token_tuple(ir.lvalue, ir.variable)
         addback = False
     else:    
