@@ -3335,5 +3335,5 @@ class tcheck(AbstractDetector):
             #        results.append(res)
         end_time = time.time()
         print(f"Function count: {function_count}")
-        print(f"Time elapsed: {end_time - start_time}")
+        #print(f"Time elapsed: {end_time - start_time}")
         return results
