@@ -727,7 +727,7 @@ def check_type(ir) -> bool:
     addback = False;
     #Assignmnet
     #Deubg pow
-    print(ir)
+    #print(ir)
     #if(debug_pow_pc):
     #    #print("**POW***")
     #    for pc in debug_pow_pc:
@@ -735,7 +735,7 @@ def check_type(ir) -> bool:
     #        #print("___")
     #    #print("**E")
     if isinstance(ir, Assignment):
-        print("asgn")
+        #print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
         ##print(get_norm(ir.rvalue))
         #Assign value if constant int assignement
@@ -782,14 +782,14 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Phi):
         #Phi (ssa) unpack
         addback = False
-        print("Phi")
+        #print("Phi")
         if(is_type_undef(ir.lvalue)):
-            for rval in ir.rvalues:
-                print(rval.extok)
+            #for rval in ir.rvalues:
+            #    print(rval.extok)
 
-            print()
-            print()
-            print("END==================================")
+            #print()
+            #print()
+            #print("END==================================")
             #if(not(propogate_parameter(ir.lvalue))):
             set = False
             for rval in ir.rvalues:
@@ -832,19 +832,19 @@ def check_type(ir) -> bool:
     elif isinstance(ir, EventCall):
         return False
     elif isinstance(ir, Index):
-        print("INDEX")
+        #print("INDEX")
         addback = type_ref(ir)
         #return addback
     elif isinstance(ir, Member):
-        print("MEMBER")
+        #print("MEMBER")
         addback = type_member(ir) 
         addback =  False
     elif isinstance(ir, Return):
-        print("RETURN")
+        #print("RETURN")
         ir.function._returns_ssa.clear()
         for y in ir.values:
             if(init_var(y)): 
-                print(y.extok)
+                #print(y.extok)
                 ir.function.add_return_ssa(y)
             else:
                 ir.function.add_return_ssa(create_iconstant())
