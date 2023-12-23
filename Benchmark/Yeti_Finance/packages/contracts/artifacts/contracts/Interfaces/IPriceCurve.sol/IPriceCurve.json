@@ -1,0 +1,154 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IPriceCurve",
+  "sourceName": "contracts/Interfaces/IPriceCurve.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "calculateDecayedFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_collateralVCInput",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_collateralVCBalancePost",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalVCBalancePre",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalVCBalancePost",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_collateralVCInput",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalCollateralVCBalance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalVCBalancePre",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalVCBalancePost",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFeeAndUpdate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getFeeCapAndTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "_lastFeePercent",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_lastFeeTime",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_whitelistAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setAddresses",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_decayTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDecayTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_lastFeePercent",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_lastFeeTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "setFeeCapAndTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

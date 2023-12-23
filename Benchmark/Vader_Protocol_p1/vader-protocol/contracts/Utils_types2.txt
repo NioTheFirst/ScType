@@ -1,0 +1,127 @@
+[*c],Utils
+[ta], global, FACTORY, 0
+[ta], global, POOLS, 0
+[ta], global, USDV, 0
+[ta], global, VADER, 0
+[ta], global, ROUTER, 0
+[ta], assetChecks, collateralAsset, 0
+[ta], assetChecks, debtAsset, 0
+[ta], isBase, token, 0
+[ta], isPool, token, 0
+[ta], calcValueInBase, token, 0
+[ta], calcValueInToken, token, 0
+[ta], calcValueOfTokenInToken, token1, 0
+[ta], calcValueOfTokenInToken, token2, 0
+[ta], calcSwapValueInBase, token, 0
+[ta], calcSwapValueInToken, token, 0
+[ta], requirePriceBounds, token, 0
+[ta], getRewardShare, token, 0
+[ta], getProtection, member, 0
+[ta], getProtection, token, 0
+[ta], getCoverage, member, 0
+[ta], getCoverage, token, 0
+[ta], getCollateralValueInBase, member, 0
+[ta], getCollateralValueInBase, collateralAsset, 0
+[ta], getColalteralValueInBase, debtAsset, 0
+[ta], getDebtValueInCollateral, member, 0
+[ta], getDebtValueInCollateral, collateralAsset, 0
+[ta], getDebtValueInCollateral, debtAsset, 0
+[ta], getInterestOwed, collateralAsset, 0
+[ta], getInterestOwed, debtAsset, 0
+[ta], getInterestPayment, collateralAsset, 0
+[ta], getInterstPayment, debtAsset, 0
+[ta], getDebtLoading, collateralAsset, 0
+[ta], getDebtAsset, debtAsset, 0
+[xf],sortArray
+[xf], init[sef], SYNTH, TOKEN, 1, {c, 1, -1, 0, 0}
+[sef], POOLS, getPoolAmounts, 2, {c, [1], [-1], 0, 0}, {c, [1], [-1], 0, 0}
+[sef], POOLS, getBaseAmount, 1, {c, [-1], [-1], 0}
+[sef], POOLS, pooledVADER, 1, {c, 1, -1, 0}
+[sef], POOLS, pooledUSDV, 1, {c, 2, -1, 0}
+[sef], ROUTER, reserveUSDV, 1, {c, 2, -1, 0}
+[sef], ROUTER, reserveVADER, 1, {c, 1, -1, 0}
+[sef], ROUTER, getMemberBaseDeposit, 1, {c, [2], [-1], 0}
+[sef], ROUTER, getMemberTokenDeposit, 1, {c, [2], [-1], 0}
+[sef], POOLS, getMemberUnits, 1, {c, [-1], [-1], 0}
+[sef], POOLS, getUnits, 1, {c, [1], [-1], 0}
+[sef], POOLS, getTokenAmount, 1, {c, [1], [-1], 0}
+[sef], ROUTER, getMemberLastDeposit, 1, {c, [2], [-1], 0}
+[sef], ROUTER, getSystemDebt, 1, {c, [2], [-1], 0}
+[t],global,POOLS,-2,-1,0, POOLS
+[t],global,USDV,-2,-1,0, USDV
+[t],global,VADER,-2,-1,0, VADER
+[t],global,ROUTER,-2,-1,0, ROUTER
+[t],global,one,-1,-1,0
+[t],global,FACTORY,-2,-1,0, FACTORY
+[t],global,_year,-1,-1,0
+[t],global,inited,-2,-1,0
+[t],global,_10k,-1,-1,0
+[t],init,_vader,-2,-1,0
+[t],init,_usdv,-2,-1,0
+[t],init,_router,-2,-1,0
+[t],init,_pools,-2,-1,0
+[t],init,_factory,-2,-1,0
+[t],assetChecks,collateralAsset,-2,-1,0, SYNTH
+[t],assetChecks,debtAsset,-2,-1,0, SYNTH
+[t],isBase,token,-2,-1,0
+[t],isPool,token,-2,-1,0
+[t],calcValueInBase,token,-2,-1,0
+[t],calcValueInBase,amount,-1,-1,0
+[t],calcValueInBase,_baseAmt,2,-1,0
+[t],calcValueInBase,_tokenAmt,1,-1,0
+[t],calcValueInToken,token,-2,-1,0
+[t],calcValueInToken,amount,-1,-1,0
+[t],calcValueInToken,_baseAmt,1,-1,0
+[t],calcValueInToken,_tokenAmt,2,-1,0
+[t],requirePriceBounds,token,-2,-1,0
+[t],requirePriceBounds,bound,-1,-1,0
+[t],requirePriceBounds,inside,-2,-1,0
+[t],requirePriceBounds,targetPrice,-1,-1,0
+[t],getRewardShare,token,-2,-1,0
+[t],getRewardShare,rewardReductionFactor,-1,-1,0
+[t],getProtection,member,-2,-1,0
+[t],getProtection,token,-2,-1,0
+[t],getProtection,basisPoints,-1,-1,0
+[t],getProtection,timeForFullProtection,-1,-1,0
+[t],getCollateralValueInBase,member,-2,-1,0
+[t],getCollateralValueInBase,collateral,1,-1,0
+[t],getCollateralValueInBase,collateralAsset,-2,-1,0, collateralContract
+[t],getCollateralValueInBase,debtAsset,-2,-1,0, debtContract
+[t],calcSwapValueInBase,_baseAmt,2,-1,0
+[t],calcSwapValueInBase,_tokenAmt,1,-1,0
+[t],getInterestPayment,collateralAsset,-2,-1,0, collateralContract
+[t],getInterestPayment,debtAsset,-2,-1,0, debtContract
+[t],getDebtLoading,collateralAsset,-2,-1,0, collateralContract
+[t],getDebtLoading,debtAsset,-2,-1,0, debtContract
+[t],calcPart,bp,-1,-1,4
+[t],calcPart,total,-1,-1,0
+[t],calcShare,part,-1,-1,0
+[t],calcShare,total,-1,-1,0
+[t],calcShare,amount,-1,-1,0
+[t],calcSwapOutput,x,-1,-1,0
+[t],calcSwapOutput,X,-1,-1,0
+[t],calcSwapOutput,Y,-1,-1,0
+[t],calcSwapFee,x,-1,-1,0
+[t],calcSwapFee,X,-1,-1,0
+[t],calcSwapFee,Y,-1,-1,0
+[t],calcSwapSlip,x,-1,-1,0
+[t],calcSwapSlip,X,-1,-1,0
+[t],calcLiquidityUnits,b,1,-1,0
+[t],calcLiquidityUnits,B,1,-1,0
+[t],calcLiquidityUnits,t,2,-1,0
+[t],calcLiquidityUnits,T,2,-1,0
+[t],calcLiquidityUnits,P,3,-1,0
+[t],getSlipAdustment,b,1,-1,0
+[t],getSlipAdustment,B,1,-1,0
+[t],getSlipAdustment,t,2,-1,0
+[t],getSlipAdustment,T,2,-1,0
+[t],calcSynthUnits,b,1,-1,0
+[t],calcSynthUnits,B,1,-1,0
+[t],calcSynthUnits,P,-1,-1,0
+[t],calcAsymmetricShare,u,1,-1,0
+[t],calcAsymmetricShare,U,1,-1,0
+[t],calcAsymmetricShare,A,1,-1,0
+[t],calcCoverage,B0,1,-1,0
+[t],calcCoverage,T0,2,-1,0
+[t],calcCoverage,B1,1,-1,0
+[t],calcCoverage,T1,2,-1,0

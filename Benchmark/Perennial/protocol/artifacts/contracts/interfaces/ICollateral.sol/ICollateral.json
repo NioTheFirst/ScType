@@ -1,0 +1,531 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ICollateral",
+  "sourceName": "contracts/interfaces/ICollateral.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "UFixed18",
+          "name": "totalMaintenance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "UFixed18",
+          "name": "totalCollateral",
+          "type": "uint256"
+        }
+      ],
+      "name": "CollateralCantLiquidate",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "CollateralInsufficientCollateralError",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "CollateralUnderLimitError",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "Fixed18",
+          "name": "amount",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "newShortfall",
+          "type": "uint256"
+        }
+      ],
+      "name": "AccountSettle",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Deposit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "FeeClaim",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "liquidator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "Liquidation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "newLiquidationFeeUpdated",
+          "type": "uint256"
+        }
+      ],
+      "name": "LiquidationFeeUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "protocolFee",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "productFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "ProductSettle",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "ShortfallResolution",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "UFixed18",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Withdrawal",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "claimFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        }
+      ],
+      "name": "collateral",
+      "outputs": [
+        {
+          "internalType": "UFixed18",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        }
+      ],
+      "name": "collateral",
+      "outputs": [
+        {
+          "internalType": "UFixed18",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "internalType": "UFixed18",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "depositTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "fees",
+      "outputs": [
+        {
+          "internalType": "UFixed18",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFactory",
+          "name": "factory_",
+          "type": "address"
+        },
+        {
+          "internalType": "Token18",
+          "name": "token_",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        }
+      ],
+      "name": "liquidatable",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        }
+      ],
+      "name": "liquidatableNext",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        }
+      ],
+      "name": "liquidate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "liquidationFee",
+      "outputs": [
+        {
+          "internalType": "UFixed18",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "internalType": "UFixed18",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "resolveShortfall",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "Fixed18",
+          "name": "amount",
+          "type": "int256"
+        }
+      ],
+      "name": "settleAccount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "UFixed18",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "settleProduct",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        }
+      ],
+      "name": "shortfall",
+      "outputs": [
+        {
+          "internalType": "UFixed18",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "Token18",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "UFixed18",
+          "name": "newLiquidationFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateLiquidationFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IProduct",
+          "name": "product",
+          "type": "address"
+        },
+        {
+          "internalType": "UFixed18",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

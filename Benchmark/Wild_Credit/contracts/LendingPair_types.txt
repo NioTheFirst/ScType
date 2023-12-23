@@ -1,0 +1,20 @@
+[*c], LendingPair
+[sefa], Clones, clone, 1, {t, 1}
+[sefa], LendingController, colFactor, 1, {c, -1, -1, 20, 'u'}
+[sefa], LendingController, liqFeeCaller, 1, {c, -1, -1, 20, 'u'}
+[sefa], LendingController, liqFeeSystem, 1, {c, -1, -1, 20, 'u'}
+[sefa], LendingController, tokenPrices, 2, {t, [1], [2], 0, -1}, {t, [2], [1], 0, -1}
+[sefa], UniswapV3Helper, positionTokens, 2, {c, [global:tokenA], [-1], 6, 'u'}, {c, [global:tokenB], [-1], 18, 'u'}
+[sefa], InterestRateModel, interestRatePerBlock, 1, {c, -1, -1, 20, 'u', global:InterestModel}
+[sefa], InterestRateModel, lpRate, 1, {c, -1, -1, 20, 'u', global:InterestModel}
+[sefa], Math, min, 1, {t, [1], [-1], 1, 'u'}
+[ta], global, tokenA, 6
+[ta], global, tokenB, 18
+[ta], global, lpToken, 18
+[ta], depositRepay, _token, 6
+[ta], borrowBalanceConverted, _borrowedToken, 6
+[ta], borrowBalanceConverted, _returnToken, 18
+[ta], supplyBalanceConverted, _suppliedToken, 6
+[ta], supplyBalanceConverted, _returnToken, 18
+[ta], convertTokenValues, _fromToken, 6
+[ta], convertTokenValues, _toToken, 18

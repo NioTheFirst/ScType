@@ -1,0 +1,49 @@
+[*c], Trading
+[sef], POSITION, ownerOf
+[sef], POSITION, trades
+[sef], _stableVault, stable
+[sef], PAIRS, idToAsset
+[sef], TRADINGEXTENSION, getRef
+[sef], _tigAsset, balanceOf, 1, {c, -1, -1, 0, f: 0}
+[sef], _marginAsset, decimals
+[sef], TRADINGEXTENSION, getVerifiedPrice, 2, {c, -1, -1, 0}, {c, -1, -1, 0}
+[sef], PAIRS, idToOi
+[xf], initiateMarketOrder
+[xf], initiateCloseOrder
+addToPosition
+[xf], initiateLimitOrder
+[xf], cancelLimitOrder
+[xf], addMargin
+[xf], removeMargin
+[xf], updateTpSl
+[xf], executeLimitOrder
+[xf], liquidatePosition
+[xf], setFees
+[t], global, position, -1, -1, 0, POSITION
+[t], global, tradingExtension, -1, -1, 0, TRADINGEXTENSION
+[t], global, DIVISION_CONSTANT
+[t], global, gov
+[t], global, openFees
+[t*], global, openFees, daoFees, f:10
+[t*], global, openFees, burnFees, f:10
+[t], global, limitDelay
+[t], global, limitOrderPriceRange
+[t], global, allowedVault
+[t], global, pairsContract, -1, -1, 0, PAIRS
+[t], global, maxWinPercent
+[t], global, _owner
+[t], global, proxyApprovals
+[t], global, _isTrustedForwarder
+[t], global, closeFees
+[t], global, blockDelay
+[t], global, blockDelayPassed
+[t], global, vaultFundingPercent
+
+[t], addToPosition, _id
+[t], addToPosition, _addMargin, f:0
+[t], addToPosition, _priceData
+[t], addToPosition, _stableVault
+[t], addToPosition, _marginAsset
+[t], addToPosition, _permitData
+[t], addToPosition, _trader
+[t*], addToPosition, _trade, asset, 1, -1, 0

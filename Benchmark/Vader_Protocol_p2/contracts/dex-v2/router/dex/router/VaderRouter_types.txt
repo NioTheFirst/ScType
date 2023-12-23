@@ -1,0 +1,26 @@
+[*c], VaderRouter
+
+[xf], constructor
+[xf], removeLiquidity
+[xf], swapTokensForExactTokens
+[xf], initialize
+[xf], calculateInGivenOut
+calculateOutGivenIn
+
+[sef], FACTORY, nativeAsset, 1, {c, 1, -1, 0}
+[sef], FACTORY, getPool, 1, {c, -1, -1, 0, BasePool}
+
+[t], global, factory, -1, -1, 0, FACTORY
+[t], global, reserve, -1, -1, 0, RESERVE
+[t], global, _ZERO_ADDRESS, -1, -1, 0, ZERO
+[t], global, _owner, -1, -1, 0, OWNER
+[t], global, _ONE_YEAR
+
+[t], swapExactTokensForTokens, amountIn, 2, -1, 0
+[t], swapExactTokensForTokens, amountOutMin, 1, -1, 0
+[t], swapExactTokensForTokens, path
+[t], swapExactTokensForTokens, to, -1, -1, 0, NATIVETOKEN
+[t], swapExactTokensForTokens, deadline
+
+[t], calculateOutGivenIn, amountIn, 2, -1, 0
+[t], calculateOutGivenIn, path

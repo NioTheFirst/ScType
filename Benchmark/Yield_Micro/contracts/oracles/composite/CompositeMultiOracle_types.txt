@@ -1,0 +1,10 @@
+[*c], CompositeMultiOracle
+[ta], global, tokA, 6
+[ta], global, tokB, 6
+[sefa], CastBytes32Bytes6, b6, 1, {t, 1}
+[sefa], Oracle, peek, 2, {c, [global:tokA], [global:tokB], '*', 'u'}, {c, [-1], [-1], 0, 'u'}
+[sefa], Oracle, get, 2, {c, global:tokA, global:tokB, '*', 'u'}, {c, -1, -1, 0, 'u'}
+[sefa], Oracle, decimals, 1, {c, [-1], [-1], 0, '*'}
+[t], _peek, source
+[t*], _peek, source, decimals, -1, -1, 0, 'u'
+

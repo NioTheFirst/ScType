@@ -1,0 +1,34 @@
+[*c], TwapOracle
+[sef], TOKEN0, decimals, 1, {c, 1, -1, -404}
+[sef], FixedPoint, decode144, 1, {t, [1], [-1], 1}
+[sef], FACTORY, getPair, 1, {c, -1, -1, 0, PAIR}
+[sef], UniswapV2OracleLibrary, currentCumulativePrices, 3, , , 
+[sef], PAIR, price0CumulativeLast
+[sef], PAIR, price1CumulativeLast
+[sef], PAIR, getReserves, 3, , , 
+[sef], VADERPOOL, getReserves, 3, , , 
+[sef], VADERPOOL, cumulativePrices, 3, , , , 
+[sef], AGGREGATOR, latestRoundData, 5, {c, -1, -1, 0}, {c, 2, -1, -404}, , , {c, -1, -1, 0}
+[tref], _aggregators, -1, -1, 0, AGGREGATOR
+[tref], _pairExists
+[t], global, VADER, -1, -1, 0, VADER
+[t], global, USDV, -1, -1, 0, USDV
+[t], global, _usdvEnabled
+[tref], _pairs, -1, -1, 0, PAIR
+[t], global, _owner
+[t], global, _updatePeriod
+[t], global, _vaderPool, -1, -1, 0, VADERPOOL
+[t], consult, token, -1, -1, 0, TOKEN0
+[t*], global, _pairs, token0, -1, -1, 0, TOKEN0
+[t*], global, _pairs, price1Average, 2, -1, -404
+[t*], global, _pairs.price1Average, _x, 1, -1, 0
+[t*], global, _pairs, token1, -1, -1, 0, TOKEN1
+[t], pairExists, token0
+[t], pairExists, token1
+[t], initialize, _usdv
+[t], initialize, _vader
+[t], registerAggregator, asset
+[t], registerAggregator, aggregator
+[t], registerPair, factory, -1, -1, 0, FACTORY
+[t], registerPair, token0
+[t], registerPair, token1

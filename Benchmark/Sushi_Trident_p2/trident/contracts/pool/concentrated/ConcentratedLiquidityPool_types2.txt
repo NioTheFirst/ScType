@@ -1,0 +1,76 @@
+[*c], ConcentratedLiquidityPool
+constructor
+mint
+burnSingle
+collect
+swap
+rangeFeeGrowth
+rangeSecondsInside
+[sef], BENTO, withdraw, 1, {c, -1, -1, 0}
+[sef], BENTO, transfer, 1, {c, -1, -1, 0}
+[sef], BENTO, balanceOf, 1, {c, -1, -1, 0}
+[sef], TickMath, getSqrtRatioAtTick, 1, {c, -1, -1, 0}
+[sef], DyDxMath, getDy, 1, {c, -1, -1, 0}
+[sef], DyDxMath, getDx, 1, {c, -1, -1, 0}
+[sef], DyDxMath, getLiquidityForAmounts
+[sef], Ticks, remove
+[sef], DEPLOYER, bento, 1, {c, -1, -1, 0, BENTO}
+[sef], DEPLOYER, barFeeTo
+[sef], DEPLOYER, barFee
+[sef], Ticks, getMaxLiquidity
+[sef], Ticks, insert
+[sef], Ticks, cross, 2, {c, -1, -1, 0}, {c, -1, -1, 0}
+[sef], FullMath, mulDiv, 1, {t, [1, 2], [3], 0}
+[sef], MANAGER, positionMintCallback
+[sef], FullMath, mulDivRoundingUp, 1, {t, [1,2], [3], 0}
+[sef], UnsafeMath, divRoundingUp, 1, {t, [1], [2], 0}
+[sef], SwapLib, handleFees, 4, {c, -1, -1, 0}, {c, -1, -1, 0}, {c, -1, -1, 0}, {c, -1, -1, 0}
+[t], global, MAX_TICK_LIQUIDITY
+[t], global, barFeeTo
+[t], global, bento, -1, -1, 0, BENTO
+[t], global, masterDeployer, -1, -1, 0, DEPLOYER
+[t], global, swapFee
+[t], global, tickSpacing
+[t], global, token0
+[t], global, token1
+[t], global, unlocked
+[t], global, barFee
+[t], global, feeGrowthGlobal0
+[t], global, feeGrowthGlobal1
+[t], global, lastObservation
+[t], global, liquidity
+[t], global, nearestTick
+[t], global, price
+[t], global, secondsPerLiquidity
+[t], global, ticks
+[t], global, reserve0
+[t], global, reserve1
+[t], global, token0ProtocolFee
+[t], global, token1ProtocolFee
+[t], global, MAX_FEE
+[t], global, positions
+[t*], global, positions, feeGrowthInside0Last
+[t*], global, positions, feeGrowthInside1Last
+[t], global, MAX_TICK
+[t], constructor, _masterDeployer, -1, -1, 0, DEPLOYER
+[t], constructor, _token0
+[t], constructor, _token1
+[t], constructor, _swapFee
+[t], constructor, _price
+[t], constructor, _tickSpacing
+
+[t], burn, lower
+[t], burn, upper
+[t], burn, amount
+[t], burn, recipient
+[t], burn, unwrapBento
+[t], collect, lower
+[t], collect, upper
+[t], collect, recipient
+[t], swap, inAmount
+[t], swap, recipient
+[t], rangeFeeGrowth, lowerTick
+[t], rangeFeeGrowth, upperTick
+[t], rangeSecondsInside, lowerTick
+[t], rangeSecondsInside, upperTick
+[t*], mint, mintParams, positionOwner, -1, -1, 0, MANAGER

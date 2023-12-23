@@ -1,0 +1,17 @@
+[*c], LiquidityBasedTWAP
+[sefa], UniswapV2Pair, token0, 1, {c, global:vader, 18}
+[sefa], UniswapV2Pair, token1, 1, {c, global:USDV, 6}
+[sefa], AggregatorV3, latestRoundData, 5, , {c, [global:vader], [global:USDV], 18, 'u'}, , , 
+[sefa], FixedPoint, decode144, 1, {t, 1, -1, 1, 'u'}
+[sefa], UniswapV2Pair, getReserves, 2, {c, [global:vader], -1, 18, 'u'}, {c, [global:USDV], -1, 6, 'u'}
+[sefa], UniswapV2OracleLibrary, currentCumulativePrices, 3, {c, [global:vader], -1, 18, 'u'} , {c, [global:USDV], -1, 6, 'u'} , 
+[sefa], AggregatorV3, decimals, 1, {c, -1, -1, 0, 18}
+[sefa], ERC20Metadata, decimals, 1, {c, -1, -1, 0, 6}
+[sefa], UniswapV2Pair, price1CumulativeLast, 1, {c, [global:USDV], -1, 6, 'u'}
+[sefa], UniswapV2Pair, price0CumulativeLast, 1, {c, [global:vader], -1, 18, 'u'}
+[sefa], VaderPoolV2, getReserves, 2, {c, [global:vader], -1, 18, 'u'}, {c, [global:USDV], -1, 6, 'u'}
+[sefa], VaderPoolV2, cumulativePrices, 3, {c, [global:vader], -1, 18, 'u'} , {c, [global:USDV], -1, 6, 'u'} ,
+[ta], global, vader, 18
+[ta], global, USDV, 6
+[ta], constructor, _vader, 18
+[ta], getChainlinkPrice, asset, 6

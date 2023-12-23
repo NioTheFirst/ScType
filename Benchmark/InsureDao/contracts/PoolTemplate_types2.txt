@@ -1,0 +1,70 @@
+[*c], PoolTemplate
+[sef], REF, name
+[sef], REF, symbol
+[sef], REF, decimals
+[sef], REF, getVault, 1, {c, -1, -1, 0, VAULT}
+[sef], VAULT, underlyingValue, 1, {c, 1, -1, 0}
+[sef], VAULT, attributionValue, 1, {t, [1], -1, 0}
+[sef], VAULT, withdrawValue
+[sef], VAULT, addValue
+[sef], VAULT, addValueBatch
+[sef], VAULT, debts
+[sef], VAULT, offsetDebt
+[sef], PARAM, getLockup, 1, {c, 1, -1, 0}
+[sef], PARAM, getWithdrawable
+[sef], PARAM, getGrace
+[sef], PARAM, getPremium, 1, {t, [1], -1, 0}
+[sef], PARAM, getFeeRate, 1, {c, -1, -1, 0}
+[sef], PARAM, getMinDate
+[sef], PARAM, getOwner
+[sef], INDEX, compensate
+[t], global, lockedAmount, 1, -1, 0
+[t], global, parameters, -1, -1, 0, PARAM
+[t], global, _decimals
+[t], global, MAGIC_SCALE_1E6
+[t], global, marketStatus
+[t], global, vault, -1, -1, 0, VAULT
+[t], global, _name
+[t], global, allInsuranceCount
+[t], global, attributionDebt
+[t], global, rewardPerCredit
+[t], global, totalCredit
+[t], global, insurances
+[t], global, _symbol
+[t], global, _balances, 1, -1, 0
+[t], global, _totalSupply, 1, -1, 0
+[t], global, withdrawalReq, 1, -1, 0
+[t], global, indicies
+[t], global, incident
+[tref], indexList, -1, -1, 0, INDEX
+[t], global, _allowances
+[t], global, registry
+[t], global, pendingEnd
+[t], initialize, _metaData
+[t], initialize, _conditions
+[tref], _references, -1, -1, 0, REF
+[t], deposit, _amount, 1, -1, 0
+[t], requestWithdraw, _amount, 1, -1, 0
+[t], withdraw, _amount, 1, -1, 0
+[t], unlockBatch, _ids
+[t], unlock, _id
+[t], allocateCredit, _credit
+[t], withdrawCredit, _credit
+[t], insure, _amount, 1, -1, 0
+[t], insure, _maxCost
+[t], insure, _span
+[t], insure, _target
+[t], redeem, _id
+[t], redeem, _merkleProof
+[t], transferInsurance, _id
+[t], transferInsurance, _to, -1, -1, 0, to
+[t], applyCover, _pending
+[t], applyCover, _payoutNumerator
+[t], applyCover, _payoutDenominator
+[t], applyCover, _incidentTimestamp
+[t], applyCover, _merkleRoot
+[t], applyCover, _rawdata
+[t], applyCover, _memo
+[t], valueOfUnderlying, _owner, -1, -1, 0, owner
+[t], pendingPremium, _index, -1, -1, 0, index
+[t], worth, _value

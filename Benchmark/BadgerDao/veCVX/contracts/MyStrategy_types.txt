@@ -1,0 +1,16 @@
+[*c],MyStrategy
+[ta], global, CVX, 6
+[ta], global, reward, 6
+[ta], global, want, 6
+[ta], global, WETH, 18
+[sef], CONTROLLER, vaults, 1, {c, [-1], [-1], 0, VAULT}
+[sefa], Controller, rewards
+[sef], SUSHI_ROUTER, swapExactTokensForTokens
+[sef], LOCKER, maximumBoostPayment
+[sefa], SettV3, getPricePerFullShare, 1, {c, [global:CVX], [global:want], 18, 'u'}
+[sefa], CvxLocker, lockedBalanceOf, 1, {c, [global:CVX], [-1], 6, 'u'}
+[sefa], CvxLocker, balanceOf, 1, {c, [global:CVX], [-1], 6, 'u'}
+[sef], CVX, balanceOf, 1, {c, [2], [-1], 0}
+[sef], WANT, balanceOf, 1, {c, [1], [-1], 0}
+[sef], REWARD, balanceOf, 1, {c, [1], [-1], 0}
+

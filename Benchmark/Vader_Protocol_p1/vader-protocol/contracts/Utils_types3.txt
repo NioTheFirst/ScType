@@ -1,0 +1,51 @@
+[*c],Utils
+[ta], global, FACTORY, 0
+[ta], global, POOLS, 0
+[ta], global, USDV, 0
+[ta], global, VADER, 0
+[ta], global, ROUTER, 0
+[ta], assetChecks, collateralAsset, 6
+[ta], assetChecks, debtAsset, 18
+[ta], isBase, token, 0
+[ta], isPool, token, 0
+[ta], calcValueInBase, token, 0
+[ta], calcValueInToken, token, 0
+[ta], calcValueOfTokenInToken, token1, 0
+[ta], calcValueOfTokenInToken, token2, 0
+[ta], calcSwapValueInBase, token, 0
+[ta], calcSwapValueInToken, token, 0
+[ta], requirePriceBounds, token, 0
+[ta], getRewardShare, token, 0
+[ta], getProtection, member, 0
+[ta], getProtection, token, 0
+[ta], getCoverage, member, 0
+[ta], getCoverage, token, 0
+[ta], getCollateralValueInBase, member, 0
+[ta], getCollateralValueInBase, collateralAsset, 6
+[ta], getCollateralValueInBase, debtAsset, 18
+[ta], getDebtValueInCollateral, member, 0
+[ta], getDebtValueInCollateral, collateralAsset, 6
+[ta], getDebtValueInCollateral, debtAsset, 18
+[ta], getInterestOwed, collateralAsset, 6
+[ta], getInterestOwed, debtAsset, 18
+[ta], getInterestPayment, collateralAsset, 6
+[ta], getInterestPayment, debtAsset, 18
+[ta], getDebtLoading, collateralAsset, 6
+[ta], getDebtLoading, debtAsset, 18
+[ta], getDebtAsset, debtAsset, 18
+[xf],sortArray
+[xf], init
+[sefa], SYNTH, TOKEN, 1, {c, global:POOLS}
+[sefa], POOLS, getPoolAmounts, 2, {c, [global:VADER], [-1], 0, 0}, {c, [global:USDV], [-1], 0, 0}
+[sefa], POOLS, getBaseAmount, 1, {c, [-1], [-1], 0, 0}
+[sefa], POOLS, pooledVADER, 1, {c, global:VADER, -1, 0, 0}
+[sefa], POOLS, pooledUSDV, 1, {c, global:USDV, -1, 0, 0}
+[sefa], ROUTER, reserveUSDV, 1, {c, global:USDV, -1, 0, 0}
+[sefa], ROUTER, reserveVADER, 1, {c, global:VADER, -1, 0, 0}
+[sefa], ROUTER, getMemberBaseDeposit, 1, {c, [global:USDV], [-1], 0, 0}
+[sefa], ROUTER, getMemberTokenDeposit, 1, {c, [global:VADER], [-1], 0, 0}
+[sefa], POOLS, getMemberUnits, 1, {c, [global:POOLS], [-1], 0, 0}
+[sefa], POOLS, getUnits, 1, {t, [1], [-1], 0, 0}
+[sefa], POOLS, getTokenAmount, 1, {c, [global:VADER], [-1], 0, 0}
+[sefa], ROUTER, getMemberLastDeposit, 1, {}
+[sefa], ROUTER, getSystemDebt, 1, {c, [global:POOLS], [-1], 0, 0}

@@ -1,0 +1,14 @@
+[*c], LenderPool
+[sefa], SavingsAccount, allowance, 1, {t, [2], [-1], 1, 'u'}
+[sefa], PooledCreditLine, getBorrowerAddress
+[sefa], PooledCreditLine, getPrincipal, 1, {c, [create:_borrowAsset], [-1], 6, 'u'}
+[sefa], Yield, getSharesForTokens, 1, {c, [global:shares], [-1], 18, 'u'}
+[sefa], SavingsAccount, withdrawShares
+[sefa], ERC1155ReceiverUpgradeable, onERC1155Received
+[sefa], PooledCreditLine, getEndsAt
+[sefa], SavingsAccount, deposit, 1, {c, [global:shares], [-1], 18, 'u'}
+[sefa], Yield, getTokensForShares, 1, {c, [global:tokens], [-1], 6, 'u'}
+[sefa], PooledCreditLine, getStatusAndUpdate
+[sefa], PooledCreditLine, liquidate, 2, {c, [global:collateral], 18}, {c, [global:collateral], [-1], 18, 'u'}
+[ta], constructor, _pooledCreditLine, 0
+[ta], create, _borrowAsset, 6

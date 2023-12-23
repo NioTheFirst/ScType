@@ -1,0 +1,49 @@
+[*c], LiquidityBasedTWAP
+[t], global, previousPrices, 1, -1, 0
+[t], global, totalLiquidityWeight, 1, -1, 0
+[t], global, twapData, -1, -1, 0, EXCHANGEPAIR
+[t*], global, twapData, lastMeasurement
+[t*], global, twapData, updatePeriod
+[t*], global, twapData, pastLiquidityEvaluation
+[t*], global, twapData, nativeTokenPriceAverage, 1, -1, -404
+[t*], global, twapData, nativeTokenPriceCumulative, 1, -1, -404
+[t*], global, twapData, foreignUnit, -1, -1, -404
+[t*], global, twapData, foreignAsset, -1, -1, 0, FOREIGNASSET
+[t], global, vaderPairs, -1, -1, 0, VADERPAIR
+[t], global, usdvPairs, -1, -1, 0, USDVPAIR
+[t], global, vader, 2, -1, 0, VADER
+[t], global, oracles, -1, -1, 0, ORACLE
+[t], global, _owner, -1, -1, 0, OWNER
+[t], global, vaderPool, -1, -1, 0, VADERPOOL
+[t], global, maxUpdateWindow, -1, -1, 0
+[sef], FixedPoint, decode144, 1, {t, [1], [-1], 1}
+[sef], VADERPOOL, getReserves, 2, {c, 1, -1, 0}, {c, 2, -1, 0}
+[sef], VADERPOOL, cumulativePrices, 3, {c, 1, -1, 0}, }, {c, -1, -1, 0}, {c, -1, -1, 0}
+[sef], VADERPAIR, token0, 1, {c, -1, -1, 0, TOK0}
+[sef], VADERPAIR, token1, 1, {c, -1, -1, 0, TOK1}
+[sef], VADERPAIR, getReserves, 3, , , 
+[sef], VADERPAIR, price0CumulativeLast
+[sef], VADERPAIR, price1CumulativeLast
+[sef], TOK0, decimals
+[sef], TOK1, decimals
+[sef], ORACLE, latestRoundData, 5, {c, -1, -1, 0}, {c, 2, -1, 0}, {c, -1, -1, 0}, {c, -1, -1, 0}, {c, -1, -1, 0}
+[sef], ORACLE, decimals
+[sef], ASSET, decimals
+[sef], UniswapV2OracleLibrary, currentCumulativePrices, 3, , , 
+[t], constructor, _vader, -1, -1, 0, VADER
+[t], constructor, _vaderPool
+[t], getChainlinkPrice, asset, -1, -1, 0, ASSET
+[t], setupVader, pair, -1, -1, 0, VADERPAIR
+[t], setupVader, oracle, -1, -1, 0, ORACLE
+[t], setupVader, updatePeriod
+[t], setupVader, vaderPrice
+[t], addVaderPair, pair
+[t], addVaderPair, oracle
+[t], addVaderPair, updatePeriod
+[t], setupUSDV, foreignAsset, -1, -1, 0, ASSET
+[t], setupUSDV, oracle, 1, -1, 0, ORACLE
+[t], setupUSDV, updatePeriod
+[t], setupUSDV, usdvPrice
+[t], addUSDVPair, foreignAsset
+[t], addUSDVPair, oracle
+[t], addUSDVPair, updatePeriod

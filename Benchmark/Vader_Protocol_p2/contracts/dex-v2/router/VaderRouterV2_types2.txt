@@ -1,0 +1,33 @@
+[*c], VaderRouterV2
+[sef], POOL, positionForeignAsset, 1, {c, -1, -1, 0, tokB}
+[sef], POOL, burn, 3, {c, 1, -1, 0}, {c, 2, -1, 0}, {c, 1, -1, 6}
+[sef], POOL, mint
+[sef], POOL, nativeAsset
+[sef], POOL, swap
+[sef], POOL, doubleSwap
+[t], global, _ZERO_ADDRESS
+[t], global, nativeAsset, -1, -1, 0, tokA
+[t], global, pool, -1, -1, 0, POOL
+[t], global, _owner
+[t], global, _ONE_YEAR
+[t], global, reserve, -1, -1, 0, VaderReserve
+[t], removeLiquidity, tokenA, -1, -1, 0, tokA
+[t], removeLiquidity, tokenB, -1, -1, 0, tokB
+[t], removeLiquidity, id
+[t], removeLiquidity, amountAMin, 1, -1, 0
+[t], removeLiquidity, amountBMin, 2, -1, 0
+[t], removeLiquidity, to
+[t], removeLiquidity, deadline
+[t], addLiquidity, tokenA
+[t], addLiquidity, tokenB
+[t], addLiquidity, amountADesired, 2, -1, 0
+[t], addLiquidity, amountBDesired, 1, -1, 0
+[t], addLiquidity, a
+[t], addLiquidity, b
+[t], addLiquidity, to
+[t], addLiquidity, deadline
+[t], swapExactTokensForTokens, amountIn
+[t], swapExactTokensForTokens, amountOutMin
+[t], swapExactTokensForTokens, path
+[t], swapExactTokensForTokens, to
+[t], swapExactTokensForTokens, deadline

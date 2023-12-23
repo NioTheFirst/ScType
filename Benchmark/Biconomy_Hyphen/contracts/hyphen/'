@@ -1,0 +1,53 @@
+[*c], LiquidityPool
+[sef], LPP, getCurrentLiquidity
+[sef], LPP, totalLPFees
+[sef], LPP, getSuppliedLiquidityByToken
+[sef], TokenManager, getTokensInfo
+[sef], TokenManager, getDepositConfig
+initialize
+setTrustedForwarder
+setLiquidityProviders
+setExecutorManager
+getCurrentLiquidity
+depositErc20
+getRewardAmount
+[xf], depositNative
+[xf], sendFundsToUser
+[xf], getTransferFee
+[xf], withdrawErc20GasFee
+[xf], transfer
+[t], global, _pauser
+[t], global, executorManager
+[t], global, NATIVE
+[tref], incentivePool, 1, -1, 0
+[t], global, tokenManager, -1, -1, 0, TokenManager
+[t], global, _owner
+[t], global, _trustedForwarder
+[t], global, processedHash
+[t], global, gasFeeAccumulatedByToken
+[t], global, gasFeeAccumulated
+[t], global, liquidityProviders, -1, -1, 0, LPP
+[t], global, BASE_DIVISOR, -1, -1, 6
+[t], global, _NOT_ENTERED
+[t], global, baseGas
+[t], global, _ENTERED
+[t], global, _status
+
+[t], getAmountToTransfer, initialGas
+[t], getAmountToTransfer, tokenAddress
+[t], getAmountToTransfer, amount, 1, -1, 0
+[t], getAmountToTransfer, tokenGasPrice
+[t], initialize, _executorManagerAddress, -1, -1, 0, EXECMANAGER
+[t], initialize, _pauser, -1, -1, 0, PAUSER
+[t], initialize, _trustedForwarder, -1, -1, 0, FORWARD
+[t], initialize, _tokenManager, -1, -1, 0, TokenManager
+[t], initialize, _liquidityProviders, -1, -1, 0, LPROVIDERS
+[t], setTrustedForwarder, trustedForwarder, -1, -1, 0, FORWARD
+[t], setLiquidityProviders, _liquidityProviders, -1, -1, 0, LPROVIDER
+[t], setExecutorManager, _executorManagerAddress, -1, -1, 0, EXECMANAGER
+[t], getCurrentLiquidity, tokenAddress, -1, -1, 0, TOKADDRESS
+[t], depositErc20, toChainId
+[t], depositErc20, tokenAddress, -1, -1, 0, TOKADDRESS
+[t], depositErc20, receiver, -1, -1, 0, RECIEVER
+[t], depositErc20, amount, 1, -1, 6
+[t], depositErc20, tag

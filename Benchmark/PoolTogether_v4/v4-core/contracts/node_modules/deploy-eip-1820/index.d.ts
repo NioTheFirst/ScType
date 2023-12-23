@@ -1,0 +1,1 @@
+declare module 'deploy-eip-1820';

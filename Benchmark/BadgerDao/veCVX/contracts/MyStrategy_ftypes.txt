@@ -1,0 +1,10 @@
+[*c],MyStrategy
+[t],global,MAX_FEE,-1,-1,0, 'u', f:12
+[t], global, withdrawalFee, f:12
+[t], CVXToWant, cvx, f:0
+[t], wantToCVX, want, f:0
+[t], _deposit, _amount, f:0
+[sefa], SettV3, getPricePerFullShare, 1, {c, [global:CVX], [global:want], 18, 'u', f:0}
+[sefa], CvxLocker, lockedBalanceOf, 1, {c, [global:CVX], [-1], 6, 'u', f:0}
+[sefa], CvxLocker, balanceOf, 1, {c, [global:CVX], [-1], 6, 'u', f:0}
+

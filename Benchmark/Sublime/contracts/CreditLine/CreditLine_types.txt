@@ -1,0 +1,8 @@
+[*c], CreditLine
+[sefa], PriceOracle, getLatestPrice, 2, {t, [1], [2], 1, 'u'}, 
+[t], global, protocolFeeFraction, -1, -1, 30, 'u'
+[t], global, creditLineConstants
+[t*], borrow, creditLineConstants, borrowAsset, global:tokB, 18
+[t*], liquidate, creditLineConstants, collateralAsset, global:tokA, 6
+[t*], liquidate, creditLineConstants, borrowAsset, global:tokB, 18
+[t], liquidate, amount, global:tokA, -1, 6, 'u'
