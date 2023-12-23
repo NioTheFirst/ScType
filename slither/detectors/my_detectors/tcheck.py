@@ -244,6 +244,7 @@ def pass_ftype(dest, left, func, right = None):
 #USAGE: prints a param_cache
 #RETURNS: nothing
 def print_param_cache(param_cache):
+    return
     param_no = 0
     for param in param_cache:
         print("Param: " + str(param_no))
@@ -310,14 +311,14 @@ def add_param_cache(function, new_param_cache):
     match_param = -100
     #for pc in fpc:
         ##print_param_cache(pc)
-    print(f"New param cache {new_param_cache}")
+    #print(f"New param cache {new_param_cache}")
     if(len(fpc) == 0):
         add_param = True
     for a in range(len(fpc)):
         cur_param_cache = fpc[a]
         paramno = 0
         dif_cur_param = False
-        print(f"Old param cache: {cur_param_cache}")
+        #print(f"Old param cache: {cur_param_cache}")
         for cur_param in cur_param_cache:
             #compare cur_param with new_param_cache[paramno]
             seen_n = {}
@@ -467,7 +468,7 @@ def querry_type(ir):
     if(ir.tname != None):
         uxname = ir.tname
     uxname = str(uxname)
-    print(f"Finding type for {uxname}({ir.type} ... )")
+    #print(f"Finding type for {uxname}({ir.type} ... )")
     if(str(ir.type) == "bool"):
         ##print("SKIP bool")
         assign_const(ir)
@@ -479,14 +480,14 @@ def querry_type(ir):
         #Address array and Mappings resulting in addressess.
         norm = get_addr(ir)
         if(norm == None):
-            print("Decimals for \"" + uxname + "\": ")
+            #print("Decimals for \"" + uxname + "\": ")
             input_str = input()
             if(input_str != '*'):
                 norm = int(input_str)
         label = new_address(ir)
         label.norm = norm
         ir.extok.norm = norm
-        print(label)
+        #print(label)
         return
 
 
@@ -506,8 +507,8 @@ def querry_type(ir):
         if(_ir.address == 'u'):
             _ir.address = save_addr
         
-        print(_ir)
-        print("[*]Type fetched successfully")
+        #print(_ir)
+        #print("[*]Type fetched successfully")
         return
     #print("[x]Failed to fetch type from type file, defaulting to human interface")
     #Commented out to get necessary(?) functions
@@ -515,7 +516,7 @@ def querry_type(ir):
     assign_const(ir)
     norm = get_norm(ir)
     #Assign norm to constants
-    print(f"Value: {get_values(ir)}")
+    #print(f"Value: {get_values(ir)}")
     if(norm != 'u'):
         ir.extok.norm = norm
     return True
@@ -727,7 +728,7 @@ def check_type(ir) -> bool:
     addback = False;
     #Assignmnet
     #Deubg pow
-    print(ir)
+    #print(ir)
     #if(debug_pow_pc):
     #    #print("**POW***")
     #    for pc in debug_pow_pc:
@@ -856,8 +857,8 @@ def check_type(ir) -> bool:
     #DEBUG
     try:
         if ir.lvalue and is_variable(ir.lvalue):
-            print("[i]Type for "+ir.lvalue.name)
-            print(ir.lvalue.extok)
+            #print("[i]Type for "+ir.lvalue.name)
+            #print(ir.lvalue.extok)
             if(isinstance(ir.lvalue, ReferenceVariable)):
                 ref = ir.lvalue
                 ref_root = ref.extok.ref_root
@@ -910,7 +911,7 @@ def type_conversion(ir):
         #addback = copy_token_tuple(ir.lvalue, ir.variable)
         addback = False
     else:    
-        print(ir.variable.extok)
+        #print(ir.variable.extok)
         addback = type_asn(ir.lvalue, ir.variable)
         ir.lvalue.extok.value = ir.variable.extok.value
         if(ir.lvalue.extok.norm != get_norm(ir.variable)):
@@ -928,7 +929,7 @@ def type_conversion(ir):
                     contract_name = instance_name[pos+1:]
                     break
             ir.lvalue.link_function = contract_name
-            print(contract_name)
+            #Sprint(contract_name)
        
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
@@ -964,7 +965,7 @@ def type_included_hlc(ir, dest, function, contract_name):
     for param in ir.arguments:
         ##print(param)
         init_var(param)
-        print(param.extok)
+        #print(param.extok)
         if(is_type_const(param)):
             assign_const(param)
         #elif(is_type_undef(param)):
@@ -972,8 +973,8 @@ def type_included_hlc(ir, dest, function, contract_name):
         #    return 1
     #generate param cache
     new_param_cache = function_hlc_param_cache(ir)
-    print("High level cal param_cache")
-    print_param_cache(new_param_cache)
+    #print("High level cal param_cache")
+    #print_param_cache(new_param_cache)
     added = -100
     #if(not(mark_iteration) or current_function_marked):
     #print("Included ir: ")
@@ -1046,7 +1047,7 @@ def querry_fc(ir) -> int:
             aliased_cont_name = get_alias(cont_name[1:])
         if(aliased_cont_name != None):
             included_func = get_cf_pair(aliased_cont_name, func_name)
-    print(f"Found: {included_func}")
+    #print(f"Found: {included_func}")
 
     if(included_func != None):
 
@@ -1054,7 +1055,7 @@ def querry_fc(ir) -> int:
             return 2
         return 2
 
-    print(f"Written func info: {cont_name}, {func_name}")
+    #print(f"Written func info: {cont_name}, {func_name}")
     #
     #if (isVar and (str(dest.type)[0] == "I" or str(dest.type)[0] == "i")):
     #    cont_name = str(dest.type)[1:]
@@ -1105,9 +1106,9 @@ def handle_balance_functions(ir):
     norm = 'u'
     fin_type = -1
     isbfunc = False
-    print('Handling balance function!')
+    #print('Handling balance function!')
     #TODO check the address
-    print(_dest.address)
+    #print(_dest.address)
     if(_dest.address == 'u'):
         _dest.address = new_address(dest, True).head
     #Use this to check for changes!
@@ -1151,7 +1152,7 @@ def handle_balance_functions(ir):
         if(numargs >= 3):
             probarg = args[2]
         if(probarg ==  None):
-            print("TranferFrom does not have 3 arguments")
+            #print("TranferFrom does not have 3 arguments")
             return False
         #Test for safe
         if(not(is_type_const(probarg) or is_type_undef(probarg))):
@@ -1213,7 +1214,7 @@ def type_hlc(ir) ->bool:
     #just query the user for the data (beta)
     #print(ir)
     global function_hlc
-    print("High Call: "+str(ir.function_name))
+    #print("High Call: "+str(ir.function_name))
     ##print("func name:" + ir.function.name)
     ##print("other func name:" + str(ir.function_name))
     param = ir.arguments
