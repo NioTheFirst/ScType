@@ -97,8 +97,9 @@ f_type_mul = {
 }
 
 f_type_div = {
-    (0, 0) : 0,
-    (1, 1): 1, #net bal / net bal (?)
+    (0, 0) : 40,
+    (1, 1): 40, #net bal / net bal (?)
+    (2, 2): 40,
     (0, 10) : 14, #raw balance / c. fee ratio (t)= transaction fee (d)
     (2, 10) : 14, #accrued balance / c. fee ratio (t) = transaction fee (d)
     (13, 10): 11, #t. fee (n) / fee ratio = t. fee

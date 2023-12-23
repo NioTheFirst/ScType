@@ -2105,7 +2105,7 @@ def compare_norm(lv, varA, varB, func = None):
     _varB = varB.extok
     A_norm = _varA.norm
     B_norm = _varB.norm
-    print(f"A: {A_norm} B: {B_norm}")
+    #print(f"A: {A_norm} B: {B_norm}")
     if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
         if(isinstance(varA, Constant) and varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
             add_errors(lv)
@@ -2732,7 +2732,7 @@ def _clear_type_node(node):
     global debug_pow_pc
     ##print("clearning node...")
     for ir in node.irs_ssa:
-        print("clearing ir...?")
+        #print("clearing ir...?")
         #if(debug_pow_pc):
         #    for pc in debug_pow_pc:
         #        #print("BEFORE")
@@ -2752,7 +2752,7 @@ def _clear_type_node(node):
                     field.extok.token_type_clear()
                 #update_non_ssa(ir.lvalue)
 
-                print(f"[i] {ir.lvalue.name} cleared")
+                #print(f"[i] {ir.lvalue.name} cleared")
                 ##print(_ir)
     #Clear variables read
     '''
