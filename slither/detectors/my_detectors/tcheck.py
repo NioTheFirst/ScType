@@ -727,7 +727,7 @@ def check_type(ir) -> bool:
     addback = False;
     #Assignmnet
     #Deubg pow
-    #print(ir)
+    print(ir)
     #if(debug_pow_pc):
     #    #print("**POW***")
     #    for pc in debug_pow_pc:
@@ -735,7 +735,7 @@ def check_type(ir) -> bool:
     #        #print("___")
     #    #print("**E")
     if isinstance(ir, Assignment):
-        #print("asgn")
+        print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
         ##print(get_norm(ir.rvalue))
         #Assign value if constant int assignement
@@ -782,14 +782,14 @@ def check_type(ir) -> bool:
     elif isinstance(ir, Phi):
         #Phi (ssa) unpack
         addback = False
-        #print("Phi")
+        print("Phi")
         if(is_type_undef(ir.lvalue)):
             for rval in ir.rvalues:
                 print(rval.extok)
 
-            #print()
-            #print()
-            #print("END==================================")
+            print()
+            print()
+            print("END==================================")
             #if(not(propogate_parameter(ir.lvalue))):
             set = False
             for rval in ir.rvalues:
@@ -832,19 +832,19 @@ def check_type(ir) -> bool:
     elif isinstance(ir, EventCall):
         return False
     elif isinstance(ir, Index):
-        #print("INDEX")
+        print("INDEX")
         addback = type_ref(ir)
         #return addback
     elif isinstance(ir, Member):
-        #print("MEMBER")
+        print("MEMBER")
         addback = type_member(ir) 
         addback =  False
     elif isinstance(ir, Return):
-        #print("RETURN")
+        print("RETURN")
         ir.function._returns_ssa.clear()
         for y in ir.values:
             if(init_var(y)): 
-                #print(y.extok)
+                print(y.extok)
                 ir.function.add_return_ssa(y)
             else:
                 ir.function.add_return_ssa(create_iconstant())
@@ -856,17 +856,17 @@ def check_type(ir) -> bool:
     #DEBUG
     try:
         if ir.lvalue and is_variable(ir.lvalue):
-            #print("[i]Type for "+ir.lvalue.name)
-            #print(ir.lvalue.extok)
+            print("[i]Type for "+ir.lvalue.name)
+            print(ir.lvalue.extok)
             if(isinstance(ir.lvalue, ReferenceVariable)):
                 ref = ir.lvalue
                 ref_root = ref.extok.ref_root
                 ref_field = ref.extok.ref_field
-                #print(f"Root: {ref_root}, Field: {ref_field}")
+                print(f"Root: {ref_root}, Field: {ref_field}")
                 if(ref_root and ref_field):
                     update_member(ir.lvalue.points_to_origin, ref_field, ir.lvalue)
             update_non_ssa(ir.lvalue)
-            #print("XXXX")
+            print("XXXX")
     except AttributeError:
         #do nothing
         y = 8008315
@@ -888,7 +888,7 @@ def type_conversion(ir):
     #if(debug_print):
         #convert_ssa(ir.lvalue)
     #convert_ssa(ir.variable)
-    #print(f"Converting {str(ir.variable)}")
+    print(f"Converting {str(ir.variable)}")
     if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
         #TMPxxx  CONVERT address(this)
         assign_const(ir.lvalue)
@@ -897,7 +897,7 @@ def type_conversion(ir):
         if(name_key in address_to_label):
             _addr = address_to_label[name_key]
         else:
-            #print(f"new address made for {str(ir.variable)}")
+            print(f"new address made for {str(ir.variable)}")
             addr = new_address(ir.lvalue, True)
             _addr = addr.head
             label_to_address[addr] = name_key
@@ -906,11 +906,11 @@ def type_conversion(ir):
         ir.lvalue.extok.address = _addr
         ir.lvalue.norm = 0
         ir.lvalue.link_function = current_contract_name
-        #print(_addr)
+        print(_addr)
         #addback = copy_token_tuple(ir.lvalue, ir.variable)
         addback = False
     else:    
-        #print(ir.variable.extok)
+        print(ir.variable.extok)
         addback = type_asn(ir.lvalue, ir.variable)
         ir.lvalue.extok.value = ir.variable.extok.value
         if(ir.lvalue.extok.norm != get_norm(ir.variable)):
@@ -928,7 +928,7 @@ def type_conversion(ir):
                     contract_name = instance_name[pos+1:]
                     break
             ir.lvalue.link_function = contract_name
-            #print(contract_name)
+            print(contract_name)
        
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
@@ -964,7 +964,7 @@ def type_included_hlc(ir, dest, function, contract_name):
     for param in ir.arguments:
         ##print(param)
         init_var(param)
-        #print(param.extok)
+        print(param.extok)
         if(is_type_const(param)):
             assign_const(param)
         #elif(is_type_undef(param)):
@@ -972,7 +972,7 @@ def type_included_hlc(ir, dest, function, contract_name):
         #    return 1
     #generate param cache
     new_param_cache = function_hlc_param_cache(ir)
-    #print("High level cal param_cache")
+    print("High level cal param_cache")
     print_param_cache(new_param_cache)
     added = -100
     #if(not(mark_iteration) or current_function_marked):
@@ -1046,7 +1046,7 @@ def querry_fc(ir) -> int:
             aliased_cont_name = get_alias(cont_name[1:])
         if(aliased_cont_name != None):
             included_func = get_cf_pair(aliased_cont_name, func_name)
-    #print(f"Found: {included_func}")
+    print(f"Found: {included_func}")
 
     if(included_func != None):
 
@@ -1054,7 +1054,7 @@ def querry_fc(ir) -> int:
             return 2
         return 2
 
-    #print(f"Written func info: {cont_name}, {func_name}")
+    print(f"Written func info: {cont_name}, {func_name}")
     #
     #if (isVar and (str(dest.type)[0] == "I" or str(dest.type)[0] == "i")):
     #    cont_name = str(dest.type)[1:]
@@ -1105,9 +1105,9 @@ def handle_balance_functions(ir):
     norm = 'u'
     fin_type = -1
     isbfunc = False
-    #print('Handling balance function!')
+    print('Handling balance function!')
     #TODO check the address
-    #print(_dest.address)
+    print(_dest.address)
     if(_dest.address == 'u'):
         _dest.address = new_address(dest, True).head
     #Use this to check for changes!
@@ -1151,7 +1151,7 @@ def handle_balance_functions(ir):
         if(numargs >= 3):
             probarg = args[2]
         if(probarg ==  None):
-            #print("TranferFrom does not have 3 arguments")
+            print("TranferFrom does not have 3 arguments")
             return False
         #Test for safe
         if(not(is_type_const(probarg) or is_type_undef(probarg))):
@@ -1213,7 +1213,7 @@ def type_hlc(ir) ->bool:
     #just query the user for the data (beta)
     #print(ir)
     global function_hlc
-    #print("High Call: "+str(ir.function_name))
+    print("High Call: "+str(ir.function_name))
     ##print("func name:" + ir.function.name)
     ##print("other func name:" + str(ir.function_name))
     param = ir.arguments
@@ -1233,7 +1233,7 @@ def type_hlc(ir) ->bool:
     temp = ir.lvalue.name
     ##print(temp)
     #typecheck abnormal function calls
-    #print("Running querryfc")
+    print("Running querryfc")
     res = querry_fc(ir)
     if(res == 2):
         return False
@@ -1253,10 +1253,10 @@ def update_member(member, fieldf, copy_ir):
         return
     _member = member.extok
 
-    #print("#################")
-    #print(f"Member: {member.extok}")
-    #print(f"Fieldf: {fieldf.extok}")
-    #print(f"Copy_ir: {copy_ir.extok}")
+    print("#################")
+    print(f"Member: {member.extok}")
+    print(f"Fieldf: {fieldf.extok}")
+    print(f"Copy_ir: {copy_ir.extok}")
 
     added = False
     ptfield = None
@@ -1268,21 +1268,21 @@ def update_member(member, fieldf, copy_ir):
             ptfield = field
             break
 
-    #print()
-    #print(f"Added: {added}")
+    print()
+    print(f"Added: {added}")
     if(added):
         copy_token_type(copy_ir, ptfield)
         asn_norm(ptfield, copy_ir.extok.norm)
         pass_ftype(ptfield, copy_ir, "assign")
-        #print("Added to member...")
-        #print(ptfield.extok)
+        print("Added to member...")
+        print(ptfield.extok)
         _field = ptfield.extok
     else:
         copy_token_type(copy_ir, fieldf)
         pass_ftype(fieldf, copy_ir, "assign")
         asn_norm(fieldf, copy_ir.extok.norm)
         _member.add_field(fieldf)
-        #print("Add new member...")
+        print("Add new member...")
 
         _field = fieldf.extok
     if(not(_field.function_name)):
@@ -1319,9 +1319,9 @@ def type_member(ir)->bool:
 
     #Check for field in typefile first:
     field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
-    #print(f"FTT: {field_type_tuple}")
+    print(f"FTT: {field_type_tuple}")
     if(field_type_tuple == None):
-        #print("No field found")
+        print("No field found")
         #TURN OFF ASSUMPTION
         #assign_const(ir.lvalue)
         #querry_type(ir.lvalue)
@@ -1330,7 +1330,7 @@ def type_member(ir)->bool:
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
     #_lv.#print_fields()
-    #print(f"Current field: {ir.lvalue.extok}")
+    print(f"Current field: {ir.lvalue.extok}")
     if(not(is_type_undef(ir.lvalue))):
         #Copy backwards from the dest (ir.lvalue) to the field
         fieldSet = False
@@ -1393,7 +1393,7 @@ def type_ref(ir)->bool:
 
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left) or is_type_const(ir.variable_left)):
-        #print("REFERENCE LEFT VALUE PROPAGATION")
+        print("REFERENCE LEFT VALUE PROPAGATION")
         #print(ir.variable_left.extok)
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_left, ir.lvalue)
@@ -1403,7 +1403,7 @@ def type_ref(ir)->bool:
 
     #check if the index of the variable has a type that is not a constant
     if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
-        #print("REFERENCE RIGHT VALUE PROPAGATION")
+        print("REFERENCE RIGHT VALUE PROPAGATION")
         if(ir.variable_right.extok.is_address()):
             ir.lvalue.extok.token_type_clear()
             addr = ir.variable_right.extok.address
@@ -1429,7 +1429,7 @@ def type_ref(ir)->bool:
     ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
         ##print("REFERENCE TYPE READ")
-        #print(f"REf tuple: {ref_tuple}")
+        print(f"REf tuple: {ref_tuple}")
         copy_token_tuple(ir.lvalue, ref_tuple)
         return False
 
@@ -1934,13 +1934,13 @@ def handle_trace(rir, lir):
         return False
     #Just take the first one for now
     first_trace = pot_trace[0]
-    #print(f"Trace: {pot_trace}")
+    print(f"Trace: {pot_trace}")
     for key,value in first_trace.items():
         unioned = label_sets[key].union(label_sets[value])
         if(unioned):
             continue
         return False
-    #print("resolving...")
+    print("resolving...")
     _rir.resolve_labels(label_sets)
     _lir.resolve_labels(label_sets)
     #Handle norm propogation here
@@ -2022,8 +2022,8 @@ def generate_label_trace(dictA, dictB):
 #RETURNS: ordering succeeds or not
 def check_ordering(order, _dict):
     dict = copy.deepcopy(_dict)
-    #print(dict)
-    #print(order)
+    print(dict)
+    print(order)
     return True
     for d in dict:
         if(d < 0):
@@ -2104,7 +2104,7 @@ def compare_norm(lv, varA, varB, func = None):
     _varB = varB.extok
     A_norm = _varA.norm
     B_norm = _varB.norm
-    #print(f"A: {A_norm} B: {B_norm}")
+    print(f"A: {A_norm} B: {B_norm}")
     if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
         if(isinstance(varA, Constant) and varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
             add_errors(lv)
@@ -2196,7 +2196,7 @@ def bin_norm(dest, lir, rir, func = None):
     err = compare_norm(dest, lir, rir, func)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
-    #print(f"lnorm: {lnorm} rnorm: {rnorm}")
+    print(f"lnorm: {lnorm} rnorm: {rnorm}")
     if(err):
         asn_norm(dest, 'u')
         return
@@ -2251,9 +2251,9 @@ def type_bin_mul(dest, lir, rir) ->bool:
     #print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    #print("Mul...")
-    #print(lir.extok)
-    #print(rir.extok)
+    print("Mul...")
+    print(lir.extok)
+    print(rir.extok)
     bin_norm(dest, lir, rir, "mul")
     pass_ftype(dest, lir, "mul", rir)
     if(is_type_undef(lir) or is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
@@ -2548,7 +2548,7 @@ def _tcheck_ir(irs, function_name) -> []:
 def propogate_parameter(lv, function, clear_initial_parameters = False):
     print(f"Ssa_name: {lv.ssa_name}, name: {lv.name}")
     #print(lv.name)
-    #print(lv.extok)
+    print(lv.extok)
     if("_1" in lv.ssa_name and (lv.extok.is_undefined() or clear_initial_parameters)):
             #print("local...")
             pos = -1
@@ -2567,13 +2567,13 @@ def propogate_parameter(lv, function, clear_initial_parameters = False):
                     lv.extok.token_type_clear()
                     lv.extok.name = lv.ssa_name
                     lv.extok.function_name = function.name
-                    #print(f"saved parameter: {p.extok}")
+                    print(f"saved parameter: {p.extok}")
                     copy_token_type(p, lv)
                     
                     lv.extok.norm = p.extok.norm
                     copy_ftype(p, lv)
-                    #print(lv.extok)
-                    #print("Copied ftype")
+                    print(lv.extok)
+                    print("Copied ftype")
                     return True
     return False
 #USSAGE: propogates a local variable with a global stored assignment
@@ -2584,11 +2584,11 @@ def propogate_global(lv):
         pos = -1
         ssa_name_info = convert_ssa_name(lv.ssa_name)
         _name = ssa_name_info[0]
-        #print(f"Globalname: {_name}, contract_name: {current_contract_name}")
+        print(f"Globalname: {_name}, contract_name: {current_contract_name}")
         if((_name, current_contract_name) in global_var_types):
-            #print("global...")
+            print("global...")
             stored_state = global_var_types[(_name, current_contract_name)]
-            #print(stored_state.extok)
+            print(stored_state.extok)
             copy_token_type(stored_state, lv)
             copy_ftype(stored_state, lv)
             lv.extok.norm = stored_state.extok.norm
@@ -2606,7 +2606,7 @@ def convert_ssa_name(name):
                 break
     _name = name[:pos]
     num = (name[pos+1:])
-    #print(f"Name: {_name}, Num: {num}")
+    print(f"Name: {_name}, Num: {num}")
     return [_name, num]
 
 #USAGE: typecheck a node
@@ -2626,7 +2626,7 @@ def _tcheck_node(node, function) -> []:
     function_name = function.name
     irs = []
     #local vars read
-    #print("Propogating parameters and globals to SSA variables...")
+    print("Propogating parameters and globals to SSA variables...")
     #print(node.ssa_state_variables_read)
     #print(node.ssa_local_variables_read)
     for lv in node.ssa_local_variables_read:
@@ -2652,7 +2652,7 @@ def _tcheck_node(node, function) -> []:
         propogate_parameter(lv, function)
         propogate_global(lv)
         #print(lv.extok)
-    #print("End popogation")            
+    print("End popogation")            
         
     for ir in node.irs_ssa:
         #DEFINE REFERENCE RELATIONS
@@ -2678,7 +2678,7 @@ def _tcheck_node(node, function) -> []:
     for var in node.ssa_variables_written:
         
         if((var.extok.name, current_contract_name) in global_var_types):
-            #print(f"Copied {var.extok.name}")
+            print(f"Copied {var.extok.name}")
             temp = global_var_types[(var.extok.name, current_contract_name)]
             #print(f" To type: {temp.type}")
             if(str(var.type) == "address"):
@@ -2737,7 +2737,7 @@ def _clear_type_node(node):
         #        #print("BEFORE")
         #        #print_param_cache(pc)
         #        #print("AFTER")
-        #print(ir)
+        print(ir)
         #Clear lvalue
         if(has_lvalue(ir) and is_variable(ir.lvalue)):
             ##print("has variable")
@@ -2751,7 +2751,7 @@ def _clear_type_node(node):
                     field.extok.token_type_clear()
                 #update_non_ssa(ir.lvalue)
 
-                #print(f"[i] {ir.lvalue.name} cleared")
+                print(f"[i] {ir.lvalue.name} cleared")
                 ##print(_ir)
     #Clear variables read
     '''
@@ -2772,9 +2772,9 @@ def _clear_type_node(node):
 def remap_return(function):
     fentry = {function.entry_point}
     explored = set()
-    #print("FIND RETURN")
-    #print(function.entry_point)
-    #print(function.full_name)
+    print("FIND RETURN")
+    print(function.entry_point)
+    print(function.full_name)
     return_ssa_mapping = {}
     for ir_ssa in function.returns_ssa:
         try:
@@ -2808,13 +2808,13 @@ def _propogate_all_parameters(function):
     fentry = {function.entry_point}
     while fentry:
         node = fentry.pop()
-        #print(node)
+        print(node)
         if node in explored:
             continue
         explored.add(node)
-        #print("Propogating All")
+        print("Propogating All")
         for var in node.ssa_local_variables_read:
-            #print(var)
+            print(var)
             propogate_parameter(var, function, True)
         for son in node.sons:
             fentry.add(son)
@@ -2849,10 +2849,10 @@ def _tcheck_function_call(function, param_cache) -> []:
         if(paramno == len(param_cache)):
             #Issue if there are functions with the same name
             break
-        #print(f"Param: {param}")
+        print(f"Param: {param}")
         copy_pc_token_type(param_cache[paramno], param)
-        #print(param_cache[paramno])
-        #print(param.extok)
+        print(param_cache[paramno])
+        print(param.extok)
         #param.parent_function = function.name
         paramno+=1
     #find return and tack it onto the end
@@ -2931,15 +2931,15 @@ def _tcheck_function(function) -> []:
     function_ref = 0
     explored = set()
     addback_nodes = []
-    #print()
-    #print()
-    #print()
-    #print(function.name)
+    print()
+    print()
+    print()
+    print(function.name)
 
     if(check_bar(function.name)):
         ##print("wooo")
         return addback_nodes
-    #print("Function name: "+function.name)
+    print("Function name: "+function.name)
     ##print("Function Visibility (test): "+function.visibility)
     fvisibl = function.visibility
     new_param_cache = None
@@ -2948,7 +2948,7 @@ def _tcheck_function(function) -> []:
             ##print(fparam.name)
             fparam.parent_function = function.name
             querry_type(fparam)
-            #print(f"Param1: {fparam.extok}")
+            print(f"Param1: {fparam.extok}")
         #generate param_cache
         new_param_cache = function_param_cache(function)
         if(not(mark_iteration) or current_function_marked):
@@ -2979,9 +2979,9 @@ def _tcheck_function(function) -> []:
         explored = set()
         paramno = 0
         for param in function.parameters:
-            #print(new_param_cache[paramno])
+            print(new_param_cache[paramno])
             copy_pc_token_type(new_param_cache[paramno], param)
-            #print(f"Param:{param.extok}")
+            print(f"Param:{param.extok}")
             paramno+=1
         while fentry:
             node = fentry.pop()
@@ -3005,7 +3005,6 @@ def _tcheck_function(function) -> []:
     return addback_nodes
 
 def view_ir(fentry):
-    return
     print()
     print()
     explored = set()
@@ -3041,7 +3040,7 @@ def _tcheck_contract_state_var(contract):
         if(state_var.name in seen):
             continue
         seen[state_var.name] = True
-        #print("State_var: "+state_var.name)
+        print("State_var: "+state_var.name)
         state_var.parent_function = "global"
         #check_type(state_var)
         if(user_type and fill_type):
@@ -3085,12 +3084,12 @@ def _mark_functions(contract):
         #print(function.nodes)
         fentry = {function.entry_point}
         #add contract-function pair
-        #print(f"Mark functions Adding: {contract.name}, {function.name}, {hasExternal}")
+        print(f"Mark functions Adding: {contract.name}, {function.name}, {hasExternal}")
         #view_ir({function.entry_point})
         add_cf_pair(contract.name, function.name, function)
         if(not (function.entry_point and (not(hasExternal) or function.visibility == "external" or function.visibility == "public"))):
             function_check[function.name] = False
-            #print("[x] Not visible ")
+            print("[x] Not visible ")
             continue
         contains_bin = False
         while fentry:
@@ -3112,7 +3111,6 @@ def _mark_functions(contract):
             for son in node.sons:
                 fentry.add(son)
         function_check[function.name] = contains_bin
-        return
         if contains_bin:
             print("[*]Marked")
         else:
@@ -3140,9 +3138,9 @@ def _tcheck_contract(contract):
     #Reset update ratios
     reset_update_ratios()
     for function in contract.functions_declared:
-        #print("Reading Function: " + function.name)
+        print("Reading Function: " + function.name)
         if not(function_check[function.name]):
-            #print("Function " + function.name + " not marked")
+            print("Function " + function.name + " not marked")
             if(mark_iteration):
                 ##print("Mark Iterations TRUE, proceeding anyway")
                 current_function_marked = False
@@ -3153,7 +3151,7 @@ def _tcheck_contract(contract):
         if not function.entry_point:
             #print("No Entry point")
             continue
-        #print("Checking funcion...")
+        print("Checking funcion...")
         #current_function_marked = True
         #SKIP
         ##print("[*i*]External Function: " + function.name)
@@ -3214,12 +3212,12 @@ class tcheck(AbstractDetector):
     IMPACT = DetectorClassification.INFORMATIONAL
     CONFIDENCE = DetectorClassification.HIGH
 
-    WIKI = 'Output by ScType'
+    WIKI = 'Initialized i guess?'
 
-    WIKI_TITLE = 'None'
-    WIKI_DESCRIPTION = 'ScType tool for accounting errors in smart contracts'
-    WIKI_EXPLOIT_SCENARIO = 'Erroneous accounting mistakes'
-    WIKI_RECOMMENDATION = 'None'
+    WIKI_TITLE = 'woops'
+    WIKI_DESCRIPTION = 'i am initializing'
+    WIKI_EXPLOIT_SCENARIO = 'finding external'
+    WIKI_RECOMMENDATION = 'i will do something later'
 
     def _detect(self):
         results = []
@@ -3234,7 +3232,7 @@ class tcheck(AbstractDetector):
         global label_sets
         assign_const(constant_instance)
         total_compilations = tcheck_module.get_total_compilations()
-        #print(f"total compilations: {total_compilations}, contracts: {len(self.contracts)}")
+        print(f"total compilations: {total_compilations}, contracts: {len(self.contracts)}")
         '''
         for contract in self.contracts:
             print(f"Checking {contract.name}")
@@ -3246,7 +3244,7 @@ class tcheck(AbstractDetector):
         for contract in self.contracts:
             #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
-            #print("contract name: "+contract.name)
+            print("contract name: "+contract.name)
             #print("WARNING!!!!")
             type_info_name = contract.name+"_types.txt"
             finance_info_name = contract.name+"_ftypes.txt"
@@ -3258,7 +3256,7 @@ class tcheck(AbstractDetector):
             try:
                 with open(finance_info_name, "r") as _f_file:
                     f_file = finance_info_name
-                    #print(f"Finance file: {f_file}")
+                    print(f"Finance file: {f_file}")
             except FileNotFoundError:
                 #print("Finance File not Found")
                 f_file = None
@@ -3297,17 +3295,15 @@ class tcheck(AbstractDetector):
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
                 #print("continuing...")
                 continue
-            #print(f"Running check on {contract.name}")
+            print(f"Running check on {contract.name}")
             errorsx = _tcheck_contract(contract)
             #print("xxxxxx")
             #print(f"Errors: {errorsx}")
 
-            #Created address labels
-            '''
             for label, address in address_to_label.items():
-                print(f"Address: {address}, Label: {label}")'''
-            #for label, addr_label in label_sets.items():
-            #    print(addr_label)
+                print(f"Address: {address}, Label: {label}")
+            for label, addr_label in label_sets.items():
+                print(addr_label)
                 
             for ir in errorsx:
                 _ir = ir.extok
