@@ -727,7 +727,7 @@ def check_type(ir) -> bool:
     addback = False;
     #Assignmnet
     #Deubg pow
-    #print(ir)
+    print(ir)
     #if(debug_pow_pc):
     #    #print("**POW***")
     #    for pc in debug_pow_pc:
@@ -856,8 +856,8 @@ def check_type(ir) -> bool:
     #DEBUG
     try:
         if ir.lvalue and is_variable(ir.lvalue):
-            #print("[i]Type for "+ir.lvalue.name)
-            #print(ir.lvalue.extok)
+            print("[i]Type for "+ir.lvalue.name)
+            print(ir.lvalue.extok)
             if(isinstance(ir.lvalue, ReferenceVariable)):
                 ref = ir.lvalue
                 ref_root = ref.extok.ref_root
