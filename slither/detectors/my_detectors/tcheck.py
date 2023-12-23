@@ -3084,12 +3084,12 @@ def _mark_functions(contract):
         #print(function.nodes)
         fentry = {function.entry_point}
         #add contract-function pair
-        print(f"Mark functions Adding: {contract.name}, {function.name}, {hasExternal}")
+        #print(f"Mark functions Adding: {contract.name}, {function.name}, {hasExternal}")
         #view_ir({function.entry_point})
         add_cf_pair(contract.name, function.name, function)
         if(not (function.entry_point and (not(hasExternal) or function.visibility == "external" or function.visibility == "public"))):
             function_check[function.name] = False
-            print("[x] Not visible ")
+            #print("[x] Not visible ")
             continue
         contains_bin = False
         while fentry:
@@ -3111,6 +3111,7 @@ def _mark_functions(contract):
             for son in node.sons:
                 fentry.add(son)
         function_check[function.name] = contains_bin
+        return
         if contains_bin:
             print("[*]Marked")
         else:
@@ -3138,9 +3139,9 @@ def _tcheck_contract(contract):
     #Reset update ratios
     reset_update_ratios()
     for function in contract.functions_declared:
-        print("Reading Function: " + function.name)
+        #print("Reading Function: " + function.name)
         if not(function_check[function.name]):
-            print("Function " + function.name + " not marked")
+            #print("Function " + function.name + " not marked")
             if(mark_iteration):
                 ##print("Mark Iterations TRUE, proceeding anyway")
                 current_function_marked = False
@@ -3151,7 +3152,7 @@ def _tcheck_contract(contract):
         if not function.entry_point:
             #print("No Entry point")
             continue
-        print("Checking funcion...")
+        #print("Checking funcion...")
         #current_function_marked = True
         #SKIP
         ##print("[*i*]External Function: " + function.name)
