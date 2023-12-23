@@ -3232,7 +3232,7 @@ class tcheck(AbstractDetector):
         global label_sets
         assign_const(constant_instance)
         total_compilations = tcheck_module.get_total_compilations()
-        print(f"total compilations: {total_compilations}, contracts: {len(self.contracts)}")
+        #print(f"total compilations: {total_compilations}, contracts: {len(self.contracts)}")
         '''
         for contract in self.contracts:
             print(f"Checking {contract.name}")
@@ -3244,7 +3244,7 @@ class tcheck(AbstractDetector):
         for contract in self.contracts:
             #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
-            print("contract name: "+contract.name)
+            #print("contract name: "+contract.name)
             #print("WARNING!!!!")
             type_info_name = contract.name+"_types.txt"
             finance_info_name = contract.name+"_ftypes.txt"
@@ -3256,7 +3256,7 @@ class tcheck(AbstractDetector):
             try:
                 with open(finance_info_name, "r") as _f_file:
                     f_file = finance_info_name
-                    print(f"Finance file: {f_file}")
+                    #print(f"Finance file: {f_file}")
             except FileNotFoundError:
                 #print("Finance File not Found")
                 f_file = None
@@ -3295,15 +3295,15 @@ class tcheck(AbstractDetector):
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
                 #print("continuing...")
                 continue
-            print(f"Running check on {contract.name}")
+            #print(f"Running check on {contract.name}")
             errorsx = _tcheck_contract(contract)
             #print("xxxxxx")
             #print(f"Errors: {errorsx}")
 
             for label, address in address_to_label.items():
                 print(f"Address: {address}, Label: {label}")
-            for label, addr_label in label_sets.items():
-                print(addr_label)
+            #For label, addr_label in label_sets.items():
+            #    print(addr_label)
                 
             for ir in errorsx:
                 _ir = ir.extok
