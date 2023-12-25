@@ -1,0 +1,25 @@
+[*c], VaderRouter
+[sefa], VaderPoolFactory, getPool
+[sefa], VaderPool, burn
+[sefa], VaderPool, swap
+[alias], VaderPool, BasePool
+[sefa], VaderPool, getReserves, 2, {c, [global:nativeAsset], [-1], 18, 'u'}, {c, [global:foreignAsset], [-1], 6, 'u'}
+[sefa], VaderPoolFactory, nativeAsset, 1, {c, [global:nativeAsset], [-1], 18, 'u'}
+[ta], global, nativeAsset, 18
+[ta], global, foreignAsset, 6
+[ta], global, _owner, 0
+[ta], global, _tokenApprovals, 0
+[ta], global, _owners, 0
+[ta], global, _ZERO_ADDRESS, 0
+[ta], removeLiquidity, tokenA, 18
+[ta], removeLiquidity, tokenB, 6
+[ta], removeLiquidity, to, 0
+[ta], swapExactTokensForTokens, path, 0
+[ta], swapExactTokensForTokens, to, 0
+[ta], swapTokensForExactTokens, path, 0
+[ta], swapTokensForExactTokens, to, 0
+[t], _swap, amountIn, global:nativeAsset, -1, 18, 'u'
+[t], swapExactTokensForTokens, amountIn, global:nativeAsset, -1, 18, 'u'
+[t], swapTokensForTokens, amountIn, global:foreignAsset, -1, 6, 'u'
+[ta], calculateInGivenOut, path, 0
+[ta], calculateOutGivenIn, path, 0

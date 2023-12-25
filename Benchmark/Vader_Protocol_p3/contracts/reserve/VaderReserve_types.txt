@@ -1,0 +1,29 @@
+[*c], VaderReserve
+constructor
+grant
+initialize
+
+[sef], LBT, previousPrices, 1, {c, 1, -1, 0}
+[sef], LBT, getUSDVPrice, 1, {c, 1, -1, 8}
+[sef], LBT, getVaderPrice, 1, {c, 2, -1, 18}
+[sef], VADER, balanceOf, 1, {c, 2, -1, 18}
+
+[t], global, _ZERO_ADDRESS
+[t], global, _owner
+[t], global, lbt, -1, -1, 0, LBT
+[t], global, router, -1, -1, 0, ROUTER
+[t], global, vader, -1, -1, 0, VADER
+[t], global, _GRANT_DELAY
+[t], global, lastGrant
+[t], global, _MAX_BASIS_POINTS
+[t], global, _MAX_GRANT_BASIS_POINTS
+[t], global, _ONE_YEAR
+
+[t], reimburseImpermanentLoss, recipient, -1, -1, 0, RECIPIENT
+[t], reimburseImpermanentLoss, amount, -1, -1, -404
+[t], constructor, _vader, -1, -1, 0, VADER
+[t], grant, recipient, -1, -1, 0, RECIPIENT
+[t], grant, amount
+[t], initialize, _lbt
+[t], initialize, _router, -1, -1, 0, ROUTER
+[t], initialize, _dao, -1, -1, 0, DAO

@@ -1,0 +1,100 @@
+[*c], Trading
+[sef], POSITION, ownerOf
+[sef], POSITION, trades
+[sef], POSITION, getCount
+[sef], _stableVault, stable, 1, {c, -1, -1, 0, _tigAsset}
+[sef], PAIRS, idToAsset
+[sef], TRADINGEXTENSION, getRef
+[sef], _tigAsset, balanceOf, 1, {c, -1, -1, 0}
+[sef], _marginAsset, decimals
+[sef], TRADINGEXTENSION, getVerifiedPrice, 2, {c, -1, -1, 0}, {c, -1, -1, 0}
+[sef], TRADINGEXTENSION, _closePosition, 3, , , 
+[sef], TRADINGEXTENSION, minPos
+[sef], OUTPUT, balanceOf, 1, -1, 0
+[sef], _stableVault, withdraw
+[sef], PAIRS, idToOi
+[sef], MARGIN, decimals
+[sef], TradingLibrary, pnl, 2, , 
+addToPosition
+initiateLimitOrder
+cancelLimitOrder
+addMargin
+removeMargin
+updateTpSl
+executeLimitOrder
+liquidatePosition
+setFees
+[t], global, position, -1, -1, 0, POSITION
+[t], global, tradingExtension, -1, -1, 0, TRADINGEXTENSION
+[t], global, DIVISION_CONSTANT
+[t], global, gov
+[t], global, openFees
+[t*], global, openFees, daoFees
+[t*], global, openFees, burnFees
+[t], global, limitDelay
+[t], global, limitOrderPriceRange
+[t], global, allowedVault
+[t], global, pairsContract, -1, -1, 0, PAIRS
+[t], global, maxWinPercent
+[t], global, _owner
+[t], global, proxyApprovals
+[t], global, _isTrustedForwarder
+[t], global, closeFees
+[t], global, blockDelay
+[t], global, blockDelayPassed
+[t], global, vaultFundingPercent
+
+[t], addToPosition, _id
+[t], addToPosition, _addMargin
+[t], addToPosition, _priceData
+[t], addToPosition, _stableVault, -1, -1, 0, _stableVault
+[t], addToPosition, _marginAsset
+[t], addToPosition, _permitData
+[t], addToPosition, _trader
+[t*], addToPosition, _trade, tigAsset, -1, -1, 0, _tigAsset
+[t*], addToPosition, _trade, asset, 1, -1, 0
+[t], initiateMarketOrder, _tradeInfo
+[t*], initiateMarketOrder, _tradeInfo, stableVault, -1, -1, 0, _stableVault
+[t], initiateMarketOrder, _priceData
+[t], initiateMarketOrder, _permitData
+[t], initiateMarketOrder, _trader, -1, -1, 0, TRADER
+[t], initiateCloseOrder, _id
+[t], initiateCloseOrder, _percent
+[t], initiateCloseOrder, _priceData
+[t], initiateCloseOrder, _stableVault, -1, -1, 0, _stableVault
+[t], initiateCloseOrder, _outputToken, -1, -1, 0, OUTPUT
+[t], initiateCloseOrder, _trader, -1, -1, 0, TRADER
+[t*], initiateCloseOrder, _trade, tigAsset, -1, -1, 0, _tigAsset
+[t], initiateLimitOrder, _tradeInfo
+[t*], initiateLimitOrder, _tradeInfo, stableVault, -1, -1, 0, _stableVault
+[t], initiateLimitOrder, _orderType
+[t], initiateLimitOrder, _price
+[t], initiateLimitOrder, _permitData
+[t], initiateLimitOrder, _trader, -1, -1, 0, TRADER
+[t], cancelLimitOrder, _id
+[t], cancelLimitOrder, _trader, -1, -1, 0, TRADER
+[t], addMargin, _id
+[t], addMargin, _marginAsset, -1, -1, 0, MARGIN
+[t], addMargin, _stableVault, -1, -1, 0, _stableVault
+[t], addMargin, _addMargin
+[t], addMargin, _permitData
+[t], addMargin, _trader, -1, -1, 0, TRADER
+[t], removeMargin, _id
+[t], removeMargin, _stableVault, -1, -1, 0, _stableVault
+[t], removeMargin, _outputToken, -1, -1, 0, OUTPUT
+[t], removeMargin, _removeMargin
+[t], removeMargin, _priceData
+[t], removeMargin, _trader, -1, -1, 0, TRADER
+[t], updateTpSl, _id
+[t], updateTpSl, _limitPrice
+[t], updateTpSl, _priceData
+[t], updateTpSl, _trader, -1, -1, 0, TRADER
+[t], executeLimitOrder, _id
+[t], executeLimitOrder, _priceData
+[t], liquidatePosition, _id
+[t], liquidatePosition, _priceData
+[t], setFees, _daoFees
+[t], setFees, _burnFees
+[t], setFees, _referralFees
+[t], setFees, _botFees
+[t], setFees, _percent

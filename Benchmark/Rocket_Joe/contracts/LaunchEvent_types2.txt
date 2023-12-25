@@ -1,0 +1,78 @@
+[*c], LaunchEvent
+
+initialize
+depositAVAX
+withdrawAVAX
+getPair
+withdrawLiquidity
+withdrawIncentives
+emergencyWithdraw
+allowEmergencyWithdraw
+penaltyCollector
+skim
+getReserves
+getRJoeAmount
+pairBalance
+
+[sef], FACTORY, getPair, 1, {c, -1, -1, 0, JOEPAIR}
+[sef], JOEPAIR, totalSupply, 1, {c, 2, -1, 6} 
+[sef], TOKEN, balanceOf, 1, {c, 1, -1, 18}
+[sef], TOKEN, decimals, 1, {c, -1, -1, -404}
+[sef], ROUTER, addLiquidity, 3, , , 
+[sef], RJFACTORY, penaltyCollector
+[sef], RJFACTORY, owner
+[sef], WAVAX, balanceOf, 1, {c, 2, -1, 6}
+[sef], LaunchEvent, wavax
+[sef], LaunchEvent, router, -1, -1, 0, ROUTER
+[sef], LaunchEvent, factory, -1, -1, 0, FACTORY
+[sef], LaunchEvent, rJoe, -1, -1, 0, RJOE
+[sef], LaunchEvent, rJoePerAvax
+[sef], LaunchEvent, PHASE_ONE_DURATION
+[sef], LaunchEvent, PHASE_ONE_NO_FEE_DURATION
+[sef], LaunchEvent, PHASE_TWO_DURATION
+
+
+[t], global, WAVAX, -1, -1, 0, WAVAX
+[t], global, rJoePerAvax
+[t], global, rocketJoeFactory, -1, -1, 0, RJFACTORY
+[t], global, token, -1, -1, 0, TOKEN
+[t], global, tokenIncentivesBalance, 1, -1, 18
+[t], global, tokenReserve, 1, -1, 18
+[t], global, wavaxReserve, 2, -1, 6
+[t], global, getUserInfo
+[t], global, issuer, -1, -1, 0, ISSUER
+[t], global, PHASE_ONE_DURATION
+[t], global, _owner
+[t], global, factory, -1, -1, 0, FACTORY
+[t], global, floorPrice, 1, -1, 18
+[t], global, pair, -1, -1, 0, JOEPAIR
+[t], global, router, -1, -1, 0, ROUTER
+[t], global, tokenIncentivesForUsers, 1, -1, 18
+[t], global, wavaxAllocated, 2, -1, 6
+[t], global, PHASE_TWO_DURATION
+[t], global, auctionStart
+[t], global, stopped
+[t], global, lpSupply
+[t], global, maxAllocation, 2, -1, 6
+[t], global, rJoe, -1, -1, 0, RJTOKEN
+[t], global, tokenIncentiveIssuerRefund, 1, -1, 18
+[t], global, initialized
+[t], global, issuerTimelock
+[t], global, userTimelock
+[t], global, PHASE_ONE_NO_FEE_DURATION
+[t], global, fixedWithdrawPenalty, -1, -1, 18
+[t], global, maxWithdrawPenalty, -1, -1, 18
+[t], initialize, _issuer, -1, -1, 0, ISSUER
+[t], initialize, _auctionStart
+[t], initialize, _token, -1, -1, 0, TOKEN
+[t], initialize, _tokenIncentivesPercent
+[t], initialize, _floorPrice
+[t], initialize, _maxWithdrawPenalty
+[t], initialize, _fixedWithdrawPenalty
+[t], initialize, _maxAllocation
+[t], initialize, _userTimelock
+[t], initialize, _issuerTimelock
+[t], withdrawAVAX, _amount, 2, -1, 6
+[t*], withdrawIncentives, user, balance, 2, -1, 6
+[t], getRJoeAmount, _avaxAmount
+[t], pairBalance, _user, -1, -1, 0, user

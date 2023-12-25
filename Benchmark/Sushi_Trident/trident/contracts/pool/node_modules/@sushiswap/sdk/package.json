@@ -1,0 +1,84 @@
+{
+  "name": "@sushiswap/sdk",
+  "license": "MIT",
+  "version": "5.0.0-canary.66",
+  "description": "🛠 An SDK for building applications on top of SushiSwap.",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/sushiswap/sushiswap-sdk",
+  "keywords": [
+    "sushiswap",
+    "ethereum",
+    "sdk"
+  ],
+  "module": "dist/sdk.esm.js",
+  "scripts": {
+    "lint": "tsdx lint src test",
+    "build": "tsdx build",
+    "watch": "tsdx watch",
+    "test": "tsdx test",
+    "prepublishOnly": "tsdx build",
+    "prepare": "husky install",
+    "prettier": "prettier --write 'src/**/*.ts' 'test/**/*.ts'"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint",
+      "yarn test --bail --passWithNoTests --findRelatedTests",
+      "prettier --write"
+    ],
+    "*.md": "prettier --write"
+  },
+  "dependencies": {
+    "big.js": "^6.1.0",
+    "decimal.js-light": "^2.5.0",
+    "isomorphic-unfetch": "^3.1.0",
+    "jsbi": "^3.1.0",
+    "tiny-invariant": "^1.1.0",
+    "tiny-warning": "^1.0.3",
+    "toformat": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@ethersproject/abi": "^5.4.0",
+    "@ethersproject/abstract-signer": "^5.4.0",
+    "@ethersproject/address": "^5.4.0",
+    "@ethersproject/bignumber": "^5.4.0",
+    "@ethersproject/bytes": "^5.4.0",
+    "@ethersproject/contracts": "^5.4.0",
+    "@ethersproject/experimental": "^5.4.0",
+    "@ethersproject/networks": "^5.4.0",
+    "@ethersproject/providers": "^5.4.0",
+    "@ethersproject/signing-key": "^5.4.0",
+    "@ethersproject/solidity": "^5.4.0",
+    "@ethersproject/transactions": "^5.4.0",
+    "eip-712": "^0.4.3"
+  },
+  "devDependencies": {
+    "@ethersproject/abi": "^5.4.0",
+    "@ethersproject/abstract-signer": "^5.4.0",
+    "@ethersproject/address": "^5.4.0",
+    "@ethersproject/bignumber": "^5.4.0",
+    "@ethersproject/bytes": "^5.4.0",
+    "@ethersproject/contracts": "^5.4.0",
+    "@ethersproject/experimental": "^5.4.0",
+    "@ethersproject/networks": "^5.4.0",
+    "@ethersproject/providers": "^5.4.0",
+    "@ethersproject/signing-key": "^5.4.0",
+    "@ethersproject/solidity": "^5.4.0",
+    "@ethersproject/transactions": "^5.4.0",
+    "@sushiswap/core": "^2.0.0-canary.1",
+    "@sushiswap/prettier-config": "^0.1.0",
+    "@types/big.js": "^6.1.0",
+    "babel-plugin-transform-jsbi-to-bigint": "^1.4.0",
+    "eip-712": "^0.4.3",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.1.2",
+    "tsdx": "^0.14.1"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}

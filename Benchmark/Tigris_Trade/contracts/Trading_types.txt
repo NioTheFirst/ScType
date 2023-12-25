@@ -1,0 +1,20 @@
+[*c], Trading
+[sefa], Position, getCount
+[sefa], StableVault, stable, 1, {c, global:tokA, 6}
+[sefa], PairsContract, idToAsset, 1, {c, global:tokA, 6}
+[sefa], TradingExtension, getRef
+[sefa], TradingExtension, getVerifiedPrice, 2, {t, 1, -1, 1, 'u'}, 
+[sefa], PairsContract, idToOi
+[sefa], Position, ownerOf
+[sefa], Position, trades
+[sefa], TradingExtension, _closePosition
+[sefa], TradingExtension, minPos
+[sefa], StableVault, withdraw
+[sefa], TradingLibrary, pnl
+[ta], global, tokA, 6
+[t], _handleOpenFees, _fees
+[t*], _handleOpenFees, _fees, daoFees
+[t*], _handleOpenFees, _fees, burnFees
+[ta], initiateCloseOrder, _outputToken, 6
+[ta], addToPosition, _marginAsset, 6
+[ta], removeMargin, _outputToken, 6

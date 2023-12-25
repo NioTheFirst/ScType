@@ -1,0 +1,59 @@
+[*c], LenderPool
+[sef], SAVINGS, allowance
+[sef], SAVINGS, approve
+[sef], SAVINGS, withdrawShares
+[sef], SAVINGS, deposit
+[sef], PCL, getBorrowerAddress
+[sef], PCL, getPrincipal
+[sef], VERIFICATION, isUser
+[sef], _strategy, getSharesForTokens, 1, {c, 2, -1, 0}
+[sef], account, onERC1155Received
+[sef], PCL, getEndsAt
+[sef], PCLSTRAT, getSharesForTokens, 1, {c, 2, -1, 0}
+[sef], PCLSTRAT, getTokensForShares, 1, {c, 1, -1, 0}
+[sef], PCL, getStatusAndUpdate
+[sef], PCL, liquidate, 2, {c, -1, -1, 0, CASSET}, {c, -1, -1, 0}
+[t], constructor, _pooledCreditLine, -1, -1, 0, PCL
+[t], constructor, _savingsAccount, -1, -1, 0, SAVINGS
+[t], constructor, _verification, -1, -1, 0, VERIFICATION
+[t], global, _uri
+[tref], pooledCLVariables
+[t*], global, pooledCLConstants, borrowAssetStrategy, -1, -1, 0, PCLSTRAT
+[t], global, _balances, 1, -1, 0
+[t], global, POOLED_CREDIT_LINE, -1, -1, 0, PCL
+[t], global, pooledCLConstants
+[t], global, totalSupply, 1, -1, 0
+[t], global, SAVINGS_ACCOUNT, -1, -1, 0, SAVINGS
+[t], global, VERIFICATION, -1, -1, 0, VERIFICATION
+[t], global, _operatorApprovals
+[t], global, _INTERFACE_ID_ERC165
+[t], global, _INTERFACE_ID_ERC1155
+[t], global, _INTERFACE_ID_ERC1155_METADATA_URI
+[t], global, _ENTERED
+[t], global, _NOT_ENTERED
+[t], global, _status
+[t], global, _supportedInterfaces
+[t], create, _id
+[t], create, _lenderVerifier, -1, -1, 0, LENDVERI
+[t], create, _borrowAsset, -1, -1, 0, BASSET
+[t], create, _borrowAssetStrategy, -1, -1, 0, BSTRAT
+[t], create, _borrowLimit, 1, -1, 0
+[t], create, _minBorrowAmount, 1, -1, 0
+[t], create, _collectionPeriod
+[t], lend, _id
+[t], lend, _amount, 1, -1, 0
+[t], start, _id
+[t], borrowed, _id
+[t], borrowed, _sharesBorrowed, 2, -1, 0
+[t], repaid, _id
+[t], repaid, _sharesRepaid, 2, -1, 0
+[t], repaid, _interestShares, 2, -1, 0
+[t], terminate, _id
+[t], terminate, _to, -1, -1, 0, TO
+[t], withdrawInterest, _id
+[t], getLenderInterestWithdrawable, _id
+[t], getLenderInterestWithdrawable, _lender, -1, -1, 0, LENDER
+[t], calculatePrincipalWithdrawable, _id
+[t], calculatePrincipalWithdrawable, _lender, -1, -1, 0, LENDER
+[t], liquidate, _id
+[t], withdrawTokensAfterLiquidation, _id

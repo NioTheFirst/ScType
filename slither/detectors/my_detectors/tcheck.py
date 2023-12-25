@@ -2844,7 +2844,7 @@ def _tcheck_function_call(function, param_cache) -> []:
     paramno = 0
     #Append to function count
     function_count+=1
-    print(f"function: {function_name}, function count: {function_count}")
+    print(f"function: {function.name}, function count: {function_count}")
     for param in function.parameters:
         #clear previous types
         #copy new types
@@ -2965,7 +2965,7 @@ def _tcheck_function(function) -> []:
     remap_return(function)
     #Append to function count
     function_count+=1
-    print(f"function: {function_name}, function count: {function_count}")
+    print(f"function: {function.name}, function count: {function_count}")
     #Propogate parameters
     #_propogate_all_parameters(function)
 

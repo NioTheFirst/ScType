@@ -1,0 +1,10 @@
+[*c], OptimisticLedgerLib
+[sef], Fixed18Lib, from
+[sef], Fixed18Lib, sign
+[sef], Fixed18Lib, abs, 1, {t, [1], [-1], 0}
+[t], global, BASE
+
+[t], settleAccount, self
+[t*], settleAccount, self, shortfall, 1, -1, 0, f: 50
+[t], settleAccount, account
+[t], settleAccount, amount

@@ -1,0 +1,1675 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/collateral/Collateral.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "6353b8d91b0bd576dedb79d5e89faabd",
+      "sourceName": "contracts/collateral/Collateral.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/ICollateral.sol",
+        "./types/OptimisticLedger.sol",
+        "../utils/unstructured/UReentrancyGuard.sol",
+        "../factory/UFactoryProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Collateral"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/interfaces/ICollateral.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "3b6431ebb41e8be09374d0c27a313237",
+      "sourceName": "contracts/interfaces/ICollateral.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IProduct.sol",
+        "../utils/types/UFixed18.sol",
+        "../utils/types/Fixed18.sol",
+        "../utils/types/Token18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ICollateral"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/collateral/types/OptimisticLedger.sol": {
+      "lastModificationDate": 1689127821542,
+      "contentHash": "0110a79e3aef8f6dab73d0f04c138de8",
+      "sourceName": "contracts/collateral/types/OptimisticLedger.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/types/UFixed18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "OptimisticLedgerLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/unstructured/UReentrancyGuard.sol": {
+      "lastModificationDate": 1687481775671,
+      "contentHash": "5b212212351c6a07afe1b52428cbe989",
+      "sourceName": "contracts/utils/unstructured/UReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "UReentrancyGuard"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/factory/UFactoryProvider.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "6fb4602793464a7706dd2066cc2e7a9b",
+      "sourceName": "contracts/factory/UFactoryProvider.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFactory.sol",
+        "../interfaces/IProduct.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "UFactoryProvider"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/interfaces/IProduct.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "f8ab671698f2f5af167ce96e033765f1",
+      "sourceName": "contracts/interfaces/IProduct.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../product/types/position/Position.sol",
+        "../product/types/position/PrePosition.sol",
+        "../product/types/accumulator/Accumulator.sol",
+        "../utils/types/UFixed18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IProduct"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/types/UFixed18.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "a0f2be29a202bf7645df9461ccab3dfe",
+      "sourceName": "contracts/utils/types/UFixed18.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Fixed18.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "UFixed18Lib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/types/Fixed18.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "a3cb15cb9c5df1af80c417af8a22c57a",
+      "sourceName": "contracts/utils/types/Fixed18.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./UFixed18.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Fixed18Lib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/types/Token18.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "fe668757445a27b0f9fcb1a394501ecf",
+      "sourceName": "contracts/utils/types/Token18.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "./UFixed18.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Token18Lib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/types/position/Position.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "24f20fdb37dce5381d9bd64481bc9e5c",
+      "sourceName": "contracts/product/types/position/Position.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "../../../utils/types/UFixed18.sol",
+        "../accumulator/Accumulator.sol",
+        "./PrePosition.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PositionLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/types/position/PrePosition.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "0290566c53bfca0190b92053d13949b6",
+      "sourceName": "contracts/product/types/position/PrePosition.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Position.sol",
+        "../ProductProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PrePositionLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/types/accumulator/Accumulator.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "39cefdb2e1515fbf774c36e7354e5383",
+      "sourceName": "contracts/product/types/accumulator/Accumulator.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../../utils/types/Fixed18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "AccumulatorLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1689127997343,
+      "contentHash": "4e138d2b21c8844ab1799e37d232fb5e",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/types/ProductProvider.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "f3647fcb38dcaf7fb5644cd5ef46ddac",
+      "sourceName": "contracts/product/types/ProductProvider.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IProductProvider.sol",
+        "../../interfaces/IFactory.sol",
+        "../../utils/types/UFixed18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ProductProviderLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/interfaces/IProductProvider.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "6a61d094d616df94138f02f1987453dd",
+      "sourceName": "contracts/interfaces/IProductProvider.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IOracle.sol",
+        "../product/types/position/Position.sol",
+        "../utils/types/UFixed18.sol",
+        "../utils/types/Fixed18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IProductProvider"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/interfaces/IFactory.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "acd3d7bb861de56ea63f1850dee6b4ca",
+      "sourceName": "contracts/interfaces/IFactory.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ICollateral.sol",
+        "./IIncentivizer.sol",
+        "./IProduct.sol",
+        "./IProductProvider.sol",
+        "../utils/types/UFixed18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IFactory"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/interfaces/IOracle.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "b1af25e971c8ef7b81a3528839dbd0b2",
+      "sourceName": "contracts/interfaces/IOracle.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/types/Fixed18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IOracle"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/interfaces/IIncentivizer.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "d976a9806c549378163f1a3bf09cf83f",
+      "sourceName": "contracts/interfaces/IIncentivizer.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFactory.sol",
+        "../interfaces/IProduct.sol",
+        "../product/types/position/Position.sol",
+        "../utils/types/Token18.sol",
+        "../utils/types/UFixed18.sol",
+        "../utils/types/Fixed18.sol",
+        "../incentivizer/types/ProgramInfo.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IIncentivizer"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1689127997271,
+      "contentHash": "0eac3e1a83ee62326ca007811285b274",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1689127997275,
+      "contentHash": "aa1be06992a99bb7393b26a6af3c4dfb",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1689127997411,
+      "contentHash": "d37406082a74a9b6b114de522fcb6349",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1689127996743,
+      "contentHash": "c5f6c4e4df069c789e7d84b4c3011913",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/incentivizer/types/ProgramInfo.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "660b2ab59247efeca444376b558f5ca7",
+      "sourceName": "contracts/incentivizer/types/ProgramInfo.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IProduct.sol",
+        "../../product/types/position/Position.sol",
+        "../../product/types/accumulator/Accumulator.sol",
+        "../../utils/types/Token18.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ProgramInfoLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/Product.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "0c0e3a50212241beb80110f65f99ab9b",
+      "sourceName": "contracts/product/Product.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IProduct.sol",
+        "../interfaces/IProductProvider.sol",
+        "./types/position/AccountPosition.sol",
+        "./types/accumulator/AccountAccumulator.sol",
+        "../utils/unstructured/UReentrancyGuard.sol",
+        "../factory/UFactoryProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Product"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/types/position/AccountPosition.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "2ca69711cf7560c62eabada33fff50ed",
+      "sourceName": "contracts/product/types/position/AccountPosition.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./PrePosition.sol",
+        "../accumulator/Accumulator.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "AccountPositionLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/types/accumulator/AccountAccumulator.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "5d419cf752d414956ce230e0ca25394a",
+      "sourceName": "contracts/product/types/accumulator/AccountAccumulator.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Accumulator.sol",
+        "./VersionedAccumulator.sol",
+        "../position/AccountPosition.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "AccountAccumulatorLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/types/accumulator/VersionedAccumulator.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "2a65681c6fc5c268e39c9e6cf466e57c",
+      "sourceName": "contracts/product/types/accumulator/VersionedAccumulator.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Accumulator.sol",
+        "../position/VersionedPosition.sol",
+        "../ProductProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "VersionedAccumulatorLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/types/position/VersionedPosition.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "8da9698d814cce75ef0cfa25be3f7a61",
+      "sourceName": "contracts/product/types/position/VersionedPosition.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./PrePosition.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "VersionedPositionLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/mocks/MockUReentrancyGuard.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "935113386b586df111f9800da0107af0",
+      "sourceName": "contracts/utils/mocks/MockUReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../unstructured/UReentrancyGuard.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockUReentrancyGuard"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/incentivizer/Incentivizer.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "b26000f9ddfd28bfcf304c09a63634b0",
+      "sourceName": "contracts/incentivizer/Incentivizer.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeCast.sol",
+        "@openzeppelin/contracts/utils/structs/EnumerableSet.sol",
+        "../interfaces/IIncentivizer.sol",
+        "../interfaces/IFactory.sol",
+        "./types/Program.sol",
+        "../utils/unstructured/UReentrancyGuard.sol",
+        "../product/types/position/Position.sol",
+        "../product/types/accumulator/Accumulator.sol",
+        "../factory/UFactoryProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Incentivizer"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/node_modules/@openzeppelin/contracts/utils/math/SafeCast.sol": {
+      "lastModificationDate": 1689127997395,
+      "contentHash": "b8980ba70f1a32dd81c98fda7e3aac07",
+      "sourceName": "@openzeppelin/contracts/utils/math/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/node_modules/@openzeppelin/contracts/utils/structs/EnumerableSet.sol": {
+      "lastModificationDate": 1689127996855,
+      "contentHash": "2c46fb3033f19693d6cbe230950fec96",
+      "sourceName": "@openzeppelin/contracts/utils/structs/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/incentivizer/types/Program.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "f7a247a0633f36f6f553f268190be9e4",
+      "sourceName": "contracts/incentivizer/types/Program.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../product/types/position/Position.sol",
+        "../../utils/types/Token18.sol",
+        "./ProgramInfo.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ProgramLib"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/mocks/MockUFixed18.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "a465073717f98bbc3bdde4fc8f031fc8",
+      "sourceName": "contracts/utils/mocks/MockUFixed18.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../types/UFixed18.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockUFixed18"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/oracle/ChainlinkOracle.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "36164418ab3c03ecfb2c01a34b061df4",
+      "sourceName": "contracts/oracle/ChainlinkOracle.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/SafeCast.sol",
+        "../interfaces/IOracle.sol",
+        "../utils/types/UFixed18.sol",
+        "../utils/unstructured/UOwnable.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ChainlinkOracle",
+        "IChainlinkFeed"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/unstructured/UOwnable.sol": {
+      "lastModificationDate": 1687481775671,
+      "contentHash": "ce6a5b34b7c9b13595c7e9ea86f454af",
+      "sourceName": "contracts/utils/unstructured/UOwnable.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "UOwnable"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/mocks/MockUOwnable.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "0374883fa82aba96330a530a672e51f7",
+      "sourceName": "contracts/utils/mocks/MockUOwnable.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../unstructured/UOwnable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockUOwnable"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/product/ProductProviderBase.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "f780c646a6f54854e5d5d4cb5393341e",
+      "sourceName": "contracts/product/ProductProviderBase.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IProductProvider.sol",
+        "../interfaces/IOracle.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ProductProviderBase"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/examples/Squeeth.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "fa5724702fa5c9878129bf4aaa8db4a4",
+      "sourceName": "contracts/examples/Squeeth.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../product/ProductProviderBase.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Squeeth"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/examples/ShortEther.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "d462f2b747e5d45a9113efdcedd34cc3",
+      "sourceName": "contracts/examples/ShortEther.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../product/ProductProviderBase.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ShortEther"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/factory/Factory.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "9d9108345310b78276935e8009754f04",
+      "sourceName": "contracts/factory/Factory.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/proxy/Clones.sol",
+        "../interfaces/IFactory.sol",
+        "../interfaces/ICollateral.sol",
+        "../interfaces/IIncentivizer.sol",
+        "../interfaces/IProduct.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Factory"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/node_modules/@openzeppelin/contracts/proxy/Clones.sol": {
+      "lastModificationDate": 1689127996779,
+      "contentHash": "e8f1f04c46c67381a0b13f90439f9b41",
+      "sourceName": "@openzeppelin/contracts/proxy/Clones.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Clones"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/mocks/MockToken18.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "00257272d43ef6c4d1735fce4bf94623",
+      "sourceName": "contracts/utils/mocks/MockToken18.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../types/Token18.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockToken18"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/utils/mocks/MockFixed18.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "3b556f3c7e01c9a22862e9e75b7e35d7",
+      "sourceName": "contracts/utils/mocks/MockFixed18.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../types/Fixed18.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockFixed18"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/60/protocol/contracts/examples/LeveragedEther.sol": {
+      "lastModificationDate": 1687481775667,
+      "contentHash": "d0fdeb4c9a9410e58fa27b77a2f697dc",
+      "sourceName": "contracts/examples/LeveragedEther.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../product/ProductProviderBase.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "LeveragedEther"
+      ]
+    }
+  }
+}

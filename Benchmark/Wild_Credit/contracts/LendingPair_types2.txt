@@ -1,0 +1,66 @@
+[*c], LendingPair
+[sef], TOKA, decimals
+[sef], TOKB, decimals
+[sef], LENDINGCONTR, uniMinOutputPct, 1, {c, -1, -1, 0}
+[sef], LENDINGCONTR, interestRateModel, 1, {c, -1, -1, 0, INTERESTMODEL}
+[sef], INTERESTMODEL, interestRatePerBlock
+[sef], INTERESTMODEL, lpRate
+[sef], LENDINGCONTR, tokenPrices, 2, {c, 1, -1, 0}, {c, 2, -1, 0}
+[sef], LENDINGCONTR, colFactor, 1, {c, -1, -1, 20}
+[sef], LENDINGCONTR, liqFeeCaller
+[sef], LENDINGCONTR, liqFeeSystem
+[sef], Clones, clone, 1, {t, [1], [-1], 0}
+[sef], V3HELPER, positionTokens, 2, {c, -1, -1, 0}, {c, -1, -1, 0}
+[sef], V3HELPER, positionAmounts, 2, {c, -1, -1, 0}, {c, -1, -1, 0}
+[sef], V3HELPER, removeLiquidity, 2, {c, -1, -1, 0}, {c, -1, -1, 0}
+[sef], Math, min , 1, {t, [1], [-1], 0}
+[t], global, LIQ_MIN_HEALTH
+[t], global,  lendingController, -1, -1, 0, LENDINGCONTR
+[t], global, tokenA, -1, -1, 0, TOKA
+[t], global, tokenB, -1, -1, 0, TOKB
+[t], global, uniManager
+[t], global, uniV3Helper, -1, -1, 0, V3HELPER
+[t], global, WETH
+[t], global, lastBlockAccrued
+[t], global, _NOT_ENTERED
+[t], global, _ENTERED
+[t], global, feeRecipient
+[t], global, _status
+[tref], pendingSystemFees
+[tref], uniPosition
+[tref], debtSharesOf
+[tref], supplySharesOf
+[tref], totalSupplyAmount
+[tref], totalSupplyShares
+[tref], totalDebtAmount
+[tref], totalDebtShares
+[tref], lpToken
+[tref], decimals
+[t], initialize, _lpTokenMaster
+[t], initialize, _lendingController
+[t], initialize, _uniV3Helper
+[t], initialize, _feeRecipient
+[t], initialize, _tokenA, -1, -1, 0, TOKA
+[t], initialize, _tokenB, -1, -1, 0, TOKB
+[t], depositUniPosition, _account
+[t], depositUniPosition, _positionID
+[t], repayAll, _account
+[t], repayAll, _token
+[t], repayAll, _maxAmount, 1, -1, 0
+[t], repayAllETH, _account
+[t], repayAllETH, _maxAmount, 1, -1, 0
+[t], accrue, _token
+[t], collectSystemFee, _token
+[t], collectSystemFee, _amount, 1, -1, 0
+[t], transferLp, _token
+[t], transferLp, _from
+[t], transferLp, _to
+[t], transferLp, _amount, 1, -1, 0
+[t], liquidateAccount, _account
+[t], liquidateAccount, _repayToken
+[t], liquidateAccount, _repayAmount
+[t], liquidateAccount, _minSupplyOutput
+[t], accountHealth, _account
+[t], supplyRatePerBlock, _token
+[t], borrowRatePerBlock, _token
+[t], checkAccountHealth, _account

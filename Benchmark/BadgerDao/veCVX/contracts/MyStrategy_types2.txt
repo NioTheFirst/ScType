@@ -1,0 +1,53 @@
+[*c],MyStrategy
+[sef], CONTROLLER, vaults, 1, {c, [-1], [-1], 0, VAULT}
+[sef], CONTROLLER, rewards
+[sef], SUSHI_ROUTER, swapExactTokensForTokens
+[sef], LOCKER, balanceOf, 1, {c, [2], [-1], 0}
+[sef], LOCKER, maximumBoostPayment
+[sef], CVX_VAULT, getPricePerFullShare, 1, {c, 2, 1, 18}
+[sef], LOCKER, lockedBalanceOf, 1, {c, [2], [-1], 0}
+[sef], CVX, balanceOf, 1, {c, [2], [-1], 0}
+[sef], WANT, balanceOf, 1, {c, [1], [-1], 0}
+[sef], REWARD, balanceOf, 1, {c, [1], [-1], 0}
+[t],global,LOCKER,-1,-1,0, LOCKER
+[t], global, this, -1, -1, 0
+[t],global,CVX,-1,-1,0, CVX
+[t],global,CVX_VAULT,-1,-1,0, CVX_VAULT
+[t],global,SUSHI_ROUTER,-1,-1,0, SUSHI_ROUTER
+[t],global,WETH,-1,-1,0, WETH
+[t],global,reward,-1,-1,0, REWARD
+[t],global,lpComponent,-1,-1,0, LP
+[t],global,want,-1,-1,0, WANT
+[t],global,controller,-1,-1,0, CONTROLLER
+[t],global,performanceFeeGovernance,-1,-1,0, FEEGOV
+[t],global,performanceFeeStrategist,-1,-1,0, FEESTRAT
+[t],global,strategist,-1,-1,0, STRAT
+[t],global,DELEGATE,-1,-1,0, DELEGATE
+[t],global,DELEGATED_SPACE,-1,-1,0, DELEGAT_SPACE
+[t],global,SNAPSHOT,-1,-1,0
+[t],global,MAX_BPS,-1,-1,0
+[t],global,withdrawalSafetyCheck,-1,-1,0
+[t],global,harvestOnRebalance,-1,-1,0
+[t],global,processLocksOnReinvest,-1,-1,0
+[t],global ,processLocksOnRebalance,-1,-1,0
+[t],global,MAX_FEE,-1,-1,0
+[t], global, uniswap
+[t], global, withdrawalFee
+[t], global, governance
+[t], global, keeper
+[t], global, withdrawalMaxDeviationThreshold
+[t], global, guardian
+[t],_transferToVault,_amount,1,-1,0
+[t],_processFee,token,-1,-1,0
+[t],_processFee,amount,1,-1,0
+[t],_processFee,feeBps,-1,-1,0
+[t],_processFee,recipient,-1,-1,0
+[t],CVXToWant,cvx,2,-1,0
+[t],getProtectedTokens,_asset,-1,-1,0
+[t],_withdrawSome,_amount,1,-1,0
+[t],harvest,governancePerformanceFee,-1,-1,0
+[t],harvest,strategistPerformanceFee,-1,-1,0
+[t],_onlyNotProtectedTokens,_asset,1,-1,0
+[t],manualRebalance,toLock,-1,-1,0
+[t], wantToCVX, want, 1, -1, 0
+

@@ -1,0 +1,44 @@
+{
+  "name": "@pooltogether/fixed-point",
+  "version": "1.0.0",
+  "description": "An extremely simple fixed point math library",
+  "keywords": [
+    "blockchain",
+    "smart-contracts",
+    "ethereum"
+  ],
+  "repository": "https://github.com/pooltogether/fixed-point",
+  "author": "Brendan Asselstine <brendan@pooltogether.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "buidler test",
+    "compile": "buidler compile",
+    "prepack": "rm -rf build cache && buidler compile && truffle-extract -b build -o abis",
+    "postpublish": "PACKAGE_VERSION=$(./scripts/package-version.sh) && git tag -ae v$PACKAGE_VERSION && git push --tags"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.2.0",
+    "@nomiclabs/buidler-ethers": "^1.2.0",
+    "@nomiclabs/buidler-waffle": "^1.2.0",
+    "@types/chai": "^4.2.10",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.9.1",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^2.3.2",
+    "ethers": "^4.0.45",
+    "solc": "0.6.4",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3",
+    "truffle-extract": "pooltogether/truffle-extract"
+  },
+  "files": [
+    "LICENSE",
+    "abis/**",
+    "build/**",
+    "contracts/**"
+  ]
+}

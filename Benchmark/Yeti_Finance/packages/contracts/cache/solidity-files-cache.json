@@ -1,0 +1,5443 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/ActivePool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "8c9ca1ffa80b64e657d5465fb1ba042c",
+      "sourceName": "contracts/ActivePool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IActivePool.sol",
+        "./Interfaces/IWhitelist.sol",
+        "./Interfaces/IERC20.sol",
+        "./Interfaces/IWAsset.sol",
+        "./Dependencies/SafeMath.sol",
+        "./Dependencies/Ownable.sol",
+        "./Dependencies/CheckContract.sol",
+        "./Dependencies/YetiCustomBase.sol",
+        "./Dependencies/SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ActivePool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IActivePool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "e9ed45cf02f42666fa0bf3a0dea3fa95",
+      "sourceName": "contracts/Interfaces/IActivePool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IActivePool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/SafeMath.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "541dc725deb81126962df7ce933a238c",
+      "sourceName": "contracts/Dependencies/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IERC20.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "2d2e2c466ae8799d514df6c79b5d5474",
+      "sourceName": "contracts/Interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IWAsset.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "ee694d3e2a0f4ccf3fa465b2b07498d9",
+      "sourceName": "contracts/Interfaces/IWAsset.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IWAsset"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/Ownable.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "a9ee342ddfe037af5ff3c67940fbb11d",
+      "sourceName": "contracts/Dependencies/Ownable.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/CheckContract.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "ca43e4a2c5d6609c11c502a4f481c712",
+      "sourceName": "contracts/Dependencies/CheckContract.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "CheckContract"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/YetiCustomBase.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "aa4b067fe5034a0814b23e4d34121b3d",
+      "sourceName": "contracts/Dependencies/YetiCustomBase.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BaseMath.sol",
+        "./SafeMath.sol",
+        "../Interfaces/IERC20.sol",
+        "../Interfaces/IWhitelist.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "YetiCustomBase"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/SafeERC20.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "98c5ebb50d696233a06b949861d32733",
+      "sourceName": "contracts/Dependencies/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IERC20.sol",
+        "./Address.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IWhitelist.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "1d5090830168b5c38d55aa5aabaedbed",
+      "sourceName": "contracts/Interfaces/IWhitelist.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IWhitelist"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IPool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "9a7f7f63193c5f20396a7e78c3ab9f35",
+      "sourceName": "contracts/Interfaces/IPool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ICollateralReceiver.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IPool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ICollateralReceiver.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "bea3ceaa7ebbbeb23fc04d8aae1f2cb0",
+      "sourceName": "contracts/Interfaces/ICollateralReceiver.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ICollateralReceiver"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/BaseMath.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "a067c9d9cb9232723c091b531e4e58f8",
+      "sourceName": "contracts/Dependencies/BaseMath.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "BaseMath"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/EchidnaTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "37bb70c767f7ec1a3e80792b7c4fbf46",
+      "sourceName": "contracts/TestContracts/EchidnaTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TroveManager.sol",
+        "../BorrowerOperations.sol",
+        "../ActivePool.sol",
+        "../DefaultPool.sol",
+        "../StabilityPool.sol",
+        "../GasPool.sol",
+        "../CollSurplusPool.sol",
+        "../YUSDToken.sol",
+        "./PriceFeedTestnet.sol",
+        "../SortedTroves.sol",
+        "../TroveManagerLiquidations.sol",
+        "../TroveManagerRedemptions.sol",
+        "../Dependencies/Whitelist.sol",
+        "./EchidnaProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "EchidnaTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TroveManager.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "105dd782955bee3b70a530e33b72f2c0",
+      "sourceName": "contracts/TroveManager.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/ITroveManager.sol",
+        "./Interfaces/IStabilityPool.sol",
+        "./Interfaces/ICollSurplusPool.sol",
+        "./Interfaces/IYUSDToken.sol",
+        "./Interfaces/ISortedTroves.sol",
+        "./Interfaces/IYETIToken.sol",
+        "./Interfaces/ISYETI.sol",
+        "./Interfaces/IWhitelist.sol",
+        "./Interfaces/ITroveManagerLiquidations.sol",
+        "./Interfaces/ITroveManagerRedemptions.sol",
+        "./Interfaces/IERC20.sol",
+        "./Dependencies/TroveManagerBase.sol",
+        "./Dependencies/ReentrancyGuard.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TroveManager"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/BorrowerOperations.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "e5be134e22f8bf02501a7871b9500823",
+      "sourceName": "contracts/BorrowerOperations.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IBorrowerOperations.sol",
+        "./Interfaces/ITroveManager.sol",
+        "./Interfaces/IYUSDToken.sol",
+        "./Interfaces/ICollSurplusPool.sol",
+        "./Interfaces/ISortedTroves.sol",
+        "./Interfaces/ISYETI.sol",
+        "./Interfaces/IWhitelist.sol",
+        "./Interfaces/IYetiRouter.sol",
+        "./Interfaces/IERC20.sol",
+        "./Dependencies/LiquityBase.sol",
+        "./Dependencies/Ownable.sol",
+        "./Dependencies/CheckContract.sol",
+        "./Dependencies/SafeMath.sol",
+        "./Dependencies/ReentrancyGuard.sol",
+        "./Interfaces/IWAsset.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "BorrowerOperations"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/DefaultPool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "d8ab416793b8bf8a8ca44c8c2f175c65",
+      "sourceName": "contracts/DefaultPool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IDefaultPool.sol",
+        "./Interfaces/IActivePool.sol",
+        "./Interfaces/IWhitelist.sol",
+        "./Interfaces/IERC20.sol",
+        "./Interfaces/IWAsset.sol",
+        "./Dependencies/SafeMath.sol",
+        "./Dependencies/Ownable.sol",
+        "./Dependencies/CheckContract.sol",
+        "./Dependencies/YetiCustomBase.sol",
+        "./Dependencies/SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "DefaultPool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/StabilityPool.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "98fda864af47ce8ce1eeac716c06aa9f",
+      "sourceName": "contracts/StabilityPool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IBorrowerOperations.sol",
+        "./Interfaces/IStabilityPool.sol",
+        "./Interfaces/IBorrowerOperations.sol",
+        "./Interfaces/ITroveManager.sol",
+        "./Interfaces/IYUSDToken.sol",
+        "./Interfaces/ISortedTroves.sol",
+        "./Interfaces/ICommunityIssuance.sol",
+        "./Interfaces/IWhitelist.sol",
+        "./Interfaces/IERC20.sol",
+        "./Interfaces/IWAsset.sol",
+        "./Dependencies/LiquityBase.sol",
+        "./Dependencies/SafeMath.sol",
+        "./Dependencies/LiquitySafeMath128.sol",
+        "./Dependencies/Ownable.sol",
+        "./Dependencies/CheckContract.sol",
+        "./Dependencies/SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "StabilityPool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/GasPool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "49a9badb4339de7db797029b4f42c82f",
+      "sourceName": "contracts/GasPool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "GasPool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/CollSurplusPool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "ca3dffbf7644c4ed8a52b64034e1e127",
+      "sourceName": "contracts/CollSurplusPool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/ICollSurplusPool.sol",
+        "./Interfaces/IWhitelist.sol",
+        "./Dependencies/SafeMath.sol",
+        "./Dependencies/Ownable.sol",
+        "./Dependencies/CheckContract.sol",
+        "./Dependencies/LiquityBase.sol",
+        "./Interfaces/IWAsset.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "CollSurplusPool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/PriceFeedTestnet.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "3d01ccd5bb8391e6db6ff08663c5f3a8",
+      "sourceName": "contracts/TestContracts/PriceFeedTestnet.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IPriceFeed.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "PriceFeedTestnet"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TroveManagerRedemptions.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "c899b0e826e953e68bae42bb800429c5",
+      "sourceName": "contracts/TroveManagerRedemptions.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IWAsset.sol",
+        "./Dependencies/TroveManagerBase.sol",
+        "./Dependencies/SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TroveManagerRedemptions"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YUSDToken.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "a3f0af29ab7e056ed3859a86e51c2ccb",
+      "sourceName": "contracts/YUSDToken.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IYUSDToken.sol",
+        "./Dependencies/SafeMath.sol",
+        "./Dependencies/CheckContract.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "YUSDToken"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/SortedTroves.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "81e5a59d48125d89da5ac1a38cb9c70c",
+      "sourceName": "contracts/SortedTroves.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/ISortedTroves.sol",
+        "./Dependencies/SafeMath.sol",
+        "./Dependencies/Ownable.sol",
+        "./Dependencies/CheckContract.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "SortedTroves"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/Whitelist.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "1f27960c632e9030d0c3480bcba12fa2",
+      "sourceName": "contracts/Dependencies/Whitelist.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "../Interfaces/IBaseOracle.sol",
+        "../Interfaces/IWhitelist.sol",
+        "../Interfaces/IPriceFeed.sol",
+        "../Interfaces/IPriceCurve.sol",
+        "../Interfaces/IActivePool.sol",
+        "../Interfaces/IDefaultPool.sol",
+        "../Interfaces/IStabilityPool.sol",
+        "../Interfaces/ICollSurplusPool.sol",
+        "../Interfaces/IERC20.sol",
+        "./LiquityMath.sol",
+        "./CheckContract.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "Whitelist"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/EchidnaProxy.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "82309dce9414d00d841f5b228c121882",
+      "sourceName": "contracts/TestContracts/EchidnaProxy.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TroveManager.sol",
+        "../BorrowerOperations.sol",
+        "../StabilityPool.sol",
+        "../YUSDToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "EchidnaProxy"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TroveManagerLiquidations.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "59e30889d23a322e87d74b455ad2b901",
+      "sourceName": "contracts/TroveManagerLiquidations.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IWAsset.sol",
+        "./Dependencies/TroveManagerBase.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TroveManagerLiquidations"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ITroveManager.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "5a470d42f69a6a12456375fdffb861a2",
+      "sourceName": "contracts/Interfaces/ITroveManager.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ILiquityBase.sol",
+        "./IStabilityPool.sol",
+        "./IYUSDToken.sol",
+        "./IYETIToken.sol",
+        "./ISYETI.sol",
+        "./IActivePool.sol",
+        "./IDefaultPool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ITroveManager"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IStabilityPool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "96d664edebebb5a918e4900ff38a30f8",
+      "sourceName": "contracts/Interfaces/IStabilityPool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ICollateralReceiver.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IStabilityPool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IYUSDToken.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "1095540cf58b03af3cabfca139a0326d",
+      "sourceName": "contracts/Interfaces/IYUSDToken.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IERC20.sol",
+        "../Interfaces/IERC2612.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IYUSDToken"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ICollSurplusPool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "9c4b1a1b5b2d175773b42a317adc8b37",
+      "sourceName": "contracts/Interfaces/ICollSurplusPool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/YetiCustomBase.sol",
+        "./ICollateralReceiver.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ICollSurplusPool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ISortedTroves.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "74084d8f6a540480bef7b60ee3101387",
+      "sourceName": "contracts/Interfaces/ISortedTroves.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ISortedTroves"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IYETIToken.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "96cfd0caf00ad79bff5fe3bf3123a0f2",
+      "sourceName": "contracts/Interfaces/IYETIToken.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./IERC2612.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IYETIToken"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ITroveManagerLiquidations.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "7739af20087a1cec23d2d2d143725b90",
+      "sourceName": "contracts/Interfaces/ITroveManagerLiquidations.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ITroveManagerLiquidations"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ISYETI.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "d481f8dba8af968e3091f969caa1662e",
+      "sourceName": "contracts/Interfaces/ISYETI.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ISYETI"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ITroveManagerRedemptions.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "87d50a6c3ecdc34b43b54b0a80d0e4a7",
+      "sourceName": "contracts/Interfaces/ITroveManagerRedemptions.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ITroveManagerRedemptions"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/ReentrancyGuard.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "9a3d88e17521eddcf4bd7ff68706017e",
+      "sourceName": "contracts/Dependencies/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/TroveManagerBase.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "01a92836eb7c505271b33a706a9303f9",
+      "sourceName": "contracts/Dependencies/TroveManagerBase.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/ITroveManager.sol",
+        "../Interfaces/IStabilityPool.sol",
+        "../Interfaces/ICollSurplusPool.sol",
+        "../Interfaces/IYUSDToken.sol",
+        "../Interfaces/ISortedTroves.sol",
+        "../Interfaces/IYETIToken.sol",
+        "../Interfaces/ISYETI.sol",
+        "../Interfaces/IActivePool.sol",
+        "../Interfaces/ITroveManagerLiquidations.sol",
+        "../Interfaces/ITroveManagerRedemptions.sol",
+        "./LiquityBase.sol",
+        "./Ownable.sol",
+        "./CheckContract.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TroveManagerBase"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ILiquityBase.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "77acec5cea9541a0a81717406865aef2",
+      "sourceName": "contracts/Interfaces/ILiquityBase.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPriceFeed.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ILiquityBase"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IDefaultPool.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "cc24b6f69fccffaa5367e74375cc08f6",
+      "sourceName": "contracts/Interfaces/IDefaultPool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IDefaultPool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IPriceFeed.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "d426f65f816948f6cee74be809e329f3",
+      "sourceName": "contracts/Interfaces/IPriceFeed.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IPriceFeed"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IERC2612.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "58f0051bf3f2649ca67eac0c2d78a65f",
+      "sourceName": "contracts/Interfaces/IERC2612.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IERC2612"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/LiquityBase.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "1db985b68b7f48cd4d7d12e6572b51fe",
+      "sourceName": "contracts/Dependencies/LiquityBase.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./LiquityMath.sol",
+        "../Interfaces/IActivePool.sol",
+        "../Interfaces/IDefaultPool.sol",
+        "../Interfaces/ILiquityBase.sol",
+        "./YetiCustomBase.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LiquityBase"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/LiquityMath.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "f65c7b4dda6c1731ac7a5c2289c1fe30",
+      "sourceName": "contracts/Dependencies/LiquityMath.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LiquityMath"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IBorrowerOperations.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "fabeb5652c1a79bcc62cfb599af8bdf2",
+      "sourceName": "contracts/Interfaces/IBorrowerOperations.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IBorrowerOperations"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IYetiRouter.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "b44f6449d076e75a26a2f3f71e2313d7",
+      "sourceName": "contracts/Interfaces/IYetiRouter.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IYetiRouter"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ICommunityIssuance.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "b4fc23855d20b5434511c928f59c130d",
+      "sourceName": "contracts/Interfaces/ICommunityIssuance.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ICommunityIssuance"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/LiquitySafeMath128.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "670b0c8229c87756b3a1ef9cc2f8f5c3",
+      "sourceName": "contracts/Dependencies/LiquitySafeMath128.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LiquitySafeMath128"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IBaseOracle.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "87fd93423918801947366e3375f11ac1",
+      "sourceName": "contracts/Interfaces/IBaseOracle.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IBaseOracle"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IPriceCurve.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "a0fac82d492923ff175bd42dca1cf5c7",
+      "sourceName": "contracts/Interfaces/IPriceCurve.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IPriceCurve"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YetiFinanceTreasury.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "d637475dd0b1078ad80789cb6bfd2e38",
+      "sourceName": "contracts/YetiFinanceTreasury.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IERC20.sol",
+        "./Dependencies/SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "YetiFinanceTreasury"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/TeamLockup.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "e18ed0be5f5a0f8e662d7499a98d0ddc",
+      "sourceName": "contracts/YETI/TeamLockup.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IERC20.sol",
+        "../Dependencies/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TeamLockup"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/LockupContractFactory.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "fd849c9461c2d86898057a9aaf8603d9",
+      "sourceName": "contracts/YETI/LockupContractFactory.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/CheckContract.sol",
+        "../Dependencies/SafeMath.sol",
+        "../Dependencies/Ownable.sol",
+        "../Interfaces/ILockupContractFactory.sol",
+        "./LockupContract.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LockupContractFactory"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ILockupContractFactory.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "e03f14afec0f0897c853ef6266203f85",
+      "sourceName": "contracts/Interfaces/ILockupContractFactory.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ILockupContractFactory"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/LockupContract.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "909644571c9756b31e1d23f2a41aee72",
+      "sourceName": "contracts/YETI/LockupContract.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/SafeMath.sol",
+        "../Interfaces/IYETIToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LockupContract"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/YETIToken.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "e6bf5ea6d5dcbc28ccccab785acdd6f6",
+      "sourceName": "contracts/YETI/YETIToken.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/SafeMath.sol",
+        "../Interfaces/IYETIToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "YETIToken"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/YETITokenTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "5fcb889dfd23abbce661257309cef1e8",
+      "sourceName": "contracts/TestContracts/YETITokenTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../YETI/YETIToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "YETITokenTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/ShortLockupContract.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "1369274c198da57bc3dcb97feccf11ad",
+      "sourceName": "contracts/YETI/ShortLockupContract.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/SafeMath.sol",
+        "../Dependencies/SafeERC20.sol",
+        "../Interfaces/IYETIToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ShortLockupContract"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/CommunityIssuance.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "0d09166b854e9dc6cf4c1e466846ebaa",
+      "sourceName": "contracts/YETI/CommunityIssuance.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IYETIToken.sol",
+        "../Interfaces/ICommunityIssuance.sol",
+        "../Dependencies/BaseMath.sol",
+        "../Dependencies/LiquityMath.sol",
+        "../Dependencies/Ownable.sol",
+        "../Dependencies/CheckContract.sol",
+        "../Dependencies/SafeMath.sol",
+        "../Dependencies/SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "CommunityIssuance"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/LiquityMathTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "6a24554ffb42b55f4bf48c4d6197ac10",
+      "sourceName": "contracts/TestContracts/LiquityMathTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/LiquityMath.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LiquityMathTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/FunctionCaller.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "7097fd0257c8ec6d37a8c6010f7f9586",
+      "sourceName": "contracts/TestContracts/FunctionCaller.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/ITroveManager.sol",
+        "../Interfaces/ISortedTroves.sol",
+        "../Interfaces/IPriceFeed.sol",
+        "../Dependencies/LiquityMath.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "FunctionCaller"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Proxy/BorrowerWrappersScript.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "32848824318da1352837938bc70deac7",
+      "sourceName": "contracts/Proxy/BorrowerWrappersScript.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/SafeMath.sol",
+        "../Dependencies/LiquityMath.sol",
+        "../Interfaces/IERC20.sol",
+        "../Interfaces/IBorrowerOperations.sol",
+        "../Interfaces/ITroveManager.sol",
+        "../Interfaces/IStabilityPool.sol",
+        "../Interfaces/IPriceFeed.sol",
+        "../Interfaces/ISYETI.sol",
+        "./BorrowerOperationsScript.sol",
+        "./ETHTransferScript.sol",
+        "./SYETIScript.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "BorrowerWrappersScript"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Proxy/BorrowerOperationsScript.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "e362d56747fb25b15607d2fa1e895406",
+      "sourceName": "contracts/Proxy/BorrowerOperationsScript.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/CheckContract.sol",
+        "../Interfaces/IBorrowerOperations.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "BorrowerOperationsScript"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Proxy/SYETIScript.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "d9c17b9d48621c0c2ca5d5ba1a15cbc0",
+      "sourceName": "contracts/Proxy/SYETIScript.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/CheckContract.sol",
+        "../Interfaces/ISYETI.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "SYETIScript"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Proxy/ETHTransferScript.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "4ad054acb5348fbc8989cabd7134732c",
+      "sourceName": "contracts/Proxy/ETHTransferScript.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ETHTransferScript"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/SortedTrovesBOTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "b502571ce1a3522f94c3cae3f6be9463",
+      "sourceName": "contracts/TestContracts/SortedTrovesBOTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../BorrowerOperations.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "SortedTrovesBOTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/StabilityPoolTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "442a594965ebb017aa49e5a165954ba6",
+      "sourceName": "contracts/TestContracts/StabilityPoolTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../StabilityPool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "StabilityPoolTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/LiquitySafeMath128Tester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "f40f59ea08bd1c4d443d17fbfd3229cb",
+      "sourceName": "contracts/TestContracts/LiquitySafeMath128Tester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/LiquitySafeMath128.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LiquitySafeMath128Tester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/SortedTrovesTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "a390ab0439d89d3c6eb0d178ecb45fff",
+      "sourceName": "contracts/TestContracts/SortedTrovesTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/ISortedTroves.sol",
+        "../SortedTroves.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "SortedTrovesTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/HintHelpers.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "9a00a0f8432fb601dd1e6e0ddd691fb0",
+      "sourceName": "contracts/HintHelpers.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/ITroveManager.sol",
+        "./Interfaces/ISortedTroves.sol",
+        "./Interfaces/IWhitelist.sol",
+        "./Dependencies/LiquityBase.sol",
+        "./Dependencies/Ownable.sol",
+        "./Dependencies/CheckContract.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "HintHelpers"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Proxy/StabilityPoolScript.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "d238dc72f7862e18b7accf0c02cac27c",
+      "sourceName": "contracts/Proxy/StabilityPoolScript.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/CheckContract.sol",
+        "../Interfaces/IStabilityPool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "StabilityPoolScript"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Proxy/TroveManagerScript.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "e5efd7999c2c39e85e70eb0e2ed99547",
+      "sourceName": "contracts/Proxy/TroveManagerScript.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/CheckContract.sol",
+        "../Interfaces/ITroveManager.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TroveManagerScript"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/MultiTroveGetter.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "9be546fd7bb0a32bba48ab5a23388414",
+      "sourceName": "contracts/MultiTroveGetter.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./TroveManager.sol",
+        "./SortedTroves.sol",
+        "./Dependencies/Whitelist.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "MultiTroveGetter"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/PriceCurves/ThreePieceWiseLinearPriceCurve.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "22e466be2c5fb5e4971cd96951c56d15",
+      "sourceName": "contracts/PriceCurves/ThreePieceWiseLinearPriceCurve.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IPriceCurve.sol",
+        "../Dependencies/SafeMath.sol",
+        "../Dependencies/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ThreePieceWiseLinearPriceCurve"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Oracles/LPTokenPriceFeed.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "6008562910fb281f28f6f3f9b083e6d1",
+      "sourceName": "contracts/Oracles/LPTokenPriceFeed.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/SafeMath.sol",
+        "../Dependencies/HomoraMath.sol",
+        "../Interfaces/IBaseOracle.sol",
+        "../Interfaces/IPriceFeed.sol",
+        "../Interfaces/IUniswapV2Pair.sol",
+        "../Dependencies/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "UniswapV2LPTokenPriceFeed"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/HomoraMath.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "9e454949c6a380cec9d05a92e4d971c2",
+      "sourceName": "contracts/Dependencies/HomoraMath.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "HomoraMath"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Oracles/BQITokenOracle.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "1fd3ccb58c9d15be08b643150b4d40d0",
+      "sourceName": "contracts/Oracles/BQITokenOracle.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/SafeMath.sol",
+        "../Interfaces/IBaseOracle.sol",
+        "../Dependencies/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "BQIOracle",
+        "IQIToken"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Oracles/AAVETokenOracle.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "5a24011cb3e065dcd68c348b9114408b",
+      "sourceName": "contracts/Oracles/AAVETokenOracle.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/SafeMath.sol",
+        "../Interfaces/IBaseOracle.sol",
+        "../Dependencies/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "AAVEOracle",
+        "IWAAVE"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/LiquityBaseTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "0fc307f2bd19aeb2952950c2b52716fe",
+      "sourceName": "contracts/TestContracts/LiquityBaseTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/LiquityBase.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LiquityBaseTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Routers/WJLPRouter.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "828dfe3d80f690edb2af44a4a6dfacf8",
+      "sourceName": "contracts/Routers/WJLPRouter.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IYetiRouter.sol",
+        "../Interfaces/IWAsset.sol",
+        "../Interfaces/IJoeZapper.sol",
+        "../Interfaces/IERC20.sol",
+        "../Dependencies/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "WJLPRouter"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IJoeZapper.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "58a706b5588c0349245ce1425fa171c5",
+      "sourceName": "contracts/Interfaces/IJoeZapper.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IJoeZapper"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Routers/ERC20Router.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "3dce0f4ed92d3b918ec33e38e3dba730",
+      "sourceName": "contracts/Routers/ERC20Router.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IYetiRouter.sol",
+        "../Interfaces/IERC20.sol",
+        "../Dependencies/SafeMath.sol",
+        "../YUSDToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ERC20Router",
+        "IRouter"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/DefaultPoolTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "350a4cb613e3bd66526edad82d3849ba",
+      "sourceName": "contracts/TestContracts/DefaultPoolTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../DefaultPool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "DefaultPoolTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/LUSDTokenCaller.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "7d9f000e3f433da3627e9f9a07c0b004",
+      "sourceName": "contracts/TestContracts/LUSDTokenCaller.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/IYUSDToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "YUSDTokenCaller"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/PriceFeed.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "cf3ee090a6c22cabd4292cf6844877c1",
+      "sourceName": "contracts/PriceFeed.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IPriceFeed.sol",
+        "./Interfaces/ITellorCaller.sol",
+        "./Dependencies/AggregatorV3Interface.sol",
+        "./Dependencies/SafeMath.sol",
+        "./Dependencies/Ownable.sol",
+        "./Dependencies/CheckContract.sol",
+        "./Dependencies/BaseMath.sol",
+        "./Dependencies/LiquityMath.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "PriceFeed"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ITellorCaller.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "08d7d8efb3543c2eeba815e5313c02e3",
+      "sourceName": "contracts/Interfaces/ITellorCaller.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ITellorCaller"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/AggregatorV3Interface.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "145d7eca8a8f57799686358d1ff6a9e3",
+      "sourceName": "contracts/Dependencies/AggregatorV3Interface.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "AggregatorV3Interface"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/PriceFeedTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "d1f7264f7f339808b71779140c782c2d",
+      "sourceName": "contracts/TestContracts/PriceFeedTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../PriceFeed.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "PriceFeedTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/MockAggregator.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "b33523b92bcc3d622f46534cbba89a87",
+      "sourceName": "contracts/TestContracts/MockAggregator.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/AggregatorV3Interface.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "MockAggregator"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/TellorCaller.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "a2d33aa3af24676d855d0ff163ca7326",
+      "sourceName": "contracts/Dependencies/TellorCaller.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Interfaces/ITellorCaller.sol",
+        "../Interfaces/ITellor.sol",
+        "./SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TellorCaller"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ITellor.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "e31804dde34cc999a0988ef7b0f14f59",
+      "sourceName": "contracts/Interfaces/ITellor.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ITellor"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/LPRewards/Unipool.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "831f0eef71c4717d72b96b7d50e21bcb",
+      "sourceName": "contracts/LPRewards/Unipool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/LiquityMath.sol",
+        "../Dependencies/SafeMath.sol",
+        "../Dependencies/Ownable.sol",
+        "../Dependencies/CheckContract.sol",
+        "../Interfaces/IYETIToken.sol",
+        "./Dependencies/SafeERC20.sol",
+        "./Interfaces/ILPTokenWrapper.sol",
+        "./Interfaces/IUnipool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LPTokenWrapper",
+        "Unipool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/LPRewards/Dependencies/SafeERC20.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "bf997e804fc2eac8083f4afb050f79c5",
+      "sourceName": "contracts/LPRewards/Dependencies/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../Interfaces/IERC20.sol",
+        "../../Dependencies/SafeMath.sol",
+        "./Address.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/LPRewards/Interfaces/ILPTokenWrapper.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "bc8dc33ef0af10d24ecc2322085a388f",
+      "sourceName": "contracts/LPRewards/Interfaces/ILPTokenWrapper.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ILPTokenWrapper"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/LPRewards/Interfaces/IUnipool.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "387e4f8733a79e8eb39dba43f88f2b4d",
+      "sourceName": "contracts/LPRewards/Interfaces/IUnipool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IUnipool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/LPRewards/Dependencies/Address.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "dd436d44fe589d97fd1664b033a54384",
+      "sourceName": "contracts/LPRewards/Dependencies/Address.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/LPRewards/Pool2Unipool.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "5f14f6925cb282bb712fd6f187b36ef7",
+      "sourceName": "contracts/LPRewards/Pool2Unipool.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/LiquityMath.sol",
+        "../Dependencies/SafeMath.sol",
+        "../Dependencies/Ownable.sol",
+        "../Dependencies/CheckContract.sol",
+        "../Interfaces/IYETIToken.sol",
+        "./Dependencies/SafeERC20.sol",
+        "./Interfaces/ILPTokenWrapper.sol",
+        "./Interfaces/IUnipool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "LPTokenWrapper",
+        "Pool2Unipool"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/BorrowerOperationsTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "704154afc1704b2db6525411ba2babb2",
+      "sourceName": "contracts/TestContracts/BorrowerOperationsTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../BorrowerOperations.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "BorrowerOperationsTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/CDPManagerTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "4737c0adb3c1208cf09cf0b1ad982ee5",
+      "sourceName": "contracts/TestContracts/CDPManagerTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../TroveManager.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TroveManagerTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/CommunityIssuanceTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "8e3484ad5b46e394635490352a839934",
+      "sourceName": "contracts/TestContracts/CommunityIssuanceTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../YETI/CommunityIssuance.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "CommunityIssuanceTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Proxy/TokenScript.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "2c94b733982ba260f9e76d242ecc02b3",
+      "sourceName": "contracts/Proxy/TokenScript.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Dependencies/CheckContract.sol",
+        "../Interfaces/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TokenScript"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/YUSDTokenTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "0ec9d8f8541239b18acb1517f599dca5",
+      "sourceName": "contracts/TestContracts/YUSDTokenTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../YUSDToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "YUSDTokenTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TeamAllocation.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "bc192f45df1e9e53e34e866ac0bbac0e",
+      "sourceName": "contracts/TeamAllocation.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IERC20.sol",
+        "./Dependencies/SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "TeamAllocation"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/ActivePoolTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "9adcdd75dbf01852802afbc8b128df15",
+      "sourceName": "contracts/TestContracts/ActivePoolTester.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ActivePool.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ActivePoolTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ILQTYStaking.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "a2271eb708b5639de77c0459dc0e0697",
+      "sourceName": "contracts/Interfaces/ILQTYStaking.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ISYETI"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IOracle.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "6dd06dfecbc1ec20af52654dab8becb8",
+      "sourceName": "contracts/Interfaces/IOracle.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "IOracle"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/ITraderJoeZap.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "538908ec34958c3c1a3cf7c12e8fa9c3",
+      "sourceName": "contracts/Interfaces/ITraderJoeZap.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ITraderJoeZap"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/LPRewards/TestContracts/ERC20Mock.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "21ee69e2befeb8a4350cd4f75949d971",
+      "sourceName": "contracts/LPRewards/TestContracts/ERC20Mock.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ERC20Mock"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Migrations.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "9c333c39f9549bb64040b0aed49bb7f7",
+      "sourceName": "contracts/Migrations.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "Migrations"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/Destructible.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "c3342b76dc5fa9efd16e2e12bb307aa3",
+      "sourceName": "contracts/TestContracts/Destructible.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "Destructible"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/MockTellor.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "535a93f109eef01b6b44ec08e2186279",
+      "sourceName": "contracts/TestContracts/MockTellor.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "MockTellor"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/NonPayable.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "6a0854bf5443b518e3061bcbc8b70247",
+      "sourceName": "contracts/TestContracts/NonPayable.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "NonPayable"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/TestAssets/ERC20Token.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "3df7748868b2cf92c5339ab1bf68d880",
+      "sourceName": "contracts/TestContracts/TestAssets/ERC20Token.sol",
+      "solcConfig": {
+        "version": "0.6.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.11"
+      ],
+      "artifacts": [
+        "ERC20Token",
+        "SafeMath"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Interfaces/IUniswapV2Pair.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "9863b130b79af89a7e4c02759fccc120",
+      "sourceName": "contracts/Interfaces/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Pair"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1690056542759,
+      "contentHash": "e2884fb4e1ef4b4a7c7ac3a227880b0f",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">= 0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/Address.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "ab0e99c401bc48afff47737c97ee475e",
+      "sourceName": "contracts/AssetWrappers/Address.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/SafeERC20.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "41abd62504a083241c57177bd8f4920f",
+      "sourceName": "contracts/AssetWrappers/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IERC20_8.sol",
+        "./Address.sol"
+      ],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/Interfaces/IERC20_8.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "861b4f5d2212e0f82c3e1c3dfaec1be1",
+      "sourceName": "contracts/AssetWrappers/Interfaces/IERC20_8.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/WJLP.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "eb41751a2371c70dff466d0412d175bd",
+      "sourceName": "contracts/AssetWrappers/WJLP.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC20_8.sol",
+        "./Interfaces/IWAsset.sol",
+        "./SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "IMasterChefJoeV2",
+        "IRewarder",
+        "WJLP"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/ERC20_8.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "a3c42f1d5496b88dcbb54394630cca73",
+      "sourceName": "contracts/AssetWrappers/ERC20_8.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces/IERC20_8.sol"
+      ],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "ERC20_8"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/Interfaces/IWAsset.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "294cfc60c75d4e5cd130b339d93069f9",
+      "sourceName": "contracts/AssetWrappers/Interfaces/IWAsset.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "IWAsset"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/WBQI.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "d218d8f26a4d5a119689cd6284441be7",
+      "sourceName": "contracts/AssetWrappers/WBQI.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC20_8.sol",
+        "./Interfaces/IWAsset.sol"
+      ],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "IComptroller",
+        "IRewarder",
+        "WBQI"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/WAAVE.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "d5735303a2e651a31fcd9a00e6f804a0",
+      "sourceName": "contracts/AssetWrappers/WAAVE.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC20_8.sol",
+        "./Interfaces/IWAsset.sol"
+      ],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "WAAVE"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/Interfaces/IRewarder.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "18bc2be70aa97156b4b0aa84047aaadd",
+      "sourceName": "contracts/AssetWrappers/Interfaces/IRewarder.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20_8.sol"
+      ],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "IRewarder"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/Interfaces/IMasterChefJoeV2.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "88e7bb088479a455ad4a16f9b787ac9e",
+      "sourceName": "contracts/AssetWrappers/Interfaces/IMasterChefJoeV2.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IRewarder.sol"
+      ],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "IMasterChefJoeV2"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/AssetWrappers/Interfaces/IZap.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "31c1e62ecab4207cdd1a61cc76609bbf",
+      "sourceName": "contracts/AssetWrappers/Interfaces/IZap.sol",
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.7"
+      ],
+      "artifacts": [
+        "IZap"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/Dependencies/Address.sol": {
+      "lastModificationDate": 1687481775739,
+      "contentHash": "8e41b90be481648e89edd944176dbaf2",
+      "sourceName": "contracts/Dependencies/Address.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.11"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1690056541495,
+      "contentHash": "8065b340476f61365c076897199425f1",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/Context.sol",
+        "./IERC20.sol",
+        "../../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1690056541391,
+      "contentHash": "2adbd82f6d055a4751566d4671512b03",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1690056541627,
+      "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/node_modules/@openzeppelin/contracts/math/SafeMath.sol": {
+      "lastModificationDate": 1690056541731,
+      "contentHash": "e03e12206057e809eb76c5f681170c32",
+      "sourceName": "@openzeppelin/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/sYETITokenTester.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "915f4dc80dd09156ab24cf8e40d0cfdd",
+      "sourceName": "contracts/TestContracts/sYETITokenTester.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../YETI/sYETIToken.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "sYETITokenTester"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/sYETIToken.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "d31e78f2c4e63c86f34a4f42cdf81c96",
+      "sourceName": "contracts/YETI/sYETIToken.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BoringCrypto/BoringMath.sol",
+        "./BoringCrypto/BoringERC20.sol",
+        "./BoringCrypto/Domain.sol",
+        "./BoringCrypto/ERC20.sol",
+        "./BoringCrypto/IERC20.sol",
+        "./BoringCrypto/BoringOwnable.sol",
+        "./IsYETIRouter.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "IYETIToken",
+        "sYETIToken"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/BoringCrypto/BoringMath.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "d57c37916c9849903f40adaaa0e4aa82",
+      "sourceName": "contracts/YETI/BoringCrypto/BoringMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "BoringMath",
+        "BoringMath128",
+        "BoringMath32",
+        "BoringMath64"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/BoringCrypto/Domain.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "09e7ad1c97a2bf61c0b8d6ed471cb619",
+      "sourceName": "contracts/YETI/BoringCrypto/Domain.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "Domain"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/BoringCrypto/BoringERC20.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "342147ef54ec78f9b190f074b6e003c8",
+      "sourceName": "contracts/YETI/BoringCrypto/BoringERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "BoringERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/BoringCrypto/ERC20.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "e3117f2192685653fbe4733eeacf56b2",
+      "sourceName": "contracts/YETI/BoringCrypto/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./Domain.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "ERC20",
+        "ERC20Data",
+        "ERC20WithSupply"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/BoringCrypto/IERC20.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "88f8701b8313a6356a564e5d9de47324",
+      "sourceName": "contracts/YETI/BoringCrypto/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/BoringCrypto/BoringOwnable.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "a990913bd62dc6fddcd14e4819279db4",
+      "sourceName": "contracts/YETI/BoringCrypto/BoringOwnable.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "BoringOwnable",
+        "BoringOwnableData"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/IsYETIRouter.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "4f7e504dade0bed747b3f3f73b3425c4",
+      "sourceName": "contracts/YETI/IsYETIRouter.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "IsYETIRouter"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/YUSDToYETIRouters/dummyUniV2Router.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "ab0743a3cb52fa78630c0a7d708d4be3",
+      "sourceName": "contracts/YETI/YUSDToYETIRouters/dummyUniV2Router.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IsYETIRouter.sol",
+        "../BoringCrypto/BoringOwnable.sol",
+        "../BoringCrypto/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "IRouter",
+        "dummyUniV2Router"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/YETI/BoringCrypto/BoringBatchable.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "bbeec2f0470a02c71142432fc4d23390",
+      "sourceName": "contracts/YETI/BoringCrypto/BoringBatchable.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "BaseBoringBatchable",
+        "BoringBatchable"
+      ]
+    },
+    "/data/brainz/Web3Bugs/contracts/66/packages/contracts/contracts/TestContracts/DappSys/proxy.sol": {
+      "lastModificationDate": 1687481775743,
+      "contentHash": "928a9c4b946dd7aaf0a8fca2b142111a",
+      "sourceName": "contracts/TestContracts/DappSys/proxy.sol",
+      "solcConfig": {
+        "version": "0.4.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.23"
+      ],
+      "artifacts": [
+        "DSAuth",
+        "DSAuthEvents",
+        "DSAuthority",
+        "DSNote",
+        "DSProxy",
+        "DSProxyCache",
+        "DSProxyFactory"
+      ]
+    }
+  }
+}

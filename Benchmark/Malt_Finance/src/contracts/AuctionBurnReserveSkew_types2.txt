@@ -1,0 +1,33 @@
+[*c], AuctionBurnReserveSkew
+[sef], AUCTION, currentAuctionId
+[sef], AUCTION, getAuctionCommitments, 2, , 
+[t], global, _roles
+[t], global, TIMELOCK_ROLE
+[t], global, auctionAverageLookback
+[t], global, ADMIN_ROLE
+[t], global, AUCTION_ROLE
+[t], global, GOVERNOR_ROLE
+[t], global, LIQUIDITY_MINE_ROLE
+[t], global, MONETARY_BURNER_ROLE
+[t], global, MONETARY_MINTER_ROLE
+[t], global, REWARD_THROTTLE_ROLE
+[t], global, STABILIZER_NODE_ROLE
+[t], initialize, _timelock
+[t], initialize, initialAdmin
+[t], initialize, _stabilizerNode
+[t], initialize, _auction
+[t], initialize, _period
+[t], global, count
+[t], global, globalAdmin, -1, -1, 0, gAdmin
+[t], global, auction, -1, -1, 0, AUCTION
+[t], global, lastBlock
+[t], global, pegObservations
+[t], global, stabilizerNode
+[t], consult, excess
+[t], getRealBurnBudget, maxBurnSpend
+[t], getRealBurnBudget, premiumExcess
+[t], addAbovePegObservation, amount
+[t], addBelowPegObservation, amount
+[t], setNewStabilizerNode, _node, -1, -1, 0, NODE
+[t], setNewAuction, _auction, -1, -1, 0, AUCTION
+[t], setAuctionAverageLookback, _lookback

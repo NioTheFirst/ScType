@@ -1,0 +1,46 @@
+[*c], ConcentratedLiquidityPool
+[xf], constructor
+[xf], mint
+[xf], burnSingle
+[xf], collect
+[xf], swap
+[xf], rangeFeeGrowth
+[xf], rangeSecondsInside
+[sef], TickMath, getSqrtRatioAtTick, 1, {c, -1, -1, 0, f: 0}
+[sef], DyDxMath, getDy, 1, {c, -1, -1, 0, f: 0}
+[sef], DyDxMath, getDx, 1, {c, -1, -1, 0, f: 0}
+[sef], Ticks, remove
+[sef], FullMath, mulDiv, 1, {t, [1, 2], [3], 0, f:11}
+[t], global, MAX_TICK_LIQUIDITY
+[t], global, barFeeTo
+[t], global, bento
+[t], global, masterDeployer
+[t], global, swapFee
+[t], global, tickSpacing
+[t], global, token0
+[t], global, token1
+[t], global, unlocked
+[t], global, barFee
+[t], global, feeGrowthGlobal0, f:10
+[t], global, feeGrowthGlobal1, f:10
+[t], global, lastObservation
+[t], global, liquidity
+[t], global, nearestTick
+[t], global, price
+[t], global, secondsPerLiquidity
+[t], global, ticks
+[t], global, reserve0, f: 30
+[t], global, reserve1, f:30
+[t], global, token0ProtocolFee
+[t], global, token1ProtocolFee
+[t], global, MAX_FEE
+[t], global, positions
+[t*], global, positions, feeGrowthInside0Last, f:10
+[t*], global, positions, feeGrowthInside1Last, f:10
+[t], global, MAX_TICK
+
+[t], burn, lower
+[t], burn, upper
+[t], burn, amount, f: 0
+[t], burn, recipient
+[t], burn, unwrapBento

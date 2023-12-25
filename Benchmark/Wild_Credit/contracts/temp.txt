@@ -1,0 +1,58 @@
+[*c], LendingPair
+[sefa], Clones, clone, 1, {t, 1}
+[sefa], LendingController, colFactor, 1, {c, -1, -1, 20, 'u'}
+[sefa], LendingController, liqFeeCaller, 1, {c, -1, -1, 20, 'u'}
+[sefa], LendingController, liqFeeSystem, 1, {c, -1, -1, 20, 'u'}
+[sefa], LendingController, tokenPrices, 2, {t, [1], [2], 0, -1}, {t, [2], [1], 0, -1}
+[sefa], UniswapV3Helper, positionTokens, 2, {c, [global:tokenA], [-1], 6, 'u'}, {c, [global:tokenB], [-1], 18, 'u'}
+[sefa], InterestRateModel, interestRatePerBlock, 1, {c, -1, -1, 20, 'u', global:InterestModel}
+[sefa], InterestRateModel, lpRate, 1, {c, -1, -1, 20, 'u', global:InterestModel}
+[sefa], Math, min, 1, {t, [1], [-1], 1, 'u'}
+[ta], global, tokenA, 6
+[ta], global, tokenB, 18
+#[ta], global, feeRecipient, 0
+[ta], global, lpToken, 18
+#[ta], initialize, _lpTokenMaster, 0
+#[ta], initialize, _lendingController, 0
+#[ta], initialize, _uniV3Helper, 0
+#[ta], initialize, _feeRecipient, 0
+#[ta], initialize, _tokenA, 6
+#[ta], initialize, _tokenB, 18
+#[ta], depositUniPosition, _account, 0
+#[ta], depositRepay, _account, 0
+[ta], depositRepay, _token, 6
+#[ta], depositRepayETH, _account, 0
+#[ta], deposit, _account, 0
+#[ta], deposit, _token, 6
+#[ta], withdrawBorrow, _token, 6
+#[ta], withdraw, _token, 6
+#[ta], withdrawAll, _token, 6
+#[ta], borrow, _token, 6
+#[ta], repayAll, _account, 0
+#[ta], repayAll, _token, 6
+#[ta], repayAllETH, _account, 0
+#[ta], repay, _account, 0
+#[ta], repay, _token, 6
+#[ta], accrue, _token, 6
+#[ta], collectSystemFee, _token, 6
+#[ta], transferLp, _token, 6
+#[ta], transferLp, _from, 0
+#[ta], transferLp, _to, 0
+#[ta], liquidateAccount, _account, 0
+#[ta], liquidateAccount, _repayToken, 6
+#[ta], accountHealth, _account, 0
+#[ta], debtOf, _token, 6
+#[ta], debtOf, _account, 0
+#[ta], supplyOf, _token, 6
+#[ta], supplyOf, _account, 0
+#[ta], borrowBalanceConverted, _account, 0
+[ta], borrowBalanceConverted, _borrowedToken, 6
+[ta], borrowBalanceConverted, _returnToken, 18
+#[ta], supplyBalanceConverted, _account, 0
+[ta], supplyBalanceConverted, _suppliedToken, 6
+[ta], supplyBalanceConverted, _returnToken, 18
+#[ta], supplyRatePerBlock, _token, 6
+#[ta], borrowRatePerBlock, _token, 6
+#[ta], checkAccountHealth, _account, 0
+[ta], convertTokenValues, _fromToken, 6
+[ta], convertTokenValues, _toToken, 18

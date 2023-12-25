@@ -1,0 +1,42 @@
+[*c], VaderRouter
+
+constructor
+removeLiquidity
+swapTokensForExactTokens
+initialize
+calculateInGivenOut
+calculateOutGivenIn
+[sef], BasePool, burn, 3, , , 
+[sef], FACTORY, nativeAsset, 1, {c, 1, -1, 0}
+[sef], FACTORY, getPool, 1, {c, -1, -1, 0, BasePool}
+
+[t], global, factory, -1, -1, 0, FACTORY
+[t], global, reserve, -1, -1, 0, RESERVE
+[t], global, _ZERO_ADDRESS, -1, -1, 0, ZERO
+[t], global, _owner, -1, -1, 0, OWNER
+[t], global, _ONE_YEAR
+
+[t], swapExactTokensForTokens, amountIn, 2, -1, 0
+[t], swapExactTokensForTokens, amountOutMin, 1, -1, 0
+[t], swapExactTokensForTokens, path
+[t], swapExactTokensForTokens, to, -1, -1, 0, NATIVETOKEN
+[t], swapExactTokensForTokens, deadline
+
+[t], swapTokensForExactTokens, amountOut
+[t], swapTokensForExactTokens, amountInMax
+[t], swapTokensForExactTokens, path
+[t], swapTokensForExactTokens, to
+[t], swapTokensForExactTokens, deadline
+[t], initialize, _reserve
+[t], calculateOutGivenIn, amountIn, 2, -1, 0
+[t], calculateOutGivenIn, path
+[t], constructor, _factory
+[t], removeLiquidity, tokenA
+[t], removeLiquidity, tokenB
+[t], removeLiquidity, id
+[t], removeLiquidity, amountAMin
+[t], removeLiquidity, amountBMin
+[t], removeLiquidity, to
+[t], removeLiquidity, deadline
+[t], calculateInGivenOut, amountOut
+[t], calculateInGivenOut, path

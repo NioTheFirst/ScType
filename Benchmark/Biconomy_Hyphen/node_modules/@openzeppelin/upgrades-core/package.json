@@ -1,0 +1,60 @@
+{
+  "name": "@openzeppelin/upgrades-core",
+  "version": "1.10.0",
+  "description": "",
+  "repository": "https://github.com/OpenZeppelin/openzeppelin-upgrades/tree/master/packages/core",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "/dist",
+    "/src",
+    "/artifacts/AdminUpgradeabilityProxy.json",
+    "/artifacts/ProxyAdmin.json",
+    "/artifacts/contracts/proxy/AdminUpgradeabilityProxy.sol/AdminUpgradeabilityProxy.json",
+    "/artifacts/contracts/proxy/ProxyAdmin.sol/ProxyAdmin.json",
+    "/contracts/Initializable.sol",
+    "/artifacts/@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol",
+    "/artifacts/@openzeppelin/contracts/proxy/transparent/ProxyAdmin.sol/ProxyAdmin.json ",
+    "/artifacts/@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol/TransparentUpgradeableProxy.json"
+  ],
+  "scripts": {
+    "clean": "hardhat clean && rimraf dist *.tsbuildinfo",
+    "compile": "tsc -b && yarn compile:contracts",
+    "compile:contracts": "hardhat compile",
+    "prepare": "yarn clean && yarn compile",
+    "prepublishOnly": "bash scripts/copy-artifacts.sh",
+    "test": "tsc -b && hardhat compile --force && ava",
+    "test:watch": "hardhat compile --force && fgbg 'ava --watch' 'tsc -b --watch' --",
+    "version": "node ../../scripts/bump-changelog.js"
+  },
+  "devDependencies": {
+    "@ava/typescript": "^2.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.0",
+    "@openzeppelin/contracts": "4.1.0",
+    "@openzeppelin/contracts-upgradeable": "4.1.0",
+    "@types/bn.js": "^5.0.0",
+    "@types/cbor": "^5.0.0",
+    "@types/debug": "^4.1.5",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^10.17.26",
+    "@types/proper-lockfile": "^4.1.1",
+    "@types/rimraf": "^3.0.0",
+    "ava": "^3.9.0",
+    "dotenv": "^10.0.0",
+    "fgbg": "^0.1.4",
+    "hardhat": "^2.0.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "bn.js": "^5.1.2",
+    "cbor": "^8.0.0",
+    "chalk": "^4.1.0",
+    "compare-versions": "^3.6.0",
+    "debug": "^4.1.1",
+    "ethereumjs-util": "^7.0.3",
+    "proper-lockfile": "^4.1.1",
+    "solidity-ast": "^0.4.15"
+  }
+}

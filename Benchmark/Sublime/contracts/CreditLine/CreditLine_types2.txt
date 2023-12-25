@@ -1,0 +1,76 @@
+[*c], CreditLine
+[sef], ORACLE, getLatestPrice, 2, {t, [2], [1], 0}, {c, -1, -1, 0}
+[sef], REG, getStrategies, 1, {c, -1, -1, 0, YIELD}
+[sef], YIELD, getTokensForShares, 1, {t, [2], [-1], 0}
+[sef], SAVE, transfer
+[sef], SAVE, withdraw
+[sef], SAVE, balanceInShares
+[sef], SAVE, transferFrom
+[sef], SAVE, deposit
+[sef], SAVE, withdrawFrom
+[sef], BASSET, balanceOf
+calculateInterest
+calculateInterestAccrued
+calculateCurrentDebt
+calculateBorrowableAmount
+request
+accept
+depositCollateral
+borrow
+repay
+close
+calculateCurrentCollateralRatio
+calculateTotalCollateralTokens
+withdrawCollateral
+withdrawableCollateral
+[t], global, savingsAccount, -1, -1, 0, SAVE
+[t], global, strategyRegistry, -1, -1, 0, REG
+[t], global, collateralShareInStrategy
+[t], global, _NOT_ENTERED
+[t], global, this, -1, -1, 0, THIS
+[t], global, priceOracle, -1, -1, 0, ORACLE
+[t], global, _owner
+[t], global, creditLineConstants
+[t*], global, creditLineConstants, borrowAsset, 1, -1, 0, BASSET
+[t*], global, creditLineConstants, collateralAsset, 2, -1, 0, CASSET
+[t], global, creditLineVariables
+[t], global, YEAR_IN_SECONDS
+[t], global, _ENTERED
+[t], global, _status
+[t], global, creditLineCounter
+[t], global, defaultStrategy
+[t], global, protocolFeeCollector
+[t], global, protocolFeeFraction
+[t], global, _initialized
+[t], global, _initializing
+[t], global, liquidatorRewardFraction
+
+[t], liquidate, _id
+[t], liquidate, _toSavingsAccount
+[t], liquidate, amount, 1, -1, 0
+[t], calculateInterest, _principal
+[t], calculateInterest, _borrowRate
+[t], calculateInterest, _timeElapsed
+[t], calculateInterestAccrued, _id
+[t], calculateCurrentDebt, _id
+[t], calculateBorrowableAmount, _id
+[t], request, _requestTo, -1, -1, 0, reqTo
+[t], request, _borrowLimit
+[t], request, _borrowRate
+[t], request, _collateralRatio
+[t], request, _borrowAsset, -1, -1, 0, bAsset
+[t], request, _collateralAsset, -1, -1, 0, cAsset
+[t], accept, _id
+[t], depositCollateral, _id
+[t], depositCollateral, _amount
+[t], depositCollateral, _strategy, -1, -1, 0, strat
+[t], borrow, _id
+[t], borrow, _amount
+[t], repay, _id
+[t], repay, _amount
+[t], close, _id
+[t], calculateCurrentCollateralRatio, _id
+[t], calculateTotalCollateralTokens, _id
+[t], withdrawCollateral, _id
+[t], withdrawCollateral, _amount
+[t], withdrawableCollateral, _id

@@ -1,0 +1,37 @@
+[*c], BasePool
+
+[xf], getReserves
+[xf], mint
+#[xf], swap
+
+[sef], NATIVETOKEN, balanceOf, 1, {c, 1, -1, 0}
+[sef], FOREIGNTOKEN, balanceOf, 1, {c, 2, -1, 0}
+[sef], UQ112x112, encode, 1, {t, [1], [1], 1}
+[sef], UQ112x112, uqdiv, 1, {t, [1], [2], 1}
+
+[t], global, _balances, -1, -1, 0
+[t], global, _NOT_ENTERED
+[t], global, _owner, -1, -1, 0, OWNER
+[t], global, _tokenApprovals
+[t], global, _owners, -1, -1, 0
+[t], global, _symbol
+[t], global, _operatorApprovals
+[t], global, foreignAsset, -1, -1, 0, FOREIGNTOKEN
+[t], global, nativeAsset, -1, -1, 0, NATIVETOKEN
+[t], global, positionId
+[t], global, totalSupply
+[t], global, positions
+[t], global, _ENTERED
+[t], global, _status
+[t], global, _ONE_YEAR
+[t], global, _blockTimestampLast
+[t], global, priceForeignCumulativeLast
+[t], global, priceNativeCumulativeLast
+[t], global, _reserveForeign, 2, -1, 0
+[t], global, _reserveNative, 1, -1, 0
+[t], global, ONE
+[t], global, _name
+
+[t], swap, nativeAmountIn, 1, -1, 0
+[t], swap, foreignAmountIn, 2, -1, 0
+[t], swap, to, -1, -1, 0, FOREIGNTOKEN
