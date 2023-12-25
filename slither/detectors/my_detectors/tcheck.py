@@ -3303,8 +3303,8 @@ class tcheck(AbstractDetector):
             #print("xxxxxx")
             #print(f"Errors: {errorsx}")
 
-            for label, address in address_to_label.items():
-                print(f"Address: {address}, Label: {label}")
+            #for label, address in address_to_label.items():
+            #    print(f"Address: {address}, Label: {label}")
             #For label, addr_label in label_sets.items():
             #    print(addr_label)
                 

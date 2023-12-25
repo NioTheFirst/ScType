@@ -33,10 +33,10 @@ fi
 # Group 3: PoolTogether
 if [[ $# -eq 0 || $1 -eq 3 ]]; then
   solc-select use 0.8.4
-  #cd "Benchmark/PoolTogether/contracts/yield-source"
-  #slither --detect tcheck .
-  echo "Currently ommitted"
-  #cd "../../../../"
+  cd "Benchmark/PoolTogether/contracts/yield-source"
+  slither --detect tcheck .
+  #echo "Currently ommitted"
+  cd "../../../../"
   execute_group 3 echo "[*] Tested 1 warning for PoolTogether"
   sleep 3
 fi
@@ -44,10 +44,10 @@ fi
 # Group 4: Tracer
 if [[ $# -eq 0 || $1 -eq 4 ]]; then
   solc-select use 0.8.4
-  #cd "Benchmark/Tracer/src/contracts/lib"
-  #slither --detect tcheck .
-  echo "Currently ommitted"
-  #cd "../../../../../"
+  cd "Benchmark/Tracer/src/contracts/lib"
+  slither --detect tcheck .
+  #echo "Currently ommitted"
+  cd "../../../../../"
   execute_group 4 echo "[*] Tested 1 warning for Tracer"
   sleep 3
 fi
@@ -78,7 +78,7 @@ if [[ $# -eq 0 || $1 -eq 7 ]]; then
   cd "Benchmark/yAxis/contracts/v3"
   slither --detect tcheck Vault.sol
   cd "../../../../"
-  execute_group 7 echo "[*] Tested 3 warnings for yAxis"
+  execute_group 7 echo "[*] Tested 5 warnings for yAxis"
   sleep 3
 fi
 
@@ -88,7 +88,7 @@ if [[ $# -eq 0 || $1 -eq 8 ]]; then
   cd "Benchmark/BadgerDao/veCVX/contracts"
   slither --detect tcheck veCVXStrategy.sol
   cd "../../../../"
-  execute_group 8 echo "[*] Tested 2 warnings for veCVX"
+  execute_group 8 echo "[*] Tested 2 warnings for BadgerDao"
   sleep 3
 fi
 
@@ -98,7 +98,7 @@ if [[ $# -eq 0 || $1 -eq 9 ]]; then
   cd "Benchmark/Wild_Credit/contracts"
   slither --detect tcheck LendingPair.sol
   cd "../../../"
-  execute_group 9 echo "[*] Tested 2 warnings for Wild Credit"
+  execute_group 9 echo "[*] Tested 4 warnings for Wild Credit"
   sleep 3
 fi
 
@@ -108,7 +108,7 @@ if [[ $# -eq 0 || $1 -eq 10 ]]; then
   cd "Benchmark/PoolTogether_v4/v4-core/contracts"
   slither --detect tcheck DrawCalculator.sol
   cd "../../../../"
-  execute_group 10 echo "[*] Tested 1 warnings for Pool Together v4"
+  execute_group 10 echo "[*] Tested 0 warnings for Pool Together v4"
   sleep 3
 fi
 
@@ -118,7 +118,7 @@ if [[ $# -eq 0 || $1 -eq 11 ]]; then
   cd "Benchmark/Sushi_Trident_p2/trident/contracts/pool/concentrated"
   slither --detect tcheck ConcentratedLiquidityPool.sol
   cd "../../../../../../"
-  execute_group 11 echo "[*] Tested 12 warnings for Sushi Trident"
+  execute_group 11 echo "[*] Tested 8 warnings for Sushi Trident"
   sleep 3
 fi
 
@@ -138,7 +138,7 @@ if [[ $# -eq 0 || $1 -eq 13 ]]; then
   cd "Benchmark/Covalent/contracts"
   slither --detect tcheck DelegatedStaking.sol
   cd "../../../"
-  execute_group 13 echo "[*] Tested 3 warnings for Covalent"
+  execute_group 13 echo "[*] Tested 0 warnings for Covalent"
   sleep 3
 fi
 
@@ -148,7 +148,7 @@ if [[ $# -eq 0 || $1 -eq 14 ]]; then
   cd "Benchmark/Badger_Dao_p2/contracts"
   slither --detect tcheck WrappedIbbtc.sol
   cd "../../../"
-  execute_group 14 echo "[*] Tested 1 warnings for Badger Dao p2"
+  execute_group 14 echo "[*] Tested 4 warnings for Badger Dao p2"
   sleep 3
 fi
 
@@ -158,14 +158,15 @@ if [[ $# -eq 0 || $1 -eq 15 ]]; then
   cd "Benchmark/Vader_Protocol_p2/contracts"
   cd "twap"
   slither --detect tcheck TwapOracle.sol
+  echo "[*] Tested 5 warnings for Part 1"
   cd "../"
   cd "dex/router"
-  #slither --detect tcheck .
-  echo "Currently Omitted (9)"
+  slither --detect tcheck .
+  echo "[*] Tested 11 warnings for Part 2"
   cd "../../"
   cd "dex-v2/router"
-  #slither --detect tcheck .
-  echo "Currently Omitted (3)"
+  slither --detect tcheck .
+  echo "[*] Tested 1 warnings for Part 3"
   cd "../../"
   cd "../../../"
   execute_group 15 echo "[*] Tested 17 warnings for Badger Dao p2"
@@ -209,12 +210,14 @@ if [[ $# -eq 0 || $1 -eq 19 ]]; then
   cd "Benchmark/Sublime/contracts"
   cd "CreditLine"
   slither --detect tcheck CreditLine.sol
+  echo "[*] Tested 1 warnings for Part 1"
   cd ".."
   cd "yield"
   slither --detect tcheck YearnYield.sol
+  echo "[*] Tested 4 warnings for Part 2"
   cd ".."
   cd "../../../"
-  execute_group 19 echo "[*] Tested 6 warnings for Sublime"
+  execute_group 19 echo "[*] Tested 5 warnings total for Sublime"
   sleep 3
 fi
 
@@ -234,7 +237,7 @@ if [[ $# -eq 0 || $1 -eq 21 ]]; then
   cd "Benchmark/Vader_Protocol_p3/contracts/lbt"
   slither --detect tcheck LiquidityBasedTWAP.sol
   cd "../../../../"
-  execute_group 21 echo "[*] Tested 7 warnings for Vader Protocol p3"
+  execute_group 21 echo "[*] Tested 4 warnings for Vader Protocol p3"
   sleep 3
 fi
 
@@ -244,7 +247,7 @@ if [[ $# -eq 0 || $1 -eq 22 ]]; then
   cd "Benchmark/InsureDao/contracts"
   slither --detect tcheck PoolTemplate.sol
   cd "../../../"  
-  execute_group 22 echo "[*] Tested 0 warnings for InsureDao"
+  execute_group 22 echo "[*] Tested 1 warnings for InsureDao"
   sleep 3
 fi
 
@@ -254,7 +257,7 @@ if [[ $# -eq 0 || $1 -eq 23 ]]; then
   cd "Benchmark/Rocket_Joe/contracts"
   slither --detect tcheck LaunchEvent.sol
   cd "../../../"  
-  execute_group 23 echo "[*] Tested 4 warnings for Rocket Joe"
+  execute_group 23 echo "[*] Tested 5 warnings for Rocket Joe"
   sleep 3
 fi
 
@@ -264,7 +267,7 @@ if [[ $# -eq 0 || $1 -eq 24 ]]; then
   cd "Benchmark/Concur_Finance/contracts"
   slither --detect tcheck MasterChef.sol
   cd "../../../"
-  execute_group 24 echo "[*] Tested 0 warnings for Concur Finance"
+  execute_group 24 echo "[*] Tested 1 warnings for Concur Finance"
   sleep 3
 fi
 
@@ -314,7 +317,7 @@ if [[ $# -eq 0 || $1 -eq 29 ]]; then
   cd "Benchmark/Tigris_Trade/contracts"
   slither --detect tcheck Trading.sol
   cd "../../../"           
-  execute_group 29 echo "[*] Tested 5 warnings for Tigris Trade"
+  execute_group 29 echo "[*] Tested 4 warnings for Tigris Trade"
   sleep 3
 fi
 

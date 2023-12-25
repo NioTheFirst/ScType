@@ -1,4 +1,9 @@
 # syntax=docker/dockerfile:1.3
+
+FROM docker
+COPY --from=docker/buildx-bin /buildx /usr/libexec/docker/cli-plugins/docker-buildx
+RUN docker buildx version
+
 FROM ubuntu:jammy AS python-wheels
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     gcc \
@@ -60,9 +65,9 @@ RUN solc-select install 0.8.10
 RUN solc-select install 0.8.12
 RUN solc-select install 0.4.25 && solc-select use 0.4.25
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 
-=======
->>>>>>> 9aa0099a1755b1b7843565aff05d6b7f70e29059
+#=======
+#>>>>>>> 9aa0099a1755b1b7843565aff05d6b7f70e29059
 RUN echo "Building scheck..."
 CMD /bin/bash

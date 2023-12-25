@@ -121,7 +121,7 @@ def _process(
         slither.register_printer(printer_cls)
 
     analyzed_contracts_count = len(slither.contracts)
-    print(f"Analyzed_contracts_count: {analyzed_contracts_count}")
+    #print(f"Analyzed_contracts_count: {analyzed_contracts_count}")
     results_detectors = []
     results_printers = []
 
