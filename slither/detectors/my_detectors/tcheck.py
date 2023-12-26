@@ -705,7 +705,7 @@ def check_type(ir) -> bool:
         if(is_type_undef(ir.lvalue)):
             set = False
             print(ir.rvalues)
-            temp_rvalues = sort(ir.rvalues)
+            temp_rvalues = sorted(ir.rvalues, key=lambda x: x.name, reverse=False)
             print(temp_rvalues)
             for rval in temp_rvalues:
                 if(not(is_type_undef(rval) or is_type_const(rval))):
