@@ -668,7 +668,7 @@ def check_type(ir) -> bool:
     global var_assignment_storage
     addback = False
     #Print the IR (debugging statement)
-    print(ir)
+    #print(ir)
     if isinstance(ir, Assignment):
         addback = type_asn(ir.lvalue, ir.rvalue)
         #Assign value if constant int assignement
@@ -751,8 +751,8 @@ def check_type(ir) -> bool:
     try:
         if ir.lvalue and is_variable(ir.lvalue):
             #Debugging statement: lhs variable after operatiom
-            print("[i]Type for "+ir.lvalue.name)
-            print(ir.lvalue.extok)
+            #print("[i]Type for "+ir.lvalue.name)
+            #print(ir.lvalue.extok)
             if(isinstance(ir.lvalue, ReferenceVariable)):
                 #Field propogation
                 ref = ir.lvalue
@@ -836,13 +836,8 @@ def type_included_hlc(ir, dest, function, contract_name):
     global mark_iteration
     global current_function_marked
     global current_contract_name
-    #function is the fentry point
-    #if(mark_iteration and not(current_function_marked)):
-    #    return 2
     for param in ir.arguments:
-        ##print(param)
         init_var(param)
-        #print(param.extok)
         if(is_type_const(param)):
             assign_const(param)
         #elif(is_type_undef(param)):
@@ -850,25 +845,17 @@ def type_included_hlc(ir, dest, function, contract_name):
         #    return 1
     #generate param cache
     new_param_cache = function_hlc_param_cache(ir)
-    #print("High level cal param_cache")
-    #print_param_cache(new_param_cache)
     added = -100
-    #if(not(mark_iteration) or current_function_marked):
-    #print("Included ir: ")
-    #view_ir(function.entry_point)
     added = add_param_cache(function, new_param_cache)
     if(added == -100):
-        ##print("added")
         save_contract_name = current_contract_name
         current_contract_name = contract_name
         addback = _tcheck_function_call(function, new_param_cache)
-        #deal with return value (single) TODO
         handle_return(ir.lvalue, function)
         current_contract_name = save_contract_name
         if(len(addback) != 0):
             return 2
     else:
-        ##print(added)
         ret_obj = function.get_parameter_cache_return(added)
         if isinstance(ret_obj, Variable):
             if(isinstance(ret_obj, list)):
@@ -896,11 +883,7 @@ def querry_fc(ir) -> int:
         if(handle_balance_functions(ir)):
            return 2
         return 0
-    #if(mark_iteration and not(current_function_marked)):
-    #    assign_const(ir.lvalue)
-    #    return 2
     dest = ir.destination
-    #convert_ssa(dest)
     func_name = ir.function.name
     cont_name = None
     isVar = True
@@ -912,7 +895,6 @@ def querry_fc(ir) -> int:
         return 2
     if(isVar):
         #Contingency for undefined contract instances
-        #cont_name = dest.extok.name
         cont_name = str(dest.type)
     #Use original contract name instead of reduced name for interfaces etc.
     included_func = get_cf_pair(cont_name, func_name)
@@ -924,49 +906,31 @@ def querry_fc(ir) -> int:
             aliased_cont_name = get_alias(cont_name[1:])
         if(aliased_cont_name != None):
             included_func = get_cf_pair(aliased_cont_name, func_name)
-    #print(f"Found: {included_func}")
 
     if(included_func != None):
 
         if(type_included_hlc(ir, dest, included_func, cont_name) == 1):
             return 2
         return 2
-
-    #print(f"Written func info: {cont_name}, {func_name}")
-    #
-    #if (isVar and (str(dest.type)[0] == "I" or str(dest.type)[0] == "i")):
-    #    cont_name = str(dest.type)[1:]
-    #print_addresses()
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets == None):
         cont_name = cont_name[1:]
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
     if(written_func_rets != None):
-        ##print("wfc len: " + str(len(written_func_rets)))
         if(len(written_func_rets) == 0):
-            #No return value included, default to constant
-            #convert_ssa(ir.lval
             assign_const(ir.lvalue)
         elif(len(written_func_rets) == 1):
             written_func_ret = written_func_rets[0]
-            #convert_ssa(ir.lvalue)
             copy_token_tuple(ir.lvalue, written_func_ret)
-            #address
-            #if(str(ir.lvalue.type) == "address"):
-            #    print("Getting new address:")
-            #    print(new_address(ir.lvalue, False))
         elif(isinstance(ir.lvalue, TupleVariable) and len(written_func_rets) > 1):
             add_tuple(ir.lvalue.name, written_func_rets)
         else:
-            y = 8008135
-            ##print("bad function call")
-        ##print("COPIED")
+            y = False
         return 2
     
     #Special functions:
     if(handle_balance_functions(ir)):
         return 2
-    #exit(0)
     return 0
 
 #USAGE: propogates types etc from a set of balance-related functions. Currently supports the functions with names in `balance_funcs`.
@@ -983,20 +947,10 @@ def handle_balance_functions(ir):
     norm = 'u'
     fin_type = -1
     isbfunc = False
-    #print('Handling balance function!')
-    #TODO check the address
-    #print(_dest.address)
     if(_dest.address == 'u'):
         _dest.address = new_address(dest, True).head
     #Use this to check for changes!
     ir.lvalue.extok.token_type_clear()
-    #if(not(dest in address_to_num))
-    #if(_dest.function_name == "global"):
-        #Global address, positive t_type
-    #    token_type = address_to_num[dest]
-    #for key, addr in label_sets.items():
-        #print(addr)
-    #fin_type = label_sets[token_type].finance_type
     if(func_name == "balanceOf"):
         token_type = _dest.address
         if(token_type in label_sets):
@@ -1029,7 +983,6 @@ def handle_balance_functions(ir):
         if(numargs >= 3):
             probarg = args[2]
         if(probarg ==  None):
-            #print("TranferFrom does not have 3 arguments")
             return False
         #Test for safe
         if(not(is_type_const(probarg) or is_type_undef(probarg))):
@@ -1056,7 +1009,6 @@ def handle_balance_functions(ir):
             fin_type = label_sets[token_type].finance_type
         ir.lvalue.extok.value = norm
         isbfunc = True
-    #WIP, transferFrom, "safe"
     if(isbfunc and token_type < 0):
         ir.lvalue.extok.trace = dest
     return isbfunc
@@ -1066,7 +1018,6 @@ def handle_balance_functions(ir):
 #USAGE: typecheck for a library call: in this case, we only return special instances, or user-defined calls
 #RETURNS: return or not
 def type_library_call(ir):
-    ##print("Library Call: "+str(ir.function.name))
     param = ir.arguments
     if(not(is_variable(ir.lvalue))):
         return False
@@ -1088,16 +1039,9 @@ def type_library_call(ir):
 #USAGE: typecheck for high-level call (i.e. iERC20(address).balanceof())
 #RETURNS: whether or not the high-level call node should be returned (should always return FALSE)
 def type_hlc(ir) ->bool:
-    #just query the user for the data (beta)
-    #print(ir)
+    #just query the user for the data 
     global function_hlc
-    #print("High Call: "+str(ir.function_name))
-    ##print("func name:" + ir.function.name)
-    ##print("other func name:" + str(ir.function_name))
     param = ir.arguments
-    #for p in param:
-    #    #print(p.name)
-    #    #print_token_type(p)
     if(not(is_variable(ir.lvalue))):
         return False
     if(ir.function.name == "add"):
@@ -1109,16 +1053,13 @@ def type_hlc(ir) ->bool:
     elif(ir.function.name == "div"):
         return type_bin_div(ir.lvalue, param[0], param[1])
     temp = ir.lvalue.name
-    ##print(temp)
     #typecheck abnormal function calls
-    #print("Running querryfc")
     res = querry_fc(ir)
     if(res == 2):
         return False
         
     x = "hlc_"+str(function_hlc)
     ir.lvalue.change_name(x)
-    ##print(ir.lvalue.name)
     querry_type(ir.lvalue)
     ir.lvalue.change_name(temp)
     function_hlc+=1
@@ -1131,41 +1072,28 @@ def update_member(member, fieldf, copy_ir):
         return
     _member = member.extok
 
-    #print("#################")
-    #print(f"Member: {member.extok}")
-    #print(f"Fieldf: {fieldf.extok}")
-    #print(f"Copy_ir: {copy_ir.extok}")
-
     added = False
     ptfield = None
     for field in _member.fields:
         _field = field.extok
-        #print(f"F: {_field.name}")
         if(_field.name == fieldf.extok.name):
             added = True
             ptfield = field
             break
-
-    #print()
-    #print(f"Added: {added}")
     if(added):
         copy_token_type(copy_ir, ptfield)
         asn_norm(ptfield, copy_ir.extok.norm)
         pass_ftype(ptfield, copy_ir, "assign")
-        #print("Added to member...")
-        #print(ptfield.extok)
         _field = ptfield.extok
     else:
         copy_token_type(copy_ir, fieldf)
         pass_ftype(fieldf, copy_ir, "assign")
         asn_norm(fieldf, copy_ir.extok.norm)
         _member.add_field(fieldf)
-        #print("Add new member...")
 
         _field = fieldf.extok
     if(not(_field.function_name)):
         _field.function_name = _member.function_name
-    #add_field(_member.function_name, _member.name, _field.name, (_field.num_token_types, _field.den_token_types, _field.norm, _field.value, _field.address))
 
 
 #USAGE: typechecks Members (i.e. a.b or a.b())
@@ -1177,38 +1105,20 @@ def type_member(ir)->bool:
     init_var(ir.variable_left)
     init_var(ir.variable_right)
     _lv = ir.variable_left.extok
-    #_lvname = ir.variable_left.ssa_name
     _rv = ir.variable_right.extok
     _ir = ir.lvalue.extok
     if(_lv.function_name == None):
         _lv.function_name = ir.lvalue.extok.function_name
     pf_name = _lv.function_name
-    #print(_lv.name)
-    
-    #print(_lvname)
-    #print(_rv.name)
-    #print(pf_name)
-    ##print(f"left var type: {ir.variable_left.type}")
-    ##print(f"left var structure elems: {ir.variable_left.type.type.elems}")
-    #if is_type_undef(ir.variable_left):
-    #    #print("UNDEFINED LEFT VARIABLE IN MEMBER")
-    #    return True
-    #print("Typing member")
 
     #Check for field in typefile first:
     field_type_tuple = get_field(pf_name, _lv.name, _rv.name)
-    #print(f"FTT: {field_type_tuple}")
     if(field_type_tuple == None):
         #print("No field found")
-        #TURN OFF ASSUMPTION
-        #assign_const(ir.lvalue)
-        #querry_type(ir.lvalue)
         return True
 
     field_full_name = _lv.name + "." + _rv.name
     _ir.name = field_full_name
-    #_lv.#print_fields()
-    #print(f"Current field: {ir.lvalue.extok}")
     if(not(is_type_undef(ir.lvalue))):
         #Copy backwards from the dest (ir.lvalue) to the field
         fieldSet = False
@@ -1226,7 +1136,6 @@ def type_member(ir)->bool:
     for field in _lv.fields:
         _field = field.extok
         if(_field.name == _rv.name and not(is_type_undef(field))):
-            #print(field.extok)
             ir.lvalue.extok.token_type_clear()
             copy_token_type(field, ir.lvalue)
             copy_norm(field, ir.lvalue)
@@ -1240,10 +1149,6 @@ def type_member(ir)->bool:
     temp.name = _rv.name
     _lv.add_field(temp)
     return False
-    #FIELD WORK
-    """if (str(ir.variable_right) == "decimals"):
-        assign_const(ir.lvalue)
-        ir.lvalue.norm = ir.variable_left.norm"""
     
 
 #USAGE: typechecks for references (i.e. a[0])
@@ -1255,24 +1160,17 @@ def type_ref(ir)->bool:
     if(mark_iteration and not(current_function_marked)):
         assign_const(ir.lvalue)
         return False
-    ##print_token_type(ir.variable_left)
     #check for boolean
     _lv = ir.lvalue.extok
     _vl = ir.variable_left.extok
     _lv.name = _vl.name
     _lv.function_name = _vl.function_name
-    ##print(f"Name: {_lv.function_name}")
     if(str(ir.lvalue.type) == "bool"):
-        ##print("REFERENCE IS BOOL TYPE")
         assign_const(ir.lvalue)
         return False
     
-    #if(str(ir.lvalue.type) == "address"):
-
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left) or is_type_const(ir.variable_left)):
-        #print("REFERENCE LEFT VALUE PROPAGATION")
-        #print(ir.variable_left.extok)
         ir.lvalue.extok.token_type_clear()
         copy_token_type(ir.variable_left, ir.lvalue)
         copy_norm(ir.variable_left, ir.lvalue)
@@ -1281,7 +1179,6 @@ def type_ref(ir)->bool:
 
     #check if the index of the variable has a type that is not a constant
     if not(is_type_undef(ir.variable_right) or is_type_const(ir.variable_right)):
-        #print("REFERENCE RIGHT VALUE PROPAGATION")
         if(ir.variable_right.extok.is_address()):
             ir.lvalue.extok.token_type_clear()
             addr = ir.variable_right.extok.address
@@ -1298,21 +1195,16 @@ def type_ref(ir)->bool:
         return False
 
     #check the parser for a pre-user-defined type
-    #print(ir.variable_left.name)
-    #check address
-    #print(ir.lvalue.type.type)
     if(str(ir.lvalue.type).startswith("address")):
         ir.lvalue.extok.address = ir.variable_left.extok.address
         return False
     ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
     if(ref_tuple != None):
         ##print("REFERENCE TYPE READ")
-        #print(f"REf tuple: {ref_tuple}")
         copy_token_tuple(ir.lvalue, ref_tuple)
         return False
 
-    #no other options, just querry the user (try not to let this happen)
-    #querry_type(ir.lvalue)
+    #no other options, assign constant
     assign_const(ir.lvalue)
     return True
 
@@ -1334,35 +1226,19 @@ def type_fc(ir) -> bool:
         elif(not isinstance(param, Variable)):
             param = create_iconstant()
         params.append(param)
-            #undefined type
-            #return True
     #generate param cache
     new_param_cache = function_call_param_cache(params)
-    ##print("Internal cal param_cache")
-    ##print_param_cache(new_param_cache)
-    #added = -100
-    #if(not(mark_iteration) or current_function_marked):
     added = add_param_cache(ir.function, new_param_cache)
-    #if(ir.function.name == "pow" and added == -100):
-    #    debug_pow_pc = ir.function.parameter_cache()
-    ##print(f"Parameter length: {len(ir.function.parameter_cache())}")
-    #for pc in ir.function.parameter_cache():
-    #    for param in pc:
-    #        #print(param)
     if(added == -100):
-        ##print("added")
         addback = _tcheck_function_call(ir.function, new_param_cache)
-        #deal with return value (single) TODO
         handle_return(ir.lvalue, ir.function)
         if(len(addback) != 0):
             return True
         
     else:
-        ##print(added)
         if(not(ir.lvalue)):
             return False
         ret_obj = ir.function.get_parameter_cache_return(added)
-        #print(f"Previous result: {ret_obj.extok}")
         if isinstance( ret_obj, Variable):
             if isinstance(ret_obj, list):
                 type_asn(ir.lvalue, ret_obj[0])
@@ -1385,15 +1261,12 @@ def handle_return(dest_ir, function):
     #dest_ir is optional if there is no return destination
     tuple_types = []
     if(mark_iteration and not(current_function_marked)):
-        ##print("No save for this scenario")
         return
-    ##print("Saving return values for: " + function.name)
     added = False
     _dest_ir = None
     constant_instance = create_iconstant()
     if(dest_ir):
         _dest_ir = dest_ir.extok
-    #for _x in function.return_values_ssa:
     for _x in function.returns_ssa:
         if(not isinstance(_x, Variable)):
             x = constant_instance
@@ -1411,7 +1284,6 @@ def handle_return(dest_ir, function):
                 _dest_ir.linked_contract = __x.linked_contract
                 asn_norm(dest_ir, get_norm(x))
                 copy_ftype(x, dest_ir)
-            #copy to constant instance
             constant_instance.extok.token_type_clear()
             copy_token_type(x, constant_instance)
             constant_instance.extok.linked_contract = __x.linked_contract
@@ -1419,8 +1291,6 @@ def handle_return(dest_ir, function):
             copy_ftype(x, constant_instance)
             function.add_parameter_cache_return(constant_instance)
             added = True
-        ##print(__x)
-        ##print("___")
     if(len(tuple_types) > 0):
         if(isinstance(dest_ir, TupleVariable)):
             add_tuple(dest_ir.name, tuple_types)
@@ -1438,25 +1308,14 @@ def handle_return(dest_ir, function):
 #USAGE: assigns type from dest to sorc
 #RETURNS: 'TRUE' if no variables undefined
 def type_asn(dest, sorc) -> bool:
-    #dest = ir.lvalue
-    #sorc = ir.variable_right
     init_var(sorc)
-    #print("_______________")
-    #print(sorc.extok)
-    #print(dest.extok)
-    #asn_norm(dest, get_norm(sorc))
     if(is_type_undef(sorc)):
-        #print("Undefined?")
         return True
     elif(is_type_const(sorc)):
-        #print("XXXX")
         if(is_type_undef(dest) or is_type_const(dest)):
-            #print("COPY HERE")
             copy_token_type(sorc, dest)
-        #return True
         return False
     else:
-        #print(f"Is it undefined? {is_type_undef(dest)}, Const? {is_type_const(dest)}")
         if(is_type_undef(dest) or is_type_const(dest)):
             copy_token_type(sorc, dest)
         elif(not(compare_token_type(sorc, dest)) and handle_trace(sorc, dest) == False):
@@ -1475,7 +1334,6 @@ def type_asni(dest, sorc):
     else:
         tmp = create_iconstant()
         tmp = combine_types(tmp, sorc, "div") 
-        ##print(tmp.extok)
         if(is_type_undef(dest)):
             copy_inv_token_type(sorc, dest)
         elif(not(compare_token_type(tmp, dest))):
@@ -1508,9 +1366,7 @@ def type_asnai(dest, sorc)->bool:
 #RETURNS: NULL
 def init_var(ir):
     #Special variables
-    #print("init")
     if(not(is_variable(ir)) and str(ir) != "msg.value"):
-        ##print(str(ir))
         return False
     _ir = ir.extok
     if(_ir.name == None or _ir.function_name == None):
@@ -1521,10 +1377,7 @@ def init_var(ir):
         _ir.norm = get_norm(ir)
     else:
         convert_ssa(ir)
-    #print("end")
     return True
-    ##print_token_type(ir)
-    ##print("^^^^")
 
 #USAGE: test any ir for if it is a special constant instead of a variable
 #RETURNS: new ir
@@ -1580,19 +1433,14 @@ def type_bin_pow(dest, lir, rir) -> bool:
     #don't assign norm yet
     _lir = lir.extok
     _rir = rir.extok
-    ##print(_lir)
-    ##print(_rir)
     if(is_type_undef(lir) or is_type_undef(rir)):
         return True
     pow_const = -1
-    ##print_token_type(dest) 
     pass_ftype(dest, lir, "pow", rir)
     if(is_constant(rir)):
         pow_const = rir.value
     if(is_type_const(lir)):
         assign_const(dest)
-        ##print("x:" + str(get_norm(dest)))
-        ##print(pow_const)
         l_norm = get_norm(lir)
         if(pow_const > 0 and isinstance(l_norm, int)):
             if(l_norm == 0):
@@ -1631,13 +1479,11 @@ def handle_value_binop(dest, lir, rir, func):
     lval = get_values(lir)
     rval = get_values(rir)
     fval = 'u'
-    #print(f"lval:{lval} rval:{rval}")
     if(type(lval) != int or type(rval) != int):
         if(type(lval) == int):
             fval = lval
         if(type(rval) == int):
             fval = rval
-        #fval = 'u'
     elif(func == Add):
         fval = lval + rval
     elif(func == Sub):
@@ -1659,21 +1505,12 @@ def handle_value_binop(dest, lir, rir, func):
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_add(dest, lir, rir) -> bool:
     global Add
-    #dest = ir.lvalue
-    #lir = ir.variable_left
-    #rir = ir.variable_right
-   #print(lir.extok)
-    #print(rir.extok)
     if(not (init_var(lir) and init_var(rir))):
         return False
-    ##print_token_type(dest)
-    ##print("initlize checks")
-    ##print(";;;")
     #Handle errors
     if(not(is_type_undef(lir) or is_type_undef(rir) or is_type_const(lir) or is_type_const(rir) or is_type_address(lir) or is_type_address(rir))):
         if(not(compare_token_type(rir, lir)) and handle_trace(rir, lir) == False):
             #report error, default to left child 
-            
             add_errors(dest)
             return False
     bin_norm(dest, lir, rir)
@@ -1703,12 +1540,6 @@ def type_bin_add(dest, lir, rir) -> bool:
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_sub(dest, lir, rir) -> bool:
     global Sub
-    #print("SUB1")
-    #dest = ir.lvalue
-    #lir = ir.variable_left
-    #rir = ir.variable_right
-    #print(lir.extok)
-    #print(rir)
     if(not (init_var(lir) and init_var(rir))):
         return False
     #Handle errors
@@ -1720,11 +1551,6 @@ def type_bin_sub(dest, lir, rir) -> bool:
             return False
     bin_norm(dest, lir, rir)
     pass_ftype(dest, lir, "sub", rir)
-    ##print_token_type(lir)
-    ##print_token_type(rir)
-    #print("SUB")
-    #print(lir.extok)
-    #print(rir.extok)
     if(is_type_undef(lir) or  is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
         if(is_type_undef(lir) or is_type_address(lir)):
             type_asn(dest, rir)
@@ -1756,11 +1582,6 @@ def handle_trace(rir, lir):
     rdtt = _rir.den_token_types.copy()
     lntt = _lir.num_token_types.copy()
     ldtt = _lir.den_token_types.copy()
-    
-    #Check norm here instead of within address_handler
-    #if(_rir.norm != '*' and _lir.norm != '*' and _rir.norm != 'u' and _lir.norm != 'u'):
-    #        if(_rir.norm != _lir.norm):
-    #            return False
 
     #Reduce numerators
     n_dict = {}
@@ -1812,16 +1633,13 @@ def handle_trace(rir, lir):
         return False
     #Just take the first one for now
     first_trace = pot_trace[0]
-    #print(f"Trace: {pot_trace}")
     for key,value in first_trace.items():
         unioned = label_sets[key].union(label_sets[value])
         if(unioned):
             continue
         return False
-    #print("resolving...")
     _rir.resolve_labels(label_sets)
     _lir.resolve_labels(label_sets)
-    #Handle norm propogation here
     return True
 
 #USAGE: given two dictionaries with x amounts of value y, generate all possible orderings of trace to label
