@@ -704,7 +704,10 @@ def check_type(ir) -> bool:
         addback = False
         if(is_type_undef(ir.lvalue)):
             set = False
-            for rval in ir.rvalues:
+            print(ir.rvalues)
+            temp_rvalues = sort(ir.rvalues)
+            print(temp_rvalues)
+            for rval in temp_rvalues:
                 if(not(is_type_undef(rval) or is_type_const(rval))):
                     type_asn(ir.lvalue, rval)
                     ir.lvalue.extok.norm = rval.extok.norm
@@ -2245,7 +2248,6 @@ def _tcheck_node(node, function) -> []:
 
         
         if isinstance(ir, Phi):
-            #Phi de
             lv = ir.lvalue
             propogate_parameter(lv, function)
             propogate_global(lv)
