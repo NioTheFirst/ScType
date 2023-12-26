@@ -101,13 +101,15 @@ f_type_mul = {
     (23, 21):23, #compound interest * compound interest ratio = compound interest
     (21, 23): 23, 
     (40, 0) : 0, #price/exchange rate * any balance = corresponding balance
-    (0, 40) : 0,
+    (0, 40) : 0, #Reserve
     (40, 1) : 1,
     (1, 40) : 1,
     (40, 2) : 2,
     (1, 40) : 2,
     (40, 3) : 3,
     (3, 40) : 3,    
+    (60, 40) : 40, #price x dividend
+    (40, 60) : 40, #dividend x price
 }
 
 f_type_div = {

@@ -62,16 +62,8 @@ Div = 4
 Pow = 5
 Cmp = 6
 
-#address to label
-#address_to_num = {}
-#label to address
-#num_to_address = {}
-#label to normalization
-#num_to_norm = {}
-#global_address_counter = 0
 traces = 0 #trace default is -2
 trace_to_label = {}
-#temp_address_counter = 0
 global_var_types = {}
 var_assignment_storage = {}
 read_global = {}
@@ -226,15 +218,12 @@ def get_external_type_tuple(contract_name, function_name, parameters):
 #RETURNS bool
 def check_contract(contract_name):
     if(tcheck_parser.check_contract(contract_name)):
-        ##print("[*] " + contract_name + " run")
         return True
-    ##print("[x] " + contract_name + " not run")
     return False
 
 def print_token_type(ir):
     if(isinstance(ir, Variable)):
         y = 8008135
-        ##print(ir.extok)
 
 #USAGE: passes the finance type
 def pass_ftype(dest, left, func, right = None):
@@ -287,7 +276,6 @@ def gen_param_cache(param_list):
             _param = create_iconstant().extok
         else:
             _param = param.extok
-        ##print(f"preprocess pram: {_param}")
         num = _param.num_token_types
         den = _param.den_token_types
         norm = _param.norm
@@ -309,16 +297,12 @@ def add_param_cache(function, new_param_cache):
     add_param = False
     fpc = function.parameter_cache()
     match_param = -100
-    #for pc in fpc:
-        ##print_param_cache(pc)
-    #print(f"New param cache {new_param_cache}")
     if(len(fpc) == 0):
         add_param = True
     for a in range(len(fpc)):
         cur_param_cache = fpc[a]
         paramno = 0
         dif_cur_param = False
-        #print(f"Old param cache: {cur_param_cache}")
         for cur_param in cur_param_cache:
             #compare cur_param with new_param_cache[paramno]
             seen_n = {}
@@ -355,7 +339,6 @@ def add_param_cache(function, new_param_cache):
             if(new_param_cache[paramno][5] != cur_param[5]):
                 seen_ftype = True
             #compare address
-            #print(cur_param)
             if(new_param_cache[paramno][6] != cur_param[6]):
                 seen_address = True
             if(seen_ftype or seen_norm or seen_address):
@@ -373,16 +356,11 @@ def add_param_cache(function, new_param_cache):
                 break
             paramno+=1
         if(dif_cur_param == False):
-            ##print("Its the same:")
-            ##print_param_cache(cur_param_cache)
             add_param = False
             match_param = a
             break
-    ##print(match_param)
     if(add_param):
         function.add_parameter_cache(new_param_cache)
-        ##print("Add new")
-        ##print_param_cache(new_param_cache)
     return match_param
 
 #USAGE: parses an input file and fills the type_hashtable
@@ -403,8 +381,6 @@ def read_type_file(ir):
     var_name = _ir.name
     if(ir.tname != None):
         var_name = ir.tname
-    ##print("read function name: " + function_name)
-    ##print("read parent name: " + ir.name)
     if(_ir.name == None):
         return None
     ref_tt = get_ref(var_name)
@@ -433,7 +409,7 @@ def append_typefile(ir, num = None, den = None, norm = None, lf = None):
     newline = "[t], " + function_name + ", " + var_name
     if(num == -1 and den == -1 and norm == 0 and lf == None):
         #do nothing
-        y = 8008135
+        y = XXX
     else:
         newline=newline + ", " + str(num) + ", " + str(den) + ", " + str(norm)
         if(lf):
@@ -470,32 +446,23 @@ def querry_type(ir):
     uxname = str(uxname)
     #print(f"Finding type for {uxname}({ir.type} ... )")
     if(str(ir.type) == "bool"):
-        ##print("SKIP bool")
         assign_const(ir)
         return
     if(str(ir.type) == "bytes"):
-        ##print("SKIP bytes")
         return
     if(str(ir.type).startswith("address") or "=> address" in str(ir.type) or get_addr(ir, True) != None):
         #Address array and Mappings resulting in addressess.
         norm = get_addr(ir)
         if(norm == None):
-            #print("Decimals for \"" + uxname + "\": ")
             input_str = input()
             if(input_str != '*'):
                 norm = int(input_str)
         label = new_address(ir)
         label.norm = norm
         ir.extok.norm = norm
-        #print(label)
         return
 
-
-    #if(mark_iteration and not(current_function_marked)):
-    #    assign_const(ir)
-    #    return
-
-    #Get type tuple for regular int (emergency usage) + TODO modify s.t. parameters passed as names?
+    #Get type tuple for regular variables
     type_tuple = read_type_file(ir)
     
     propagate_fields(ir)
@@ -506,23 +473,19 @@ def querry_type(ir):
         copy_token_tuple(ir, type_tuple)
         if(_ir.address == 'u'):
             _ir.address = save_addr
-        
-        #print(_ir)
         #print("[*]Type fetched successfully")
         return
     #print("[x]Failed to fetch type from type file, defaulting to human interface")
-    #Commented out to get necessary(?) functions
 
     assign_const(ir)
     norm = get_norm(ir)
     #Assign norm to constants
-    #print(f"Value: {get_values(ir)}")
     if(norm != 'u'):
         ir.extok.norm = norm
     return True
     
 
-    #Currently deprecated
+    #Turned off for artifact, querries users for type
     print("Define num type for \"" + uxname + "\": ")
     input_str = input()
     num = int(input_str)
@@ -541,34 +504,25 @@ def querry_type(ir):
         lf = input()
         ir.link_function = lf
     append_typefile(ir, num, den, norm, lf)
-    #add to parser file? TODO Priority: Low
 
 def is_constant(ir):
     if isinstance(ir, Constant):
-        ##print("Constatn varible: "+ir.name.lower())
         return True
     return False
 
 def is_function(ir):
     if isinstance(ir, Function):
-        ##print("Function: "+ir.name)
         temp = ir.parameters
 
 def is_condition(ir):
     if isinstance(ir, Condition):
-        ##print("Conidtion: ")
-        #for x in ir.read:
-        #    #print(x)
-        ##print(ir.value)
         y = 8008135
 def is_function_type_variable(ir):
     if isinstance(ir, FunctionTypeVariable):
         y = 8008135
-        ##print("Function Type Variable: "+ir.name.lower())
 
 def is_type_undef(ir):
     if not(is_variable(ir)):
-        ##print("not variable")
         return True
     _ir = ir.extok
     return _ir.is_undefined()
@@ -581,7 +535,6 @@ def is_type_address(ir):
 
 def is_type_const(ir):
     if not(is_variable(ir)):
-        ##print("not variable")
         return True
     _ir = ir.extok
     return _ir.is_constant()
@@ -606,7 +559,6 @@ def assign_const(ir):
 #RETURNS: NULL
 def assign_err(ir):
     assign_const(ir)
-    #ir.extok.finance_type = -1
 
 #USAGE: copies all the types from a type tuple to an ir node
 #RETURNS: null
@@ -618,8 +570,6 @@ def copy_token_tuple(ir, tt):
 #USAGE: copies all token types from the 'src' ir node to the 'dest' ir node
 #RETURNS: null
 def copy_token_type(src, dest):
-    #dest.token_typen.clear()
-    #dest.token_typed.clear()
     tcheck_propagation.copy_token_type(dest, src)
 
 #USAGE: copies inverse token types from the 'src' ir node from the 'dest' ir node
@@ -654,7 +604,6 @@ def add_errors(ir):
     print(f"Error with {_ir.name} in function {_ir.function_name}")
     print("Error with: " + _ir.name + " in function " + _ir.function_name)
     assign_err(ir)
-    ##print(errors)
 
 #USAGE: Directly copies a normalization value (WARNING: SKIPS TYPECHECKING)
 def copy_norm(src, dest):
@@ -668,17 +617,13 @@ def convert_ssa(ir):
         return
     if(is_constant(ir) or ir.name.startswith("PIC") or isinstance(ir, Constant)):
         return
-    #if(not(ir.ssa_name)):
-    #    return
     non_ssa_ir = ir.non_ssa_version
-    #name = ir.ssa_name
-    if(not (is_type_undef(non_ssa_ir))): # and is_type_undef(ir)):
+    if(not (is_type_undef(non_ssa_ir))):
         ir.token_typen.clear()
         ir.token_typed.clear()
         _ir = ir.extok
         _ir.token_type_clear()
         copy_token_type(non_ssa_ir, ir)
-        ##print_token_type(ir)
         copy_norm(non_ssa_ir, ir)
         ir.norm = non_ssa_ir.norm
         if(non_ssa_ir.extok.function_name):
@@ -696,17 +641,13 @@ def update_non_ssa(ir):
         return
     if(is_constant(ir)):
         return
-    #if(not(ir.ssa_name)):
-    #    return
     non_ssa_ir = ir.non_ssa_version
-    #name = ir.ssa_name
     if(not (is_type_undef(ir))):
         _non_ssa_ir = non_ssa_ir.extok
         _non_ssa_ir.token_type_clear()
         non_ssa_ir.token_typen.clear()
         non_ssa_ir.token_typed.clear()
         copy_token_type(ir, non_ssa_ir)
-        ##print_token_type(ir)
         copy_norm(ir, non_ssa_ir)
         non_ssa_ir.norm = ir.norm
         non_ssa_ir.link_function = ir.link_function
@@ -725,50 +666,29 @@ def check_type(ir) -> bool:
     global global_var_types
     global current_contract_name
     global var_assignment_storage
-    addback = False;
-    #Assignmnet
-    #Deubg pow
-    print(ir)
-    #if(debug_pow_pc):
-    #    #print("**POW***")
-    #    for pc in debug_pow_pc:
-    #        #print_param_cache(pc)
-    #        #print("___")
-    #    #print("**E")
+    addback = False
+    #Print the IR (debugging statement)
+    #print(ir)
     if isinstance(ir, Assignment):
-        #print("asgn")
         addback = type_asn(ir.lvalue, ir.rvalue)
-        ##print(get_norm(ir.rvalue))
         #Assign value if constant int assignement
         if(is_constant(ir.rvalue)):
             ir.lvalue.extok.value = ir.rvalue.value
         elif(is_variable(ir.rvalue)):
             ir.lvalue.extok.value = ir.rvalue.extok.value
         rnorm = get_norm(ir.rvalue)
-        ##print("________")
-        ##print(ir.rvalue.extok)
-        ##print(f"is constnat? + {is_constant(ir.rvalue)}")
         if(ir.lvalue.extok.norm != '*' and not (is_constant(ir.rvalue) and rnorm == 0)):
             asn_norm(ir.lvalue, rnorm)
         pass_ftype(ir.lvalue, ir.rvalue, "assign")
-        ##print_token_type(ir.lvalue)
-
-        #Handle value
         
     elif isinstance(ir, Binary):
         #Binary
         addback = type_bin(ir)
     elif isinstance(ir, Modifier):
-        ##print("MOIFIER STATEMENT")
         addback = False
     elif isinstance(ir, InternalCall):
          #Function call
-        ##print("ic")
-        #if(ir.lvalue):
         addback = type_fc(ir)
-        #else:
-        #    addback = False
-        #    #print("NO RETURN LOCATION")
     elif isinstance(ir, LibraryCall):
         addback = type_library_call(ir)
     elif isinstance(ir, HighLevelCall):
@@ -777,24 +697,14 @@ def check_type(ir) -> bool:
     elif isinstance(ir, TypeConversion):
         type_conversion(ir)
     elif isinstance(ir, Unpack):
-
         #Unpack tuple
         addback = type_upk(ir)
     elif isinstance(ir, Phi):
         #Phi (ssa) unpack
         addback = False
-        #print("Phi")
         if(is_type_undef(ir.lvalue)):
-            #for rval in ir.rvalues:
-            #    print(rval.extok)
-
-            #print()
-            #print()
-            #print("END==================================")
-            #if(not(propogate_parameter(ir.lvalue))):
             set = False
             for rval in ir.rvalues:
-                #print(rval.extok)
                 if(not(is_type_undef(rval) or is_type_const(rval))):
                     type_asn(ir.lvalue, rval)
                     ir.lvalue.extok.norm = rval.extok.norm
@@ -803,7 +713,6 @@ def check_type(ir) -> bool:
 
                 else:
                     continue
-                #fields
                 _rval = rval.extok
                 for field in _rval.fields:
                     ir.lvalue.extok.add_field(field)
@@ -821,21 +730,11 @@ def check_type(ir) -> bool:
                     for field in _rval.fields:
                         ir.lvalue.extok.add_field(field)
 
-
-
-            
-        #search global variables (deprecated)
-        #_ir = ir.lvalue
-        #_name = _ir.name
-        #if((_name, current_contract_name) in global_var_types):
-        #    copy_token_type(global_var_types[(_name, current_contract_name)], ir.lvalue)
-        ##print("Phi")
     elif isinstance(ir, EventCall):
         return False
     elif isinstance(ir, Index):
         #print("INDEX")
         addback = type_ref(ir)
-        #return addback
     elif isinstance(ir, Member):
         #print("MEMBER")
         addback = type_member(ir) 
@@ -845,37 +744,26 @@ def check_type(ir) -> bool:
         ir.function._returns_ssa.clear()
         for y in ir.values:
             if(init_var(y)): 
-                #print(y.extok)
                 ir.function.add_return_ssa(y)
             else:
                 ir.function.add_return_ssa(create_iconstant())
         return False
-    #elif(is_variable(ir.lvalue) and is_referenceVariable(ir.lvalue)):
-    #    #Reference
-    #    addback = type_ref(ir)
-    #    return False
-    #DEBUG
     try:
         if ir.lvalue and is_variable(ir.lvalue):
-            print("[i]Type for "+ir.lvalue.name)
-            print(ir.lvalue.extok)
+            #Debugging statement: lhs variable after operatiom
+            #print("[i]Type for "+ir.lvalue.name)
+            #print(ir.lvalue.extok)
             if(isinstance(ir.lvalue, ReferenceVariable)):
+                #Field propogation
                 ref = ir.lvalue
                 ref_root = ref.extok.ref_root
                 ref_field = ref.extok.ref_field
-                #print(f"Root: {ref_root}, Field: {ref_field}")
                 if(ref_root and ref_field):
                     update_member(ir.lvalue.points_to_origin, ref_field, ir.lvalue)
             update_non_ssa(ir.lvalue)
-            #print("XXXX")
     except AttributeError:
         #do nothing
-        y = 8008315
-    ##print("done.")
-    #if(addback):
-        ##print("This IR caused addback:")
-        ##print(ir)
-        ##print("XXXXX")
+        y = XXX
     return (addback)
 
 #USAGE: typechecks a type conversions (USDC vs IERC20)
@@ -886,19 +774,12 @@ def check_type(ir) -> bool:
 def type_conversion(ir):
     global address_to_label
     global label_to_address
-    #if(debug_print):
-        #convert_ssa(ir.lvalue)
-    #convert_ssa(ir.variable)
-    #print(f"Converting {str(ir.variable)}")
     if(str(ir.variable) == "this" or str(ir.variable) == "block.number" or str(ir.variable) == "msg.sender"):
-        #TMPxxx  CONVERT address(this)
         assign_const(ir.lvalue)
-        #ir.variable.extok.function_name = "global"
         name_key = "global:" + str(ir.variable)
         if(name_key in address_to_label):
             _addr = address_to_label[name_key]
         else:
-            #print(f"new address made for {str(ir.variable)}")
             addr = new_address(ir.lvalue, True)
             _addr = addr.head
             label_to_address[addr] = name_key
@@ -907,11 +788,8 @@ def type_conversion(ir):
         ir.lvalue.extok.address = _addr
         ir.lvalue.norm = 0
         ir.lvalue.link_function = current_contract_name
-        #print(_addr)
-        #addback = copy_token_tuple(ir.lvalue, ir.variable)
         addback = False
     else:    
-        #print(ir.variable.extok)
         addback = type_asn(ir.lvalue, ir.variable)
         ir.lvalue.extok.value = ir.variable.extok.value
         if(ir.lvalue.extok.norm != get_norm(ir.variable)):
@@ -929,7 +807,6 @@ def type_conversion(ir):
                     contract_name = instance_name[pos+1:]
                     break
             ir.lvalue.link_function = contract_name
-            #Sprint(contract_name)
        
 
 #USAGE: typcehcks an unpack functionality (similar to assign)
