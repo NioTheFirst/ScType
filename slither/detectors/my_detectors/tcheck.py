@@ -706,14 +706,14 @@ def check_type(ir) -> bool:
             set = False
             test_string = ""
             for r in ir.rvalues:
-                test_string += ", " + r.name
+                test_string += ", " + str(r)
             print(f"unsoirted: {test_string}")
             temp_rvalues = sorted(ir.rvalues, key=lambda x: x.name, reverse=False)
             test_string = ""
             for r in temp_rvalues:
-                test_string += ", " + r.name
+                test_string += ", " + str(r)
             print(f"soirted: {test_string}")
-            for rval in temp_rvalues:
+            for rval in ir.rvalues:
                 if(not(is_type_undef(rval) or is_type_const(rval))):
                     type_asn(ir.lvalue, rval)
                     ir.lvalue.extok.norm = rval.extok.norm
