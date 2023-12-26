@@ -1660,12 +1660,10 @@ def generate_label_trace(dictA, dictB):
     if(sum > 0):
         return None
     #Begin matching (dp algorithm)
-    #Rework this by today
-    #Try to get some normalization in as well
     dp = [[]]  #int, ([ordering], [pos_dict])
     curn = 0
     for n in neg_dict:
-        dp.append([]) #current list
+        dp.append([]) 
         if (curn == 0):
             for p in pos_dict:
                 _pos_dict = copy.deepcopy(pos_dict)
@@ -1718,8 +1716,6 @@ def generate_label_trace(dictA, dictB):
 #RETURNS: ordering succeeds or not
 def check_ordering(order, _dict):
     dict = copy.deepcopy(_dict)
-    #print(dict)
-    #print(order)
     return True
     for d in dict:
         if(d < 0):
@@ -1738,8 +1734,6 @@ def get_norm(ir):
     if(not(is_variable(ir))):
         return 'u'
     _ir = ir.extok
-    #TEST
-    #If ir already has a value in the Extended Type
     if(type(_ir.norm) != int and type(_ir.value) == int):
         if(_ir.value % 10 != 0):
             return power+1
@@ -1749,14 +1743,12 @@ def get_norm(ir):
             copy_val = copy_val/10
             power+=1
         if(power >= 5 or copy_val == 1):
-            ##print(power)
             return power
 
     #ir is a constant or undefined
     if(not(isinstance(ir, Constant)) or (not(isinstance(ir.value, int)))):
         return _ir.norm
     else:
-        ##print("val: " + str(ir.value))
         if(ir.value % 10 != 0):
             return power+1
         power = 0
@@ -1800,7 +1792,6 @@ def compare_norm(lv, varA, varB, func = None):
     _varB = varB.extok
     A_norm = _varA.norm
     B_norm = _varB.norm
-    #print(f"A: {A_norm} B: {B_norm}")
     if(not(func) and (isinstance(varA, Constant) or isinstance(varB, Constant))):
         if(isinstance(varA, Constant) and varA.value == 1 and not(_varA.is_undefined() or _varA.is_constant())):
             add_errors(lv)
@@ -1809,8 +1800,7 @@ def compare_norm(lv, varA, varB, func = None):
             add_errors(lv)
             return True
         return False
-    
-    #print("x")
+
     if(A_norm == 'u' or B_norm == 'u'):
         return False
     elif(A_norm == '*' or B_norm == '*'):
@@ -1818,18 +1808,7 @@ def compare_norm(lv, varA, varB, func = None):
             add_errors(lv)
             return True
     else:
-        #print("y")
-        #print(f"A: {A_norm} B: {B_norm}")
-        #print(type(A_norm))
-        #print(type(B_norm))
         if((not(func)) and (A_norm != B_norm)):
-            #if(A_norm == 0):
-            #    _varA.norm = B_norm
-            #    return False
-            #if(B_norm == 0):
-            #    _varB.norm = A_norm
-            #    return False
-            #print("z")
             add_errors(lv)
             return True
     return False
@@ -1842,8 +1821,6 @@ def add_norm(ir, norm):
         return
     _ir = ir.extok
     temp = _ir.norm
-    ##print(temp)
-    ##print(norm)
     if(isinstance(temp, int) and isinstance(norm, int)):
         temp+=norm
         _ir.norm = temp
@@ -1855,12 +1832,11 @@ def add_norm(ir, norm):
                 add_errors(ir)
                 return(True)
             else:
-                #do nothing
-                y = 8008135
-                ##print("[W] ASSIGNED UNKOWN TYPE IN ADDITIVE NORM ASSIGNMENT")
+                y = False
         else:
             _ir.norm = '*'
     return False
+
 #USAGE: subtract norm (i.e. for multiplication, division, or power)
 #RETURNS: NULL
 def sub_norm(ir, norm):
@@ -1879,20 +1855,16 @@ def sub_norm(ir, norm):
                 add_errors(ir)
                 return True
             else:
-                #do nothing
-                ##print("[W] ASSIGNED UNKOWN TYPE IN ADDITIVE NORM ASSIGNMENT")
-                y = 8008315
+                y = False
         else:
             _ir.norm = '*'
     return False
 
 
 def bin_norm(dest, lir, rir, func = None):
-    #if(func == None):
     err = compare_norm(dest, lir, rir, func)
     lnorm = get_norm(lir)
     rnorm = get_norm(rir)
-    #print(f"lnorm: {lnorm} rnorm: {rnorm}")
     if(err):
         asn_norm(dest, 'u')
         return
@@ -1907,12 +1879,6 @@ def bin_norm(dest, lir, rir, func = None):
         asn_norm(dest, lnorm)
     elif(lnorm == '*' or rnorm == '*' or not(isinstance(lnorm, int)) or not(isinstance(rnorm, int))):
            
-        #    asn_norm(dest, lnorm)
-        #    asn_norm(rir, lnorm)
-        #elif(isinstance(rnorm, int)):
-        #    asn_norm(dest, rnorm)
-        #    asn_norm(lir, rnorm)
-        #else:
         if(dest.extok.norm != '*'):
             asn_norm(dest, '*')
     else:
@@ -1935,7 +1901,6 @@ def combine_types(lir, rir, func = None):
     elif(func == "div"):
         copy_token_type(lir, tmp)
         copy_inv_token_type(rir, tmp)
-    #print(f"Tmp: {tmp.extok}")
     return tmp
 
 
@@ -1943,13 +1908,8 @@ def combine_types(lir, rir, func = None):
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_mul(dest, lir, rir) ->bool:
     global Mul
-    #typecheck -> 10*A + B
-    #print("testing mul...")
     if(not (init_var(lir) and init_var(rir))):
         return False
-    #print("Mul...")
-    #print(lir.extok)
-    #print(rir.extok)
     bin_norm(dest, lir, rir, "mul")
     pass_ftype(dest, lir, "mul", rir)
     if(is_type_undef(lir) or is_type_undef(rir) or is_type_address(lir) or is_type_address(rir)):
@@ -1986,9 +1946,6 @@ def type_bin_div(dest, lir, rir) ->bool:
         return False
     bin_norm(dest, lir, rir, "div")
     pass_ftype(dest, lir, "div", rir)
-    #if(get_norm(dest) != 0):
-    #    add_error(dest)
-    ##print(dest.extok)
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(dest)):
             if(is_type_undef(lir)):
@@ -2055,13 +2012,10 @@ def generate_ratios(dest, lir, rir, func):
 #USAGE: typechecks '>' statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_gt(dest, lir, rir) -> bool:
-    ##print("testing gt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir, "compare")
     pass_ftype(dest, lir, "compare", rir)
-    ##print_token_type(rir)
-    ##print(is_type_const(rir))
     if(is_type_undef(lir) or is_type_undef(rir)):
         if(is_type_undef(lir)):
             type_asn(lir, rir)
@@ -2071,7 +2025,7 @@ def type_bin_gt(dest, lir, rir) -> bool:
             type_asn(dest, lir)
         return True
     elif(is_type_const(lir) or is_type_const(rir)):
-       #assign dest as a constant (although it should not be used in arithmatic)
+       #assign dest as a constant 
        assign_const(dest)
        return False
     elif(not(compare_token_type(lir, rir)) and handle_trace(lir, rir) == False):
@@ -2083,7 +2037,6 @@ def type_bin_gt(dest, lir, rir) -> bool:
 #USAGE: typechecks '>=' statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_ge(dest, lir, rir) -> bool:
-    ##print("testing gt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir, "compare")
@@ -2097,7 +2050,7 @@ def type_bin_ge(dest, lir, rir) -> bool:
             type_asn(rir, lir)
         return True
     elif(is_type_const(lir) or is_type_const(rir)):
-       #assign dest as a constant (although it should not be used in arithmatic)
+       #assign dest as a constant 
        assign_const(dest)
        return False
     elif(not(compare_token_type(lir, rir)) and handle_trace(lir, rir) == False):
@@ -2109,7 +2062,6 @@ def type_bin_ge(dest, lir, rir) -> bool:
 #USAGE: typechecks '<' statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_lt(dest, lir, rir) -> bool:
-    ##print("testing lt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir, "compare")
@@ -2135,7 +2087,6 @@ def type_bin_lt(dest, lir, rir) -> bool:
 #USAGE: typechecks '<=' statement
 #RETURNS: 'TRUE' if the node needs to be added back to the worklist
 def type_bin_le(dest, lir, rir) -> bool:
-    ##print("testing lt...")
     if(not (init_var(lir) and init_var(rir))):
         return False
     bin_norm(dest, lir, rir)
@@ -2160,19 +2111,13 @@ def type_bin_le(dest, lir, rir) -> bool:
 
 def is_variable(ir):
     if isinstance(ir, Variable):
-        ##print("This is a variable: "+ir.name.lower()+" " + str(ir.type))
-        ##print_token_type(ir)
         return True
     return False
 
 
 def is_internalcall(ir):
     if isinstance(ir, InternalCall):
-        ##print("Internal call...")
-        y = 8008135
-
-
-
+        y = False
 
 #def contains_equal(ir):
 #    if isinstance(ir, Binary):
@@ -2191,11 +2136,8 @@ def is_assert(node):
 #USAGE: given a list of irs, typecheck
 #RETURNS: a list of irs that have undefined types
 def _tcheck_ir(irs, function_name) -> []:
-    #irs is the list of irs
     newirs = []
     for ir in irs:
-        # irs are expressions in the form of a = b op c
-        ##print(ir)
         is_function(ir)
         if has_lvalue(ir):
              if function_name != None and ir.lvalue != None and is_variable(ir.lvalue):
@@ -2206,21 +2148,14 @@ def _tcheck_ir(irs, function_name) -> []:
                     _ir.function_name = "global"
                 else:
                     ir.lvalue.parent_function = function_name
-                ##print("Function name: "+ ir.lvalue.parent_function)
         if isinstance(ir, Function):
-            ##print("Function...")
             continue
         if isinstance(ir, Condition):
-            ##print("Condition...")
             is_condition(ir)
             continue
         if isinstance(ir, EventCall):
             continue
         if isinstance(ir, InternalCall):
-            ##print("Internal call...")
-            ##print(ir.function)
-            #for param in ir.read:
-            #    #print(param.name)
             is_function(ir.function)
             check_type(ir)
             continue
@@ -2228,48 +2163,30 @@ def _tcheck_ir(irs, function_name) -> []:
             check_type(ir)
             continue
         
-        """if function_name != None and ir.lvalue != None and is_variable(ir.lvalue):
-            _ir = ir.lvalue.extok
-            _ir.name = ir.lvalue.name
-            _ir.function_name = function_name
-            ir.lvalue.parent_function = function_name
-            #print("Function name: "+ ir.lvalue.parent_function)"""
         addback = check_type(ir)
-        #is_variable(ir.lvalue)
         if(addback):
             newirs.append(ir)
     return newirs
 
 #USAGE: propogates a local variables with a parameter
 def propogate_parameter(lv, function, clear_initial_parameters = False):
-    #print(f"Ssa_name: {lv.ssa_name}, name: {lv.name}")
-    #print(lv.name)
-    #print(lv.extok)
     if("_1" in lv.ssa_name and (lv.extok.is_undefined() or clear_initial_parameters)):
-            #print("local...")
             pos = -1
             for i in range(len(lv.ssa_name)-1):
                 revpos = len(lv.ssa_name)-i-1
-                #print(lv.ssa_name[revpos:revpos+2])   
                 if(lv.ssa_name[revpos:revpos+2] == '_1'):
                     pos = revpos
                     break
             lv_subname = lv.ssa_name[:pos]
-            #lv_subname = lv.ssa_name[:len(lv.ssa_name)-2]
-            #print(lv_subname)
             for p in function.parameters:
-                #print(p.extok)
                 if(p.name == lv_subname):
                     lv.extok.token_type_clear()
                     lv.extok.name = lv.ssa_name
                     lv.extok.function_name = function.name
-                    #print(f"saved parameter: {p.extok}")
                     copy_token_type(p, lv)
                     
                     lv.extok.norm = p.extok.norm
                     copy_ftype(p, lv)
-                    #print(lv.extok)
-                    #print("Copied ftype")
                     return True
     return False
 #USSAGE: propogates a local variable with a global stored assignment
@@ -2280,11 +2197,8 @@ def propogate_global(lv):
         pos = -1
         ssa_name_info = convert_ssa_name(lv.ssa_name)
         _name = ssa_name_info[0]
-        #print(f"Globalname: {_name}, contract_name: {current_contract_name}")
         if((_name, current_contract_name) in global_var_types):
-            #print("global...")
             stored_state = global_var_types[(_name, current_contract_name)]
-            #print(stored_state.extok)
             copy_token_type(stored_state, lv)
             copy_ftype(stored_state, lv)
             lv.extok.norm = stored_state.extok.norm
@@ -2296,13 +2210,11 @@ def convert_ssa_name(name):
     num = None
     for i in range(len(name)-1):
             revpos = len(name)-i-1
-            #print(lv.ssa_name[revpos])
             if(name[revpos] == '_'):
                 pos = revpos
                 break
     _name = name[:pos]
     num = (name[pos+1:])
-    #print(f"Name: {_name}, Num: {num}")
     return [_name, num]
 
 #USAGE: typecheck a node
@@ -2311,44 +2223,21 @@ def _tcheck_node(node, function) -> []:
     global errors
     global current_contract_name
     global global_address_counter
-    ##print("typecheckig node...")
-    #OVERHAUL:
-    #Get rid of the mapping thing for the SSA
-    #Just apply mappings for the initial parameters
-    #Examine the Phi thing more closesly
-    #print("Rembmered parameters?")
-    #for param in function.parameters:
-        #print(param.extok)
     function_name = function.name
     irs = []
     #local vars read
-    #print("Propogating parameters and globals to SSA variables...")
-    #print(node.ssa_state_variables_read)
-    #print(node.ssa_local_variables_read)
     for lv in node.ssa_local_variables_read:
-        #print(lv)
-        #print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
-        #print(lv.extok)
     for lv in node.ssa_state_variables_read:
-        #print(lv)
-        #print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
     for lv in node.ssa_variables_read:
-        #print(lv)
-        #print(lv.extok)
         propogate_parameter(lv, function)
         propogate_global(lv)
-        #print(lv.extok)
     for lv in node.ssa_variables_written:
-        #print(lv)
-        #print(lv.extok)
         propogate_parameter(lv, function)
-        propogate_global(lv)
-        #print(lv.extok)
-    #print("End popogation")            
+        propogate_global(lv)   
         
     for ir in node.irs_ssa:
         #DEFINE REFERENCE RELATIONS
@@ -2360,9 +2249,6 @@ def _tcheck_node(node, function) -> []:
             lv = ir.lvalue
             propogate_parameter(lv, function)
             propogate_global(lv)
-            #print(lv.extok)
-            #print("Phid")
-        #print("weee")
         if isinstance(ir, Member):
             if isinstance(ir.lvalue, ReferenceVariable):
                 ir.lvalue.extok.ref([ir.variable_left, ir.variable_right])
@@ -2370,13 +2256,10 @@ def _tcheck_node(node, function) -> []:
     newirs = _tcheck_ir(irs, function_name)
 
     #Handle Constructor Varialbes (need to be propagated)
-    #if(function.name == "constructor"):
     for var in node.ssa_variables_written:
         
         if((var.extok.name, current_contract_name) in global_var_types):
-            #print(f"Copied {var.extok.name}")
             temp = global_var_types[(var.extok.name, current_contract_name)]
-            #print(f" To type: {temp.type}")
             if(str(var.type) == "address"):
                 continue
             temp.extok.name = var.extok.name
@@ -2389,7 +2272,6 @@ def _tcheck_node(node, function) -> []:
             if(var.extok.address != 'u'):
                 #Only global addresses
                 global_address_counter+=1
-            #print(temp.extok)
 
     for error in errors:
         if(error.dnode == None):
@@ -2425,18 +2307,9 @@ def has_lvalue(ir):
 #RETURNS: N/A
 def _clear_type_node(node):
     global debug_pow_pc
-    ##print("clearning node...")
     for ir in node.irs_ssa:
-        #print("clearing ir...?")
-        #if(debug_pow_pc):
-        #    for pc in debug_pow_pc:
-        #        #print("BEFORE")
-        #        #print_param_cache(pc)
-        #        #print("AFTER")
-        #print(ir)
         #Clear lvalue
         if(has_lvalue(ir) and is_variable(ir.lvalue)):
-            ##print("has variable")
             if(isinstance(ir.lvalue, TemporaryVariable) or isinstance(ir.lvalue, LocalIRVariable) or isinstance(ir.lvalue, Variable)):
                 #clear the types for temporary and local variables
                 _ir = ir.lvalue.extok
@@ -2445,32 +2318,14 @@ def _clear_type_node(node):
                 _ir.finance_type = -1
                 for field in _ir.fields:
                     field.extok.token_type_clear()
-                #update_non_ssa(ir.lvalue)
+    #Clear variables
 
-                #print(f"[i] {ir.lvalue.name} cleared")
-                ##print(_ir)
-    #Clear variables read
-    '''
-    for var in node.ssa_local_variables_read:
-        _var = var.extok
-        _var.token_type_clear()
-        _var.norm = 'u'
-        _var.finance_type = -1
-        #if(debug_pow_pc):
-        ###    for pc in debug_pow_pc:
-        #      #print("CCCCCC")
-        #      #print_param_cache(pc)
-        #      #print("XXXXXX")
-    '''
 
 #USAGE: searches a function for a RETURN node, if it doesn't exist, do stuff
 #RETURNS: return node
 def remap_return(function):
     fentry = {function.entry_point}
     explored = set()
-    #print("FIND RETURN")
-    #print(function.entry_point)
-    #print(function.full_name)
     return_ssa_mapping = {}
     for ir_ssa in function.returns_ssa:
         try:
@@ -2481,7 +2336,6 @@ def remap_return(function):
     explored = set()
     while(fentry):
         node = fentry.pop()
-        #print(node)
         if(node in explored):
             continue
         explored.add(node)
@@ -2504,13 +2358,10 @@ def _propogate_all_parameters(function):
     fentry = {function.entry_point}
     while fentry:
         node = fentry.pop()
-        #print(node)
         if node in explored:
             continue
         explored.add(node)
-        #print("Propogating All")
         for var in node.ssa_local_variables_read:
-            #print(var)
             propogate_parameter(var, function, True)
         for son in node.sons:
             fentry.add(son)
@@ -2524,36 +2375,21 @@ def _tcheck_function_call(function, param_cache) -> []:
     global function_ref
     global function_count
     global temp_address_counter
-    #save_temp = temp_address_counter
-    #temp_address_counter = 0
-    ##print("xyz")
     function_hlc = 0
     function_ref = 0
     explored = set()
     addback_nodes = []
-    #if(check_bar(function.name)):
-    #    return addback_nodes
-    ##print("Function name: "+function.name)
-    ##print("Function Visibility: "+function.visibility)
     #load parameters
     paramno = 0
     #Append to function count
     function_count+=1
-    print(f"function: {function.name}, function count: {function_count}")
+    #print(f"function: {function.name}, function count: {function_count}")
     for param in function.parameters:
-        #clear previous types
-        #copy new types
         if(paramno == len(param_cache)):
-            #Issue if there are functions with the same name
             break
-        #print(f"Param: {param}")
         copy_pc_token_type(param_cache[paramno], param)
-        #print(param_cache[paramno])
-        #print(param.extok)
-        #param.parent_function = function.name
         paramno+=1
     #find return and tack it onto the end
-    #typecheck function
     remap_return(function)
 
     #Propogate parameters
@@ -2575,10 +2411,6 @@ def _tcheck_function_call(function, param_cache) -> []:
             if(paramno == len(param_cache)):
                 break
             copy_pc_token_type(param_cache[paramno], param)
-            #update_non_ssa(param)
-            #if (isinstance(param, Variable)):
-            #print(param.extok)
-            #    update_non_ssa(param)
             paramno+=1
         while fentry:
             node = fentry.pop()
@@ -2586,7 +2418,7 @@ def _tcheck_function_call(function, param_cache) -> []:
                 continue
             explored.add(node)
             #clear previous nodes
-            if(prevlen == -1):# or not(node in addback_nodes)):
+            if(prevlen == -1):
                 _clear_type_node(node)
             addback = _tcheck_node(node, function)
             if(len(addback) > 0):
@@ -2606,9 +2438,7 @@ def _tcheck_function_call(function, param_cache) -> []:
             _tcheck_node(return_node, function)
         prevlen = curlen
         curlen = len(addback_nodes)
-        ##print(f"WORKLIST iteration {wl_iter} for function call \"{function.name}\":\n New undefined nodes- {curlen}\n Old undefined nodes- {prevlen}")
         wl_iter+=1
-    #temp_address_counter = save_temp
     return addback_nodes
 
 #USAGE: typecheck a function
