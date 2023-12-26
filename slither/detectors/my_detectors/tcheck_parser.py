@@ -48,7 +48,6 @@ update_ratios = {10: -1,
                  20: -1,
                  21: -1}
 
-#Copy this into address_handler
 f_type_num = {
     -1: "undef",
     0: "raw balance",
@@ -67,12 +66,9 @@ f_type_num = {
     30: "reserve",
     40: "price/exchange rate",
     50: "debt",
+    60: "dividend"
 }
 
-#link gpt... (name) ->type
-#prompt...
-
-#test discord bot again
 f_type_name = {
     "undef" : -1,
     "raw balance" :0,
@@ -91,6 +87,7 @@ f_type_name = {
     "reserve" : 30,
     "price/exchange rate" : 40,
     "debt": 50,
+    "dividend": 60
 }
 
 
