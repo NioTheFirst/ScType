@@ -110,6 +110,8 @@ f_type_mul = {
     (3, 40) : 3,    
     (60, 40) : 40, #price x dividend
     (40, 60) : 40, #dividend x price
+    (40, 30) : 30, #price x reserve 
+    (30, 40) : 30, 
 }
 
 f_type_div = {
@@ -139,6 +141,7 @@ f_type_div = {
     (1, 40) : 2,
     (40, 3) : 3,
     (3, 40) : 3,    
+    (30, 40): 30 #resreve / price
 }
 
 abs_buf = 10    
