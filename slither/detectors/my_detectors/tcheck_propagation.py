@@ -23,12 +23,18 @@ f_type_add = {
     (10, 10) : 10, #c. fee ratio + c. fee ratio = c.fee ratio
     (12, 12) : 12, #s. fee ratio + s. fee ratio = s.fee ratio
     (13, 13) : 13, #trans fee + trans fee
-    (30, 0): 30,#reserve - any balance
+    (30, 0): 30,#reserve +any balance
     (30, 1): 30,
+    (1, 30): 30,
     (30, 30): 30,
     (30, 2): 30,
     (30, 3): 30,
     (40, 40): 40,
+    (11, 50): 50, #fee + debt
+    (50, 11): 50, #debt + fee
+    (23, 11): 23, #Interest + fee = interest
+    (23, 50): 50, #interest + debt = debt
+    (23, 23): 23, #interest + interest = interest
     (50, 0): 50, #debt + any balance
     (0, 50): 50,
     (50, 1): 50,
@@ -36,7 +42,12 @@ f_type_add = {
     (50, 2): 50,
     (2, 50): 50,
     (50, 3): 50,
-    (3, 50): 50
+    (3, 50): 50,
+    (60, 0): 3, #divident + balances
+    (0, 60):3,
+    (1, 60): 3,
+    (60, 1): 3,
+    
 }
 
 f_type_sub = {
@@ -63,8 +74,8 @@ f_type_sub = {
     (50, 1): 50,
     (50, 2): 50,
     (50, 3): 50,
-    (60, 11): 60, #dividend
-    (60, 60): 60
+    (60, 11): 60, #dividend - fee = divident
+    (60, 60): 60, #divident - divident 
 }
 
 f_type_mul = {
