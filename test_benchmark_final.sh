@@ -138,7 +138,7 @@ if [[ $# -eq 0 || $1 -eq 13 ]]; then
   cd "Benchmark/Covalent/contracts"
   slither --detect tcheck DelegatedStaking.sol
   cd "../../../"
-  execute_group 13 echo "[*] Tested 0 warnings for Covalent"
+  execute_group 13 echo "[*] Tested 2 warnings for Covalent"
   sleep 3
 fi
 
