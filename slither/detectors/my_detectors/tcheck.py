@@ -2452,47 +2452,35 @@ def _tcheck_function(function) -> []:
     global mark_iteration
     global current_function_marked
     global temp_address_counter
-    #save_temp = temp_address_counter
-    #temp_address_counter = 0
     function_hlc = 0
     function_ref = 0
     explored = set()
     addback_nodes = []
-    print()
-    print()
-    print()
-    print(function.name)
+    #print()
+    #print()
+    #print()
+    #print(function.name)
 
     if(check_bar(function.name)):
-        ##print("wooo")
         return addback_nodes
     #print("Function name: "+function.name)
-    ##print("Function Visibility (test): "+function.visibility)
     fvisibl = function.visibility
     new_param_cache = None
-    if(True): #fvisibl == 'public' or fvisibl == 'external' or read_internal):
+    if(True): 
         for fparam in function.parameters:
-            ##print(fparam.name)
             fparam.parent_function = function.name
             querry_type(fparam)
-            #print(f"Param1: {fparam.extok}")
         #generate param_cache
         new_param_cache = function_param_cache(function)
         if(not(mark_iteration) or current_function_marked):
             added = add_param_cache(function, new_param_cache)
-        #print_param_cache(new_param_cache)
     else:
-        #do not care about internal functions in initial iteration
         return addback_nodes
-
-    #for ssa in function.parameters_ssa:
-        #print(ssa)
     remap_return(function)
     #Append to function count
     function_count+=1
-    print(f"function: {function.name}, function count: {function_count}")
+    #print(f"function: {function.name}, function count: {function_count}")
     #Propogate parameters
-    #_propogate_all_parameters(function)
 
     #WORKLIST ALGORITHM
     prevlen = -1
@@ -2506,16 +2494,14 @@ def _tcheck_function(function) -> []:
         explored = set()
         paramno = 0
         for param in function.parameters:
-            #print(new_param_cache[paramno])
             copy_pc_token_type(new_param_cache[paramno], param)
-            #print(f"Param:{param.extok}")
             paramno+=1
         while fentry:
             node = fentry.pop()
             if node in explored:
                 continue
             explored.add(node)
-            if(prevlen == -1):# or not(node in addback_nodes)):
+            if(prevlen == -1):
                 _clear_type_node(node)
             addback = _tcheck_node(node, function)
             if(len(addback) > 0):
@@ -2524,17 +2510,13 @@ def _tcheck_function(function) -> []:
                 fentry.add(son)
         prevlen = curlen
         curlen = len(addback_nodes)
-        ##print(f"WORKLIST iteration {wl_iter} for function call \"{function.name}\":\n New undefined nodes- {curlen}\n Old undefined nodes- {prevlen}")
         wl_iter+=1
     #Save return value
-    #temp_address_counter = save_temp
     handle_return(None, function)
     return addback_nodes
 
 def view_ir(fentry):
     return
-    print()
-    print()
     explored = set()
     while fentry:
         node = fentry.pop()
@@ -2568,9 +2550,7 @@ def _tcheck_contract_state_var(contract):
         if(state_var.name in seen):
             continue
         seen[state_var.name] = True
-        #print("State_var: "+state_var.name)
         state_var.parent_function = "global"
-        #check_type(state_var)
         if(user_type and fill_type):
             new_tfile = open(type_info_name, "a")
             new_tfile.write(f"[t], global, {state_var.name}\n")
@@ -2580,23 +2560,20 @@ def _tcheck_contract_state_var(contract):
         if(True):
             if(not(contract.name in read_global)):
                 querry_type(state_var)
-                #print("querrying!!!")
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
                 copy_ftype(state_var, new_constant)
                 new_constant.extok.norm = state_var.extok.norm
                 global_var_types[(state_var.extok.name, contract.name)] = new_constant
-                #print(f"Saved name: {state_var.extok.name}")
-                #print(new_constant.extok)
             else:
                 stored_state = global_var_types[(state_var.extok.name, contract.name)]
-                #print(stored_state.extok)
                 copy_token_type(stored_state, state_var)
                 copy_ftype(stored_state, state_var)
                 state_var.extok.norm = stored_state.extok.norm
             if(isinstance(state_var, ReferenceVariable)):
                 add_ref(state_var.name, (state_var.token_typen, state_var.token_typed, state_var.norm, state_var.link_function))
     read_global[contract.name] = True
+    
 #USAGE: labels which contracts that should be read (contains binary operations) also adds contract-function pairs
 #RTURNS: NULL
 def _mark_functions(contract):
@@ -2608,22 +2585,16 @@ def _mark_functions(contract):
             
 
     for function in contract.functions_declared:
-        #print(f"Checking... {function.name} Visibility: {function.visibility}")
-        #print(function.nodes)
         fentry = {function.entry_point}
         #add contract-function pair
-        #print(f"Mark functions Adding: {contract.name}, {function.name}, {hasExternal}")
-        #view_ir({function.entry_point})
         add_cf_pair(contract.name, function.name, function)
         if(not (function.entry_point and (not(hasExternal) or function.visibility == "external" or function.visibility == "public"))):
             function_check[function.name] = False
-            #print("[x] Not visible ")
             continue
         contains_bin = False
         while fentry:
             node = fentry.pop()
             for ir in node.irs_ssa:
-                #print(ir)
                 if(isinstance(ir, Binary)):
                     contains_bin = True
                     break
@@ -2646,7 +2617,7 @@ def _mark_functions(contract):
             print("[X]No Binary")
 
 
-#TODO--------------------------------------------------------
+
 # USAGE: typechecks an entire contract given the contract
 #        generates a list of nodes that need to be added back
 # RETURNS: returns a list of errors(if any)
@@ -2667,61 +2638,25 @@ def _tcheck_contract(contract):
     #Reset update ratios
     reset_update_ratios()
     for function in contract.functions_declared:
-        #print("Reading Function: " + function.name)
         if not(function_check[function.name]):
-            #print("Function " + function.name + " not marked")
             if(mark_iteration):
-                ##print("Mark Iterations TRUE, proceeding anyway")
                 current_function_marked = False
             else:
                 continue
         else:
             current_function_marked = True
         if not function.entry_point:
-            #print("No Entry point")
             continue
-        #print("Checking funcion...")
-        #current_function_marked = True
-        #SKIP
-        ##print("[*i*]External Function: " + function.name)
-        #continue
         addback_nodes = _tcheck_function(function)
         #Override state variables only for the constructor
         current_function_marked = True
         if(function.name != "constructor"):
-            #_tcheck_contract_state_var(contract)
             y = None
         else:
-            #_tcheck_contract_state_var(contract)
             continue
-            #Deprecated
-            print("CONSTRUCTOR VARIABLES______________________________")
-            for var in function.ssa_variables_written:
-                if((var.extok.name, contract.name) in global_var_types):
-                    #print(f"Copied {var.extok.name}")
-                    temp = global_var_types[(var.extok.name, contract.name)]
-                    temp.extok.name = var.extok.name
-                    temp.extok.function_name = "constructor"
-                    copy_token_type(var, temp)
-                    global_var_types[(var.extok.name, contract.name)] = temp
-                    if(var.extok.address != 'u'):
-                        #Only global addresses
-                        global_address_counter+=1
-                    #print(temp.extok)
         
         if(len(addback_nodes) > 0):
             all_addback_nodes+=(addback_nodes)
-    """cur = 0    
-    while all_addback_nodes:
-        #print("------")
-        cur_node = all_addback_nodes.pop()
-        addback = _tcheck_node(cur_node, None)
-        if(len(addback) > 0):
-            all_addback_nodes.append(cur_node)
-        if(cur == 5):
-            break
-        cur+=1
-    """
     return errors
 
 #USAGE: returns the state variables of a contract
@@ -2761,47 +2696,28 @@ class tcheck(AbstractDetector):
         global label_sets
         assign_const(constant_instance)
         total_compilations = tcheck_module.get_total_compilations()
-        #print(f"total compilations: {total_compilations}, contracts: {len(self.contracts)}")
-        '''
-        for contract in self.contracts:
-            print(f"Checking {contract.name}")
-            for function in contract.functions_declared:
-                print(f"Name: {function.name}")
-        print("End Checking...")
-        '''
         start_time = time.time()
         for contract in self.contracts:
-            #TODO: implement x contract function calls and interate through global variables first
             #create hashtable with function name and contract name
-            #print("contract name: "+contract.name)
-            #print("WARNING!!!!")
             type_info_name = contract.name+"_types.txt"
             finance_info_name = contract.name+"_ftypes.txt"
-            #TODO: Eventually, combine both files as one
-            #print(type_info_name)
-
             #get finance type info
             f_file = None
             try:
                 with open(finance_info_name, "r") as _f_file:
                     f_file = finance_info_name
-                    #print(f"Finance file: {f_file}")
             except FileNotFoundError:
-                #print("Finance File not Found")
                 f_file = None
 
             #get type information from file (if there is one)
             try:
                 with open(type_info_name, "r") as t_file:
                     # File processing code goes here
-                    #print("\"" + type_info_name +"\" opened successfully.")
                     user_type = False
                     type_file = type_info_name
                     parse_type_file(type_file, f_file)
                     u_provide_type[contract.name] = False
-                    #print("oooo")
             except FileNotFoundError:
-                #print("Type File not found.")
                 # Handle the error gracefully or take appropriate action
                 u_provide_type[contract.name] = False
                 user_type = True
@@ -2818,21 +2734,11 @@ class tcheck(AbstractDetector):
         for contract in self.contracts:
             if(contract.name in seen_contracts):
                 continue
-            #print(f"Seen contract: {seen_contracts} Contract name out: {contract.name}")
             seen_contracts[contract.name] = True
             user_type = u_provide_type[contract.name]
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
-                #print("continuing...")
                 continue
-            #print(f"Running check on {contract.name}")
             errorsx = _tcheck_contract(contract)
-            #print("xxxxxx")
-            #print(f"Errors: {errorsx}")
-
-            #for label, address in address_to_label.items():
-            #    print(f"Address: {address}, Label: {label}")
-            #For label, addr_label in label_sets.items():
-            #    print(addr_label)
                 
             for ir in errorsx:
                 _ir = ir.extok
@@ -2847,19 +2753,6 @@ class tcheck(AbstractDetector):
                 info+=("Var name: " + name + " " + "Func name: " + func + " in " + str(dnode) + "\n")
                 res = self.generate_result(info)
                 results.append(res)
-            #add_b4_div = detect_add_b4_div(contract)
-            #if add_b4_div:
-            #    for (func, nodes) in add_b4_div:
-            #        info = [
-            #                func,
-            #                " typechecking for smart contracts"         
-            #        ]
-            #        nodes.sort(key = lambda x:x.node_id)
-            #        for node in nodes:
-            #            info += ["\t= ", node, "\n"]
-            #        res = self.generate_result(info)
-            #        results.append(res)
         end_time = time.time()
         print(f"Function count: {function_count}")
-        #print(f"Time elapsed: {end_time - start_time}")
         return results
