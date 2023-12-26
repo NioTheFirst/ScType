@@ -704,16 +704,8 @@ def check_type(ir) -> bool:
         addback = False
         if(is_type_undef(ir.lvalue)):
             set = False
-            test_string = ""
-            for r in ir.rvalues:
-                test_string += ", " + str(r)
-            print(f"unsoirted: {test_string}")
             temp_rvalues = sorted(ir.rvalues, key=lambda x: str(x), reverse=False)
-            test_string = ""
-            for r in temp_rvalues:
-                test_string += ", " + str(r)
-            print(f"soirted: {test_string}")
-            for rval in ir.rvalues:
+            for rval in temp_rvalues:
                 if(not(is_type_undef(rval) or is_type_const(rval))):
                     type_asn(ir.lvalue, rval)
                     ir.lvalue.extok.norm = rval.extok.norm
@@ -728,7 +720,7 @@ def check_type(ir) -> bool:
                 set = True
                 break
             if(set == False):
-                for rval in ir.rvalues:
+                for rval in temp_rvalues:
                     if(isinstance(rval.extok.norm, int)):
                         ir.lvalue.extok.norm = rval.extok.norm
                         if(rval.extok.finance_type != -1):
