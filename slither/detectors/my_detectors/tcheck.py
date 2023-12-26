@@ -708,7 +708,7 @@ def check_type(ir) -> bool:
             for r in ir.rvalues:
                 test_string += ", " + str(r)
             print(f"unsoirted: {test_string}")
-            temp_rvalues = sorted(ir.rvalues, key=lambda x: x.name, reverse=False)
+            temp_rvalues = sorted(ir.rvalues, key=lambda x: str(x), reverse=False)
             test_string = ""
             for r in temp_rvalues:
                 test_string += ", " + str(r)
