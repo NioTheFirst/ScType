@@ -2,7 +2,7 @@ Project name: Pool Together
 
 Expected Warnings(1):
 
-[TP, 1] typecheck error: Var name: redeemedUnderlyingAsset Func name: redeemToken in EXPRESSION redeemedUnderlyingAsset += redeemedShare
+`[TP, 1] typecheck error: Var name: redeemedUnderlyingAsset Func name: redeemToken in EXPRESSION redeemedUnderlyingAsset += redeemedShare`
 
 Explanation for [TP, 1]: `redeemAmount` is used instead of `redeemShare` in function `redeemToken`. 
 These two variables represent amounts of different tokens ("amount" token and "share" token). 
