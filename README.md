@@ -29,6 +29,10 @@ ScType is applying for:
 
 `|--- test_benchmark_min.sh`
 
+`|--- create_typefile.md`
+
+`|--- financial_type_keys.py`
+
 `|--- slither/detectors/my_detectors`
 
 `README-dev.md` contains the information written here.
@@ -53,24 +57,12 @@ It provides additional information to variables, such as token units, scaling fa
 ## Type File Parsing
 
 The type file provides initial abstract types for select global variables or function parameters.
-
-In particular, 
-
-1) The number of decimals that a certain token has.
-
-2) The return values of any functions that are not included within the project.
-
-3) The token units, scaling factor, and financial type of certain variables.
-
-Detailed instructions on how to manually create a type file can be found in `create_typefile.txt`.
-
-Please note that ScType can infer token units and scaling factors from special functions such as `balanceOf()` or `transfer()`. However, it currently cannot infer the mentioned attributes from variables that represent a price of two tokens. Such information must be provided to the type file.
-Additionally, ScType cannot make any inference on the financial type of variables. Such information must also be provided to the type file.
-We leave handling the two above cases to our future work.
+Detailed information can be found in `create_typefile.md`
 
 All of the type files for the testing dataset have already been provided; when counting the number of annotations made for type files, we exclude the ones which provide the return values of functions not in scope. We reason that this is a common cost for all static analysis tools and is an effort that we plan to improve upon in furture work.
 
-The parser for the type file is located in `tcheck_parser.py`.
+The parser for the type file is located in `tcheck_parser.py`. It checks each annotation that follows the format as described in `create_typefile.md`, and stores the abstract types in dictionaries for use later in type checking. 
+Each variable type has its own dictionary, and can be checked within `tcheck_parser.py`.
 
 ## Typechecking Engine
 
@@ -98,6 +90,8 @@ To run ScType against a directory, run:
 `slither --detect tcheck .`
 
 ScType will be able to automatically typecheck calls to any functions as long as the function is somewhere within the directory. 
+
+However, ScType needs type files to be made for each contract that needs to be checked. Details can be found in the `create_typefile.md` file.
 
 # Docker
 
