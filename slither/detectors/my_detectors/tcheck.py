@@ -1632,7 +1632,7 @@ def handle_trace(rir, lir):
             d_dict[ld] = -1
     #Generate matchings, or generalize set
     all_zeros = True
-    for n in n_dict
+    for n in n_dict:
         if (n != 0):
             all_zeros = False
             break
