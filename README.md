@@ -60,6 +60,10 @@ The following section describes the core components of ScType and where they are
 The abstract type as introduced by Fig. 6 in our paper is defined in `ExtendedType.py`. 
 It provides additional information to variables, such as token units, scaling factor, and financial type.
 
+In particular, for every variable intermediate representation (IR) produced by Slither, there is a field, `extok`, that contains the ExtendedType object defined in `ExtendedType.py`.
+
+For development or debugging, simply inputting the following python code `print({var}.extok)` where `{var}` is a variable IR will display information about the variable including the three aforementioned attributes, as well as fields and addresses. 
+
 ## Type File Parsing
 
 The type file provides initial abstract types for select global variables or function parameters.
