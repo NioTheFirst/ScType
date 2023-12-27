@@ -2,115 +2,23 @@ Switched global version to 0.8.4
 
 
 
-redeemIdleToken
-tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
-[i]Type for tokenToShare
+toInt256
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
 
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
 Address: u
 Norm: u
 LF: None
 Value: u
 Fields: 
-Finance Type: price/exchange rate
-TMP_0(uint256) = share_1 (c)* tokenToShare_1
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
 [i]Type for TMP_0
 
-Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-RETURN TMP_0
-tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
-[i]Type for tokenToShare
-
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-TMP_0(uint256) = share_1 (c)* tokenToShare_1
-[i]Type for TMP_0
-
-Name: TMP_0 Function: redeemIdleToken
-Num: 2
-Den: 1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-RETURN TMP_0
-Function count: 1
-
-
-
-redeemToken
-idleToken_8(address) := ϕ(['idleToken_0', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: redeemToken
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_19(int256) = 1 (c)+ 1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 2
-Fields: 
-Finance Type: undef
-a_1(int256) := TMP_19(int256)
-[i]Type for a
-
-Name: a Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 2
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
-tokens_1(uint256) := ϕ(['mintAmount_1', 'redeemAmount_1'])
-[i]Type for tokens
-
-Name: tokens Function: _tokenToShares
-Num: 2
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-ONE_IDLE_TOKEN_1(uint256) := ϕ(['ONE_IDLE_TOKEN_0', 'ONE_IDLE_TOKEN_4', 'ONE_IDLE_TOKEN_2'])
-[i]Type for ONE_IDLE_TOKEN
-
-Name: ONE_IDLE_TOKEN Function: _tokenToShares
+Name: TMP_0 Function: toInt256
 Num: -1
 Den: -1
 Address: u
@@ -119,637 +27,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_4(uint256) = tokens_1 (c)* ONE_IDLE_TOKEN_1
-[i]Type for TMP_4
-
-Name: TMP_4 Function: _tokenToShares
-Num: 2
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-TMP_5(uint256) = INTERNAL_CALL, IdleYieldSource._price()()
-idleToken_4(address) := ϕ(['idleToken_0', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: _price
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_10 = CONVERT idleToken_4 to IIdleToken
-[i]Type for TMP_10
-
-Name: TMP_10 Function: _price
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: IdleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_11 = CONVERT this to address
-[i]Type for TMP_11
-
-Name: TMP_11 Function: _price
-Num: -1
-Den: -1
-Address: 5
-Norm: u
-LF: IdleYieldSource
-Value: u
-Fields: 
-Finance Type: undef
-TMP_12(uint256) = HIGH_LEVEL_CALL, dest:TMP_10(IIdleToken), function:tokenPriceWithFee, arguments:['TMP_11']  
-tPWF_1(uint256) := ϕ(['tPWF_0'])
-[i]Type for tPWF
-
-Name: tPWF Function: tokenPriceWithFee
-Num: 1
-Den: 2
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-RETURN tPWF_1
-tPWF_1(uint256) := ϕ(['tPWF_0'])
-[i]Type for tPWF
-
-Name: tPWF Function: tokenPriceWithFee
-Num: 1
-Den: 2
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-RETURN tPWF_1
-[i]Type for TMP_12
-
-Name: TMP_12 Function: _price
-Num: 1
-Den: 2
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-idleToken_5(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: _price
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-RETURN TMP_12
-idleToken_4(address) := ϕ(['idleToken_0', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: _price
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_10 = CONVERT idleToken_4 to IIdleToken
-[i]Type for TMP_10
-
-Name: TMP_10 Function: _price
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: IdleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_11 = CONVERT this to address
-[i]Type for TMP_11
-
-Name: TMP_11 Function: _price
-Num: 
-Den: 
-Address: 5
-Norm: u
-LF: IdleYieldSource
-Value: u
-Fields: 
-Finance Type: undef
-TMP_12(uint256) = HIGH_LEVEL_CALL, dest:TMP_10(IIdleToken), function:tokenPriceWithFee, arguments:['TMP_11']  
-tPWF_1(uint256) := ϕ(['tPWF_0'])
-[i]Type for tPWF
-
-Name: tPWF Function: tokenPriceWithFee
-Num: 1
-Den: 2
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-RETURN tPWF_1
-tPWF_1(uint256) := ϕ(['tPWF_0'])
-[i]Type for tPWF
-
-Name: tPWF Function: tokenPriceWithFee
-Num: 1
-Den: 2
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-RETURN tPWF_1
-[i]Type for TMP_12
-
-Name: TMP_12 Function: _price
-Num: 1
-Den: 2
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-idleToken_5(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_4', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: _price
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-RETURN TMP_12
-[i]Type for TMP_5
-
-Name: TMP_5 Function: _tokenToShares
-Num: 1
-Den: 2
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-TMP_6(uint256) = TMP_4 (c)/ TMP_5
-[i]Type for TMP_6
-
-Name: TMP_6 Function: _tokenToShares
-Num: 2, 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-shares_1(uint256) := TMP_6(uint256)
-[i]Type for shares
-
-Name: shares Function: _tokenToShares
-Num: 2, 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-RETURN shares_1
-tokens_1(uint256) := ϕ(['mintAmount_1', 'redeemAmount_1'])
-[i]Type for tokens
-
-Name: tokens Function: _tokenToShares
-Num: 2
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-ONE_IDLE_TOKEN_1(uint256) := ϕ(['ONE_IDLE_TOKEN_0', 'ONE_IDLE_TOKEN_4', 'ONE_IDLE_TOKEN_2'])
-[i]Type for ONE_IDLE_TOKEN
-
-Name: ONE_IDLE_TOKEN Function: _tokenToShares
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_4(uint256) = tokens_1 (c)* ONE_IDLE_TOKEN_1
-[i]Type for TMP_4
-
-Name: TMP_4 Function: _tokenToShares
-Num: 2
-Den: -1
-Address: u
-Norm: 18
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-TMP_5(uint256) = INTERNAL_CALL, IdleYieldSource._price()()
-[i]Type for TMP_5
-
-Name: TMP_5 Function: _tokenToShares
-Num: 1
-Den: 2
-Address: u
-Norm: 12
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-TMP_6(uint256) = TMP_4 (c)/ TMP_5
-[i]Type for TMP_6
-
-Name: TMP_6 Function: _tokenToShares
-Num: 2, 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-shares_1(uint256) := TMP_6(uint256)
-[i]Type for shares
-
-Name: shares Function: _tokenToShares
-Num: 2, 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-RETURN shares_1
-[i]Type for TMP_20
-
-Name: TMP_20 Function: redeemToken
-Num: 2, 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-redeemedShare_1(uint256) := TMP_20(uint256)
-[i]Type for redeemedShare
-
-Name: redeemedShare Function: redeemToken
-Num: 2, 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-TMP_21 = CONVERT idleToken_9 to IIdleToken
-[i]Type for TMP_21
-
-Name: TMP_21 Function: redeemToken
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: IdleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
-tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
-[i]Type for tokenToShare
-
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-TMP_0(uint256) = share_1 (c)* tokenToShare_1
-[i]Type for TMP_0
-
-Name: TMP_0 Function: redeemIdleToken
-Num: 2, 2, 2
-Den: 1, 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-RETURN TMP_0
-tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
-[i]Type for tokenToShare
-
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-TMP_0(uint256) = share_1 (c)* tokenToShare_1
-[i]Type for TMP_0
-
-Name: TMP_0 Function: redeemIdleToken
-Num: 2, 2, 2
-Den: 1, 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-RETURN TMP_0
-[i]Type for TMP_22
-
-Name: TMP_22 Function: redeemToken
-Num: 2, 2, 2
-Den: 1, 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-idleToken_10(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: redeemToken
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
-[i]Type for redeemedUnderlyingAsset
-
-Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2, 2, 2
-Den: 1, 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-redeemedUnderlyingAsset_2(uint256) = redeemedUnderlyingAsset_1 (c)+ redeemedShare_1
-Error with redeemedUnderlyingAsset in function redeemToken
-Error with: redeemedUnderlyingAsset in function redeemToken
-[i]Type for redeemedUnderlyingAsset
-
-Name: redeemedUnderlyingAsset Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-idleToken_8(address) := ϕ(['idleToken_0', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: redeemToken
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_19(int256) = 1 (c)+ 1
-[i]Type for TMP_19
-
-Name: TMP_19 Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 2
-Fields: 
-Finance Type: undef
-a_1(int256) := TMP_19(int256)
-[i]Type for a
-
-Name: a Function: redeemToken
-Num: -1
-Den: -1
-Address: u
-Norm: u
-LF: None
-Value: 2
-Fields: 
-Finance Type: undef
-TMP_20(uint256) = INTERNAL_CALL, IdleYieldSource._tokenToShares(uint256)(redeemAmount_1)
-[i]Type for TMP_20
-
-Name: TMP_20 Function: redeemToken
-Num: 2, 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-redeemedShare_1(uint256) := TMP_20(uint256)
-[i]Type for redeemedShare
-
-Name: redeemedShare Function: redeemToken
-Num: 2, 2
-Den: 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-TMP_21 = CONVERT idleToken_9 to IIdleToken
-[i]Type for TMP_21
-
-Name: TMP_21 Function: redeemToken
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: IdleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_22(uint256) = HIGH_LEVEL_CALL, dest:TMP_21(IIdleToken), function:redeemIdleToken, arguments:['redeemedShare_1']  
-tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
-[i]Type for tokenToShare
-
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-TMP_0(uint256) = share_1 (c)* tokenToShare_1
-[i]Type for TMP_0
-
-Name: TMP_0 Function: redeemIdleToken
-Num: 2, 2, 2
-Den: 1, 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-RETURN TMP_0
-tokenToShare_1(uint256) := ϕ(['tokenToShare_0'])
-[i]Type for tokenToShare
-
-Name: tokenToShare Function: redeemIdleToken
-Num: 2
-Den: 1
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: price/exchange rate
-TMP_0(uint256) = share_1 (c)* tokenToShare_1
-[i]Type for TMP_0
-
-Name: TMP_0 Function: redeemIdleToken
-Num: 2, 2, 2
-Den: 1, 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-RETURN TMP_0
-[i]Type for TMP_22
-
-Name: TMP_22 Function: redeemToken
-Num: 2, 2, 2
-Den: 1, 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-idleToken_10(address) := ϕ(['idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_9', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: redeemToken
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-redeemedUnderlyingAsset_1(uint256) := TMP_22(uint256)
-[i]Type for redeemedUnderlyingAsset
-
-Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 2, 2, 2
-Den: 1, 1
-Address: u
-Norm: 6
-LF: None
-Value: u
-Fields: 
-Finance Type: raw balance
-redeemedUnderlyingAsset_2(uint256) = redeemedUnderlyingAsset_1 (c)+ redeemedShare_1
-[i]Type for redeemedUnderlyingAsset
-
-Name: redeemedUnderlyingAsset Function: redeemToken
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-
-
-
-transferERC20
-idleToken_11(address) := ϕ(['idleToken_0', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
-[i]Type for idleToken
-
-Name: idleToken Function: transferERC20
-Num: -1
-Den: -1
-Address: 3
-Norm: u
-LF: idleToken
-Value: u
-Fields: 
-Finance Type: undef
-TMP_24(bool) = erc20Token_1 != idleToken_11
-[i]Type for TMP_24
-
-Name: TMP_24 Function: transferERC20
-Num: 
-Den: 
-Address: u
-Norm: u
-LF: None
-Value: u
-Fields: 
-Finance Type: undef
-TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
-[i]Type for TMP_25
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
 
 Name: None Function: None
 Num: 
@@ -760,22 +39,35 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-idleToken_11(address) := ϕ(['idleToken_0', 'idleToken_3', 'idleToken_1', 'idleToken_5', 'idleToken_7', 'idleToken_10'])
-[i]Type for idleToken
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
 
-Name: idleToken Function: transferERC20
+Name: TMP_2 Function: toInt256
 Num: -1
 Den: -1
-Address: 3
+Address: u
 Norm: u
-LF: idleToken
+LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_24(bool) = erc20Token_1 != idleToken_11
-[i]Type for TMP_24
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
 
-Name: TMP_24 Function: transferERC20
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
 Num: 
 Den: 
 Address: u
@@ -784,8 +76,8 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-TMP_25(None) = SOLIDITY_CALL require(bool,string)(TMP_24,IdleYieldSource/idleDai-transfer-not-allowed)
-[i]Type for TMP_25
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
 
 Name: None Function: None
 Num: 
@@ -796,9 +88,5428 @@ LF: None
 Value: u
 Fields: 
 Finance Type: undef
-Function count: 9
-Executing Group 3
-[*] Tested 1 warning for PoolTogether
-Group 3 complete
-Elapsed time: 9.831409009 seconds
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+
+
+
+abs
+TMP_3(bool) = x_1 > 0
+[i]Type for TMP_3
+
+Name: TMP_3 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_4 = CONVERT x_1 to int256
+[i]Type for TMP_4
+
+Name: TMP_4 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_4
+TMP_5(uint256) = 0 (c)- 1
+[i]Type for TMP_5
+
+Name: TMP_5 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: undef
+TMP_6(uint256) = TMP_5 (c)* x_1
+[i]Type for TMP_6
+
+Name: TMP_6 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: undef
+TMP_7 = CONVERT TMP_6 to int256
+[i]Type for TMP_7
+
+Name: TMP_7 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: undef
+RETURN TMP_7
+TMP_3(bool) = x_1 > 0
+[i]Type for TMP_3
+
+Name: TMP_3 Function: abs
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_4 = CONVERT x_1 to int256
+[i]Type for TMP_4
+
+Name: TMP_4 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_4
+TMP_5(uint256) = 0 (c)- 1
+[i]Type for TMP_5
+
+Name: TMP_5 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: undef
+TMP_6(uint256) = TMP_5 (c)* x_1
+[i]Type for TMP_6
+
+Name: TMP_6 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: undef
+TMP_7 = CONVERT TMP_6 to int256
+[i]Type for TMP_7
+
+Name: TMP_7 Function: abs
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: -1
+Fields: 
+Finance Type: undef
+RETURN TMP_7
+
+
+
+sum
+arr_1(uint256[]) := ϕ(['arr_1'])
+[i]Type for arr
+
+Name: arr Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_0 -> LENGTH arr_1
+[i]Type for REF_0
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+n_1(uint256) := REF_0(uint256)
+[i]Type for n
+
+Name: n Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+total_1(uint256) := 0(uint256)
+[i]Type for total
+
+Name: total Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+i_1(uint256) := 0(uint256)
+[i]Type for i
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+total_2(uint256) := ϕ(['total_1', 'total_3'])
+[i]Type for total
+
+Name: total Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+i_2(uint256) := ϕ(['i_3', 'i_1'])
+[i]Type for i
+
+Name: i Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_8(bool) = i_2 < n_1
+[i]Type for TMP_8
+
+Name: TMP_8 Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_1(uint256) -> arr_1[i_2]
+[i]Type for REF_1
+
+Name: arr Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+total_3(uint256) = total_2 (c)+ REF_1
+[i]Type for total
+
+Name: total Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_9(uint256) := i_2(uint256)
+[i]Type for TMP_9
+
+Name: TMP_9 Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+i_3(uint256) = i_2 (c)+ 1
+[i]Type for i
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+RETURN total_2
+arr_1(uint256[]) := ϕ(['arr_1'])
+[i]Type for arr
+
+Name: arr Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_0 -> LENGTH arr_1
+[i]Type for REF_0
+
+Name: REF_0 Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+n_1(uint256) := REF_0(uint256)
+[i]Type for n
+
+Name: n Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+total_1(uint256) := 0(uint256)
+[i]Type for total
+
+Name: total Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+i_1(uint256) := 0(uint256)
+[i]Type for i
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+total_2(uint256) := ϕ(['total_1', 'total_3'])
+[i]Type for total
+
+Name: total Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+i_2(uint256) := ϕ(['i_3', 'i_1'])
+[i]Type for i
+
+Name: i Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_8(bool) = i_2 < n_1
+[i]Type for TMP_8
+
+Name: TMP_8 Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_1(uint256) -> arr_1[i_2]
+[i]Type for REF_1
+
+Name: arr Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+total_3(uint256) = total_2 (c)+ REF_1
+[i]Type for total
+
+Name: total Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_9(uint256) := i_2(uint256)
+[i]Type for TMP_9
+
+Name: TMP_9 Function: sum
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+i_3(uint256) = i_2 (c)+ 1
+[i]Type for i
+
+Name: i Function: sum
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+RETURN total_2
+
+
+
+sumN
+arr_1(uint256[]) := ϕ(['arr_1'])
+[i]Type for arr
+
+Name: arr Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+n_1(uint256) := ϕ(['len_1'])
+[i]Type for n
+
+Name: n Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+total_1(uint256) := 0(uint256)
+[i]Type for total
+
+Name: total Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+i_1(uint256) := 0(uint256)
+[i]Type for i
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+total_2(uint256) := ϕ(['total_3', 'total_1'])
+[i]Type for total
+
+Name: total Function: sumN
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+i_2(uint256) := ϕ(['i_3', 'i_1'])
+[i]Type for i
+
+Name: i Function: sumN
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_10(bool) = i_2 < n_1
+[i]Type for TMP_10
+
+Name: TMP_10 Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(uint256) -> arr_1[i_2]
+[i]Type for REF_2
+
+Name: arr Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+total_3(uint256) = total_2 (c)+ REF_2
+[i]Type for total
+
+Name: total Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN total_2
+TMP_11(uint256) := i_2(uint256)
+[i]Type for TMP_11
+
+Name: TMP_11 Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+i_3(uint256) = i_2 (c)+ 1
+[i]Type for i
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+arr_1(uint256[]) := ϕ(['arr_1'])
+[i]Type for arr
+
+Name: arr Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+n_1(uint256) := ϕ(['len_1'])
+[i]Type for n
+
+Name: n Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+total_1(uint256) := 0(uint256)
+[i]Type for total
+
+Name: total Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+i_1(uint256) := 0(uint256)
+[i]Type for i
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+total_2(uint256) := ϕ(['total_3', 'total_1'])
+[i]Type for total
+
+Name: total Function: sumN
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+i_2(uint256) := ϕ(['i_3', 'i_1'])
+[i]Type for i
+
+Name: i Function: sumN
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_10(bool) = i_2 < n_1
+[i]Type for TMP_10
+
+Name: TMP_10 Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(uint256) -> arr_1[i_2]
+[i]Type for REF_2
+
+Name: arr Function: sumN
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+total_3(uint256) = total_2 (c)+ REF_2
+[i]Type for total
+
+Name: total Function: sumN
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN total_2
+TMP_11(uint256) := i_2(uint256)
+[i]Type for TMP_11
+
+Name: TMP_11 Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+i_3(uint256) = i_2 (c)+ 1
+[i]Type for i
+
+Name: i Function: sumN
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 1
+Fields: 
+Finance Type: undef
+
+
+
+min
+TMP_16(bool) = a_1 < b_1
+[i]Type for TMP_16
+
+Name: TMP_16 Function: min
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN b_1
+RETURN a_1
+TMP_16(bool) = a_1 < b_1
+[i]Type for TMP_16
+
+Name: TMP_16 Function: min
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN b_1
+RETURN a_1
+
+
+
+signedMin
+TMP_17(bool) = a_1 < b_1
+[i]Type for TMP_17
+
+Name: TMP_17 Function: signedMin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN b_1
+RETURN a_1
+TMP_17(bool) = a_1 < b_1
+[i]Type for TMP_17
+
+Name: TMP_17 Function: signedMin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN b_1
+RETURN a_1
+Function count: 6
+
+
+
+notionalValue
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+RETURN TMP_2
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+RETURN TMP_2
+
+
+
+margin
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_3(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['price_1'] 
+[i]Type for TMP_3
+
+Name: TMP_3 Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+signedPrice_1(int256) := TMP_3(int256)
+[i]Type for signedPrice
+
+Name: signedPrice Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_4(int256) -> position_1.quote
+[i]Type for REF_4
+
+Name: REF_4 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_6(int256) -> position_1.base
+[i]Type for REF_6
+
+Name: position.base Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_4(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.mul(int256,int256), arguments:['REF_6', 'signedPrice_1'] 
+[i]Type for TMP_4
+
+Name: TMP_4 Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_5(int256) = REF_4 (c)+ TMP_4
+[i]Type for TMP_5
+
+Name: TMP_5 Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_5
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: quote, base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_3(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['price_1'] 
+[i]Type for TMP_3
+
+Name: TMP_3 Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+signedPrice_1(int256) := TMP_3(int256)
+[i]Type for signedPrice
+
+Name: signedPrice Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_4(int256) -> position_1.quote
+[i]Type for REF_4
+
+Name: REF_4 Function: margin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_6(int256) -> position_1.base
+[i]Type for REF_6
+
+Name: position.base Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_4(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.mul(int256,int256), arguments:['REF_6', 'signedPrice_1'] 
+[i]Type for TMP_4
+
+Name: TMP_4 Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_5(int256) = REF_4 (c)+ TMP_4
+[i]Type for TMP_5
+
+Name: TMP_5 Function: margin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_5
+
+
+
+leveragedNotionalValue
+TMP_6(uint256) = INTERNAL_CALL, Balances.notionalValue(Balances.Position,uint256)(position_1,price_1)
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+[i]Type for TMP_6
+
+Name: TMP_6 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+_notionalValue_1(uint256) := TMP_6(uint256)
+[i]Type for _notionalValue
+
+Name: _notionalValue Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_7(int256) = INTERNAL_CALL, Balances.margin(Balances.Position,uint256)(position_1,price_1)
+[i]Type for TMP_7
+
+Name: TMP_7 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+marginValue_1(int256) := TMP_7(int256)
+[i]Type for marginValue
+
+Name: marginValue Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_8(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['_notionalValue_1'] 
+[i]Type for TMP_8
+
+Name: TMP_8 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+signedNotionalValue_1(int256) := TMP_8(int256)
+[i]Type for signedNotionalValue
+
+Name: signedNotionalValue Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_9(int256) = signedNotionalValue_1 (c)- marginValue_1
+[i]Type for TMP_9
+
+Name: TMP_9 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_10(bool) = TMP_9 < 0
+[i]Type for TMP_10
+
+Name: TMP_10 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN 0
+TMP_11(int256) = signedNotionalValue_1 (c)- marginValue_1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_12 = CONVERT TMP_11 to uint256
+[i]Type for TMP_12
+
+Name: TMP_12 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_12
+TMP_6(uint256) = INTERNAL_CALL, Balances.notionalValue(Balances.Position,uint256)(position_1,price_1)
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+[i]Type for TMP_6
+
+Name: TMP_6 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+_notionalValue_1(uint256) := TMP_6(uint256)
+[i]Type for _notionalValue
+
+Name: _notionalValue Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_7(int256) = INTERNAL_CALL, Balances.margin(Balances.Position,uint256)(position_1,price_1)
+[i]Type for TMP_7
+
+Name: TMP_7 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+marginValue_1(int256) := TMP_7(int256)
+[i]Type for marginValue
+
+Name: marginValue Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_8(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['_notionalValue_1'] 
+[i]Type for TMP_8
+
+Name: TMP_8 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+signedNotionalValue_1(int256) := TMP_8(int256)
+[i]Type for signedNotionalValue
+
+Name: signedNotionalValue Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_9(int256) = signedNotionalValue_1 (c)- marginValue_1
+[i]Type for TMP_9
+
+Name: TMP_9 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_10(bool) = TMP_9 < 0
+[i]Type for TMP_10
+
+Name: TMP_10 Function: leveragedNotionalValue
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN 0
+TMP_11(int256) = signedNotionalValue_1 (c)- marginValue_1
+[i]Type for TMP_11
+
+Name: TMP_11 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_12 = CONVERT TMP_11 to uint256
+[i]Type for TMP_12
+
+Name: TMP_12 Function: leveragedNotionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_12
+
+
+
+minimumMargin
+position_1(Balances.Position) := ϕ(['position_1'])
+[i]Type for position
+
+Name: position Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1'])
+[i]Type for price
+
+Name: price Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+liquidationGasCost_1(uint256) := ϕ(['liquidationGasCost_1'])
+[i]Type for liquidationGasCost
+
+Name: liquidationGasCost Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+maximumLeverage_1(uint256) := ϕ(['trueMaxLeverage_1'])
+[i]Type for maximumLeverage
+
+Name: maximumLeverage Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_8(int256) -> position_1.base
+[i]Type for REF_8
+
+Name: position.base Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_13(bool) = REF_8 == 0
+[i]Type for TMP_13
+
+Name: TMP_13 Function: minimumMargin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN 0
+TMP_14(uint256) = INTERNAL_CALL, Balances.notionalValue(Balances.Position,uint256)(position_1,price_1)
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+[i]Type for TMP_14
+
+Name: TMP_14 Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+_notionalValue_1(uint256) := TMP_14(uint256)
+[i]Type for _notionalValue
+
+Name: _notionalValue Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_15(uint256) = liquidationGasCost_1 (c)* 6
+[i]Type for TMP_15
+
+Name: TMP_15 Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 6
+Fields: 
+Finance Type: undef
+adjustedLiquidationGasCost_1(uint256) := TMP_15(uint256)
+[i]Type for adjustedLiquidationGasCost
+
+Name: adjustedLiquidationGasCost Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 6
+Fields: 
+Finance Type: undef
+TMP_16(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.div(uint256,uint256), arguments:['_notionalValue_1', 'maximumLeverage_1'] 
+[i]Type for TMP_16
+
+Name: TMP_16 Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+minimumMarginWithoutGasCost_1(uint256) := TMP_16(uint256)
+[i]Type for minimumMarginWithoutGasCost
+
+Name: minimumMarginWithoutGasCost Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_17(uint256) = adjustedLiquidationGasCost_1 (c)+ minimumMarginWithoutGasCost_1
+[i]Type for TMP_17
+
+Name: TMP_17 Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 6
+Fields: 
+Finance Type: undef
+RETURN TMP_17
+position_1(Balances.Position) := ϕ(['position_1'])
+[i]Type for position
+
+Name: position Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1'])
+[i]Type for price
+
+Name: price Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+liquidationGasCost_1(uint256) := ϕ(['liquidationGasCost_1'])
+[i]Type for liquidationGasCost
+
+Name: liquidationGasCost Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+maximumLeverage_1(uint256) := ϕ(['trueMaxLeverage_1'])
+[i]Type for maximumLeverage
+
+Name: maximumLeverage Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_8(int256) -> position_1.base
+[i]Type for REF_8
+
+Name: position.base Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_13(bool) = REF_8 == 0
+[i]Type for TMP_13
+
+Name: TMP_13 Function: minimumMargin
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN 0
+TMP_14(uint256) = INTERNAL_CALL, Balances.notionalValue(Balances.Position,uint256)(position_1,price_1)
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+position_1(Balances.Position) := ϕ(['position_1', 'position_1'])
+[i]Type for position
+
+Name: position Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: base
+Finance Type: undef
+price_1(uint256) := ϕ(['price_1', 'price_1'])
+[i]Type for price
+
+Name: price Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_2(int256) -> position_1.base
+[i]Type for REF_2
+
+Name: position.base Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_0(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.abs(int256), arguments:['REF_2'] 
+[i]Type for TMP_0
+
+Name: TMP_0 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_1 = CONVERT TMP_0 to uint256
+[i]Type for TMP_1
+
+Name: TMP_1 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 'u'
+Fields: 
+Finance Type: undef
+TMP_2(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['TMP_1', 'price_1'] 
+[i]Type for TMP_2
+
+Name: TMP_2 Function: notionalValue
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+[i]Type for TMP_14
+
+Name: TMP_14 Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+_notionalValue_1(uint256) := TMP_14(uint256)
+[i]Type for _notionalValue
+
+Name: _notionalValue Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_15(uint256) = liquidationGasCost_1 (c)* 6
+[i]Type for TMP_15
+
+Name: TMP_15 Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 6
+Fields: 
+Finance Type: undef
+adjustedLiquidationGasCost_1(uint256) := TMP_15(uint256)
+[i]Type for adjustedLiquidationGasCost
+
+Name: adjustedLiquidationGasCost Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 6
+Fields: 
+Finance Type: undef
+TMP_16(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.div(uint256,uint256), arguments:['_notionalValue_1', 'maximumLeverage_1'] 
+[i]Type for TMP_16
+
+Name: TMP_16 Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+minimumMarginWithoutGasCost_1(uint256) := TMP_16(uint256)
+[i]Type for minimumMarginWithoutGasCost
+
+Name: minimumMarginWithoutGasCost Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_17(uint256) = adjustedLiquidationGasCost_1 (c)+ minimumMarginWithoutGasCost_1
+[i]Type for TMP_17
+
+Name: TMP_17 Function: minimumMargin
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 6
+Fields: 
+Finance Type: undef
+RETURN TMP_17
+
+
+
+marginIsValid
+TMP_18(uint256) = INTERNAL_CALL, Balances.minimumMargin(Balances.Position,uint256,uint256,uint256)(position_1,price_1,liquidationGasCost_1,trueMaxLeverage_1)
+[i]Type for TMP_18
+
+Name: TMP_18 Function: marginIsValid
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+minMargin_1(uint256) := TMP_18(uint256)
+[i]Type for minMargin
+
+Name: minMargin Function: marginIsValid
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_19(int256) = INTERNAL_CALL, Balances.margin(Balances.Position,uint256)(position_1,price_1)
+[i]Type for TMP_19
+
+Name: TMP_19 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+_margin_1(int256) := TMP_19(int256)
+[i]Type for _margin
+
+Name: _margin Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_20(bool) = _margin_1 < 0
+[i]Type for TMP_20
+
+Name: TMP_20 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_21 = CONVERT _margin_1 to uint256
+[i]Type for TMP_21
+
+Name: TMP_21 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_22(bool) = TMP_21 >= minMargin_1
+[i]Type for TMP_22
+
+Name: TMP_22 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_22
+RETURN False
+TMP_18(uint256) = INTERNAL_CALL, Balances.minimumMargin(Balances.Position,uint256,uint256,uint256)(position_1,price_1,liquidationGasCost_1,trueMaxLeverage_1)
+[i]Type for TMP_18
+
+Name: TMP_18 Function: marginIsValid
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+minMargin_1(uint256) := TMP_18(uint256)
+[i]Type for minMargin
+
+Name: minMargin Function: marginIsValid
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_19(int256) = INTERNAL_CALL, Balances.margin(Balances.Position,uint256)(position_1,price_1)
+[i]Type for TMP_19
+
+Name: TMP_19 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+_margin_1(int256) := TMP_19(int256)
+[i]Type for _margin
+
+Name: _margin Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_20(bool) = _margin_1 < 0
+[i]Type for TMP_20
+
+Name: TMP_20 Function: marginIsValid
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_21 = CONVERT _margin_1 to uint256
+[i]Type for TMP_21
+
+Name: TMP_21 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_22(bool) = TMP_21 >= minMargin_1
+[i]Type for TMP_22
+
+Name: TMP_22 Function: marginIsValid
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_22
+RETURN False
+
+
+
+fillAmount
+REF_11(uint256) -> orderA_1.amount
+[i]Type for REF_11
+
+Name: REF_11 Function: fillAmount
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_23(uint256) = REF_11 (c)- fillA_1
+[i]Type for TMP_23
+
+Name: TMP_23 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_12(uint256) -> orderB_1.amount
+[i]Type for REF_12
+
+Name: REF_12 Function: fillAmount
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_24(uint256) = REF_12 (c)- fillB_1
+[i]Type for TMP_24
+
+Name: TMP_24 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_25(uint256) = LIBRARY_CALL, dest:LibMath, function:LibMath.min(uint256,uint256), arguments:['TMP_23', 'TMP_24'] 
+TMP_16(bool) = a_1 < b_1
+[i]Type for TMP_16
+
+Name: TMP_16 Function: min
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN b_1
+RETURN a_1
+TMP_16(bool) = a_1 < b_1
+[i]Type for TMP_16
+
+Name: TMP_16 Function: min
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN b_1
+RETURN a_1
+[i]Type for TMP_25
+
+Name: TMP_25 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_25
+REF_11(uint256) -> orderA_1.amount
+[i]Type for REF_11
+
+Name: REF_11 Function: fillAmount
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_23(uint256) = REF_11 (c)- fillA_1
+[i]Type for TMP_23
+
+Name: TMP_23 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_12(uint256) -> orderB_1.amount
+[i]Type for REF_12
+
+Name: REF_12 Function: fillAmount
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_24(uint256) = REF_12 (c)- fillB_1
+[i]Type for TMP_24
+
+Name: TMP_24 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_25(uint256) = LIBRARY_CALL, dest:LibMath, function:LibMath.min(uint256,uint256), arguments:['TMP_23', 'TMP_24'] 
+TMP_16(bool) = a_1 < b_1
+[i]Type for TMP_16
+
+Name: TMP_16 Function: min
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN b_1
+RETURN a_1
+TMP_16(bool) = a_1 < b_1
+[i]Type for TMP_16
+
+Name: TMP_16 Function: min
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN b_1
+RETURN a_1
+[i]Type for TMP_25
+
+Name: TMP_25 Function: fillAmount
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_25
+
+
+
+applyTrade
+REF_14(uint256) -> trade_1.amount
+[i]Type for REF_14
+
+Name: trade_1.amount Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_26(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['REF_14'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_2
+[i]Type for TMP_26
+
+Name: TMP_26 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+signedAmount_1(int256) := TMP_26(int256)
+[i]Type for signedAmount
+
+Name: signedAmount Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_16(uint256) -> trade_1.price
+[i]Type for REF_16
+
+Name: REF_16 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_27(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['REF_16'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+[i]Type for TMP_27
+
+Name: TMP_27 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+signedPrice_1(int256) := TMP_27(int256)
+[i]Type for signedPrice
+
+Name: signedPrice Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_28(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.mul(int256,int256), arguments:['signedAmount_1', 'signedPrice_1'] 
+[i]Type for TMP_28
+
+Name: TMP_28 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+quoteChange_1(int256) := TMP_28(int256)
+[i]Type for quoteChange
+
+Name: quoteChange Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_18(uint256) -> trade_1.amount
+[i]Type for REF_18
+
+Name: trade_1.amount Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_19(uint256) -> trade_1.price
+[i]Type for REF_19
+
+Name: REF_19 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_29(int256) = INTERNAL_CALL, Balances.getFee(uint256,uint256,uint256)(REF_18,REF_19,feeRate_1)
+amount_1(uint256) := ϕ(['REF_18'])
+[i]Type for amount
+
+Name: amount Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+executionPrice_1(uint256) := ϕ(['REF_19'])
+[i]Type for executionPrice
+
+Name: executionPrice Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+feeRate_1(uint256) := ϕ(['feeRate_1'])
+[i]Type for feeRate
+
+Name: feeRate Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: compound fee ratio (t)
+TMP_39(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['amount_1', 'executionPrice_1'] 
+[i]Type for TMP_39
+
+Name: TMP_39 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+quoteChange_1(uint256) := TMP_39(uint256)
+[i]Type for quoteChange
+
+Name: quoteChange Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_40(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['quoteChange_1', 'feeRate_1'] 
+[i]Type for TMP_40
+
+Name: TMP_40 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+TMP_41(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['TMP_40'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN TMP_2
+[i]Type for TMP_41
+
+Name: TMP_41 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+fee_1(int256) := TMP_41(int256)
+[i]Type for fee
+
+Name: fee Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN fee_1
+amount_1(uint256) := ϕ(['REF_18'])
+[i]Type for amount
+
+Name: amount Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+executionPrice_1(uint256) := ϕ(['REF_19'])
+[i]Type for executionPrice
+
+Name: executionPrice Function: getFee
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+feeRate_1(uint256) := ϕ(['feeRate_1'])
+[i]Type for feeRate
+
+Name: feeRate Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: compound fee ratio (t)
+TMP_39(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['amount_1', 'executionPrice_1'] 
+[i]Type for TMP_39
+
+Name: TMP_39 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+quoteChange_1(uint256) := TMP_39(uint256)
+[i]Type for quoteChange
+
+Name: quoteChange Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_40(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['quoteChange_1', 'feeRate_1'] 
+[i]Type for TMP_40
+
+Name: TMP_40 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+TMP_41(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['TMP_40'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN TMP_2
+[i]Type for TMP_41
+
+Name: TMP_41 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+fee_1(int256) := TMP_41(int256)
+[i]Type for fee
+
+Name: fee Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN fee_1
+[i]Type for TMP_29
+
+Name: TMP_29 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+fee_1(int256) := TMP_29(int256)
+[i]Type for fee
+
+Name: fee Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+newQuote_1(int256) := 0(int256)
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+newBase_1(int256) := 0(int256)
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+REF_20(Perpetuals.Side) -> trade_1.side
+[i]Type for REF_20
+
+Name: REF_20 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_21(None) -> Perpetuals.Side
+[i]Type for REF_21
+
+Name: REF_21 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_22(None) -> REF_21.Long
+[i]Type for REF_22
+
+Name: REF_22 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_30(bool) = REF_20 == REF_22
+[i]Type for TMP_30
+
+Name: TMP_30 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_25(Perpetuals.Side) -> trade_1.side
+[i]Type for REF_25
+
+Name: REF_25 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_26(None) -> Perpetuals.Side
+[i]Type for REF_26
+
+Name: REF_26 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_27(None) -> REF_26.Short
+[i]Type for REF_27
+
+Name: REF_27 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_34(bool) = REF_25 == REF_27
+[i]Type for TMP_34
+
+Name: TMP_34 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_28(int256) -> position_1.base
+[i]Type for REF_28
+
+Name: REF_28 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_35(int256) = REF_28 (c)- signedAmount_1
+[i]Type for TMP_35
+
+Name: TMP_35 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+newBase_3(int256) := TMP_35(int256)
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_29(int256) -> position_1.quote
+[i]Type for REF_29
+
+Name: REF_29 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_36(int256) = REF_29 (c)+ quoteChange_1
+[i]Type for TMP_36
+
+Name: TMP_36 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_37(int256) = TMP_36 (c)- fee_1
+[i]Type for TMP_37
+
+Name: TMP_37 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: net balance
+newQuote_3(int256) := TMP_37(int256)
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: net balance
+REF_23(int256) -> position_1.base
+[i]Type for REF_23
+
+Name: REF_23 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_31(int256) = REF_23 (c)+ signedAmount_1
+[i]Type for TMP_31
+
+Name: TMP_31 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+newBase_2(int256) := TMP_31(int256)
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+newQuote_4(int256) := ϕ(['newQuote_3', 'newQuote_1'])
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newBase_4(int256) := ϕ(['newBase_3', 'newBase_1'])
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newQuote_5(int256) := ϕ(['newQuote_2', 'newQuote_1'])
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newBase_5(int256) := ϕ(['newBase_2', 'newBase_1'])
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_24(int256) -> position_1.quote
+[i]Type for REF_24
+
+Name: REF_24 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_32(int256) = REF_24 (c)- quoteChange_1
+[i]Type for TMP_32
+
+Name: TMP_32 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_33(int256) = TMP_32 (c)+ fee_1
+Error with TMP_33 in function applyTrade
+Error with: TMP_33 in function applyTrade
+[i]Type for TMP_33
+
+Name: TMP_33 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newQuote_2(int256) := TMP_33(int256)
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_38 = new Position(newQuote_5,newBase_5)
+[i]Type for TMP_38
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newPosition_1(Balances.Position) := TMP_38(Balances.Position)
+[i]Type for newPosition
+
+Name: newPosition Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN newPosition_1
+REF_14(uint256) -> trade_1.amount
+[i]Type for REF_14
+
+Name: trade_1.amount Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_26(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['REF_14'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+RETURN TMP_2
+[i]Type for TMP_26
+
+Name: TMP_26 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+signedAmount_1(int256) := TMP_26(int256)
+[i]Type for signedAmount
+
+Name: signedAmount Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_16(uint256) -> trade_1.price
+[i]Type for REF_16
+
+Name: REF_16 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_27(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['REF_16'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+[i]Type for TMP_27
+
+Name: TMP_27 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+signedPrice_1(int256) := TMP_27(int256)
+[i]Type for signedPrice
+
+Name: signedPrice Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_28(int256) = LIBRARY_CALL, dest:PRBMathSD59x18, function:PRBMathSD59x18.mul(int256,int256), arguments:['signedAmount_1', 'signedPrice_1'] 
+[i]Type for TMP_28
+
+Name: TMP_28 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+quoteChange_1(int256) := TMP_28(int256)
+[i]Type for quoteChange
+
+Name: quoteChange Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_18(uint256) -> trade_1.amount
+[i]Type for REF_18
+
+Name: trade_1.amount Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_19(uint256) -> trade_1.price
+[i]Type for REF_19
+
+Name: REF_19 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_29(int256) = INTERNAL_CALL, Balances.getFee(uint256,uint256,uint256)(REF_18,REF_19,feeRate_1)
+[i]Type for TMP_29
+
+Name: TMP_29 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+fee_1(int256) := TMP_29(int256)
+[i]Type for fee
+
+Name: fee Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+newQuote_1(int256) := 0(int256)
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+newBase_1(int256) := 0(int256)
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 0
+Fields: 
+Finance Type: undef
+REF_20(Perpetuals.Side) -> trade_1.side
+[i]Type for REF_20
+
+Name: REF_20 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_21(None) -> Perpetuals.Side
+[i]Type for REF_21
+
+Name: REF_21 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_22(None) -> REF_21.Long
+[i]Type for REF_22
+
+Name: REF_22 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_30(bool) = REF_20 == REF_22
+[i]Type for TMP_30
+
+Name: TMP_30 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_25(Perpetuals.Side) -> trade_1.side
+[i]Type for REF_25
+
+Name: REF_25 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_26(None) -> Perpetuals.Side
+[i]Type for REF_26
+
+Name: REF_26 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_27(None) -> REF_26.Short
+[i]Type for REF_27
+
+Name: REF_27 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_34(bool) = REF_25 == REF_27
+[i]Type for TMP_34
+
+Name: TMP_34 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_28(int256) -> position_1.base
+[i]Type for REF_28
+
+Name: REF_28 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_35(int256) = REF_28 (c)- signedAmount_1
+[i]Type for TMP_35
+
+Name: TMP_35 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+newBase_3(int256) := TMP_35(int256)
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+REF_29(int256) -> position_1.quote
+[i]Type for REF_29
+
+Name: REF_29 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_36(int256) = REF_29 (c)+ quoteChange_1
+[i]Type for TMP_36
+
+Name: TMP_36 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_37(int256) = TMP_36 (c)- fee_1
+[i]Type for TMP_37
+
+Name: TMP_37 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: net balance
+newQuote_3(int256) := TMP_37(int256)
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: net balance
+REF_23(int256) -> position_1.base
+[i]Type for REF_23
+
+Name: REF_23 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_31(int256) = REF_23 (c)+ signedAmount_1
+[i]Type for TMP_31
+
+Name: TMP_31 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+newBase_2(int256) := TMP_31(int256)
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+newQuote_4(int256) := ϕ(['newQuote_3', 'newQuote_1'])
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newBase_4(int256) := ϕ(['newBase_3', 'newBase_1'])
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newQuote_5(int256) := ϕ(['newQuote_2', 'newQuote_1'])
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newBase_5(int256) := ϕ(['newBase_2', 'newBase_1'])
+[i]Type for newBase
+
+Name: newBase Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+REF_24(int256) -> position_1.quote
+[i]Type for REF_24
+
+Name: REF_24 Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_32(int256) = REF_24 (c)- quoteChange_1
+[i]Type for TMP_32
+
+Name: TMP_32 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_33(int256) = TMP_32 (c)+ fee_1
+[i]Type for TMP_33
+
+Name: TMP_33 Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newQuote_2(int256) := TMP_33(int256)
+[i]Type for newQuote
+
+Name: newQuote Function: applyTrade
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_38 = new Position(newQuote_5,newBase_5)
+[i]Type for TMP_38
+
+Name: TMP_38 Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+newPosition_1(Balances.Position) := TMP_38(Balances.Position)
+[i]Type for newPosition
+
+Name: newPosition Function: applyTrade
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN newPosition_1
+
+
+
+getFee
+amount_1(uint256) := ϕ(['REF_18'])
+[i]Type for amount
+
+Name: amount Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+executionPrice_1(uint256) := ϕ(['REF_19'])
+[i]Type for executionPrice
+
+Name: executionPrice Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+feeRate_1(uint256) := ϕ(['feeRate_1'])
+[i]Type for feeRate
+
+Name: feeRate Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: compound fee ratio (t)
+TMP_39(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['amount_1', 'executionPrice_1'] 
+[i]Type for TMP_39
+
+Name: TMP_39 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+quoteChange_1(uint256) := TMP_39(uint256)
+[i]Type for quoteChange
+
+Name: quoteChange Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_40(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['quoteChange_1', 'feeRate_1'] 
+[i]Type for TMP_40
+
+Name: TMP_40 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+TMP_41(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['TMP_40'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN TMP_2
+[i]Type for TMP_41
+
+Name: TMP_41 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+fee_1(int256) := TMP_41(int256)
+[i]Type for fee
+
+Name: fee Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN fee_1
+amount_1(uint256) := ϕ(['REF_18'])
+[i]Type for amount
+
+Name: amount Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+executionPrice_1(uint256) := ϕ(['REF_19'])
+[i]Type for executionPrice
+
+Name: executionPrice Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: price/exchange rate
+feeRate_1(uint256) := ϕ(['feeRate_1'])
+[i]Type for feeRate
+
+Name: feeRate Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: compound fee ratio (t)
+TMP_39(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['amount_1', 'executionPrice_1'] 
+[i]Type for TMP_39
+
+Name: TMP_39 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+quoteChange_1(uint256) := TMP_39(uint256)
+[i]Type for quoteChange
+
+Name: quoteChange Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: raw balance
+TMP_40(uint256) = LIBRARY_CALL, dest:PRBMathUD60x18, function:PRBMathUD60x18.mul(uint256,uint256), arguments:['quoteChange_1', 'feeRate_1'] 
+[i]Type for TMP_40
+
+Name: TMP_40 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+TMP_41(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['TMP_40'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN TMP_2
+[i]Type for TMP_41
+
+Name: TMP_41 Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+fee_1(int256) := TMP_41(int256)
+[i]Type for fee
+
+Name: fee Function: getFee
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: transaction fee (n)
+RETURN fee_1
+
+
+
+tokenToWad
+MAX_DECIMALS_1(uint256) := ϕ(['MAX_DECIMALS_0'])
+[i]Type for MAX_DECIMALS
+
+Name: MAX_DECIMALS Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_42(uint256) = MAX_DECIMALS_1 (c)- tokenDecimals_1
+[i]Type for TMP_42
+
+Name: TMP_42 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_43(uint256) = 10 (c)** TMP_42
+[i]Type for TMP_43
+
+Name: TMP_43 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+scaler_1(uint256) := TMP_43(uint256)
+[i]Type for scaler
+
+Name: scaler Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+TMP_44(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['amount_1'] 
+[i]Type for TMP_44
+
+Name: TMP_44 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_45(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['scaler_1'] 
+[i]Type for TMP_45
+
+Name: TMP_45 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_46(int256) = TMP_44 (c)* TMP_45
+[i]Type for TMP_46
+
+Name: TMP_46 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_46
+MAX_DECIMALS_1(uint256) := ϕ(['MAX_DECIMALS_0'])
+[i]Type for MAX_DECIMALS
+
+Name: MAX_DECIMALS Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_42(uint256) = MAX_DECIMALS_1 (c)- tokenDecimals_1
+[i]Type for TMP_42
+
+Name: TMP_42 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_43(uint256) = 10 (c)** TMP_42
+[i]Type for TMP_43
+
+Name: TMP_43 Function: tokenToWad
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+scaler_1(uint256) := TMP_43(uint256)
+[i]Type for scaler
+
+Name: scaler Function: tokenToWad
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+TMP_44(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['amount_1'] 
+[i]Type for TMP_44
+
+Name: TMP_44 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_45(int256) = LIBRARY_CALL, dest:LibMath, function:LibMath.toInt256(uint256), arguments:['scaler_1'] 
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+POSITIVE_INT256_MAX_1(uint256) := ϕ(['POSITIVE_INT256_MAX_0'])
+[i]Type for POSITIVE_INT256_MAX
+
+Name: POSITIVE_INT256_MAX Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_0(bool) = x_1 <= POSITIVE_INT256_MAX_1
+[i]Type for TMP_0
+
+Name: TMP_0 Function: toInt256
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,uint256 overflow)
+[i]Type for TMP_1
+
+Name: None Function: None
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_2 = CONVERT x_1 to int256
+[i]Type for TMP_2
+
+Name: TMP_2 Function: toInt256
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_2
+[i]Type for TMP_45
+
+Name: TMP_45 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_46(int256) = TMP_44 (c)* TMP_45
+[i]Type for TMP_46
+
+Name: TMP_46 Function: tokenToWad
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+RETURN TMP_46
+
+
+
+wadToToken
+MAX_DECIMALS_2(uint256) := ϕ(['MAX_DECIMALS_0'])
+[i]Type for MAX_DECIMALS
+
+Name: MAX_DECIMALS Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_47(uint256) = MAX_DECIMALS_2 (c)- tokenDecimals_1
+[i]Type for TMP_47
+
+Name: TMP_47 Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_48(uint256) = 10 (c)** TMP_47
+[i]Type for TMP_48
+
+Name: TMP_48 Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+TMP_49 = CONVERT TMP_48 to uint256
+[i]Type for TMP_49
+
+Name: TMP_49 Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+scaler_1(uint256) := TMP_49(uint256)
+[i]Type for scaler
+
+Name: scaler Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+TMP_50(uint256) = wadAmount_1 (c)/ scaler_1
+[i]Type for TMP_50
+
+Name: TMP_50 Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+TMP_51 = CONVERT TMP_50 to uint256
+[i]Type for TMP_51
+
+Name: TMP_51 Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+RETURN TMP_51
+MAX_DECIMALS_2(uint256) := ϕ(['MAX_DECIMALS_0'])
+[i]Type for MAX_DECIMALS
+
+Name: MAX_DECIMALS Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_47(uint256) = MAX_DECIMALS_2 (c)- tokenDecimals_1
+[i]Type for TMP_47
+
+Name: TMP_47 Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: u
+Fields: 
+Finance Type: undef
+TMP_48(uint256) = 10 (c)** TMP_47
+[i]Type for TMP_48
+
+Name: TMP_48 Function: wadToToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+TMP_49 = CONVERT TMP_48 to uint256
+[i]Type for TMP_49
+
+Name: TMP_49 Function: wadToToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+scaler_1(uint256) := TMP_49(uint256)
+[i]Type for scaler
+
+Name: scaler Function: wadToToken
+Num: 
+Den: 
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+TMP_50(uint256) = wadAmount_1 (c)/ scaler_1
+[i]Type for TMP_50
+
+Name: TMP_50 Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+TMP_51 = CONVERT TMP_50 to uint256
+[i]Type for TMP_51
+
+Name: TMP_51 Function: wadToToken
+Num: -1
+Den: -1
+Address: u
+Norm: u
+LF: None
+Value: 10
+Fields: 
+Finance Type: undef
+RETURN TMP_51
+Function count: 32
+Function count: 32
+Function count: 32
+Function count: 32
+Function count: 32
+Function count: 32
+Currently ommitted
+Executing Group 4
+[*] Tested 1 warning for Tracer
+Group 4 complete
+Elapsed time: 61.117088964 seconds
 Testing complete
