@@ -1631,7 +1631,16 @@ def handle_trace(rir, lir):
         else:
             d_dict[ld] = -1
     #Generate matchings, or generalize set
-    if(len(n_dict) == 0 and len(d_dict) == 0):
+    all_zeros = True
+    for n in n_dict
+        if (n != 0):
+            all_zeros = False
+            break
+    for d in d_dict:
+        if(d!= 0 and all_zeros):
+            all_zeros = False
+            break
+    if(all_zeros):
         return True
     pot_trace = generate_label_trace(n_dict, d_dict)
     if(pot_trace == None):
