@@ -590,7 +590,7 @@ def get_field(function_name, full_parent_name, field_name):
         #print(f"List: {temp}")
         temp[0] = stringToType(temp[0])
         temp[1] = stringToType(temp[1])
-        return field_type_hash[key]
+        return tuple(temp)
     return None
 
 
