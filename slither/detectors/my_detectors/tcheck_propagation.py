@@ -135,6 +135,7 @@ f_type_div = {
     (40, 0) : 0, #price/exchange rate * any balance = corresponding balance
     (0, 40) : 0,
     (30, 30): 30,
+    (0, 30): 0,
     (40, 1) : 1,
     (1, 40) : 1,
     (40, 2) : 2,
