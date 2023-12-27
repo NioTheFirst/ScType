@@ -9,7 +9,7 @@ Expected Warnings (8):
 
 [TP 1, 2] typecheck error: Var name: amount0 Func name: burn in EXPRESSION amount0 += amount0fees
 
-[TPp] typecheck error: Var name: amount1 Func name: burn in EXPRESSION amount1 += amount1fees
+[TPP] typecheck error: Var name: amount1 Func name: burn in EXPRESSION amount1 += amount1fees
 
 [FP] typecheck error: Var name: reserve0 Func name: collect in EXPRESSION reserve0 -= uint128(amount0fees)
 
