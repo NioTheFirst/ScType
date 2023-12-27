@@ -466,8 +466,8 @@ def parse_type_file(t_file, f_file = None):
                 value = 'u'
                 addr = 'u'
                 if(len(_line) >= 8):
-                    num = int(_line[4].strip())
-                    denom = int(_line[5].strip())
+                    num = _line[4].strip()
+                    denom = _line[5].strip()
                     norm = [int(_line[6].strip())]
                     value = _line[7].strip()
                     try:
