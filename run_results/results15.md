@@ -1,6 +1,6 @@
 Project name: Vader Protocol p2
 
-For this project, there are three parts. This is from ScType being run separately run in three directories.
+For this project, there are three parts. This is from ScType being separately run in three directories.
 
 Part 1:
 
@@ -49,7 +49,7 @@ The first three warnings will be duplicated. It is a minor side effect of runnin
 [FP] typecheck error: Var name: TMP_43 Func name: calculateSwapReverse in NEW VARIABLE numerator = numeratorC - numeratorA - numeratorB
 ```
 
-Explanation of [TP, 1, 2]: The `_swap()` function switches the an amount of one token, `nativeAmountIn`, with an amount of a different token, `foreignAmountIn`. 
+Explanation of [TP, 1, 2]: The `_swap()` function switches an amount of one token, `nativeAmountIn`, with an amount of a different token, `foreignAmountIn`. 
 Hence, when the swap is performed in the `swap()` function call, there are multiple operations which have token unit mismatches.
 
 Part 2 True Positives List:
