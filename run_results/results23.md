@@ -14,5 +14,6 @@ Explanation of [TP, 1]: The computation for `tokenIncentivesForUsers` in functio
 Hence, when the expresssion is computed for tokens that do not have such a scaling factor, there is a scaling factor mismatch in the reported expression.
 
 True Positives List:
+
 1)https://github.com/code-423n4/2022-01-trader-joe-findings/issues/193
 
