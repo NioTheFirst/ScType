@@ -1,6 +1,6 @@
 Project name: Vader Protol p1
 
-Expected Warnings (3):
+Expected Warnings (4):
 
 [FP]  typecheck error: Var name: TMP_169 Func name: calcShare in IF part > total
 
