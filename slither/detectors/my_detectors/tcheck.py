@@ -730,6 +730,15 @@ def check_type(ir) -> bool:
                     _rval = rval.extok
                     for field in _rval.fields:
                         ir.lvalue.extok.add_field(field)
+            if(set == False):
+                for rval in temp_rvalues:
+                    if(rval.extok.finance_type != -1):
+                        ir.lvalue.extok.finance_type = rval.extok.finance_type
+                    else:
+                        continue
+                    _rval = rval.extok
+                    for field in _rval.fields:
+                        ir.lvalue.extok.add_field(field)
 
     elif isinstance(ir, EventCall):
         return False
