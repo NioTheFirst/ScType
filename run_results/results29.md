@@ -8,7 +8,7 @@ Expected Warnings(2):
 ```
 
 Explanation of [TP, 1]: `_margin` from `_handleDeposit()` is categorized as a net balance, since when function `addToPosition()` calls `_handleDeposit()`, the parameter `_margin` is set to be `_addMargin`, a raw balance subtracted by `fee`, which is a fee. 
-Hence, when `_margin` is compared with `_balBefore`, a raw balance, there is a financial type mismatch.` 
+Hence, when `_margin` is compared with `_balBefore`, a raw balance, there is a financial type mismatch.
 
 True Positives List:
 1) https://github.com/code-423n4/2022-12-tigris-findings/issues/236
