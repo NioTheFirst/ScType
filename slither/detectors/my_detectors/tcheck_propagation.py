@@ -336,7 +336,11 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             pass_update(dest, rsrcl, func, rsrcr)
             return False
         if(_rlf == -1):
-            assign_ftype(_rrf, dest)
+            
+            if(func == "div"):
+                assign_ftype(-1, dest)
+            else:
+                assign_ftype(_rrf, dest)
             pass_update(dest, rsrcl, func, rsrcr)
             return False
     key = (_rlfp, _rrfp)
