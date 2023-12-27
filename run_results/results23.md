@@ -15,5 +15,5 @@ Hence, when the expresssion is computed for tokens that do not have such a scali
 
 True Positives List:
 
-1)https://github.com/code-423n4/2022-01-trader-joe-findings/issues/193
+1) https://github.com/code-423n4/2022-01-trader-joe-findings/issues/193
 
