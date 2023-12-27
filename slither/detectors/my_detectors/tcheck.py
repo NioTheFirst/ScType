@@ -1653,7 +1653,7 @@ def generate_label_trace(dictA, dictB):
     pos_dict = {}
     sum = 0
     neg_dict = {}
-    print(dictB)
+    print(f"d:{dictB}")
     for i in dictA:
         if(i > 0):
             pos_dict[i] = dictA[i]
