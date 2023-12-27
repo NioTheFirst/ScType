@@ -1205,7 +1205,7 @@ def type_ref(ir)->bool:
             ir.lvalue.extok.add_num_token_type(head_addr)
             ir.lvalue.extok.add_den_token_type(-1)
             ir.lvalue.extok.norm = norm
-            ir.lvalue.extok.address = head_addr
+            #ir.lvalue.extok.address = head_addr
         else:
             ir.lvalue.extok.token_type_clear()
             copy_token_type(ir.variable_right, ir.lvalue)

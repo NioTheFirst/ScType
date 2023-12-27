@@ -18,9 +18,9 @@ Part 2:
 
 Expected Warnings (4):
 ```
-[TPP, 1] typecheck error: Var name: TMP_113 Func name: _depositERC20 in EXPRESSION sharesReceived = IERC20(vault).balanceOf(address(this)).sub(sharesBefore)
+[FP] typecheck error: Var name: TMP_113 Func name: _depositERC20 in EXPRESSION sharesReceived = IERC20(vault).balanceOf(address(this)).sub(sharesBefore)
 
-[TPP, 1] typecheck error: Var name: TMP_100 Func name: _depositETH in EXPRESSION sharesReceived = IERC20(vault).balanceOf(address(this)).sub(initialTokenBalance)
+[FP] typecheck error: Var name: TMP_100 Func name: _depositETH in EXPRESSION sharesReceived = IERC20(vault).balanceOf(address(this)).sub(initialTokenBalance)
 
 [TP, 1] typecheck error: Var name: TMP_88 Func name: getTokensForShares in EXPRESSION amount = IyVault(liquidityToken[asset]).getPricePerFullShare().mul(shares).div(1e18)
 
