@@ -78,9 +78,40 @@ Each variable type has its own dictionary, and can be checked within `tcheck_par
 
 The propogation and typechecking of the tool are implemented in `tcheck.py` and `tcheck_propogation.py`.
 `tcheck.py` receives the representation from Slither, and performs the typechecking of individual operations within the function `check_type()`.
-It handles mainly token unit and scaling factor checking.
 
-`tcheck_propogation.py` performs the more complex typechecking of financial types. In particular, it stores the rules for financial type propogation and verifies that each operation is in accordance. Table 2 in the paper as well as Tables 1-3 in the Appendix are subsets of the rules in this file. 
+In particular, `tcheck.py` receives the SSA from Slither, and first determines which contract are marked to be typechecked. 
+More details on how to do so can be found in `create_typefile.md`.
+
+For the contracts that have been marked, Slither typechecks them one-by-one via the function `_tcheck_contract()`.
+Per each contract, the global variables are read, and assigned initial type info if annotations have been provided in the type files.
+This is done through the function `_tcheck_contract_state_var()`.
+
+Then, each individual function is used as an entry point and typechecked. 
+This is done in the function `_tcheck_function()`.
+
+In particular, the function `_check_type()` typechecks each operation or declaration in the SSA nodes, by calling the appropriate helper function.
+Helper functions include `type_bin()`, which checks binary operations, `type_fc()`, which checks calls to functions with the contract, and `type_hlc(), which checks calls to functions outside of the contract.
+
+Certain helper functions make calls to functions stored in `tcheck_propogation.py`.
+
+`tcheck_propogation.py` stores functions related to the propogation and comparison of the abstract types.
+For example, function `pass_ftype()` takes as parameters a LHS variable, a RHS variable, and the name of a binary operation, and checks to see if it is in violation of the financial type propogation rules.
+
+We have selected one of the helper functions to explain more in detail, in particular `type_bin_add()`, which is used to typecheck addition operations.
+
+#### Explanation for function `type_bin_add()` (Lines XXXX to XXXX)
+
+`type_bin_add()` takes as parameters: a destination variable (`dest`), a LHS variable (`lir`), and a RHS variable (`rir`).
+
+If both LHS and RHS variables are not undefined or constant variables, the token units are compared through the function calls `compare_token_type()` and `handle_trace()` (line XXXX).
+
+If the token units are incompatible, an error is added.
+
+If not, the scaling factors of the RHS and LHS variables are compared and the result is passed to the destination variable via the function call `bin_norm()`.
+
+Additionally, `type_bin_add()` checks whether or not the addition operation violated any financial type rules by called `pass_ftype()`, which in turn calls the `pass_ftype()` function in `tcheck_propogation.py` that was previously mentioned.
+
+Then, the appropriate token units are assigned to the destination variable, and `type_bin_add()` returns.
 
 
 # Build and Run from Source Code
@@ -168,19 +199,7 @@ The number of annotations was obtained through the metric defined in the "Type F
 
 The reported number of warnings is directly the amount reported by the tool.
 
-The number of true positives, false positives, missed-type-errors and not-type-errors were determined by manual inspection of the warnings.
+The number of true positives, false positives, missed-type-errors and not-type-errors were determined by manual inspection of the warnings. The expected results and distribution of true and false positives can be found in the `run_results` directory. 
+See the README.md file within for more details.
 
 The execution time of the tool was obtained by using a clock within the testing scripts.
-
-### Fig 9: False Positive Example in Vader Protocol P2
-
-
-Fig 9 in the paper demonstrates a false positive generated from the tool.
-
-The project is the Vader Protol P2 project, corresponding to number 15 on the table. To run the project, input the command:
-
-`./test_benchmark_final.sh 15`
-
-The corresponding false positive is the warning reported as:
-
-`> typecheck error: Var name: TMP_28 Func name: calculateSwap in NEW VARIABLE denominator = pow(amountIn + reserveIn)`
