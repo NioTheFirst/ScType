@@ -5,7 +5,7 @@ Expected Warnings (4):
 ```
 [TP, 1] typecheck error: Var name: TMP_182 Func name: balance in RETURN balanceOfThis().add(IController(manager.controllers(address(this))).balanceOf())
 
-typecheck error: Var name: _totalSupply Func name: _mint in EXPRESSION _totalSupply = _totalSupply.add(amount)
+[FP] typecheck error: Var name: _totalSupply Func name: _mint in EXPRESSION _totalSupply = _totalSupply.add(amount)
 
 [TP, 2] typecheck error: Var name: TMP_157 Func name: withdraw in NEW VARIABLE _toWithdraw = _amount.sub(_balance)
 

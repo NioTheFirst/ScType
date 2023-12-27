@@ -23,6 +23,8 @@ f_type_add = {
     (10, 10) : 10, #c. fee ratio + c. fee ratio = c.fee ratio
     (12, 12) : 12, #s. fee ratio + s. fee ratio = s.fee ratio
     (13, 13) : 13, #trans fee + trans fee
+    (0, 13): 1,
+    (13, 0): 1,
     (30, 0): 30,#reserve +any balance
     (30, 1): 30,
     (1, 30): 30,
