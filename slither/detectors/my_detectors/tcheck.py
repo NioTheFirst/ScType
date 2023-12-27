@@ -1583,7 +1583,9 @@ def handle_trace(rir, lir):
     rdtt = _rir.den_token_types.copy()
     lntt = _lir.num_token_types.copy()
     ldtt = _lir.den_token_types.copy()
-
+    print("Handling trace")
+    print(_rir)
+    print(_lir)
     #Reduce numerators
     n_dict = {}
     for rn in rntt:
