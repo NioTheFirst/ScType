@@ -2280,7 +2280,7 @@ def _tcheck_node(node, function) -> []:
             temp.extok.function_name = function.name #"constructor"
             temp.extok.token_type_clear()
             copy_token_type(var, temp)
-            if(temp.finance_type == -1):
+            if(temp.extok.finance_type == -1):
                 copy_ftype(var, temp)
             temp.extok.norm = var.extok.norm
             global_var_types[(var.extok.name, current_contract_name)] = temp
