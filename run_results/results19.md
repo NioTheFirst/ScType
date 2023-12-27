@@ -5,6 +5,7 @@ Sublime is split into two parts, due to ScType being run in two separate directo
 Part 1:
 
 Expected Warnings (1):
+
 `[TP, 1] typecheck error: Var name: TMP_357 Func name: liquidate in NEW VARIABLE _returnETH = amount.sub(_borrowTokens,Insufficient ETH to liquidate)`
 
 Explanation of [TP, 1]: The function `getLatestPrice()` returns a price that is used incorrectly.
