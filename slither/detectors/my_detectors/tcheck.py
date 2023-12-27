@@ -725,8 +725,8 @@ def check_type(ir) -> bool:
                         ir.lvalue.extok.norm = rval.extok.norm
                         if(rval.extok.finance_type != -1):
                             ir.lvalue.extok.finance_type = rval.extok.finance_type
-                    else:
-                        continue
+                        else:
+                            continue
                     _rval = rval.extok
                     for field in _rval.fields:
                         ir.lvalue.extok.add_field(field)
