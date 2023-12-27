@@ -1636,7 +1636,6 @@ def handle_trace(rir, lir):
         return False
     #Just take the first one for now
     first_trace = pot_trace[0]
-    print(f"First trace: {first_trace}")
     for key,value in first_trace.items():
         unioned = label_sets[key].union(label_sets[value])
         if(unioned):
@@ -1654,6 +1653,7 @@ def generate_label_trace(dictA, dictB):
     pos_dict = {}
     sum = 0
     neg_dict = {}
+    print(dictB)
     for i in dictA:
         if(i > 0):
             pos_dict[i] = dictA[i]
@@ -1708,7 +1708,6 @@ def generate_label_trace(dictA, dictB):
     if(curn == 0):
         return None
     for orderings in dp[curn-1]:
-        print(orderings)
         if(check_ordering(orderings[2], dictA) and check_ordering(orderings[2], dictB)):
             pot_ordering.append(orderings[2])
     if(len(pot_ordering) == 0):
