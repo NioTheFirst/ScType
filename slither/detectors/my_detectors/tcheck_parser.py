@@ -466,8 +466,8 @@ def parse_type_file(t_file, f_file = None):
                 value = 'u'
                 addr = 'u'
                 if(len(_line) >= 8):
-                    num = [ int(_line[4].strip())]
-                    denom = [int(_line[5].strip())]
+                    num = int(_line[4].strip())
+                    denom = int(_line[5].strip())
                     norm = [int(_line[6].strip())]
                     value = _line[7].strip()
                     try:
@@ -586,6 +586,10 @@ def get_field(function_name, full_parent_name, field_name):
     key = function_name + '_' + full_parent_name + '_' + field_name
     #print(f"OUT KEY: {key}")
     if key in field_type_hash:
+        temp = list(field_type_hash[key])
+        #print(f"List: {temp}")
+        temp[0] = stringToType(temp[0])
+        temp[1] = stringToType(temp[1])
         return field_type_hash[key]
     return None
 
