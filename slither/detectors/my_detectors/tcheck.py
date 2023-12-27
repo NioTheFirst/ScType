@@ -1634,6 +1634,7 @@ def handle_trace(rir, lir):
         return False
     #Just take the first one for now
     first_trace = pot_trace[0]
+    print(f"First trace: {first_trace}")
     for key,value in first_trace.items():
         unioned = label_sets[key].union(label_sets[value])
         if(unioned):
