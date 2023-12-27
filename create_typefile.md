@@ -130,7 +130,7 @@ To make finance type file annotations for integer variables, follow the followin
 
 `[t], {function_name}, {variable_name}, f:{finance_type_key}`
 
-The `{finance_type_key}` is the integer corresponding to the finance type of the variable. The table is included in `tcheck_parser.py`, and also within the `finance_type_key.txt` file within this directory.
+The `{finance_type_key}` is the integer corresponding to the finance type of the variable. The table is included in `tcheck_parser.py`, and also within the `finance_type_keys.py` file within this directory.
 
 For example, since the price financial type has a key of `40`, an annotation for `priceAToB` defined in the above section would be:
 
