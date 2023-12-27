@@ -134,7 +134,6 @@ f_type_div = {
     (21, 23): 23, 
     (40, 0) : 0, #price/exchange rate * any balance = corresponding balance
     (0, 40) : 0,
-    #(0, 30): 0,
     (30, 30): 30,
     (40, 1) : 1,
     (1, 40) : 1,
@@ -337,6 +336,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             pass_update(dest, rsrcl, func, rsrcr)
             return False
         if(_rlf == -1):
+            assign_ftype(_rrf, dest)
             pass_update(dest, rsrcl, func, rsrcr)
             return False
     key = (_rlfp, _rrfp)
