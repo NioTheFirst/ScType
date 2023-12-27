@@ -730,6 +730,8 @@ def check_type(ir) -> bool:
                     _rval = rval.extok
                     for field in _rval.fields:
                         ir.lvalue.extok.add_field(field)
+                    set = True
+                    break
             if(set == False):
                 for rval in temp_rvalues:
                     if(rval.extok.finance_type != -1):
