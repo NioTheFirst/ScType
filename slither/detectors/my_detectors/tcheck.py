@@ -1170,6 +1170,12 @@ def type_ref(ir)->bool:
         assign_const(ir.lvalue)
         return False
     
+    ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
+    if(ref_tuple != None):
+        ##print("REFERENCE TYPE READ")
+        copy_token_tuple(ir.lvalue, ref_tuple)
+        return False
+
     #check if the right value already has a type?
     if not(is_type_undef(ir.variable_left) or is_type_const(ir.variable_left)):
         ir.lvalue.extok.token_type_clear()
@@ -1198,11 +1204,6 @@ def type_ref(ir)->bool:
     #check the parser for a pre-user-defined type
     if(str(ir.lvalue.type).startswith("address")):
         ir.lvalue.extok.address = ir.variable_left.extok.address
-        return False
-    ref_tuple = get_ref(ir.variable_left.non_ssa_version.name)
-    if(ref_tuple != None):
-        ##print("REFERENCE TYPE READ")
-        copy_token_tuple(ir.lvalue, ref_tuple)
         return False
 
     #no other options, assign constant
