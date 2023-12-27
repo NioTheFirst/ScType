@@ -1631,6 +1631,8 @@ def handle_trace(rir, lir):
         else:
             d_dict[ld] = -1
     #Generate matchings, or generalize set
+    if(len(n_dict) == 0 and len(d_dict) == 0):
+        return True
     pot_trace = generate_label_trace(n_dict, d_dict)
     if(pot_trace == None):
         return False
@@ -1653,7 +1655,7 @@ def generate_label_trace(dictA, dictB):
     pos_dict = {}
     sum = 0
     neg_dict = {}
-    print(f"d:{dictB}")
+    print(f"d:{dictA}")
     for i in dictA:
         if(i > 0):
             pos_dict[i] = dictA[i]
