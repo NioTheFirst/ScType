@@ -287,6 +287,7 @@ def pass_ftype_no_ir(l_fin_type, r_fin_type, func):
     if(r_fin_type != None and r_fin_type > update_start):
         r_pure = r_fin_type - update_start
     key = (l_pure, r_pure)
+    print(key)
     if(func == "add"):
         if key in f_type_add:
             return f_type_add[key]
