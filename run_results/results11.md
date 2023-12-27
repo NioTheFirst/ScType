@@ -27,7 +27,8 @@ Expected Warnings (10):
 Explanation of [TP, 1, 2]: Inside the `burn()` function, both global variables representing a financial type of total supply are decremented by variables (`amount0fees`, `amount1fees`), which represent a transaction fee. 
 This is not allowed, as the transaction fee financial type should only be subtracted from user balance, net balance, or accrued balance. 
 Instead, they should have been decremented by `amount0` and `amount1`, which represent a `net balance`, as reported in the true positive reports.
-However, this causes ScType to report false positives in other functions `collect()` and `mint()`, as the `amount0fees` and `amount1fees` represent a dividend financial type (i.e. a reward for the user) instead of a transaction fee. We leave handling this case to out future work.
+
+However, ScType also reports false positives in functions `collect()` and `mint()`, as the `amount0fees` and `amount1fees` represent a dividend financial type (i.e. a reward for the user) instead of a transaction fee. We leave handling this case to out future work.
 
 True Positives List:
 1) https://github.com/code-423n4/2021-09-sushitrident-2-findings/issues/24
