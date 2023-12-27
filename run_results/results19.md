@@ -28,7 +28,8 @@ Expected Warnings (4):
 [TPP, 1] typecheck error: Var name: TMP_87 Func name: getTokensForShares in EXPRESSION amount = IyVault(liquidityToken[asset]).getPricePerFullShare().mul(shares).div(1e18)
 ```
 
-Explanation of [TP, 1]: The decimals computed for `amount` in `getTokensForShares()` are incorrect, which causes a scaling factor mismatch. Functions `_depositERC20
+Explanation of [TP, 1]: The decimals computed for `amount` in `getTokensForShares()` are incorrect, since they are assumed to be 18.
+Hence, when tokens that do not have a scaling factor of 18 decimals are provided, there will be a decimal mismatch.
 
 True Positives List:
 1) https://github.com/code-423n4/2021-12-sublime-findings/issues/134
