@@ -21,29 +21,35 @@ ScType is applying for:
 
 `|Sctype`
 
-`|--- README-dev.md`
+`|--- README.md`
 
-`|--- README-docker.md`
+`|--- LICSENSE`
 
 `|--- test_benchmark_final.sh`
-
-`|--- test_benchmark_min.sh`
 
 `|--- create_typefile.md`
 
 `|--- financial_type_keys.py`
 
+`|--- run_results`
+
 `|--- slither/detectors/my_detectors`
 
-`README-dev.md` contains the information written here.
+`README.md` is the file you are currently reading now.
 
-`README-docker.md` contains instructions on how to pull and run the docker image of ScType. Those instructions are included below in the "Docker" section.
+`LICENSE` contains the license for ScType.
 
 `test_benchmark_final.sh` is the script used for running ScType on the dataset provided in the paper. More details can be found in the "Docker" section.
 
+`create_typefile.md` contains instructions on how to manually build type files.
+
+`financial_type_keys.py` stores a copy of a table from `tcheck_parser.py` that contains the mappings of financial types and their keys. More information can be found in `create_typefile.md`.
+
+`run_results` is a repository that contains the expected results from running ScType on the dataset used in the paper. More information can be found in the README.md file located there.
+
 `slither/detectors/my_detectors` is a directory that contains all of the files that are used by ScType.
 
-All other code is used by Slither.
+All other code is unimportant or used by Slither.
 
 # Introduction to Core Components
 
