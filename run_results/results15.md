@@ -16,7 +16,8 @@ Part 1 Expected Warnings (4):
 [TPP, 1, 2, 3] typecheck error: Var name: TMP_47 Func name: consult in EXPRESSION result = ((sumUSD * IERC20Metadata(token).decimals()) / sumNative)
 ```
 
-Explanation of [TP, 1, 2, 3]: The equation for variable `result` in the `consult()` function is incorrect; one reason is that the scaling factor, `IERC20Metadata(token).decimals` does not represent the actual scaling factor, but represents the number of decimals, instead. 
+Explanation of [TP, 1, 2, 3]: The equation for variable `result` in the `consult()` function is incorrect.
+This is because the scaling factor, `IERC20Metadata(token).decimals` does not represent the actual scaling factor, but represents the number of decimals, instead. 
 For example, instead of 10^18, it returns 18. Hence, ScType returns a decimal mismatch.
 
 
