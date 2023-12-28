@@ -11,7 +11,7 @@ For each reported warning, a label is given that follows one of the four formats
 
 2) [FPP], which stands for a propogation of a False Positive Warning.
 
-3) [TP, {number}], which stands for the frist instance of a True Positive Warning, along with the index of the true positive in the true positive list below.
+3) [TP, {number}], which stands for the first instance of a True Positive Warning, along with the index of the true positive in the true positive list below.
 
 4) [TPP, {number}], which stands for a propogation of a True Positive Warning, along with the index of the true positive in the true positive list below.
 
