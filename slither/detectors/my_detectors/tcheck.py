@@ -668,7 +668,7 @@ def check_type(ir) -> bool:
     global var_assignment_storage
     addback = False
     #Print the IR (debugging statement)
-    print(ir)
+    #print(ir)
     if isinstance(ir, Assignment):
         addback = type_asn(ir.lvalue, ir.rvalue)
         #Assign value if constant int assignement
@@ -763,8 +763,8 @@ def check_type(ir) -> bool:
     try:
         if ir.lvalue and is_variable(ir.lvalue):
             #Debugging statement: lhs variable after operatiom
-            print("[i]Type for "+ir.lvalue.name)
-            print(ir.lvalue.extok)
+            #print("[i]Type for "+ir.lvalue.name)
+            #print(ir.lvalue.extok)
             if(isinstance(ir.lvalue, ReferenceVariable)):
                 #Field propogation
                 ref = ir.lvalue
@@ -1596,9 +1596,6 @@ def handle_trace(rir, lir):
     rdtt = _rir.den_token_types.copy()
     lntt = _lir.num_token_types.copy()
     ldtt = _lir.den_token_types.copy()
-    print("Handling trace")
-    print(_rir)
-    print(_lir)
     #Reduce numerators
     n_dict = {}
     for rn in rntt:
@@ -1677,7 +1674,6 @@ def generate_label_trace(dictA, dictB):
     pos_dict = {}
     sum = 0
     neg_dict = {}
-    print(f"d:{dictA}")
     for i in dictA:
         if(i > 0):
             pos_dict[i] = dictA[i]
@@ -2484,10 +2480,10 @@ def _tcheck_function(function) -> []:
     function_ref = 0
     explored = set()
     addback_nodes = []
-    print()
-    print()
-    print()
-    print(function.name)
+    #print()
+    #print()
+    #print()
+    #print(function.name)
 
     if(check_bar(function.name)):
         return addback_nodes

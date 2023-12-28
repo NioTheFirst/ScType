@@ -587,7 +587,7 @@ def get_field(function_name, full_parent_name, field_name):
     #print(f"OUT KEY: {key}")
     if key in field_type_hash:
         temp = list(field_type_hash[key])
-        print(f"List: {temp}")
+        #print(f"List: {temp}")
         if(isinstance(temp[0], list)):
             temp[0][0] = stringToType(temp[0][0])
         else:
