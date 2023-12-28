@@ -21,4 +21,9 @@ For example,
 
 means that the warning is the first instance of the accounting error reported by the first true positive in the true positives list.
 
+## True and False Positive Statistics
+
+True Postives found: 29
+
+False Positives found: 14
 
