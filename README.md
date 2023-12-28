@@ -130,9 +130,9 @@ To run ScType against a directory, run:
 
 `slither --detect tcheck .`
 
-ScType will be able to automatically typecheck calls to any functions as long as the function is somewhere within the directory. 
+ScType will be able to automatically typecheck calls to any functions as long as the function is located within the directory. 
 
-However, ScType needs type files to be made for each contract that needs to be checked. Details can be found in the `create_typefile.md` file.
+However, ScType needs type files to be made for each contract that shall be typechecked. Details on how to do so can be found in the `create_typefile.md` file.
 
 # Docker
 
