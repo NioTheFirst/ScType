@@ -53,7 +53,7 @@ The name of a finance type file associated with a certain file should be: `{file
 
 For example, if the name of the smart contract was `ABC`, the token type file and finance type file names need to be: `ABC_types.txt` and `ABC_ftypes.txt`, respectively.
 
-__It is important to note that the "name" of a smart contract is the name is used for the contract or library within the smart contract file, not necessarily the name of the file itself__
+__It is important to note that the "name" of a smart contract is the name used for the contract or library within the smart contract file, not necessarily the name of the file itself__
 
 For example, if the file name was `CDE.sol`, but with the file, the contract's name was `ABC`, then `ABC` should be used to name the token type and finance type files.
 
