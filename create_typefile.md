@@ -42,7 +42,7 @@ A type annotation is a line of text which provides initial abstract type informa
 
 An annotation in a type files is typically made for a global variable or a function parameter. 
 
-The information to make a type annotation is not difficult to obtain, and can typically be found within comments in the code, or in documents provided by the developer of the smart contract.
+The information to make a type annotation is not difficult to obtain, and can usually be found within comments in the code, or in documents provided by the developer of the smart contract.
 
 ### Location and Naming of Type Files
 
