@@ -21,6 +21,35 @@ For example,
 
 means that the warning is the first instance of the accounting error reported by the first true positive in the true positives list.
 
+For certain true positive warnings, there may be more than one index, i.e. `[TP, 2, 3]... `.
+This means that the warning is a consequence of the second and the third true positive accounting errors in the true positives list.
+
+## Error propagation
+
+The following depicts a simple example of how one accounting error can lead to multiple warnings thrown by ScType:
+
+```solidity
+wrongBalanceTokA = balanceOf(addressTokB) //should be addressTokA
+...
+totalBalanceTokA -= wrongBalanceTokA      //ScType warning 1
+...
+otherBalanceTokA += wrongBalanceTokA      //ScType warning 2
+```
+
+For the provided example, there are two tokens, token A and token B.
+`totalBalanceTokA` and `otherBalanceTokA` are both amounts of token A.
+
+`balanceOf(addressTokB)` returns an amount of token B, when the amount for `wrongBalanceTokA` was intended to be of token A.
+
+As a result, the subtraction `totalBalanceTokA -= wrongBalanceTokA` and the addition `otherBalanceTokA += wrongBalanceTokA` would both have token unit mismatches.
+
+The true positive accounting error would only report the first expression, `wrongBalanceTokA = balanceOf(addressTokB)` as problematic, as that is the root cause.
+
+However, ScType will report two warnings, due to the token unit mismatches.
+
+
+
+
 ## True and False Positive Statistics
 
 True Postives found: 29
