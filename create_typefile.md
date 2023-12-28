@@ -180,7 +180,7 @@ The latter is used for integers, its fields follow the same rules as Integer var
 
 To make annotations for nested fields, simply extend the `{variable_name}` with the "_" character for the individual layers.
 
-For example, the annotation required to annotate the field: {myobj.A.B.C} would be:
+For example, the annotation required to annotate the field: {myobj.a.b.c} would be:
 ```
 [t*] {function_name}, myobj_a_b, c, ...
 ```
