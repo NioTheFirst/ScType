@@ -12,7 +12,7 @@ Explanation of [TP, 1]: The function `getLatestPrice()` returns a price that is 
 The contract assumes the price to be `tok(borrow_token)/tok(collateral_token)`, but the inverse is returned.
 Hence, there is a token mismatch in function `liquidate`, as `_borrowTokens` relies on the price returned by `getLatestPrice()`. 
 
-True Positives List:
+Part 1 True Positives List:
 1) https://github.com/code-423n4/2021-12-sublime-findings/issues/155
 
 Part 2:
@@ -31,5 +31,5 @@ Expected Warnings (4):
 Explanation of [TP, 1]: The decimals computed for `amount` in `getTokensForShares()` are incorrect, since they are assumed to be 18.
 Hence, when tokens that do not have a scaling factor of 18 decimals are provided, there will be a decimal mismatch.
 
-True Positives List:
+Part 2 True Positives List:
 1) https://github.com/code-423n4/2021-12-sublime-findings/issues/134
