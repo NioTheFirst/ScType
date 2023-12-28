@@ -9,6 +9,7 @@ ScType can handle simple variables as well as arrays and object fields. It can a
 
 In the following sections, we introduce the structure of the repository for ScType, describe and point out locations of core components, explain how to  compile the source code, and finally, how to pull and run a provided Docker Image in order to reproduce the results in our paper.
 
+The Docker Image requires 30GB of space.
 
 ScType is applying for:
 
@@ -43,11 +44,13 @@ ScType is applying for:
 
 `create_typefile.md` contains instructions on how to manually build type files.
 
-`financial_type_keys.py` stores a copy of a table from `tcheck_parser.py` that contains the mappings of financial types and their keys. More information can be found in `create_typefile.md`.
+`financial_type_keys.py` stores a copy of a table from `tcheck_parser.py` (which is located in the directory `slither/detectors/my_detectors`) that contains the mappings of financial types and their keys. More information can be found in `create_typefile.md`.
 
 `run_results` is a repository that contains the expected results from running ScType on the dataset used in the paper. More information can be found in the README.md file located there.
 
 `slither/detectors/my_detectors` is a directory that contains all of the files that are used by ScType.
+
+__This repo does not include the Benchmark dataset in the paper, however the Docker image does.__
 
 All other code is unimportant or used by Slither.
 
@@ -57,7 +60,7 @@ The following section describes the core components of ScType and where they are
 
 ## Abstract Type
 
-The abstract type as introduced by Fig. 6 in our paper is defined in `ExtendedType.py`. 
+The abstract type as introduced by Fig. 6 in our paper is defined in `ExtendedType.py` (which is located in the directory `slither/detectors/my_detectors`). 
 It provides additional information to variables, such as token units, scaling factor, and financial type.
 
 In particular, for every variable intermediate representation (IR) produced by Slither, there is a field, `extok`, that contains the ExtendedType object defined in `ExtendedType.py`.
@@ -71,12 +74,12 @@ Detailed information can be found in `create_typefile.md`
 
 All of the type files for the testing dataset have already been provided; when counting the number of annotations made for type files, we exclude the ones which provide the return values of functions not in scope. We reason that this is a common cost for all static analysis tools and is an effort that we plan to improve upon in furture work.
 
-The parser for the type file is located in `tcheck_parser.py`. It checks each annotation that follows the format as described in `create_typefile.md`, and stores the abstract types in dictionaries for use later in type checking. 
+The parser for the type file is located in `tcheck_parser.py` . It checks each annotation that follows the format as described in `create_typefile.md`, and stores the abstract types in dictionaries for use later in type checking. 
 Each variable type has its own dictionary, and can be checked within `tcheck_parser.py`.
 
 ## Typechecking Engine
 
-The propogation and typechecking of the tool are implemented in `tcheck.py` and `tcheck_propogation.py`.
+The propogation and typechecking of the tool are implemented in `tcheck.py` and `tcheck_propogation.py` (which are both located in the directory `slither/detectors/my_detectors`).
 `tcheck.py` receives the representation from Slither, and performs the typechecking of individual operations within the function `check_type()`.
 
 In particular, `tcheck.py` receives the SSA from Slither, and first determines which contracts are marked to be typechecked. 
