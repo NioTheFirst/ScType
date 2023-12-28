@@ -50,7 +50,7 @@ The first three warnings will be duplicated. It is a minor side effect of runnin
 ```
 
 Explanation of [TP, 1, 2]: The `_swap()` function switches an amount of one token, `nativeAmountIn`, with an amount of a different token, `foreignAmountIn`. 
-Hence, when the swap is performed in the `swap()` function call, there are multiple operations which have token unit mismatches.
+Hence, when the swap is performed in the `swap()` function call, there are multiple operations that result in token unit mismatches.
 
 Part 2 True Positives List:
 1) https://github.com/code-423n4/2021-11-vader-findings/issues/161
