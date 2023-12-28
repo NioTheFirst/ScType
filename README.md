@@ -1,7 +1,7 @@
 # Overview
 ScType is a static analysis tool written in Python3 to detect accounting errors in Solidity smart contracts. 
 
-Sctype leverages the single-static-assignment representation produced by [Slither](https://github.com/crytic/slither) to perform abstract type inference. It assigns initial abstract types to select variables based on a type file or inference from the code. Then, the abstract types are propogated throughout the contract based on the produced representation and are typechecked accordingly.
+Sctype leverages the single-static-assignment representation produced by [Slither](https://github.com/crytic/slither) to perform abstract type inference. It assigns initial abstract types to select variables based on a type file or inference from the code. Then, the abstract types are propogated throughout the contract based on the produced representation and typechecked accordingly.
 
 ScType checks each individual function within the code. Users are able to specify the abstract types of the initial function parameters through the type file, however the majority of abstract type assignment to variables is done through propogation. 
 
@@ -66,7 +66,7 @@ For development or debugging, simply inputting the following python code `print(
 
 ## Type File Parsing
 
-The type file provides initial abstract types for select global variables or function parameters.
+The type file provides initial abstract types for selected global variables or function parameters.
 Detailed information can be found in `create_typefile.md`
 
 All of the type files for the testing dataset have already been provided; when counting the number of annotations made for type files, we exclude the ones which provide the return values of functions not in scope. We reason that this is a common cost for all static analysis tools and is an effort that we plan to improve upon in furture work.
@@ -79,7 +79,7 @@ Each variable type has its own dictionary, and can be checked within `tcheck_par
 The propogation and typechecking of the tool are implemented in `tcheck.py` and `tcheck_propogation.py`.
 `tcheck.py` receives the representation from Slither, and performs the typechecking of individual operations within the function `check_type()`.
 
-In particular, `tcheck.py` receives the SSA from Slither, and first determines which contract are marked to be typechecked. 
+In particular, `tcheck.py` receives the SSA from Slither, and first determines which contracts are marked to be typechecked. 
 More details on how to do so can be found in `create_typefile.md`.
 
 For the contracts that have been marked, Slither typechecks them one-by-one via the function `_tcheck_contract()`.
@@ -90,7 +90,7 @@ Then, each individual function is used as an entry point and typechecked.
 This is done in the function `_tcheck_function()`.
 
 In particular, the function `_check_type()` typechecks each operation or declaration in the SSA nodes, by calling the appropriate helper function.
-Helper functions include `type_bin()`, which checks binary operations, `type_fc()`, which checks calls to functions with the contract, and `type_hlc(), which checks calls to functions outside of the contract.
+Helper functions include `type_bin()`, which checks binary operations, `type_fc()`, which checks calls to functions with the contract, and `type_hlc()`, which checks calls to functions outside of the contract.
 
 Certain helper functions make calls to functions stored in `tcheck_propogation.py`.
 
