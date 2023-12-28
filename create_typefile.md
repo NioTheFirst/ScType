@@ -40,7 +40,7 @@ The token type file must start with the "[*c]" flag so as to let ScType know to 
 
 A type annotation is a line of text which provides initial abstract type information about a singular variable in a smart contract.
 
-An annotation in type files are typically made for a global variable or a function parameter. 
+Annotations in type files are typically made for a global variable or a function parameter. 
 
 The information to make a type annotation is not difficult to obtain, and can usually be found within comments in the code, or in documents provided by the developer of the smart contract.
 
