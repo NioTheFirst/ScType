@@ -99,11 +99,11 @@ For example, function `pass_ftype()` takes as parameters a LHS variable, a RHS v
 
 We have selected one of the helper functions to explain more in detail, in particular `type_bin_add()`, which is used to typecheck addition operations.
 
-#### Explanation for function `type_bin_add()` (Lines XXXX to XXXX)
+#### Explanation for function `type_bin_add()`
 
 `type_bin_add()` takes as parameters: a destination variable (`dest`), a LHS variable (`lir`), and a RHS variable (`rir`).
 
-If both LHS and RHS variables are not undefined or constant variables, the token units are compared through the function calls `compare_token_type()` and `handle_trace()` (line XXXX).
+If both LHS and RHS variables are not undefined or constant variables, the token units are compared through the function calls `compare_token_type()` and `handle_trace()`.
 
 If the token units are incompatible, an error is added.
 
@@ -179,7 +179,7 @@ To run ScType against the entire dataset, run the following command within the i
 
 `./test_benchmark_final.sh`
 
-The entire execution will take XXX minutes.
+The entire execution will take 10 minutes.
 
 To run ScType against individual projects in the dataset, append the index of the project to the previous command.
 
