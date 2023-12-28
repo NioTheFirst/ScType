@@ -110,7 +110,7 @@ To make token type file annotations for integer variables, follow the following 
 
 where
 1) `{numerator_token_type}` is the numerator token type for the variable. This can be obtained by copying the address of the token from the type file like so:
-`{function_name}:{address_name}`. Reusing the address `USDCaddress` from the "Addresses" section, if the variable were an amount of the token referred to by the `USDCaddress`, than its numerator should be `getBalance:USDCaddress`. If unknown, fill with `-1`.
+`{function_name}:{address_name}`. Using the address `USDCaddress` from the "Addresses" section as an example, if the integer variable represented an amount of the token referred to by the `USDCaddress`, than its numerator should be `getBalance:USDCaddress`. If unknown, fill with `-1`.
 2) `{denominator_token_type}` is exactly the same as the numberator token type, except that it represents the denominator token unit of the variable. It is most commonly used when defining a price of two tokens. If unknown, fill with `-1`
 3) `{scaling_factor}` represents the scaling factor for the variable. If unknown, fill with `0`
 4) `{value}` represents a value that the variable can take. If unknown, fill with `'u'`
