@@ -161,7 +161,7 @@ Individual warnings are output with green text with the following format:
 
 `>typecheck error: Var name: A Func name: B in C`
 
-This warning means that the variable "A" located within function "B" is incorrect, and the problematic operation or declaration is "C".
+This warning means that the variable IR variable "A" located within function "B" is incorrect, and the problematic operation or declaration is within IR "C".
 
 The total number of warnings reported by the tool are reported in the following line in the following format:
 
