@@ -17,7 +17,7 @@ For each reported warning, a label is given that follows one of the four formats
 
 For example, 
 
-'[TP, 1] typecheck error: Var name: TMP_57 Func name: updateHourlyBondAmount in NEW VARIABLE deltaAmount = bond.amount - oldAmount'
+`[TP, 1] typecheck error: Var name: TMP_57 Func name: updateHourlyBondAmount in NEW VARIABLE deltaAmount = bond.amount - oldAmount`
 
 means that the warning is the first instance of the accounting error reported by the first true positive in the true positives list.
 
