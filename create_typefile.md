@@ -48,9 +48,9 @@ The information to make a type annotation is not difficult to obtain, and can us
 
 Type files should be in the same directory as the file they pertain to.
 
-The name of a token type file associated with a certain smart contract file should be: `{file_name}_types.txt`
+The name of a token type file associated with a certain smart contract file should be: `{contract_name}_types.txt`
 
-The name of a finance type file associated with a certain file should be: `{file_name}_ftypes.txt`
+The name of a finance type file associated with a certain file should be: `{contract_name}_ftypes.txt`
 
 For example, if the name of the smart contract was `ABC`, the token type file and finance type file names need to be: `ABC_types.txt` and `ABC_ftypes.txt`, respectively.
 
