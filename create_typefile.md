@@ -77,7 +77,7 @@ Common attributes of annotations include:
 2) `{variable_name}` the name of the variable referred to by the annotation
 3) `{scaling_factor}` the number of decimals that the current variable is scaled by. Common examples include 6 (10^6, typical for USDC tokens) or 18 (10^18, typical for ETH tokens)
 
-Other fields will be explained more in detail in their relavant sections.
+Other fields will be explained more in detail in their relevant sections.
 
 ### Addresses
 
