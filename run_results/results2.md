@@ -12,7 +12,7 @@ Expected Warnings (4):
 [TP, 2] typecheck error: Var name: TMP_195 Func name: calcLiquidityUnits in NEW VARIABLE _units = (((P * part1) + part2) / part3)
 ```
 
-Explanation for [TP, 1]: The equation in function `calcAsymmetricShare()` is incorrect, as previously in the function, `part1` is calculated as (U x a), `part2` is calculated as (U x U) and `part3` is calculated as (U x u), where 'U' and 'u' stand for amounts of one token while a stands for an amount of another. 
+Explanation for [TP, 1]: The equation in function `calcAsymmetricShare()` is incorrect, as previously in the function, `part1` is calculated as (U x a), `part2` is calculated as (U x U) and `part3` is calculated as (U x u), where 'U' and 'u' stand for amounts of one token while 'a' stands for an amount of another. 
 Hence, the mathematical subtraction of `((part1 x part2) - part3 ...` is reported as incorrect, as `part1 x part2` has units of tok(U)^3 x tok(a) while `part3` has units of tok(U)^2. This warning is the example used in Fig 1. of the motivation section.
 
 True Positives List:
