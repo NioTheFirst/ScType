@@ -101,15 +101,15 @@ We have selected one of the helper functions to explain more in detail, in parti
 
 #### Explanation for function `type_bin_add()`
 
-`type_bin_add()` takes as parameters: a destination variable (`dest`), a LHS variable (`lir`), and a RHS variable (`rir`).
+`type_bin_add()` takes as parameters: a destination variable (`dest`), the left operand variable of the addition (`lir`), and the right operand variable of the addition (`rir`).
 
-If both LHS and RHS variables are not undefined or constant variables, the token units are compared through the function calls `compare_token_type()` and `handle_trace()`.
+If both operands are not undefined or constant variables, the token units are compared through the function calls `compare_token_type()` and `handle_trace()`.
 
 If the token units are incompatible, an error is added.
 
-If not, the scaling factors of the RHS and LHS variables are compared and the result is passed to the destination variable via the function call `bin_norm()`.
+If not, the scaling factors of the operands are compared and the result is passed to the destination variable via the function call `bin_norm()`.
 
-Additionally, `type_bin_add()` checks whether or not the addition operation violated any financial type rules by called `pass_ftype()`, which in turn calls the `pass_ftype()` function in `tcheck_propogation.py` that was previously mentioned.
+Additionally, `type_bin_add()` checks whether or not the addition operation violated any financial type rules by calling `pass_ftype()`, which in turn calls the `pass_ftype()` function in `tcheck_propogation.py` that was previously mentioned.
 
 Then, the appropriate token units are assigned to the destination variable, and `type_bin_add()` returns.
 
