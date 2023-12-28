@@ -11,7 +11,7 @@ Expected Warnings (4):
 [FP] typecheck error: Var name: REF_75 Func name: _burnSupplyShares in EXPRESSION supplySharesOf[_token][_account] -= _shares
 ```
 
-Explanation of [TP, 1]: In the function `_supplyCreditUni()`, a price for one token (`_priceB`) is replaced by the price for another toekn (`_priceA`). This leads to the token amounts `creditA` and `creditB` to have mismatching token types hence ScType reports warning 1. 
+Explanation of [TP, 1]: In the function `_supplyCreditUni()`, a price for one token (`_priceB`) is replaced by the price for another toklen (`_priceA`). This leads to the token amounts `creditA` and `creditB` to have mismatching token types hence ScType reports a warning. 
 
 True Positives List:
 1) https://github.com/code-423n4/2021-09-wildcredit-findings/issues/70
