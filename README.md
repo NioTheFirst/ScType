@@ -23,7 +23,7 @@ ScType is applying for:
 
 `|--- README.md`
 
-`|--- LICSENSE`
+`|--- LICENSE`
 
 `|--- test_benchmark_final.sh`
 
