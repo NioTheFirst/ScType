@@ -213,7 +213,7 @@ where:
 3) `{length of return tuple}` is the length of the return tuple.
 
 Then, there are `{length of return tuple}` comma-separated, annotations that represent each of the tuple objects, in order. 
-If an object in the return tuple does not have much usage (i.e. it is a string or a boolean), simply leave a blank space, add a comma, and move on to the next object.
+If an object in the return tuple does not have meaningful usage for typechecking (i.e. it is a string or a boolean), simply leave a blank space, add a comma, and move on to the next object.
 
 For all other objects in the return tuple, follow the following format:
 
@@ -229,13 +229,13 @@ The `{address}` field is only used if there is nothing in both the `[numerator_t
 ##### Copy
 If the return type for the current object should be copied:
 1) `[numerator_token_types]` stores a '[]' enclosed list containing all of the numerator token types in the format defined in the "Integer Variables" section, i.e. `[function1_name:address1_name, function2_name:address2_name, ...]`. If empty, replace with [-1].
-2) `[denominator_token_types]` has the exact same format as `[numerator_token_types]` does.
+2) `[denominator_token_types]` has the exact same format as `[numerator_token_types]` does, but represents denominator token types instead.
 3) `{address}` stores the intended address in the format defined above, i.e. `[function1_name:address1_name]`
-The other two parameters follow the same definition as the previous sections.
+The other two parameters follow the same definitions and formats as the previous sections.
 
 #### Transfer
 If the return type for the current object should be transferred:
-1) `[numerator_token_types]` stores a '[]' enclosed list containing the indexes of the function call parameters that make up the numerator of the return type, i.e. `[1, 1, 2]` means that the numerator of the object is made by the units of the first parameter ^2 multiplied by the second parameter. If the parameters are addresses, they are treated as integer amounts of their underlying tokens (if they have any). If empty, replace with [-1].
+1) `[numerator_token_types]` stores a '[]' enclosed list containing the indexes of the function call parameters that make up the numerator of the return type, i.e. `[1, 1, 2]` means that the numerator of the object is made by the units of the first parameter squared multiplied by the second parameter. If empty, replace with [-1].
 2) `[denominator_token_types]` follows the same rules as the numerator.
 3) `{scaling factor}` holds a single value pertaining to a parameter that has the intended scaling factor.
 4) `{address}` holds a single value pertaining to a parameter that has the same address. 
