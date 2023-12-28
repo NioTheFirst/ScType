@@ -4,9 +4,9 @@ Expected Warnings (1):
 
 `[TP, 1] typecheck error: Var name: TMP_57 Func name: updateHourlyBondAmount in NEW VARIABLE deltaAmount = bond.amount - oldAmount`
 
-Explanation for [TP, 1]: `updateHourlyBondAmount()` calls `applyInterest()`, which has an accounting error as stated, to produce bond.amount. 
-In particular, `bond.amount` has a financial type of accrued balance while `oldAmount` has financial type of raw balance.
-Hence, ScType detects and error during the subtraction operation reported by the warning.
+Explanation for [TP, 1]: `updateHourlyBondAmount()` calls `applyInterest()` to produce bond.amount. 
+Hence, `bond.amount` has a financial type of accrued balance while `oldAmount` still has financial type of raw balance.
+Therefore, ScType detects and error during the subtraction operation reported by the warning.
 
 True Positives List:
 
