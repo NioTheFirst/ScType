@@ -24,9 +24,9 @@ Expected Warnings (10):
 [FPP] typecheck error: Var name: reserve0 Func name: _updateReserves in EXPRESSION reserve0 -= uint128(amountOut)
 ```
 
-Explanation of [TP, 1, 2]: Inside the `burn()` function, both global variables representing a financial type of total supply are decremented by variables (`amount0fees`, `amount1fees`), which represent a transaction fee. 
-This is not allowed, as the transaction fee financial type should only be subtracted from user balance, net balance, or accrued balance. 
-Instead, they should have been decremented by `amount0` and `amount1`, which represent a `net balance`, as reported in the true positive reports.
+Explanation of [TP, 1, 2]: Inside the `burn()` function, both global variables representing a financial type of total supply (`reserve0`, `reserve1`) are decremented by variables (`amount0fees`, `amount1fees`), respectively, which have financial types of transaction fee. 
+This is not allowed, as the transaction fee financial type should not be subtracted from total supply, only added to it.
+The correct behviour should have been tp decremented by `amount0` and `amount1`, which represent `net balance`, as reported in the true positive reports.
 
 
 However, ScType also reports false positives in functions `collect()` and `mint()`, as the `amount0fees` and `amount1fees` represent earnings for a contract instead of a transaction fee. We leave handling this case to our future work.
