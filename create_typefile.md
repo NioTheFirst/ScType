@@ -203,6 +203,8 @@ The fields follow the same rules as the "Integer variables" section.
 
 The detection scope is all accessible files reachable by Slither. Typically this means the specific file if a selected file is chosen as a target for ScType, or all files in the directory that ScType was called in if a directory is chosen as the target.
 
+Hence, the return values of functions not included within detection scope need to be provided as annotations in the type file, since they cannot be typechecked, and therefore the types for the return values would be unknown.
+
 For return values of functions that are not included within the detection scope, follow the following format:
 
 `[sefa], {contract_name}, {function_name}, {length of return tuple}, {type for return value one}, {type for return value two}, ...`
