@@ -8,7 +8,7 @@ Expected Warnings (3):
 ```
 
 Explanation of [TP, 1]: The `_approve()` function call within the function `transferFrom()` should use `amount`, not `amountInShares`. 
-This is because the two values represent different tokens, hence ScType reports a type mismatch within the `_approve()` function call. 
+This is because the two values represent different tokens, and as a result ScType reports a type mismatch within the `_approve()` function call when they are eventually assigned to eachother. 
 
 True Positives List:
 1) https://github.com/code-423n4/2021-10-badgerdao-findings/issues/43
