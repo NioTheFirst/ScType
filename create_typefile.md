@@ -116,13 +116,13 @@ where
 3) `{scaling_factor}` represents the scaling factor for the variable. If unknown, fill with `0`
 4) `{value}` represents a value that the variable can take. If unknown, fill with `'u'`
 
-If none of the information is none, the annotation can be excluded entirely.
+If all of the information is unknown, the annotation can be excluded entirely.
 
-For example, an integer variable named `priceAToB` in a function `getCost()`  which represents a price of token A over token B, where A and B are both global variables, has a scaling factor of 6, and has an unknown value would be type like so:
+For example, an integer variable named `priceAToB` in a function `getCost()`  which represents a price of token A over token B where A and B are both global variables, has a scaling factor of 6, and has an unknown value would be typed like so:
 
 `[t], getCost, priceAToB, global:A, global:B, 6, 'u'`
 
-Typically, annotations for token types are not needed since they can be inferred from special functions like `balanceOf()`. Additionally, if they are provided, the user-provided annotation will be prioritized over inference in case of differences (and a warning will be issued).
+Typically, annotations for token types are not needed since they can be inferred from special functions like `balanceOf()`. If they are provided, the user-provided annotation will be prioritized over inference in case of differences (and a warning will be issued).
 
 #### Finance Type File
 
@@ -130,7 +130,7 @@ To make finance type file annotations for integer variables, follow the followin
 
 `[t], {function_name}, {variable_name}, f:{finance_type_key}`
 
-The `{finance_type_key}` is the integer corresponding to the finance type of the variable. The table is included in `tcheck_parser.py`, and also within the `finance_type_keys.py` file within this directory.
+The `{finance_type_key}` is the integer corresponding to the finance type of the variable. The table is included in `tcheck_parser.py`, and also within the `financial_type_keys.py` file within this directory.
 
 For example, since the price financial type has a key of `40`, an annotation for `priceAToB` defined in the above section would be:
 
@@ -146,16 +146,15 @@ To make token type file annotations for arrays, follow the following format:
 
 `[tref], {variable_name}, {numerator_token_type}, {denominator_token_type}, {scaling _factor}`
 
-Arrays follow the same rules as Integer variables.
+The fields follow the same format as Integer variables.
 
-In the event that an array can represent values of different token types, i.e.`balance[]`, do not make an annotation.
 
 #### Finance Type File
 To make finance type file annotations for arrays, follow the following format:
 
   `[tref], {variable_name}, {finance_type_key}`
 
-Arrays follow the same rules as Integer variables
+The fields follow the same format as Integer variables
 
 ### Objects and Fields
 
@@ -165,7 +164,7 @@ To make token type file annotations for objects and fields, follow the following
 
 For Objects:
 
-Follow the same rules as the "Integer variables" section
+Copy the format from the "Integer Variables" section.
 
 For Fields:
 
@@ -175,15 +174,15 @@ or
 
 `[t*], {function_name}, {variable_name}, {field_name}, {numerator_token_type}, {denominator_token_type}, {scaling_factor}, {value}`
 
-The former is used for addresses; `{address}` is the name of the address as defined in the "Integer variables" section.
+The former is used for addresses; `{address}` is the format of the address as defined in the "Integer variables" section, i.e. `function_name`:`address_name`.
 
-The latter is used for integers, it follows the same rules as Integer variables.
+The latter is used for integers, the its fields follow the same rules as Integer variables.
 
-To make annotations for fields that are deeper within objects, simply extend the `{variable_name}` with the "_" character.
+To make annotations for nested fields, simply extend the `{variable_name}` with the "_" character.
 
-For example, the annotations required to annotate the field: {myobj.A.B.C} would be:
+For example, the annotation required to annotate the field: {myobj.A.B.C} would be:
 ```
-[t*] ..., myobj_a_b, c, ...
+[t*] {function_name}, myobj_a_b, c, ...
 ```
 
 #### Finance Type File
@@ -198,9 +197,11 @@ For Fields:
 
 `[t*], {function_name}, {variable_name}, {field_name}, {finance_type_key}`
 
+The fields follow the same rules as the "Integer variables" section.
+
 ### Return Values of Functions Not Included within Detection Scope
 
-The detection scope is all accessible files reachable by Slither. Typically this means the specific file if a selected file is chosen as a target for ScType, or all files in the directory that ScType was called in if the directory is chosen as the target.
+The detection scope is all accessible files reachable by Slither. Typically this means the specific file if a selected file is chosen as a target for ScType, or all files in the directory that ScType was called in if a directory is chosen as the target.
 
 For return values of functions that are not included within the detection scope, follow the following format:
 
@@ -214,7 +215,7 @@ where:
 Then, there are `{length of return tuple}` comma-separated, annotations that represent each of the tuple objects, in order. 
 If an object in the return tuple does not have much usage (i.e. it is a string or a boolean), simply leave a blank space, add a comma, and move on to the next object.
 
-For all other objects, follow the following format:
+For all other objects in the return tuple, follow the following format:
 
 #### Token Type File
 
@@ -230,19 +231,19 @@ If the return type for the current object should be copied:
 1) `[numerator_token_types]` stores a '[]' enclosed list containing all of the numerator token types in the format defined in the "Integer Variables" section, i.e. `[function1_name:address1_name, function2_name:address2_name, ...]`. If empty, replace with [-1].
 2) `[denominator_token_types]` has the exact same format as `[numerator_token_types]` does.
 3) `{address}` stores the intended address in the format defined above, i.e. `[function1_name:address1_name]`
-The other two parameters are self-explanitory
+The other two parameters follow the same definition as the previous sections.
 
 #### Transfer
 If the return type for the current object should be transferred:
 1) `[numerator_token_types]` stores a '[]' enclosed list containing the indexes of the function call parameters that make up the numerator of the return type, i.e. `[1, 1, 2]` means that the numerator of the object is made by the units of the first parameter ^2 multiplied by the second parameter. If the parameters are addresses, they are treated as integer amounts of their underlying tokens (if they have any). If empty, replace with [-1].
 2) `[denominator_token_types]` follows the same rules as the numerator.
-3) `{scaling factor}` holds a single value pertaining to a parameter that has the intended token unit.
+3) `{scaling factor}` holds a single value pertaining to a parameter that has the intended scaling factor.
 4) `{address}` holds a single value pertaining to a parameter that has the same address. 
 5) `{value}` holds a single value pertaining to its actual value.
 
 #### Finance Type File
 
-The format for finance type annotations is simply:
+The format of return tuple object for finance type annotations is simply:
 
 {f:`{finance_type_key}`}. 
 
@@ -274,7 +275,7 @@ They are:
 ## Optimizations
 
 The current optimization that has been performed is the automatic reuse of annotations that share the same names as well as abstract type info. 
-For example, if the contract contains 5 function which each have the same parameter, `asset` that has scaling factor 18, instead of:
+For example, if the contract contains 5 function which each have the same address parameter, `asset` that has scaling factor 18, instead of:
 ```
 [ta], function1, asset, 6
 [ta], function2, asset, 6
