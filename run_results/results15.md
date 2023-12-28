@@ -64,3 +64,6 @@ Part 3 Expected Warnings (1):
 `[TP, 1] typecheck error: Var name: TMP_40 Func name: _min in IF a < b`
 
 Explanation of [TP, 1]: The `reimburseImpermanentLoss()` function call in contract VaderReserve compares a loss amount, `amount` with the current VADER tokens in the reserve, `reserve()`. However, the `removeLiquidity()` function call calls `reimburseImpermanentLoss()` with a loss amount of `coveredLoss`, which was type as a USDV token. Hence, there will be a type mismatch when the two are compared in the `_min()` function call within `reimburseImpermanentLoss()`.
+
+Part 3 True Positives List:
+1) https://github.com/code-423n4/2021-11-vader-findings/issues/54
