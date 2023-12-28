@@ -1,7 +1,8 @@
 # Overview
 
 The following file details how to create typefiles for Solidity smart contracts. 
-First, there will be a section explaining where to put the type file, what is an annotation, the difference between a token type file and a finance type file, and how the total number of annotations is counted.
+
+ The first section explains where to put the type file, what is an annotation, the difference between a token type file and a finance type file, and how the total number of annotations is counted.
 Then, there will be several sections explaining the several types of annotations for variables.
 
 The types of variables that are supported are:
