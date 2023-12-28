@@ -189,7 +189,7 @@ For example, Vader Protocol p1 is the 2nd project. Hence, to only run ScType aga
 
 The number of warnings from the execution will match the ones reported on the paper.
 
-We briefly go over the reproduceable results in the paper
+We briefly go over the reproduceable results in the paper as follows.
 
 ### Table 3: Evaluation Results
 
