@@ -342,7 +342,7 @@ def pass_ftype(dest, rsrcl, func, rsrcr = None):
             pass_update(dest, rsrcl, func, rsrcr)
             return False
     key = (_rlfp, _rrfp)
-    print(f"Finance type key: {key}")
+    #print(f"Finance type key: {key}")
     if(func == "add"):
         if key in f_type_add:
             assign_ftype(f_type_add[key], dest)
