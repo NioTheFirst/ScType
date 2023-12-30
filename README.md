@@ -13,7 +13,7 @@ The Docker Image requires 30GB of space.
 
 ScType is applying for:
 
-1. Available. ScType is publically available on [Github](TODO). We have also provided a runnable image of the tool on [Dockerhub](https://hub.docker.com/repository/docker/icse24sctype/full/general) and provide instructions to pull and run below.
+1. Available. ScType is publically available on [Github](https://github.com/NioTheFirst/ScType/tree/ICSE24Artifact). We have also provided a runnable image of the tool on [Dockerhub](https://hub.docker.com/repository/docker/icse24sctype/full/general) and provide instructions to pull and run below.
 
 2. Reusable. We provide the source code as well as an explanation to key components of ScType below. We also include detailed isntructions on how to reproduce the results obtained in the paper. Finally, ScType is built on top of Slither, a well-known open-source project.
 
@@ -36,6 +36,8 @@ ScType is applying for:
 
 `|--- slither/detectors/my_detectors`
 
+`|--- Benchmark`
+
 `README.md` is the file you are currently reading now.
 
 `LICENSE` contains the license for ScType.
@@ -49,6 +51,12 @@ ScType is applying for:
 `run_results` is a repository that contains the expected results from running ScType on the dataset used in the paper. More information can be found in the README.md file located there.
 
 `slither/detectors/my_detectors` is a directory that contains all of the files that are used by ScType.
+
+`Benchmark` is a directory that contains the testing dataset. It is not provided in this repository, but is available through the Docker Image. 
+Each subdirectory within `Benchmark` contains the code for one smart contract project. They were obtained from this [repository](https://github.com/ZhangZhuoSJTU/Web3Bugs). 
+The true positive reports came from past reports from [Code4rena](https://code4rena.com/reports), a smart contract security vendor that hosts smart contract auditing competitions.
+
+To see the specific directory within each project where ScType is run, please check `test_benchmark_final.sh`.
 
 __This repo does not include the Benchmark dataset in the paper, however the Docker image does.__
 
@@ -164,7 +172,7 @@ Individual warnings are output with green text with the following format:
 
 `>typecheck error: Var name: A Func name: B in C`
 
-This warning means that the variable IR variable "A" located within function "B" is incorrect, and the problematic operation or declaration is within IR "C".
+This warning means that the variable IR variable "A" located within function "B" is incorrect, and the problematic operation or declaration is within IR expression "C".
 
 The total number of warnings reported by the tool are reported in the following line in the following format:
 
