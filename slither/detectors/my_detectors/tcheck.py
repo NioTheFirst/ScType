@@ -14,6 +14,7 @@ from slither.core.declarations import Structure, Contract
 from slither.core.solidity_types.elementary_type import ElementaryType
 from slither.core.declarations.modifier import Modifier
 from slither import tcheck_module
+from slither.sctype_cf_pairs import get_cont_with_state_var
 import copy
 import linecache
 import os
@@ -109,6 +110,7 @@ def get_alias(used_name):
 def add_cf_pair(contract_name, function_name, function):
     if(contract_name == None or function_name == None or function.entry_point == None):
         return False
+    #print(f"Adding function pair: {contract_name}, {function_name}")
     tcheck_parser.add_in_func(contract_name, function_name, function)
 
 #USAGE: returns the ir for a contract, function pair
@@ -908,23 +910,9 @@ def querry_fc(ir) -> int:
     if(isVar):
         #Contingency for undefined contract instances
         cont_name = str(dest.type)
-    #Use original contract name instead of reduced name for interfaces etc.
-    included_func = get_cf_pair(cont_name, func_name)
-    if(included_func == None):
-        included_func = get_cf_pair(cont_name[1:], func_name)
-    if(included_func == None):
-        aliased_cont_name = get_alias(cont_name)
-        if(aliased_cont_name == None):
-            aliased_cont_name = get_alias(cont_name[1:])
-        if(aliased_cont_name != None):
-            included_func = get_cf_pair(aliased_cont_name, func_name)
 
-    if(included_func != None):
-
-        if(type_included_hlc(ir, dest, included_func, cont_name) == 1):
-            return 2
-        return 2
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
+    old_cont_name = cont_name
     if(written_func_rets == None):
         cont_name = cont_name[1:]
     written_func_rets = get_external_type_tuple(cont_name, func_name, ir.arguments)
@@ -939,10 +927,34 @@ def querry_fc(ir) -> int:
         else:
             y = False
         return 2
-    
+    #Use original contract name instead of reduced name for interfaces etc.
     #Special functions:
     if(handle_balance_functions(ir)):
         return 2
+    included_func = get_cf_pair(old_cont_name, func_name)
+    #print(f"Searching for cfpair: {old_cont_name}, {func_name}")
+    final_name = old_cont_name
+    if(included_func == None):
+        included_func = get_cf_pair(cont_name, func_name)
+        final_name = cont_name
+    if(included_func == None):
+        aliased_cont_name = get_alias(old_cont_name)
+        if(aliased_cont_name == None):
+            aliased_cont_name = get_alias(cont_name)
+        if(aliased_cont_name != None):
+            included_func = get_cf_pair(aliased_cont_name, func_name)
+        final_name = aliased_cont_name
+
+    if(included_func != None):
+
+        if(type_included_hlc(ir, dest, included_func, final_name) == 1):
+            return 2
+        return 2
+    '''
+    #Special functions:
+    if(handle_balance_functions(ir)):
+        return 2
+    '''
     return 0
 
 #USAGE: propogates types etc from a set of balance-related functions. Currently supports the functions with names in `balance_funcs`.
@@ -2221,6 +2233,8 @@ def propogate_global(lv):
         pos = -1
         ssa_name_info = convert_ssa_name(lv.ssa_name)
         _name = ssa_name_info[0]
+        #print(f"global name: {_name}, current_contract_name: {current_contract_name}")
+        #print(global_var_types)
         if((_name, current_contract_name) in global_var_types):
             stored_state = global_var_types[(_name, current_contract_name)]
             copy_token_type(stored_state, lv)
@@ -2582,7 +2596,7 @@ def _tcheck_contract_state_var(contract):
             assign_const(state_var)
             continue
         if(True):
-            if(not(contract.name in read_global)):
+            if(not(contract.name in read_global) or not((state_var.extok.name, contract.name) in global_var_types)):
                 querry_type(state_var)
                 new_constant = create_iconstant()
                 copy_token_type(state_var, new_constant)
@@ -2606,7 +2620,6 @@ def _mark_functions(contract):
     for function in contract.functions_declared:
         if(function.visibility == "external" or function.visibility == "public"):
             hasExternal = True
-            
 
     for function in contract.functions_declared:
         fentry = {function.entry_point}
@@ -2722,6 +2735,7 @@ class tcheck(AbstractDetector):
         total_compilations = tcheck_module.get_total_compilations()
         start_time = time.time()
         for contract in self.contracts:
+            #print(f"Contracts handled: {contract.name}, compilations: {total_compilations}")
             #create hashtable with function name and contract name
             type_info_name = contract.name+"_types.txt"
             finance_info_name = contract.name+"_ftypes.txt"
@@ -2741,6 +2755,7 @@ class tcheck(AbstractDetector):
                     type_file = type_info_name
                     parse_type_file(type_file, f_file)
                     u_provide_type[contract.name] = False
+                    #print(f"opened type file for {contract.name}")
             except FileNotFoundError:
                 # Handle the error gracefully or take appropriate action
                 u_provide_type[contract.name] = False
@@ -2750,9 +2765,12 @@ class tcheck(AbstractDetector):
                 continue
             
             #mark functions
-            _mark_functions(contract)
+            used_contract = get_cont_with_state_var(contract.name)
+            if(used_contract == None):
+                used_contract = contract
+            _mark_functions(used_contract)
             #resolve global variables
-            _tcheck_contract_state_var(contract)
+            _tcheck_contract_state_var(used_contract)
 
   
         for contract in self.contracts:
@@ -2762,7 +2780,10 @@ class tcheck(AbstractDetector):
             user_type = u_provide_type[contract.name]
             if(not (check_contract(contract.name)) or (user_type and fill_type)):
                 continue
-            errorsx = _tcheck_contract(contract)
+            used_contract = get_cont_with_state_var(contract.name)
+            if(used_contract == None):
+                used_contract = contract
+            errorsx = _tcheck_contract(used_contract)
                 
             for ir in errorsx:
                 _ir = ir.extok
@@ -2778,5 +2799,5 @@ class tcheck(AbstractDetector):
                 res = self.generate_result(info)
                 results.append(res)
         end_time = time.time()
-        print(f"Function count: {function_count}")
+        #print(f"Function count: {function_count}")
         return results

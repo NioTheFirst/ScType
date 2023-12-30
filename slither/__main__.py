@@ -44,6 +44,8 @@ from slither.utils.command_line import (
     check_and_sanitize_markdown_root,
 )
 from slither.exceptions import SlitherException
+from slither.sctype_cf_pairs import add_cf_pair, add_cont_with_state_var
+
 
 logging.basicConfig()
 logger = logging.getLogger("Slither")
@@ -77,6 +79,30 @@ def process_single(
 
     return _process(slither, detector_classes, printer_classes)
 
+def preprocess_single(
+    target: Union[str, CryticCompile],
+    args: argparse.Namespace,
+) -> Tuple[Slither, List[Dict], List[Dict], int]:
+    """
+    The core high-level code for running Slither static analysis.
+
+    Returns:
+        list(result), int: Result list and number of contracts analyzed
+    """
+    ast = "--ast-compact-json"
+    if args.legacy_ast:
+        ast = "--ast-json"
+    if args.checklist:
+        args.show_ignored_findings = True
+
+    slither = Slither(target, ast_format=ast, **vars(args))
+    for contract in slither.contracts:
+        #print(contract.name)
+        add_cont_with_state_var(contract.name, contract)
+        for function in contract.functions_declared:
+            #print(f"{function.name}: {function.entry_point}")
+            add_cf_pair(contract.name, function.name, function)
+    #print("--------")
 
 def process_all(
     target: str,
@@ -90,6 +116,8 @@ def process_all(
     results_printers = []
     analyzed_contracts_count = 0
     tcheck_module.update_total_compilations(len(compilations))
+    for compilation in compilations:
+        preprocess_single(compilation, args)
     for compilation in compilations:
         (
             slither,

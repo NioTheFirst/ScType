@@ -14,6 +14,7 @@
 #       -get_ref_type_tuple(ref_name) :check for existence and returns type tuple for a reference (arrays or maps)
 import address_handler
 from address_handler import address_to_label, label_sets
+from slither.sctype_cf_pairs import get_cf_pairh, view_all_cf_pairs
 
 #address_to_label = {}
 #label_sets = {}
@@ -774,6 +775,8 @@ def get_ref_type_tuple(ref_name):
     return None
 
 def add_in_func(contract_name, function_name, in_func):
+    #deprecated
+    return
     key = contract_name + '_' + function_name
     if(key in in_func_ptr_hash):
         #Do not modify thing already in hash.
@@ -782,6 +785,10 @@ def add_in_func(contract_name, function_name, in_func):
 
 def get_in_func_ptr(contract_name, function_name):
     key = contract_name + '_' + function_name
+    #view_all_cf_pairs()
+    return get_cf_pairh(contract_name, function_name)
+    return None
+    #deprecated
     if(key in in_func_ptr_hash):
         funcptr = in_func_ptr_hash[key]
         if(funcptr.entry_point == None):
