@@ -1,5 +1,5 @@
 # Overview
-ScType is a static analysis tool written in Python3 to detect accounting errors in Solidity smart contracts. 
+ScType is a static analysis tool written in Python3 to detect accounting errors in Solidity smart contracts. It can be found on [Github](https://github.com/NioTheFirst/ScType).
 
 Sctype leverages the single-static-assignment representation produced by [Slither](https://github.com/crytic/slither) to perform abstract type inference. It assigns initial abstract types to select variables based on a type file or inference from the code. Then, the abstract types are propogated throughout the contract based on the produced representation and typechecked accordingly.
 
@@ -13,9 +13,11 @@ The Docker Image requires 30GB of space.
 
 ScType is applying for:
 
-1. Available. ScType is publically available on [Github](https://github.com/NioTheFirst/ScType/tree/ICSE24Artifact). We have also provided a runnable image of the tool on [Dockerhub](https://hub.docker.com/repository/docker/icse24sctype/full/general) and provide instructions to pull and run below.
+1. Available. ScType is publically available on [Github](https://github.com/NioTheFirst/ScType). We have also provided a runnable image of the tool on [Dockerhub](https://hub.docker.com/repository/docker/icse24sctype/full/general) and provide instructions to pull and run below.
 
-2. Reusable. We provide the source code as well as an explanation to key components of ScType below. We also include detailed isntructions on how to reproduce the results obtained in the paper. Finally, ScType is built on top of Slither, a well-known open-source project.
+2. Reusable. We provide the source code as well as an explanation to key components of ScType below. We include detailed instructions on how to reproduce the results obtained in the paper.
+We also provide instructions for developers to leverage our tool. More detail can be found in the section "Build and Run from Source Code".
+Finally, ScType is built on top of Slither, a well-known open-source project. Using open-source code improves reusability by making the code easier to understand.
 
 
 # Introduction to the Repository
@@ -32,6 +34,12 @@ ScType is applying for:
 
 `|--- financial_type_keys.py`
 
+`|--- expected_results.txt`
+
+`|--- icse2024-paper1049.pdf`
+
+`|--- icse2024-paper1049-supplementary_material_upload.pdf`
+
 `|--- run_results`
 
 `|--- slither/detectors/my_detectors`
@@ -42,11 +50,15 @@ ScType is applying for:
 
 `LICENSE` contains the license for ScType.
 
-`test_benchmark_final.sh` is the script used for running ScType on the dataset provided in the paper. More details can be found in the "Docker" section.
+`test_benchmark_final.sh` is the script used for running ScType on the dataset provided in the paper. More details can be found in the "Reproducing Results in the Paper" section.
 
 `create_typefile.md` contains instructions on how to manually build type files.
 
 `financial_type_keys.py` stores a copy of a table from `tcheck_parser.py` (which is located in the directory `slither/detectors/my_detectors`) that contains the mappings of financial types and their keys. More information can be found in `create_typefile.md`.
+
+`expected_results.txt` stores a copy of the ouput that should be produced from running the Docker image againsts the dataset in the paper. See the "Dataset Evaluation" subsection of the "Repdroducing Results in the Paper" section for more details.
+
+`icse2024-paper1049.pdf` and `icse2024-paper1049-supplementary_material_upload.pdf` contain the PDF files for the paper written for this tool, _Towards Finding Accounting Errors in Smart Contracts_ and its supplementary materials. 
 
 `run_results` is a repository that contains the expected results from running ScType on the dataset used in the paper. More information can be found in the README.md file located there.
 
@@ -60,7 +72,7 @@ To see the specific directory within each project where ScType is run, please ch
 
 __This repo does not include the Benchmark dataset in the paper, however the Docker image does.__
 
-All other code is unimportant or used by Slither.
+All other code belongs to Slither.
 
 # Introduction to Core Components
 
@@ -78,7 +90,7 @@ For development or debugging, simply inputting the following python code `print(
 ## Type File Parsing
 
 The type file provides initial abstract types for selected global variables or function parameters.
-Detailed information can be found in `create_typefile.md`
+Detailed instructions can be found in `create_typefile.md`
 
 All of the type files for the testing dataset have already been provided; when counting the number of annotations made for type files, we exclude the ones which provide the return values of functions not in scope. We reason that this is a common cost for all static analysis tools and is an effort that we plan to improve upon in furture work.
 
@@ -127,6 +139,10 @@ Then, the appropriate token units are assigned to the destination variable, and 
 
 # Build and Run from Source Code
 
+To download a copy of ScType, clone the repository like so:
+
+`git clone https://github.com/NioTheFirst/ScType.git`
+
 To compile the source code, navigate to the home directory of ScType and run:
 
 `pip3 install . --upgrade`
@@ -143,9 +159,9 @@ To run ScType against a directory, run:
 
 ScType will be able to automatically typecheck calls to any functions as long as the function is located within the directory. 
 
-However, ScType needs type files to be made for each contract that shall be typechecked. Details on how to do so can be found in the `create_typefile.md` file.
+However, ScType needs type files to be made for each contract that shall be typechecked. Details on how to do so can be found in the [`create_typefile.md`](https://github.com/NioTheFirst/ScType/blob/main/create_typefile.md) file.
 
-# Docker
+# Reproducing Results in the Paper
 
 The following section describes how to pull the docker image from Dockerhub and how to reproduce the results in the paper.
 
@@ -193,6 +209,8 @@ To run ScType against the entire dataset, run the following command within the i
 `./test_benchmark_final.sh`
 
 The entire execution will take 10 minutes.
+
+The expected results of the execution can be found in `expected_results.txt`.
 
 To run ScType against individual projects in the dataset, append the index of the project to the previous command.
 
