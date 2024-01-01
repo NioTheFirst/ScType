@@ -1,4 +1,7 @@
 # Overview
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10449162.svg)](https://doi.org/10.5281/zenodo.10449162)
+
 ScType is a static analysis tool written in Python3 to detect accounting errors in Solidity smart contracts. It can be found on [Github](https://github.com/NioTheFirst/ScType).
 
 Sctype leverages the single-static-assignment representation produced by [Slither](https://github.com/crytic/slither) to perform abstract type inference. It assigns initial abstract types to select variables based on a type file or inference from the code. Then, the abstract types are propogated throughout the contract based on the produced representation and typechecked accordingly.
