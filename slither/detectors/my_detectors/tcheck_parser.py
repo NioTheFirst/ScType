@@ -32,6 +32,8 @@ spex_func_type_hash = {}
 MAX_PARAMETERS = 5
 contract_name_aliases = {}
 
+
+read_files = {}
 reuse_types = True
 reuse_types_var = {}
 reuse_addr = True
@@ -39,7 +41,7 @@ reuse_addr_types = {}
 reuse_fin = True
 reuse_fin_types = {}
 
-
+total_annotations = 0
 field_tuple_start = 5
 update_start = 100
 
@@ -91,6 +93,9 @@ f_type_name = {
     "dividend": 60
 }
 
+def get_total_annotations():
+    global total_annotations
+    return(total_annotations)
 
 def gen_finance_instances(line):
     _line = line.split(",")
@@ -125,6 +130,8 @@ def gen_finance_instances(line):
 
 
 def parse_finance_file(f_file):
+    global read_files
+    global total_annotations
     global reuse_fin
     global reuse_fin_types
     #Same structure as token_type parser
@@ -143,6 +150,9 @@ def parse_finance_file(f_file):
                     f_params.append(-1)
             #Regular variables
             if(_line[0].strip() == "[t]"):
+                if(not(f_file) in read_files):
+                    #print(_line)
+                    total_annotations+=1
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
                 if(reuse_fin and not(v_name in reuse_fin_types)):
@@ -157,6 +167,9 @@ def parse_finance_file(f_file):
                 
             elif(_line[0].strip() == "[ta]"):
                 #addresses
+                if(not(f_file) in read_files):
+                    total_annotations+=1
+                    #print(_line)
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
                 if(reuse_fin and not(v_name in reuse_fin_types)):
@@ -188,12 +201,17 @@ def parse_finance_file(f_file):
                 add_ex_func(c_name, f_name, new_tts)
             #May be deprecated?
             elif(_line[0].strip() == "[tref]"):
+                if(not(f_file) in read_files):
+                    total_annotations+=1
                 ref_name = _line[1].strip()
                 ref_tt = get_ref_type_tuple(ref_name)
                 ref_tt += (f_params[0], )
                 add_ref(ref_name, ref_tt)
             
             elif(_line[0].strip() == "[t*]"):
+                if(not(f_file) in read_files):
+                    total_annotations+=1
+                    #print(_line)
                 f_name = _line[1].strip()
                 p_name = _line[2].strip()
                 v_name = _line[3].strip()
@@ -205,11 +223,14 @@ def parse_finance_file(f_file):
                     field_tt = get_field(f_name, p_name, v_name)
                 field_tt += (f_params[0], )
                 add_field(f_name, p_name, v_name, field_tt)
+    read_files[f_file] = True
 
 def parse_type_file(t_file, f_file = None):
     global label_sets
     global reuse_addr
+    global read_files
     global reuse_addr_types
+    global total_annotations
     with open (t_file, 'r') as type_file:
         lines = []
         counter = 0
@@ -227,11 +248,16 @@ def parse_type_file(t_file, f_file = None):
             #print(line)
             if(_line[0].strip() == "[alias]"):
                 #Alias for contract names
+                if(not(t_file in read_files)):
+                    total_annotations+=1
                 used_name = _line[1].strip()
                 actual_name = _line[2].strip()
                 add_alias(used_name, actual_name)
 
             if(_line[0].strip() == "[t]"):
+                if(not(t_file in read_files)):
+                    total_annotations+=1
+                    #print(_line)
                 f_name = _line[1].strip()
                 v_name = _line[2].strip()
                 #TODO: Check for previous mentions of v_name
@@ -412,6 +438,9 @@ def parse_type_file(t_file, f_file = None):
                 add_ex_func(c_name, f_name, ef_types)
             #REFERENCE TYPE
             if(_line[0].strip() == "[tref]"):
+                if(not(t_file in read_files)):
+                    #print(_line)
+                    total_annotations+=1
                 ref_name = _line[1].strip()
                 num = [-1]
                 denom = [-1]
@@ -437,6 +466,9 @@ def parse_type_file(t_file, f_file = None):
             #i.e. global, USDC, 6       (positive address)
             #i.e. transfer, token, *    (negative address)
             if(_line[0].strip() == "[ta]"):
+                if(not(t_file in read_files)):
+                    #print(_line)
+                    total_annotations+=1
                 func_name = _line[1].strip()
                 var_name = _line[2].strip()
 
@@ -458,6 +490,9 @@ def parse_type_file(t_file, f_file = None):
                     reuse_addr_types[var_name] = norm
             #FIELD TYPE
             if(_line[0].strip() == "[t*]"):
+                if(not(t_file in read_files)):
+                    #print(_line)
+                    total_annotations+=1
                 func_name = _line[1].strip()
                 parent_name = _line[2].strip()
                 field_name = _line[3].strip()
@@ -490,6 +525,7 @@ def parse_type_file(t_file, f_file = None):
                     
 
                 add_field(func_name, parent_name, field_name, (num, denom, norm, value, addr))
+    read_files[t_file] = True
     parse_finance_file(f_file)
 
 def add_var(function_name, var_name, type_tuple):

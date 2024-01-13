@@ -2799,5 +2799,6 @@ class tcheck(AbstractDetector):
                 res = self.generate_result(info)
                 results.append(res)
         end_time = time.time()
-        #print(f"Function count: {function_count}")
+        print(f"Annotation count: {tcheck_parser.get_total_annotations()}")
+        print(f"Function count: {function_count}")
         return results
