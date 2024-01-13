@@ -114,7 +114,7 @@ The propogation and typechecking of the tool are implemented in `tcheck.py` and 
 `tcheck.py` receives the representation from Slither, and performs the typechecking of individual operations within the function `check_type()`.
 
 In particular, `tcheck.py` receives the SSA from Slither, and first determines which contracts are marked to be typechecked. 
-More details on how to do so can be found in `create_typefile.md`.
+More details on how to do so can be found in [`create_typefile.md`](https://github.com/NioTheFirst/ScType/blob/main/create_typefile.md), located in this directory.
 
 For the contracts that have been marked, Slither typechecks them one-by-one via the function `_tcheck_contract()`.
 Per each contract, the global variables are read, and assigned initial type info if annotations have been provided in the type files.
