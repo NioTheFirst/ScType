@@ -87,7 +87,7 @@ The output of the command should look like the following screenshot:
 
 This output is produced by running ScType against the first smart contract project in our dataset, MarginSwap. 
 
-## Dataset Evaluation
+## Reproducing Major Results
 
 To run ScType against the entire dataset, run the following command within the interactable shell:
 
