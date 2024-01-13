@@ -66,7 +66,7 @@ The number of functions checked are reported in the following format:
 
 The number of annotations are reported in the following format:
 
-`Annotation count: XXX`
+`>Annotation count: XXX`
 
 Please note that some outputs will contain more than one set of `Annotation count` and `Function count`. This is due to ScType checking more than one file. In such a scenario, disregard all but the last pair of `Annotation count` and `Function count` in a singular ScType execution.
 
