@@ -16,7 +16,7 @@ ScType is applying for:
 
 1. Available. ScType is publically available on [Github](https://github.com/NioTheFirst/ScType). We have also provided a runnable image of the tool on [Dockerhub](https://hub.docker.com/repository/docker/icse24sctype/full/general) and provide instructions to pull and run below.
 
-2. Reusable. We provide detailed instructions on how to reproduce the results in the paper. We also provide an explanation of key components of ScType and how developers can leverage our tool in the file [`README_dev.md`](XXX) in this directory.
+2. Reusable. We provide detailed instructions on how to reproduce the results in the paper. We also provide an explanation of key components of ScType and how developers can leverage our tool in the file [`README_dev.md`](https://github.com/NioTheFirst/ScType/blob/main/README-dev.md) in this directory.
 Finally, ScType is built on top of Slither, a well-known open-source project. Using open-source code improves reusability by making the code easier to understand.
 
 
@@ -115,7 +115,7 @@ We briefly go over the reproduceable results in the paper as follows.
 
 The data from table 3 on page 8 of our [paper](https://github.com/NioTheFirst/ScType/blob/main/icse2024-paper1049.pdf) was obtained by running ScType against the entire dataset: 
 
-The number of annotations was obtained through the metric defined in the "Type File Parsing" section of the file [`README-dev.md`](XXX), which can be found in this directory.
+The number of annotations was obtained through the metric defined in the "Type File Parsing" section of the file [`README-dev.md`](https://github.com/NioTheFirst/ScType/blob/main/README-dev.md), which can be found in this directory.
 
 The reported number of warnings is directly the amount reported by the tool.
 
