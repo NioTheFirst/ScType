@@ -1,7 +1,7 @@
 # pylint: disable=unused-import,relative-beyond-top-level
 from .examples.backdoor import Backdoor
-from .my_detectors.detect_external import detect_external
-from .my_detectors.detect_round import detect_round
+#from .my_detectors.detect_external import detect_external
+#from .my_detectors.detect_round import detect_round
 from .my_detectors.tcheck import tcheck
 from .variables.uninitialized_state_variables import UninitializedStateVarsDetection
 from .variables.uninitialized_storage_variables import UninitializedStorageVars
