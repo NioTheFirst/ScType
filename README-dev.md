@@ -171,3 +171,21 @@ To run ScType against a directory, run:
 ScType will be able to automatically typecheck calls to any functions as long as the function is located within the directory. 
 
 However, ScType needs type files to be made for each contract that shall be typechecked. Details on how to do so can be found in the [`create_typefile.md`](https://github.com/NioTheFirst/ScType/blob/main/create_typefile.md) file.
+
+## Dataset Evaluation using the Source Compilation
+
+The dataset used to test ScType has been pushed intp a separate Github repository named `ScType_Data`.
+
+It can be cloned by running the command:
+
+`git clone https://github.com/NioTheFirst/ScType_Data.git`
+
+It requires 30GB of space and take around 50 minutes to clone from Github.
+
+Once the repository has been cloned, move the directory named `Benchmark` from `ScType_Data` to the `ScType` directory cloned in the first section by running the command:
+
+`mv /path/to/ScType_Data/Benchmark /path/to/ScType`
+
+Replace `/path/to/ScType_Data/Benchmark` and `/path_to_ScType` as needed.
+
+Once the move is complete, evaluation of ScType against the dataset can proceed as directed in the "Usage" section of the [README.md](https://github.com/NioTheFirst/ScType/blob/main/README.md).
