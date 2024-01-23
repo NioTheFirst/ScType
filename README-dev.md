@@ -188,4 +188,27 @@ Once the repository has been cloned, move the directory named `Benchmark` from `
 
 Replace `/path/to/ScType_Data/Benchmark` and `/path_to_ScType` as needed.
 
-Once the move is complete, evaluation of ScType against the dataset can proceed as directed in the "Usage" section of the [README.md](https://github.com/NioTheFirst/ScType/blob/main/README.md).
+Then, it is necessary to install the Soilidity compilations used in the various projects in the dataset.
+
+To do so, install the `solc-select` package by running:
+
+`pip3 install solc-select`
+
+then, run the following commands:
+
+```
+solc-select install 0.6.12
+solc-select install 0.7.6
+solc-select install 0.8.0
+solc-select install 0.8.1
+solc-select install 0.8.3
+solc-select install 0.8.4
+solc-select install 0.8.6
+solc-select install 0.8.7
+solc-select install 0.8.9
+solc-select install 0.8.10
+solc-select install 0.8.12
+solc-select install 0.4.25 && solc-select use 0.4.25
+```
+
+Once the move is complete and the Solidity compilations have been downloaded, evaluation of ScType against the dataset can proceed as directed in the "Usage" section of the [README.md](https://github.com/NioTheFirst/ScType/blob/main/README.md).
